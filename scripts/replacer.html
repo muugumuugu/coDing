@@ -18,11 +18,12 @@
 			<hr>
 			<pre><code class="language-html">&lt;tr&gt;.*\/D.*?/.*/(.*?)&quot;&gt;([^~]*?)&lt;/a&gt;&lt;/td&gt;&lt;/tr&gt;</code></pre>
 			<ul>
-			<li><pre><code class="language-html">&lt;td&gt;&lt;/td&gt;&lt;a href=&quot;\1&quot;&gt;&lt;img src=&quot;\1&quot; alt=&quot;\2&quot; width=&quot;300&quot; height=&quot;300&quot;&gt;&lt;/a&gt;</code></pre>
+			<li><pre><code class="language-html">&lt;div&gt;&lt;a href=&quot;\1&quot;&gt;&lt;img src=&quot;\1&quot; alt=&quot;\2&quot; width=&quot;300&quot; height=&quot;300&quot;/&gt;&lt;br&gt;\2&lt;/a&gt;&lt;/div&gt;&amp;nbsp;</code></pre>
 			<li><pre><code class="language-html">&lt;li&gt;&lt;a href=&quot;\1&quot;&gt;\2&lt;/a&gt; &lt;/li&gt;</code></pre>
 			<li><pre><code class="language-html">&lt;div&gt;&lt;a href=&quot;\1&quot;&gt;\2&lt;/a&gt;&lt;span class=&quot;divider&quot;&gt;    |  &lt;/span&gt;&lt;/div&gt;</code></pre>
-			<li><pre><code class="language-html">&lt;div&gt;&lt;audio src=&quot;\1&quot; alt=&quot;\2&quot; width=&quot;100&quot; height=&quot;50&quot; controls&gt;&lt;/div&gt;</code></pre>
-			<li><pre><code class="language-html">&lt;div&gt;&lt;a href=&quot;\1&quot;&gt;&lt;obj data=&quot;\1&quot; width=&quot;300&quot; height=&quot;300&quot;&gt;\2&lt;/object&gt;&lt;/a&gt;&lt;/div&gt;&amp;nbsp;</code></pre>
+			<li><pre><code class="language-html">&lt;div&gt;&lt;audio src=&quot;\1&quot; alt=&quot;\2&quot; width=&quot;100&quot; height=&quot;50&quot; controls&gt;&lt;br&gt;&lt;a href=&quot;\1&quot;&gt;\2&lt;/a&gt;&lt;/div&gt;&amp;nbsp;</code></pre>
+			<li><pre><code class="language-html">&lt;div&gt;&lt;object data=&quot;\1&quot; width=&quot;300&quot; height=&quot;300&quot;&gt;\2&lt;/object&gt;&lt;br&gt;&lt;a href=&quot;\1&quot;&gt;\2&lt;/a&gt;&lt;/div&gt;&amp;nbsp;</code></pre>
+			<li><pre><code class="language-html">&lt;div&gt;&lt;video src=&quot;\1&quot; width=&quot;300&quot; height=&quot;300&quot; controls&gt;\2&lt;/vidro&gt;&lt;br&gt;&lt;a href=&quot;\1&quot;&gt;\2&lt;/a&gt;&lt;/div&gt;&amp;nbsp;</code></pre>
 			</ul>
 			<hr>
 			<pre><code class="language-html">&lt;table&gt;</code></pre>
