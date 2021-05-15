@@ -1,0 +1,6 @@
+Title: Biological Life Simulator
+Description: This little program was my final project for a university bioinformatics course. It is designed to represent basic evolutionary and population genetics principles for simple artifical organisms. Basically, simple creatures compete with each other for limited resources. Each organism has a strand of pseudo-DNA that determines three basic attributes: size, speed, and range (how far it can see). When the little critters reproduce (asexually - sorry, everyone :), mutations may take place in the child organism. The code isn't completely optimized, but you may still find that it runs too fast compiled. It can be quite addicting - my longest simulation ran for almost 400,000 cycles before all the organisms died out. For further analysis of a particular simulation, all data can be saved to a tab-delimited text file compatible with any major spreadsheet software. Comments and suggestions are welcome.
+This file came from Planet-Source-Code.com...the home millions of lines of source code
+You can view comments on this code/and or vote on it at: http://www.Planet-Source-Code.com/vb/scripts/ShowCode.asp?txtCodeId=67837&lngWId=1
+
+The author may have retained certain copyrights to this code...please observe their request and the law by reviewing all copyright conditions at the above URL.

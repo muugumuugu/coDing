@@ -1,0 +1,17 @@
+frmMain = 0, 0, 0, 0, C, 52, 52, 808, 534, C
+frmNewEqu = 0, 0, 0, 0, C, 182, 182, 938, 664, C
+ModMain = 0, 0, 0, 0, C
+frmEval = 0, 0, 0, 0, C, 208, 208, 964, 690, C
+frmSolve = 0, 0, 0, 0, C, 0, 0, 756, 482, C
+frmZoom = 0, 0, 0, 0, C, 26, 26, 782, 508, C
+frmArea = 104, 104, 860, 586, , 182, 182, 952, 664, C
+frmAbout = 0, 0, 0, 0, C, 26, 26, 782, 508, C
+frmCalculator = 0, 0, 0, 0, C, 52, 52, 808, 534, C
+frmOptions = 0, 0, 0, 0, C, 78, 78, 834, 560, C
+MathFunctions = 0, 0, 0, 0, C
+frmTurningPoints = 0, 0, 0, 0, C, 104, 104, 860, 586, C
+frmTangent = 0, 0, 0, 0, C, 130, 130, 886, 612, C
+frmDerivative = 0, 0, 0, 0, C, 208, 208, 978, 690, C
+frmTable = 0, 0, 0, 0, C, 156, 156, 912, 638, C
+frmTrace = 0, 0, 0, 0, C, 182, 182, 938, 664, C
+ModDerivative = 0, 0, 0, 0, C

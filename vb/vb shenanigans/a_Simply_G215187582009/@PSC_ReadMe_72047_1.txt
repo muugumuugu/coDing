@@ -1,0 +1,7 @@
+Title: a Simply Genetic Algorithm And Neural Network PROJECTS (V2)
+Description: CONTAINS: Genetic Algorithm Class - Simple and easy to use. + Modified ParasChopra Neural Net by www.paraschopra.com. ----- EXAMPLE PROJECTS: ----- [ FILLTHEGRID ]: Example of use of Genetic Algorithm Class (SimplyGA). ----- [ TSP WITH GA ]: Travel Salesman Problem solved by Genetic Algorithm Class (SimplyGA). ---- [ XOR ]: Xor Function performed by Neural Net.(Neural net is Trained by Genetic Algorithm Class). ----- 
+[ FLYERS ]: NEURAL NET TRAINED BY GENETIC ALGORITHM. A Population of Individuals moves according to a Population of Neural Nets. The Goal is to stay closer to the Red Point. Before changing red point (start) position the population is evaluated. The nearest reproduce and replace the worst. (This is performed by GA.) Neural Nets are Updated by putting to Neuron Biases and Sinapses eights the Genes of GA. Net Inputs are 3: How much red point is LeftRight, how much it is FrontBack and the distance from it. Net Outputs are 2: Steer and Accellerate/brake. (This is ARTIFICIAL INTELLIGENCE) /// more will be added/updated /// 09.05.2009 Added Xor_Or_And / Improved Flyers.
+This file came from Planet-Source-Code.com...the home millions of lines of source code
+You can view comments on this code/and or vote on it at: http://www.Planet-Source-Code.com/vb/scripts/ShowCode.asp?txtCodeId=72047&lngWId=1
+
+The author may have retained certain copyrights to this code...please observe their request and the law by reviewing all copyright conditions at the above URL.

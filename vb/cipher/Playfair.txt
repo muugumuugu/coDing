@@ -1,0 +1,58 @@
+Playfair is a digraph cipher, invented in 1854 by Sir Charles Wheatstone. We encrypt the text in groups of two letters.
+
+To use the Playfair cipher, we start with a matrix with 5 rows and columns. This matrix is filled with the secret key and the alphabet. We skip the double letters and combine the letters I and J.
+
+Message: THIS MESSAGE IS SECRET
+Key    : STALINGRAD  
+
+S  T  A  L I/J
+N  G  R  D  B
+C  E  F  H  K
+M  O  P  Q  U
+V  W  X  Y  Z
+
+First, we devide the message in digraphs. Is a digram is mad of two identical letters, we insert an X. If the text ends on one letter, we pad the text also with an X.
+
+Message    : TH IS ME SX SA GE IS SE CR ET
+
+We now encrypt each digraph. There are three possible positions.
+
+If the letters are in a different row and column we take the letters in the opposite corners, starting with the letter in the same row as the plain digraph.
+
+'TH' is encrypted as 'LE'
+
+.  T  .  L  .
+.  .  .  .  .
+.  E  .  H  .
+.  .  .  .  .
+.  .  .  .  .
+
+If the letters are in the same row, we take the letters directly at theire right. If a letter is in the last column, we wrap arround and take the letter in first column.
+
+'SA' is encrypted as 'TL' 
+
+S  T  A  L  .
+.  .  .  .  .
+.  .  .  .  .
+.  .  .  .  .
+.  .  .  .  .
+
+If the letters are in the same column, we take the letters directly beneath them. If a letter is in the last row, we wrap arround and take the letter in the first row.
+
+'ET' is encrypted as 'OG'
+
+.  T  .  .  .
+.  G  .  .  .
+.  E  .  .  .
+.  O  .  .  .
+.  .  .  .  .
+
+Plain message: TH IS ME SX SA GE IS SE CR ET
+Code message : LE ST OC AV TL EO ST TC FN OG 
+
+
+Finally, we write down the code in groups of five:
+
+Cipher text: LESTO CAVTL EOSTT CFNOG 
+
+To decrypt a message, if they are in different row and column, we take the letters in the opposite corners. If they are in the same row, take the letters at theire left, and if they are in the same column, take the letters above them.

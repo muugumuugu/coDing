@@ -1,0 +1,53 @@
+The Vigenère cipher, invented by Giovanni Batista Belaso, is a poly- alphabetic substitution cipher. It remained unbroken for twohundred years, until  Charles Babbage in 1854 found a way to retrieving the key lenght and performed multilple letter-frequency analysis on the code text. Even today, many novice crypto programmers write, without knowing, variations on the Vigenére cipher, not realizing they can all be broken with cryptanalysis, based on Babbage's methode.
+ 
+To encipher with Vigenére we make use of a table of alphabets.
+
+The table consists of the alphabet written out 26 times in different rows, each alphabet shifted one place, compared to the previous alphabet.
+
+    A B C D E F G H I J K L M N O P Q R S T U V W X Y Z
+ ------------------------------------------------------
+ A| A B C D E F G H I J K L M N O P Q R S T U V W X Y Z 
+ B| B C D E F G H I J K L M N O P Q R S T U V W X Y Z A
+ C| C D E F G H I J K L M N O P Q R S T U V W X Y Z A B
+ D| D E F G H I J K L M N O P Q R S T U V W X Y Z A B C
+ E| E F G H I J K L M N O P Q R S T U V W X Y Z A B C D
+ F| F G H I J K L M N O P Q R S T U V W X Y Z A B C D E
+ G| G H I J K L M N O P Q R S T U V W X Y Z A B C D E F
+ H| H I J K L M N O P Q R S T U V W X Y Z A B C D E F G
+ I| I J K L M N O P Q R S T U V W X Y Z A B C D E F G H
+ J| J K L M N O P Q R S T U V W X Y Z A B C D E F G H I
+ K| K L M N O P Q R S T U V W X Y Z A B C D E F G H I J
+ L| L M N O P Q R S T U V W X Y Z A B C D E F G H I J K
+ M| M N O P Q R S T U V W X Y Z A B C D E F G H I J K L
+ N| N O P Q R S T U V W X Y Z A B C D E F G H I J K L M
+ O| O P Q R S T U V W X Y Z A B C D E F G H I J K L M N
+ P| P Q R S T U V W X Y Z A B C D E F G H I J K L M N O
+ Q| Q R S T U V W X Y Z A B C D E F G H I J K L M N O P
+ R| R S T U V W X Y Z A B C D E F G H I J K L M N O P Q
+ S| S T U V W X Y Z A B C D E F G H I J K L M N O P Q R
+ T| T U V W X Y Z A B C D E F G H I J K L M N O P Q R S
+ U| U V W X Y Z A B C D E F G H I J K L M N O P Q R S T
+ V| V W X Y Z A B C D E F G H I J K L M N O P Q R S T U
+ W| W X Y Z A B C D E F G H I J K L M N O P Q R S T U V
+ X| X Y Z A B C D E F G H I J K L M N O P Q R S T U V W
+ Y| Y Z A B C D E F G H I J K L M N O P Q R S T U V W X
+ Z| Z A B C D E F G H I J K L M N O P Q R S T U V W X Y
+
+ 
+Plain text: THIS IS A SECRET MESSAGE
+Key       : ZODIAC
+
+We write down the message and write the key under the message, and repeat it until it matches the message.
+
+A letter is enciphered by the key letter under it. To encipher the letter T, we search for the crossing between the Z row and T column. This gives us the letter S.
+
+Text: THISISASECRETMESSAGE
+Key : ZODIACZODIACZODIACZO
+--------------------------
+Code: SVLAIUZGHKRGSAHASCFS 
+
+Finally, we write down the code in groups of five:
+
+Cipher text: SVLAI UZGHK RGSAH ASCFS
+
+To decipher the message we write down the key above the code text. Next, we look up the key letter in the table row, and go down until we find the code letter. The name of that row is the plain letter.

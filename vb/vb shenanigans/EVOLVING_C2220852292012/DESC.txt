@@ -1,0 +1,117 @@
+EVOLVING CREATURES (Roberto Mior)
+
+[V 7]
+- Possibility to penalize creature, when desired points touch ground. 
+  [No Creature file compatibility with previous version]
+
+[V 6]
+- Added "brained" Muscles (DoPhysicsV6)
+- New TASK: keep initial SHAPE (DoPhysicsV6)
+- video: From 30 fps to 25 fps
+
+
+[V 5]
+- 2 Kind of physics: DoPhysicsV4 and DoPhysicsV5.
+- In Both DoPhysics at [If .Y > MaxY Then]
+  replaced .Y = MaxY
+  with .Y = MaxY - (.Y - MaxY)	 	
+	
+[V 4]
+- I thought Not to use NoBrained Link tensions for input. (They seems to be not so much relevant).
+  I find more interesting the contact with Ground, So, Do Not use NoBrained links tensions for Input,     but X and Y Velocities of Points touching Ground.
+- Neuron Biases Excursion and Sinapse Weights Excursion 
+  inverse proportional to AVG Number of input Sinapses x Neuron (Subs CreateNet & InitBrainCell).
+- "Ghost" other creature than Current Best, while drawing video frames.
+- Increased TaskWalk Initial Value. (Prevent Negative Fitness)
+- Social Disaster Extension: Individs that must be changed can be found by "Same Fitness" Values or
+			     "Identical Genes Values". 
+                             (Sometimes Same Fitness doesn't mean Same Genes)
+			     Once found, they can be Randomized or Mutated. 
+- RndM function.
+- Make Video Frames at Every 50 (not 25) generations (if a better is found)
+- Little changes in Draw Intro Creature.
+- "Alpha Blend" in Class LineGS - LineDIB and CircleDIB
+- Not resizable form. Manifest.
+
+[Update 3]  (Available on PSC)
+- GA better Adaptive Mutation Prob 
+- Added Rotational Velocity for Input (2: >0 and <0)
+- CyclesForScreenFrame 16->20
+- Particle draw style
+
+[Update 2] 
+- Smoothed point touching ground function (Sort of pressure)
+- Smoothed Length Added by Brain
+- Improved creature physics
+- X Velocity Air Resistence
+- Better management of tasks.
+- Particle System
+- Increased output links Excursion.
+- CyclesForScreenFrame 12->16 CyclesForVideoFrame BrainClock
+
+
+[Update 1] 
+- Very Faster 
+- Inputs/outputs Display 
+- SIN Function instead of EXP in NN Activation function
+- Added Hidden layer with a number of neurons equal to 1.5 times the Number of Outputs 
+- 3 sons per Generation 
+- Better StayOnGround Fitness function 
+- Other -----
+
+This is a typical example of how evolution works.
+A population of (customizable) Creatures try to Evolve according to some tasks.
+A Creature is composed by springs, "muscles" and a neural network.
+There are "intelligent" and "dumb" springs. First ones change their rest length according to the neural network outputs. The other simply react to external forces to mantain their invariable rest lengths.
+From V6 there are "muscles". Muscle is an angle constrain between two links. The NN outputs determinate 
+even the Angle that they must have.
+The Creature's Neural Network Inputs are: Vx,Vy & "Pressure" of touching ground Points, Creature Rotation (DX and DY), Height from ground, X Y Velocities and Rotational Velocity.
+The Creature's Neural Network Outputs are: "Intelligent" springs rest lengths and Muscles rest angles.
+
+EVOLUTION (genetic algorithm):
+At Each generation there are 3 sons wich parents are "randomly" choosen from the best previous generation creatures. (Some sons mutate their genes with low probability (M)).
+Then sons are Evaluated. (This 3 sons replace the previous generation worst creatures)
+
+
+TASKS:
+Creature's evaluation is based on Task(s) to perform.
+These are:
+
+WALK		(Distance walked)
+DON'T JUMP	(Minimize avg height from ground)
+AVG HEIGHT	(Average Creature middle point height)
+MAX HEIGHT	(Creature Max Height Reached)
+VERTICALITY *	(Rotate by -/+90°)
+HORIZONTALITY *	(Keep initial orientation)[even 180°]
+KEEP SHAPE      (Maintain initial shape)
+*(Rotation is based on the 2 (left-Right) most external links.)
+
+These task can be mixed together. (for some complex tasks/creatures it's a little bit diffcult to find the best proportions)
+
+Each Creature performs a score (called "fitness")
+
+
+
+VIDEOS:
+http://www.youtube.com/results?search_query=523079FC88A7771B&aq=f
+http://www.youtube.com/reexre#g/c/523079FC88A7771B
+
+
+
+
+***** Mistery ***** [maybe old issue]
+I got a problem I'm not able to solve:
+- Search word "Mistery" in code.
+- The Line Below is marked as comment
+- If I remove the comment tag to that line a strange "error" occours. Explaination:
+[1] Comment That line.
+Set Walk task to zero and AVG height task >0, Check MakeVideoFrames and Run the software.
+in graph you will see that Green Line (BestCreature) will go only DOWN. And that's OK.
+[2] UNComment That line.
+Set Walk task to zero and AVG height task >0, Check MakeVideoFrames and Run the software.
+in graph you will see that Green Line (BestCreature) will go DOWN and UP. And that's NOT OK.
+That line of code is used to change the X Offset position of the creatures when no-Walk task (Task Walk=0) for a better visualization. 
+Hope the problem is quite clear. If you got a soultion let me know (reexre@gmail.com)
+
+
+

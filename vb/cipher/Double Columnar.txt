@@ -1,0 +1,34 @@
+A variant of the Single Columnar Transposition is the Double Columnar Transposition, where two columnar transpositions with two different keys is performed on the plain text. The Double Columnar Transposition was one of the strongest field ciphers, commonly used in Worl War II. If the key was used only for a limited number of messages, it provided a very high security.
+
+To perform a Double Columnar Transposition we write out the key as column header. The key is numbered in alphabetical order. If two letters of the key are the same, the first in the key gets the lowest number.
+
+Plain text      : THIS IS A SECRET MESSAGE
+1st Columnar Key: LEONARDO
+2nd Columnar Key: DAVINCI
+The plain text is written out in successive rows beneath the headers:
+
+L E O N A R D O
+4 3 6 5 1 8 2 7
+---------------
+T H I S I S A S
+E C R E T M E S
+S A G E
+
+De code message is read off in columns in order of the headers:
+
+First cipher text: ITAEHCATESSEEIRGSSSM
+
+Next, we perform the second transposition.
+
+D A V I N C I
+3 1 7 4 6 2 5
+-------------
+I T A E H C A
+T E S S E E I 
+R G S S S M
+
+Again, we read off the ciphertext by the column and write down the text in groups of five:
+
+Cipher text: TEGCE MITRE SSAIH ESASS
+
+To decode the message we first use the 2nd columnar key and than the 1st columnar key. We write out the header and reconstruct the table with long and short rows. We fill in the code column by colum in the order of the key.

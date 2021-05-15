@@ -1,0 +1,71 @@
+The most powerfull pencil-and-paper ciphers are those who combine fractionation and transposition. In this example we encrypt with a straddling checkerboard, followed by a double columnar transposition. To decrypt the message we reverse the encryption sequence. A variant of this methode is the famouse VIC-cipher from the Russian Spy Reino Hayhanen. It resisted all cryptanalysis attemps and remained unbroken until the defection of Hayhanen in '57.
+
+To encipher a message we use three keys: One Checkerboard key and two Transposition keys.
+
+Plain text      : THIS IS A SECRET
+Checkerboard key: INDEPENDEN(CE)
+1st Columnar key: LEONARDO
+2nd Columnar Key: DAVINCI
+
+First, we encipher the text with the Straddling Checkerboard. The Straddling Checkerboard is a table of 3 rows with each 10 letters. The first row contains the 8 highest frequency letters and 2 blanks. The 2nd and 3th row contain the rest of the alphabet, a point and a space.
+
+We write out the key as column header. The first 10 letters of the key are numbered by alphabetic order, the last letter gets the number 0. If two letters of the key are the same, the first in the key gets the lowest number.
+
+The rows receive the same number as the empty fields in the first row.
+
+Plain text      : THIS IS A SECRET
+Checkerboard key: INDEPENDEN(CE)
+
+ |I N D E P E N D E N
+ |6 7 1 3 0 4 8 2 5 9
+-+-------------------
+ |A T   O N E   S I R
+1|B C D F G H J K L M
+8|P Q U V W X Y Z .  
+
+To encipher a letter on the top row we replaced by the number labelling its column. A Letters on the other rows is replaced by its row number, then column number:
+
+Plain text : T  H  I  S     I  S     A      S  E  C  R  E  T 
+Cipher text: 7  14 5  2  89 5  2  89 6  89  2  4  17 9  4  7 
+
+Cipher text: 71452 89528 96892 41794 7 
+
+Next, we perform the first columnar tranposition. We write out the key as column header. The key is numbered in alphabetical order. If two letters of the key are the same, the first in the key gets the lowest number.
+
+Cipher text     : 71452 89528 96892 41794 7 
+1st Columnar key: LEONARDO
+
+The plain text is written out in successive rows beneath the headers:
+
+
+L E O N A R D O
+4 3 6 5 1 8 2 7
+---------------
+7 1 4 5 2 8 9 5
+2 8 9 6 8 9 2 4
+1 7 9 4 7 
+
+De code message is read off in columns in order of the headers, and written in groups of five letters:
+
+Cipher text: 28792 18772 15644 99538 9
+
+Finally, we perform the second columnar tranposition. Again, we write out the key as column header.
+
+Cipher text     : 28792 18772 15644 99548 9
+2nd Columnar key: DAVINCI
+
+The plain text is written out in successive rows beneath the headers:
+
+
+D A V I N C I
+3 1 7 4 6 2 5
+-------------
+2 8 7 9 2 1 8
+7 7 2 1 5 6 4
+4 9 9 5 4 8 9
+
+De code message is read off and written in groups of five letters and we now have the final cipher text:
+
+Cipher text: 87916 82749 15849 25472 9
+
+To decipher the message we start with the 2nd columnar transposition, next the 1st columnar transposition and finally we retrieve the plain text by using the Straddling Checkerboard.

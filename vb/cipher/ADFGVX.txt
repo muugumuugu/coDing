@@ -1,0 +1,49 @@
+The ADFGVX cipher was the most important German Field cipher, used during World War I. It combines the fractioning of a Polybius Square with a single Columnar Transposition. Although this combination provided a powerfull encryption, Georges Painvin, a brilliant Frensh codebreaker, succeeded in breaking the German cipher. The letters ADFGVX were chosen because they were well distinguist in morse code.
+
+The ADFGVX Cipher requires two keys. One for the square and one for a single columnar transposition.
+
+Message     : THIS IS A SECRET
+Square key  : CALIFORNIA
+Columnar key: APOLLO
+
+To use the ADFGVX cipher, we start with a matrix with 6 rows and columns. This matrix is filled with the alphabet and the numbers 0 to 9. We skip the double letters and add the numbers directly after his corresponding letter, 1 after A, 2 After B and so on, with 0 as last number after J.
+
+The key, completed with the rest of the alphabet:
+
+Square Key: CALIFORNBDEGHJKMPQSTUVWXYZ
+
+The numbers inserted:
+
+Square Key: C3A1LI9F6ORNB2D4E5G7H8J0KMPQSTUVWXYZ
+ 
+
+ | A D F G V X
+-+------------
+A| C 3 A 1 L I
+D| 9 F 6 O R N
+F| B 2 D 4 E 5
+G| G 7 H 8 J 0
+V| K M P Q S T
+X| U V W X Y Z
+
+We read of the square code by reading the row and the column of the letter.
+
+Message    : T  H  I  S  I  S  A  S  E  C  R  E  T
+Square code: VX GF AX VV AX VV AF VV FV AA DV FV VX
+
+Next, we perform a single columnar transposition on the Square code:
+
+A P O L L O
+1 6 4 2 3 5
+-----------
+V X G F A X
+V V A X V V
+A F V V F V
+A A D V F V
+V X
+
+Finally, we read off by the columns in the key order and write down the cipher text in groups:
+
+Cipher text: VVAAV FXVVA VFFGA VDXVV VXVFA X
+
+To decipher the message we begin with the columnar transposition and continue with the square to finally retrieve the plain text.

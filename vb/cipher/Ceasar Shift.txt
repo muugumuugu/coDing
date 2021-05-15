@@ -1,0 +1,20 @@
+The Caesar Shift cipher, also called ROT cipher, is a simple substitution cipher. It was used by Julius Caesar the encrypt messages to his commanders in the field.
+
+To use this cipher we write down the alphabet and write a seconde alphabet underneath it, with an offset that represents the key. If we shift with an offset of 3, the first letter of the second alphabet is 'D'. A commonly used encryption to hide puzzels is the ROT-13 code, where an offset of 13 is used.
+
+To encrypt, we simply lookup the letter in the top alphabet, and replace it with the letter underneath it.
+
+Plain message: THIS IS A SECRET
+Shift Key    : 3 (D)
+
+A B C D E F G H I J K L M N O P Q R S T U V W X Y Z
+D E F G H I J K L M N O P Q R S T U V W X Y Z A B C
+
+Plain message: THIS IS A SECRET
+Code message : WKLV LV D VHFUHW
+
+Finally, we write down the code in groups of five:
+
+Cipher text: WKLVL VDVHF UHW
+
+To decrypt the message we lookup the letter in the bottom alphabet and replace it with the letter above it.

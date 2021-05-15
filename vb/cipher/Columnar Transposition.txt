@@ -1,0 +1,19 @@
+To perform a single columnar transposition we write out the key as column header. The key is numbered in alphabetical order. If two letters of the key are the same, the first in the key gets the lowest number.
+
+Plain text: THIS IS A SECRET MESSAGE
+Key       : LEONARDO
+
+The plain text is written out in successive rows beneath the headers:
+
+L E O N A R D O
+4 3 6 5 1 8 2 7
+---------------
+T H I S I S A S
+E C R E T M E S
+S A G E
+
+De code message is read off in columns in order of the headers, and written in groups of five letters:
+
+Cipher text: ITAEH CATES SEEIR GSSSM
+
+To decode the message we write out the header and reconstruct the  table with long and short rows. We fill in the code column by colum in the order of the key.

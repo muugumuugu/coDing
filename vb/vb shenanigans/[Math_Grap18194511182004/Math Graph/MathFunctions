@@ -1,0 +1,80 @@
+VERSION 1.0 CLASS
+BEGIN
+  MultiUse = -1  'True
+  Persistable = 0  'NotPersistable
+  DataBindingBehavior = 0  'vbNone
+  DataSourceBehavior  = 0  'vbNone
+  MTSTransactionMode  = 0  'NotAnMTSObject
+END
+Attribute VB_Name = "MathFunctions"
+Attribute VB_GlobalNameSpace = False
+Attribute VB_Creatable = True
+Attribute VB_PredeclaredId = False
+Attribute VB_Exposed = False
+Function Sec(ByVal x As Currency) As Currency: On Error Resume Next:  Sec = 1 / Cos(x): End Function
+Function Cosec(ByVal x As Currency) As Currency: On Error Resume Next: Cosec = 1 / Sin(x): End Function
+Function Cotan(ByVal x As Currency) As Currency: On Error Resume Next: Cotan = 1 / Tan(x): End Function
+Function Arcsin(ByVal x As Currency) As Currency: On Error Resume Next: Arcsin = Atn(x / Sqr(-x * x + 1)): End Function
+Function Arccos(ByVal x As Currency) As Currency: On Error Resume Next: Arccos = Atn(-x / Sqr(-x * x + 1)) + 2 * Atn(1): End Function
+Function Arcsec(ByVal x As Currency) As Currency: On Error Resume Next: Arcsec = Atn(x / Sqr(x * x - 1)) + Sgn((x) - 1) * (2 * Atn(1)): End Function
+Function Arccosec(ByVal x As Currency) As Currency: On Error Resume Next: Arccosec = Atn(x / Sqr(x * x - 1)) + (Sgn(x) - 1) * (2 * Atn(1)): End Function
+Function Arccotan(ByVal x As Currency) As Currency:  On Error Resume Next: Arccotan = Atn(x) + 2 * Atn(1): End Function
+Function HSin(ByVal x As Currency) As Currency: On Error Resume Next: HSin = (Exp(x) - Exp(-x)) / 2: End Function
+Function HCos(ByVal x As Currency) As Currency: On Error Resume Next: HCos = (Exp(x) + Exp(-x)) / 2: End Function
+Function HTan(ByVal x As Currency) As Currency: On Error Resume Next: HTan = (Exp(x) - Exp(-x)) / (Exp(x) + Exp(-x)): End Function
+Function HSec(ByVal x As Currency) As Currency: On Error Resume Next: HSec = 2 / (Exp(x) + Exp(-x)): End Function
+Function HCosec(ByVal x As Currency) As Currency: On Error Resume Next: HCosec = 2 / (Exp(x) - Exp(-x)): End Function
+Function HCotan(ByVal x As Currency) As Currency: On Error Resume Next: HCotan = (Exp(x) + Exp(-x)) / (Exp(x) - Exp(-x)): End Function
+Function HArcsin(ByVal x As Currency) As Currency: On Error Resume Next: HArcsin = Log(x + Sqr(x * x + 1)): End Function
+Function HArccos(ByVal x As Currency) As Currency: On Error Resume Next: HArccos = Log(x + Sqr(x * x - 1)): End Function
+Function HArctan(ByVal x As Currency) As Currency: On Error Resume Next: HArctan = Log((1 + x) / (1 - x)) / 2: End Function
+Function HArcsec(ByVal x As Currency) As Currency: On Error Resume Next: HArcsec = Log((Sqr(-x * x + 1) + 1) / x): End Function
+Function HArccosec(ByVal x As Currency) As Currency: On Error Resume Next: HArccosec = Log((Sgn(x) * Sqr(x * x + 1) + 1) / x): End Function
+Function HArccotan(ByVal x As Currency) As Currency: On Error Resume Next: HArccotan = Log((x + 1) / (x - 1)) / 2: End Function
+Function e() As Currency: e = 2.71828182845904: End Function
+Function Pi() As Currency: Pi = 3.14159265358979: End Function
+Function Drad() As Currency: Drad = 1.74532925199433E-02: End Function
+Function Rdeg() As Currency: Rdeg = 57.2957795130823: End Function
+Function Frac(ByVal x As Currency): Frac = x - Int(x): End Function
+Function LogN(ByVal B As Currency, ByVal r As Currency) As Currency
+     On Error Resume Next
+     If r > 0 And B > 0 Then LogN = Log(r) / Log(B)
+End Function
+
+'Add any function you want here:
+'E.g.
+Function ssqr(Number As Integer) As Double
+'This is an integer accepting Sqr function. Uses For to calculate a number
+On Error Resume Next
+Dim n As Double, r As Double
+Dim I As Byte
+r = Number / 2
+For I = 1 To 10
+    r = (r + Number / r) / 2
+Next I
+ssqr = r
+End Function
+
+Function Factorial(ByVal Number As Integer) As Long
+  On Error Resume Next
+  'Gives the factorial of an integer
+  Dim I%, Product&
+  Product = 1
+  If Number > 0 Then
+    For I = 2 To Number Step 1
+      Product = Product * I
+    Next I
+  Else
+    For I = -1 To Number Step -1
+      Product = Product * I
+    Next I
+  End If
+  Factorial = Product
+End Function
+
+Function nCr(ByVal n%, ByVal r%) As Double
+   'Returns the rth term of the nth line of pascals triangle
+   On Error Resume Next
+   nCr = Factorial(n) / (Factorial(r) * Factorial(n - r))
+End Function
+

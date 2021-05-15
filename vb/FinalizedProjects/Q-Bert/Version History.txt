@@ -1,0 +1,21 @@
+Please note: these are all of Q-Bert II and have nothing to do with the original Q-Bert.
+
+Version Demo: A two-level Q-Bert game. The levels are hard coded in here, which isn't used in
+	      the full game, allowing others to make levels with the Level Editor.
+
+Version 1.00.0000: Mainly Alpha version. Not playable due to Class A bug:
+		   'Subscript out of range' error when loading the file occurs. Many Class B
+		   bugs are in this, but are not visible because of the Class A bug. (in
+		   hindsight, this is obvious)
+Version 1.01.0000: Beta 1 version. All currently visible Class A & B bugs have been fixed, 
+		   and is used for testing for more bugs.
+Version 1.02.0000: Beta 2 version. Many things, have been added and changed. You can now view 
+		   the high scores, and many more bugs have been erased.
+Version 1.02.0001: Now fully commented. Much extra and unneccesary code has been removed.
+Version 1.02.0002: If someone would get a score of over the range of an integer (about 32000);
+		   it would crash with an overflow error: fixed, score is now a Long Integer.
+Version 1.02.0003: Now, one can stop the splash screen and move on to the game form by clicking
+on it. New code not commented but pretty understandable.
+
+Visit the Damadros Web-site:
+http://damadros.cjb.net

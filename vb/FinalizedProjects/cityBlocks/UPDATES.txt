@@ -1,0 +1,83 @@
+
+***************************
+******* CityBuilder ******* 
+***************************
+
+ - Added a really cool special effect!! Now when you hover your mouse selection
+   over a building, it turns to blue color. It helps a lot when there is a congestion
+   between your building placements and you cant see on which building your mouse
+   is currently on.
+
+ - The ability to save and load maps. Only one map can be saved at the moment. This
+   procedure is based on MS Access database, so you can open you database and modify
+   the bank balance in it :D :D
+
+ - Improved the framerate. Now the game doesnt render the graphics which are not currently
+   visible ie. on the screen. Same with sound. Sounds from buildings that are not
+   visible will not be heard; overall improving performance.
+
+ - The game now starts from 1st January, 2005. Earlier it used to start from the
+   real current date.
+
+
+ - Another lovely building added called Modern Offices.
+
+ - Parks are now charged for maintanence every month. Unlike other buildings which give
+   monthly taxes, parks are require monthly expenses.
+
+ - Sound Effects can be switched off from the About window.
+
+
+ - Minor fixes include a minor increase in frame rate and a little fix with Tall Office
+   Block.
+
+---------------------------------
+
+ - New buildings added!! 3 parks, 1 house (Flats), and 1 office (Office Complex). Some
+   buildings were renamed and some construction and destroying amounts were also adjusted.
+
+ - Now you can build roads and complete your metropolis! A variety of road joint types
+   are available to allow you to build all possible connections.
+
+ - Keyboard shortcuts added:
+
+   * ESC		Closes all windows and returns the mouse into normal state.
+   * Arrow Keys		Move around the terrain
+
+ - Sounds added, which require DirectX 8. Sounds are original from Transport Tycoon Duluxe.
+
+ - Some icons and mouse pointers were fixed.
+
+ - A major flaw was found and fixed in the terrain geometry. The tiles were not accurately
+   placed. They were overlapping and my whole code is now built on that flaw.
+   And just because of that stupid problem my coding is so long. If I had found out that
+   problem, my code would have been significantly less than this; frame rate would have
+   been better and I would have been able to add much more things to the game.. like 
+   airplanes, vehicles, etc. I cant add them now, because I will have to rebuild the whole
+   game on the basis of new geometry sizes.. which is a very long work! However I have
+   been able to add the roads.. but you and I both know the road arent well programmed :\
+
+ - Few other glitches were fixed.
+
+ - Toolbar is replaced with my custom toolbar which helps me in button grouping. Its based
+   on the new LineButton control.
+
+ - LineButton control was just a small little pathetic control. I've added the features of
+   Image, FlatButton, and Selected which makes this into a professional looking modern control.
+
+ - More animation frames added to exploded tile. Grass doesn't appear all of a sudden,
+   now it 'grows'.
+
+ - Now you can explode an already exploded area and go on exploding like mad! Fire in the hole!
+
+
+ - Added new mouse cursors when the terrain is scrolled through right-click.
+
+ - Fixed the problem with mouse selection tile (the white tile that appears when the user is
+   about to build, destroy or get info about some tile). Previously the tile didnt appear over
+   constructed areas, but only grass tiles. Now it appears on all tiles whether constructed
+   or destroyed tiles.
+
+
+
+----------------------------------------------------------------------------------------------

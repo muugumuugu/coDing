@@ -1,0 +1,13 @@
+Plans for further versions of Q-Bert
+
+What does the future have in store for Q-Bert?
+-A 3D game?
+-Better pathfinding for baddies so in mazes they won't just stick in a corner?
+-Better pictures?
+-Sounds?
+-Themes?
+-Starting from scratch instead of starting with the old game and having many obsolete subs.
+-Better drawing methods so it can handle many walls and doors without going slow?
+-More characters (bosses, NPC allies (NPC=Non-Player-Character)
+-See the Damadros web-site for more plans! http://damadros.cjb.net
+-Send your suggestion to me: drmayerson@lycos.co.uk

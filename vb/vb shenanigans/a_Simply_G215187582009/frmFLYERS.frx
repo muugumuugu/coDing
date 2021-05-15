@@ -1,0 +1,19 @@
+ÿiNEURAL NET TRAINED BY 
+GENETIC ALGORITHM
+
+A Population of Individuals moves 
+according to a Population of Neural Nets. 
+The Goal is to stay closer to the Red 
+Point. Before changing red point (start) 
+position the population is evaluated.
+The nearest reproduce and replace the 
+worst. (This is performed by GA.)
+Neural Nets are Updated by putting to 
+Neuron Biases and Sinapses Weights the 
+Genes of GA.
+Net Inputs are 3: How much red point is 
+LeftRight, how much it is FrontBack and 
+the distance from it.
+Net Outputs are 2: Steer and 
+Accellerate/brake.
+[Good Results after 150-200 Generations]

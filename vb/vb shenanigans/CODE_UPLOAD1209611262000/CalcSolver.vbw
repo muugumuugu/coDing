@@ -1,0 +1,16 @@
+frmCalcSolver = 3, 84, 478, 480, C, 22, 22, 395, 368, C
+frmAbout = 154, 154, 485, 500, C, 154, 154, 485, 500, C
+frmHelp = 44, 44, 375, 390, Z, 0, 0, 331, 346, C
+modCalculate = 110, 110, 441, 456, 
+modLoad = 132, 132, 460, 478, 
+frmSplash = 132, 132, 460, 478, , 154, 154, 482, 500, C
+modMajorParsing = 132, 132, 521, 478, 
+modMinorParsing = 154, 154, 543, 500, 
+modScanning = 0, 0, 389, 346, 
+modConvertandErrors = 22, 22, 411, 368, 
+modDeclarations = 44, 44, 433, 390, 
+frmConstants = 110, 110, 500, 456, , 88, 88, 478, 434, C
+frmOptions = 154, 154, 516, 500, , 44, 44, 436, 390, C
+frmStatistics = 0, 0, 362, 346, , 132, 132, 494, 478, C
+modStatistics = 154, 154, 516, 500, 
+frmGraph = 154, 154, 514, 500, , 22, 22, 382, 368, C
