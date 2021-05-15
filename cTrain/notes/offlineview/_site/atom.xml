@@ -1,0 +1,785 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>NOTES</title>
+    <description>rendered notes for offline viewing</description>
+    <link>http://localhost:3125</link>
+    <atom:link href="http://localhost:3125/feed.xml" rel="self" type="application/rss+xml" />
+    <author>
+      <name>MOGU</name>
+      <email>muugu12052001@gmail.com</email>
+      <uri></uri>
+    </author>
+    
+      <item>
+        <title>Transformations in P5</title>
+        <description>&lt;h1 id=&quot;transformations&quot;&gt;transformations&lt;/h1&gt;
+&lt;h2 id=&quot;main-functions&quot;&gt;main functions&lt;/h2&gt;
+&lt;ul&gt;
+  &lt;li&gt;translate
+    &lt;ul&gt;
+      &lt;li&gt;useful to centre entire system around a given point. basically shifts &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;orgin&lt;/code&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;rotate
+    &lt;ul&gt;
+      &lt;li&gt;uses radians and rotates co-ordinate &lt;strong&gt;pivoting @ origin&lt;/strong&gt; , along Z axis.(by default pointing outward.)&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;scale
+    &lt;ul&gt;
+      &lt;li&gt;scales/multiplies the units on the axes. even direction  &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;flipp&lt;/code&gt; by -ve values.&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;&lt;em&gt;push&lt;/em&gt;
+    &lt;ul&gt;
+      &lt;li&gt;&lt;em&gt;save&lt;/em&gt; current cordinate &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;matrix&lt;/code&gt; and also   &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;styles&lt;/code&gt; info&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;&lt;em&gt;pop&lt;/em&gt;
+    &lt;ul&gt;
+      &lt;li&gt;&lt;em&gt;reload&lt;/em&gt; the temp stored coord &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;matrix&lt;/code&gt; n &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;styles&lt;/code&gt;.&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;abt-the-functioning&quot;&gt;abt the functioning&lt;/h3&gt;
+&lt;blockquote&gt;
+  &lt;p&gt;drawings are based relative to origin, which is initially @ ** top left corner**&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;however, translate &lt;strong&gt;&lt;em&gt;accumulates&lt;/em&gt;&lt;/strong&gt;. once done, it stays there and that point is considered origin. And then it  &lt;em&gt;resets @ draw&lt;/em&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;rotate also behaves the same &lt;strong&gt;&lt;em&gt;accumulating&lt;/em&gt;&lt;/strong&gt; way,  &lt;em&gt;reseting @ draw&lt;/em&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;scale is &lt;em&gt;not relative&lt;/em&gt;, it just means how many pixels is 1 unit. and signs for direction.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;origin’s coordinates are also &lt;strong&gt;relative&lt;/strong&gt; to current running origin&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;co-ordinate system is &lt;strong&gt;left handed&lt;/strong&gt;, so angles &lt;em&gt;clockwise&lt;/em&gt;, and y increases downward.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;push n pop are lil staccks , so the pushing popping is &lt;strong&gt;LIFO&lt;/strong&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;rotateX,Y,Z are specific axis rotn for WEBGL 3d renderer&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;applyMatrix() will apply a co-ordinate transform.&lt;/p&gt;
+&lt;/blockquote&gt;
+</description>
+        <pubDate>Sat, 08 May 2021 00:00:00 +0530</pubDate>
+        <link>http://localhost:3125//Transformations</link>
+        <link href="http://localhost:3125/Transformations"/>
+        <guid isPermaLink="true">http://localhost:3125/Transformations</guid>
+      </item>
+    
+      <item>
+        <title>RegExp</title>
+        <description>&lt;h2 id=&quot;what-is-regular-expression&quot;&gt;What is Regular Expression?&lt;/h2&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;A regular expression is a group of characters or symbols which is used to find a specific pattern in a text.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;A regular expression is a pattern that is matched against a subject string from
+left to right. Regular expressions are used to replace text within a string,
+validating forms, extracting a substring from a string based on a pattern match,
+and so much more. The term “regular expression” is a mouthful, so you will usually
+find the term abbreviated to “regex” or “regexp”.&lt;/p&gt;
+
+&lt;p&gt;Imagine you are writing an application and you want to set the rules for when a
+user chooses their username. We want to allow the username to contain letters,
+numbers, underscores and hyphens. We also want to limit the number of characters
+in the username so it does not look ugly. We can use the following regular expression to
+validate the username:&lt;/p&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;br /&gt;
+The regular expression above can accept the strings &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;john_doe&lt;/code&gt;, &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;jo-hn_doe&lt;/code&gt; and
+&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;john12_as&lt;/code&gt;. It does not match &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Jo&lt;/code&gt; because that string contains an uppercase
+letter and also it is too short.&lt;/p&gt;
+
+&lt;h2 id=&quot;table-of-contents&quot;&gt;Table of Contents&lt;/h2&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href=&quot;#what-is-regular-expression&quot;&gt;What is Regular Expression?&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#table-of-contents&quot;&gt;Table of Contents&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#1-basic-matchers&quot;&gt;1. Basic Matchers&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#2-meta-characters&quot;&gt;2. Meta Characters&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#21-the-full-stop&quot;&gt;2.1 The Full Stop&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#22-character-sets&quot;&gt;2.2 Character Sets&lt;/a&gt;
+    &lt;ul&gt;
+      &lt;li&gt;&lt;a href=&quot;#221-negated-character-sets&quot;&gt;2.2.1 Negated Character Sets&lt;/a&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#23-repetitions&quot;&gt;2.3 Repetitions&lt;/a&gt;
+    &lt;ul&gt;
+      &lt;li&gt;&lt;a href=&quot;#231-the-star&quot;&gt;2.3.1 The Star&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;#232-the-plus&quot;&gt;2.3.2 The Plus&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;#233-the-question-mark&quot;&gt;2.3.3 The Question Mark&lt;/a&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#24-braces&quot;&gt;2.4 Braces&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#25-capturing-groups&quot;&gt;2.5 Capturing Groups&lt;/a&gt;
+    &lt;ul&gt;
+      &lt;li&gt;&lt;a href=&quot;#251-non-capturing-groups&quot;&gt;2.5.1 Non-Capturing Groups&lt;/a&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#26-alternation&quot;&gt;2.6 Alternation&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#27-escaping-special-characters&quot;&gt;2.7 Escaping Special Characters&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#28-anchors&quot;&gt;2.8 Anchors&lt;/a&gt;
+    &lt;ul&gt;
+      &lt;li&gt;&lt;a href=&quot;#281-the-caret&quot;&gt;2.8.1 The Caret&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;#282-the-dollar-sign&quot;&gt;2.8.2 The Dollar Sign&lt;/a&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#3-shorthand-character-sets&quot;&gt;3. Shorthand Character Sets&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#4-lookarounds&quot;&gt;4. Lookarounds&lt;/a&gt;
+    &lt;ul&gt;
+      &lt;li&gt;&lt;a href=&quot;#41-positive-lookahead&quot;&gt;4.1 Positive Lookahead&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;#42-negative-lookahead&quot;&gt;4.2 Negative Lookahead&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;#43-positive-lookbehind&quot;&gt;4.3 Positive Lookbehind&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;#44-negative-lookbehind&quot;&gt;4.4 Negative Lookbehind&lt;/a&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#5-flags&quot;&gt;5. Flags&lt;/a&gt;
+    &lt;ul&gt;
+      &lt;li&gt;&lt;a href=&quot;#51-case-insensitive&quot;&gt;5.1 Case Insensitive&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;#52-global-search&quot;&gt;5.2 Global Search&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;#53-multiline&quot;&gt;5.3 Multiline&lt;/a&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#6-greedy-vs-lazy-matching&quot;&gt;6. Greedy vs Lazy Matching&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;1-basic-matchers&quot;&gt;1. Basic Matchers&lt;/h2&gt;
+
+&lt;p&gt;A regular expression is just a pattern of characters that we use to perform a
+search in a text.  For example, the regular expression &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;the&lt;/code&gt; means: the letter
+&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;t&lt;/code&gt;, followed by the letter &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;h&lt;/code&gt;, followed by the letter &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;e&lt;/code&gt;.&lt;/p&gt;
+
+&lt;pre&gt;
+&quot;the&quot; =&amp;gt; The fat cat sat on &lt;a href=&quot;#learn-regex&quot;&gt;&lt;strong&gt;the&lt;/strong&gt;&lt;/a&gt; mat.
+&lt;/pre&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://regex101.com/r/dmRygT/1&quot;&gt;Test the regular expression&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;The regular expression &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;123&lt;/code&gt; matches the string &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;123&lt;/code&gt;. The regular expression is
+matched against an input string by comparing each character in the regular
+expression to each character in the input string, one after another. Regular
+expressions are normally case-sensitive so the regular expression &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;The&lt;/code&gt; would
+not match the string &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;the&lt;/code&gt;.&lt;/p&gt;
+
+&lt;pre&gt;
+&quot;The&quot; =&amp;gt; &lt;a href=&quot;#learn-regex&quot;&gt;&lt;strong&gt;The&lt;/strong&gt;&lt;/a&gt; fat cat sat on the mat.
+&lt;/pre&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://regex101.com/r/1paXsy/1&quot;&gt;Test the regular expression&lt;/a&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;2-meta-characters&quot;&gt;2. Meta Characters&lt;/h2&gt;
+
+&lt;p&gt;Meta characters are the building blocks of regular expressions.  Meta
+characters do not stand for themselves but instead are interpreted in some
+special way. Some meta characters have a special meaning and are written inside
+square brackets. The meta characters are as follows:&lt;/p&gt;
+
+&lt;table&gt;
+  &lt;thead&gt;
+    &lt;tr&gt;
+      &lt;th style=&quot;text-align: center&quot;&gt;Meta character&lt;/th&gt;
+      &lt;th&gt;Description&lt;/th&gt;
+    &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;.&lt;/td&gt;
+      &lt;td&gt;Period matches any single character except a line break.&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;[ ]&lt;/td&gt;
+      &lt;td&gt;Character class. Matches any character contained between the square brackets.&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;[^ ]&lt;/td&gt;
+      &lt;td&gt;Negated character class. Matches any character that is not contained between the square brackets&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;*&lt;/td&gt;
+      &lt;td&gt;Matches 0 or more repetitions of the preceding symbol.&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;+&lt;/td&gt;
+      &lt;td&gt;Matches 1 or more repetitions of the preceding symbol.&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;?&lt;/td&gt;
+      &lt;td&gt;Makes the preceding symbol optional.&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;{n,m}&lt;/td&gt;
+      &lt;td&gt;Braces. Matches at least “n” but not more than “m” repetitions of the preceding symbol.&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;(xyz)&lt;/td&gt;
+      &lt;td&gt;Character group. Matches the characters xyz in that exact order.&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;|&lt;/td&gt;
+      &lt;td&gt;Alternation. Matches either the characters before or the characters after the symbol.&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;\&lt;/td&gt;
+      &lt;td&gt;Escapes the next character. This allows you to match reserved characters &lt;code&gt;[ ] ( ) { } . * + ? ^ $ \ &amp;#124;&lt;/code&gt;&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;^&lt;/td&gt;
+      &lt;td&gt;Matches the beginning of the input.&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;$&lt;/td&gt;
+      &lt;td&gt;Matches the end of the input.&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;h2 id=&quot;21-the-full-stop&quot;&gt;2.1 The Full Stop&lt;/h2&gt;
+
+&lt;p&gt;The full stop &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;.&lt;/code&gt; is the simplest example of a meta character. The meta character &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;.&lt;/code&gt;
+matches any single character. It will not match return or newline characters.
+For example, the regular expression &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;.ar&lt;/code&gt; means: any character, followed by the
+letter &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;a&lt;/code&gt;, followed by the letter &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;r&lt;/code&gt;.&lt;/p&gt;
+
+&lt;pre&gt;
+&quot;.ar&quot; =&amp;gt; The &lt;a href=&quot;#learn-regex&quot;&gt;&lt;strong&gt;car&lt;/strong&gt;&lt;/a&gt; &lt;a href=&quot;#learn-regex&quot;&gt;&lt;strong&gt;par&lt;/strong&gt;&lt;/a&gt;ked in the &lt;a href=&quot;#learn-regex&quot;&gt;&lt;strong&gt;gar&lt;/strong&gt;&lt;/a&gt;age.
+&lt;/pre&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://regex101.com/r/xc9GkU/1&quot;&gt;Test the regular expression&lt;/a&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;22-character-sets&quot;&gt;2.2 Character Sets&lt;/h2&gt;
+
+&lt;p&gt;Character sets are also called character classes. Square brackets are used to
+specify character sets. Use a hyphen inside a character set to specify the
+characters’ range. The order of the character range inside the square brackets
+doesn’t matter. For example, the regular expression &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;[Tt]he&lt;/code&gt; means: an uppercase
+&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;T&lt;/code&gt; or lowercase &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;t&lt;/code&gt;, followed by the letter &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;h&lt;/code&gt;, followed by the letter &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;e&lt;/code&gt;.&lt;/p&gt;
+
+&lt;pre&gt;
+&quot;[Tt]he&quot; =&amp;gt; &lt;a href=&quot;#learn-regex&quot;&gt;&lt;strong&gt;The&lt;/strong&gt;&lt;/a&gt; car parked in &lt;a href=&quot;#learn-regex&quot;&gt;&lt;strong&gt;the&lt;/strong&gt;&lt;/a&gt; garage.
+&lt;/pre&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://regex101.com/r/2ITLQ4/1&quot;&gt;Test the regular expression&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;A period inside a character set, however, means a literal period. The regular
+expression &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;ar[.]&lt;/code&gt; means: a lowercase character &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;a&lt;/code&gt;, followed by the letter &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;r&lt;/code&gt;,
+followed by a period &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;.&lt;/code&gt; character.&lt;/p&gt;
+
+&lt;pre&gt;
+&quot;ar[.]&quot; =&amp;gt; A garage is a good place to park a c&lt;a href=&quot;#learn-regex&quot;&gt;&lt;strong&gt;ar.&lt;/strong&gt;&lt;/a&gt;
+&lt;/pre&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://regex101.com/r/wL3xtE/1&quot;&gt;Test the regular expression&lt;/a&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;221-negated-character-sets&quot;&gt;2.2.1 Negated Character Sets&lt;/h3&gt;
+
+&lt;p&gt;In general, the caret symbol represents the start of the string, but when it is
+typed after the opening square bracket it negates the character set. For
+example, the regular expression &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;[^c]ar&lt;/code&gt; means: any character except &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;c&lt;/code&gt;,
+followed by the character &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;a&lt;/code&gt;, followed by the letter &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;r&lt;/code&gt;.&lt;/p&gt;
+
+&lt;pre&gt;
+&quot;[^c]ar&quot; =&amp;gt; The car &lt;a href=&quot;#learn-regex&quot;&gt;&lt;strong&gt;par&lt;/strong&gt;&lt;/a&gt;ked in the &lt;a href=&quot;#learn-regex&quot;&gt;&lt;strong&gt;gar&lt;/strong&gt;&lt;/a&gt;age.
+&lt;/pre&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://regex101.com/r/nNNlq3/1&quot;&gt;Test the regular expression&lt;/a&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;23-repetitions&quot;&gt;2.3 Repetitions&lt;/h2&gt;
+
+&lt;p&gt;The meta characters &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;+&lt;/code&gt;, &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;*&lt;/code&gt; or &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;?&lt;/code&gt; are used to specify how many times a
+subpattern can occur. These meta characters act differently in different
+situations.&lt;/p&gt;
+
+&lt;h3 id=&quot;231-the-star&quot;&gt;2.3.1 The Star&lt;/h3&gt;
+
+&lt;p&gt;The &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;*&lt;/code&gt; symbol matches zero or more repetitions of the preceding matcher. The
+regular expression &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;a*&lt;/code&gt; means: zero or more repetitions of the preceding lowercase
+character &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;a&lt;/code&gt;. But if it appears after a character set or class then it finds
+the repetitions of the whole character set. For example, the regular expression
+&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;[a-z]*&lt;/code&gt; means: any number of lowercase letters in a row.&lt;/p&gt;
+
+&lt;pre&gt;
+&quot;[a-z]*&quot; =&amp;gt; T&lt;a href=&quot;#learn-regex&quot;&gt;&lt;strong&gt;he&lt;/strong&gt;&lt;/a&gt; &lt;a href=&quot;#learn-regex&quot;&gt;&lt;strong&gt;car&lt;/strong&gt;&lt;/a&gt; &lt;a href=&quot;#learn-regex&quot;&gt;&lt;strong&gt;parked&lt;/strong&gt;&lt;/a&gt; &lt;a href=&quot;#learn-regex&quot;&gt;&lt;strong&gt;in&lt;/strong&gt;&lt;/a&gt; &lt;a href=&quot;#learn-regex&quot;&gt;&lt;strong&gt;the&lt;/strong&gt;&lt;/a&gt; &lt;a href=&quot;#learn-regex&quot;&gt;&lt;strong&gt;garage&lt;/strong&gt;&lt;/a&gt; #21.
+&lt;/pre&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://regex101.com/r/7m8me5/1&quot;&gt;Test the regular expression&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;The &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;*&lt;/code&gt; symbol can be used with the meta character &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;.&lt;/code&gt; to match any string of
+characters &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;.*&lt;/code&gt;. The &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;*&lt;/code&gt; symbol can be used with the whitespace character &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;\s&lt;/code&gt;
+to match a string of whitespace characters. For example, the expression
+&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;\s*cat\s*&lt;/code&gt; means: zero or more spaces, followed by a lowercase &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;c&lt;/code&gt;,
+followed by a lowercase &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;a&lt;/code&gt;, followed by a lowercase &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;t&lt;/code&gt;,
+followed by zero or more spaces.&lt;/p&gt;
+
+&lt;pre&gt;
+&quot;\s*cat\s*&quot; =&amp;gt; The fat&lt;a href=&quot;#learn-regex&quot;&gt;&lt;strong&gt; cat &lt;/strong&gt;&lt;/a&gt;sat on the con&lt;a href=&quot;#learn-regex&quot;&gt;&lt;strong&gt;cat&lt;/strong&gt;&lt;/a&gt;enation.
+&lt;/pre&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://regex101.com/r/gGrwuz/1&quot;&gt;Test the regular expression&lt;/a&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;232-the-plus&quot;&gt;2.3.2 The Plus&lt;/h3&gt;
+
+&lt;p&gt;The &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;+&lt;/code&gt; symbol matches one or more repetitions of the preceding character. For
+example, the regular expression &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;c.+t&lt;/code&gt; means: a lowercase &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;c&lt;/code&gt;, followed by
+at least one character, followed by a lowercase &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;t&lt;/code&gt;. It needs to be
+clarified that&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;t&lt;/code&gt; is the last &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;t&lt;/code&gt; in the sentence.&lt;/p&gt;
+
+&lt;pre&gt;
+&quot;c.+t&quot; =&amp;gt; The fat &lt;a href=&quot;#learn-regex&quot;&gt;&lt;strong&gt;cat sat on the mat&lt;/strong&gt;&lt;/a&gt;.
+&lt;/pre&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://regex101.com/r/Dzf9Aa/1&quot;&gt;Test the regular expression&lt;/a&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;233-the-question-mark&quot;&gt;2.3.3 The Question Mark&lt;/h3&gt;
+
+&lt;p&gt;In regular expressions, the meta character &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;?&lt;/code&gt; makes the preceding character
+optional. This symbol matches zero or one instance of the preceding character.
+For example, the regular expression &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;[T]?he&lt;/code&gt; means: Optional uppercase
+&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;T&lt;/code&gt;, followed by a lowercase &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;h&lt;/code&gt;, followed by a lowercase &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;e&lt;/code&gt;.&lt;/p&gt;
+
+&lt;pre&gt;
+&quot;[T]he&quot; =&amp;gt; &lt;a href=&quot;#learn-regex&quot;&gt;&lt;strong&gt;The&lt;/strong&gt;&lt;/a&gt; car is parked in the garage.
+&lt;/pre&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://regex101.com/r/cIg9zm/1&quot;&gt;Test the regular expression&lt;/a&gt;&lt;/p&gt;
+
+&lt;pre&gt;
+&quot;[T]?he&quot; =&amp;gt; &lt;a href=&quot;#learn-regex&quot;&gt;&lt;strong&gt;The&lt;/strong&gt;&lt;/a&gt; car is parked in t&lt;a href=&quot;#learn-regex&quot;&gt;&lt;strong&gt;he&lt;/strong&gt;&lt;/a&gt; garage.
+&lt;/pre&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://regex101.com/r/kPpO2x/1&quot;&gt;Test the regular expression&lt;/a&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;24-braces&quot;&gt;2.4 Braces&lt;/h2&gt;
+
+&lt;p&gt;In regular expressions, braces (also called quantifiers) are used to
+specify the number of times that a character or a group of characters can be
+repeated. For example, the regular expression &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;[0-9]{2,3}&lt;/code&gt; means: Match at least
+2 digits, but not more than 3, ranging from 0 to 9.&lt;/p&gt;
+
+&lt;pre&gt;
+&quot;[0-9]{2,3}&quot; =&amp;gt; The number was 9.&lt;a href=&quot;#learn-regex&quot;&gt;&lt;strong&gt;999&lt;/strong&gt;&lt;/a&gt;7 but we rounded it off to &lt;a href=&quot;#learn-regex&quot;&gt;&lt;strong&gt;10&lt;/strong&gt;&lt;/a&gt;.0.
+&lt;/pre&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://regex101.com/r/juM86s/1&quot;&gt;Test the regular expression&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;We can leave out the second number. For example, the regular expression
+&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;[0-9]{2,}&lt;/code&gt; means: Match 2 or more digits. If we also remove the comma, the
+regular expression &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;[0-9]{3}&lt;/code&gt; means: Match exactly 3 digits.&lt;/p&gt;
+
+&lt;pre&gt;
+&quot;[0-9]{2,}&quot; =&amp;gt; The number was 9.&lt;a href=&quot;#learn-regex&quot;&gt;&lt;strong&gt;9997&lt;/strong&gt;&lt;/a&gt; but we rounded it off to &lt;a href=&quot;#learn-regex&quot;&gt;&lt;strong&gt;10&lt;/strong&gt;&lt;/a&gt;.0.
+&lt;/pre&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://regex101.com/r/Gdy4w5/1&quot;&gt;Test the regular expression&lt;/a&gt;&lt;/p&gt;
+
+&lt;pre&gt;
+&quot;[0-9]{3}&quot; =&amp;gt; The number was 9.&lt;a href=&quot;#learn-regex&quot;&gt;&lt;strong&gt;999&lt;/strong&gt;&lt;/a&gt;7 but we rounded it off to 10.0.
+&lt;/pre&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://regex101.com/r/Sivu30/1&quot;&gt;Test the regular expression&lt;/a&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;25-capturing-groups&quot;&gt;2.5 Capturing Groups&lt;/h2&gt;
+
+&lt;p&gt;A capturing group is a group of subpatterns that is written inside parentheses
+&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;(...)&lt;/code&gt;. As discussed before, in regular expressions, if we put a quantifier
+after a character then it will repeat the preceding character. But if we put a quantifier
+after a capturing group then it repeats the whole capturing group. For example,
+the regular expression &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;(ab)*&lt;/code&gt; matches zero or more repetitions of the character
+“ab”. We can also use the alternation &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;|&lt;/code&gt; meta character inside a capturing group.
+For example, the regular expression &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;(c|g|p)ar&lt;/code&gt; means: a lowercase &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;c&lt;/code&gt;,
+&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;g&lt;/code&gt; or &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;p&lt;/code&gt;, followed by &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;a&lt;/code&gt;, followed by &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;r&lt;/code&gt;.&lt;/p&gt;
+
+&lt;pre&gt;
+&quot;(c|g|p)ar&quot; =&amp;gt; The &lt;a href=&quot;#learn-regex&quot;&gt;&lt;strong&gt;car&lt;/strong&gt;&lt;/a&gt; is &lt;a href=&quot;#learn-regex&quot;&gt;&lt;strong&gt;par&lt;/strong&gt;&lt;/a&gt;ked in the &lt;a href=&quot;#learn-regex&quot;&gt;&lt;strong&gt;gar&lt;/strong&gt;&lt;/a&gt;age.
+&lt;/pre&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://regex101.com/r/tUxrBG/1&quot;&gt;Test the regular expression&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;Note that capturing groups do not only match, but also capture, the characters for use in
+the parent language. The parent language could be Python or JavaScript or virtually any
+language that implements regular expressions in a function definition.&lt;/p&gt;
+
+&lt;h3 id=&quot;251-non-capturing-groups&quot;&gt;2.5.1 Non-Capturing Groups&lt;/h3&gt;
+
+&lt;p&gt;A non-capturing group is a capturing group that matches the characters but
+does not capture the group. A non-capturing group is denoted by a &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;?&lt;/code&gt; followed by a &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;:&lt;/code&gt;
+within parentheses &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;(...)&lt;/code&gt;. For example, the regular expression &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;(?:c|g|p)ar&lt;/code&gt; is similar to
+&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;(c|g|p)ar&lt;/code&gt; in that it matches the same characters but will not create a capture group.&lt;/p&gt;
+
+&lt;pre&gt;
+&quot;(?:c|g|p)ar&quot; =&amp;gt; The &lt;a href=&quot;#learn-regex&quot;&gt;&lt;strong&gt;car&lt;/strong&gt;&lt;/a&gt; is &lt;a href=&quot;#learn-regex&quot;&gt;&lt;strong&gt;par&lt;/strong&gt;&lt;/a&gt;ked in the &lt;a href=&quot;#learn-regex&quot;&gt;&lt;strong&gt;gar&lt;/strong&gt;&lt;/a&gt;age.
+&lt;/pre&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://regex101.com/r/Rm7Me8/1&quot;&gt;Test the regular expression&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;Non-capturing groups can come in handy when used in find-and-replace functionality or
+when mixed with capturing groups to keep the overview when producing any other kind of output.
+See also &lt;a href=&quot;#4-lookaround&quot;&gt;4. Lookaround&lt;/a&gt;.&lt;/p&gt;
+
+&lt;h2 id=&quot;26-alternation&quot;&gt;2.6 Alternation&lt;/h2&gt;
+
+&lt;p&gt;In a regular expression, the vertical bar &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;|&lt;/code&gt; is used to define alternation.
+Alternation is like an OR statement between multiple expressions. Now, you may be
+thinking that character sets and alternation work the same way. But the big
+difference between character sets and alternation is that character sets work at the
+character level but alternation works at the expression level. For example, the
+regular expression &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;(T|t)he|car&lt;/code&gt; means: either (an uppercase &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;T&lt;/code&gt; or a lowercase
+&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;t&lt;/code&gt;, followed by a lowercase &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;h&lt;/code&gt;, followed by a lowercase &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;e&lt;/code&gt;) OR
+(a lowercase &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;c&lt;/code&gt;, followed by a lowercase &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;a&lt;/code&gt;, followed by
+a lowercase &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;r&lt;/code&gt;). Note that I included the parentheses for clarity, to show that either expression
+in parentheses can be met and it will match.&lt;/p&gt;
+
+&lt;pre&gt;
+&quot;(T|t)he|car&quot; =&amp;gt; &lt;a href=&quot;#learn-regex&quot;&gt;&lt;strong&gt;The&lt;/strong&gt;&lt;/a&gt; &lt;a href=&quot;#learn-regex&quot;&gt;&lt;strong&gt;car&lt;/strong&gt;&lt;/a&gt; is parked in &lt;a href=&quot;#learn-regex&quot;&gt;&lt;strong&gt;the&lt;/strong&gt;&lt;/a&gt; garage.
+&lt;/pre&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://regex101.com/r/fBXyX0/1&quot;&gt;Test the regular expression&lt;/a&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;27-escaping-special-characters&quot;&gt;2.7 Escaping Special Characters&lt;/h2&gt;
+
+&lt;p&gt;A backslash &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;\&lt;/code&gt; is used in regular expressions to escape the next character. This
+allows us to include reserved characters such as &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;{ } [ ] / \ + * . $ ^ | ?&lt;/code&gt; as matching characters. To use one of these special character as a matching character, prepend it with &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;\&lt;/code&gt;.&lt;/p&gt;
+
+&lt;p&gt;For example, the regular expression &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;.&lt;/code&gt; is used to match any character except a
+newline. Now, to match &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;.&lt;/code&gt; in an input string, the regular expression
+&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;(f|c|m)at\.?&lt;/code&gt; means: a lowercase &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;f&lt;/code&gt;, &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;c&lt;/code&gt; or &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;m&lt;/code&gt;, followed by a lowercase
+&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;a&lt;/code&gt;, followed by a lowercase &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;t&lt;/code&gt;, followed by an optional &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;.&lt;/code&gt;
+character.&lt;/p&gt;
+
+&lt;pre&gt;
+&quot;(f|c|m)at\.?&quot; =&amp;gt; The &lt;a href=&quot;#learn-regex&quot;&gt;&lt;strong&gt;fat&lt;/strong&gt;&lt;/a&gt; &lt;a href=&quot;#learn-regex&quot;&gt;&lt;strong&gt;cat&lt;/strong&gt;&lt;/a&gt; sat on the &lt;a href=&quot;#learn-regex&quot;&gt;&lt;strong&gt;mat.&lt;/strong&gt;&lt;/a&gt;
+&lt;/pre&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://regex101.com/r/DOc5Nu/1&quot;&gt;Test the regular expression&lt;/a&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;28-anchors&quot;&gt;2.8 Anchors&lt;/h2&gt;
+
+&lt;p&gt;In regular expressions, we use anchors to check if the matching symbol is the
+starting symbol or ending symbol of the input string. Anchors are of two types:
+The first type is the caret &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;^&lt;/code&gt; that checks if the matching character is the first
+character of the input and the second type is the dollar sign &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;$&lt;/code&gt; which checks if a matching
+character is the last character of the input string.&lt;/p&gt;
+
+&lt;h3 id=&quot;281-the-caret&quot;&gt;2.8.1 The Caret&lt;/h3&gt;
+
+&lt;p&gt;The caret symbol &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;^&lt;/code&gt; is used to check if a matching character is the first character
+of the input string. If we apply the following regular expression &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;^a&lt;/code&gt; (meaning ‘a’ must be
+the starting character) to the string &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;abc&lt;/code&gt;, it will match &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;a&lt;/code&gt;. But if we apply
+the regular expression &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;^b&lt;/code&gt; to the above string, it will not match anything.
+Because in the string &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;abc&lt;/code&gt;, the “b” is not the starting character. Let’s take a look
+at another regular expression &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;^(T|t)he&lt;/code&gt; which means: an uppercase &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;T&lt;/code&gt; or
+a lowercase &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;t&lt;/code&gt; must be the first character in the string, followed by a
+lowercase &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;h&lt;/code&gt;, followed by a lowercase &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;e&lt;/code&gt;.&lt;/p&gt;
+
+&lt;pre&gt;
+&quot;(T|t)he&quot; =&amp;gt; &lt;a href=&quot;#learn-regex&quot;&gt;&lt;strong&gt;The&lt;/strong&gt;&lt;/a&gt; car is parked in &lt;a href=&quot;#learn-regex&quot;&gt;&lt;strong&gt;the&lt;/strong&gt;&lt;/a&gt; garage.
+&lt;/pre&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://regex101.com/r/5ljjgB/1&quot;&gt;Test the regular expression&lt;/a&gt;&lt;/p&gt;
+
+&lt;pre&gt;
+&quot;^(T|t)he&quot; =&amp;gt; &lt;a href=&quot;#learn-regex&quot;&gt;&lt;strong&gt;The&lt;/strong&gt;&lt;/a&gt; car is parked in the garage.
+&lt;/pre&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://regex101.com/r/jXrKne/1&quot;&gt;Test the regular expression&lt;/a&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;282-the-dollar-sign&quot;&gt;2.8.2 The Dollar Sign&lt;/h3&gt;
+
+&lt;p&gt;The dollar sign &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;$&lt;/code&gt; is used to check if a matching character is the last character
+in the string. For example, the regular expression &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;(at\.)$&lt;/code&gt; means: a
+lowercase &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;a&lt;/code&gt;, followed by a lowercase &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;t&lt;/code&gt;, followed by a &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;.&lt;/code&gt;
+character and the matcher must be at the end of the string.&lt;/p&gt;
+
+&lt;pre&gt;
+&quot;(at\.)&quot; =&amp;gt; The fat c&lt;a href=&quot;#learn-regex&quot;&gt;&lt;strong&gt;at.&lt;/strong&gt;&lt;/a&gt; s&lt;a href=&quot;#learn-regex&quot;&gt;&lt;strong&gt;at.&lt;/strong&gt;&lt;/a&gt; on the m&lt;a href=&quot;#learn-regex&quot;&gt;&lt;strong&gt;at.&lt;/strong&gt;&lt;/a&gt;
+&lt;/pre&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://regex101.com/r/y4Au4D/1&quot;&gt;Test the regular expression&lt;/a&gt;&lt;/p&gt;
+
+&lt;pre&gt;
+&quot;(at\.)$&quot; =&amp;gt; The fat cat. sat. on the m&lt;a href=&quot;#learn-regex&quot;&gt;&lt;strong&gt;at.&lt;/strong&gt;&lt;/a&gt;
+&lt;/pre&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://regex101.com/r/t0AkOd/1&quot;&gt;Test the regular expression&lt;/a&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;3-shorthand-character-sets&quot;&gt;3. Shorthand Character Sets&lt;/h2&gt;
+
+&lt;p&gt;There are a number of convenient shorthands for commonly used character sets/
+regular expressions:&lt;/p&gt;
+
+&lt;table&gt;
+  &lt;thead&gt;
+    &lt;tr&gt;
+      &lt;th style=&quot;text-align: center&quot;&gt;Shorthand&lt;/th&gt;
+      &lt;th&gt;Description&lt;/th&gt;
+    &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;.&lt;/td&gt;
+      &lt;td&gt;Any character except new line&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;\w&lt;/td&gt;
+      &lt;td&gt;Matches alphanumeric characters: &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;[a-zA-Z0-9_]&lt;/code&gt;&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;\W&lt;/td&gt;
+      &lt;td&gt;Matches non-alphanumeric characters: &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;[^\w]&lt;/code&gt;&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;\d&lt;/td&gt;
+      &lt;td&gt;Matches digits: &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;[0-9]&lt;/code&gt;&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;\D&lt;/td&gt;
+      &lt;td&gt;Matches non-digits: &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;[^\d]&lt;/code&gt;&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;\s&lt;/td&gt;
+      &lt;td&gt;Matches whitespace characters: &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;[\t\n\f\r\p{Z}]&lt;/code&gt;&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;\S&lt;/td&gt;
+      &lt;td&gt;Matches non-whitespace characters: &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;[^\s]&lt;/code&gt;&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;h2 id=&quot;4-lookarounds&quot;&gt;4. Lookarounds&lt;/h2&gt;
+
+&lt;p&gt;Lookbehinds and lookaheads (also called lookarounds) are specific types of
+&lt;strong&gt;&lt;em&gt;non-capturing groups&lt;/em&gt;&lt;/strong&gt; (used to match a pattern but without including it in the matching
+list). Lookarounds are used when we a pattern must be
+preceded or followed by another pattern. For example, imagine we want to get all
+numbers that are preceded by the &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;$&lt;/code&gt; character from the string
+&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;$4.44 and $10.88&lt;/code&gt;. We will use the following regular expression &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;(?&amp;lt;=\$)[0-9\.]*&lt;/code&gt;
+which means: get all the numbers which contain the &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;.&lt;/code&gt; character and are preceded
+by the &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;$&lt;/code&gt; character. These are the lookarounds that are used in regular
+expressions:&lt;/p&gt;
+
+&lt;table&gt;
+  &lt;thead&gt;
+    &lt;tr&gt;
+      &lt;th style=&quot;text-align: center&quot;&gt;Symbol&lt;/th&gt;
+      &lt;th&gt;Description&lt;/th&gt;
+    &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;?=&lt;/td&gt;
+      &lt;td&gt;Positive Lookahead&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;?!&lt;/td&gt;
+      &lt;td&gt;Negative Lookahead&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;?&amp;lt;=&lt;/td&gt;
+      &lt;td&gt;Positive Lookbehind&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;?&amp;lt;!&lt;/td&gt;
+      &lt;td&gt;Negative Lookbehind&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;h3 id=&quot;41-positive-lookahead&quot;&gt;4.1 Positive Lookahead&lt;/h3&gt;
+
+&lt;p&gt;The positive lookahead asserts that the first part of the expression must be
+followed by the lookahead expression. The returned match only contains the text
+that is matched by the first part of the expression. To define a positive
+lookahead, parentheses are used. Within those parentheses, a question mark with
+an equals sign is used like this: &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;(?=...)&lt;/code&gt;. The lookahead expressions is written after
+the equals sign inside parentheses. For example, the regular expression
+&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;(T|t)he(?=\sfat)&lt;/code&gt; means: match either a lowercase &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;t&lt;/code&gt; or an uppercase
+ &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;T&lt;/code&gt;, followed by the letter &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;h&lt;/code&gt;, followed by the letter &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;e&lt;/code&gt;. In parentheses we
+define a positive lookahead which tells the regular expression engine to match &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;The&lt;/code&gt;
+or &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;the&lt;/code&gt; only if it’s followed by the word &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;fat&lt;/code&gt;.&lt;/p&gt;
+
+&lt;pre&gt;
+&quot;(T|t)he(?=\sfat)&quot; =&amp;gt; &lt;a href=&quot;#learn-regex&quot;&gt;&lt;strong&gt;The&lt;/strong&gt;&lt;/a&gt; fat cat sat on the mat.
+&lt;/pre&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://regex101.com/r/IDDARt/1&quot;&gt;Test the regular expression&lt;/a&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;42-negative-lookahead&quot;&gt;4.2 Negative Lookahead&lt;/h3&gt;
+
+&lt;p&gt;Negative lookaheads are used when we need to get all matches from an input string
+that are not followed by a certain pattern. A negative lookahead is written the same way as a
+positive lookahead. The only difference is, instead of an equals sign &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;=&lt;/code&gt;, we
+use an exclamation mark &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;!&lt;/code&gt; to indicate negation i.e. &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;(?!...)&lt;/code&gt;. Let’s take a look at the following
+regular expression &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;(T|t)he(?!\sfat)&lt;/code&gt; which means: get all &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;The&lt;/code&gt; or &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;the&lt;/code&gt; words
+from the input string that are not followed by a space character and the word &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;fat&lt;/code&gt;.&lt;/p&gt;
+
+&lt;pre&gt;
+&quot;(T|t)he(?!\sfat)&quot; =&amp;gt; The fat cat sat on &lt;a href=&quot;#learn-regex&quot;&gt;&lt;strong&gt;the&lt;/strong&gt;&lt;/a&gt; mat.
+&lt;/pre&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://regex101.com/r/V32Npg/1&quot;&gt;Test the regular expression&lt;/a&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;43-positive-lookbehind&quot;&gt;4.3 Positive Lookbehind&lt;/h3&gt;
+
+&lt;p&gt;Positive lookbehinds are used to get all the matches that are preceded by a
+specific pattern. Positive lookbehinds are written &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;(?&amp;lt;=...)&lt;/code&gt;. For example, the
+regular expression &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;(?&amp;lt;=(T|t)he\s)(fat|mat)&lt;/code&gt; means: get all &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;fat&lt;/code&gt; or &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;mat&lt;/code&gt; words
+from the input string that come after the word &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;The&lt;/code&gt; or &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;the&lt;/code&gt;.&lt;/p&gt;
+
+&lt;pre&gt;
+&quot;(?&amp;lt;=(T|t)he\s)(fat|mat)&quot; =&amp;gt; The &lt;a href=&quot;#learn-regex&quot;&gt;&lt;strong&gt;fat&lt;/strong&gt;&lt;/a&gt; cat sat on the &lt;a href=&quot;#learn-regex&quot;&gt;&lt;strong&gt;mat&lt;/strong&gt;&lt;/a&gt;.
+&lt;/pre&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://regex101.com/r/avH165/1&quot;&gt;Test the regular expression&lt;/a&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;44-negative-lookbehind&quot;&gt;4.4 Negative Lookbehind&lt;/h3&gt;
+
+&lt;p&gt;Negative lookbehinds are used to get all the matches that are not preceded by a
+specific pattern. Negative lookbehinds are written &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;(?&amp;lt;!...)&lt;/code&gt;. For example, the
+regular expression &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;(?&amp;lt;!(T|t)he\s)(cat)&lt;/code&gt; means: get all &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;cat&lt;/code&gt; words from the input
+string that are not after the word &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;The&lt;/code&gt; or &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;the&lt;/code&gt;.&lt;/p&gt;
+
+&lt;pre&gt;
+&quot;(?&amp;lt;!(T|t)he\s)(cat)&quot; =&amp;gt; The cat sat on &lt;a href=&quot;#learn-regex&quot;&gt;&lt;strong&gt;cat&lt;/strong&gt;&lt;/a&gt;.
+&lt;/pre&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://regex101.com/r/8Efx5G/1&quot;&gt;Test the regular expression&lt;/a&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;5-flags&quot;&gt;5. Flags&lt;/h2&gt;
+
+&lt;p&gt;Flags are also called modifiers because they modify the output of a regular
+expression. These flags can be used in any order or combination, and are an
+integral part of the RegExp.&lt;/p&gt;
+
+&lt;table&gt;
+  &lt;thead&gt;
+    &lt;tr&gt;
+      &lt;th style=&quot;text-align: center&quot;&gt;Flag&lt;/th&gt;
+      &lt;th&gt;Description&lt;/th&gt;
+    &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;i&lt;/td&gt;
+      &lt;td&gt;Case insensitive: Match will be case-insensitive.&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;g&lt;/td&gt;
+      &lt;td&gt;Global Search: Match all instances, not just the first.&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;m&lt;/td&gt;
+      &lt;td&gt;Multiline: Anchor meta characters work on each line.&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;h3 id=&quot;51-case-insensitive&quot;&gt;5.1 Case Insensitive&lt;/h3&gt;
+
+&lt;p&gt;The &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;i&lt;/code&gt; modifier is used to perform case-insensitive matching. For example, the
+regular expression &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;/The/gi&lt;/code&gt; means: an uppercase &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;T&lt;/code&gt;, followed by a lowercase
+&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;h&lt;/code&gt;, followed by an &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;e&lt;/code&gt;. And at the end of regular expression
+the &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;i&lt;/code&gt; flag tells the regular expression engine to ignore the case. As you can
+see, we also provided &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;g&lt;/code&gt; flag because we want to search for the pattern in the
+whole input string.&lt;/p&gt;
+
+&lt;pre&gt;
+&quot;The&quot; =&amp;gt; &lt;a href=&quot;#learn-regex&quot;&gt;&lt;strong&gt;The&lt;/strong&gt;&lt;/a&gt; fat cat sat on the mat.
+&lt;/pre&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://regex101.com/r/dpQyf9/1&quot;&gt;Test the regular expression&lt;/a&gt;&lt;/p&gt;
+
+&lt;pre&gt;
+&quot;/The/gi&quot; =&amp;gt; &lt;a href=&quot;#learn-regex&quot;&gt;&lt;strong&gt;The&lt;/strong&gt;&lt;/a&gt; fat cat sat on &lt;a href=&quot;#learn-regex&quot;&gt;&lt;strong&gt;the&lt;/strong&gt;&lt;/a&gt; mat.
+&lt;/pre&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://regex101.com/r/ahfiuh/1&quot;&gt;Test the regular expression&lt;/a&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;52-global-search&quot;&gt;5.2 Global Search&lt;/h3&gt;
+
+&lt;p&gt;The &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;g&lt;/code&gt; modifier is used to perform a global match (finds all matches rather than
+stopping after the first match). For example, the regular expression&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;/.(at)/g&lt;/code&gt;
+means: any character except a new line, followed by a lowercase &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;a&lt;/code&gt;,
+followed by a lowercase &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;t&lt;/code&gt;. Because we provided the &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;g&lt;/code&gt; flag at the end of
+the regular expression, it will now find all matches in the input string, not just the first one (which is the default behavior).&lt;/p&gt;
+
+&lt;pre&gt;
+&quot;/.(at)/&quot; =&amp;gt; The &lt;a href=&quot;#learn-regex&quot;&gt;&lt;strong&gt;fat&lt;/strong&gt;&lt;/a&gt; cat sat on the mat.
+&lt;/pre&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://regex101.com/r/jnk6gM/1&quot;&gt;Test the regular expression&lt;/a&gt;&lt;/p&gt;
+
+&lt;pre&gt;
+&quot;/.(at)/g&quot; =&amp;gt; The &lt;a href=&quot;#learn-regex&quot;&gt;&lt;strong&gt;fat&lt;/strong&gt;&lt;/a&gt; &lt;a href=&quot;#learn-regex&quot;&gt;&lt;strong&gt;cat&lt;/strong&gt;&lt;/a&gt; &lt;a href=&quot;#learn-regex&quot;&gt;&lt;strong&gt;sat&lt;/strong&gt;&lt;/a&gt; on the &lt;a href=&quot;#learn-regex&quot;&gt;&lt;strong&gt;mat&lt;/strong&gt;&lt;/a&gt;.
+&lt;/pre&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://regex101.com/r/dO1nef/1&quot;&gt;Test the regular expression&lt;/a&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;53-multiline&quot;&gt;5.3 Multiline&lt;/h3&gt;
+
+&lt;p&gt;The &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;m&lt;/code&gt; modifier is used to perform a multi-line match. As we discussed earlier,
+anchors &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;(^, $)&lt;/code&gt; are used to check if a pattern is at the beginning of the input or
+the end. But if we want the anchors to work on each line, we use
+the &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;m&lt;/code&gt; flag. For example, the regular expression &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;/at(.)?$/gm&lt;/code&gt; means: a lowercase
+&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;a&lt;/code&gt;, followed by a lowercase &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;t&lt;/code&gt; and, optionally, anything except
+a new line. And because of the &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;m&lt;/code&gt; flag, the regular expression engine now matches patterns
+at the end of each line in a string.&lt;/p&gt;
+
+&lt;pre&gt;
+&quot;/.at(.)?$/&quot; =&amp;gt; The fat
+                cat sat
+                on the &lt;a href=&quot;#learn-regex&quot;&gt;&lt;strong&gt;mat.&lt;/strong&gt;&lt;/a&gt;
+&lt;/pre&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://regex101.com/r/hoGMkP/1&quot;&gt;Test the regular expression&lt;/a&gt;&lt;/p&gt;
+
+&lt;pre&gt;
+&quot;/.at(.)?$/gm&quot; =&amp;gt; The &lt;a href=&quot;#learn-regex&quot;&gt;&lt;strong&gt;fat&lt;/strong&gt;&lt;/a&gt;
+                  cat &lt;a href=&quot;#learn-regex&quot;&gt;&lt;strong&gt;sat&lt;/strong&gt;&lt;/a&gt;
+                  on the &lt;a href=&quot;#learn-regex&quot;&gt;&lt;strong&gt;mat.&lt;/strong&gt;&lt;/a&gt;
+&lt;/pre&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://regex101.com/r/E88WE2/1&quot;&gt;Test the regular expression&lt;/a&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;6-greedy-vs-lazy-matching&quot;&gt;6. Greedy vs Lazy Matching&lt;/h2&gt;
+&lt;p&gt;By default, a regex will perform a greedy match, which means the match will be as long as
+possible. We can use &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;?&lt;/code&gt; to match in a lazy way, which means the match should be as short as possible.&lt;/p&gt;
+
+&lt;pre&gt;
+&quot;/(.*at)/&quot; =&amp;gt; &lt;a href=&quot;#learn-regex&quot;&gt;&lt;strong&gt;The fat cat sat on the mat&lt;/strong&gt;&lt;/a&gt;. &lt;/pre&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://regex101.com/r/AyAdgJ/1&quot;&gt;Test the regular expression&lt;/a&gt;&lt;/p&gt;
+
+&lt;pre&gt;
+&quot;/(.*?at)/&quot; =&amp;gt; &lt;a href=&quot;#learn-regex&quot;&gt;&lt;strong&gt;The fat&lt;/strong&gt;&lt;/a&gt; cat sat on the mat. &lt;/pre&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://regex101.com/r/AyAdgJ/2&quot;&gt;Test the regular expression&lt;/a&gt;&lt;/p&gt;
+</description>
+        <pubDate>Tue, 27 Apr 2021 00:00:00 +0530</pubDate>
+        <link>http://localhost:3125//RegEx</link>
+        <link href="http://localhost:3125/RegEx"/>
+        <guid isPermaLink="true">http://localhost:3125/RegEx</guid>
+      </item>
+    
+  </channel>
+</rss>

@@ -1,0 +1,23 @@
+body{
+    padding:10px;
+    color:white;
+    background-color:black;
+    font-size:18px;
+    line-height:32px;
+    font-family: monospace,'Courier New', Courier;
+}
+label{
+    height:22px;
+    text-align:right;
+    font-size:22px;
+}
+input{
+    height:fit-content;
+    font-size:20px;
+    margin:5px;
+}
+button{
+    font-size:22px;
+    padding:0px;
+    margin:5px;
+}

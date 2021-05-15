@@ -1,0 +1,47 @@
+<html>
+    <head>
+        <title>README for sentiment analysis API</title>
+        <link href="../css/notestyle/styles.css" rel="stylesheet">
+    </head>
+    <body style="padding:5px";>
+    <h1>server for an API that handles sentiment analysis </h1>
+
+    <p>analyses text for mood using <a href="http://www2.imm.dtu.dk/pubdb/pubs/6010-full.html">afinn's sentiment-analysis word list</a>, and a additional database with words/scores customizable and expandable by user</p>
+    
+    <blockquote>
+        Launches @ <a href="http://localhost:4000/">http://localhost:4000/</a>
+    </blockquote>
+    <blockquote>
+        Hosted @ Glitch by Alias <a href="https://sentimentapi-codingtrain.glitch.me">sentimentAPI-codingtrain</a>
+    </blockquote>
+    
+    routes:
+    <blockquote>
+        <table style="font-size:19px;">
+            <tr>
+                <th>root urls</th>
+                <th>location</th>
+            </tr>
+            <tr>
+                <td><a href= "http://localhost:4000">http://localhost:4000</a></td>
+                <td>local</td>
+            </tr>
+                <td><a href="https://sentimentapi-codingtrain.glitch.me">https://sentimentapi-codingtrain.glitch.me</a></td>
+                <td>WWW</td>
+            </tr>
+         </table>
+    </blockquote>
+
+    <dl>
+        <dt>/search/word</dt>
+            <dd> searches for a word in the overall db and gives its score</dd>
+        <dt>/add/word/score</dt>
+            <dd> adds word to db, if it is a repeat, score given here will over ride</dd>
+        <dt>/all</dt>
+            <dd> spits out customized word-score set.</dd>
+        <dt>/analyze</dt>
+            <dd>analyzes given text.</dd>
+    </dl>
+    
+    </body>
+</html>

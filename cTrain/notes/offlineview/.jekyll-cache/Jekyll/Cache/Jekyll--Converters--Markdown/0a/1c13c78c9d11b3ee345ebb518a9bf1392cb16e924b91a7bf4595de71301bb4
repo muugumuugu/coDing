@@ -1,0 +1,67 @@
+I"	<h1 id="transformations">transformations</h1>
+<h2 id="main-functions">main functions</h2>
+<ul>
+  <li>translate
+    <ul>
+      <li>useful to centre entire system around a given point. basically shifts <code class="language-plaintext highlighter-rouge">orgin</code></li>
+    </ul>
+  </li>
+  <li>rotate
+    <ul>
+      <li>uses radians and rotates co-ordinate <strong>pivoting @ origin</strong> , along Z axis.(by default pointing outward.)</li>
+    </ul>
+  </li>
+  <li>scale
+    <ul>
+      <li>scales/multiplies the units on the axes. even direction  <code class="language-plaintext highlighter-rouge">flipp</code> by -ve values.</li>
+    </ul>
+  </li>
+  <li><em>push</em>
+    <ul>
+      <li><em>save</em> current cordinate <code class="language-plaintext highlighter-rouge">matrix</code> and also   <code class="language-plaintext highlighter-rouge">styles</code> info</li>
+    </ul>
+  </li>
+  <li><em>pop</em>
+    <ul>
+      <li><em>reload</em> the temp stored coord <code class="language-plaintext highlighter-rouge">matrix</code> n <code class="language-plaintext highlighter-rouge">styles</code>.</li>
+    </ul>
+  </li>
+</ul>
+
+<h3 id="abt-the-functioning">abt the functioning</h3>
+<blockquote>
+  <p>drawings are based relative to origin, which is initially @ ** top left corner**</p>
+</blockquote>
+
+<blockquote>
+  <p>however, translate <strong><em>accumulates</em></strong>. once done, it stays there and that point is considered origin. And then it  <em>resets @ draw</em></p>
+</blockquote>
+
+<blockquote>
+  <p>rotate also behaves the same <strong><em>accumulating</em></strong> way,  <em>reseting @ draw</em></p>
+</blockquote>
+
+<blockquote>
+  <p>scale is <em>not relative</em>, it just means how many pixels is 1 unit. and signs for direction.</p>
+</blockquote>
+
+<blockquote>
+  <p>origin’s coordinates are also <strong>relative</strong> to current running origin</p>
+</blockquote>
+
+<blockquote>
+  <p>co-ordinate system is <strong>left handed</strong>, so angles <em>clockwise</em>, and y increases downward.</p>
+</blockquote>
+
+<blockquote>
+  <p>push n pop are lil staccks , so the pushing popping is <strong>LIFO</strong></p>
+</blockquote>
+
+<blockquote>
+  <p>rotateX,Y,Z are specific axis rotn for WEBGL 3d renderer</p>
+</blockquote>
+
+<blockquote>
+  <p>applyMatrix() will apply a co-ordinate transform.</p>
+</blockquote>
+:ET

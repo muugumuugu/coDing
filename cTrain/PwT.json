@@ -1,0 +1,86 @@
+{
+	"1":
+		{
+		"1":{"content":"Introduction ","status":"undone"},
+		"2":{"content":"My Workflow ","status":"undone"},
+		"3":{"content":"Getting Text form User - Text Input ","status":"undone"},
+		"4":{"content":"Getting Text from User - Loading a Text File ","status":"undone"},
+		"5":{"content":"JavaScript String Object ","status":"undone"},
+		"6":{"content":"Homework Assignments Week 1 ","status":"undone"}
+		},
+	"2":
+		{
+		"1":{"content":"Introduction to Regular Expressions ","status":"undone"},
+		"2":{"content":"Regular Expressions - Meta-characters ","status":"undone"},
+		"3":{"content":"Regular Expressions - Character Classes ","status":"undone"},
+		"4":{"content":"Regular Expressions - Capturing Groups ","status":"undone"},
+		"5":{"content":"Regular Expressions - Back References ","status":"undone"},
+		"6":{"content":"Regular Expressions - test%28%29 and match%28%29 ","status":"undone"},
+		"7":{"content":"Regular Expressions - exec%28%29 ","status":"undone"},
+		"8":{"content":"Regular Expressions - split%28%29 ","status":"undone"},
+		"9":{"content":"Regular Expressions - replace%28%29 ","status":"undone"},
+		"10":{"content":"Homework Assignments Week 2 ","status":"undone"}
+		},
+	"3":
+		{
+		"1":{"content":"The RiTa.js Library ","status":"done"},
+		"2":{"content":"The %27nlp-compromise%27 Library ","status":"done"},
+		"3":{"content": "Homework Assignments Week 3 ","status":"undone"}
+		},
+	"4":
+		{
+
+		},
+	"5":
+		{
+		"1":{"content":"Intro to Week 5 Text Analysis and Word Counting ","status":"done"},
+		"2":{"content":"Associative Arrays in JavaScript ","status":"done"},
+		"3":{"content":"Homework Assignment Week 5 ","status":"undone"}
+		},
+	"6":
+		{
+		"1":{"content":"Intro to Session 6 - Markov Chains ","status":"done"},
+		"2":{"content":"Homework Assignment Session 6 ","status":"undone"}
+		},
+	"7":
+		{
+		"1":{"content":"Intro to Session 7 - Context-Free Grammar ","status":"done"},
+		"2":{"content":"Context-Free Grammar with Tracery ","status":"done"},
+		"3":{"content":"Context-Free Grammar with RiTa.js ","status":"done"},
+		"4":{"content":"Homework Assignment Session 7 ","status":"undone"}
+		},
+	"8":
+		{
+		"1":{"content":"Intro to Session 8 - Building an API in Node ","status":"done"},
+		"2":{"content":"HTTP Server with Express ","status":"done"},
+		"3":{"content":"RESTful Routes ","status":"done"},
+		"4":{"content":"RESTful Routes with Parameters ","status":"done"},
+		"5":{"content":"Saving Data to JSON File with Node.js ","status":"done"},
+		"6":{"content":"API Front End Client ","status":"done"},
+		"7":{"content":"%27Build Your Own API%27 Conclusion with HTTP POST ","status":"done"}
+		},
+	"9":
+		{
+		"1":{"content":"What is Firebase %28Database as a Service%29 ","status":"undone"},
+		"2":{"content":"Firebase - Saving Data ","status":"undone"},
+		"3":{"content":"Firebase - Retrieving Data ","status":"undone"}
+		},
+	"10":
+		{
+		"1":{"content":"Introduction to Chatbots ","status":"undone"},
+		"2":{"content":"Chatbots with RiveScript ","status":"undone"},
+		"3":{"content":"Text-to-Speech with p5.Speech ","status":"undone"},
+		"4":{"content":"Speech Recognition with p5.Speech ","status":"undone"}
+		},
+	"11":
+		{
+		"1":{"content":"Introduction to Chrome Extensions ","status":"undone"},
+		"2":{"content":"Bookmarklets ","status":"undone"},
+		"3":{"content":"Chrome Extensions - Content Scripts ","status":"undone"},
+		"4":{"content":"Chrome Extensions - Background Scripts ","status":"undone"},
+		"5":{"content":"Chrome Extensions - Pop-ups ","status":"undone"},
+		"6":{"content":"Chrome Extensions - Pop-ups Messaging ","status":"undone"},
+		"7":{"content":"Chrome Extensions - New Tab Override ","status":"undone"},
+		"8":{"content":"Cross-Browser Extensions ","status":"undone"}
+		}
+}

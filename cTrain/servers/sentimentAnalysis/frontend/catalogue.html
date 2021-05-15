@@ -1,0 +1,33 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <title>frontend codes</title>
+    <link rel="stylesheet" href="../../../css/notestyle/styles.css">
+  </head>
+  <body>
+<h1>frontend codes</h1>
+<div style="  display: flex; flex-wrap: wrap;">
+<div><textarea id="index"  cols=40 rows=15 style="background-color:white;"></textarea><br> <a href="index.html">index.html</a></div>&nbsp;
+<script>
+	function sendXHR(type, url, data, callback) {
+	var newXHR = new XMLHttpRequest() || new window.ActiveXObject("Microsoft.XMLHTTP");
+	newXHR.open(type, url, true);
+	newXHR.send(data);
+	newXHR.onreadystatechange = function() {
+		if (this.status === 200 && this.readyState === 4) {
+			callback(this.response);
+			}
+		};
+	}
+	sendXHR("GET", "index.html", null, function(response) { // response contains the content of the description.txt file.
+		document.getElementById('index').innerHTML = response; // Use innerHTML to get or set the html content.
+	});
+
+</script>
+<div><object data="sketch.js" width="300" style="background-color:white; height:250px;"></object><br> <a href="sketch.js">sketch.js</a></div>&nbsp;
+<div><object data="style.css" width="300" style="background-color:white; height:250px;"></object><br> <a href="style.css">style.css</a></div>&nbsp;
+</div>
+
+</body></html>

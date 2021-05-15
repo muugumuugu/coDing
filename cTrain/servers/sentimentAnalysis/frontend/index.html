@@ -1,0 +1,40 @@
+<html lang="en">
+	<head>
+		<title>Front end for Sentiment API</title>
+		<link  href="style.css" rel="stylesheet" >
+		<script src="sketch.js"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.2.0/p5.js "></script>
+	</head>
+<body>
+	<h1>sentiment analysis</h1>
+	<br>
+	<div tag="add route" style="  display: flex; flex-wrap: wrap;">
+		<div style="background-color:white; color:black;"><h2 style="text-align:center;padding:0px;margin:0px;font-size:20px;">&nbsp;/add &nbsp; <br>Route</h2></div>&nbsp;
+		<div>
+			<label for="word">word&nbsp;: </label><input id="word">
+		<br>
+			<label for="score">score: </label><input id="score">
+		</div>
+		<br>
+		<button id="submit">submit</button>
+	</div>
+	<br>
+	<div id='sketch'></div>
+	<br>
+	<div tag='postroute'  style="  display: flex; flex-wrap: wrap;">
+		<div style="background-color:white; color:black;"><h2 style="text-align:center;padding:0px;margin:0px;font-size:20px;">&nbsp;/analyze &nbsp; <br>Route</h2>
+		<h3 style="text-align:center; font-size:16px;">score :<br> <span id="analyzed"></span></h3>
+		</div>
+		&nbsp;
+		<div>
+			<label  for="data2analyze">text<br> 2 <br>analyze&nbsp;:&nbsp; </label>
+		</div>
+		&nbsp;
+		<div>
+			<textarea style="font-size:22px;" id="data2analyze" cols=100 rows=7></textarea>
+		</div>
+		&nbsp;
+		<button id="analyze">analyze</button>
+	</div>
+
+</body></html>

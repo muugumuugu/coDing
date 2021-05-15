@@ -1,0 +1,35 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <title>server code</title>
+    <link rel="stylesheet" href="../../css/notestyle/styles.css">
+  </head>
+  <body>
+<h1>server code</h1>
+<div style="  display: flex; flex-wrap: wrap;">
+<div><a href="data/">data/</a></div>&nbsp;
+<div><a href="frontend/catalogue.html">frontend/</a></div>&nbsp;
+<div><a href="package.json">package.json</a><br><object data="package.json" width="400" style="background-color:white; height:250px;"></object></div>&nbsp;
+<div><a href="README.md">README.md</a><br><textarea id="readme" cols=75 rows=15 stylee="background-color:white;"></textarea></div>&nbsp;
+<script>
+	function sendXHR(type, url, data, callback) {
+	var newXHR = new XMLHttpRequest() || new window.ActiveXObject("Microsoft.XMLHTTP");
+	newXHR.open(type, url, true);
+	newXHR.send(data);
+	newXHR.onreadystatechange = function() {
+		if (this.status === 200 && this.readyState === 4) {
+			callback(this.response);
+			}
+		};
+	}
+	sendXHR("GET", "README.md", null, function(response) { // response contains the content of the description.txt file.
+		document.getElementById('readme').innerHTML = response; // Use innerHTML to get or set the html content.
+	});
+
+</script>
+<div><a href="server.js">server.js</a><br><object data="server.js" width="400" style="background-color:white; height:250px;"></object></div>&nbsp;
+</div>
+
+</body></html>

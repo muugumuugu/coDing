@@ -1,0 +1,27 @@
+components:
+    AlphabetOrElements {
+        terminal
+        non-terminal
+    }
+    ProductionRules=ReplacementRules
+    example:
+    A,B,C non-terminal alphabets
+    D,E,F terminal alphabets
+    ProductionRule:
+        A->BDE
+        B->AF
+        C->A
+    Axiom AC(expanding axiom):
+        AC--> BDEA-->AFDEBDEA-->etc etc:
+
+delimiterless will replace wherever it finds the key, so key cannot be a substring of the resultant.
+delimiter to mark non terminals:
+    ritaold:<*>
+    ritanew:$
+    tracey:#
+default start seed:
+    tracey:argument to flatten funcn
+    ritaOld:<start>
+    ritanew:start
+
+structures and models or output window: art assignment bot, spellbooxs etc

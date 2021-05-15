@@ -1,0 +1,325 @@
+body{
+    background-color:rgb(226, 118, 172);
+}
+
+main{
+    background-color: rgb(221, 241, 102);
+    padding:15px;
+}
+
+h1{
+    padding-left: 5px;
+    font-size:21px;
+    background-color:rgb(170, 97, 219);
+
+}
+h1.indexStyle{
+    padding-left:5px;
+    font-size:24px;
+    background-color: coral;
+
+}
+h1.grass{
+    padding:2px;
+    padding-left:5px;
+    font-size:22px;
+    background-color:rgb(116, 223, 134)
+}
+
+h2{
+    padding-left: 5px;
+    padding-top:0px;
+    padding-bottom:0px;
+    margin-bottom:1px;
+    margin-top:1px;
+    font-size:18px;
+}
+h2.indexStyle{
+    font-size:21px;
+    background-color: rgb(147, 139, 253);
+    color:black;
+    padding:5px;
+    text-align:right;
+}
+
+h3.indexStyle{
+    font-size:21px;
+    background-color: black;
+    color:white;
+    padding:5px;
+
+}
+
+label.regex{
+    color:#000000;
+    background-color:#7fe0e0;
+    margin:5px;
+ }
+label.solaris{
+    font-size:18px;
+    width:20%;
+    background-color: rgb(13, 5, 83);
+    color:white;
+}
+label.dark{
+    padding:1px;
+    padding-left:3px;
+    color:#FFFFFF;
+    font-size:20px;
+    background-color:#000000;
+}
+
+input{
+    font-size:20px;
+}
+input.sunny{
+    font-size:18px;
+    background-color: rgb(218, 215, 44); 
+    margin:5px;
+    width:30%;
+}
+
+textarea{
+    font-size:20px;
+    width:75%;
+    height:100px;
+}
+textarea.orchid{
+    font-size:18px;
+    background-color:rgb(133, 41, 255);
+    width:75%;
+    height:15%;
+}
+textarea.lake{
+    width:80%;
+    height:33%;
+    background-color:rgb(88, 255, 255);
+}
+
+button{
+    width:15%;
+    margin:5px;
+    height:29px;
+    font-size:18px;
+}
+button.regex{
+    padding:1px;
+    font-size:18px;
+    margin:5px;
+}
+button.solaris{
+    font-size:18px;
+    padding:2px;
+    margin:3px;
+    background-color: black;
+    color:white;
+}
+
+
+span{
+    padding:1px;
+    padding-left:3px;
+    color:#FFFFFF;
+    font-size:20px;
+    background-color:#000000;
+    width:auto;
+}
+span.invis{
+    padding:1px;
+    padding-left:3px;
+    color:rgb(211, 130, 130);
+    font-size:20px;
+    background-color: rgb(221, 241, 102);
+   /* background-color:rgb(211, 130, 130);*/
+    width:auto;
+}
+span.wrd{
+    background-color: rgb(233, 141, 194);
+    color:#000000;
+}
+span.nonwrd{
+    background-color: rgb(206, 219, 89);
+    color:#000000;
+}
+
+p{
+    padding-left:10px;
+    margin-bottom:1px;
+    margin-top:1px;
+    background-color: black;
+    color:white;
+}
+p.userI{
+    background-color:#9fa6c9;
+    color:#000000;
+}
+p.sky{
+    background-color:#89b4df;
+    color:#000000;
+    margin:3px;
+    padding:5px;
+}
+p.tokenz{
+    font-size:16px;
+    padding-left:10px;
+    width:50%;
+    margin-bottom:3px;
+    margin-top:3px;
+    background-color:rgb(129, 206, 161);
+    color: black;
+}
+
+div.oppose{
+    font-size:16px;
+    position:fixed;
+    top:180px;
+    padding-left:10px;
+    width:30%;
+    color: black;
+    left:65%;
+    background-color:lightgreen;
+}
+div.pluralpast{
+    font-size:16px;
+    position:fixed;
+    top:180px;
+    padding-left:10px;
+    width:30%;
+    color: black;
+    left:33%;
+    background-color:rgb(95, 124, 250);
+}
+div.keyOut{
+    font-size:16px;
+    position:fixed;
+    top:180px;
+    padding-left:10px;
+    width:30%;
+    color: black;
+    left:1%;
+    background-color: turquoise;
+}
+div.valueOut{
+    font-size:16px;
+    position:fixed;
+    top:180px;
+    padding-left:10px;
+    width:30%;
+    color: black;
+    left:33%;
+    background-color:rgb(109, 228, 109);
+}
+div.regarray{
+    padding-left:10px;
+    background-color: rgb(95, 95, 255);
+    color:black;
+}
+div.talk{
+    padding-left:10px;
+    background-color:lightgreen;
+    color:black;
+}
+div.outlog{
+    font-size:16px;
+    position:fixed;
+    top:180px;
+    padding-left:10px;
+    width:30%;
+    color: black;
+    left:1%;
+    background-color: turquoise;
+}
+div.meter{
+    font-size:16px;
+    position:fixed;
+    top:180px;
+    padding-left:10px;
+    width:30%;
+    color: black;
+    left:65%;
+    background-color:lightgreen;
+}
+div.rhyme{
+    font-size:16px;
+    position:fixed;
+    top:180px;
+    padding-left:10px;
+    width:30%;
+    color: black;
+    left:33%;
+    background-color:rgb(95, 124, 250);
+}
+div.grass{
+    padding:10px;
+    background-color:rgb(93, 185, 131);
+    color: black;
+}
+
+
+/*
+ol.a {list-style-type: armenian;}
+ol.b {list-style-type: cjk-ideographic;}
+ol.d {list-style-type: decimal-leading-zero;}
+ol.e {list-style-type: georgian;}
+ol.f {list-style-type: hebrew;}
+ol.j {list-style-type: katakana-iroha;}
+ol.l {list-style-type: lower-greek;}*/
+ol.indexStyleOL{
+    background-color: turquoise;
+    color:black;
+    list-style-type: decimal-leading-zero;
+}
+ul.indexStyleUL{
+    text-align:right;
+    list-style: none; /* Remove HTML bullets */
+    padding: 5px;
+    margin: 10px;
+    list-style-position: inside;
+    background-color:lightgreen;
+    color:black;
+}
+li.indexStyleOL{
+    padding-left:5px;
+    margin-left:15px;
+    margin-right:5px;
+}
+li.indexStyleUL{
+    padding-left:5px;  
+    margin-left:15px;
+    margin-right:5px;
+}
+li.indexStyleUL::before {
+    content: "ö"; /* Insert content that looks like bullets like ∞ */
+    padding-right: 8px;
+    color: rgb(0, 17, 255); /* Or a color you prefer */
+  }
+
+footer{
+    position:fixed;
+    bottom:0px;
+    right:0px;
+    left:0px;
+    text-align: right;
+    padding-right:25px;
+    background-color:rgb(252, 160, 99);
+}
+footer.mini{
+    position:fixed;
+    bottom:0px;
+    right:0px;
+    left:auto;
+    width:45%;
+    text-align: right;
+    padding-right:25px;
+    background-color:rgb(252, 160, 99);
+}
+footer.indexStyle{
+    position:unset;
+    text-align: right;
+    margin:5px;
+    padding-top:5px;
+    padding-bottom:5px;
+    padding-left:5px;
+    padding-right:25px;
+    background-color: darkorchid;
+}

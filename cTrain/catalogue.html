@@ -1,0 +1,48 @@
+<!doctype html>
+<html>
+  <head>
+	<link rel="icon" href="favicon.ico" type="image/icon type">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <title>Source Code Archive</title>
+    <link rel="stylesheet" href="css/notestyle/styles.css">
+  </head>
+  <body>
+<h1>Source Code Archive</h1>
+<ul>
+	<li><a href="css/index.html">css/</a> </li>
+	<li><a href="html/index.html">html/</a> </li>
+	<li><a href="js/index.html">js/</a> </li>
+	<li><a href="notes/index.html">notes/</a> </li>
+	<li><a href="resources/index.html">resources/</a> </li>
+	<li><a href="servers/index.html">servers/</a> </li>
+	<li><a href="_config.yml">_config.yml</a> <br><textarea cols=40 rows=15 id='config'></textarea></li>
+	<li><a href="index.html">index.html</a> <br> <textarea cols=40 rows=15 id='index'></textarea> </li>
+	<script>
+	function sendXHR(type, url, data, callback) {
+	var newXHR = new XMLHttpRequest() || new window.ActiveXObject("Microsoft.XMLHTTP");
+	newXHR.open(type, url, true);
+	newXHR.send(data);
+	newXHR.onreadystatechange = function() {
+		if (this.status === 200 && this.readyState === 4) {
+			callback(this.response);
+			}
+		};
+	}
+	sendXHR("GET", "index.html", null, function(response) { // response contains the content of the description.txt file.
+		document.getElementById('index').innerHTML = response; // Use innerHTML to get or set the html content.
+	});
+	sendXHR("GET", "_config.yml", null, function(response) { // response contains the content of the description.txt file.
+		document.getElementById('config').innerHTML = response; // Use innerHTML to get or set the html content.
+	});
+//github fixit
+	if (document.getElementById('config').innerHTML.trim()==""){
+		sendXHR("GET", "https://raw.githubusercontent.com/muugumuugu/cTrainStuff/stuff/_config.yml", null, function(response) { // response contains the content of the description.txt file.
+		document.getElementById('config').innerHTML = response; // Use innerHTML to get or set the html content.
+	});
+	}
+
+
+</script>
+</ul>
+</body></html>
