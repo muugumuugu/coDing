@@ -1,0 +1,1 @@
+packageSearchIndex = [{"l":"All Packages","url":"allpackages-index.html"},{"l":"colorblind"},{"l":"colorblind.generators"},{"l":"colorblind.generators.util"}]
