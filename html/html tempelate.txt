@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="en">
+  <head>
+		<meta charset="utf-8">
+		<!--embedd-->
+			<meta property="og:title" content="allysa" />
+			<meta property="og:type" content="website" />
+			<meta property="og:url" content="https://mogidot.github.io/allysa/" />
+			<meta property="og:image" content="https://mogidot.github.io/allysa/alyssa.jpg" />
+			<meta property="og:description" content="allysa in the  night forest" />
+			<meta name="theme-color" content="#000000">
+			<meta name="twitter:card" content="summary_large_image">
+		<!--meta end-->
+		<!--scripts-->
+			<script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.2.0/p5.js"></script>
+			<script src=""></script>
+			<script type="text/javascript" src="/styles/syntaxhighlighter.js" ></script>
+			<script>hljs.highlightAll();</script>
+		<!--styles-->
+			<link rel="stylesheet" href="/styles/home.css">
+			<link rel="stylesheet" href="https://gistcdn.rawgit.org/mogidot/c5bfccdd8f0b4d3316b803b49da5941e/503a870f1bf33202399e43cde01a00aadce0923b/hackerstyle.css">
+			<style type="text/css" id="invertRunning">html {-filter: invert(100%)}</style>
+			<style>
+				span.divider{color: blue;}
+				a:link {color: green;  background-color: transparent;  text-decoration: none;}
+				a:visited {color: pink;  background-color: transparent;  text-decoration: none;}
+				a:hover {color: red;  background-color: transparent;  text-decoration: underline;}
+				a:active {color: yellow;  background-color: transparent;  text-decoration: underline;}
+				body{background-color:black;  color:white;}
+			</style>
+
+		<!--title-->
+		<title></title>
+	</head>
+	<!--frontend-->
+	<body>
+		<header></header>
+		<main>
+			<div style="  display: flex; flex-wrap: wrap;"></div>
+		</main>
+		<footer></footer>
+	</body>
+</html>
