@@ -1,0 +1,93 @@
+[2021-04-11 16:11:29] Executing bootstrap tasks
+[2021-04-11 16:11:29] OpenJDK Runtime Environment 15.0.2+7-27
+[2021-04-11 16:11:29] Product org.eclipse.products.epp.package.java.2021-03
+[2021-04-11 16:11:29] Bundle org.eclipse.oomph.setup 1.19.0.v20210223-0655, build=5032, branch=de1d74a6bf3addd102f8a873eabac293fbeaa3ad
+[2021-04-11 16:11:29] Bundle org.eclipse.oomph.setup.core 1.19.0.v20210221-1019, build=5032, branch=de1d74a6bf3addd102f8a873eabac293fbeaa3ad
+[2021-04-11 16:11:29] Bundle org.eclipse.oomph.setup.p2 1.16.0.v20200814-1205, build=5032, branch=de1d74a6bf3addd102f8a873eabac293fbeaa3ad
+[2021-04-11 16:11:29] Performing P2 Director (Eclipse IDE for Java Developers (2021-03))
+[2021-04-11 16:11:29] Offline = false
+[2021-04-11 16:11:29] Mirrors = true
+[2021-04-11 16:11:29] Resolving 17 requirements from 3 repositoriesto /home/muku/eclipse/java-2021-03/eclipse
+[2021-04-11 16:11:29] Requirement org.eclipse.equinox.p2.iu:epp.package.java [4.19.0,5.0.0)
+[2021-04-11 16:11:29] Requirement org.eclipse.equinox.p2.iu:org.eclipse.platform.feature.group [4.19.0,5.0.0)
+[2021-04-11 16:11:29] Requirement org.eclipse.equinox.p2.iu:org.eclipse.rcp.feature.group [4.19.0,5.0.0)
+[2021-04-11 16:11:29] Requirement org.eclipse.equinox.p2.iu:org.eclipse.buildship.feature.group
+[2021-04-11 16:11:29] Requirement org.eclipse.equinox.p2.iu:org.eclipse.eclemma.feature.feature.group
+[2021-04-11 16:11:29] Requirement org.eclipse.equinox.p2.iu:org.eclipse.egit.feature.group
+[2021-04-11 16:11:29] Requirement org.eclipse.equinox.p2.iu:org.eclipse.epp.mpc.feature.group
+[2021-04-11 16:11:29] Requirement org.eclipse.equinox.p2.iu:org.eclipse.jdt.feature.group
+[2021-04-11 16:11:29] Requirement org.eclipse.equinox.p2.iu:org.eclipse.jgit.feature.group
+[2021-04-11 16:11:29] Requirement org.eclipse.equinox.p2.iu:org.eclipse.m2e.feature.feature.group
+[2021-04-11 16:11:29] Requirement org.eclipse.equinox.p2.iu:org.eclipse.m2e.lemminx.feature.feature.group
+[2021-04-11 16:11:29] Requirement org.eclipse.equinox.p2.iu:org.eclipse.m2e.logback.feature.feature.group
+[2021-04-11 16:11:29] Requirement org.eclipse.equinox.p2.iu:org.eclipse.mylyn.wikitext.editors_feature.feature.group
+[2021-04-11 16:11:29] Requirement org.eclipse.equinox.p2.iu:org.eclipse.tips.feature.feature.group
+[2021-04-11 16:11:29] Requirement org.eclipse.equinox.p2.iu:org.eclipse.tm.terminal.feature.feature.group
+[2021-04-11 16:11:29] Requirement org.eclipse.equinox.p2.iu:org.eclipse.wildwebdeveloper.xml.feature.feature.group
+[2021-04-11 16:11:29] Requirement org.eclipse.equinox.p2.iu:org.eclipse.oomph.setup.feature.group
+[2021-04-11 16:11:29] Repository http://download.eclipse.org/technology/epp/packages/2021-03/202103121200
+[2021-04-11 16:11:29] Repository http://download.eclipse.org/releases/2021-03/202103171000
+[2021-04-11 16:11:29] Repository http://download.eclipse.org/oomph/updates/milestone/latest
+[2021-04-11 16:11:37] Calculating requirements and dependencies.
+[2021-04-11 16:11:39] Computing prerequisite plan
+[2021-04-11 16:11:41] Fetching artifacts.jar from http://download.eclipse.org/technology/epp/packages/2021-03/202103121200/ (2.49kB)
+[2021-04-11 16:11:42] Fetching artifacts.xml.xz from http://download.eclipse.org/releases/2021-03/202103171000/ (629.28kB)
+[2021-04-11 16:11:43] Fetching artifacts.xml.xz from http://download.eclipse.org/releases/2021-03/202103171000/
+[2021-04-11 16:11:46] Fetching compositeArtifacts.jar from http://download.eclipse.org/oomph/updates/milestone/latest/ (444B)
+[2021-04-11 16:11:47] Fetching artifacts.xml.xz from http://download.eclipse.org/oomph/drops/milestone/S20210411-042319-1.21.0-M1/ (24.41kB)
+[2021-04-11 16:11:48] Collecting 7 artifacts from http://download.eclipse.org/oomph/updates/milestone/latest
+[2021-04-11 16:11:48] Downloading org.eclipse.oomph.setup
+[2021-04-11 16:11:48] Downloading org.eclipse.oomph.p2
+[2021-04-11 16:11:48] Downloading org.eclipse.oomph.p2.core
+[2021-04-11 16:11:48] Downloading org.eclipse.oomph.util
+[2021-04-11 16:11:48] Downloading org.eclipse.oomph.setup.core
+[2021-04-11 16:11:48] Downloading org.eclipse.nebula.widgets.tablecombo
+[2021-04-11 16:11:49] Fetching org.eclipse.oomph.setup.core_1.20.0.v20210411-0650.jar from http://download.eclipse.org/oomph/drops/milestone/S20210411-042319-1.21.0-M1/features/ (19.29kB)
+[2021-04-11 16:11:49] Fetching org.eclipse.nebula.widgets.tablecombo_1.2.0.202104091720.jar from http://download.eclipse.org/oomph/drops/milestone/S20210411-042319-1.21.0-M1/plugins/ (37.33kB)
+[2021-04-11 16:11:49] Fetching org.eclipse.oomph.setup.core_1.20.0.v20210411-0650.jar.pack.gz from http://download.eclipse.org/oomph/drops/milestone/S20210411-042319-1.21.0-M1/plugins/ (109.86kB)
+[2021-04-11 16:11:49] Fetching org.eclipse.oomph.p2_1.19.0.v20210330-1145.jar from http://download.eclipse.org/oomph/drops/milestone/S20210411-042319-1.21.0-M1/features/ (19.12kB)
+[2021-04-11 16:11:49] Fetching org.eclipse.oomph.util_1.16.0.v20210329-0828.jar.pack.gz from http://download.eclipse.org/oomph/drops/milestone/S20210411-042319-1.21.0-M1/plugins/ (77.35kB)
+[2021-04-11 16:11:49] Fetching org.eclipse.oomph.setup_1.21.0.v20210411-0650.jar from http://download.eclipse.org/oomph/drops/milestone/S20210411-042319-1.21.0-M1/features/ (19.18kB)
+[2021-04-11 16:11:49] Fetching org.eclipse.oomph.p2.core_1.18.0.v20210330-1145.jar.pack.gz from http://download.eclipse.org/oomph/drops/milestone/S20210411-042319-1.21.0-M1/plugins/ (126.27kB)
+[2021-04-11 16:11:49] Fetching org.eclipse.oomph.p2_1.19.0.v20210330-1145.jar from http://download.eclipse.org/oomph/drops/milestone/S20210411-042319-1.21.0-M1/features/ (19.12kB)
+[2021-04-11 16:11:49] Fetching org.eclipse.oomph.p2.core_1.18.0.v20210330-1145.jar.pack.gz from http://download.eclipse.org/oomph/drops/milestone/S20210411-042319-1.21.0-M1/plugins/ (126.27kB)
+[2021-04-11 16:11:50] Fetching org.eclipse.oomph.p2.core_1.18.0.v20210330-1145.jar.pack.gz from http://download.eclipse.org/oomph/drops/milestone/S20210411-042319-1.21.0-M1/plugins/
+[2021-04-11 16:11:50] Fetching org.eclipse.oomph.setup.core_1.20.0.v20210411-0650.jar.pack.gz from http://download.eclipse.org/oomph/drops/milestone/S20210411-042319-1.21.0-M1/plugins/
+[2021-04-11 16:11:50] Mirrored 7 artifacts from http://download.eclipse.org/oomph/drops/milestone/S20210411-042319-1.21.0-M1/ at 45kb/s
+[2021-04-11 16:11:50] Collected 7 artifacts for http://download.eclipse.org/oomph/updates/milestone/latest in 2.31s
+[2021-04-11 16:11:50] Collecting 5 artifacts from http://download.eclipse.org/technology/epp/packages/2021-03/202103121200
+[2021-04-11 16:11:50] Downloading org.eclipse.epp.package.common.feature
+[2021-04-11 16:11:50] Downloading org.eclipse.epp.package.common
+[2021-04-11 16:11:50] Downloading org.eclipse.epp.package.java
+[2021-04-11 16:11:50] Downloading epp.package.java.executable.gtk.linux.x86_64
+[2021-04-11 16:11:50] Downloading org.eclipse.epp.package.java.feature
+[2021-04-11 16:11:51] Fetching org.eclipse.epp.package.common.feature_4.19.0.20210311-1200.jar from http://download.eclipse.org/technology/epp/packages/2021-03/202103121200/features/ (19.55kB)
+[2021-04-11 16:11:51] Fetching org.eclipse.epp.package.java.feature_4.19.0.20210311-1200.jar from http://download.eclipse.org/technology/epp/packages/2021-03/202103121200/features/ (19.66kB)
+[2021-04-11 16:11:51] Fetching org.eclipse.epp.package.common_4.19.0.20210311-1200.jar.pack.gz from http://download.eclipse.org/technology/epp/packages/2021-03/202103121200/plugins/ (148.08kB)
+[2021-04-11 16:11:51] Fetching org.eclipse.epp.package.java_4.19.0.20210311-1200.jar.pack.gz from http://download.eclipse.org/technology/epp/packages/2021-03/202103121200/plugins/ (118.59kB)
+[2021-04-11 16:11:51] Fetching epp.package.java.executable.gtk.linux.x86_64_4.19.0.20210311-1200 from http://download.eclipse.org/technology/epp/packages/2021-03/202103121200/binary/ (24.99kB)
+[2021-04-11 16:11:52] Fetching org.eclipse.epp.package.common_4.19.0.20210311-1200.jar.pack.gz from http://download.eclipse.org/technology/epp/packages/2021-03/202103121200/plugins/
+[2021-04-11 16:11:52] Fetching org.eclipse.epp.package.java_4.19.0.20210311-1200.jar.pack.gz from http://download.eclipse.org/technology/epp/packages/2021-03/202103121200/plugins/
+[2021-04-11 16:11:54] Mirrored 5 artifacts from http://download.eclipse.org/technology/epp/packages/2021-03/202103121200/ at 50kb/s
+[2021-04-11 16:11:54] Collected 5 artifacts for http://download.eclipse.org/technology/epp/packages/2021-03/202103121200 in 3.506s
+[2021-04-11 16:11:54] Collecting 216 artifacts from http://download.eclipse.org/releases/2021-03/202103171000
+[2021-04-11 16:12:23] Downloading org.eclipse.platform_root
+[2021-04-11 16:12:23] Downloading org.eclipse.e4.ui.ide
+[2021-04-11 16:12:23] Downloading org.eclipse.m2e.sourcelookup
+[2021-04-11 16:12:23] Downloading org.eclipse.m2e.importer
+[2021-04-11 16:12:23] Downloading org.eclipse.m2e.lifecyclemapping.defaults
+[2021-04-11 16:12:23] Downloading org.eclipse.m2e.binaryproject.ui
+[2021-04-11 16:12:23] Downloading org.eclipse.rcp
+[2021-04-11 16:12:23] Downloading org.eclipse.equinox.security.linux.x86_64
+[2021-04-11 16:12:23] Downloading org.eclipse.e4.ui.swt.gtk
+[2021-04-11 16:12:23] Downloading org.eclipse.egit
+[2021-04-11 16:12:47] Fetching org.eclipse.platform_root_4.19.0.v20210303-1800 from https://ftp.jaist.ac.jp/pub/eclipse/releases/2021-03/202103171000/binary/ (196B)
+[2021-04-11 16:12:48] Fetching org.eclipse.m2e.lifecyclemapping.defaults_1.17.1.20210115-1536.jar.pack.gz from https://ftp.yz.yamagata-u.ac.jp/pub/eclipse/releases/2021-03/202103171000/plugins/ (8.31kB)
+[2021-04-11 16:12:48] Fetching org.eclipse.m2e.sourcelookup_1.17.1.20210115-1536.jar.pack.gz from https://ftp.yz.yamagata-u.ac.jp/pub/eclipse//releases/2021-03/202103171000/plugins/ (11.34kB)
+[2021-04-11 16:12:48] Fetching org.eclipse.m2e.importer_1.17.1.20210115-1536.jar.pack.gz from https://mirrors.ustc.edu.cn/eclipse/releases/2021-03/202103171000/plugins/ (10.56kB)
+[2021-04-11 16:12:49] Fetching org.eclipse.platform_root_4.19.0.v20210303-1800 from https://ftp.jaist.ac.jp/pub/eclipse/releases/2021-03/202103171000/binary/ (196B)
+[2021-04-11 16:12:49] Fetching org.eclipse.m2e.sourcelookup_1.17.1.20210115-1536.jar.pack.gz from https://ftp.yz.yamagata-u.ac.jp/pub/eclipse//releases/2021-03/202103171000/plugins/ (11.34kB)
+[2021-04-11 16:12:49] Fetching org.eclipse.m2e.importer_1.17.1.20210115-1536.jar.pack.gz from https://mirrors.ustc.edu.cn/eclipse/releases/2021-03/202103171000/plugins/ (10.56kB)
+[2021-04-11 16:12:49] Fetching org.eclipse.m2e.lifecyclemapping.defaults_1.17.1.20210115-1536.jar.pack.gz from https://ftp.yz.yamagata-u.ac.jp/pub/eclipse/releases/2021-03/202103171000/plugins/ (8.31kB)
+[2021-04-11 16:12:50] Fetching org.eclipse.equinox.security.linux.x86_64_1.1.500.v20210125-1508.jar.pack.gz from https://mirrors.tuna.tsinghua.edu.cn/eclipse/releases/2021-03/202103171000/plugins/ (7.08kB)
+[2021-04-11 16:12:52] Downloading org.eclipse.m2e.binaryproject
