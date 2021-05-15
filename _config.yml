@@ -1,2 +1,2 @@
 theme: jekyll-theme-hacker
-exclude: ['cTrain/notes/offline', 'cTrain/servers', 'ProceSSingSketchBook/examples' , 'ProceSSingSketchBook/libraries', 'ProceSSingSketchBook/templates','ProceSSingSketchBook/modes']
+exclude: ['eclipse/java','eclipse/.metadata','eclipse/JavaWrkSpc','rubydump/.metadata','Rstudio/x86_64-pc-linux-gnu-library','cTrain/notes/offline', 'cTrain/servers', 'ProceSSingSketchBook/examples' , 'ProceSSingSketchBook/libraries', 'ProceSSingSketchBook/templates','ProceSSingSketchBook/modes']
