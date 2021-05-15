@@ -1,0 +1,41 @@
+ cat * > merged-file
+
+
+ or
+
+ find /path/to/directory/ -name *.csv -exec cat {} + > merged.file
+
+
+ 3
+
+Try this
+
+curdir=$(pwd)
+for folder in /path/to/Files/*; do
+  [ -d "$folder" ] && cd "$folder" && ./conv.sh
+done
+cd $curdir
+
+Or assuming you are at /path/to/Files/, this also works
+
+for f in *; do [ -d "$f" ] && cd "$f" && ./conv.sh; done; cd ..
+
+
+//
+
+
+convert *.jpg -auto-orient pictures.pdf
+
+//
+
+img2pdf $(find . -iname '*.jpg' | sort -V) -o ./document.pdf
+
+
+.//
+This to make a pdf file out of every jpg image without loss of either resolution or quality:
+
+ls -1 ./*jpg | xargs -L1 -I {} img2pdf {} -o {}.pdf
+
+2) This to concatenate the pdfpages into one:
+
+pdftk *.pdf cat output combined.pdf

@@ -1,0 +1,141 @@
+wwrite notes in Jade using // or brainfuck with #
+#$\sum_{i=0}^n i^2 = \frac{(n^2+n)(2n+1)}{6}$
+
+#$\alpha\Omega\omega$   $\epsilon ,\varepsilon, \phi, \varphi , \ell$
+
+#$ x_i^2 10^{10}$
+
+#$\{ and \}$
+
+#$\frac{a+1}{b+1}$
+
+#$(2+3)[4+4]$
+
+
+#$\left(\frac{\sqrt x}{y^3}\right)$
+
+#$\vert x\vert$    $\Vert x\Vert$
+
+#$\langle and \rangle $
+
+#$\lceil and \rceil$ $\lfloor and \rfloor$
+
+#$\left( x \middle({\frac{billieboo}{boo}} \middle)y  \right) $ 
+
+#$ \left.\frac12\right\rbrace$
+
+#$\Biggl(\biggl(\Bigl(\bigl((x)\bigr)\Bigr)\biggr)\Biggr)$
+
+#$ \sum and \int$  $\sum_1^n$
+
+#$ \prod, \int, \bigcup, \bigcap, \iint, \iiint, \idotsint$
+
+#$\Bbb Z$
+
+#$\mathbf B , \mathit I , \pmb S , \mathtt T , \mathrm R , \mathcal C , \mathscr F \mathfrak G$
+
+#$\sqrt{x^3}$
+
+#$ {...}^{1/2}$
+
+#$ \lim, \sin \lim_{x\to 0}$
+
+#$\operatorname{foo}(x)$
+
+#$\lt, \gt ,\le, \leq ,\leqq ,\leqslant ,\ge ,\geq, \geqq ,\geqslant, \neq $
+
+. You can use \not to put a slash through almost anything: \not\lt ≮
+but it often looks bad.
+#$\times \div \pm \mp $
+
+#$x\cdot y$
+
+
+#$\cup \cap \setminus \subset \subseteq \subsetneq \supset \in \notin \emptyset \varnothing$
+
+#$\binom{n+1}{2k}$
+
+#$\to , \rightarrow , \leftarrow , \Rightarrow , \Leftarrow , \mapsto $
+
+#$\land , \lor , \lnot , \forall , \exists,  \top , \bot , \vdash , \vDash $
+
+#$ \star \ast \oplus \circ \bullet $
+
+#$\approx , \sim , \simeq , \cong , \equiv , \prec , \lhd , \therefore $
+
+#$\infty \aleph_0 $
+
+#$\nabla \partial$
+
+#$\Im \Re $
+
+#$ a\equiv b\pmod n$
+
+#$a,b,c,d,\ldots, z 1+2+3+ \cdots +n$
+
+#$\hat x, \widehat {xy}$
+
+#$\bar x  , \overline {xyz}  , \vec x  , \overrightarrow {xy} , \overleftrightarrow {xy} $
+
+#$\dot x \ and \  \ddot x$ 
+
+#space is using \  , newline using \\
+
+#$ \$ $
+
+#$\backslash$
+
+#$\_$
+
+#$_5C_3$
+
+# $$    \begin{matrix} 1 & x & x^2 \\ 1 & y & y^2 \\ 1 & z & z^2 \\ \end{matrix}$$  
+
+#$$\begin{pmatrix} 1 & x \\  1 & y\\ \end{pmatrix}$$  permutation
+
+#$$\begin{bmatrix} 1 & x \\  1 & y\\ \end{bmatrix}$$  box
+
+#$$\begin{vmatrix} 1 & x \\  1 & y\\ \end{vmatrix}$$  vector, for dbl use Vmatrix
+
+#$ \cdots , \ddots , \vdots$
+
+#$$ \left[ \begin{array}{cc|c} 1&2&3\\ 4&5&6 \end{array} \right] $$
+
+#$$ \begin{pmatrix} a & b\\ c & d\\ \hline 1 & 0\\ 0 & 1 \end{pmatrix} $$
+
+# $\bigl( \begin{smallmatrix} a & b \\ c & d \end{smallmatrix} \bigr)$
+
+#$$  f(n) = \begin{cases} n/2,  & \text{if $n$ is even} \\ 3n+1, & \text{if $n$ is odd} \end{cases} $$
+
+#$$\left. \begin{array}{l} \text{if $n$ is even:}&n/2\\ \text{if $n$ is odd:}&3n+1 \end{array}\ \right\} =f(n)$$
+
+#$$ \begin{array}{c|lcr} n & \text{Left} & \text{Center} & \text{Right} \\ \hline 1 & 0.24 & 1 & 125 \\ 2 & -1 & 189 & -8 \\ 3 & -20 & 2000 & 1+10i \end{array} $$
+
+#$\cancel{x} , \cancelto{0}{x}$
+
+#$\fbox A$
+
+#$\underbrace{a\cdot a\cdots a}_{b\text{ times}}$
+
+#$X\overset{a}{\underset{b}{\to}}Y$
+
+#$\overset{ \huge\frown}{PQ}$
+
+#$ \  \begin{CD} A @>{\text{very long label}}>> B\\ @V b V V = @VV c V\\ C @>>d> D \end{CD} $
+
+#$a1+ \cfrac{12345}{ a2 +  \cfrac{1234444444}{122222222}}$
+
+
+
+#$ a+y^3 \stackrel{\eqref{1}}= x^2 \tag{0} $
+
+#$a := x^2-y^3 \tag{1}$
+
+
+
+
+
+
+
+
+
