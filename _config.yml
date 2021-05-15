@@ -1,2 +1,2 @@
 theme: jekyll-theme-hacker
-exclude: ['cTrain/notes/offline', 'servers']
+exclude: ['cTrain/notes/offline', 'servers', 'ProceSSingSketchBook/examples' ]
