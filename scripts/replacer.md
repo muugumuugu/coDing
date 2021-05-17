@@ -12,7 +12,7 @@
   ```
 - 2
   ```html
-  <link rel="stylesheet" href="/styles/home.css">
+  <link rel="stylesheet" href="/styles/home.css"><link rel="stylesheet" href="https://gitcdn.xyz/repo/mogidot/c5bfccdd8f0b4d3316b803b49da5941e/raw/40afd74f51cbf475d9ab3eee356f35b78188dbd5/hackerstyle.css">
   ```
 
 ---
