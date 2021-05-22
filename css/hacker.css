@@ -330,6 +330,13 @@ code highlight
     transform: translateX(-50%) translateY(-50%);
 }
 
+/*flexi*/
+li.flex5 {  width: 28%;  padding-right:2.5%}
+		ul.flexnone {  display: flex;  flex-wrap: wrap;  margin: 15; padding: 25;  list-style-type:none;}
+
+ul.flexbullet{  display: flex;  flex-wrap: wrap;  margin: 15; padding: 25; }
+div.flex{display: flex;  flex-wrap: wrap;}
+
 /*flipbutton*/
 .centered {
   width: 100%;
