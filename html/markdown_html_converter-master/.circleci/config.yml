@@ -1,0 +1,98 @@
+version: 2.1
+commands:
+  early_return_for_forked_pull_requests:
+    description: >-
+      If this build is from a fork, stop executing the current job and return success.
+      This is useful to avoid steps that will fail due to missing credentials.
+    steps:
+      - run:
+          name: Early return if this build is from a forked PR
+          command: |
+            if [ -n "$CIRCLE_PR_NUMBER" ]; then
+              echo "Nothing to do for forked PRs, so marking this step successful"
+              circleci step halt
+            fi
+jobs:
+  build:
+    docker:
+      - image: circleci/python:3.7
+    steps:
+      - checkout
+      - restore_cache:
+          key: v1-dependency-cache-{{ checksum "setup.py" }}
+
+      - run:
+          name: install python dependencies
+          command: |
+            virtualenv venv
+            . venv/bin/activate
+            pip install -e .[dev]
+      - save_cache:
+          key: v1-dependency-cache-{{ checksum "setup.py" }}
+          paths:
+            - "venv"
+      - run:
+          name: run black (code format check)
+          command: |
+            . venv/bin/activate
+            black setup.py
+            black --check setup.py src/
+      - run:
+          name: run tests and format check
+          command: |
+            . venv/bin/activate
+            pip install .
+            tests/test.sh
+  deploy:
+    docker:
+      - image: circleci/python:3.7
+    steps:
+      - early_return_for_forked_pull_requests
+      - checkout
+
+      - restore_cache:
+          key: v1-dependency-cache-{{ checksum "setup.py" }}
+
+      - run:
+          name: install python dependencies
+          command: |
+            virtualenv venv
+            . venv/bin/activate
+            pip install -e .[dev]
+      - save_cache:
+          key: v1-dependency-cache-{{ checksum "setup.py" }}
+          paths:
+            - "venv"
+
+      - run:
+          name: init .pypirc
+          command: |
+            echo -e "[pypi]" >> ~/.pypirc
+            echo -e "username = __token__" >> ~/.pypirc
+            echo -e "password = $PYPI_PASSWORD" >> ~/.pypirc
+      - run:
+          name: create packages
+          command: |
+            python setup.py sdist bdist_wheel
+      - run:
+          name: upload to pypi
+          command: |
+            git config --global user.email "aumitleon1@gmail.com"
+            git config --global user.name "aumitleon"
+            . venv/bin/activate
+            semantic-release publish
+workflows:
+  version: 2
+  build_and_deploy:
+    jobs:
+      - build:
+          filters:
+            tags:
+              only: /.*/
+      - deploy:
+          requires:
+            - build
+          filters:
+            branches:
+              only: 
+                - master
