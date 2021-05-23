@@ -12,7 +12,7 @@
   ```
 - 2
   ```html
-  <link rel="stylesheet" href="/styles/home.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/muugumuugu/coDing/css/hacker.min.css">
+  <link rel="stylesheet" href="/styles/home.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/muugumuugu/coDing@latest/css/hacker.min.css">
   ```
 
 ---
