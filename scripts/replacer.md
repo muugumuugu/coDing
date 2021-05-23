@@ -30,9 +30,9 @@
   <li><a href="\1">\2</a> </li>
   ```
 - 3
-    ```html
-    <div><a href="\1">\2</a><span class="divider">    |  </span></div>
-    ```
+  ```html
+  <div><a href="\1">\2</a><span class="divider">    |  </span></div>
+  ```
 
 -  4
   ```html

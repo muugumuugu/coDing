@@ -63,7 +63,7 @@
     \[...\]
     ```
 
-  - in-line mathematics delimiter
+- in-line mathematics delimiter
     ```latex
     \(...\)
     ```
