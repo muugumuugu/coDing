@@ -41,7 +41,7 @@
 .highlight .ss { color: #90a959; }
 
 
-body { margin: 2px; padding: 25px; background: #151515 url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAhQAAAIUAQMAAAB4tCemAAAABlBMVEUaGhobGxsh/u4NAAAEd0lEQVR4Xu3cPbKrMAwFYFOlZQdZqlkqS6BMFb2gHx/pZl6pVMcFk9yLvzQejZBlxjEeInKOTUTkPT5jk+N5f3qKyHH/YZ73df1N6tdjty9T4v7xfI0xlTwfN/T6kOPxvqH4JK9w7R/tBg0axzDwY+jKtUlqqHnPVBfk82Uz4pZ2gwYNDcd2yWtY1lqP9b8iNpa+jmNvN2jQQHDVMRUSRGIl7X4lNViLHBYt1P2hQYPGPBF/hxm+zG3S0k6f7j94dRs0aHjURQKBRy5RDctclHToSFnEbwwaNKBh6SOByBFbxMODrOrB3m7QoDHPXAaoaYOF43sEme6TFbG7DRo0Im14eLlAMNMSiLF5McGXvqCi4GNvN2jQkNMMLO53CtEDM59SAjOyjX6DBg08fEUNVqdvehdwn+5a/dV2gwYN1FalQD4TLgKzz0Si223QoJEnoVvgVYsJ9YFMvFwQta12gwaNqLeKFO0NA8WsPFNkRed+gwaNv3tV9zBfAdUkLtg6QBq89xs0aHj8Xb2B/mgWuMh/uloEOW63QYMG2v0QhGt6ixJCWfWrcLC3GzRoRO66rf0rNAiWZKHUwPw+g9oNGjRy7oowm7MDH+bmYB29gf0GDRoehGu5ChsGgk+3mxZ8bIBd7QYNGpm2LoDaIKjjURNdUWMF63aDBg0fcf+UeCqb0LD+PSbHD+pPX90GDRr3pDDQw6ozfVJEYnyNOO1z93aDBo3DpteGKnEI21noIbQLxjy7DRo0POBiEg6u4nQKsgM0ueAIYbtBg4ZWVJHFImPwgcoXKgp+X+x9Xd0GDRr5bD8gb2iJPiyD0BZobkCj3aBBA41/er9/ten6CYXYWoONX5Cr26BBA09bKByogS7Bep4KRS986jdo0EANVjUb2RhY4ch7BSlHv0GDBnr9UeVatw7UYG0mjgiEceztBg0ac61mpLz5kitfvv7tb7i0GzRoIG3QT/kxLCJxXeFIecNtN2jQQEegfB2wds0GcgdUGfSytxs0aES3Ss1xzcWhlnpspbZjj26DBg0deHmar+G8f7DV/djagnXj/QYNGticqlUuERylwj4rBipfV7tBg4YI3kyVX1ihBqqsquG38rPY3m7QoHE803OXhBaTUAiob6vKsbvfoEFjnisTgF/aApUsK9xGJBVXu0GDBo78QZt+wWsp10X/EYYovrcbNGjgZJWokY+olBLWKC0DU5BKtBs0aIipHoRrzUpd/Dd+ywz0sLYbNGhMVLRKlUu1wNGEjdenrgRi7zZo0DBLkCzEKymyJjGQ/CIh7jdo0KgvmazlAmzAWohW7V03wH5k0KDhRQKlaysAOlgQhPHa6ojY/QYNGmgFOGKFq5+TBQRmhb5OCnYbNGikcCw6QquTPLPFOQGcD+w3aNAQVFTxFnV0WvlXJBXhYteg26BBo/Tz53rrKrXipf7LrYWDebUbNGgMHKZOrf9IFrBDYLhezMU5rV6DBo3s59x1tbSqq1rKhSXHiKvdoEHj601/5fkMuwZ1wyBwjdP/ACfy2vdF7+1uAAAAAElFTkSuQmCC") 0 0; color: #eaeaea; font-size: 16px; line-height: 1.5; font-family: Monaco, "Bitstream Vera Sans Mono", "Lucida Console", Terminal, monospace; }
+body { margin: 2px; padding: 25px; background: #151515 url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAhQAAAIUAQMAAAB4tCemAAAABlBMVEUaGhobGxsh/u4NAAAEd0lEQVR4Xu3cPbKrMAwFYFOlZQdZqlkqS6BMFb2gHx/pZl6pVMcFk9yLvzQejZBlxjEeInKOTUTkPT5jk+N5f3qKyHH/YZ73df1N6tdjty9T4v7xfI0xlTwfN/T6kOPxvqH4JK9w7R/tBg0axzDwY+jKtUlqqHnPVBfk82Uz4pZ2gwYNDcd2yWtY1lqP9b8iNpa+jmNvN2jQQHDVMRUSRGIl7X4lNViLHBYt1P2hQYPGPBF/hxm+zG3S0k6f7j94dRs0aHjURQKBRy5RDctclHToSFnEbwwaNKBh6SOByBFbxMODrOrB3m7QoDHPXAaoaYOF43sEme6TFbG7DRo0Im14eLlAMNMSiLF5McGXvqCi4GNvN2jQkNMMLO53CtEDM59SAjOyjX6DBg08fEUNVqdvehdwn+5a/dV2gwYN1FalQD4TLgKzz0Si223QoJEnoVvgVYsJ9YFMvFwQta12gwaNqLeKFO0NA8WsPFNkRed+gwaNv3tV9zBfAdUkLtg6QBq89xs0aHj8Xb2B/mgWuMh/uloEOW63QYMG2v0QhGt6ixJCWfWrcLC3GzRoRO66rf0rNAiWZKHUwPw+g9oNGjRy7oowm7MDH+bmYB29gf0GDRoehGu5ChsGgk+3mxZ8bIBd7QYNGpm2LoDaIKjjURNdUWMF63aDBg0fcf+UeCqb0LD+PSbHD+pPX90GDRr3pDDQw6ozfVJEYnyNOO1z93aDBo3DpteGKnEI21noIbQLxjy7DRo0POBiEg6u4nQKsgM0ueAIYbtBg4ZWVJHFImPwgcoXKgp+X+x9Xd0GDRr5bD8gb2iJPiyD0BZobkCj3aBBA41/er9/ten6CYXYWoONX5Cr26BBA09bKByogS7Bep4KRS986jdo0EANVjUb2RhY4ch7BSlHv0GDBnr9UeVatw7UYG0mjgiEceztBg0ac61mpLz5kitfvv7tb7i0GzRoIG3QT/kxLCJxXeFIecNtN2jQQEegfB2wds0GcgdUGfSytxs0aES3Ss1xzcWhlnpspbZjj26DBg0deHmar+G8f7DV/djagnXj/QYNGticqlUuERylwj4rBipfV7tBg4YI3kyVX1ihBqqsquG38rPY3m7QoHE803OXhBaTUAiob6vKsbvfoEFjnisTgF/aApUsK9xGJBVXu0GDBo78QZt+wWsp10X/EYYovrcbNGjgZJWokY+olBLWKC0DU5BKtBs0aIipHoRrzUpd/Dd+ywz0sLYbNGhMVLRKlUu1wNGEjdenrgRi7zZo0DBLkCzEKymyJjGQ/CIh7jdo0KgvmazlAmzAWohW7V03wH5k0KDhRQKlaysAOlgQhPHa6ojY/QYNGmgFOGKFq5+TBQRmhb5OCnYbNGikcCw6QquTPLPFOQGcD+w3aNAQVFTxFnV0WvlXJBXhYteg26BBo/Tz53rrKrXipf7LrYWDebUbNGgMHKZOrf9IFrBDYLhezMU5rV6DBo3s59x1tbSqq1rKhSXHiKvdoEHj601/5fkMuwZ1wyBwjdP/ACfy2vdF7+1uAAAAAElFTkSuQmCC") 0 0; color: #eaeaea; font-size: 16px; line-height: 1.5; font-family: courier, Terminal, monospace; }
 
 /* General & 'Reset' Stuff */
 .container { width: 90%; max-width: 1000px; margin: 0 auto; }
@@ -59,7 +59,7 @@ header { background: rgba(0, 0, 0, 0.1); border-bottom: 1px dashed #b5e853; padd
 
 .header-link { display: inline; }
 
-header h1 { font-size: 24px; line-height: 1.5; margin: 0; text-align: center; font-weight: bold; font-family: Monaco, "Bitstream Vera Sans Mono", "Lucida Console", Terminal, monospace; color: #b5e853; text-shadow: 0 1px 1px rgba(0, 0, 0, 0.1), 0 0 5px rgba(181, 232, 83, 0.1), 0 0 10px rgba(181, 232, 83, 0.1); letter-spacing: -1px; -webkit-font-smoothing: antialiased; }
+header h1 { font-size: 24px; line-height: 1.5; margin: 0; text-align: center; font-weight: bold; font-family: courier, Terminal, monospace; color: #b5e853; text-shadow: 0 1px 1px rgba(0, 0, 0, 0.1), 0 0 5px rgba(181, 232, 83, 0.1), 0 0 10px rgba(181, 232, 83, 0.1); letter-spacing: -1px; -webkit-font-smoothing: antialiased; }
 
 header h2 { font-size: 18px; font-weight: 300; color: #666; }
 
@@ -69,7 +69,7 @@ header h2 { font-size: 18px; font-weight: 300; color: #666; }
 
 section img { max-width: 100%; }
 
-h1, h2, h3, h4, h5, h6 { font-weight: normal; font-family: Monaco, "Bitstream Vera Sans Mono", "Lucida Console", Terminal, monospace; color: #b5e853; letter-spacing: -0.03em; text-shadow: 0 1px 1px rgba(0, 0, 0, 0.1), 0 0 5px rgba(181, 232, 83, 0.1), 0 0 10px rgba(181, 232, 83, 0.1); }
+h1, h2, h3, h4, h5, h6 { font-weight: normal; font-family: courier, Terminal, monospace; color: #b5e853; letter-spacing: -0.03em; text-shadow: 0 1px 1px rgba(0, 0, 0, 0.1), 0 0 5px rgba(181, 232, 83, 0.1), 0 0 10px rgba(181, 232, 83, 0.1); }
 
 #main_content h1 { font-size: 30px; }
 
@@ -333,9 +333,38 @@ code highlight
 /*flexi*/
 li.flex5 {  width: 28%;  padding-right:2.5%}
 		ul.flexnone {  display: flex;  flex-wrap: wrap;  margin: 15; padding: 25;  list-style-type:none;}
+		ul.flexnone li{content: "";list-style-image:none;
+  margin: 0 1em;}
 
 ul.flexbullet{  display: flex;  flex-wrap: wrap;  margin: 15; padding: 25; }
 div.flex{display: flex;  flex-wrap: wrap;}
+/*shelf floral*/
+span.qtlink a:link {
+			color: #80ff00;
+			background-color: transparent;
+			text-decoration: none;
+			}
+span.qtlink a:visited {
+			color: pink;
+			background-color: transparent;
+			text-decoration: none;
+			}
+span.qtlink	a:hover {
+			color: #80bfff;
+			background-color: transparent;
+			text-decoration: underline;
+			}
+span.qtlink		a:active {
+			color: yellow;
+			background-color: transparent;
+			text-decoration: underline;
+			}
+li.point{list-style-image:none;}
+li.point:before {
+  content: "\261E";
+  margin: 0 1em;
+}
+span.divider{ color: blue;}
 
 /*flipbutton*/
 .centered {
