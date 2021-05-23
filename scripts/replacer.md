@@ -33,7 +33,7 @@
   ```html
   <div><a href="\1">\2</a><span class="divider">    |  </span></div>
   ```
--  4
+- 4
   ```html
   <div><audio src="\1" alt="\2" width="100" height="50" controls><br><a href="\1">\2</a></div>&nbsp;
   ```
