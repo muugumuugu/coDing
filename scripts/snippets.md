@@ -1,9 +1,11 @@
 <!-- Required extensions: pymdownx.betterem, pymdownx.tilde, pymdownx.emoji, pymdownx.tasklist, pymdownx.superfences -->
+
 - home
   ```bat
   cd ~
   http-serve -p8081
   ```
+
 - notes
   ```bat
   cd ~
@@ -21,10 +23,11 @@
 * [blog](http://127.0.0.1:4000/)
 
 
-- for right aligning child divs of flexbox
+- for right aligning child divs of flexbox 
   ```css
   flex-grow: 1;
   ```
+
 - invert color
   ```css
   html {-filter: invert(100%)}
@@ -51,14 +54,17 @@
     ```html
     <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     ```
-  - displayed mathematics delimeter
+- displayed mathematics delimeter
     ```latex
     $$...$$
     ```
+
     ```latex
     \[...\]
     ```
+
   - in-line mathematics delimiter
     ```latex
     \(...\)
     ```
+
