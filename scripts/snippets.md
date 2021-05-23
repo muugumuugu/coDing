@@ -23,7 +23,7 @@
 * [blog](http://127.0.0.1:4000/)
 
 
-- for right aligning child divs of flexbox 
+- for right aligning child divs of flexbox
   ```css
   flex-grow: 1;
   ```
@@ -49,6 +49,10 @@
   ```shell
   ls -1prt | grep -v "/$" | cat -n | while read n f; do mv -n "${f}" "$(printf "%04d" $n).${f#*.}";
   ```
+- backup installation list
+  ```shell
+  dpkg --get-selections > mylists.list
+  ```
 - mathJax
   - tag
     ```html
@@ -67,4 +71,3 @@
     ```latex
     \(...\)
     ```
-
