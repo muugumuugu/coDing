@@ -340,7 +340,7 @@ ul.flexbullet{  display: flex;  flex-wrap: wrap;  margin: 15; padding: 25; }
 div.flex{display: flex;  flex-wrap: wrap;}
 /*shelf floral*/
 span.qtlink a:link {
-			color: #80ff00;
+			color:#80bfff;
 			background-color: transparent;
 			text-decoration: none;
 			}
@@ -350,12 +350,12 @@ span.qtlink a:visited {
 			text-decoration: none;
 			}
 span.qtlink	a:hover {
-			color: #80bfff;
+			color:yellow;
 			background-color: transparent;
 			text-decoration: underline;
 			}
 span.qtlink		a:active {
-			color: yellow;
+			color:#80ff00;
 			background-color: transparent;
 			text-decoration: underline;
 			}

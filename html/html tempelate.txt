@@ -14,20 +14,13 @@
 		<!--scripts-->
 			<script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.2.0/p5.js"></script>
 			<script src=""></script>
-			<script type="text/javascript" src="/styles/syntaxhighlighter.js" ></script>
+			<script src="/styles/syntaxhighlighter.js"></script>
+			<script src="https://cdn.jsdelivr.net/gh/muugumuugu/coDing@latest/js/syntaxhighlighter.js"></script>
 			<script>hljs.highlightAll();</script>
 		<!--styles-->
 			<link rel="stylesheet" href="/styles/home.css">
-			<link rel="stylesheet" href="https://gitcdn.xyz/repo/mogidot/c5bfccdd8f0b4d3316b803b49da5941e/raw/40afd74f51cbf475d9ab3eee356f35b78188dbd5/hackerstyle.css">
+			<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/muugumuugu/coDing@latest/css/hacker.css">
 			<style type="text/css" id="invertRunning">html {-filter: invert(100%)}</style>
-			<style>
-				span.divider{color: blue;}
-				a:link {color: green;  background-color: transparent;  text-decoration: none;}
-				a:visited {color: pink;  background-color: transparent;  text-decoration: none;}
-				a:hover {color: red;  background-color: transparent;  text-decoration: underline;}
-				a:active {color: yellow;  background-color: transparent;  text-decoration: underline;}
-				body{background-color:black;  color:white;}
-			</style>
 
 		<!--title-->
 		<title></title>
