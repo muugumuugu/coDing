@@ -32,6 +32,18 @@
   ```css
   html {-filter: invert(100%)}
   ```
+- download link
+  ```bash
+  wget link -O outputname
+  ```
+- download list of links
+  ```bash
+  wget -i input.txt
+  ```
+- trim a video of leng hh\:mm\:ss of inp video beginning @ time HH:MM:SS
+  ```bash
+  ffmpeg -i inp.mp4 -ss HH:MM:SS -t hh:mm:ss -async 1 cut.mp4
+  ```
 
 - for MD checklist
   ```html
@@ -42,15 +54,15 @@
   <!-- Required extensions: pymdownx.betterem, pymdownx.tilde, pymdownx.emoji, pymdownx.tasklist, pymdownx.superfences -->
   ```
 - rename files sequentially
-  ```shell
+  ```bash
   ls | cat -n | while read n f; do mv "$f" `printf "2019-12-02-23-19-%02d.jpg" $n`; done
   ```
 - rename and keep extension no recursion thry directories
-  ```shell
+  ```bash
   ls -1prt | grep -v "/$" | cat -n | while read n f; do mv -n "${f}" "$(printf "%04d" $n).${f#*.}";
   ```
 - backup installation list
-  ```shell
+  ```bash
   dpkg --get-selections > mylists.list
   ```
 - mathJax

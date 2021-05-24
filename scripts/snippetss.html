@@ -8,18 +8,19 @@
 		<title>snippets</title>
 	</head>
 <body>
-<!-- Required extensions: pymdownx.betterem, pymdownx.tilde, pymdownx.emoji, pymdownx.tasklist, pymdownx.superfences -->
 <ul>
-<li>home<pre><code class="lang-bat"><span class="hljs-attribute">cd</span> <span class="hljs-regexp">~
-http-serve</span> -p8081
+<li><p>home</p>
+<pre><code class="lang-bat">cd ~
+http-serve -p8081
 </code></pre>
 </li>
-<li>notes<pre><code class="lang-bat"><span class="hljs-comment">cd</span> <span class="hljs-comment">~</span>
-<span class="hljs-comment">jekyll</span> <span class="hljs-comment">serve</span> <span class="hljs-literal">-</span><span class="hljs-literal">-</span><span class="hljs-comment">watch</span> <span class="hljs-literal">-</span><span class="hljs-literal">-</span><span class="hljs-comment">port</span> <span class="hljs-comment">3125</span>
+<li><p>notes</p>
+<pre><code class="lang-bat">cd ~
+jekyll serve --watch --port 3125
 </code></pre>
 </li>
-<li>blog<pre><code class="lang-bat"><span class="hljs-comment">cd</span>
-<span class="hljs-comment">jekyll</span> <span class="hljs-comment">serve</span> <span class="hljs-literal">-</span><span class="hljs-literal">-</span><span class="hljs-comment">watch</span> <span class="hljs-literal">-</span><span class="hljs-literal">-</span><span class="hljs-comment">port</span> <span class="hljs-comment">4000</span>
+<li>blog<pre><code class="lang-bat">cd
+jekyll serve --watch --port 4000
 </code></pre>
 </li>
 </ul>
@@ -29,39 +30,55 @@ http-serve</span> -p8081
 <li><a href="http://127.0.0.1:4000/">blog</a></li>
 </ul>
 <ul>
-<li>for right aligning child divs of flexbox<pre><code class="lang-css"><span class="hljs-attribute">flex-grow</span>: <span class="hljs-number">1</span>;
+<li><p>for right aligning child divs of flexbox</p>
+<pre><code class="lang-css">flex-grow: 1;
 </code></pre>
 </li>
 <li><p>invert color</p>
-<pre><code class="lang-css"><span class="hljs-selector-tag">html</span> {<span class="hljs-attribute">-filter</span>: <span class="hljs-built_in">invert</span>(100%)}
+<pre><code class="lang-css">html {-filter: invert(100%)}
+</code></pre>
+</li>
+<li>download link<pre><code class="lang-bash">wget link -O outputname
+</code></pre>
+</li>
+<li>download list of links<pre><code class="lang-bash">wget -i input.txt
+</code></pre>
+</li>
+<li><p>trim a video of leng hh\:mm\:ss of inp video beginning @ time HH:MM:SS</p>
+<pre><code class="lang-bash">ffmpeg -i inp.mp4 -ss HH:MM:SS -t hh:mm:ss -async 1 cut.mp4
 </code></pre>
 </li>
 <li><p>for MD checklist</p>
-<pre><code class="lang-html"><span class="hljs-comment">&lt;!-- Required extensions: pymdownx.tasklist --&gt;</span>
+<pre><code class="lang-html">&lt;!-- Required extensions: pymdownx.tasklist --&gt;
 </code></pre>
 </li>
-<li>for GFM<pre><code class="lang-html"><span class="hljs-comment">&lt;!-- Required extensions: pymdownx.betterem, pymdownx.tilde, pymdownx.emoji, pymdownx.tasklist, pymdownx.superfences --&gt;</span>
+<li>for GFM<pre><code class="lang-html">&lt;!-- Required extensions: pymdownx.betterem, pymdownx.tilde, pymdownx.emoji, pymdownx.tasklist, pymdownx.superfences --&gt;
 </code></pre>
 </li>
-<li>rename files sequentially<pre><code class="lang-shell">ls | cat -n | <span class="hljs-keyword">while</span> <span class="hljs-built_in">read</span> n f; <span class="hljs-keyword">do</span> mv <span class="hljs-string">"<span class="hljs-variable">$f</span>"</span> `<span class="hljs-built_in">printf</span> <span class="hljs-string">"2019-12-02-23-19-%02d.jpg"</span> <span class="hljs-variable">$n</span>`; <span class="hljs-keyword">done</span>
+<li>rename files sequentially<pre><code class="lang-bash">ls | cat -n | while read n f; do mv "$f" `printf "2019-12-02-23-19-%02d.jpg" $n`; done
 </code></pre>
 </li>
-<li>backup installation customizations<pre><code class="lang-shell">dpkg <span class="hljs-keyword">--get-selections</span> &gt; <span class="hljs-string">mylists.list</span></code></pre>
+<li>rename and keep extension no recursion thry directories<pre><code class="lang-bash">ls -1prt | grep -v "/$" | cat -n | while read n f; do mv -n "${f}" "$(printf "%04d" $n).${f#*.}";
+</code></pre>
 </li>
-<li>rename and keep extension no recursion thry directories<pre><code class="lang-shell">ls -1prt | grep -v <span class="hljs-string">"/$"</span> | cat -n | <span class="hljs-keyword">while</span> <span class="hljs-built_in">read</span> n f; <span class="hljs-keyword">do</span> mv -n <span class="hljs-string">"<span class="hljs-variable">${f}</span>"</span> <span class="hljs-string">"<span class="hljs-variable">$(printf "%04d" $n)</span>.<span class="hljs-variable">${f#*.}</span>"</span>;
+<li>backup installation list<pre><code class="lang-bash">dpkg --get-selections &gt; mylists.list
 </code></pre>
 </li>
 <li>mathJax<ul>
-<li>tag<pre><code class="lang-html"><span class="hljs-tag">&lt;<span class="hljs-name">script</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"MathJax-script"</span> <span class="hljs-attr">async</span> <span class="hljs-attr">src</span>=<span class="hljs-string">"https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"</span>&gt;</span><span class="undefined"></span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span>
+<li>tag<pre><code class="lang-html">&lt;script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"&gt;&lt;/script&gt;
 </code></pre>
 </li>
-<li>displayed mathematics delimeter
-	<pre><code class="lang-latex">$$...$$</code></pre>
-	<pre><code class="lang-latex">\[..\]</code></pre>
-</li>
-<li>in-line mathematics delimiter
-<pre><code class="lang-latex">\(...\)</code></pre></li>
 </ul>
+</li>
+<li><p>displayed mathematics delimeter</p>
+<pre><code class="lang-latex">  $$...$$
+</code></pre>
+<pre><code class="lang-latex">  \[...\]
+</code></pre>
+</li>
+<li><p>in-line mathematics delimiter</p>
+<pre><code class="lang-latex">  \(...\)
+</code></pre>
 </li>
 </ul>
 </body>

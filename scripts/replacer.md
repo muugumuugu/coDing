@@ -54,5 +54,5 @@
 
 - 1
   ```html
-  <div style="  display: flex; flex-wrap: wrap;">
+  <div class="flex">
   ```

@@ -110,7 +110,7 @@ hr { height: 0; border: 0; border-bottom: 1px dashed #b5e853; color: #b5e853; }
 .btn .icon { display: inline-block; width: 16px; height: 16px; margin: 1px 8px 0 0; float: left; }
 
 /* Links a, a:hover, a:visited */
-a { color: #63c0f5; text-shadow: 0 0 5px rgba(104, 182, 255, 0.5); }
+a { font-weight:bold; color: #63c0f5; text-shadow: 0 0 5px rgba(104, 182, 255, 0.5); }
 
 a:active, a:focus { outline: 0; border: none; -moz-outline-style: none; }
 
