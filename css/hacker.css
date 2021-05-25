@@ -172,11 +172,13 @@ code highlight
 .hljs-subst,
 .hljs-function,
 .hljs-title,
-.hljs-params,
 .hljs-formula {
   color: #FF00EE;
 }
 
+.hljs-params{
+color:#22d8ff;
+}
 .hljs-comment,
 .hljs-quote {
   color: #57A64A;
