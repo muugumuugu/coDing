@@ -330,12 +330,20 @@ color:#fb5429;
 }
 
 /*flexi*/
+div.scroll{
+display:flex;
+overflow-y:scroll;
+overflow-x:scroll;
+height:25em;
+width:25em;}
 li.flex5 {  width: 28%;  padding-right:2.5%}
-		ul.flexnone {  display: flex;  flex-wrap: wrap;  margin: 15; padding: 25;  list-style-type:none;}
+		ul.flexnone {  display: flex;  flex-wrap: wrap; overflow-y:scroll;
+	overflow-x:scroll;  margin: 15; padding: 25;  list-style-type:none;}
 		ul.flexnone li{content: "";list-style-image:none;
   margin: 0 1em;}
 
-ul.flexbullet{  display: flex;  flex-wrap: wrap;  margin: 15; padding: 25; }
+ul.flexbullet{  display: flex;  flex-wrap: wrap; overflow-y:scroll;
+	overflow-x:scroll;  margin: 15; padding: 25; }
 div.flex{display: flex;  flex-wrap: wrap;}
 /*shelf floral*/
 span.qtlink a:link {
