@@ -16,12 +16,12 @@ http-serve<span class="hljs-params"> -p8081</span>
 </li>
 <li><a href="http://127.0.0.1:3125/">notes</a></li>
 <pre><code class="lang-bat">cd ~
-jekyll serve --watch --port 3125
+jekyll serve<span class="hljs-params"> --watch </span>--port 3125
 </code></pre>
 </li>
 <li><a href="http://127.0.0.1:4000/">blog</a></li>
 <pre><code class="lang-bat">cd
-jekyll serve --watch --port 4000
+jekyll serve<span class="hljs-params"> --watch </span>--port 4000
 </code></pre>
 </li>
 </ul>
@@ -45,12 +45,18 @@ jekyll serve --watch --port 4000
 <pre><code class="lang-bash">ffmpeg<span class="hljs-params"> -i</span> inp.mp4<span class="hljs-params"> -ss</span> HH:MM:SS<span class="hljs-params"> -t</span> hh:mm:ss<span class="hljs-params"> -async</span> 1 cut.mp4
 </code></pre>
 </li>
-<li><p>for MD checklist</p>
-<pre><code class="lang-html">&lt;!-- Required extensions: pymdownx.tasklist --&gt;
+<li><p>video to frames</p>
+<pre><code class="lang-bash">ffmpeg<span class="hljs-params"> -i</span> inp.mp4<span class="hljs-params"> -r </span> 1/1 $filename%03d.bmp
 </code></pre>
 </li>
-<li>for GFM<pre><code class="lang-html">&lt;!-- Required extensions: pymdownx.betterem, pymdownx.tilde, pymdownx.emoji, pymdownx.tasklist, pymdownx.superfences --&gt;
+<li><p>frames to gif</p>
+<pre><code class="lang-bash">gifsicle<span class="hljs-params"> --delay </span> 10<span class="hljs-params"> --loopcount </span> 0 *.gif &gt; out.gif
 </code></pre>
+</li>
+<li><p>for MD checklist</p>
+<pre><code class="lang-html">&lt;!-- Required extensions: pymdownx.tasklist<span class="hljs-params"> --&gt; </span></code></pre>
+</li>
+<li>for GFM<pre><code class="lang-html">&lt;!-- Required extensions: pymdownx.betterem, pymdownx.tilde, pymdownx.emoji, pymdownx.tasklist, pymdownx.superfences<span class="hljs-params"> --&gt; </span></code></pre>
 </li>
 <li>rename files sequentially<pre><code class="lang-bash">ls | cat<span class="hljs-params"> -n</span> | while read n f; do mv "$f" `printf "2019-12-02-23-19-%02d.jpg" $n`; done
 </code></pre>
@@ -58,7 +64,7 @@ jekyll serve --watch --port 4000
 <li>rename and keep extension no recursion thry directories<pre><code class="lang-bash">ls<span class="hljs-params"> -1prt</span> | grep<span class="hljs-params"> -v</span> "/$" | cat<span class="hljs-params"> -n</span> | while read n f; do mv<span class="hljs-params"> -n</span> "${f}" "$(printf "%04d" $n).${f#*.}";
 </code></pre>
 </li>
-<li>backup installation list<pre><code class="lang-bash">dpkg --get-selections &gt; mylists.list
+<li>backup installation list<pre><code class="lang-bash">dpkg<span class="hljs-params"> --get-selections </span>&gt; mylists.list
 </code></pre>
 </li>
 <li>mathJax<ul>

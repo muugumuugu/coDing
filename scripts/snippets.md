@@ -44,7 +44,15 @@
   ```bash
   ffmpeg -i inp.mp4 -ss HH:MM:SS -t hh:mm:ss -async 1 cut.mp4
   ```
-
+- video to frames
+  ```bash
+  ffmpeg -i inp.mp4 -r  1/1 $filename%03d.bmp
+  ```
+- frames to gif
+ ```bash
+  gifsicle --delay  10 --loopcount  0 *.gif  &gt; out.gif
+  ```
+</code></pre
 - for MD checklist
   ```html
   <!-- Required extensions: pymdownx.tasklist -->
