@@ -138,7 +138,6 @@ code highlight
   color: #DCDCDC;
 }
 
-.hljs-keyword,
 .hljs-literal,
 .hljs-symbol,
 .hljs-name {
@@ -149,10 +148,11 @@ code highlight
   text-decoration: underline;
 }
 
-.hljs-built_in,
+
 .hljs-type {
   color: #4EC9B0;
 }
+.hljs-built_in{color:#c381d9;}
 
 .hljs-number,
 .hljs-class {
@@ -177,7 +177,7 @@ code highlight
 }
 
 .hljs-params{
-color:#fbc239;
+color:#fb5429;
 }
 .hljs-comment,
 .hljs-quote {
