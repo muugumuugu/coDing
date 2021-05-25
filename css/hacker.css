@@ -174,7 +174,7 @@ code highlight
 .hljs-title,
 .hljs-params,
 .hljs-formula {
-  color: #DCDCDC;
+  color: #FF00EE;
 }
 
 .hljs-comment,
@@ -253,9 +253,7 @@ code highlight
   color: #eaeaea;
 }
 
-.hljs-params {
-  color: #da0000;
-}
+
 
 .hljs-literal,
 .hljs-number,

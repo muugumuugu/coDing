@@ -52,7 +52,6 @@
  ```bash
   gifsicle --delay  10 --loopcount  0 *.gif  &gt; out.gif
   ```
-</code></pre
 - for MD checklist
   ```html
   <!-- Required extensions: pymdownx.tasklist -->
