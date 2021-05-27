@@ -332,13 +332,17 @@ color:#fb5429;
 /*flexi*/
 div.scroll{
 display:flex;
-overflow-y:scroll;
-overflow-x:scroll;
+overflow:auto;
+ul.none{list-style-type:none; margin:5px;
+padding:0px;
+
+}
+ul.none li li{content: "";list-style-image:none;
+  margin: 0 1em;}
 height:25em;
 width:25em;}
 li.flex5 {  width: 28%;  padding-right:2.5%}
-		ul.flexnone {  display: flex;  flex-wrap: wrap; overflow-y:scroll;
-	overflow-x:scroll;  margin: 15; padding: 25;  list-style-type:none;}
+		ul.flexnone {  display: flex;  flex-wrap: wrap; overflow:scroll;  margin: 15; padding: 25;  list-style-type:none;}
 		ul.flexnone li{content: "";list-style-image:none;
   margin: 0 1em;}
 
