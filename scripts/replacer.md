@@ -14,7 +14,10 @@
   ```html
   <link rel="stylesheet" href="/styles/home.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/muugumuugu/coDing@latest/css/hacker.min.css">
   ```
-
+- 3
+  ```html
+  <style> div{margin:5px;}image{width:300px;height:200px;}</style>
+  ```
 ---
 
 ```html
@@ -23,7 +26,7 @@
 
 - 1
   ```html
-  <div><a href="\1"><img src="\1" alt="\2" width="300" height="300"/><br>\2</a></div>&nbsp;
+  <div><a href="\1"><img src="\1" alt="\2" /><br>\2</a></div>&nbsp;
   ```
 - 2
   ```html
