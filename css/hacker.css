@@ -1,3 +1,19 @@
+button.copy {
+  color: #adb5bd;
+  box-sizing: border-box;
+  transition: 0.2s ease-out;
+  cursor: pointer;
+  background: rgba(0, 0, 0, 0.15);
+  border: 1px solid rgba(0, 0, 0, 0);
+  padding: 5px 10px;
+  font-size: 0.8em;
+  position: relative !important;
+  top: 0;
+  left: 90%;
+  border-radius: 0 0.15rem;
+}
+
+
 .highlight { color: #d0d0d0; }
 
 .highlight table td { padding: 5px; }
@@ -335,6 +351,7 @@ display:flex;
 overflow:auto;
 ul.none{list-style-type:none; margin:5px;
 padding:0px;
+overflow:auto;
 
 }
 ul.none li li{content: "";list-style-image:none;
@@ -342,13 +359,12 @@ ul.none li li{content: "";list-style-image:none;
 height:25em;
 width:25em;}
 li.flex5 {  width: 28%;  padding-right:2.5%}
-		ul.flexnone {  display: flex;  flex-wrap: wrap; overflow:scroll;  margin: 15; padding: 25;  list-style-type:none;}
+		ul.flexnone {  display: flex;  flex-wrap: wrap; overflow:auto;  margin: 15; padding: 25;  list-style-type:none;}
 		ul.flexnone li{content: "";list-style-image:none;
   margin: 0 1em;}
 
-ul.flexbullet{  display: flex;  flex-wrap: wrap; overflow-y:scroll;
-	overflow-x:scroll;  margin: 15; padding: 25; }
-div.flex{display: flex;  flex-wrap: wrap;}
+ul.flexbullet{  display: flex;  flex-wrap: wrap; overflow:auto; margin: 15; padding: 25; }
+div.flex{display: flex; overflow:auto; flex-wrap: wrap;}
 /*shelf floral*/
 span.qtlink a:link {
 			color:#80bfff;

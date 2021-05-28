@@ -38,5 +38,7 @@
 		</details>
 		</main>
 		<footer></footer>
+		<!--scripts-->
+		<script src="copybutton.js"></script>
 	</body>
 </html>
