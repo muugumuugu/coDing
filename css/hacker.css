@@ -348,22 +348,23 @@ color:#fb5429;
 /*flexi*/
 div.scroll{
 display:flex;
-overflow:auto;
-ul.none{list-style-type:none; margin:5px;
+overflow:auto;}
+ul.nobullet{list-style-type:none; margin:5px;
 padding:0px;
 overflow:auto;
 
 }
-ul.none li li{content: "";list-style-image:none;
+ul.nobullet li{content: "";list-style-image:none;
   margin: 0 1em;}
-height:25em;
-width:25em;}
-li.flex5 {  width: 28%;  padding-right:2.5%}
+
+
+ul.flexnone li{  width: auto; margin-right:1%; }
 		ul.flexnone {  display: flex;  flex-wrap: wrap; overflow:auto;  margin: 15; padding: 25;  list-style-type:none;}
 		ul.flexnone li{content: "";list-style-image:none;
   margin: 0 1em;}
 
 ul.flexbullet{  display: flex;  flex-wrap: wrap; overflow:auto; margin: 15; padding: 25; }
+ul.flexbullet li{width:auto; margin-left:25px;}
 div.flex{display: flex; overflow:auto; flex-wrap: wrap;}
 /*shelf floral*/
 span.qtlink a:link {
