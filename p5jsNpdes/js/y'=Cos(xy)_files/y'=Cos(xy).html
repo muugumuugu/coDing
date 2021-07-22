@@ -1,0 +1,70 @@
+<html><head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8"><meta charset="utf-8">
+
+<title>y'=Cos(xy)</title>
+<style>body{background-color:black;margin0px;overflow:hidden;}canvas{//border:1px white solid;}</style>
+</head><body><font face="Helvetica" color="white">Use left mouse button </font>
+<select id="variation">
+	<option value="0" selected="selected">y'=cos(xy)</option>
+	<option value="1">y'=x+y</option>
+	<option value="2">y'=sin(x)cos(y)</option>
+	<option value="3">y'=cos(x)*y^2</option>
+	<option value="4">y'=log(x)log(y)</option>
+	<option value="5">y'=tan(x)cos(y)</option>
+	<option value="6">y'=4y(1-y)</option>
+	<option value="7">Pendulum</option>
+	<option value="8">Oval</option>
+	<option value="9">x''=-g*x'-sin(x)+F</option>
+	<option value="10">Lotka-Volterra</option>
+	<option value="11">Strudel</option>
+	<option value="12">Rauten</option>
+	<option value="13">Rauten2</option>
+	<option value="14">Regenbogen</option>
+	<option value="15">Duffing</option>
+	<option value="16">BSP Seite 11</option>
+	<option value="17">Sonstiges</option>
+</select>
+<button name="button1" onclick="setupNew()">Ok</button>
+
+
+
+
+
+<script>
+
+
+var variation = 0;
+var height = window.innerHeight;
+var width =  window.innerWidth;
+var canvas = document.createElement('canvas');
+var blobArray = [];
+var mouse = {x: 0, y: 0};
+canvas.mouseIsOver = false;
+   canvas.onmouseover = function()   {
+      this.mouseIsOver = true;
+   };
+   canvas.onmouseout = function()   {
+      this.mouseIsOver = false;
+   }
+document.body.appendChild(canvas);
+var width = canvas.width = width,
+	height = canvas.height = height,
+	c = canvas.getContext('2d');
+function randomRange(min, max){
+	return Math.random()*(max-min) + min;
+}
+function setupNew(){
+	var dropdown = document.getElementById("variation");
+	variation = parseInt(dropdown.options[dropdown.selectedIndex].value);
+	console.log(variation);
+	c.fillStyle = 'black';
+	c.fillRect(0,0,width,height);
+	blobArray = [];
+	c.fillStyle = 'white';
+	c.fillRect(width/2-1,0,1,height);
+	c.fillRect(0,height/2-1,width,1);
+}
+</script><canvas width="1920" height="956"></canvas>
+<script src="y'=Cos(xy)_files/difeqrk.js"></script>
+
+</body></html>
