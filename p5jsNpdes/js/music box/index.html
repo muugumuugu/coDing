@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<title>Mogu Music Box</title>
+	<link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+<meta name="viewport" content="width=device-width, initial-scale=1.0;">
+	<script src="howler.js"></script>
+<script type="text/javascript" src="lottie.js">
+
+	</script>
+
+	<center>
+    
+		<h1 id="title" style="color:rgb(255, 238, 0);"> Mogu Music Box</h1>
+
+		<button class="buttoncol" id="scrollToBottom" onclick= "scrollToElXY(0);">▼</button> 
+<p></p>
+			<!-- <p><i>click on keys to set notes then press play</i><i> (lower notes on the left - higher notes on the right) </i> -->
+
+		<div id="UI"></div>
+      <h1 id="loading" style="display:none"><a style="font-size:20px;color:white;">🔷🔷🔷</a>Winding Up<a style="font-size:20px">🔷🔷🔷</a> </h1>
+
+			<audio id="1" src="notes/1.mp3"></audio>
+			<audio id="2" src="notes/2.mp3"></audio>
+			<audio id="3" src="notes/3.mp3"></audio>
+			<audio id="4" src="notes/4.mp3"></audio>
+			<audio id="5" src="notes/5.mp3"></audio>
+			<audio id="6" src="notes/6.mp3"></audio>
+			<audio id="7" src="notes/7.mp3"></audio>
+			<audio id="8" src="notes/8.mp3"></audio>
+			<audio id="9" src="notes/9.mp3"></audio>
+      <audio id="10" src="notes/10.mp3"></audio>
+			<audio id="11" src="notes/11.mp3"></audio>
+			<audio id="12" src="notes/12.mp3"></audio>
+			<audio id="13" src="notes/13.mp3"></audio>
+			<audio id="14" src="notes/14.mp3"></audio>
+			<audio id="15" src="notes/15.mp3"></audio>
+		
+
+</center>
+
+	<audio id="windUp" src="sounds/windup.mp3" ></audio>
+
+	<audio id="switchSound1" src="sounds/switch1.wav" ></audio>
+	<audio id="switchSound2" src="sounds/switch2.wav" ></audio>
+	<audio id="switchSound3" src="sounds/switch3.wav" ></audio>
+	<audio id="switchSound4" src="sounds/switch4.wav" ></audio>
+  <audio id="switchSound5" src="sounds/switch5.mp3" ></audio>
+
+<center>
+
+
+  	<button class="lottieclass" id="lottie" disabled="true" onclick="randomNotes();UI_Sound(3);generateRandomAnimation();"></button>
+      <p></p>
+     
+  <button class="buttoncol" id="play" onclick="loadAnimation(); resetNotes();generateMusic();displayMatrix(0);playNotes();playAnimation();"> &#9654; </button>
+  
+ 
+  <button id="stop" onclick="stopPlaying()">&#9724;</button>
+  <button style="display:none;" id="previewMusicPlay" onclick="listenOnly();playRadioNotes();"> &#9654; </button>
+       <button style="display:none;" id="previewMusicStop" onclick="stopPlayingRadio();"> 	&#9724; </button>
+    <p></p>
+    
+<button class="buttoncol" id="generate" onclick="createMusicBox();;UI_Sound(1);scrollToEl(3);">+</button>
+<button  style ="max-width:100px" id="holdDoc" onclick="holdNote();UI_Sound(0)" >🔷</button>
+ <button  id="showOtherOpt"  onclick="showOtherPlayOpt();UI_Sound(0);">...</button>
+<button style="display:none;" id="preload" onclick="fastPreviewAnim();tunePreload();displayMatrix(0);scrollToElXY(0);">⚡ </button>
+<button class="buttoncol" id="exitRadio" style="display:none;" onclick="showOtherPlayOpt();showOtherPlayOpt();revealUI();stopPlaying();scrollToEl(1);" > back</button>
+    <button style="margin-left:0px;display:none;" id="previewMusic" onclick="generateRadioMusic();deleteAll();UI_Sound(5);"> 	📻 </button>
+ 
+<button class="buttoncol" id="delete" onclick="deleteMusicBox();UI_Sound(3);scrollToEl(4);">-</button>
+		 <p></p>
+
+
+<a id="delayVal" contenteditable="true" >350</a>
+<a>🐇</a><input oninput="displayDelay(this.value)" onchange="displayDelay(this.value)" type="range"  min="100" max="1000" value="350" class="slider" id="Tempo_Input" > <a>🐢</a>
+<p></p <a>🔊</a><input type="range" min="0" max="100" value="20" class="slider" id="volumeSlider">
+<a style="border:none;cursor: pointer; background-color:transperent;" onclick="resetHowlerSpeedSlider()" >
+   <p></p>🔔</a><a style="font-weight:900">♩</a>
+<input type="range"  onchange="displayHoldVal(this.value)" min="0" max="200" value="100" class="slider" id="howlerSpeedSlider">
+ <a style="font-weight:900">♪</a>
+
+	 <p></p>
+   <button class="buttoncol" id="scrollToTop" onclick= "scrollToEl(1);">▲</button> 
+   	 <p></p>
+
+
+
+
+ <p></p>
+
+
+		<script type="text/javascript" src="animation/idle.json">
+
+		</script>
+    <script type="text/javascript" src="animation/happy.json">
+
+		</script>
+		<script  type="text/javascript" src="animation/ready.json">
+
+		</script>
+		<script type="text/javascript" src="animation/load.json">
+
+		</script>
+		<script type="text/javascript" src="animation/play.json">
+
+		</script>
+<p></p>
+
+
+  <!-- 📂 <select id="themes">
+			<option value="0">box</option>
+			<option value="1">chip</option>
+		
+
+		</select>
+		<button class="buttoncol" id="selTheme" onclick="changeTheme()">
+			change theme</button> -->
+
+<p></p>
+ <a>notes:</a><input class="inputcol" style="margin-right:2%;" id="Save_Input" value="" size="88" spellcheck="false"><button class="buttoncol" id="load" onclick="resetNotes();loadPiece();UI_Sound(2);">  load</button><button class="buttoncol" id="restart" onclick="resetNotes();deleteAll();UI_Sound(4)">delete</button>
+
+<p style="font-size:17px;"><i>wan save masterpiece? copy sequence dumdum</i></p>
+ <a>📋</a>
+<input class="inputcol" id="copy_input" value="1" size="1" style="font-size:25px;height:25px">
+<button class="buttoncol" id="copy" onclick="createMusicBox();copyMatrix();UI_Sound(1);">copy</button>
+<input class="inputcol" id="numBlocksInput" value="1" size="1" style="font-size:25px;height:25px;margin-left:2%"><button class="buttoncol" id="addPlus" onclick="addPlus();UI_Sound(2);"> ++</button>
+
+
+<button class="buttoncol" id="addMix" onclick="addMix();UI_Sound(4);">+tail</button>
+<button class="buttoncol" id="mix" onclick="merge();UI_Sound(2);">stack</button>
+<p></p>
+<p></p>
+ <a>CURRENT PREVIEW MODE:</a>
+ <button style="width:300px;max-width:300px" class="buttoncol" id="previewMode" onclick="previewMode();UI_Sound(1);">one block at a time</button><p></p>
+ <p></p>
+  	
+
+<p></p> 
+<p> buiLt iN:</p>
+
+<p ></p>
+<div id="records">
+<button class="lib" id="contribution1" onclick="demo('THE_FIRST_SONG',7)"><a style="font-size:15px;">J. Taylor's </a> "Twinkle twinkle little star"
+<button class="lib" id="contribution2" onclick="demo('London_bridges_falling_up',4)"><a style="font-size:15px;">A. B. Gomme's </a>"London bridges falling down"
+<button class="lib" id="contribution3" onclick="demo('Ode_of_Joy',9)"><a style="font-size:15px;"> Beethoven's </a>"Ode to joy in e♭"
+<button class="lib" id="contribution4" onclick="demo('Star_Wars',17)"><a style="font-size:15px;"> J. William's </a>"Star Wars Theme"
+<button class="lib" id="contribution4" onclick="demo('Jurrassic_Park',11)"><a style="font-size:15px;"> J. Williams's </a>"Jurrassic Park Theme"
+<button class="lib" id="demo3" onclick="demo('Indian_Anthem',28);"><a style="font-size:15px;"> Rabindranath Tagore's  </a>"Indian National Anthem" </button>
+
+<p ></p>
+<p ></p>
+
+</div>
+
+
+<p ></p>
+
+
+</center>
+
+<script type="text/javascript" src="animation.js">
+
+
+</script>
+
+
+
+<script src="UI.js"></script>
+<script  src="musicbox.js">
+
+</script>
+
+</body >
+</html>

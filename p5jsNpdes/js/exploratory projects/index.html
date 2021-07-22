@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Projects presentation</title>
+  
+  <meta name="description" content="Presentation of computer science projects by Etienne Jacob" />
+  
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="lib/bootstrap.min.css">
+  <script src="lib/jquery.min.js"></script>
+  <script src="lib/bootstrap.min.js"></script>
+  
+</head>
+<body>
+
+<div class="jumbotron text-center" style="background-image: url('img/backc2.png'); background-size: 100% 140%;text-shadow: 3px 3px 0px #FFFFFF;">
+  <h1>Projects presentation page</h1>
+</div>
+
+<div class="container" id="home">
+	<ul class="nav nav-pills">
+	  <li role="presentation" class="active"><a href="#home">Home</a></li>
+	  <li role="presentation"><a href="#p5js">p5.js</a></li>
+	  <li role="presentation"><a href="#processing">Processing contests</a></li>
+	  <li role="presentation"><a href="#gifart">GIF art</a></li>
+	  <li role="presentation"><a href="#github">Github</a></li>
+	  <li role="presentation"><a href="#about">About</a></li>
+	</ul>
+</div>
+
+<div class="divider">
+</div>
+
+<div class="container">
+  <p>This page is mainly designed to showcase some <a href="https://p5js.org/">p5.js</a> or <a href="https://processing.org/">Processing</a> projects programmed by Étienne Jacob. Started in September 2016.</p>
+  
+  </div>
+
+<div class="divider">
+</div>
+<div class="divider">
+</div>
+
+<div class="container" id="p5js">
+<h2> p5.js projects </h2>
+</div>
+<div class="divider">
+</div>
+
+<div class="container">
+  <div class="row">
+    <div class="col-sm-4">
+      <h3><a href="vector-field-drawing/index.html">Vector field drawing</a></h3>
+	  
+	  <img class="img-responsive" src="img/yellowish.png" alt="Yellow painting" style="padding:1px;
+   border:1px solid #021a40;">
+	  
+	  <p></br></p>
+	  
+      <p  style="text-indent : 15px;">After I found out about Processing, I rapidly came across Daniel Shiffman's excellent videos.
+	  More precisely I find p5.js great because it makes it so easy to share your work.
+	  This drawing tool was a nice project to discover lots of features from Processing/p5.js.</p>
+      <p  style="text-indent : 15px;">About the project's content : some particles paint a canvas, guided by forces generated from Perlin Noise.
+	  The physics and colors are very customizable. I used Daniel Shiffman's code and continued from there.</p>
+	  <p> <a href="https://rawgit.com/Bleuje/Rainbow-Code/master/challenges/CC_24_PerlinNoiseFlowField/index.html">(Previous version with smaller sliders)</a></p>
+    </div>
+	
+    <div class="col-sm-4">
+      <h3><a href="spinning-shapes/index.html">Spinning shapes</a></h3>
+	  
+	  <img class="img-responsive" src="img/spin1.png" alt="Spinning triangles" style="padding:1px;
+   border:1px solid #021a40;">
+	  
+	  <p></br></p>
+	  
+      <p  style="text-indent : 15px;">This is at the beginning mostly something to have a second project, in order to make this page more useful.
+	  This is a p5.js project. Some colored shapes (right now just triangles) move and spin... there are many options.</p>
+    </div>
+	
+    <div class="col-sm-4">
+      <h3><a href="colorgradient-extraction/index.html">Color gradient extraction</a></h3>
+	  
+	  <img class="img-responsive" src="colorgradient-extraction/imgsamples/snight.jpg" alt="starry night" style="padding:1px;
+   border:1px solid #021a40;">
+   
+   <p></br></p>
+	  
+      <p  style="text-indent : 15px;"> "Vector field drawing" taught me that color gradients can have a great influence on the "beauty" of randomly generated things.
+	I had the idea of generating color gradients from pictures, and that's what this project is about.
+	There are currently two applications of gradients : balls moving randomly while drawing and some effects on webcam captures.
+	  </br></p>
+    </div>
+	</div>
+	
+	<div class="row">
+	<div class="col-sm-4">
+      <h3><a href="neural-network-driver/index.html">Neural network driver</a></h3>
+	  
+	  <img class="img-responsive" src="img/nndriving.png" alt="nndriving" style="padding:1px;
+   border:1px solid #021a40;">
+   
+   <p></br></p>
+	  
+      <p  style="text-indent : 15px;"> A little neural network that drives through checkpoints (the second checkpoint to take influences the driving line).
+	  </br></p>
+    </div>
+	
+	<div class="col-sm-4">
+      <h3><a href="waves-integration/index.html">2D-Waves integration</a></h3>
+	  
+	  	  <img class="img-responsive" src="img/2dwave.png" alt="2dwave" style="padding:1px;
+   border:1px solid #021a40;">
+   
+   <p></br></p>
+	  
+      <p  style="text-indent : 15px;"> Quick sketch mainly made by copying an old code I had written in OCaml.
+	  </br></p>
+    </div>
+	
+	<div class="col-sm-4">
+      <h3><a href="rocket-optimization/index.html">Rocket optimization 1</a></h3>
+	  
+	  	  <img class="img-responsive" src="img/evol.png" alt="evol" style="padding:1px;
+   border:1px solid #021a40;">
+   
+   <p></br></p>
+	  
+      <p  style="text-indent : 15px;"> Optimization of a rocket trajectory using an evolutionary algorithm.
+	  </br></p>
+    </div>
+</div>
+
+<div class="row">
+	<div class="col-sm-4">
+      <h3><a href="rocket-optimization-sa/index.html">Rocket optimization 2</a></h3>
+	  
+	  	  <img class="img-responsive" src="img/SA-rocket2.png" alt="evol" style="padding:1px;
+   border:1px solid #021a40;">
+   
+   <p></br></p>
+	  
+      <p  style="text-indent : 15px;"> Optimization of a rocket trajectory using simulated annealing.
+	  </br></p>
+    </div>
+	
+	<div class="col-sm-4">
+      <h3><a href="mandalas/index.html">Mandala drawing</a></h3>
+	  
+	  	  <img class="img-responsive" src="mandalas/mandala1.png" alt="mand" style="padding:1px;
+   border:1px solid #021a40;">
+   
+   <p></br></p>
+	  
+      <p  style="text-indent : 15px;"> A simple drawing tool.
+	  </br></p>
+    </div>
+	
+		<div class="col-sm-4">
+      <h3><a href="grid-distortion/index.html">Grid distortion</a></h3>
+	  
+	  	  <img class="img-responsive" src="img/griddistortion.png" alt="grid" style="padding:1px;
+   border:1px solid #021a40;">
+   
+   <p></br></p>
+	  
+      <p  style="text-indent : 15px;"> An interactive sketch about a spring based grid I made for a GIF.
+	  </br></p>
+    </div>
+</div>
+
+</div>
+
+<div class="divider">
+</div>
+<div class="divider">
+</div>
+
+<div class="container" id="processing">
+<h2> Processing contests</h2>
+</div>
+<div class="divider">
+</div>
+
+<div class="container">
+  <div class="row">
+	<div class="col-sm-4">
+	  <h3><p><a href="generated-joydivision-cover/index.html">Album cover generator</a></p></h3>
+	  <img class="img-responsive" src="img/jdup.png" alt="jpud" style="padding:1px;
+   border:1px solid #021a40;">
+   <p></br></p>
+      <p style="text-indent : 15px;">My attempt to a little challenge about the album cover of Unknown Pleasures (won it).
+	  </br></p>
+    </div>
+	
+		<div class="col-sm-4">
+	  <h3><p><a href="dark-side-moon/index.html">Dark Side of the Moon sketch</a></p></h3>
+	  <img class="img-responsive" src="img/darkside2.gif" alt="darkside" style="padding:1px;
+   border:1px solid #021a40;">
+   <p></br></p>
+      <p style="text-indent : 15px;">My quick attempt to a little challenge about the album cover of the Dark Side of the Moon (won it).
+	  </br></p>
+    </div>
+  </div>
+</div>
+  
+<div class="divider">
+</div>
+<div class="divider">
+</div>
+
+<div class="container" id="gifart">
+<h2> GIF art : <a href="http://www.necessary-disorder.tumblr.com">necessary-disorder.tumblr.com</a> </h2>
+</div>
+<div class="divider">
+</div>
+
+<div class="container">
+  <div class="row">
+<p style="text-indent : 15px;">In January 2017 I started making perfectly looping black and white GIF art with Processing (first with p5.js, then with Java Processing), and I uploaded my GIFs on a tumblr blog named "necessary-disorder".
+Link : <a href="http://www.necessary-disorder.tumblr.com">necessary-disorder.tumblr.com</a> </p>
+	</div>
+	
+<div class="divider">
+</div>
+	  <div class="row">
+Examples :
+	  <img class="img-responsive" src="img/agif2opt.gif" alt="gif2" style="padding:1px;
+   border:1px solid #021a40;">
+   	  <img class="img-responsive" src="img/agif3opt.gif" alt="gif3" style="padding:1px;
+   border:1px solid #021a40;">
+      <img class="img-responsive" src="img/agif4opt.gif" alt="gif4" style="padding:1px;
+   border:1px solid #021a40;">
+   </div>
+   
+   <div class="divider">
+</div>
+
+<p style="text-indent : 15px;"> This work was showcased in April 2018 on thisiscolossal.com : <a href="http://www.thisiscolossal.com/2018/04/animation-of-sinusoidal-waves-in-gifs-by-etienne-jacob/">The Mesmerizing Animation of Sinusoidal Waves in GIFs by Étienne Jacob</a>
+
+   
+   </div>
+
+
+<div class="divider">
+</div>
+<div class="divider">
+</div>
+
+<div class="container" id="github">
+<h2> Other projects on <a href="https://github.com/Bleuje">Github</a> </h2>
+</div>
+<div class="divider">
+</div>
+
+<div class="container">
+  <div class="row">
+	<div class="col-sm-3">
+	  <p><a href="https://github.com/Bleuje/ocaml-mesh-plot">ocaml-mesh-plot</a></p>
+	  <img class="img-responsive" src="https://raw.githubusercontent.com/Bleuje/ocaml-mesh-plot/master/pictures/shadertest.jpg" alt="Spinning triangles" style="padding:1px;
+   border:1px solid #021a40;">
+      <p>A module to plot 3D meshes with Objective Caml. It contains some additional mesh processing features. </br></p>
+    </div>
+  
+    <div class="col-sm-3">
+	  <p><a href="https://github.com/Bleuje/antcolonysystem-tsp-qt">antcolonysystem-tsp-qt</a></p>
+	  <img class="img-responsive" src="https://raw.githubusercontent.com/Bleuje/antcolonysystem-tsp-qt/master/vwindow.png" alt="Spinning triangles" style="padding:1px;
+   border:1px solid #021a40;">
+      <p>Optimization of the traveling salesman problem (TSP) by ant colony optimization.
+	  Implemented in C++ with Qt.
+	  It should be somewhat ready for release although I'm not 100% sure it works as well as it is supposed to.</br></p>
+    </div>
+	
+    <div class="col-sm-3">
+	  <p><a href="https://github.com/Bleuje/ocaml-mazelab">ocaml-mazelab</a></p>
+	  <img class="img-responsive" src="https://raw.githubusercontent.com/Bleuje/ocaml-mazelab/master/pictures/toreMaze.jpg" alt="Spinning triangles" style="padding:1px;
+   border:1px solid #021a40;">
+      <p>An OCaml module to show and/or generate meshes of 3D mazes.
+	  Generated meshes can be easily transefered to Blender's renderer for example.</br></p>
+    </div>
+	
+    <div class="col-sm-3">
+	  <p><a href="https://github.com/Bleuje/ocaml-4dmaze-render">ocaml-4dmaze-render</a></p>
+	  <img class="img-responsive" src="https://raw.githubusercontent.com/Bleuje/ocaml-4dmaze-render/master/4dmaze.png" alt="Spinning triangles" style="padding:1px;
+   border:1px solid #021a40;">
+      <p>An old project about generating and rendering in 3D some 4D perfect mazes.
+	  </br></p>
+    </div>
+  </div>
+</div>
+
+<div class="divider">
+</div>
+<div class="divider">
+</div>
+
+<div class="container" id="about">
+<h2> About the author of this page </h2>
+</div>
+<div class="divider">
+</div>
+
+<div class="container">
+I am Étienne Jacob, student at the <a href="http://www.enpc.fr">ENPC</a> (École des Ponts ParisTech) french engineering school in the IMI department (Computer Science and Applied Mathematics).
+
+I like to work on computer science projects during my free time.
+
+You can follow me on <a href = "https://twitter.com/n_disorder">Twitter</a> !
+</br>
+</br>
+
+<em><strong>Contact :</strong> etin (dot) jacob (at) gmail (dot) com</em>
+
+</div>
+
+<div class="divider">
+</div>
+<div class="divider">
+</div>
+
+<div class="container">
+<a href="#top">Go to top</a>
+</div>
+
+<div class="divider">
+</div>
+<div class="divider">
+</div>
+
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-84856542-1', 'auto');
+  ga('send', 'pageview');
+
+</script>
+
+</body>
+</html>
+

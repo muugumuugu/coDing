@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  
+  <title> Vector field drawing </title>
+  <meta name="description" content="Draw beautiful things with this interective drawing tool based on moving particles !" />
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="../lib/bootstrap.min.css">
+  <script language="javascript" type="text/javascript" src="libraries/p5.js"></script>
+  <script language="javascript" src="libraries/p5.dom.js"></script>
+  <script language="javascript" src="libraries/p5.sound.js"></script>
+  <script language="javascript" type="text/javascript" src="sketch.js"></script>
+  <script language="javascript" type="text/javascript" src="particle.js"></script>
+  <script language="javascript" type="text/javascript" src="rectangle.js"></script>
+  <script language="javascript" type="text/javascript" src="color.js"></script>
+  <script src="../lib/jquery.min.js"></script>
+  <script src="../lib/bootstrap.min.js"></script>
+  <link href="https://fonts.googleapis.com/css?family=Josefin+Sans" rel="stylesheet">
+  
+  <style>
+  .btn {
+	border-radius: 0px;
+	font-family: 'Josefin Sans', arial, sans-serif;
+}
+.btn-default:focus {
+    background: #fff;
+	border: #ccc;
+}
+  </style>
+  
+</head>
+
+<body>
+
+<div class="jumbotron text-center" style="background-size: 100% 140%;text-shadow: 2px 2px 2px #FFFFFF;font-family: 'Josefin Sans', arial, sans-serif;">
+  <h1> Vector field drawing </h1>
+  <h5> (You may have to wait a little bit for pictures to load) </h5>
+</div>
+
+<div class="container"  id="buttons" style="text-align:center;font-family: 'Josefin Sans', arial, sans-serif;">
+</div>
+
+<div class="container"  id="buttons0" style="text-align:center;font-family: 'Josefin Sans', arial, sans-serif;">
+</div>
+
+<div class="container"  id="buttons00" style="text-align:center;font-family: 'Josefin Sans', arial, sans-serif;">
+</div>
+
+<div class="divider">
+</div>
+
+<div class="container"  id="buttons2" style="text-align:center;padding-left: 5px;">
+
+</div>
+
+<div class="divider">
+</div>
+
+	<div class="container"  id="canvas" style="
+			width:90%;position:absolute;
+           left: 100px;
+           z-index:-1;
+		   ">
+
+	</div>
+
+
+<div class="container" style="color: #000000;
+text-shadow: 0px 0px 3px #FFFFFF,
+			0px 0px 5px #FFFFFF,0px 0px 5px #FFFFFF, 
+               0px 0px 10px #FFFFFF, 
+               0px 0px 10px #FFFFFF;
+			   font-family: 'Josefin Sans', arial, sans-serif;">
+  <div class="row" id="physics" style="z-index: 0;top: 20px;">
+    <div class="col-sm-3" id="physics1" style="border-radius: 10px;
+    border: 4px solid rgba(0,0,0,0.3);
+    padding: 10px;
+	background-color: rgba(255,255,255,0.3);left: 50px;">
+    </div>
+	<div class="col-sm-3" id="physicsf" style="border-radius: 10px;
+    border: 4px solid rgba(0,0,0,0.3);
+    padding: 10px;
+	background-color: rgba(255,255,255,0.3);left: 50px;">
+    </div>
+    <div class="col-sm-3" id="physics2" style="border-radius: 10px;
+    border: 4px solid rgba(0,0,0,0.3);
+    padding: 10px;
+	background-color: rgba(255,255,255,0.3);left: 50px;">
+    </div>
+	</div>
+	
+  <div class="row" id="interaction" style="z-index: 0;width:90%;top: 20px;">
+    <div class="col-sm-4" id="mouse" style="border-radius: 10px;
+    border: 4px solid rgba(0,0,0,0.3);
+    padding: 10px;
+	background-color: rgba(255,255,255,0.3);left: 50px;">
+    </div>
+	<div class="col-sm-4" id="performance" style="border-radius: 10px;
+    border: 4px solid rgba(0,0,0,0.3);
+    padding: 10px;
+	background-color: rgba(255,255,255,0.3);left: 50px;">
+    </div>
+	</div>
+	
+	<div class="row" id="pen-colors" style="z-index: 0;width:90%;top: 20px;">
+	<div class="col-sm-3" id="pen" style="border-radius: 10px;
+    border: 4px solid rgba(0,0,0,0.3);
+    padding: 10px;
+	background-color: rgba(255,255,255,0.3);left: 50px;">
+	</div>
+	<div class="col-sm-3" id="color1" style="border-radius: 10px;
+    border: 4px solid rgba(0,0,0,0.3);
+    padding: 10px;
+	background-color: rgba(255,255,255,0.3);left: 50px;">
+	</div>
+	<div class="col-sm-3" id="color2" style="border-radius: 10px;
+    border: 4px solid rgba(0,0,0,0.3);
+    padding: 10px;
+	background-color: rgba(255,255,255,0.3);left: 50px;">
+    </div>
+	<div class="col-sm-3" id="colorn" style="border-radius: 10px;
+    border: 4px solid rgba(0,0,0,0.3);
+    padding: 10px;
+	background-color: rgba(255,255,255,0.3);left: 50px;">
+    </div>
+	</div>
+	
+	<div class="row" style="z-index: 0;width:90%;top: 20px;">
+	<div class="col-sm-4" id="rectangle-mode" id="rectangle-mode" style="border-radius: 10px;
+    border: 4px solid rgba(0,0,0,0.3);
+    padding: 10px;
+	background-color: rgba(255,255,255,0.3);left: 50px;">
+    </div>
+	</div>
+	<div class="row" id="gradient" style="z-index: 0;width:90%;top: 20px;">
+	<div class="col-sm-5" id="gradient1" style="border-radius: 10px;
+    border: 4px solid rgba(0,0,0,0.3);
+    padding: 10px;
+	background-color: rgba(255,255,255,0.3);left: 50px;">
+    </div>
+	<div class="col-sm-3" id="opti" style="border-radius: 10px;
+    border: 4px solid rgba(0,0,0,0.3);
+    padding: 10px;
+	background-color: rgba(255,255,255,0.3);left: 50px;">
+    </div>
+	<div class="col-sm-3" id="postp" style="border-radius: 10px;
+    border: 4px solid rgba(0,0,0,0.3);
+    padding: 10px;
+	background-color: rgba(255,255,255,0.3);left: 50px;">
+    </div>
+  </div>
+
+</div>
+
+<script>
+    document.getElementById('physics').style.display = 'none';
+    document.getElementById('interaction').style.display = 'none';
+    document.getElementById('pen-colors').style.display = 'none';
+    document.getElementById('rectangle-mode').style.display = 'none';
+    document.getElementById('gradient').style.display = 'none';
+</script>
+
+<div class="container" id="void" style="height: 600px;">
+</div>
+
+<div class="container" style="position: absolute;
+    top: 1200px;">
+	
+<div class="container" id="button3" style="margin-left: 75px;text-align:center;">
+</div>
+	
+<div class="container" id="docgal" style="margin-left: 75px;font-size: 1.2em;font-family: 'Josefin Sans', arial, sans-serif;">
+<div class="row">
+<div class="col-md-6" style="border-radius: 10px;
+    border: 4px solid rgba(0,0,0,0.3);
+    padding: 10px;">
+<p>
+<h2>Documentation</h2>
+<h3><strong>Physics</strong></h3>
+Some particles move in a random force field, somehow following Newton's second law of dynamics.
+<h4><strong>Particle settings</strong></h4>
+After the particle speed is updated from the force(s), a slow-down coefficient is applied to the speed.
+The <strong>particle speed</strong> slider lets you choose this coefficient between 0 and 1 (1 means not slowed-down).
+
+<h4><strong>Force field settings</strong></h4>
+The force field is generated from Perlin noise, but there are two methods here.
+</br>
+</br>
+The first one (<strong>Basic</strong>) uses 3D Perlin noise to generate random vector angles in 2D in a "continuous way". The third dimension is used as time to get the angles to change.
+</br>
+</br>
+The second method (<strong>Moving torus in 3D</strong>) is similar, but it uses a torus that moves randomly through 3D Perlin Noise to take the vector angles values. That way there are no problems on the borders.
+A new problem that appears is that the generation is unbalanced, some areas are "contracted" in 3D space. 
+There is a clean way to avoid that by using 4D noise, but it doesn't seem easy to get in javascript.
+</br>
+</br>
+When <strong>Space size</strong> is increased, the noise is used on a larger area, so that more discontinuity with space appear. 
+</br>
+</br>
+When <strong>Force noise</strong> is increased, some random values of higher intensity are added to the field before it affects each particle (different valeus for each particle). 
+</br>
+</br>
+<strong>Force field magnitude</strong> controls the norm (i.e. intensity) of the vectors in the force field. 
+</br>
+</br>
+<strong>Force change rate</strong> controls the speed at which we evolve using the third dimension of the Perlin Noise. 
+</br>
+</br>
+<h4><strong>Field bias</strong></h4>
+Something to add constant values to the force field.
+</br>
+</br>
+<h3><strong>Drawing style</strong></h3>
+<h4><strong>Color gradient</strong></h4>
+The color gradients use functions of the form value(t) = a + b*sin(c + w*t) to compute the red-green-blue components of the colors.
+</br>
+</br>
+The parameters a,b,c and w can be different for each component, and even each particle (c changes with <strong>particle color offset</strong>).
+All the sliders in this section are about defining these parameters. 
+</br>
+</br>
+<h4><strong>Color noise settings</strong></h4>
+Some perlin noise (noise(c + w*t)) can be added to each color component.
+<strong>Synchronized color noise</strong> adds the same noise to all components.
+The previous parameter w is controlled with <strong>noise "frequency"</strong>.
+</br>
+</br>
+The parameters a,b,c and w can be different for each component, and even each particle (c changes with <strong>particle color offset</strong>).
+All the sliders in this section are about defining these parameters. 
+</br>
+</br>
+<h3><strong>Rectangle mode</strong></h3>
+This mode is the same as the default one, excepted that the particles are drawn with rectangles :
+ the particles are constrained to move only up down left or right, and a new rectangle is drawn from the previous one using the speed as width or
+ height (depending on the direction).
+ </br>
+ </br>
+ <h3><strong>Custom color gradient</strong></h3>
+This panel allows you to paint the canvas with your own picture (press pause to have only the picture on the canvas).
+Then you can define a color gradient from there by picking points from an ellipse or just randomly to define the colors.
+There's a button to optimize (order) the colors.
+ </br>
+ </br>
+<h2><strong>Tricks</strong></h2>
+ Resize your window before reloading the page (Reset button) to use smaller resolutions.
+  </br>
+ </br>
+ <h2><strong>Recent changes</strong></h2>
+	- 25/09/2016 : added Traveling Salesman optimization to the custom color gradient, added "Recent changes", fixed bug : changing displayed values of sliders while on pause.
+	</br>
+	- 25/09/2016 : corrected pen style color bug, button "Go !" bug.
+	</br>
+	- 26/09/2016 : added simulated annealing and blur to custom color gradient, added noise to field magnitude.
+  </br>
+  	- 26/09/2016 : added field view, rescaled field generation on a torus.
+  </br>
+    - 27/09/2016 : added Taubin smoothing in color gradient post-processing. Circle view of color gradient.
+  </br>
+	- 28/09/2016 : debugged Taubin smoothing in color gradient post-processing. Clearer circle view of color gradient.
+  </br>
+ </br>
+ </p>
+</div>
+<div class="col-md-6" style="border-radius: 10px;
+    border: 4px solid rgba(0,0,0,0.3);
+    padding: 10px;">
+<h2>Gallery of examples</h2>
+	
+<img class="img-responsive" src="examples/blueish.png" alt="Yellow painting" style="
+   border:1px solid black;">
+   
+ <img class="img-responsive" src="examples/redbrown.png" alt="Yellow painting" style="
+   border:1px solid black;">
+   
+   <img class="img-responsive" src="examples/circles.png" alt="Yellow painting" style="
+   border:1px solid black;">
+   
+   <img class="img-responsive" src="examples/bigcircles.png" alt="Yellow painting" style="
+   border:1px solid black;">
+   
+   <img class="img-responsive" src="examples/squareglow.png" alt="Yellow painting" style="
+   border:1px solid black;">
+   
+   <img class="img-responsive" src="examples/psych.png" alt="Yellow painting" style="
+   border:1px solid black;">
+   
+      <img class="img-responsive" src="examples/living.png" alt="Yellow painting" style="
+   border:1px solid black;">
+   
+      <img class="img-responsive" src="examples/blurred.png" alt="Yellow painting" style="
+   border:1px solid black;">
+   
+      <img class="img-responsive" src="examples/weird.png" alt="Yellow painting" style="
+   border:1px solid black;">
+   
+      <img class="img-responsive" src="examples/nice.png" alt="Yellow painting" style="
+   border:1px solid black;">
+   
+      <img class="img-responsive" src="examples/glitch.png" alt="Yellow painting" style="
+   border:1px solid black;">
+   
+</div>
+</div>
+</div>
+<div class="divider"></div>
+<div class="divider">
+</div>
+  <p> <a href="../index.html"> Other projects </a>
+  /// <a href="https://rawgit.com/Bleuje/Rainbow-Code/master/challenges/CC_24_PerlinNoiseFlowField/index.html"> Old version </a>
+  /// <em><strong>Contact :</strong> etin (dot) jacob (at) gmail (dot) com</em> </p>
+</div>
+
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-84856542-1', 'auto');
+  ga('send', 'pageview');
+
+</script>
+
+</body>
+</html>
