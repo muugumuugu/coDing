@@ -1,0 +1,63 @@
+<html>
+	<head>
+		<title>JSON</title>
+ 		<link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css"  integrity="sha512-xodZBNTC5n17Xt2atTPuE1HxjVMSvLVW9ocqUKLsCC5CXdbqCmblAshOMAS6/keqq/sMZMZ19scR4PsZChSR7A==" crossorigin=""/>
+ 		 <!-- Make sure you put this AFTER Leaflet's CSS -->
+		 <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js" integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA==" crossorigin=""></script>
+		<script src="https://cdn.jsdelivr.net/npm/chart.js@3.0.2/dist/chart.min.js">
+				//could use loadtable p5js
+		</script>
+		<style>
+		#issMap {height: 800px; }
+		</style>
+	</head>
+	<body>
+		 <div id="issMap"></div>
+		<ul>
+			<li>longitude=<span id="long"></span>°
+			<li>latitude	=<span id="lat"></span>°
+		</ul>
+		<script>
+			//u+00b0 degree Ctrl+shift
+			const zoom=2.25;
+			const mymap = L.map('issMap').setView([0,0], zoom);//lat,lon, zoom level. //L: leafelet
+
+			//Mercator projection - western view cylindrical projection strech.[openstreetmap]
+			const attribution =  '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors';
+			const tileUrl = 'https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png';
+            const tiles = L.tileLayer(tileUrl, { attribution });//use any lke mapbox bla bla
+            const issIcon = L.icon({
+      		 iconUrl: 'https://upload.wikimedia.org/wikipedia/commons/d/d0/International_Space_Station.svg',
+       		 iconSize: [50*zoom, 32*zoom],
+       		 iconAnchor: [25*zoom, 16*zoom]
+    			  });
+    		const marker=L.marker([0,0],{icon: issIcon}).addTo(mymap);
+            tiles.addTo(mymap);
+
+			// Object notation, if  in seperate file, keys would be in quoatation marks. "lat":-45, etc.
+			let pos={
+			lat:-45,
+			lon:100
+			};
+			console.log(pos);
+			const ISSapi="https://api.wheretheiss.at/v1/satellites/25544";
+
+			async function getIss(){
+			const response= await fetch(ISSapi);
+			const data=await response.json();
+			const { latitude, longitude }=data; //java deconstruction
+			document.getElementById('long').innerHTML=longitude;
+			document.getElementById('lat').textContent=latitude;
+			marker.setLatLng([latitude,longitude]);
+			//mymap.setView([latitude,longitude],zoom);
+			console.log(data.longitude);
+			console.log(latitude);
+			}
+
+			getIss();
+			setInterval(getIss,5000);
+		</script>
+
+
+	</body>
+</html>

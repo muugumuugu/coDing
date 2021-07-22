@@ -1,0 +1,79 @@
+<html>
+	<head>
+		<title>Tabular Parser</title>
+		<script src="https://cdn.jsdelivr.net/npm/chart.js@3.0.2/dist/chart.min.js">
+				//could use loadtable p5js
+		</script>
+	</head>
+	<body>
+		<canvas id="chart" width="400"height="400">bar chart of temp</canvas>
+		<script>
+			async function getData(){
+				const x=[];
+				const y=[];
+				console.log("begun fetching");
+				const response= await fetch('temp.csv');
+				console.log(response);
+				//extract data
+				const data=await response.text();
+				//parse
+				const table=data.split(/\n/).slice(1);//regex
+				console.log(table);
+				table.forEach(row=>
+				{
+				cols=row.split(",");
+				const yy=cols[0];
+				x.push(yy);
+				const tempdiff=cols[1];
+				y.push(parseFloat(tempdiff)+14.5);
+				console.log(yy,tempdiff);
+				}
+				);
+				return {x,y};
+			}
+			// charting
+			async function chartIt(){
+				const dat=await getData();
+				const ctx = document.getElementById('chart').getContext('2d');
+				const myChart = new Chart
+					(
+					ctx,
+					{
+					type: 'line',
+					data: {
+						labels: dat.x,
+						datasets: [{
+							label: 'Zonal Annual Means of Combined Land-Surface Air and Sea-Surface Water Temperature  ',
+							data: dat.y,
+							backgroundColor: [
+								'rgba(255, 206, 86, 0.2)'
+							],
+							borderColor: [
+								'rgba(54, 162, 235, 1)',
+
+							],
+							borderWidth: 1
+							}]
+						},
+
+					options: {
+						scales: {
+								y: {
+									ticks: {
+										// Include a degree sign in the ticks
+										callback: function(value, index, values) {
+										return   value + '°';
+										}
+									}
+								}
+							}
+						}
+					}
+					);
+			}
+			chartIt();
+		</script>
+
+
+	</body>
+</html>

@@ -1,0 +1,47 @@
+<html>
+	<head>
+		<title>FETCH</title>
+	</head>
+	<body>
+		<img src="" id="rainbow" width=1000 height=600>
+		<br><br>
+		<img src="" id="rainbow2" width=1000 height=600>
+		<script>
+		console.log("about to fetch a rainbow");
+		fetch("https://cdn.hswstatic.com/gif/double-rainbows-1200x800.jpg").then
+		(
+		imgfetch =>
+		{
+		console.log("loaded r1");
+		console.log(imgfetch);
+		return imgfetch.blob();
+		}
+		)
+		.then
+		(
+		blobfetched =>
+		{
+		console.log("blobbing r1 using response chains ");
+		console.log(blobfetched);
+		document.getElementById('rainbow').src=URL.createObjectURL(blobfetched);
+		}
+		)
+		.catch
+		(
+		error =>
+		{console.log(error);}
+		);
+		</script>
+		<script>
+		async function catchRainbow()
+		{
+		const img2=await fetch("https://tse2.mm.bing.net/th?id=OIP.Jq5SJN5ZfNW0TM2IoHpA0QHaD4&pid=Api");
+		const blob2=await img2.blob();
+		document.getElementById('rainbow2').src=URL.createObjectURL(blob2);
+		}
+		catchRainbow().then(response=>{console.log("loaded r2")}).catch(error=>{console.log("error");console.log(error)});
+
+		</script>
+
+	</body>
+</html>

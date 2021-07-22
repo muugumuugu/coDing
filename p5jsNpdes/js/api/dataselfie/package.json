@@ -1,0 +1,20 @@
+{
+  "name": "dataselfie",
+  "version": "1.0.0",
+  "description": "data selfie app",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "data",
+    "coding train",
+    "journalling"
+  ],
+  "author": "mogi",
+  "license": "MIT",
+  "dependencies": {
+    "express": "^4.17.1",
+    "nedb": "^1.8.0"
+  }
+}
