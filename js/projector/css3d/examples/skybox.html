@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title></title>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">        
+        <style>
+            html, body {
+                margin: 0;
+                height: 100%;
+            }
+            body {
+                font-family: 'Helvetica Neue', Arial, sans-serif;
+                color: #fff;
+            }
+            h1 {
+                font-size: 22px;
+                margin: 0;
+            }
+            #info {
+                font-size: 13px;
+                margin: 14px;
+                position: absolute;
+                z-index: 2;
+            }
+            .mx-scene {
+                z-index: 1;
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                -webkit-transform: translate3d(-50%, -50%, 0);
+                -moz-transform: translate3d(-50%, -50%, 0);
+                transform: translate3d(-50%, -50%, 0);
+            }
+        </style>
+        <script src="../src/mx.js"></script>
+        <script src="../src/extensions/mx.scene.js"></script>
+        <script src="../src/extensions/mx.rotationControl.js"></script>
+        <script src="../src/primitives/mx.texturedBox.js"></script>
+        <script src="libs/tween.min.js"></script>
+        <script>
+            function init () {
+
+                var scene,
+                    cam,
+                    skybox,
+                    controls,
+                    mobile = false
+
+                // set up scene & camera
+
+                scene = new MX.Scene().addTo('body')
+                scene.width = window.innerWidth
+                scene.height = window.innerHeight
+                scene.perspective = 800
+                window.onresize = function () {
+                    scene.width = window.innerWidth
+                    scene.height = window.innerHeight
+                }
+
+                // set up skybox
+
+                skybox = new MX.TexturedBox({
+                    width: 804,
+                    height: 804,
+                    depth: 804,
+                    texture: 'images/universe.jpg',
+                    overlap: 1 // overlap 1px to eliminate seams
+                })
+                scene.add(skybox)
+
+                // controls
+                if ('DeviceOrientationEvent' in window &&
+                    'ontouchstart' in window &&
+                    window.screen.width <= 1024) {
+
+                    mobile = true
+
+                    // use device orientation for mobile
+                    controls = (function () {
+
+                        var locked = false,
+                            lastAlpha
+
+                        return {
+
+                            rotationX: 0,
+                            rotationY: 0,
+
+                            init: function () {
+
+                                window.addEventListener('orientationchange', checkMode)
+                                window.addEventListener('deviceorientation', function (e) {
+                                    if (!lastAlpha) {
+                                        lastAlpha = e.alpha
+                                    }
+                                    var dy = e.alpha - lastAlpha
+
+                                    // avoid the sudden jump from 0 to -360
+                                    if (dy > 300) {
+                                        dy -= 360
+                                    } else if (dy < -300) {
+                                        dy += 360
+                                    }
+
+                                    //controls.rotationX += MX.toRad(-dx)
+                                    controls.rotationX = MX.toRad(e.gamma > 0 ? 90 - e.gamma : 90 + e.gamma)
+                                    controls.rotationY += MX.toRad(dy)
+                                    lastAlpha = e.alpha
+
+                                    //log(e.gamma.toFixed(0), e.beta.toFixed(0), e.alpha.toFixed(0))
+                                })
+                                document.addEventListener('touchmove', function (e) {
+                                    e.preventDefault()
+                                })
+
+                            },
+
+                            update: function () {
+                                if (locked) return
+                                var c = scene.camera
+                                c.rotationX += (this.rotationX - c.rotationX) / 4
+                                c.rotationY += (this.rotationY - c.rotationY) / 4
+                            },
+
+                            lock: function () {
+                                locked = true
+                            },
+
+                            unlock: function () {
+                                locked = false
+                            }
+                        }
+
+                    })()
+                    controls.init()
+                } else {
+                    controls = new MX.RotationControl()
+                    controls.sensitivity = .15
+                    controls.ease = 12
+                    controls.upperBoundX = Math.PI / 4,
+                    controls.lowerBoundX = -Math.PI / 4
+                    controls.init(scene.camera)
+                }
+
+                controls.lock()
+
+                // animate
+
+                animate()
+                function animate () {
+                    requestAnimationFrame(animate)
+                    controls.update()
+                    TWEEN.update()
+                    scene.update()
+                }
+
+                new TWEEN.Tween(skybox)
+                    .to({
+                        rotationY: Math.PI * 2
+                    }, 3000)
+                    .easing(TWEEN.Easing.Exponential.InOut)
+                    .onComplete(function () {
+                        controls.unlock()
+                        if (mobile) checkMode()
+                    })
+                    .start()
+
+                function log () {
+                    var str = '',
+                        l = arguments.length
+                    for (var i = 0; i < l; i++) {
+                        str += arguments[i] + ((i === l - 1) ? '' : ', ')
+                    }
+                    document.getElementById('log').textContent = str
+                }
+
+                function checkMode () {
+                    if (window.innerWidth < window.innerHeight) {
+                        alert('please use landscape mode')
+                        controls.lock()
+                    } else {
+                        controls.unlock()
+                    }
+                }
+
+            }
+        </script>
+    </head>
+    <body onload="init()">
+        <div id="info">
+            <h1>Matrix.js skybox example</h1>
+            <br>
+            Image from fff.cmiscm.com<br>
+            Try it on mobile!
+            <p id="log" style="font-size: 80px"></p>
+        </div>
+    </body>
+</html>

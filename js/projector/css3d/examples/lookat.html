@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>lookAt() example</title>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no">
+        <style>
+            html, body {
+                height: 100%;
+                overflow: hidden;
+                margin: 0;
+            }
+            body {
+                background-color: #111;
+                font-family: Arial, sans-serif;
+                color: #fff;
+            }
+            h1 {
+                font-size: 14px;
+                margin-left: 14px;
+            }
+            #wrapper {
+                width: 100%;
+                height: 100%;
+                position: relative;
+                -webkit-perspective: 1000px;
+                -moz-perspective: 1000px;
+                perspective: 1000px;
+                z-index: 1;
+            }
+            #container {
+                width: 50%;
+                height: 50%;
+                z-index: 1;
+            }
+            .target {
+                width: 10px;
+                height: 10px;
+                background-color: #fff;
+                border-radius: 100%;
+            }
+            .dg.ac {
+                z-index: 999 !important;
+            }
+        </style>
+        <script src="../src/mx.js"></script>
+        <script src="../src/primitives/mx.coords.js"></script>
+        <script src="libs/dat.gui.min.js"></script>
+        <script>
+
+            function init () {
+
+                MX.rotationUnit = 'deg'
+
+                var container = new MX.Object3D('#container').addTo('#wrapper')
+
+                // add a target maker
+                var target = new MX.Object3D(),
+                    face1 = new MX.Object3D('.target'),
+                    face2 = new MX.Object3D('.target')
+                face2.rotationY = 90
+                target.add(face1, face2)
+                target.x = Math.round(Math.random() * 500 - 250)
+                target.y = Math.round(Math.random() * 500 - 250)
+                target.z = Math.round(Math.random() * 500 - 250)
+                container.add(target)
+
+                var coords = []
+                for (var i = 0; i < 10; i++) {
+                    var c = new MX.Coords()
+                    c.x = Math.random() * 1000 - 500
+                    c.y = Math.random() * 600 - 300
+                    c.z = Math.random() * 600 - 300
+
+                    // this basically calls lookAt(target) in every update()
+                    c.followTarget = target
+
+                    // this optionally inverse the lookAt() direction
+                    c.inverseLookAt = true
+
+                    container.add(c)
+                    coords.push(c)
+                }
+
+                container.rotationX = -15
+                container.update()
+
+                var state = {
+                    autoRotate: false
+                }
+
+                var gui = new dat.GUI()
+                gui.add(target, 'x', -500, 500)
+                gui.add(target, 'y', -500, 500)
+                gui.add(target, 'z', -500, 500)
+                gui.add(state, 'autoRotate')
+                
+                animate()
+                function animate () {
+                    requestAnimationFrame(animate)
+                    container.update()
+                    if (state.autoRotate) container.rotationY += .3
+                }
+
+            }
+            
+        </script>
+    </head>
+    <body onload="init()">
+        <div id="wrapper">
+            <h1>Matrix.js lookAt() example</h1>
+        </div>
+    </body>
+</html>

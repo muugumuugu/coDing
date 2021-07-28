@@ -1,0 +1,41 @@
+static void
+draw_circle (Image         *image,
+             int            radius,
+             unsigned char  value)
+{
+  int x, y;
+  int l;
+  int r2, y2;
+  int y2_new;
+  int ty;
+
+  /* cos pi/4 = 185363 / 2^18 (approx) */
+  l = (radius * 185363) >> 18;
+
+  /* At x=0, y=radius */
+  y = radius;
+
+  r2 = y2 = y * y;
+  ty = (2 * y) - 1;
+  y2_new = r2 + 3;
+
+  for (x = 0; x <= l; x++) {
+    y2_new -= (2 * x) - 3;
+
+    if ((y2 - y2_new) >= ty) {
+      y2 -= ty;
+      y -= 1;
+      ty -= 2;
+    }
+
+    image_set_pixel (image, x, y, value);
+    image_set_pixel (image, x, -y, value);
+    image_set_pixel (image, -x, y, value);
+    image_set_pixel (image, -x, -y, value);
+
+    image_set_pixel (image, y, x, value);
+    image_set_pixel (image, y, -x, value);
+    image_set_pixel (image, -y, x, value);
+    image_set_pixel (image, -y, -x, value);
+  }
+}

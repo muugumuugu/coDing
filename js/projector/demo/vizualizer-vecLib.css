@@ -1,0 +1,121 @@
+html,body {
+	width:100%;
+	margin: 0;
+	padding: 0;
+	font-family:monospace;
+	font-size:16px;
+	background:#010118;
+	color:#FFF;
+}
+canvas {
+	background:#000;
+	border-style:double;
+	border-width: 5px;
+	padding:5px;
+	border-color:#caea5b;
+	display: inline;
+}
+iframe#SLIDERFRM{
+border:none;
+overflow:hidden;
+margin:0px;
+padding:0px;
+width:860px;
+height:670px;
+}
+iframe#MATRIXFRM{
+border:none;
+overflow:hidden;
+margin:0px;
+padding:0px;
+width:910px;
+height:550px;
+}
+input{
+	width:230px;
+}
+button{
+	width:100%;
+	color:white;
+	border-radius: 20px;
+	text-shadow:0 0 10px #AAAAFF ,0 0 5px #2222FF;
+	background:transparent;
+	border:none;
+}
+button#switchView{
+	position:absolute;
+	border-radius:0px;
+	top:595px;
+	left:697px;
+	padding:0px;
+	margin:0px;
+	text-shadow:0 0 10px #AAFFAA ,0 0 5px #22FF22;
+	height:60px;
+	border:dotted;
+	width:150px;
+}
+button#resetCameraB{
+	position:absolute;
+	width:380px!important;
+	border-radius:0px 20px 20px 0px;
+	border:double;
+	border-color:white;
+	height:28px;
+	top:593px;
+	left:300px;
+	background:black;
+}
+button#resetCanvasB{
+	position:absolute;
+	width:380px!important;
+	border:double;
+	border-radius:0px 20px 20px 0px;
+	border-color:white;
+	height:32px;
+	top:627px;
+	left:300px;
+	background:black;
+}
+button:hover{
+	box-shadow: 0px 0px 5px 5px white;
+	cursor:pointer;
+}
+/**/
+div{
+	margin:0px;
+	padding:0px;
+	text-align:center;
+}
+div.flex{
+	display:flex;
+	flex-wrap:wrap;
+}
+
+div.ctrls{
+	padding:0px;
+	display:flex;
+	overflow-y:scroll;
+	overflow-x:hidden;
+	width:940px;
+	height:900px;
+	top:0px;
+	left:7px;
+	margin-right:10px;
+	padding:0px;
+}
+
+div.matrices{
+	background:black;
+	display:none;
+	position: absolute;
+	top:0px;
+	left:4px;
+	margin:0px;
+	padding-left:0px;
+	padding:0px;
+	border:dotted;
+	border-width:0.3px;
+	border-color:white;
+	width:920px;
+	height:670px;
+}

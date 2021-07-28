@@ -1,0 +1,21 @@
+xO = (xF-zF)cos(a)s
+
+yO = ((xF+zF+1)sin(a)-yF)s
+
+Note, that xF and zF still indicate the topmost corner of the tile which shall act as the focus.
+
+Also note, that the formulae for xS and yS do not change: they always were referring to a tile's corner, which is assumed to have a dedicated elevation anyway.
+
+The only new element regarding tiles is the fact, that also for them a center point exists now, acting as the common corner of the 4 triangles constituting that tile's surface. The elevation of that point is the average of the elevations of all 4 points.
+
+Thus for the 4 corners of any tile (even the focus tile!) remains valid:
+
+xS = (xW-zW)cos(a)s-xO+xC
+
+yS = ((xW+zW)sin(a)-yW)s-yO+yC
+
+And since this section is titled "The Final Formulae", let's repeat the (unchanged) formulas for xC and yC as well:
+
+xC = ScreenWidth / 2
+
+yC = ScreenHeight / 2

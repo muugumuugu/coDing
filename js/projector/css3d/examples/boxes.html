@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Boxes example</title>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no">
+        <style type="text/css">
+            html, body {
+                height: 100%;
+                overflow: hidden;
+                margin: 0;
+            }
+            body {
+                -webkit-perspective: 800px;
+                -moz-perspective: 800px;
+                perspective: 800px;
+                background-color: #000;
+                font-family: 'Helvetica Neue', Arial, sans-serif;
+            }
+            .box:hover .face {
+                background-color: rgba(0, 255, 122, .2) !important;
+                box-shadow: 0 0 36px rgba(0,255,122,.5) !important;
+            }
+        </style>
+        <script src="../src/mx.js"></script>
+        <script src="../src/primitives/mx.box.js"></script>
+        <script src="libs/stats.min.js"></script>
+        <script>
+
+        function init () {
+
+            // stats
+            var stats = new Stats()
+            stats.domElement.style.position = 'absolute'
+            stats.domElement.style.left = '0px'
+            stats.domElement.style.top = '0px'
+            document.body.appendChild(stats.domElement)
+
+            // set rotation unit
+            MX.rotationUnit = 'deg'
+
+            // this creates a div with id="container" and appends it to body (using querySelector)
+            // you can also pass in an existing DOM node
+            var container = new MX.Object3D('div#container').addTo('body')
+
+            var boxes = [],
+                axes = ['X', 'Y', 'Z'],
+                w = window.innerWidth,
+                h = window.innerHeight,
+                origin = {
+                    x: 0,
+                    y: 0,
+                    z: 0
+                }
+
+            for (var i = 0; i < 50; i++) {
+
+                var box = new MX.Box(Math.random() * 70 + 30, 'rgba(0, 255, 122, .1)', '#0f3')
+
+                // setting random position for each box
+                box.x = Math.random() * w - w/2
+                box.y = Math.random() * h - h/2
+                box.z = Math.random() * 500 - 250
+
+                box.rotationOrigin = origin
+
+                // box.x = i * 120 - 120
+                // box.y = i * 120 - 120
+
+                // simply attaching some random data here
+                box.axis = axes[Math.floor(Math.random() * 3)]
+
+                container.add(box)
+            }
+
+            animate()
+            function animate () {
+                stats.begin()
+
+                requestAnimationFrame(animate)
+
+                container.children.forEach(function (box) {
+                    box['rotation' + box.axis] += .5
+                })
+
+                container.rotationX += .5
+                container.update()
+
+                stats.end()
+            }
+
+        }
+        </script>
+    </head>
+    <body onload="init()">
+        <a href="https://github.com/yyx990803/matrix.js" target="_blank"><img style="position: absolute; top: 0; right: 0; border: 0; z-index:999" src="images/fork.png" alt="Fork me on GitHub"></a>
+    </body>
+</html>

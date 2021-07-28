@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title></title>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <style>
+            html, body {
+                margin: 0;
+                height: 100%;
+            }
+            body {
+                font-family: 'Helvetica Neue', Arial, sans-serif;
+                color: #fff;
+            }
+            #info {
+                font-size: 12px;
+                margin-left: 14px;
+                position: absolute;
+                z-index: 2;
+            }
+            .mx-scene {
+                z-index: 1;
+                background-color: #000;
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                -webkit-transform: translate3d(-50%, -50%, 0);
+                -moz-transform: translate3d(-50%, -50%, 0);
+                transform: translate3d(-50%, -50%, 0);
+            }
+        </style>
+        <script src="../src/mx.js"></script>
+        <script src="../src/extensions/mx.scene.js"></script>
+        <script src="../src/extensions/mx.rotationControl.js"></script>
+        <script src="../src/primitives/mx.box.js"></script>
+        <script src="../src/primitives/mx.coords.js"></script>
+        <script src="libs/tween.min.js"></script>
+        <script>
+
+            // This is just a stupid implementation of 
+            // scene and camera with some hacks.
+            // Probably not a good choice to build
+            // games with.
+
+            function init () {
+
+                var scene,
+                    cam,
+                    mainbox,
+                    coords,
+                    box, size,
+                    floor,
+                    controls = new MX.RotationControl(),
+                    movements,
+                    viewHeight = 300
+
+                // set up scene & camera
+
+                scene = new MX.Scene().addTo('body')
+                scene.width = window.innerWidth
+                scene.height = window.innerHeight
+                scene.perspective = 1000
+
+                window.onresize = function () {
+                    scene.width = window.innerWidth
+                    scene.height = window.innerHeight
+                }
+
+                cam = scene.camera
+                cam.z = -1000
+                cam.y = 5000
+                cam.x = 2000
+                cam.lookAt({ x:0, y:0, z:0 })
+
+                // set up objects
+
+                mainbox = new MX.Box(300)
+                mainbox.y = 150
+                scene.add(mainbox)
+
+                coords = new MX.Coords(1000)
+                scene.add(coords)
+
+                for (var i = 0; i < 30; i++) {
+                    size = Math.random() * 100 + 100
+                    box = new MX.Box(size)
+                    box.x = Math.random() * 5000 - 2500
+                    box.y = size / 2 + Math.random() * 1000
+                    box.z = Math.random() * 5000 - 2500
+                    scene.add(box)
+                }
+
+                // set up rotation control
+
+                controls.usePreset('firstPerson')
+                document.addEventListener('click', function (e) {
+                    controls.initPointerLock()
+                })
+
+                document.addEventListener('keydown', function (e) {
+                    if (e.keyCode === 32) {
+                        controls.lock()
+                    }
+                })
+
+                document.addEventListener('keyup', function (e) {
+                    if (e.keyCode === 32 && !inAnimation) {
+                        controls.unlock()
+                    }
+                })
+
+                // set up movement
+
+                movements = (function () {
+
+                    var moveForward,
+                        moveLeft,
+                        moveBackward,
+                        moveRight,
+                        jumping = false
+
+                    var v = 15,
+                        jumpV = 25,
+                        vx = vy = vz = 0
+
+                    return {
+
+                        init: function () {
+
+                            document.addEventListener('keydown', function (e) {
+                                switch ( e.keyCode ) {
+                                    case 38: // up
+                                    case 87: // w
+                                        moveForward = true
+                                        break
+
+                                    case 37: // left
+                                    case 65: // a
+                                        moveLeft = true
+                                        break
+
+                                    case 40: // down
+                                    case 83: // s
+                                        moveBackward = true
+                                        break
+
+                                    case 39: // right
+                                    case 68: // d
+                                        moveRight = true
+                                        break
+
+                                    case 32: // space
+                                        if (!jumping) vy += jumpV
+                                        jumping = true
+                                        break
+                                }
+                            })
+
+                            document.addEventListener('keyup', function (e) {
+                                switch ( e.keyCode ) {
+                                    case 38: // up
+                                    case 87: // w
+                                        moveForward = false
+                                        break
+
+                                    case 37: // left
+                                    case 65: // a
+                                        moveLeft = false
+                                        break
+
+                                    case 40: // down
+                                    case 83: // s
+                                        moveBackward = false
+                                        break
+
+                                    case 39: // right
+                                    case 68: // d
+                                        moveRight = false
+                                        break
+                                }
+                            })
+
+                        },
+
+                        update: function () {
+
+                            var ry = cam.rotationY
+
+                            if (jumping) {
+                                // do nothing
+                            } else if (moveForward || moveBackward || moveRight || moveLeft) {
+
+                                vx = vz = 0                              
+
+                                if (moveForward) {
+                                    vx += v * Math.cos(ry + Math.PI / 2)
+                                    vz += v * Math.sin(ry + Math.PI / 2)
+                                    
+                                }
+
+                                if (moveBackward) {
+                                    vx -= v * Math.cos(ry + Math.PI / 2)
+                                    vz -= v * Math.sin(ry + Math.PI / 2)
+                                }
+
+                                if (moveLeft) {
+                                    vx -= v * Math.cos(ry)
+                                    vz -= v * Math.sin(ry)
+                                }
+
+                                if (moveRight) {
+                                    vx += v * Math.cos(ry)
+                                    vz += v * Math.sin(ry)
+                                }
+
+                            } else {
+
+                                vx = vz = 0
+
+                            }
+
+                            vy -= 1
+
+                            // update cam
+                            cam.x += vx
+                            cam.z += vz
+                            cam.y += vy
+
+                            if (cam.y <= viewHeight) {
+                                cam.y = viewHeight
+                                vy = 0
+                                jumping = false
+                            }
+
+                        }
+                    }
+                })()
+
+                // animate
+
+                animate()
+                function animate () {
+                    requestAnimationFrame(animate)
+                    controls.update()
+                    movements.update()
+                    TWEEN.update()
+                    scene.update()
+                }
+
+                // starting animation
+
+                var inAnimation = true
+                new TWEEN.Tween(cam)
+                    .to({
+                        x: 0,
+                        y: viewHeight,
+                        z: -1000
+                    }, 5000)
+                    .easing(TWEEN.Easing.Exponential.InOut)
+                    .onUpdate(function () {
+                        cam.lookAt(mainbox)
+                    })
+                    .onComplete(function () {
+                        controls.init(cam, scene)
+                        movements.init()
+                        inAnimation = false
+                    })
+                    .start()
+
+            }
+        </script>
+    </head>
+    <body onload="init()">
+        <div id="info">
+            <h1>Matrix.js scene example</h1>
+            <p>Click to enable pointer lock mode</p>
+        </div>
+    </body>
+</html>

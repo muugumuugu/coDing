@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<!---->
+		<script src="../lib/p5/p5.min.js"></script>
+		<script src="../lib/p5/p5.sound.min.js"></script>
+		<!----->
+		<!----
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.3.1/p5.min.js"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.3.1/addons/p5.sound.min.js"></script>
+		<!---->
+		<script src="helpMenu.js"></script>
+		<script src="../lib/projector/projector-core.js"></script>
+		<script src="../lib/projector/projector-frontEnd.js"></script>
+		<!---->
+		<script src="viz.js"></script>
+		<!---->
+		<link rel="stylesheet" type="text/css" href="vizualizer-vecLib.css">
+	</head>
+	<body>
+		<div class="flex">
+			<div class="ctrls" ><iframe  id="SLIDERFRM" scrolling="no" src="../lib/projector/frontend/slider.html"></iframe></div>
+			<div class="matrices" style="padding-top:5px;padding-left:0px;" id="matrices" ><iframe style="left:-4px; padding:0px;" scrolling="no" id="MATRIXFRM" src="../lib/projector/frontend/form.html"></iframe></div>
+			<button id="resetCameraB" onclick="resetcam()"><i>reset camera to default</i></button>
+			<button id="resetCanvasB" onclick="resetcanvas()"><i>reset canvas to default</i></button>
+			<button id="switchView" onclick="toggleSliderTbl()">MATRIX VIEW &gt;&gt;</button>
+			<div id="cnvs"></div>
+		</div>
+		<script src="vizualizer-vecLib.js"></script>
+
+</body></html>

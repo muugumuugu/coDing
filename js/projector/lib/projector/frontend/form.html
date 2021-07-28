@@ -1,0 +1,123 @@
+<html>
+<head>
+	<link rel="stylesheet" href="form.css">
+</head>
+<body>
+<div class="flex" style="margin-bottom:15px; padding-top:15px;">
+	<button class="net">CNV  &gt;&gt;</button>
+	<div style="border:ridge; "><table id="cnvsM">
+		  <tr>
+		    <td><input class="mainFrmIn" id="canvasT00"></td><td><input class="mainFrmIn" id="canvasT01"></td><td><input class="mainFrmIn" id="canvasT02"></td><td><input class="mainFrmIn" id="canvasT03"></td>
+		  </tr>
+		  <tr>
+		    <td><input class="mainFrmIn" id="canvasT10"></td><td><input class="mainFrmIn" id="canvasT11"></td><td><input class="mainFrmIn" id="canvasT12"></td><td><input class="mainFrmIn" id="canvasT13"></td>
+		  </tr>
+		  <tr>
+		    <td><input class="mainFrmIn" id="canvasT20"></td><td><input class="mainFrmIn" id="canvasT21"></td><td><input class="mainFrmIn" id="canvasT22"></td><td><input class="mainFrmIn" id="canvasT23"></td>
+		  </tr>
+		  <tr>
+		    <td><input class="mainFrmIn" id="canvasT30"></td><td><input class="mainFrmIn" id="canvasT31"></td><td><input class="mainFrmIn" id="canvasT32"></td><td><input class="mainFrmIn" id="canvasT33"></td>
+		  </tr>
+	</table></div>
+	<button class="net">CAM  &gt;&gt;</button>
+	<div style="border:ridge;"><table id="camM">
+		  <tr>
+		    <td><input class="mainFrmIn" id="cameraT00"></td><td><input class="mainFrmIn" id="cameraT01"></td><td><input class="mainFrmIn" id="cameraT02"></td><td><input class="mainFrmIn" id="cameraT03"></td>
+		  </tr>
+		  <tr>
+		    <td><input class="mainFrmIn" id="cameraT10"></td><td><input class="mainFrmIn" id="cameraT11"></td><td><input class="mainFrmIn" id="cameraT12"></td><td><input class="mainFrmIn" id="cameraT13"></td>
+		  </tr>
+		  <tr>
+		    <td><input class="mainFrmIn" id="cameraT20"></td><td><input class="mainFrmIn" id="cameraT21"></td><td><input class="mainFrmIn" id="cameraT22"></td><td><input class="mainFrmIn" id="cameraT23"></td>
+		  </tr>
+		  <tr>
+		    <td><input class="mainFrmIn" id="cameraT30"></td><td><input class="mainFrmIn" id="cameraT31"></td><td><input class="mainFrmIn" id="cameraT32"></td><td><input class="mainFrmIn" id="cameraT33"></td>
+		  </tr>
+	</table></div>
+</div>
+<!-------------------->
+<div class="flex">
+	<div class="flex" >
+		<div style="width:430px;border:dotted;border-width:0.5px;padding-top:8px;padding-bottom:5px;" tagged="CANVAS">
+			<div class="flex" ><button >&nbsp;X </button><span>&nbsp;</span><input placeholder="ROT X " class="canvastheta"><div><table id="cnvsRx">
+				  <tr>
+					<td><input class="rotn"  ></td><td><input class="rotn"  ></td><td><input class="rotn"  ></td>
+				  </tr>
+				  <tr>
+					<td><input class="rotn"  ></td><td><input class="rotn"  ></td><td><input class="rotn"  ></td>
+				  </tr>
+				  <tr>
+					<td><input class="rotn"  ></td><td><input class="rotn"  ></td><td><input class="rotn"  ></td>
+				  </tr>
+			</table></div><input placeholder="POS X " class="cnvpos"><span>&nbsp;</span><input placeholder="SCL X " class="cnvscl"></div>
+			<div class="flex" ><button >&nbsp;Y </button><span>&nbsp;</span><input placeholder="ROT Y " class="canvastheta"><div><table id="cnvsRy">
+				  <tr>
+					<td><input class="rotn"  ></td><td><input class="rotn"  ></td><td><input class="rotn"  ></td>
+				  </tr>
+				  <tr>
+					<td><input class="rotn"  ></td><td><input class="rotn"  ></td><td><input class="rotn"  ></td>
+				  </tr>
+				  <tr>
+					<td><input class="rotn"  ></td><td><input class="rotn"  ></td><td><input class="rotn"  ></td>
+				  </tr>
+			</table></div><input placeholder="POS Y " class="cnvpos"><span>&nbsp;</span><input placeholder="SCL Y " class="cnvscl"></div>
+			<div class="flex" ><button >&nbsp;Z </button><span>&nbsp;</span><input placeholder="ROT Z " class="canvastheta"><div><table id="cnvsRz">
+				  <tr>
+					<td><input class="rotn"  ></td><td><input class="rotn"  ></td><td><input class="rotn"  ></td>
+				  </tr>
+				  <tr>
+					<td><input class="rotn"  ></td><td><input class="rotn"  ></td><td><input class="rotn"  ></td>
+				  </tr>
+				  <tr>
+					<td><input class="rotn"  ></td><td><input class="rotn"  ></td><td><input class="rotn"  ></td>
+				  </tr>
+			</table></div><input placeholder="POS Z " class="cnvpos"><span>&nbsp;</span><input placeholder="SCL Z " class="cnvscl"></div>
+		</div>
+	</div>
+	<!-------------------->
+	<div class="flex" style="width:470px; border:dotted; border-width:0.5px;" tagged="CAMERA">
+		<button>POSE</button>
+		<div><table id="POSEM" style="margin-top:8px;">
+			<tr>
+			<td><input ></td><td><input ></td><td><input ></td><td><input ></td>
+			</tr>
+			<tr>
+			<td><input ></td><td><input ></td><td><input ></td><td><input ></td>
+			</tr>
+			<tr>
+			<td><input ></td><td><input ></td><td><input ></td><td><input ></td>
+			</tr>
+			<tr>
+			<td><input ></td><td><input ></td><td><input ></td><td><input ></td>
+			</tr>
+		</table></div>
+		<div id="POSEDATA">
+			<input placeholder="ROT X " style="margin:4px;" ><input placeholder="POS X " style="margin:2px;" ><br>
+			<input placeholder="ROT Y " style="margin:4px;" ><input placeholder="POS Y " style="margin:2px;" ><br>
+			<input placeholder="ROT Z " style="margin:4px;" ><input placeholder="POS Z " style="margin:2px;" ><br>
+		</div>
+		<button>&nbsp;INT</button>
+		<div><table id="INTRINSIC" style="margin-top:2px;">
+			<tr>
+			<td><input ></td><td><input ></td><td><input ></td><td><input ></td>
+			</tr>
+			<tr>
+			<td><input ></td><td><input ></td><td><input ></td><td><input ></td>
+			</tr>
+			<tr>
+			<td><input ></td><td><input ></td><td><input ></td><td><input ></td>
+			</tr>
+			<tr>
+			<td><input ></td><td><input ></td><td><input ></td><td><input ></td>
+			</tr>
+		</table></div>
+		<div id="INTRINSICDATA">
+			<input placeholder="FOC X " style="margin:4px;" ><input placeholder="OFF X " style="margin:4px;" ><br>
+			<input placeholder="FOC Y " style="margin:4px;" ><input placeholder="OFF Y " style="margin:4px;" ><br>
+			<input placeholder="SKEW    " style="margin:4px; width:112px;" ><br>
+		</div>
+	</div>
+	<!-------------------->
+</div>
+</body>
+</html>
