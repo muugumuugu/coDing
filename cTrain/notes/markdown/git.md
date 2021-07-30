@@ -33,7 +33,7 @@
 	> Download/Pull from server
 - Remote
 	> clone living on some server, here, GITHUB.
-- Make a branch named gh-pages, and switch on the github pages for it. This hosts ur site on github.io 	>)).
+- Make a branch named gh-pages, and switch on the github pages for it. This hosts ur site on github.io :).
 
 ## copy pasta commands
 -  make present working directory a git repo

@@ -5,12 +5,14 @@
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/muugumuugu/coDing@latest/css/hacker.min.css">
 <script src="https://cdn.jsdelivr.net/gh/muugumuugu/coDing@latest/js/syntaxhighlighter.js"></script>
 <script>hljs.highlightAll();</script>
+<style>div.flex{width:100%;}div.flex div{width:50%;}ul{width:90%;}ul li{width:100%;}</style>
 </head>
 <body>
 <header><h1>git</h1></header>
-<div class="flex" style="width:100%;">
+<details><summary><h2>pointers</h2></summary>
+<hr>
 <div style="width:50%">
-<h2>basically</h2>
+<h3>basically</h3>
 <ul>
 <li>GIT.<blockquote>
 <p>version control</p>
@@ -21,7 +23,7 @@
 </blockquote>
 </li>
 </ul>
-<h2 id="terminology">terminology</h2>
+<h3"terminology">terminology</h3>
 <ul>
 <li>Repo<blockquote>
 <p>A project</p>
@@ -70,63 +72,77 @@ Basically save/update/delete files in the spotlight(stage).</p>
 <p>clone living on some server, here, GITHUB.</p>
 </blockquote>
 </li>
-<li>Make a branch named gh-pages, and switch on the github pages for it. This hosts ur site on github.io     &gt;)).</li>
+<li>Make a branch named gh-pages, and switch on the github pages for it. This hosts ur site on github.io :).</li>
 </ul>
-</div>
+</details>
 
 
-<div>
 
-<h2 id="copy-pasta-commands">copy pasta commands</h2>
-<ul>
+
+
+<details><summary><h2>codeblocks</h2></summary>
+<hr>
+<h3>copy pasta commands</h3>
+<div class="flex">
+<div><ul>
 <li>make present working directory a git repo.
 <pre><code class="lang-bash"><span class="hljs-attribute">git</span> <span class="hljs-keyword">init</span>
 </code></pre></li>
-</ul>
-<hr>
-<ul>
+</ul></div>
+
+<div><ul>
+<li>configure
+<pre><code class="lang-bash"><span class="hljs-attribute">git</span> <span class="hljs-keyword">config</span> <span class="hljs-params">--global</span> <span class="hljs-built_in">user</span><span class="hljs-selector-class">.name</span> <span class="hljs-string">"name"</span>
+<span class="hljs-attribute">git</span> <span class="hljs-keyword">config</span> <span class="hljs-params">--global</span> <span class="hljs-built_in">user</span><span class="hljs-selector-class">.email</span> <span class="hljs-string">"mail"</span>
+</code></pre></li>
+</ul></div>
+
+<div><ul>
 <li>stage file to commit.
 <pre><code class="lang-bash"><span class="hljs-attribute">git</span> <span class="hljs-keyword">add</span> <span class="hljs-string">fname</span>
 </code></pre></li>
+<li>delete a file and stage it&#39;s deletion.
+<pre><code class="lang-bash"><span class="hljs-attribute">git</span> <span class="hljs-keyword">rm</span> <span class="hljs-string">fname</span>
+</code></pre></li>
+</ul></div>
+
+<div><ul>
 <li>stage all changes.
 <pre><code class="lang-bash"><span class="hljs-attribute">git</span> <span class="hljs-keyword">add</span> <span class="hljs-selector-attr">.</span>
 </code></pre></li>
 <li>stage all files currently existing in location.
 <pre><code class="lang-bash"><span class="hljs-attribute">git</span> <span class="hljs-keyword">add</span> <span class="hljs-selector-attr">*</span>
 </code></pre></li>
-<li>delete a file and stage it&#39;s deletion.
-<pre><code class="lang-bash"><span class="hljs-attribute">git</span> <span class="hljs-keyword">rm</span> <span class="hljs-string">fname</span>
-</code></pre></li>
-</ul>
-<hr>
-<ul>
+</ul></div>
+
+<div><ul>
 <li>commit the staged files with commit message.
 <pre><code class="lang-bash"><span class="hljs-attribute">git</span> <span class="hljs-keyword">commit<span> <span class="hljs-built_in">-m <span class="hljs-string">msg</span>
 </code></pre></li>
 <li>commit all changes in curr repo with msg.
 <pre><code class="lang-bash"> <span class="hljs-attribute">git</span> <span class="hljs-keyword">commit<span> -<span class="hljs-selector-tag">a</span> <span class="hljs-built_in">-m</span> <span class="hljs-string">"msg"</span>
 </code></pre></li>
-</ul>
-<hr>
-<ul>
+</ul></div>
+
+<div><ul>
 <li>reset last n commits.
 <pre><code class="lang-bash"><span class="hljs-attribute">git</span> <span class="hljs-keyword">reset</span> <span class="hljs-built_in">--soft <span class="hljs-literal">HEAD</span><span class="hljs-selector-tag">~</span><span class="hljs-params">n</span>
 </code></pre></li>
-</ul>
-<hr>
-<ul>
 <li>rename main branch.
 <pre><code class="lang-bash">  <span class="hljs-attribute">git</span> <span class="hljs-keyword">branch</span> <span class="hljs-params">-M</span> <span class="hljs-string">localMain</span>
 </code></pre></li>
-</ul>
-<hr>
-<ul>
+</ul></div>
+
+<div><ul>
 <li>list remotes assosiated, and describe them
 <pre><code class="lang-bash"><span class="hljs-attribute">git</span> <span class="hljs-keyword">remote</span> <span class="hljs-built_in">-v</span>
 </code></pre></li>
 <li>add a link to a repo on some remote server
 <pre><code class="lang-bash"> <span class="hljs-attribute">git</span> <span class="hljs-keyword">remote</span> <span class="hljs-built_in">add</span> <span class="hljs-string">localNameForRemoteRep</span> <span class="hljs-literal">remoteRepoUrl</span>
 </code></pre></li>
+</ul></div>
+
+<div><ul>
 <li>get changes made in given branch of remote repo and update local branch with them.
 <pre><code class="lang-bash"> <span class="hljs-attribute">git</span> <span class="hljs-keyword">pull</span> <span class="hljs-string">localNameForRemoteRep</span><span class="hljs-symbol">/</span><span class="hljs-string">branchname</span> <span class="hljs-string">localbranchename</span>
 </code></pre></li>
@@ -136,35 +152,29 @@ Basically save/update/delete files in the spotlight(stage).</p>
 <li>track changes of a remote branch
 <pre><code class="lang-bash"><span class="hljs-attribute">git</span> <span class="hljs-keyword">push</span> <span class="hljs-built_in">--set-upstream</span> <span class="hljs-string">localNameForRemoteRep</span><span class="hljs-symbol">/</span><span class="hljs-string">branchname</span> <span class="hljs-string">localbranchename</span>
 </code></pre></li>
-</ul>
-<hr>
-<ul>
+</ul></div>
+
+<div><ul>
 <li>switch to another branch
 <pre><code class="lang-bash"><span class="hljs-attribute">git</span> <span class="hljs-keyword">checkout</span> <span class="hljs-string">branchname</span>
 </code></pre></li>
 <li>switch to new branch
 <pre><code class="lang-bash"><span class="hljs-attribute">git</span> <span class="hljs-keyword">checkout</span> <span class="hljs-built_in">-b</span> <span class="hljs-string">branchname</span>
 </code></pre></li>
-</ul>
-<hr>
-<ul>
+</ul></div>
+
+<div><ul>
 <li>check changes, branch , etc.
 <pre><code class="lang-bash"><span class="hljs-attribute">git</span> <span class="hljs-keyword">status</span>
 </code></pre></li>
 <li>show history upto last n commits/branches in Vim, exit by     &gt;q
 <pre><code class="lang-bash"><span class="hljs-attribute">git</span> <span class="hljs-keyword">log</span> <span class="hljs-params">-n</span>
 </code></pre></li>
-</ul>
-<hr>
-<ul>
-<li>configure
-<pre><code class="lang-bash"><span class="hljs-attribute">git</span> <span class="hljs-keyword">config</span> <span class="hljs-params">--global</span> <span class="hljs-built_in">user</span><span class="hljs-selector-class">.name</span> <span class="hljs-string">"name"</span>
-<span class="hljs-attribute">git</span> <span class="hljs-keyword">config</span> <span class="hljs-params">--global</span> <span class="hljs-built_in">user</span><span class="hljs-selector-class">.email</span> <span class="hljs-string">"mail"</span>
-</code></pre></li>
-</ul>
+</ul></div>
+
 
 </div>
-</div>
+</details>
 
 
 
