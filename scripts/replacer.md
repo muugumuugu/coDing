@@ -5,24 +5,43 @@
 ```html
 <style (.*\s*)+?</style>
 ```
+- header
+	```html
+	<html>
+	<head>
+	<title>
+	folder name
+	</title>
+	<link rel="stylesheet" href="/styles/home.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/muugumuugu/coDing@latest/css/hacker.min.css">
+	<style> div{margin:3px;}img{width:200px;height:200px;}div.bend{width:200px;}</style>
+	</head>
+	```
+- body
+	```html
+	<body>
+	<header>
+	<h1>folder name</h1>
+	</header>
 
-- 1
-  ```html
-  	<style>span.divider{color: blue;}a:link {color: green;background-color: transparent;text-decoration: none;}a:visited {color: pink;background-color: transparent;text-decoration: none;}a:hover {color: red;background-color: transparent;text-decoration: underline;}a:active {color: yellow;background-color: transparent;text-decoration: underline;}body{	background-color:black;	color:white;	}</style>
-  ```
-- 2
-  ```html
-  <link rel="stylesheet" href="/styles/home.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/muugumuugu/coDing@latest/css/hacker.min.css">
-  ```
-- 3
-  ```html
-  <style> div{margin:5px;}image{width:300px;height:200px;}</style>
-  ```
+
+	<div class="flex">
+
+
+
+
+
+
+	</div>
+
+
+	<footer>
+	</footer>
+	</body>
+	</html>
+	```
 ---
 
-```html
-<tr>.*\/D.*?/.*/(.*?)">([^~]*?)</a></td></tr>
-```
+files
 
 - 1
   ```html
@@ -30,7 +49,7 @@
   ```
 - 2
   ```html
-  <li><a href="\1">\2</a> </li>
+  <li><a href="\1" title="\1">\2</a></li>
   ```
 - 3
   ```html
@@ -51,11 +70,3 @@
 
 
 ---
-```html
-<table>
-```
-
-- 1
-  ```html
-  <div class="flex">
-  ```

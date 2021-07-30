@@ -8,25 +8,97 @@
 		<title>snippets</title>
 	</head>
 <body>
+
 <ul>
-<li><a href="http://127.0.0.1:8081/">home</a></li>
-<pre><code class="lang-bat">cd ~
-http-serve<span class="hljs-params"> -p</span>8081
+<li><a href="http://192.168.1.8/">apache root</a></li>
+<li><a href="http://192.168.1.8:8081/">node root</a>
+<pre><code class="lang-bash">cd <span class="hljs-selector-tag">~</span>
+<span class="hljs-attribute">http-server</span><span class="hljs-params"> -p</span><span class="hljs-number">8081</span>
 </code></pre>
 </li>
-<li><a href="http://127.0.0.1:3125/">notes</a></li>
-<pre><code class="lang-bat">cd ~
-jekyll serve<span class="hljs-params"> --watch </span>--port 3125
+<li><a href="http://192.168.1.8::3125/">notes</a>
+<pre><code class="lang-bash">cd <span class="hljs-selector-tag">~</span>
+<span class="hljs-attribute">jekyll</span> <span class="hljs-keyword">serve</span> <span class="hljs-params">--watch </span><span class="hljs-params">--port</span> <span class="hljs-number">3125</span>
 </code></pre>
 </li>
-<li><a href="http://127.0.0.1:4000/">blog</a></li>
-<pre><code class="lang-bat">cd
-jekyll serve<span class="hljs-params"> --watch </span>--port 4000
+<li><a href="http//192.168.1.8:4000/">blog</a>
+<pre><code class="lang-bash">cd <span class="hljs-selector-tag">~</span>
+<span class="hljs-attribute">jekyll</span> <span class="hljs-keyword">serve</span> <span class="hljs-params">--watch </span><span class="hljs-params">--port</span> <span class="hljs-number">4000</span>
 </code></pre>
 </li>
 </ul>
-
+<!---->
 <ul>
+<li><p>loop thru directories</p>
+<pre><code class="language-bash">for d in <span class="hljs-selector-attr">./*</span>; do  if [ <span class="hljs-built_in">-d </span>&quot;$d&quot; ]; then  echo &quot;$d&quot;;   fi; done
+</code></pre>
+</li>
+<li><p>delete files</p>
+<pre><code class="language-bash">for d in <span class="hljs-selector-attr">./*</span>; do  if [ <span class="hljs-built_in">-d </span>&quot;$d&quot; ]; then  cd $d; <span class="hljs-attribute">rm</span> <span class="hljs-selector-attr">*</span><span class="hljs-selector-class">.mp3</span>; cd <span class="hljs-selector-tag">..</span> ;   fi; done
+</code></pre>
+</li>
+<li>rename files<pre><code class="lang-bash"><span class="hljs-built_in">rename</span> <span class=hljs-params>-v</span>  's/search regex</span><span>/replacingstring/' *
+</code></pre>
+</li>
+<li>make thumbnails
+<pre><code class="lang-bash">for f in  <span class="hljs-selector-attr">*</span><span class="hljs-selector-class">.pdf</span>; <span class="hljs-keyword">do</span> <span class="hljs-built_in">echo</span> <span class="hljs-attribute">epub-thumbnailer</span> "$f" "${f%.epub}.png" <span class="hljs-number"> 800</span>; done</span>
+</code></pre>
+<pre><code class="lang-bash">for f in  <span class="hljs-selector-attr">*</span><span class="hljs-selector-class">.pdf</span>; <span class="hljs-keyword">do</span> <span class="hljs-attribute">convert</span> <span class="hljs-built_in">-thumbnail</span> x<span class="hljs-number">300</span> <span class="hljs-built_in">-background</span> <span class="hljs-literal">white</span> <span class="hljs-built_in">-alpha</span> <span class="hljs-literal">remove</span> "$f"<span class="hljs-selector-attr">[0]</span> "${f%.pdf}.png";done
+</code></pre>
+<pre><code class="lang-bash"><span class="hljs-attribute">mogrify</span>  <span class="hljs-built_in">-format</span> <span class="hljs-string"> webp</span> <span class="hljs-built_in">-path</span> <span class="hljs-string">thumbs</span> <span class="hljs-built_in">-thumbnail</span> <span class="hljs-number">200</span>x<span class="hljs-number">200</span> <span class="hljs-selector-attr">*</span><span class="hljs-selector-class">.pdf</span><span class="hljs-selector-attr">[0]</span>
+</code></pre>
+<pre><code class="lang-bash"><span class="hljs-attribute">mogrify</span>  <span class="hljs-built_in">-format</span> <span class="hljs-string"> webp</span> <span class="hljs-built_in">-path</span> <span class="hljs-string">thumbs</span> <span class="hljs-built_in">-thumbnail</span> <span class="hljs-number">200</span>x<span class="hljs-number">200</span> <span class="hljs-selector-attr">*</span><span class="hljs-selector-class">.jpg</span>
+<span class="hljs-attribute">mogrify</span>  <span class="hljs-built_in">-format</span> <span class="hljs-string"> webp</span> <span class="hljs-built_in">-path</span> <span class="hljs-string">thumbs</span> <span class="hljs-built_in">-thumbnail</span> <span class="hljs-number">200</span>x<span class="hljs-number">200</span> <span class="hljs-selector-attr">*</span><span class="hljs-selector-class">.gif</span><span class="hljs-selector-attr">[0]</span>
+<span class="hljs-attribute">mogrify</span>  <span class="hljs-built_in">-format</span> <span class="hljs-string"> webp</span> <span class="hljs-built_in">-path</span> <span class="hljs-string">thumbs</span> <span class="hljs-built_in">-thumbnail</span> <span class="hljs-number">200</span>x<span class="hljs-number">200</span> <span class="hljs-selector-attr">*</span><span class="hljs-selector-class">.djvu</span><span class="hljs-selector-attr">[0]</span>
+<span class="hljs-attribute">mogrify</span>  <span class="hljs-built_in">-format</span> <span class="hljs-string"> webp</span> <span class="hljs-built_in">-path</span> <span class="hljs-string">thumbs</span> <span class="hljs-built_in">-thumbnail</span> <span class="hljs-number">200</span>x<span class="hljs-number">200</span> <span class="hljs-selector-attr">*</span><span class="hljs-selector-class">.png</span>
+</code></pre>
+</li>
+<li>batch img
+<pre><code class="lang-bash"><span class="hljs-built_in">sudo</span> <span class="hljs-keyword">apt-get</span> <span class="hljs-selector-tag">install</span> <span class="hljs-literal">jpegoptim</span>
+</code></pre>
+<pre><code class="lang-bash"><span class="hljs-attribute">jpegoptim </span><span class="hljs-selector-attr">*</span><span class="hljs-selector-class">.mp3</span> </span><span class="hljs-built_in">-m</span><span class="hljs-number">30</span>
+</code></pre>
+<pre><code class="lang-bash"><span class="hljs-attribute">mogrify</span> <span class="hljs-built_in">-path</span> <span class="hljs-string">./results</span> <span class="hljs-built_in">-resize</span> <span class="hljs-number">50</span>x<span class="hljs-number">50</span>% <span class="hljs-built_in">-quality</span> <span class="hljs-number">80</span> <span class="hljs-built_in">-format</span> <span class="hljs-string">jpg</span> <span class="hljs-selector-attr">*</span><span class="hljs-selector-class">.png</span>
+</code></pre>
+<pre><code class="lang-bash"><span class="hljs-attribute">mogrify</span>  <span class="hljs-built_in">-format</span> <span class="hljs-string"> jpg</span>  <span class="hljs-selector-attr">*</span><span class="hljs-selector-class">.png</span>
+</code></pre>
+<pre><code class="lang-bash"><span class="hljs-attribute">mogrify</span> <span class="hljs-built_in">-path</span> <span class="hljs-string">./</span> <span class="hljs-built_in">-resize</span> <span class="hljs-number">50</span>% <span class="hljs-built_in">-quality</span> <span class="hljs-number">80</span>  <span class="hljs-selector-attr">*</span><span class="hljs-selector-class">.jpg</span>
+</code></pre>
+<pre><code class="lang-bash"><span class="hljs-attribute">convert</span> <span class="hljs-selector-attr">*</span><span class="hljs-selector-class">.jpg</span> <span class="hljs-built_in">-auto-orient</span> <span class="hljs-string">pictures.pdf</span>
+</code></pre>
+</li>
+<li>batch music
+<pre><code class="lang-bash"><span class="hljs-built_in">sudo</span> <span class="hljs-keyword">apt-get</span> <span class="hljs-selector-tag">install</span> <span class="hljs-literal">lame</span>
+</code></pre>
+<pre><code class="lang-bash"><span class="hljs-attribute">lame</span> <span class="hljs-built_in">-b</span> <span class="hljs-literal">bitrate</span> <span class="hljs-selector-attr">*</span><span class="hljs-selector-class">.mp3</span> <span class="hljs-selector-attr">*</span><span class="hljs-selector-class">.mp3.minified</span>
+</code></pre>
+</li>
+<li>RegExNegative Lookahead
+<pre><code class="lang-regex"> (<span class="hljs-name">?!</span><span class="hljs-string">NO</span>)
+</code></pre>
+</li>
+<li>RegEx Greedy WildCard
+<pre><code class="lang-regex"> (<span class="hljs-selector-tag">[</span><span class="hljs-name">^~</span><span class="hljs-selector-tag">]</span><span class="hljs-selector-attr">*</span></span>)
+</code></pre>
+</li>
+<li>concat files
+<pre><code class="lang-bash"><span class="hljs-attribute">cat</span> <span class="hljs-selector-attr">*</span> <span class="hljs-selector-tag">&gt;</span> <span class="hljs-string">outputfname</span>
+</pre></code>
+<pre><code class="lang-bash"><span class="hljs-keyword">find</span> <span class="hljs-string">/path/to/directory/</span> <span class="hljs-params">-name</span> <span class="hljs-selector-attr">*</span><span class="hljs-selector-class">.csv</span> <span class="hljs-built_in">-exec</span> <span class="hljs-attribute">cat</span> <span class="hljs-selector-attr">{}</span> +<span class="hljs-selector-tag"> &gt;</span> <span class="hljs-string">outputfname</span>
+</code></pre>
+</li>
+<li>Apply to All files
+<pre><code class="lang-bash">curdir=$(<span class="hljs-built_in">pwd</span>); for folder in <span class="hljs-string">/path/to/Files/</span><span class="hljs-selector-attr">*</span>; do </span>[ <span class="hljs-built_in">-d</span> "$folder" ] <span class="hljs-comment">&amp;&amp;</span> cd "$folder"  <span class="hljs-comment">&amp;&amp;</span> <span class="hljs-literal">./conv.sh</span>; done; cd $curdir
+</code></pre>
+<pre><code class="lang-bash">for f in <span class="hljs-selector-attr">*</span>; do	[ <span class="hljs-built_in">-d</span> "$f" ] <span class="hljs-comment">&amp;&amp;</span> cd "$f"  <span class="hljs-comment">&amp;&amp;</span> <span class="hljs-literal">./conv.sh</span>; done; cd <span class="hljs-selector-tag">..</span>
+</code></pre>
+</li>
+<li>Images To Booklet
+<pre><code class="lang-bash"><span class="hljs-attribute">img2pdf</span> $(<span class="hljs-keyword">find</span> <span class="hljs-selector-class">.</span> <span class="hljs-built_in">-iname</span> "<span class="hljs-selector-attr">*</span><span class="hljs-selector-class">.jpg</span>" | <span class="hljs-attribute">sort</span> <span class="hljs-params">-V</span>) <span class="hljs-built_in">-o</span> <span class="hljs-string">./document.pdf</span>
+</pre></code>
+<pre><code class="lang-bash"><span class="hljs-attribute">ls</span> <span class="hljs-number">-1</span> <span class="hljs-selector-attr">./*</span><span class="hljs-selector-class">jpg</span> | <span class="hljs-attribute">xargs</span> <span class="hljs-built_in">-L1</span> <span class="hljs-keyword">-I</span> <span class="hljs-selector-attr">{}</span> <span class="hljs-attribute">img2pdf</span> <span class="hljs-selector-attr">{}</span> <span class="hljs-built_in">-o</span> <span class="hljs-selector-attr">{}</span><span class="hljs-selector-class">.pdf</span>; <span class="hljs-attribute">pdftk</span> <span class="hljs-selector-attr">*</span><span class="hljs-selector-class">.pdf</span> <span class="hljs-attribute">cat</span> <span class="hljs-selector-tag">output</span> <span class="hljs-string">combined.pdf</span>
+</code></pre>
+</li>
 <li><p>for right aligning child divs of flexbox</p>
 <pre><code class="lang-css">flex-grow: 1;
 </code></pre>
@@ -35,36 +107,42 @@ jekyll serve<span class="hljs-params"> --watch </span>--port 4000
 <pre><code class="lang-css">html {-filter: invert(100%)}
 </code></pre>
 </li>
-<li>download link<pre><code class="lang-bash">wget link<span class="hljs-params"> -O</span> outputname
+<li>download link
+<pre><code class="lang-bash"><span class="hljs-attribute">wget</span> <span  class="hljs-string">link</span><span class="hljs-params"> -O</span> <span  class="hljs-string">output-name</span>
 </code></pre>
 </li>
-<li>download list of links<pre><code class="bash">wget<span class="hljs-params"> -i</span> input.txt
+<li>download list of links
+<pre><code class="bash"><span class="hljs-attribute">wget</span><span class="hljs-params"> -i</span> <span  class="hljs-string">input.txt</span>
 </code></pre>
 </li>
 <li><p>trim a video of leng hh:mm:ss of inp video beginning @ time HH:MM:SS</p>
-<pre><code class="lang-bash">ffmpeg<span class="hljs-params"> -i</span> inp.mp4<span class="hljs-params"> -ss</span> HH:MM:SS<span class="hljs-params"> -t</span> hh:mm:ss<span class="hljs-params"> -async</span> 1 cut.mp4
+<pre><code class="lang-bash"><span class="hljs-attribute">ffmpeg</span><span class="hljs-params"> -i</span> <span  class="hljs-string">input.mp4</span><span class="hljs-params"> -ss</span> <span class="hljs-literal">HH</span>:<span class="hljs-literal">MM</span>:<span class="hljs-literal">SS</span><span class="hljs-params"> -t</span> <span class="hljs-literal">hh</span>:<span class="hljs-literal">mm</span>:<span class="hljs-literal">ss</span><span class="hljs-params"> -async</span> <span class="hljs-number">1</span> <span  class="hljs-string">cut.mp4</span>
 </code></pre>
 </li>
 <li><p>video to frames</p>
-<pre><code class="lang-bash">ffmpeg<span class="hljs-params"> -i</span> inp.mp4<span class="hljs-params"> -r </span> 1/1 $filename%03d.bmp
+<pre><code class="lang-bash"><span class="hljs-attribute">ffmpeg</span><span class="hljs-params"> -i</span> <span class="hljs-string">inp.mp4</span><span class="hljs-params"> -r </span> <span class="hljs-number">1</span>/<span class="hljs-number">1</span> $filename%03d<span class="hljs-string">.bmp</span>
 </code></pre>
 </li>
 <li><p>frames to gif</p>
-<pre><code class="lang-bash">gifsicle<span class="hljs-params"> --delay </span> 10<span class="hljs-params"> --loopcount </span> 0 *.gif &gt; out.gif
+<pre><code class="lang-bash"><span class="hljs-attribute">gifsicle</span><span class="hljs-params"> --delay </span> <span class="hljs-number">10</span><span class="hljs-params"> --loopcount </span> <span class="hljs-number">0</span> <span class="hljs-selector-attr">*</span><span class="hljs-selector-class">.gif</span> <span class="hljs-selector-tag">&gt; </span> <span class="hljs-string">out.gif</span>
 </code></pre>
 </li>
-<li><p>for MD checklist</p>
+<li>
+<p>for MD checklist</p>
 <pre><code class="lang-html">&lt;!-- Required extensions: pymdownx.tasklist<span class="hljs-params"> --&gt; </span></code></pre>
 </li>
-<li>for GFM<pre><code class="lang-html">&lt;!-- Required extensions: pymdownx.betterem, pymdownx.tilde, pymdownx.emoji, pymdownx.tasklist, pymdownx.superfences<span class="hljs-params"> --&gt; </span></code></pre>
+<li>for GFM
+<pre><code class="lang-html">&lt;!-- Required extensions: pymdownx.betterem, pymdownx.tilde, pymdownx.emoji, pymdownx.tasklist, pymdownx.superfences<span class="hljs-params"> --&gt; </span></code></pre>
 </li>
-<li>rename files sequentially<pre><code class="lang-bash">ls | cat<span class="hljs-params"> -n</span> | while read n f; do mv "$f" `printf "2019-12-02-23-19-%02d.jpg" $n`; done
+<li>rename files sequentially<pre><code class="lang-bash"><span class="hljs-attribute">ls</span> | <span class="hljs-attribute">cat</span><span class="hljs-params"> -n</span> | while read n f; do mv "$f" `printf "2019-12-02-23-19-%02d.jpg" $n`; done
 </code></pre>
 </li>
-<li>rename and keep extension no recursion thry directories<pre><code class="lang-bash">ls<span class="hljs-params"> -1prt</span> | grep<span class="hljs-params"> -v</span> "/$" | cat<span class="hljs-params"> -n</span> | while read n f; do mv<span class="hljs-params"> -n</span> "${f}" "$(printf "%04d" $n).${f#*.}";
+<li>rename and keep extension no recursion thry directories
+<pre><code class="lang-bash"><span class="hljs-attribute">ls</span><span class="hljs-built_in"> -1prt</span> | <span class="hljs-attribute">grep</span><span class="hljs-params"> -v</span> "/$" | <span class="hljs-attribute">cat</span><span class="hljs-params"> -n</span> | while read <span class="hljs-selector-tag">n</span> f; do <span class="hljs-attribute">mv</span><span class="hljs-params"> -n</span> "${f}" `$(printf "%04d" $n).${f#*.}`;
 </code></pre>
 </li>
-<li>backup installation list<pre><code class="lang-bash">dpkg<span class="hljs-params"> --get-selections </span>&gt; mylists.list
+<li>backup installation list
+<pre><code class="lang-bash"><span class="hljs-attribute">dpkg</span><span class="hljs-params"> --get-selections </span><span class="hljs-selector-tag">&gt;</span> <span class="hljs-string"> mylists.list</span>
 </code></pre>
 </li>
 <li>mathJax<ul>
@@ -83,7 +161,6 @@ jekyll serve<span class="hljs-params"> --watch </span>--port 4000
 </code></pre>
 </li>
 </ul>
-</ul>
-<script src="copybutton.js"></script>
+<script src="../js/copybutton.js"></script>
 </body>
 </html>
