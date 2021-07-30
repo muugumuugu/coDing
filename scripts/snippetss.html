@@ -99,10 +99,6 @@
 <pre><code class="lang-bash"><span class="hljs-attribute">ls</span> <span class="hljs-number">-1</span> <span class="hljs-selector-attr">./*</span><span class="hljs-selector-class">jpg</span> | <span class="hljs-attribute">xargs</span> <span class="hljs-built_in">-L1</span> <span class="hljs-keyword">-I</span> <span class="hljs-selector-attr">{}</span> <span class="hljs-attribute">img2pdf</span> <span class="hljs-selector-attr">{}</span> <span class="hljs-built_in">-o</span> <span class="hljs-selector-attr">{}</span><span class="hljs-selector-class">.pdf</span>; <span class="hljs-attribute">pdftk</span> <span class="hljs-selector-attr">*</span><span class="hljs-selector-class">.pdf</span> <span class="hljs-attribute">cat</span> <span class="hljs-selector-tag">output</span> <span class="hljs-string">combined.pdf</span>
 </code></pre>
 </li>
-<li><p>for right aligning child divs of flexbox</p>
-<pre><code class="lang-css">flex-grow: 1;
-</code></pre>
-</li>
 <li><p>invert color</p>
 <pre><code class="lang-css">html {-filter: invert(100%)}
 </code></pre>
@@ -134,7 +130,7 @@
 <li>for GFM
 <pre><code class="lang-html">&lt;!-- Required extensions: pymdownx.betterem, pymdownx.tilde, pymdownx.emoji, pymdownx.tasklist, pymdownx.superfences<span class="hljs-params"> --&gt; </span></code></pre>
 </li>
-<li>rename files sequentially<pre><code class="lang-bash"><span class="hljs-attribute">ls</span> | <span class="hljs-attribute">cat</span><span class="hljs-params"> -n</span> | while read n f; do mv "$f" `printf "2019-12-02-23-19-%02d.jpg" $n`; done
+<li>rename files sequentially<pre><code class="lang-bash"><span class="hljs-attribute">ls</span> | <span class="hljs-attribute">cat</span><span class="hljs-params"> -n</span> | while read n f; do <span class="hljs-attribute">mv</span> "$f" `printf "2019-12-02-23-19-%02d.jpg" $n`; done
 </code></pre>
 </li>
 <li>rename and keep extension no recursion thry directories

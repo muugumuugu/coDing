@@ -103,10 +103,6 @@
 	```bash
 	ls -1 ./*jpg | xargs -L1 -I {} img2pdf {} -o {}.pdf; pdftk *.pdf cat output combined.pdf
 	```
-- for right aligning child divs of flexbox
-  ```css
-  flex-grow: 1;
-  ```
 - invert color
   ```css
   html {-filter: invert(100%)}
