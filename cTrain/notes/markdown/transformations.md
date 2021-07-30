@@ -12,20 +12,20 @@
     + *reload* the temp stored coord `matrix` n `styles`.
 
 ### abt the functioning
->drawings are based relative to origin, which is initially @ ** top left corner**
+> drawings are based relative to origin, which is initially @ **top left corner**
 
->however, translate ***accumulates***. once done, it stays there and that point is considered origin. And then it  _resets @ draw_
+> however, translate ***accumulates***. once done, it stays there and that point is considered origin. And then it  _resets @ draw_
 
->rotate also behaves the same ***accumulating*** way,  _reseting @ draw_
+> rotate also behaves the same ***accumulating*** way,  _reseting @ draw_
 
->scale is *not relative*, it just means how many pixels is 1 unit. and signs for direction.
+> scale is *not relative*, it just means how many pixels is 1 unit. and signs for direction.
 
->origin's coordinates are also **relative** to current running origin
+> origin's coordinates are also **relative** to current running origin
 
->co-ordinate system is **left handed**, so angles _clockwise_, and y increases downward.
+> co-ordinate system is **left handed**, so angles _clockwise_, and y increases downward.
 
->push n pop are lil staccks , so the pushing popping is **LIFO**
+> push n pop are lil staccks , so the pushing popping is **LIFO**
 
->rotateX,Y,Z are specific axis rotn for WEBGL 3d renderer
+> rotateX,rotateY,rotateZ are specific axis rotn for WEBGL 3d renderer
 
->applyMatrix() will apply a co-ordinate transform.
+> applyMatrix() will apply a co-ordinate transform.
