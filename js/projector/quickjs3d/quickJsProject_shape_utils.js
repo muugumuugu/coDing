@@ -5,7 +5,7 @@
 
 quickJsProject.ShapeUtils = (function() {
 
-  // TODO(deanm): Having to import all the math like this is a bummer.
+  // TODO: Having to import all the math like this is a bummer.
   var crossProduct = quickJsProject.Math.crossProduct;
   var dotProduct2d = quickJsProject.Math.dotProduct2d;
   var dotProduct3d = quickJsProject.Math.dotProduct3d;
@@ -89,7 +89,7 @@ quickJsProject.ShapeUtils = (function() {
       if (qf.isTriangle())
         continue;
 
-      // TODO(deanm): Should we follow some clockwise rule here?
+      // TODO: Should we follow some clockwise rule here?
       var newtri = new quickJsProject.QuadFace(qf.i0, qf.i2, qf.i3, null);
       // Convert the original quad into a triangle.
       qf.i3 = null;
@@ -278,7 +278,7 @@ quickJsProject.ShapeUtils = (function() {
   // coordinates, except that we map {x, y, z} -> {z, x, y}.  |tess_x| is phi,
   // and |tess_y| is theta.
   function makeSphericalShape(f, tess_x, tess_y) {
-    // TODO(deanm): Preallocate the arrays to the final size.
+    // TODO: Preallocate the arrays to the final size.
     var vertices = [ ];
     var quads = [ ];
 
@@ -373,7 +373,7 @@ quickJsProject.ShapeUtils = (function() {
   // them to share a vertex anyway.  The math is pretty much standard spherical
   // coordinates, except that we map {x, y, z} -> {z, x, y}.  |tess_x| is phi,
   // and |tess_y| is theta.
-  // TODO(deanm): This code could definitely be more efficent.
+  // TODO: This code could definitely be more efficent.
   function makeSphere(r, tess_x, tess_y) {
     return makeSphericalShape(function(theta, phi) {
         return {
@@ -388,7 +388,7 @@ quickJsProject.ShapeUtils = (function() {
   // Catmull-Clark, but without the proper weighting.  The |m| argument is the
   // amount to smooth, between 0 and 1, 0 being no smoothing.
   function averageSmooth(shape, m) {
-    // TODO(deanm): Remove this old compat code for calling without arguments.
+    // TODO: Remove this old compat code for calling without arguments.
     if (m === void(0))
       m = 1;
 
@@ -422,7 +422,7 @@ quickJsProject.ShapeUtils = (function() {
         var p2 = vertices[quad.i1];
         var p3 = vertices[quad.i2];
         var p4 = vertices[quad.i3];
-        // The centroid.  TODO(deanm) can't shape just come from the QuadFace?
+        // The centroid.  TODO can't shape just come from the QuadFace?
         // That would handle triangles better and avoid some duplication.
         avg.x += (p1.x + p2.x + p3.x + p4.x) / 4;
         avg.y += (p1.y + p2.y + p3.y + p4.y) / 4;
@@ -457,7 +457,7 @@ quickJsProject.ShapeUtils = (function() {
   }
 
   // Divide each face of a Shape into 4 equal new faces.
-  // TODO(deanm): Better document, doesn't support triangles, etc.
+  // TODO: Better document, doesn't support triangles, etc.
   function linearSubdivide(shape) {
     var num_quads = shape.quads.length;
 
@@ -627,11 +627,11 @@ quickJsProject.ShapeUtils = (function() {
     this.selector_ = null;
     this.selectAll();
 
-    // TODO(deanm): Need a bunch more settings, controlling which normal the
+    // TODO: Need a bunch more settings, controlling which normal the
     // extrusion is performed along, etc.
 
     // Set scale and rotation.  These are public, you can access them directly.
-    // TODO(deanm): It would be great to use a Transform here, but there are
+    // TODO: It would be great to use a Transform here, but there are
     // a few problems.  Translate doesn't make sense, so it is not really an
     // affine.  The real problem is that we need to interpolate across the
     // values, having them in a matrix is not helpful.

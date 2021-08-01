@@ -321,7 +321,7 @@ var quickJsProject = (function() {
     this.m = makeIdentityAffine();
   };
 
-  // TODO(deanm): We are creating two extra objects here.  What would be most
+  // TODO: We are creating two extra objects here.  What would be most
   // effecient is something like multiplyAffineByRotateXIP(this.m), etc.
   Transform.prototype.rotateX = function(theta) {
     this.m =
@@ -385,7 +385,7 @@ var quickJsProject = (function() {
   };
 
   Transform.prototype.dup = function() {
-    // TODO(deanm): This should be better.
+    // TODO: This should be better.
     var tm = new Transform();
     tm.m = dupAffine(this.m);
     return tm;
@@ -411,7 +411,7 @@ var quickJsProject = (function() {
       avg.z += p.z;
     }
 
-    // TODO(deanm): 1 divide and 3 multiplies cheaper than 3 divides?
+    // TODO: 1 divide and 3 multiplies cheaper than 3 divides?
     var f = 1 / il;
 
     avg.x *= f;
@@ -669,7 +669,7 @@ var quickJsProject = (function() {
     this.buffered_quads_ = [ ];
   };
 
-  // TODO(deanm): Pull the project stuff off the class if possible.
+  // TODO: Pull the project stuff off the class if possible.
 
   // http://en.wikipedia.org/wiki/Pinhole_camera_model
   //
@@ -764,7 +764,7 @@ var quickJsProject = (function() {
     // Draw the whole image.  Transform and clip will map it onto the
     // correct output triangle.
     //
-    // TODO(tulrich): figure out if drawImage goes faster if we specify the
+    // TODO: figure out if drawImage goes faster if we specify the
     // rectangle that bounds the source coords.
     ctx.drawImage(im, 0, 0);
     ctx.restore();
@@ -805,7 +805,7 @@ var quickJsProject = (function() {
       var centroid = transformPoint(t, qf.centroid);
 
       // Cull quads that are behind the camera.
-      // TODO(deanm): this should probably involve the focal point?
+      // TODO: this should probably involve the focal point?
       if (centroid.z >= -1)
         continue;
 

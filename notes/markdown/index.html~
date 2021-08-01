@@ -4,13 +4,13 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width">
     <title>markdown</title>
-    <link rel="stylesheet" href="../../../css/hacker.css">
+   <link rel="stylesheet" href="../../css/hacker.css">
   </head>
   <body>
 <h1>markdown</h1>
 <ul>
+<li><a href="git.md">git.md</a> <a href="git.html">(rendered)</a></li>
 <li><a href="regexbasics.md">regexbasics.md</a>  <a href="regexbasics.html">(rendered)</a></li>
 <li><a href="transformations.md">transformations.md</a>  <a href="transformations.html">(rendered)</a></li>
-<li><a href="git.md">git.md</a> <a href="git.html">(rendered)</a></li>
 </ul>
 </body></html>
