@@ -74,12 +74,13 @@
 	```bash
 	git reset --soft HEAD~n
 	```
-
----
-
-- rename main branche
+- rename main branch
 	```bash
 	git branch -M localMain
+	```
+- track changes of a remote branch
+	```bash
+	git branch --set-upstream-to=localNameForRemoteRep/branchname localbranchename
 	```
 ---
 
@@ -91,17 +92,15 @@
 	```bash
 	git remote add localNameForRemoteRep remoteRepoUrl
 	```
+---
+
 -  get changes made in given branch of remote repo and update local branch with them.
 	```bash
-	git pull localNameForRemoteRep/branchname localbranchename
+	git pull localNameForRemoteRep branchename
 	```
 - upload current repository data and status to clone on server
 	```bash
-	git push localNameForRemoteRep/branchname localbranchename
-	```
-- track changes of a remote branch
-	```bash
-	git push --set-upstream localNameForRemoteRep/branchname localbranchename
+	git push localNameForRemoteRep branchename
 	```
 
 ---

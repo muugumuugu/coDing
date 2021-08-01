@@ -5,7 +5,7 @@
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/muugumuugu/coDing@latest/css/hacker.min.css">
 <script src="https://cdn.jsdelivr.net/gh/muugumuugu/coDing@latest/js/syntaxhighlighter.js"></script>
 <script>hljs.highlightAll();</script>
-<style>div.flex{width:100%;}div.flex div{width:50%;}ul{width:90%;}ul li{width:100%;}</style>
+<style>h2{display:inline;}div.flex{width:100%;}div.flex div{width:50%;}ul{width:90%;}ul li{width:100%;}</style>
 </head>
 <body>
 <header><h1>git</h1></header>
@@ -23,7 +23,7 @@
 </blockquote>
 </li>
 </ul>
-<h3"terminology">terminology</h3>
+<h3>terminology</h3>
 <ul>
 <li>Repo<blockquote>
 <p>A project</p>
@@ -131,6 +131,9 @@ Basically save/update/delete files in the spotlight(stage).</p>
 <li>rename main branch.
 <pre><code class="lang-bash">  <span class="hljs-attribute">git</span> <span class="hljs-keyword">branch</span> <span class="hljs-params">-M</span> <span class="hljs-string">localMain</span>
 </code></pre></li>
+<li>track changes of a remote branch
+<pre><code class="lang-bash"><span class="hljs-attribute">git</span> <span class="hljs-params">---set-upstream-to</span><span class="hljs-symbol">=</span><span class="hljs-string">localNameForRemoteRep</span><span class="hljs-symbol">/</span><span class="hljs-string">branchname</span> <span class="hljs-string">localbranchename</span>
+</code></pre></li>
 </ul></div>
 
 <div><ul>
@@ -144,13 +147,10 @@ Basically save/update/delete files in the spotlight(stage).</p>
 
 <div><ul>
 <li>get changes made in given branch of remote repo and update local branch with them.
-<pre><code class="lang-bash"> <span class="hljs-attribute">git</span> <span class="hljs-keyword">pull</span> <span class="hljs-string">localNameForRemoteRep</span><span class="hljs-symbol">/</span><span class="hljs-string">branchname</span> <span class="hljs-string">localbranchename</span>
+<pre><code class="lang-bash"> <span class="hljs-attribute">git</span> <span class="hljs-keyword">pull</span> <span class="hljs-string">localNameForRemoteRep</span> <span class="hljs-string">branchename</span>
 </code></pre></li>
 <li>upload current repository data and status to clone on server
-<pre><code class="lang-bash"><span class="hljs-attribute">git</span> <span class="hljs-keyword">push</span> <span class="hljs-string">localNameForRemoteRep</span><span class="hljs-symbol">/</span><span class="hljs-string">branchname</span> <span class="hljs-string">localbranchename</span>
-</code></pre></li>
-<li>track changes of a remote branch
-<pre><code class="lang-bash"><span class="hljs-attribute">git</span> <span class="hljs-keyword">push</span> <span class="hljs-built_in">--set-upstream</span> <span class="hljs-string">localNameForRemoteRep</span><span class="hljs-symbol">/</span><span class="hljs-string">branchname</span> <span class="hljs-string">localbranchename</span>
+<pre><code class="lang-bash"><span class="hljs-attribute">git</span> <span class="hljs-keyword">push</span> <span class="hljs-string">localNameForRemoteRep</span><span class="hljs-string">branchename</span>
 </code></pre></li>
 </ul></div>
 
