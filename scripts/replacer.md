@@ -74,19 +74,19 @@
 ## playlist
 
 ```
-.*/(.*) _ (.*)\.(.*)
+(.*)/(.*) _ (.*)\.(.*)
 ```
 
 - m3u
 	```
-	#EXTINF: \2.\3#split\1 _ \2.\3
+	#EXTINF: \3#split\1/\2 _ \3.\4
 	```
 - html
 	- control set
 		```
-		<div><audio src="\1 _ \2.\3" alt="\2 by \1"  title="\2" width="100" height="50" controls><br><<div class="bend"><a href="\1 _ \2.\3">\2 by \1</a></div></div>
+		<div><audio src="\2 _ \3.\4" alt="\2 by \1"  title="\2" width="100" height="50" controls><br><<div class="bend"><a href="\2 _ \3.\4">\3 by \2</a></div></div>
 		```
 	- list
 		```
-		<li><a href="\1 _ \2.\3">\1 _ \2.\3</a></li>
+		<li><a href="\2 _ \3.\4">\2 _ \3.\3</a></li>
 		```

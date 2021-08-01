@@ -73,16 +73,16 @@
 
 <hr>
 <details><summary><h2>playlist</h2></summary>
-	<pre><code>.*/(.*) _ (.*)\.(.*)</code></pre>
-	<details><summary><h3>m3u</h3></summary><pre><code>#EXTINF: \2.\3#split\1 _ \2.\3</code></pre>
+	<pre><code>(.*)/(.*) _ (.*)\.(.*)</code></pre>
+	<details><summary><h3>m3u</h3></summary><pre><code>#EXTINF: \3#split\1/\2 _ \3.\4</code></pre>
 	</details>
 
 	<details><summary><h3>html</h3></summary>
 		<details><summary><h4>control set</h4></summary>
-		<pre><code>&lt;div&gt;&lt;audio src=&quot;\1 _ \2.\3&quot; alt=&quot;\2 by \1&quot;  title=&quot;\2&quot; width=&quot;100&quot; height=&quot;50&quot; controls&gt;&lt;br&gt;&lt;&lt;div class=&quot;bend&quot;&gt;&lt;a href=&quot;\1 _ \2.\3&quot;&gt;\2 by \1&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;</code></pre>
+		<pre><code>&lt;div&gt;&lt;audio src=&quot;\2 _ \3.\4&quot; alt=&quot;\3 by \2&quot;  title=&quot;\3&quot; width=&quot;100&quot; height=&quot;50&quot; controls&gt;&lt;br&gt;&lt;&lt;div class=&quot;bend&quot;&gt;&lt;a href=&quot;\2 _ \3.\4&quot;&gt;\3 by \2&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;</code></pre>
 		</details>
 		<details><summary><h4>list</summary>
-		<pre><code>&lt;li&gt;&lt;a href=&quot;\1 _ \2.\3&quot;&gt;\1 _ \2.\3&lt;/a&gt;&lt;/li&gt;</code></pre>
+		<pre><code>&lt;li&gt;&lt;a href=&quot;\2 _ \3.\4&quot;&gt;\2 _ \3.\4&lt;/a&gt;&lt;/li&gt;</code></pre>
 		</details>
 	</details>
 
