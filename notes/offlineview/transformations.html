@@ -1,0 +1,68 @@
+<html>
+<head>
+<title>transformations
+</title>
+<link rel="stylesheet" href="/styles/home.css">
+<script src="/Desktop/coDing/js/purejs/syntaxhighlighter.js"></script>
+<script src="https://cdn.jsdelivr.net/gh/muugumuugu/coDing@latest/js/purejs/syntaxhighlighter.js"></script>
+<script>hljs.highlightAll();</script>
+</head>
+<body>
+<header><h1 id="transformations">transformations</h1></header>
+
+<h2 id="main-functions">main functions</h2>
+<ul>
+<li>translate<ul>
+<li>useful to centre entire system around a given point. basically shifts <code>orgin</code></li>
+</ul>
+</li>
+<li>rotate<ul>
+<li>uses radians and rotates co-ordinate <strong>pivoting @ origin</strong> , along Z axis.(by default pointing outward.)</li>
+</ul>
+</li>
+<li>scale<ul>
+<li>scales/multiplies the units on the axes. even direction  <code>flipp</code> by -ve values.</li>
+</ul>
+</li>
+<li><em>push</em><ul>
+<li><em>save</em> current cordinate <code>matrix</code> and also   <code>styles</code> info</li>
+</ul>
+</li>
+<li><em>pop</em><ul>
+<li><em>reload</em> the temp stored coord <code>matrix</code> n <code>styles</code>.</li>
+</ul>
+</li>
+</ul>
+<h3 id="abt-the-functioning">abt the functioning</h3>
+<blockquote>
+<p>drawings are based relative to origin, which is initially @ <strong>top left corner</strong></p>
+</blockquote>
+<blockquote>
+<p>however, translate <em><strong>accumulates</strong></em>. once done, it stays there and that point is considered origin. And then it  <em>resets @ draw</em></p>
+</blockquote>
+<blockquote>
+<p>rotate also behaves the same <em><strong>accumulating</strong></em> way,  <em>reseting @ draw</em></p>
+</blockquote>
+<blockquote>
+<p>scale is <em>not relative</em>, it just means how many pixels is 1 unit. and signs for direction.</p>
+</blockquote>
+<blockquote>
+<p>origin&#39;s coordinates are also <strong>relative</strong> to current running origin</p>
+</blockquote>
+<blockquote>
+<p>co-ordinate system is <strong>left handed</strong>, so angles <em>clockwise</em>, and y increases downward.</p>
+</blockquote>
+<blockquote>
+<p>push n pop are lil staccks , so the pushing popping is <strong>LIFO</strong></p>
+</blockquote>
+<blockquote>
+<p>rotateX,rotateY,rotateZ are specific axis rotn for WEBGL 3d renderer</p>
+</blockquote>
+<blockquote>
+<p>applyMatrix() will apply a co-ordinate transform.</p>
+</blockquote>
+<script src="/Desktop/coDing/js/purejs/copybutton.js"></script>
+<script src="https://cdn.jsdelivr.net/gh/muugumuugu/coDing@latest/js/purejs/copybutton.js"></script>
+<footer> <a href="../index.html">up 1 level</a> </footer>
+</body>
+</html>

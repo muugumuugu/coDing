@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="en">
+  <head>
+		<meta charset="utf-8">
+		<!--embedd-->
+			<meta property="og:title" content="allysa" />
+			<meta property="og:type" content="website" />
+			<meta property="og:url" content="https://mogidot.github.io/allysa/" />
+			<meta property="og:image" content="https://mogidot.github.io/allysa/alyssa.jpg" />
+			<meta property="og:description" content="allysa in the  night forest" />
+			<meta name="theme-color" content="#000000">
+			<meta name="twitter:card" content="summary_large_image">
+		<!--meta end-->
+		<!--scripts-->
+			<script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.2.0/p5.js"></script>
+			<script src=""></script>
+			<script src="/styles/syntaxhighlighter.js"></script>
+			<script src="https://cdn.jsdelivr.net/gh/muugumuugu/coDing@latest/js/syntaxhighlighter.js"></script>
+			<script>hljs.highlightAll();</script>
+		<!--styles-->
+			<link rel="stylesheet" href="/styles/home.css">
+			<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/muugumuugu/coDing@latest/css/hacker.min.css">
+			<style type="text/css" id="invertRunning">html {-filter: invert(100%)}</style>
+
+		<!--title-->
+		<title></title>
+	</head>
+	<!--frontend-->
+	<body>
+		<header></header>
+		<main>
+			<div class="flex"></div>
+		<details>
+			<summary>
+				some collapsable shit
+			</summary>
+			<codeblock>cd ~</codeblock>
+		</details>
+		</main>
+		<footer></footer>
+		<!--scripts-->
+		<script src="copybutton.js"></script>
+	</body>
+</html>

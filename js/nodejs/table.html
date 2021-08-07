@@ -1,0 +1,111 @@
+<html>
+<head>
+		<script language="javascript" type="text/javascript" src="libraries/p5.min.js"></script>
+	<script>
+
+		let data=[];
+		let wid=0;
+		let size=0;
+
+		function setup() {
+		  createCanvas(windowWidth, windowHeight);
+		  size = height/2;
+			background(255);
+		  wid=windowWidth/3;
+
+  
+				for (var i=0;i<4;i++){
+					data[i]=[];
+						for (var j=0;j<4;j++){
+							data[i][j]=str(i)+str(j);
+						}
+				}
+
+  
+		} 
+		
+
+		
+		function dottedline( x1, y1, x2, y2){
+			  for (var i = 0; i <= 30; i++) {
+   				 var x = lerp(x1, x2, i/30.0) ;
+   				 var y = lerp(y1, y2, i/30.0);
+ 
+   				 point(x, y);
+ 				 }
+		}
+
+		function draw() {
+			
+		  background(0);
+		 textSize(16);
+		stroke(255);
+			
+		  // Display the data in the table 
+		  for (let r = 0; r <3 ;r++){
+			for (let c = 0; c < 3; c++) { 
+					let diag=0;
+					diag=dist(0,0,wid,300);
+					
+					
+					if ((r+c)%2==0){
+						push();
+						if (r>c){
+							rotate(PI/4);
+							if (r==0){
+								 text(data[r][c]+"\n"+data[r][c] , c*wid+wid/2,r * 300); 
+							}
+						}
+						else{
+							if (r==0){
+								 text(data[r][c]+"\n"+data[r][c] , diag,diag); 
+							}
+							if (r==2){
+								 text(data[r][c]+"\n"+data[r][c] , c*wid+wid/2,r * 300); 
+							}
+						}
+							pop();
+					}
+					else{
+			 text(data[r][c]+"\n"+data[r][c] , c*wid+wid/2,r * 300); 
+					}
+					
+				
+			
+				}
+			}
+		  }
+
+		  var s = second();
+		  var m = minute() + (s/60.0);
+		  var h = hour()%12 + (m/60.0);
+
+		  translate(width/2, height/2);
+
+		  //ellipse (0, 0, size, size);
+
+		  noFill();
+
+		  push();
+		  rotate(radians(s*(360/60)));
+		  strokeWeight(1);
+		  dottedline(0,0,0,-size*0.9);
+		  pop();
+
+		  push();
+		  rotate(radians(m*(360/60)));
+		  strokeWeight(2);
+		  line(0,0,0,-size*0.6);
+		  pop();
+
+		  push();
+		  rotate(radians(h*(360/12)));
+		  strokeWeight(4);
+		  line(0,0,0,-size*0.3);
+		  pop();
+		}
+	</script>
+</head>
+<body>
+</body>
+</html>
