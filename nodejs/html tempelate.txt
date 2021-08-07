@@ -14,12 +14,12 @@
 		<!--scripts-->
 			<script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.2.0/p5.js"></script>
 			<script src=""></script>
-			<script src="/Desktop/coDing/js/purejssyntaxhighlighter.js"></script>
-			<script src="https://cdn.jsdelivr.net/gh/muugumuugu/coDing@latest/js/purejs/syntaxhighlighter.js"></script>
+			<script src="/styles/syntaxhighlighter.js"></script>
+			<script src="https://cdn.jsdelivr.net/gh/muugumuugu/coDing@latest/js/syntaxhighlighter.js"></script>
 			<script>hljs.highlightAll();</script>
 		<!--styles-->
-			<link rel="stylesheet" href="/Desktop/coDing/css/purecss/hacker.css">
-			<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/muugumuugu/coDing@latest/css/purecss/hacker.min.css">
+			<link rel="stylesheet" href="/styles/home.css">
+			<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/muugumuugu/coDing@latest/css/hacker.min.css">
 			<style type="text/css" id="invertRunning">html {-filter: invert(100%)}</style>
 
 		<!--title-->
@@ -39,11 +39,6 @@
 		</main>
 		<footer></footer>
 		<!--scripts-->
-<<<<<<< HEAD
-		<script src="/Desktop/coDing/js/purejs/copybutton.js"></script>
-		<script src="https://cdn.jsdelivr.net/gh/muugumuugu/coDing@latest/js/purejs/copybutton.js"></script>
-=======
-		<script src="https://cdn.jsdelivr.net/gh/muugumuugu/coDing@latest/js/copybutton.js"></script>
->>>>>>> 8f924ec8939741408e44785587a73b4aff4b3f0f
+		<script src="copybutton.js"></script>
 	</body>
 </html>

@@ -1,0 +1,398 @@
+<!-- 
+
+    tags/navi page #3 'ZERO to ONE' by skye southcodes.tumblr.com
+	modify as you please but please do not touch the credit
+    any errors? have questions? need help? feel free to contact me: southcodes.tumblr.com/inbox
+
+    - honeybee icons by @suiomi
+    - normalize css by https://github.com/necolas
+    - fonts by google
+ 
+ -->
+
+<!DOCTYPE html>
+<html>
+<head>
+	<title>{title}</title>
+
+    <meta name="viewport" content="width=device-width">
+ 
+    <link rel="shortcut icon" href="{favicon}">
+    <meta name="description" content="{MetaDescription}"/>
+
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital@0;1&family=Raleway:wght@600;700&display=swap" rel="stylesheet">
+    
+    <!-- normalize css -->
+    <link href="https://necolas.github.io/normalize.css/7.0.0/normalize.css" rel="stylesheet">
+    
+    <!-- honeybee icon font by suiomi --> <link rel="stylesheet" href="https://solrainha.github.io/honeybee/honeybee.css" >
+
+<style type="text/css">
+    
+    /* quick color customization*/
+
+:root {
+    --background: #fefefe;
+
+    /* links color */
+    --links: #666;
+
+    /* links hover color */
+    --links-hover: blue;
+
+    /* header icons color */
+    --icons-color: #6db2e3;
+
+    /* lines color */
+    --line-color:#ddd; 
+
+    /* background color of the circles */
+    --inside-dots: #caecfa;
+
+    /* background of the tags boxes & header*/
+    --box-background:#fff;
+
+    /* boxes shadow color*/
+    --box-shadow: #d9d9d9;
+
+    /* background of the title in the boxes */
+    --titles-background: #f2f7fa;
+}
+
+/*----------------------*/
+
+.tmblr-iframe {margin:.7rem;opacity:.6;-ms-transform: scale(0.85); /* IE 9 */-webkit-transform: scale(0.85); /* Safari */transform: scale(0.85);}
+.tmblr-iframe:hover {opacity:.8;}
+
+body, figure{margin: 0;padding: 0}
+html{font-size: 14px}
+body {font: 1rem 'Open Sans', sans-serif;color:#333;background: var(--background)}
+a {text-decoration: none;color:var(--links);}
+a:hover {color:var(--links-hover);}
+b {font-weight: 600}
+
+/*  header  */
+
+header {
+    position: relative;
+    margin: 3rem auto;
+    width: 48rem;
+    max-width: 95vw;
+    box-sizing: border-box;
+}
+
+#hline {
+    width: 100%;height: 1px;
+    background: var(--line-color);
+    position: absolute;top:50%;
+    z-index: -4}
+#hline:before {
+    content: '';
+    position: absolute;left:0;bottom: -.5rem;
+    width: 1rem;height: 1rem;
+    background: var(--inside-dots);
+    border:1px solid var(--line-color);
+    border-radius: 100%;
+}
+
+#btitle {
+    margin: -3.5rem 0 0 1rem;
+    width: 50%;
+    position: relative;
+    z-index: 9;
+    font:600 2.3rem 'Raleway', sans-serif;
+}
+
+header article {
+    background: var(--box-background);
+    border:1px solid var(--line-color);
+    width: calc(50% - 4px);
+    float: right;
+    padding: 1rem;
+    box-sizing: border-box;
+    border-radius: 4px;
+    box-shadow: 3px 3px 3px var(--box-shadow)
+}
+
+#bio {
+    text-align: center;
+    margin-bottom: 2rem;
+    font-size: .9rem;
+    line-height: 180%;
+    color: #555;
+    letter-spacing: .025rem
+}
+
+#dd {
+    display: none;
+    width: calc(50% - 4px);
+    box-sizing: border-box;
+    position: absolute;right: 0;
+    z-index: 99;
+    margin:1rem 0 0; 
+    border: 1px solid var(--line-color);
+    border-top: 0;
+    background: var(--box-background);
+    padding: 1rem;
+    box-shadow: 3px 3px 3px var(--box-shadow)
+}
+.th-equal-o {transition-duration: .4s}
+.th-equal-o:hover {transform: rotate(90deg);cursor: pointer;}
+
+/*  nav  */
+
+#navi ul,#navi ul li,#dd ul,#dd ul li {list-style-type:none;margin:0;padding:0;}
+
+#navi ul li {display: inline-block;}
+#navi ul, #dd ul {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-around;
+}
+
+#navi .th {font-size: 1.4rem;color: var(--icons-color)}
+
+#dd ul li {
+    display: inline-block;
+    font-weight: 600;
+    text-transform: uppercase;
+    font-size: .9rem;
+    border-bottom: 1px solid var(--icons-color);
+    padding: 0 .3rem .3rem;
+    margin-bottom: .8rem
+}
+
+/* main */
+
+main {
+    width: 40rem;
+    margin: 4rem auto;
+    position: relative;
+    display: grid;
+    grid-row-gap: 50px;
+    grid-template-columns: auto auto;
+}
+
+#line {
+    width: 1px;
+    height: 100%;
+    position: absolute;
+    left: calc(100% - 50%);
+    margin: auto;
+    z-index: 9;
+    background: var(--line-color)}
+#line:after,#line:before {
+    content: '';
+    position: absolute;
+    width: 1rem;
+    height: 1rem;
+    background: var(--inside-dots);
+    border-radius: 100%;
+    bottom: 0;
+    margin-left:-.5rem;
+    border: 1px solid var(--line-color);}
+#line:before {top: -.5rem;}
+
+.box {
+    width: 20rem;
+    margin: auto;
+    box-sizing: border-box;
+    position: relative;}
+.box:nth-of-type(odd){margin-left: calc(-4rem + 1px)}
+.box:nth-of-type(even){margin-right: -4rem}
+.box:nth-of-type(odd):after,.box:nth-of-type(even):after {
+    content: '';
+    position: absolute;top:-1px;right:-4rem;
+    width: 4.5rem;height: 1px;
+    background:var(--line-color)}
+.box:nth-of-type(even):after {left:-4rem;}
+.box:first-of-type:after {background: var(--line-color);right: -4rem}
+
+.boxtit {
+    font: 700 1rem 'Raleway', sans-serif;
+    letter-spacing: .07rem;
+    border: 1px solid var(--line-color);
+    margin: -1px  0 .4rem 0;
+    padding: .8rem;
+    background: var(--titles-background);
+    /*font-style: italic;*/
+    box-shadow: 2px 2px 2px var(--box-shadow);
+    /*color: #4c86b0;*/
+    /*color: var(--icons-color)*/
+    text-transform: uppercase;
+    text-align: center;
+}
+
+.tags ul,.tags ul li {list-style-type: none;margin:0;padding: 0}
+.tags {
+    line-height: 180%;
+    border-radius: 5px;
+    font-size: .9rem;
+    letter-spacing: .03rem;
+    border: 1px solid var(--line-color);
+    margin: -1px  0 0 0;
+    padding: .6rem .8rem;
+    background: var(--box-background);
+    box-shadow: 3px 3px 3px var(--box-shadow)}
+.tags ul li {margin-bottom: .8rem;}
+.tags ul li a{display: block;}
+.tags ul li a:before{
+    content: '› ';
+    font-size: 1.3rem;
+    color: var(--icons-color);
+}
+.tags ul li a:hover:before {visibility: hidden;}
+.tags ul li:last-of-type{margin-bottom: 0}
+
+
+/* DONT TOUCH*/
+#sc {z-index:9999;position:fixed;bottom:1.5rem;right:2rem;line-height:0%;padding:1rem .5rem;font-size:.8rem;background:white;font-family:'Open Sans', sans-serif}
+
+/* MEDIA */
+
+@media only screen and (min-width:0px) and (max-width:699px) {
+
+
+    main {
+        position: relative;
+        display: block;
+        width: 100%;
+        margin: auto
+    }
+
+    .box {
+        width: 20rem;
+        padding: 1rem;
+        box-sizing: border-box;
+        position: relative;
+        display: block;
+        background: #fefefe;
+        margin: 10rem auto 0;
+    }
+
+    .box:before {
+        content: '';
+        width: 1rem;height: 1rem;
+        background:  var(--inside-dots);
+        position: absolute;
+        bottom: -5.5rem;
+        left: calc(100% - 50% - .5rem - 1px);
+        border-radius: 100%;
+        border: 1px solid var(--line-color)}
+
+
+    .box:last-of-type:before{display:none;}
+    .box:first-of-type {margin-top: 0rem}
+    .box:last-of-type {margin-bottom: 2rem;}
+
+    .box:nth-of-type(odd){margin-left: auto}
+    .box:nth-of-type(even){margin-right: auto}
+
+    .box:nth-of-type(odd):after,.box:nth-of-type(even):after {display: none;}
+    
+    #line {z-index: -1;}
+
+    #line:before {display: none;}
+}
+</style>
+</head>
+<body>
+
+<header>
+    <div id="hline">
+        <h1 id="btitle">Title</h1>
+    </div>
+
+    <article>
+
+        <p id="bio">
+            Description
+        </p>
+
+        <nav id="navi"><ul>
+            <li><a title="home" href="/"><i class="th th-home-o"></i></a></li>
+
+            <li><a title="inbox" href="/ask"><i class="th th-envelope-o"></i></a></li>
+
+            <li><a title="dashboard" href="https://tumblr.com"><i class="th th-tumblr-o"></i></a></li>
+
+            <li id="opendd"><i class="th th-equal-o" title="links"></i></li>
+        </ul>
+    
+
+        <div id="dd">
+            <ul>
+                <!-- add as many as you want -->
+                <li><a href="#">link 1</a></li>
+                <li><a href="#">link 2</a></li>
+                <li><a href="#">link 3</a></li>
+                <li><a href="#">link 4</a></li>
+            </ul>
+        </div>
+    </nav>
+    </article>
+
+    <div style="clear: both;"></div>
+</header>
+
+<main>
+<div id="line"></div>
+
+<!--     BOX TEMPLATE 
+
+        <article class="box">
+            <h2 class="boxtit">
+                title
+            </h2>
+
+            <div class="tags">
+                <ul>
+                <li><a href="tag link">tag name</a></li>
+                </ul>
+            </div>
+        </article>
+
+ -->
+
+         <article class="box">
+            <h2 class="boxtit">
+                title
+            </h2>
+
+            <div class="tags">
+                <ul>
+                <li><a href="tag link">tag name</a></li>
+                </ul>
+            </div>
+        </article>
+
+
+                <article class="box">
+            <h2 class="boxtit">
+                title
+            </h2>
+
+            <div class="tags">
+                <ul>
+                <li><a href="tag link">tag name</a></li>
+                </ul>
+            </div>
+        </article>
+
+
+</main>
+
+
+<!-- DON'T TOUCH -->
+<a id="sc" href="https://southcodes.tumblr.com" target="_blank" title="southcodes">SC</a>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script>
+$( document ).ready(function() {
+    $('#opendd').click(function(){
+        $('#dd').slideToggle(500)
+    })
+});
+</script>
+</body>
+</html>
