@@ -34,3 +34,7 @@
 	```
 	wget -E -H -k -p link
 	```
+- replace text in batch
+	```
+	sed -i.backupsuffix 's/SEARCH_REGEX/REPLACEMENT/g' INPUTFILE
+	```
