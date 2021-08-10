@@ -5,9 +5,18 @@
 	```
 	gs -dNOPAUSE -dBATCH -sDEVICE=pdfwrite -dCompatibilityLevel=1.4 -dPDFSETTINGS=/screen -sOutputFile=output.pdf input.pdf
 	```
-- img2 pdf (no spaces in fname.)
+	```
+	ps2pdf -dPDFSETTINGS=/ebook input.pdf output.pdf
+	```
+	```
+	convert -density 200x200 -quality 40 -compress jpeg input.pdf output.pdf
+	```
+- img2 pdf (no spaces in fname. if sort is required)
 	```
 	img2pdf $(find . -iname '*.jpg' | sort -V) -o ./document.pdf
+	```
+	```
+	img2pdf *.jpg -o ./document.pdf
 	```
 - find large files
 	```
@@ -37,4 +46,8 @@
 - replace text in batch
 	```
 	sed -i.backupsuffix 's/SEARCH_REGEX/REPLACEMENT/g' INPUTFILE
+	```
+- webp to gif
+	```
+	for f in *.webp; do mkdir $f.frames;anim_dump -folder $f.frames  $f;convert $f.frames/*.png -delay 10 -loop 0 $f.gif; done;
 	```
