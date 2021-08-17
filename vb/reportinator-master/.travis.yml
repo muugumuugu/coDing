@@ -1,0 +1,25 @@
+language: python
+os: linux
+dist: xenial
+python:
+  - "3.6"
+  - "3.7"
+  - "3.8"
+
+branches:
+  only:
+    - master
+
+
+before_install:
+  - sudo apt-get install texlive-latex-extra texlive-bibtex-extra latexmk
+
+install:
+  - python3 -m pip install -e .
+
+script:
+  - reportinator --source example --name Spandan --affil NISER --compiler "latexmk -pdf -bibtex -f -silent"
+  - ls ./example/output.tex; ls ./example
+  - cat ./example/output.tex
+
+root: true

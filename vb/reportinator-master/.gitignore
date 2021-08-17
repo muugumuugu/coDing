@@ -1,0 +1,6 @@
+.DS_Store
+__pycache__/
+example/
+reportinator.egg-info/
+.tox/
+config2.yml

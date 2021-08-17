@@ -113,11 +113,17 @@ Basically save/update/delete files in the spotlight(stage).</p>
 </ul></div>
 
 <div><ul>
-<li>stage all changes.
+<li>stage all changes in folder.
 <pre><code class="lang-bash"><span class="hljs-attribute">git</span> <span class="hljs-keyword">add</span> <span class="hljs-selector-attr">.</span>
 </code></pre></li>
-<li>stage all files currently existing in location.
+<li>stage all changes in repository.
+<pre><code class="lang-bash"><span class="hljs-attribute">git</span> <span class="hljs-keyword">add</span> <span class="hljs-built_in">-A</span>
+</code></pre></li>
+<li>stage all non-hidden, modified or created files.
 <pre><code class="lang-bash"><span class="hljs-attribute">git</span> <span class="hljs-keyword">add</span> <span class="hljs-selector-attr">*</span>
+</code></pre></li>
+<li>stage reation and modifications but not deletions.
+<pre><code class="lang-bash"><span class="hljs-attribute">git</span> <span class="hljs-keyword">add</span> <span class="hljs-built_in">--ignore-removal</span> <span class="hljs-selector-attr">.</span>
 </code></pre></li>
 </ul></div>
 

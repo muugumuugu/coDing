@@ -46,13 +46,21 @@
 	```bash
 	git add filename
 	```
-- stage all changes
+- stage all changes in folder
 	```bash
 	git add .
 	```
-- stage all files currently existing in location.
+- stagr all changes in repository
+	```bash
+	git add -A
+	```
+- stage all non-hidden, modified or created files
 	```bash
 	git add *
+	```
+- stage reation and modifications but not deletions
+	```bash
+	git add --ignore-removal .
 	```
 - delete a file and stage it's deletion.
 	```bash
