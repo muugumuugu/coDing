@@ -1,0 +1,39 @@
+<!doctype html>
+<html><head><meta http-equiv="content-type" content="text/html; charset=utf-8"><link rel="stylesheet" href="/styles/home.css"><script src="/styles/syntaxhighlighter.js"></script><script>hljs.highlightAll();</script><style>summary{font-weight:bold;cursor:pointer;display:inline-block;padding:0px;margin:0px;}pre{width:80%;margin-left:50px;"}</style>
+<title>servers</title></head><body>
+
+
+
+<div style="margin-left:40px!important; font-size:18px!important;">
+<details><summary><a title="http://mogimogilenovo.ooguy.com/" href="http://mogimogilenovo.ooguy.com/">ddns</a></summary>
+<blockquote><dl>
+<dt>@</dt><dd>192.168.1.8/</dd>
+<dt>alias</dt><dd>mogimogilenovo.ooguy.com</dd>
+</dl></blockquote>
+</details>
+<details><summary><a title="http://192.168.1.8/" href="http://192.168.1.8/">apache root</a></summary>
+<blockquote><dl>
+<dt>@</dt><dd>192.168.1.8/</dd>
+<dt>alias</dt><dd>localhost</dd>
+</dl></blockquote>
+</details>
+<details><summary><a title="http://192.168.1.8:8081/" href="http://192.168.1.8:8081/">node root</a></summary>
+<pre><code class="lang-bash">cd <span class="hljs-selector-tag">~</span>
+<span class="hljs-attribute">http-server</span><span class="hljs-params"> -p</span><span class="hljs-number">8081</span>
+</code></pre>
+</details>
+<details><summary><a title="http://192.168.1.8::3125/" href="http://192.168.1.8::3125/">notes</a></summary>
+<pre><code class="lang-bash">cd <span class="hljs-selector-tag">~</span>
+<span class="hljs-attribute">jekyll</span> <span class="hljs-keyword">serve</span> <span class="hljs-params">--watch </span><span class="hljs-params">--port</span> <span class="hljs-number">3125</span>
+</code></pre>
+</details>
+<details><summary><a title="http//192.168.1.8:4000/" href="http//192.168.1.8:4000/">blog</a></summary>
+<pre><code class="lang-bash">cd <span class="hljs-selector-tag">~</span>
+<span class="hljs-attribute">jekyll</span> <span class="hljs-keyword">serve</span> <span class="hljs-params">--watch </span><span class="hljs-params">--port</span> <span class="hljs-number">4000</span>
+</code></pre>
+</details>
+</div>
+
+
+
+<script src="/styles/copybutton.js"></script></body></html>

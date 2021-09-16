@@ -1,0 +1,38 @@
+<!doctype html>
+<html><head><meta http-equiv="content-type" content="text/html; charset=utf-8"><link rel="stylesheet" href="/styles/home.css"><script src="/styles/syntaxhighlighter.js"></script><script>hljs.highlightAll();</script><style>summary{font-weight:bold;cursor:pointer;display:inline-block;padding:0px;margin:0px;}pre{width:80%;margin-left:50px;"}</style>
+<title>file handling</title></head><body>
+
+
+<details><summary><h3>find large files</h3></summary>
+<pre><code class="lang-bash"=><span class="hljs-built_in">sudo</span> <span class="hljs-attribute">find</span> <span class="hljs-selector-attr">.</span> <span class="hljs-params">-xdev</span> <span class="hljs-params">-type</span> <span class="hljs-keyword">f</span> <span class="hljs-params">-size</span> <span class="hljs-literal">+100M</span>
+</code></pre>
+</details>
+<details><summary><h3>delete files</h3></summary>
+<pre><code class="language-bash">for d in <span class="hljs-selector-attr">./*</span>; do  if [ <span class="hljs-built_in">-d </span>&quot;$d&quot; ]; then  cd $d; <span class="hljs-attribute">rm</span> <span class="hljs-selector-attr">*</span><span class="hljs-selector-class">.mp3</span>; cd <span class="hljs-selector-tag">..</span> ;   fi; done
+</code></pre>
+</details>
+<!---->
+<details><summary><h3>rename files</h3></summary>
+<pre><code class="lang-bash"><span class="hljs-built_in">rename</span> <span class=hljs-params>-v</span>  's/search regex</span><span>/replacingstring/' *
+</code></pre>
+</details>
+<details><summary><h3>rename files sequentially</h3></summary>
+<pre><code class="lang-bash"><span class="hljs-attribute">ls</span> | <span class="hljs-attribute">cat</span><span class="hljs-params"> -n</span> | while read n f; do <span class="hljs-attribute">mv</span> "$f" `printf "2019-12-02-23-19-%02d.jpg" $n`; done
+</code></pre>
+</details>
+<details><summary><h3>rename and keep extension no recursion thry directories</h3></summary>
+<pre><code class="lang-bash"><span class="hljs-attribute">ls</span><span class="hljs-built_in"> -1prt</span> | <span class="hljs-attribute">grep</span><span class="hljs-params"> -v</span> "/$" | <span class="hljs-attribute">cat</span><span class="hljs-params"> -n</span> | while read <span class="hljs-selector-tag">n</span> f; do <span class="hljs-attribute">mv</span><span class="hljs-params"> -n</span> "${f}" `$(printf "%04d" $n).${f#*.}`;
+</code></pre>
+</details>
+<!---->
+<details><summary><h3>loop thru directories</h3></summary>
+<pre><code class="language-bash">for d in <span class="hljs-selector-attr">./*</span>; do  if [ <span class="hljs-built_in">-d </span>&quot;$d&quot; ]; then  echo &quot;$d&quot;;   fi; done
+</code></pre>
+</details>
+<details><summary><h3>apply to script all files in directory</h3></summary>
+<pre><code class="lang-bash">curdir=$(<span class="hljs-built_in">pwd</span>); for folder in <span class="hljs-string">/path/to/Files/</span><span class="hljs-selector-attr">*</span>; do </span>[ <span class="hljs-built_in">-d</span> "$folder" ] <span class="hljs-comment">&amp;&amp;</span> cd "$folder"  <span class="hljs-comment">&amp;&amp;</span> <span class="hljs-literal">./conv.sh</span>; done; cd $curdir
+</code></pre>
+<pre><code class="lang-bash">for f in <span class="hljs-selector-attr">*</span>; do	[ <span class="hljs-built_in">-d</span> "$f" ] <span class="hljs-comment">&amp;&amp;</span> cd "$f"  <span class="hljs-comment">&amp;&amp;</span> <span class="hljs-literal">./conv.sh</span>; done; cd <span class="hljs-selector-tag">..</span>
+</code></pre>
+</details>
+<script src="/styles/copybutton.js"></script></body></html>

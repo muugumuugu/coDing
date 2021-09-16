@@ -1,0 +1,30 @@
+<!doctype html>
+<html><head><meta http-equiv="content-type" content="text/html; charset=utf-8"><link rel="stylesheet" href="/styles/home.css"><script src="/styles/syntaxhighlighter.js"></script><script>hljs.highlightAll();</script><style>summary{font-weight:bold;cursor:pointer;display:inline-block;padding:0px;margin:0px;}pre{width:80%;margin-left:50px;"}</style>
+<title>make-a-book</title></head><body>
+
+
+<!---->
+<details><summary><h3>images To booklet</h3></summary>
+<pre><code class="lang-bash"><span class="hljs-attribute">img2pdf</span> $(<span class="hljs-keyword">find</span> <span class="hljs-selector-class">.</span> <span class="hljs-built_in">-iname</span> "<span class="hljs-selector-attr">*</span><span class="hljs-selector-class">.jpg</span>" | <span class="hljs-attribute">sort</span> <span class="hljs-params">-V</span>) <span class="hljs-built_in">-o</span> <span class="hljs-string">./document.pdf</span>
+</pre></code>
+<pre><code class="lang-bash"><span class="hljs-attribute">ls</span> <span class="hljs-number">-1</span> <span class="hljs-selector-attr">./*</span><span class="hljs-selector-class">jpg</span> | <span class="hljs-attribute">xargs</span> <span class="hljs-built_in">-L1</span> <span class="hljs-keyword">-I</span> <span class="hljs-selector-attr">{}</span> <span class="hljs-attribute">img2pdf</span> <span class="hljs-selector-attr">{}</span> <span class="hljs-built_in">-o</span> <span class="hljs-selector-attr">{}</span><span class="hljs-selector-class">.pdf</span>; <span class="hljs-attribute">pdftk</span> <span class="hljs-selector-attr">*</span><span class="hljs-selector-class">.pdf</span> <span class="hljs-attribute">cat</span> <span class="hljs-selector-tag">output</span> <span class="hljs-string">combined.pdf</span>
+</code></pre>
+<pre><code class="lang-bash"><span class="hljs-attribute">img2pdf</span>  <span class="hljs-selector-attr">*</spna><span class="hljs-selector-class">.jpg</span> <span class="hljs-params">-o</span> <span class="hljs-string">./document.pdf</span>
+</code></pre>
+</details>
+
+
+<!---->
+<details><summary><h3>compress pdf</h3></summary>
+<pre><code class="lang-bash"><span class="hljs-attribute">gs</span> <span class="hljs-params">-dNOPAUSE</span> <span class="hljs-params">-dBATCH</span> <span class="hljs-params">-sDEVICE</span>=<span class="hljs-literal">pdfwrite</span> <span class="hljs-params">-dCompatibilityLevel</span>=<span class="hljs-literal">1.4</span> <span class="hljs-params">-dPDFSETTINGS=</span><span class="hljs-keyword">/ebook</span> <span class="hljs-params">-sOutputFile=</span><span class="hljs-literal">output.pdf input.pdf</span>
+</code></pre>
+<pre><code class="lang-bash"><span class="hljs-attribute">gs</span> <span class="hljs-params">-dNOPAUSE</span> <span class="hljs-params">-dBATCH</span> <span class="hljs-params">-sDEVICE</span>=<span class="hljs-literal">pdfwrite</span> <span class="hljs-params">-dCompatibilityLevel</span>=<span class="hljs-literal">1.4</span> <span class="hljs-params">-dPDFSETTINGS=</span><span class="hljs-keyword">/screen</span> <span class="hljs-params">-sOutputFile=</span><span class="hljs-literal">output.pdf input.pdf</span>
+</code></pre>
+<pre><code class="lang-bash"><span class="hljs-attribute">ps2pdf</span> <span class="hljs-params">-dPDFSETTINGS</span><span class="hljs-built_in">=/ebook <span class="hljs-literal">input.pdf output.pdf</span>
+</code></pre>
+<pre><code class="lang-bash"><span class="hljs-attribute">convert</span> <span class="hljs-params">-density</span> <span class="hljs-literal">200</span>x<span class="hljs-literal">200</span> <span class="hljs-params">-quality</span> <span class="hljs-literal">40</span> <span class="hljs-params">-compress</span> <span class="hljs-literal">jpeg</span> <span class="hljs-string">input.pdf output.pdf</span>
+</code></pre>
+</details>
+<!---->
+
+<script src="/styles/copybutton.js"></script></body></html>

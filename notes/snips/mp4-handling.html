@@ -1,0 +1,14 @@
+<!doctype html>
+<html><head><meta http-equiv="content-type" content="text/html; charset=utf-8"><link rel="stylesheet" href="/styles/home.css"><script src="/styles/syntaxhighlighter.js"></script><script>hljs.highlightAll();</script><style>summary{font-weight:bold;cursor:pointer;display:inline-block;padding:0px;margin:0px;}pre{width:80%;margin-left:50px;"}</style>
+<title>mp4 handling</title></head><body>
+
+<details><summary><h3>compress vids</h3></summary>
+<pre><code class="lang-bash"><span class="hljs-attribute">ffmpeg</span> <span class="hljs-params">-i</span> <span class="hljs-string">source.mp4</span> <span class="hljs-params">-c:v</span> <span class="hljs-literal">libx264</span> <span class="hljs-params">-b:v</span> <span class="hljs-literal">0.5M</span> <span class="hljs-params">-c:a</span> <span class="hljs-literal">aac</span> <span class="hljs-params">-b:a</span> <span class="hljs-literal">96k</span> <span class="hljs-string">target.mp4</span>
+</code></pre>
+<pre><code class="lang-bash"><span class="hljs-attribute">ffmpeg</span> <span class="hljs-params">-i</span> <span class="hljs-string">source.mp4</span> <span class="hljs-params">-c:v</span> <span class="hljs-literal">libx264</span> <span class="hljs-params">-b:v</span> <span class="hljs-literal">1.5M</span> <span class="hljs-params">-c:a</span> <span class="hljs-literal">aac</span> <span class="hljs-params">-b:a</span> <span class="hljs-literal">128k</span> <span class="hljs-string">target.mp4</span>
+</code></pre>
+</details>
+
+
+
+<script src="/styles/copybutton.js"></script></body></html>

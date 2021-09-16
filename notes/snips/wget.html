@@ -1,0 +1,41 @@
+<!doctype html>
+<html><head><meta http-equiv="content-type" content="text/html; charset=utf-8"><link rel="stylesheet" href="/styles/home.css"><script src="/styles/syntaxhighlighter.js"></script><script>hljs.highlightAll();</script><style>summary{font-weight:bold;cursor:pointer;display:inline-block;padding:0px;margin:0px;}pre{width:80%;margin-left:50px;"}</style>
+<title>wget</title></head><body>
+
+
+
+<blockquote><dl>
+<dt>E:</dt><dd> Append .html to the file name if it is an HTML file but doesn&#39;t end in .html or similar</dd>
+<dt>H:<dd> Download files from other hosts, too</dd>
+<dt>k:<dd> After downloading convert any link in it so they point to the downloaded files</dd>
+<dt>p:<dd> Download anything the page needs for proper offline viewing</dd>
+<dt>r:<dd> recursively download all files in folder</dd>
+</dl>
+</blockquote>
+</details>
+<details><summary><h3>download link</h3></summary>
+<pre><code class="lang-bash"><span class="hljs-attribute">wget</span> <span  class="hljs-string">link</span><span class="hljs-params"> -O</span> <span  class="hljs-string">output-name</span>
+</code></pre>
+</details>
+<details><summary><h3>download list of links</h3></summary>
+<pre><code class="bash"><span class="hljs-attribute">wget</span><span class="hljs-params"> -i</span> <span  class="hljs-string">input.txt</span>
+</code></pre>
+</details>
+<details><summary><h3>download website</h3></summary>
+<pre><code class="lang-bash"><span class="hljs-attribute">wget</span> <span class="hljs-params">-r</span> <span class="hljs-params">-k</span> <span class="hljs-params">-E</span> <span class="hljs-params">-p</span> <span class="hljs-literal">link</span>
+</code></pre>
+</details>
+<details><summary><h3>download webpaeg</h3></summary>
+e<pre><code class="lang-bash"><span class="hljs-attribute">wget</span> <span class="hljs-params">-E</span> <span class="hljs-params">-H</span> <span class="hljs-params">-k</span> <span class="hljs-params">-p</span> <span class="hljs-literal">link</span>
+</code></pre>
+</details>
+<details><summary><h3>get gdrive files from url</h3></summary>
+<pre><code class="lang-bash">if <span class="hljs-symbol">[[</span> $URL <span class="hljs-symbol">=~</span> <span class="hljs-selector-class">d/</span><span class="hljs-selector-attr">(.*)</span><span class="hljs-selector-class">/view</span> <span class="jljs-symbol">]]</span>; then  <span class="hljs-literal">FILEID</span>=${BASH_REMATCH[1]}; else if <span class="hljs-symbol">[[</symbol> $URL <span class="hljs-symbol">=~</span> <span class="hljs-selector-class">open.id=</span><span class="hljs-selector-attr">(.*)</span><span class="hljs-selector-class">\&quot;</span> <span class="hljs-symbol">]]</symbol>; then  <span class="hljs-literal">FILEID</span>=${BASH_REMATCH[1]}; fi ; fi
+</code></pre>
+<pre><code class="lang-bash"><span class="hljs-attribute">wget</span> <span class="hljs-params">--no-check-certificate</span> &quot;https://docs.google.com/uc?export=download&amp;id=$FILEID&quot; <span class="hljs-params">-O</span>   &quot;$FILENAME&quot;
+</code></pre>
+<pre><code class="lang-bash"><span class="hljs-attribute">wget</span> <span class="hljs-params">--load-cookies</span> /tmp/cookies.txt &quot;https://docs.google.com/uc?export=download&amp;confirm=$(<span class="hljs-attribute">wget</span> <span class="hljs-params">--quiet</span> <span class="hljs-params">--save-cookies</span> /tmp/cookies.txt <span class="hljs-params">--keep-session-cookies</span> <span class="hljs-params">--no-check-certificate</span> &quot;https://docs.google.com/uc?export=download&amp;id=$FILEID&quot; <span class="hljs-params">-O-</span> | sed <span class="hljs-params">-rn</span> &#39;s/.*confirm=([0-9A-Za-z_]+).*/\1\n/p&#39;)&amp;id=$FILEID&quot; <span class="hljs-params">-O</span> &quot;$FILENAME&quot;  <span class="hljs-symbol">&amp;&amp; </span><span class="hljs-attribute">rm</span> <span class="hljs-params">-rf</span> /tmp/cookies.txt
+</code></pre>
+
+
+<script src="/styles/copybutton.js"></script></body></html>

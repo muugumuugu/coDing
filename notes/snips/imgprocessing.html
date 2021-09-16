@@ -1,0 +1,49 @@
+<!doctype html>
+<html><head><meta http-equiv="content-type" content="text/html; charset=utf-8"><link rel="stylesheet" href="/styles/home.css"><script src="/styles/syntaxhighlighter.js"></script><script>hljs.highlightAll();</script><style>summary{font-weight:bold;cursor:pointer;display:inline-block;padding:0px;margin:0px;}pre{width:80%;margin-left:50px;"}</style>
+<title>image processing</title></head><body>
+
+
+<details><summary><h3>make thumbnails</h3></summary>
+<pre><code class="lang-bash">for f in  <span class="hljs-selector-attr">*</span><span class="hljs-selector-class">.pdf</span>; <span class="hljs-keyword">do</span> <span class="hljs-built_in">echo</span> <span class="hljs-attribute">epub-thumbnailer</span> "$f" "${f%.epub}.png" <span class="hljs-number"> 800</span>; done</span>
+</code></pre>
+<pre><code class="lang-bash">for f in  <span class="hljs-selector-attr">*</span><span class="hljs-selector-class">.pdf</span>; <span class="hljs-keyword">do</span> <span class="hljs-attribute">convert</span> <span class="hljs-built_in">-thumbnail</span> x<span class="hljs-number">300</span> <span class="hljs-built_in">-background</span> <span class="hljs-literal">white</span> <span class="hljs-built_in">-alpha</span> <span class="hljs-literal">remove</span> "$f"<span class="hljs-selector-attr">[0]</span> "${f%.pdf}.png";done
+</code></pre>
+<pre><code class="lang-bash"><span class="hljs-attribute">mogrify</span>  <span class="hljs-built_in">-format</span> <span class="hljs-string"> webp</span> <span class="hljs-built_in">-path</span> <span class="hljs-string">thumbs</span> <span class="hljs-built_in">-thumbnail</span> <span class="hljs-number">200</span>x<span class="hljs-number">200</span> <span class="hljs-selector-attr">*</span><span class="hljs-selector-class">.pdf</span><span class="hljs-selector-attr">[0]</span>
+</code></pre>
+<pre><code class="lang-bash"><span class="hljs-attribute">mogrify</span>  <span class="hljs-built_in">-format</span> <span class="hljs-string"> webp</span> <span class="hljs-built_in">-path</span> <span class="hljs-string">thumbs</span> <span class="hljs-built_in">-thumbnail</span> <span class="hljs-number">200</span>x<span class="hljs-number">200</span> <span class="hljs-selector-attr">*</span><span class="hljs-selector-class">.jpg</span>
+<span class="hljs-attribute">mogrify</span>  <span class="hljs-built_in">-format</span> <span class="hljs-string"> webp</span> <span class="hljs-built_in">-path</span> <span class="hljs-string">thumbs</span> <span class="hljs-built_in">-thumbnail</span> <span class="hljs-number">200</span>x<span class="hljs-number">200</span> <span class="hljs-selector-attr">*</span><span class="hljs-selector-class">.gif</span><span class="hljs-selector-attr">[0]</span>
+<span class="hljs-attribute">mogrify</span>  <span class="hljs-built_in">-format</span> <span class="hljs-string"> webp</span> <span class="hljs-built_in">-path</span> <span class="hljs-string">thumbs</span> <span class="hljs-built_in">-thumbnail</span> <span class="hljs-number">200</span>x<span class="hljs-number">200</span> <span class="hljs-selector-attr">*</span><span class="hljs-selector-class">.djvu</span><span class="hljs-selector-attr">[0]</span>
+<span class="hljs-attribute">mogrify</span>  <span class="hljs-built_in">-format</span> <span class="hljs-string"> webp</span> <span class="hljs-built_in">-path</span> <span class="hljs-string">thumbs</span> <span class="hljs-built_in">-thumbnail</span> <span class="hljs-number">200</span>x<span class="hljs-number">200</span> <span class="hljs-selector-attr">*</span><span class="hljs-selector-class">.png</span>
+</code></pre>
+</details>
+<details><summary><h3>trim a video of leng hh:mm:ss of inp video beginning @ time HH:MM:SS</h3></summary>
+<pre><code class="lang-bash"><span class="hljs-attribute">ffmpeg</span><span class="hljs-params"> -i</span> <span  class="hljs-string">input.mp4</span><span class="hljs-params"> -ss</span> <span class="hljs-literal">HH</span>:<span class="hljs-literal">MM</span>:<span class="hljs-literal">SS</span><span class="hljs-params"> -t</span> <span class="hljs-literal">hh</span>:<span class="hljs-literal">mm</span>:<span class="hljs-literal">ss</span><span class="hljs-params"> -async</span> <span class="hljs-number">1</span> <span  class="hljs-string">cut.mp4</span>
+</code></pre>
+</details>
+<details><summary><h3>video to frames</h3></summary>
+<pre><code class="lang-bash"><span class="hljs-attribute">ffmpeg</span><span class="hljs-params"> -i</span> <span class="hljs-string">inp.mp4</span><span class="hljs-params"> -r </span> <span class="hljs-number">1</span>/<span class="hljs-number">1</span> $filename%03d<span class="hljs-string">.bmp</span>
+</code></pre>
+</details>
+<details><summary><h3>frames to gif</h3></summary>
+<pre><code class="lang-bash"><span class="hljs-attribute">gifsicle</span><span class="hljs-params"> --delay </span> <span class="hljs-number">10</span><span class="hljs-params"> --loopcount </span> <span class="hljs-number">0</span> <span class="hljs-selector-attr">*</span><span class="hljs-selector-class">.gif</span> <span class="hljs-selector-tag">&gt; </span> <span class="hljs-string">out.gif</span>
+</code></pre>
+</details>
+<details><summary><h3>webp to gif</h3></summary>
+<pre><code class="lang-bash">for f in <span class="hljs-selector-attr">*.</span><span class="hljs-literal">webp</span>; do <span class="hljs-attribute">mkdir</span> $f<span class="hljs-literal">.frames</span>; <span class="hljs-attribute">anim_dump</span> <span class="hljs-params">-folder</span> $f<span class="hljs-literal">.frames</span>  $f; .<span class="hljs-attribute">convert</span> $f<span class="hljs-literal">.frames/</span><span class="hljs-selector-attr">*</span><span class="hljs-literal">.png</span> <span class="hljs-params">-delay</span> <span class="hljs-number">10</span> <span class="hljs-params">-loop</span> <span class="hljs-number">0</span> $f<span class="hljs-literal">.gif</span>; done;
+</code></pre>
+</details>
+
+<details><summary><h3>batch processes</h3></summary>
+<pre><code class="lang-bash"><span class="hljs-built_in">sudo</span> <span class="hljs-keyword">apt-get</span> <span class="hljs-selector-tag">install</span> <span class="hljs-literal">jpegoptim</span>
+</code></pre>
+<pre><code class="lang-bash"><span class="hljs-attribute">jpegoptim </span><span class="hljs-selector-attr">*</span><span class="hljs-selector-class">.mp3</span> </span><span class="hljs-built_in">-m</span><span class="hljs-number">30</span>
+</code></pre>
+<pre><code class="lang-bash"><span class="hljs-attribute">mogrify</span> <span class="hljs-built_in">-path</span> <span class="hljs-string">./results</span> <span class="hljs-built_in">-resize</span> <span class="hljs-number">50</span>x<span class="hljs-number">50</span>% <span class="hljs-built_in">-quality</span> <span class="hljs-number">80</span> <span class="hljs-built_in">-format</span> <span class="hljs-string">jpg</span> <span class="hljs-selector-attr">*</span><span class="hljs-selector-class">.png</span>
+</code></pre>
+<pre><code class="lang-bash"><span class="hljs-attribute">mogrify</span>  <span class="hljs-built_in">-format</span> <span class="hljs-string"> jpg</span>  <span class="hljs-selector-attr">*</span><span class="hljs-selector-class">.png</span>
+</code></pre>
+<pre><code class="lang-bash"><span class="hljs-attribute">mogrify</span> <span class="hljs-built_in">-path</span> <span class="hljs-string">./</span> <span class="hljs-built_in">-resize</span> <span class="hljs-number">50</span>% <span class="hljs-built_in">-quality</span> <span class="hljs-number">80</span>  <span class="hljs-selector-attr">*</span><span class="hljs-selector-class">.jpg</span>
+</code></pre>
+<pre><code class="lang-bash"><span class="hljs-attribute">convert</span> <span class="hljs-selector-attr">*</span><span class="hljs-selector-class">.jpg</span> <span class="hljs-built_in">-auto-orient</span> <span class="hljs-string">pictures.pdf</span>
+</code></pre>
+</details>

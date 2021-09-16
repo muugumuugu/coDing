@@ -1,0 +1,27 @@
+<!doctype html>
+<html><head><meta http-equiv="content-type" content="text/html; charset=utf-8"><link rel="stylesheet" href="/styles/home.css"><script src="/styles/syntaxhighlighter.js"></script><script>hljs.highlightAll();</script><style>summary{font-weight:bold;cursor:pointer;display:inline-block;padding:0px;margin:0px;}pre{width:80%;margin-left:50px;"}</style>
+<title>editing text streams</title></head><body>
+
+
+
+
+<details><summary><h3>concat files</h3></summary>
+<pre><code class="lang-bash"><span class="hljs-attribute">cat</span> <span class="hljs-selector-attr">*</span> <span class="hljs-selector-tag">&gt;</span> <span class="hljs-string">outputfname</span>
+</pre></code>
+<pre><code class="lang-bash"><span class="hljs-keyword">find</span> <span class="hljs-string">/path/to/directory/</span> <span class="hljs-params">-name</span> <span class="hljs-selector-attr">*</span><span class="hljs-selector-class">.csv</span> <span class="hljs-built_in">-exec</span> <span class="hljs-attribute">cat</span> <span class="hljs-selector-attr">{}</span> +<span class="hljs-selector-tag"> &gt;</span> <span class="hljs-string">outputfname</span>
+</code></pre>
+</details>
+<details><summary><h3>replace text in batch using extended regex</h3></summary>
+<pre><code class="lang-bash"><span class="hljs-attribute">sed</span> <span class="hljs-params">-i</span><span class="hljs-literal">.backupsuffix</span> <span class="hljs-built_in">-E</span> &#39;s/SEARCH_REGEX/REPLACEMENT/g&#39; <span class="hljs-literal">INPUTFILE</span>
+</code></pre>
+</details>
+<details><summary><h3>insert text at line #N in batch</h3></summary>
+<pre><code class="lang-bash"><span class="hljs-attribute">sed</span> <span class="hljs-params">-i</span><span class="hljs-literal">.backupsuffix</span>  &#39;Ni\insertiontext\&#39; <span class="hljs-literal">INPUTFILE</span>
+</code></pre>
+</details>
+<details><summary><h3>append text at line #N in batch</h3></summary>
+<pre><code class="lang-bash"><span class="hljs-attribute">sed</span> <span class="hljs-params">-i</span><span class="hljs-literal">.backupsuffix</span>  &#39;Na\insertiontext\&#39; <span class="hljs-literal">INPUTFILE</span>
+</code></pre>
+</details>
+
+<script src="/styles/copybutton.js"></script></body></html>
