@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script src="data.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.4.0/p5.min.js" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<style>
+details[open]{width:1600px;}
+body{background:#333;}
+#reddit-content{display:flex;flex-wrap:wrap;}
+#reddit-content div,details{width:300px;margin:15px;}
+summary{padding:6px;}
+.box{background-color:#000;color:white;}
+a{text-decoration:none;color:white;text-shadow:0 0px 15px white, 0 0 5px white;}
+
+</style>
+</head>
+<body>
+<div id="reddit-content" >
+</div>
+<p id="secret" hidden ></p>
+
+<script>
+let num=0;
+function htmlDecode(input){
+	var e = document.getElementById('secret');
+	e.innerHTML = input;
+
+try {
+  return e.childNodes[0].nodeValue;
+}
+catch(err) {
+ return ""
+}
+}
+//http://www.reddit.com/r/dailyprogrammer.json?jsonp=?
+
+function setup()
+{
+	noLoop();
+	for (let i=0 ; i<jsondata.length; i++){
+		let post=jsondata[i].data;
+		let main=htmlDecode(post.selftext_html);
+		let divv=document.createElement('divv');
+		let str='<details class="box"> <summary><a href="' +post.url +'">' +  post.title +  '</a></summary>'  + main + '<br></details>'+ '<hr>' ;
+		divv.innerHTML=str;
+		document.getElementById("reddit-content").appendChild(divv)
+	}
+}
+
+</script>
+
+</body></html>

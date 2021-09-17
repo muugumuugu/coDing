@@ -42,11 +42,8 @@
 			<center><a style="color:#b5e853; font-size:20px;" href="../index.html">coDing Home</a></center>
 		</footer>
 		<!--scripts-->
-<<<<<<< HEAD
 		<script src="/Desktop/coDing/js/purejs/copybutton.js"></script>
 		<script src="https://cdn.jsdelivr.net/gh/muugumuugu/coDing@latest/js/purejs/copybutton.js"></script>
-=======
 		<script src="https://cdn.jsdelivr.net/gh/muugumuugu/coDing@latest/js/copybutton.js"></script>
->>>>>>> 8f924ec8939741408e44785587a73b4aff4b3f0f
 	</body>
 </html>
