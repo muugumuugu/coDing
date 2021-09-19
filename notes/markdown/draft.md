@@ -1,4 +1,16 @@
 <!-- Required extensions: pymdownx.betterem, pymdownx.tilde, pymdownx.emoji, pymdownx.tasklist, pymdownx.superfences -->
+
++ ConcaT videos
+	```
+	for f in *.mp4; do echo "file '$f'" >>files.txt;done;
+	ffmpeg -f concat  -i files.txt -c copy output.mp4
+	```
++ ```strings "$f" > "$f".clean #clean the text of unprintable or special unicode characters```
++ ```pdftotext "$f"```
++  playlist to mp3
+	```
+	youtube-dl --ignore-errors --format bestaudio --extract-audio --audio-format mp3 --audio-quality 160K --output "%(title)s.%(ext)s" --yes-playlist https://www.youtube.com/playlist?list={your-youtube-playlist-id}
+	```
 + showdown makehtml -i foo.md -o bar.html
 + ls | grep -v file.txt | xargs rm -r
 	+ delete all files+directories except file.txt
