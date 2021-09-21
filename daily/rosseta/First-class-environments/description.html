@@ -1,0 +1,18 @@
+<link href="/styles/home.css" rel="stylesheet">
+<p>According to <a href="wp:First-class_object|Wikipedia">wp:First-class<em>object|Wikipedia</a>, "In computing, a first-class object ... is an entity that can be constructed at run-time, passed as a parameter, returned from a subroutine, or assigned into a variable".<code></code>
+<code></code>
+Often this term is used in the context of "first class functions". In an analogous way, a programming language may support "first class environments".<code></code>
+<code></code>
+The environment is minimally, the set of variables accessable to a statement being executed. Change the environments and the same statement could produce different results when executed.<code></code>
+<code></code>
+Often an environment is captured in a <a href="wp:Closure_(computer_science)|closure">wp:Closure</em>(computer_science)|closure</a>, which encapsulates a function together with an environment. That environment, however, is <code>not</code> first-class, as it cannot be created, passed etc. independently from the function's code.<code></code>
+<code></code>
+Therefore, a first class environment is a set of variable bindings which can be constructed at run-time, passed as a parameter, returned from a subroutine, or assigned into a variable. It is like a closure without code. A statement must be able to be executed within a stored first class environment and act according to the environment variable values stored within.<code></code>
+<code></code>
+The task: Build a dozen environments, and a single piece of code to be run repeatedly in each of these envionments.<code></code>
+<code></code>
+Each environment contains the bindings for two variables: A value in the <a href="Hailstone sequence">Hailstone sequence</a>, and a count which is incremented until the value drops to 1. The initial hailstone values are 1 through 12, and the count in each environment is zero.<code></code>
+<code></code>
+When the code runs, it calculates the next hailstone step in the current environment (unless the value is already 1) and counts the steps. Then it prints the current value in a tabular form.<code></code>
+<code></code>
+When all hailstone values dropped to 1, processing stops, and the total number of hailstone steps for each environment is printed.<code></code></p>

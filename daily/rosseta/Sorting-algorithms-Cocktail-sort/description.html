@@ -1,0 +1,28 @@
+<link href="/styles/home.css" rel="stylesheet">
+<p>{{Sorting Algorithm}}<code></code>
+{{Wikipedia|Cocktail sort}}<code></code>
+<code></code>
+<code></code>
+The cocktail shaker sort is an improvement on the <a href="Bubble Sort">Bubble Sort</a>.<code></code>
+<code></code>
+The improvement is basically that values "bubble" both directions through the array, because on each iteration the cocktail shaker sort bubble sorts once forwards and once backwards. Pseudocode for the algorithm (from <a href="wp:Cocktail sort|wikipedia">wp:Cocktail sort|wikipedia</a>):<code></code>
+ <code>function</code> <code>cocktailSort</code>( A : list of sortable items )<code></code>
+  <code>do</code><code></code>
+    swapped := false<code></code>
+    <code>for each<code>' i 'in' 0 'to' length( A ) - 2 '</code>do</code><code></code>
+      <code>if<code>' A<a href=" i ] > A[ i+1 "> i ] > A[ i+1 </a> 'then</code> // test whether the two</code><code></code>
+                                <code>// elements are in the wrong</code><code></code>
+                                <code>// order</code><code></code>
+        swap( A<a href=" i ], A[ i+1 "> i ], A[ i+1 </a> ) <code>// let the two elements</code><code></code>
+                                 <code>// change places</code><code></code>
+        swapped := true;<code></code>
+    <code>if<code>' swapped = false '</code>then</code><code></code>
+      <code>// we can exit the outer loop here if no swaps occurred.</code><code></code>
+      <code>break do-while loop</code>;<code></code>
+    swapped := false<code></code>
+    <code>for each<code>' i 'in' length( A ) - 2 'down to' 0 '</code>do</code><code></code>
+      <code>if<code>' A<a href=" i ] > A[ i+1 "> i ] > A[ i+1 </a> '</code>then</code><code></code>
+        swap( A<a href=" i ], A[ i+1 "> i ], A[ i+1 </a> )<code></code>
+        swapped := true;<code></code>
+  <code>while</code> swapped; <code>// if no elements have been swapped,</code><code></code>
+                 <code>// then the list is sorted</code><code></code></p>

@@ -1,0 +1,42 @@
+<link href="/styles/home.css" rel="stylesheet">
+<p>This task investigates mathmatical operations that can be performed on a single continued fraction. This requires only a baby version of NG:<code></code>
+: <math>\begin{bmatrix}<code></code>
+  a<em>1 & a \<code></code>
+  b</em>1 & b<code></code>
+\end{bmatrix}</math><code></code>
+I may perform perform the following operations:<code></code>
+:Input the next term of N<sub>1</sub><code></code>
+:Output a term of the continued fraction resulting from the operation.<code></code>
+<code></code>
+I output a term if the integer parts of <math>\frac{a}{b}</math> and <math>\frac{a<em>1}{b</em>1}</math> are equal. Otherwise I input a term from N. If I need a term from N but N has no more terms I inject <math>\infty</math>.<code></code>
+<code></code>
+When I input a term t my internal state: <math>\begin{bmatrix}<code></code>
+  a<em>1 & a \<code></code>
+  b</em>1 & b<code></code>
+\end{bmatrix}</math> is transposed thus <math>\begin{bmatrix} a + a<em>1 * t & a</em>1  \<code></code>
+  b + b<em>1 * t & b</em>1<code></code>
+\end{bmatrix}</math><code></code>
+<code></code>
+When I output a term t my internal state: <math>\begin{bmatrix}<code></code>
+  a<em>1 & a \<code></code>
+  b</em>1 & b<code></code>
+\end{bmatrix}</math> is transposed thus <math>\begin{bmatrix} b<em>1 & b  \<code></code>
+  a</em>1 - b<em>1 * t & a - b * t<code></code>
+\end{bmatrix}</math><code></code>
+<code></code>
+When I need a term t but there are no more my internal state: <math>\begin{bmatrix}<code></code>
+  a</em>1 & a \<code></code>
+  b<em>1 & b<code></code>
+\end{bmatrix}</math> is transposed thus <math>\begin{bmatrix} a</em>1 & a<em>1 \<code></code>
+  b</em>1 & b_1<code></code>
+\end{bmatrix}</math><code></code>
+<code></code>
+I am done when b<sub>1</sub> and b are zero.<code></code>
+<code></code>
+Demonstrate your solution by calculating:<code></code>
+:<a href="1;5,2">1;5,2</a> + 1/2<code></code>
+:<a href="3;7">3;7</a> + 1/2<code></code>
+:<a href="3;7">3;7</a> divided by 4<code></code>
+Using a generator for <math>\sqrt{2}</math> (e.g., from <a href="Continued fraction]]) calculate <math>\frac{1}{\sqrt{2}}</math>. You are now at the starting line for using Continued Fractions to implement <a href="[Arithmetic-geometric mean">Continued fraction]">[Arithmetic-geometric mean">Continued fraction]</a>) calculate <math>\frac{1}{\sqrt{2}}</math>. You are now at the starting line for using Continued Fractions to implement [[Arithmetic-geometric mean</a> without ulps and epsilons.<code></code>
+<code></code>
+The first step in implementing <a href="Arithmetic-geometric mean">Arithmetic-geometric mean</a> is to calculate <math>\frac{1 + \frac{1}{\sqrt{2}}}{2}</math> do this now to cross the starting line and begin the race.<code></code></p>

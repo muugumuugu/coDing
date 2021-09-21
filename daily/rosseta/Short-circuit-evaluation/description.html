@@ -1,0 +1,29 @@
+<link href="/styles/home.css" rel="stylesheet">
+<p>{{Control Structures}}<code></code>
+<code></code>
+Assume functions &nbsp; <code>a</code> &nbsp; and &nbsp; <code>b</code> &nbsp; return boolean values, &nbsp; and further, the execution of function &nbsp; <code>b</code> &nbsp; takes considerable resources without side effects, <!--treating the printing as being for illustrative purposes only--> and is to be minimized.<code></code>
+<code></code>
+If we needed to compute the conjunction &nbsp; (<code>and</code>):<code></code>
+:::: <code> x = a() and b() </code><code></code>
+<code></code>
+Then it would be best to not compute the value of &nbsp; <code>b()</code> &nbsp; if the value of &nbsp; <code>a()</code> &nbsp;  is computed as &nbsp; <code>false</code>, &nbsp; as the value of &nbsp; <code>x</code> &nbsp; can then only ever be &nbsp; <code> false</code>.<code></code>
+<code></code>
+Similarly, if we needed to compute the disjunction (<code>or</code>):<code></code>
+:::: <code> y = a() or b() </code><code></code>
+<code></code>
+Then it would be best to not compute the value of &nbsp; <code>b()</code> &nbsp; if the value of &nbsp; <code>a()</code> &nbsp; is computed as &nbsp; <code>true</code>, &nbsp; as the value of &nbsp; <code>y</code> &nbsp; can then only ever be &nbsp; <code>true</code>.<code></code>
+<code></code>
+Some languages will stop further computation of boolean equations as soon as the result is known, so-called &nbsp; <a href="wp:Short-circuit evaluation|short-circuit evaluation">wp:Short-circuit evaluation|short-circuit evaluation</a> &nbsp; of boolean expressions<code></code>
+<code></code>
+<code></code>
+<br>Task:<code></code>
+Create two functions named &nbsp; <code>a</code> &nbsp; and &nbsp; <code>b</code>, &nbsp; that take and return the same boolean value.<code></code>
+<code></code>
+The functions should also print their name whenever they are called.<code></code>
+<code></code>
+Calculate and assign the values of the following equations to a variable in such a way that function &nbsp; <code>b</code> &nbsp; is only called when necessary:<code></code>
+:::: <code> x = a(i) and b(j) </code><code></code>
+:::: <code> y = a(i) or  b(j) </code><code></code>
+<code></code>
+<br>If the language does not have short-circuit evaluation, this might be achieved with nested &nbsp; &nbsp; <code>if</code> &nbsp; &nbsp; statements.<code></code>
+<br><br><code></code></p>

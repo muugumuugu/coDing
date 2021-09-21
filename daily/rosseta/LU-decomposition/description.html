@@ -1,0 +1,191 @@
+<link href="/styles/home.css" rel="stylesheet">
+<p>Every square matrix <math>A</math> can be decomposed into a product of a lower triangular matrix <math>L</math> and a upper triangular matrix <math>U</math><br><code></code>
+as described in <a href="wp:LU decomposition|LU decomposition">wp:LU decomposition|LU decomposition</a>.<code></code>
+<code></code>
+:<math>A = LU</math><code></code>
+<code></code>
+It is a modified form of Gaussian elimination.<code></code>
+While the <a href="Cholesky decomposition">Cholesky decomposition</a> only works for symmetric<br><code></code>
+positive definite matrices, the more general LU decomposition<code></code>
+works for any square matrix.<code></code>
+<code></code>
+There are several algorithms for calculating L and U.<code></code>
+To derive <code>Crout's algorithm</code> for a 3x3 example<br><code></code>
+we have to solve the following system:<code></code>
+<code></code>
+:<math><code></code>
+A =<code></code>
+\begin{pmatrix}<code></code>
+   a<em>{11} & a</em>{12} & a<em>{13}\<code></code>
+   a</em>{21} & a<em>{22} & a</em>{23}\<code></code>
+   a<em>{31} & a</em>{32} & a<em>{33}\<code></code>
+\end{pmatrix}<code></code>
+=<code></code>
+\begin{pmatrix}<code></code>
+   l</em>{11} & 0 & 0 \<code></code>
+   l<em>{21} & l</em>{22} & 0 \<code></code>
+   l<em>{31} & l</em>{32} & l<em>{33}\¨C25C
+\end{pmatrix}¨C26C
+\begin{pmatrix}¨C27C
+   u</em>{11} & u<em>{12} & u</em>{13} \¨C28C
+   0 & u<em>{22} & u</em>{23} \¨C29C
+   0 & 0 & u<em>{33}¨C30C
+\end{pmatrix}¨C31C
+= LU¨C32C
+</math><code></code>
+<code></code>
+We now would have to solve 9 equations with 12 unknowns. To make the system uniquely solvable, usually the diagonal elements of <math>L</math> are set to 1<code></code>
+<code></code>
+:<math>l</em>{11}=1</math><code></code>
+:<math>l<em>{22}=1</math><code></code>
+:<math>l</em>{33}=1</math><code></code>
+<code></code>
+so we get a solvable system of 9 unknowns and 9 equations.<code></code>
+<code></code>
+:<math><code></code>
+A =<code></code>
+\begin{pmatrix}<code></code>
+   a<em>{11} & a</em>{12} & a<em>{13}\<code></code>
+   a</em>{21} & a<em>{22} & a</em>{23}\<code></code>
+   a<em>{31} & a</em>{32} & a<em>{33}\<code></code>
+\end{pmatrix}<code></code>
+=<code></code>
+\begin{pmatrix}<code></code>
+   1      & 0      & 0 \<code></code>
+   l</em>{21} & 1      & 0 \<code></code>
+   l<em>{31} & l</em>{32} & 1\¨C54C
+\end{pmatrix}¨C55C
+\begin{pmatrix}¨C56C
+   u<em>{11} & u</em>{12} & u<em>{13} \¨C57C
+   0 & u</em>{22} & u<em>{23} \¨C58C
+   0 & 0 & u</em>{33}¨C59C
+\end{pmatrix}¨C60C
+=¨C61C
+\begin{pmatrix}¨C62C
+   u<em>{11}        & u</em>{12}                    & u<em>{13}              \¨C63C
+   u</em>{11}l<em>{21}  & u</em>{12}l<em>{21}+u</em>{22}       & u<em>{13}l</em>{21}+u<em>{23} \¨C64C
+   u</em>{11}l<em>{31}  & u</em>{12}l<em>{31}+u</em>{22}l<em>{32} & u</em>{13}l<em>{31} + u</em>{23}l<em>{32}+u</em>{33}¨C65C
+\end{pmatrix}¨C66C
+= LU¨C67C
+</math><code></code>
+<code></code>
+Solving for the other <math>l</math> and <math>u</math>, we get the following equations:<code></code>
+<code></code>
+:<math>u<em>{11}=a</em>{11}</math><code></code>
+:<math>u<em>{12}=a</em>{12}</math><code></code>
+:<math>u<em>{13}=a</em>{13}</math><code></code>
+<code></code>
+:<math>u<em>{22}=a</em>{22} - u<em>{12}l</em>{21}</math><code></code>
+:<math>u<em>{23}=a</em>{23} - u<em>{13}l</em>{21}</math><code></code>
+<code></code>
+:<math>u<em>{33}=a</em>{33} - (u<em>{13}l</em>{31} + u<em>{23}l</em>{32})</math><code></code>
+<code></code>
+and for <math>l</math>:<code></code>
+<code></code>
+:<math>l<em>{21}=\frac{1}{u</em>{11}} a<em>{21}</math><code></code>
+:<math>l</em>{31}=\frac{1}{u<em>{11}} a</em>{31}</math><code></code>
+<code></code>
+:<math>l<em>{32}=\frac{1}{u</em>{22}} (a<em>{32} - u</em>{12}l<em>{31})</math><code></code>
+<code></code>
+We see that there is a calculation pattern, which can be expressed as the following formulas, first for <math>U</math><code></code>
+<code></code>
+:<math>u</em>{ij} = a<em>{ij} - \sum</em>{k=1}^{i-1} u<em>{kj}l</em>{ik}</math><code></code>
+<code></code>
+and then for <math>L</math><code></code>
+<code></code>
+:<math>l<em>{ij} = \frac{1}{u</em>{jj}} (a<em>{ij} - \sum</em>{k=1}^{j-1} u<em>{kj}l</em>{ik})</math><code></code>
+<code></code>
+We see in the second formula that to get the <math>l<em>{ij}</math> below the diagonal, we have to divide by the diagonal element (pivot) <math>u</em>{jj}</math>, so we get problems when <math>u_{jj}</math> is either 0 or very small, which leads to numerical instability.<code></code>
+<code></code>
+The solution to this problem is <code>pivoting</code> <math>A</math>, which means rearranging the rows of <math>A</math>, prior to the <math>LU</math> decomposition, in a way that the largest element of each column gets onto the diagonal of <math>A</math>. Rearranging the rows means to multiply <math>A</math> by a permutation matrix <math>P</math>:<code></code>
+<code></code>
+:<math>PA \Rightarrow A'</math><code></code>
+<code></code>
+Example:<code></code>
+<code></code>
+:<math><code></code>
+\begin{pmatrix}<code></code>
+   0 & 1 \<code></code>
+   1 & 0<code></code>
+\end{pmatrix}<code></code>
+\begin{pmatrix}<code></code>
+   1 & 4 \<code></code>
+   2 & 3<code></code>
+\end{pmatrix}<code></code>
+\Rightarrow<code></code>
+\begin{pmatrix}<code></code>
+   2 & 3 \¨C115C
+   1 & 4¨C116C
+\end{pmatrix}¨C117C
+</math><code></code>
+<code></code>
+The decomposition algorithm is then applied on the rearranged matrix so that<code></code>
+<code></code>
+:<math>PA = LU</math><code></code>
+<code></code>
+<code></code>
+<code>Task description</code><code></code>
+<code></code>
+The task is to implement a routine which will take a square nxn matrix <math>A</math> and return a lower triangular matrix <math>L</math>, a upper triangular matrix <math>U</math> and a permutation matrix <math>P</math><br><code></code>
+so that the above equation is fullfilled.<code></code>
+You should then test it on the following two examples and include your output.<code></code>
+<code></code>
+Example 1:<code></code></p>
+<pre><code></code>
+A<code></code>
+<code></code>
+1   3   5<code></code>
+2   4   7<code></code>
+1   1   0<code></code>
+<code></code>
+L<code></code>
+<code></code>
+1.00000   0.00000   0.00000<code></code>
+0.50000   1.00000   0.00000<code></code>
+0.50000  -1.00000   1.00000<code></code>
+<code></code>
+U<code></code>
+<code></code>
+2.00000   4.00000   7.00000<code></code>
+0.00000   1.00000   1.50000<code></code>
+0.00000   0.00000  -2.00000<code></code>
+<code></code>
+P<code></code>
+<code></code>
+0   1   0<code></code>
+1   0   0<code></code>
+0   0   1<code></code>
+</pre>
+<p><code></code>
+<code></code>
+Example 2:<code></code></p>
+<pre><code></code>
+A<code></code>
+<code></code>
+11    9   24    2<code></code>
+ 1    5    2    6<code></code>
+ 3   17   18    1<code></code>
+ 2    5    7    1<code></code>
+<code></code>
+L<code></code>
+<code></code>
+1.00000   0.00000   0.00000   0.00000<code></code>
+0.27273   1.00000   0.00000   0.00000<code></code>
+0.09091   0.28750   1.00000   0.00000<code></code>
+0.18182   0.23125   0.00360   1.00000<code></code>
+<code></code>
+U<code></code>
+<code></code>
+11.00000    9.00000   24.00000    2.00000<code></code>
+ 0.00000   14.54545   11.45455    0.45455<code></code>
+ 0.00000    0.00000   -3.47500    5.68750<code></code>
+ 0.00000    0.00000    0.00000    0.51079<code></code>
+<code></code>
+P<code></code>
+<code></code>
+1   0   0   0<code></code>
+0   0   1   0<code></code>
+0   1   0   0<code></code>
+0   0   0   1<code></code>
+</pre>
+<p><code></code></p>

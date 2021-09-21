@@ -1,0 +1,48 @@
+<link href="/styles/home.css" rel="stylesheet">
+<p>The &nbsp; <a href="wp:Knuth shuffle|Knuth shuffle">wp:Knuth shuffle|Knuth shuffle</a> &nbsp; (a.k.a. the Fisher-Yates shuffle) &nbsp; is an algorithm for randomly shuffling the elements of an array.<code></code>
+<code></code>
+{{task heading}}<code></code>
+<code></code>
+Implement the Knuth shuffle for an integer array (or, if possible, an array of any type).<code></code>
+<code></code>
+{{task heading|Specification}}<code></code>
+<code></code>
+Given an array <code><code>items' with indices ranging from 0 to 'last</code></code>, the algorithm can be defined as follows (pseudo-code):<code></code>
+<code></code>
+ <code>for<code>' i 'from' last 'downto' 1 '</code>do</code>:<code></code>
+     <code>let</code> <code>j = random integer in range 0 <math>\leq</math> j <math>\leq</math> i</code><code></code>
+     <code>swap<code>' items<a href="i] 'with' items[j">i] 'with</code> items[j</code></a><code></code>
+<code></code>
+Notes:<code></code></p>
+<ul>
+<li>It modifies the input array in-place. If that is unreasonable in your programming language, you may amend the algorithm to return the shuffled items as a new array instead.<code></code></li>
+<li>The algorithm can also be amended to iterate from left to right, if that is more convenient.<code></code>
+<code></code>
+{{task heading|Test cases}}<code></code>
+<code></code>
+{| class="wikitable"<code></code>
+|-<code></code>
+! Input array<code></code>
+! Possible output arrays<code></code>
+|-<code></code>
+| <tt><a href=""></a></tt><code></code>
+| <tt><a href=""></a></tt><code></code>
+|-<code></code>
+| <tt><a href="10">10</a></tt><code></code>
+| <tt><a href="10">10</a></tt><code></code>
+|-<code></code>
+| <tt><a href="10, 20">10, 20</a></tt><code></code>
+| <tt><a href="10, 20]</tt><br><tt>[20, 10">10, 20]</tt><br><tt>[20, 10</a></tt><code></code>
+|-<code></code>
+| <tt><a href="10, 20, 30">10, 20, 30</a></tt><code></code>
+| <tt><a href="10, 20, 30]</tt><br><tt>[10, 30, 20]</tt><br><tt>[20, 10, 30]</tt><br><tt>[20, 30, 10]</tt><br><tt>[30, 10, 20]</tt><br><tt>[30, 20, 10">10, 20, 30]</tt><br><tt>[10, 30, 20]</tt><br><tt>[20, 10, 30]</tt><br><tt>[20, 30, 10]</tt><br><tt>[30, 10, 20]</tt><br><tt>[30, 20, 10</a></tt><code></code>
+|}<code></code>
+<code></code>
+(These are listed here just for your convenience; no need to demonstrate them on the page.)<code></code>
+<code></code>
+{{task heading|Related tasks}}<code></code>
+<code></code></li>
+<li><a href="Sattolo cycle">Sattolo cycle</a><code></code>
+<code></code>
+<hr><code></code></li>
+</ul>

@@ -1,0 +1,151 @@
+<link href="/styles/home.css" rel="stylesheet">
+<p>A binary search divides a range of values into halves, and continues to narrow down the field of search until the unknown value is found. It is the classic example of a "divide and conquer" algorithm.<code></code>
+<code></code>
+As an analogy, consider the children's game "<a href="Guess the number/With feedback|guess a number">Guess the number/With feedback|guess a number</a>."  The scorer has a secret number, and will only tell the player if their guessed number is higher than, lower than, or equal to the secret number. The player then uses this information to guess a new number.<code></code>
+<code></code>
+As the player, an optimal strategy for the general case is to start by choosing the range's midpoint as the guess, and then asking whether the guess was higher, lower, or equal to the secret number. If the guess was too high, one would select the point exactly between the range midpoint and the beginning of the range. If the original guess was too low, one would ask about the point exactly between the range midpoint and the end of the range. This process repeats until one has reached the secret number.<code></code>
+<code></code>
+<code></code>
+<br>Task:<code></code>
+Given the starting point of a range, the ending point of a range, and the "secret value", implement a binary search through a sorted integer array for a certain number. Implementations can be recursive or iterative (both if you can). Print out whether or not the number was in the array afterwards. If it was, print the index also.<code></code>
+<code></code>
+There are several binary search algorithms commonly seen. They differ by how they treat multiple values equal to the given value, and whether they indicate whether the element was found or not. For completeness we will present pseudocode for all of them.<code></code>
+<code></code>
+All of the following code examples use an "inclusive" upper bound (i.e. <code>high = N-1</code> initially). Any of the examples can be converted into an equivalent example using "exclusive" upper bound (i.e. <code>high = N</code> initially) by making the following simple changes (which simply increase <code>high</code> by 1):<code></code></p>
+<ul>
+<li>change <code>high = N-1</code> to <code>high = N</code><code></code></li>
+<li>change <code>high = mid-1</code> to <code>high = mid</code><code></code></li>
+<li>(for recursive algorithm) change <code>if (high &lt; low)</code> to <code>if (high &lt;= low)</code><code></code></li>
+<li>(for iterative algorithm) change <code>while (low &lt;= high)</code> to <code>while (low &lt; high)</code><code></code>
+<code></code>
+<br>Traditional algorithm<code></code>
+The algorithms are as follows (from <a href="wp:Binary search|Wikipedia">wp:Binary search|Wikipedia</a>). The algorithms return the index of some element that equals the given value (if there are multiple such elements, it returns some arbitrary one). It is also possible, when the element is not found, to return the "insertion point" for it (the index that the value would have if it were inserted into the array).<code></code>
+<code></code>
+<code>Recursive Pseudocode</code>:<code></code>
+// initially called with low = 0, high = N-1<code></code>
+BinarySearch(A<a href="0..N-1">0..N-1</a>, value, low, high) {<code></code>
+   // invariants: value &gt; A<a href="i">i</a> for all i < low<code></code>
+                  value < A<a href="i">i</a> for all i > high<code></code>
+   if (high < low)<code></code>
+       return not<em>found // value would be inserted at index "low"<code></code>
+   mid = (low + high) / 2<code></code>
+   if (A<a href="mid">mid</a> > value)<code></code>
+       return BinarySearch(A, value, low, mid-1)<code></code>
+   else if (A<a href="mid">mid</a> < value)<code></code>
+       return BinarySearch(A, value, mid+1, high)<code></code>
+   else<code></code>
+       return mid<code></code>
+}<code></code>
+¨C47C
+<code>Iterative Pseudocode</code>:¨C48C
+BinarySearch(A<a href="0..N-1">0..N-1</a>, value) {¨C49C
+   low = 0¨C50C
+   high = N - 1¨C51C
+   while (low <= high) {¨C52C
+       // invariants: value > A<a href="i">i</a> for all i < low¨C53C
+                      value < A<a href="i">i</a> for all i > high¨C54C
+       mid = (low + high) / 2¨C55C
+       if (A<a href="mid">mid</a> > value)¨C56C
+           high = mid - 1¨C57C
+       else if (A<a href="mid">mid</a> < value)¨C58C
+           low = mid + 1¨C59C
+       else¨C60C
+           return mid¨C61C
+   }¨C62C
+   return not</em>found // value would be inserted at index "low"¨C63C
+}¨C64C
+¨C65C
+<br>Leftmost insertion point<code></code>
+The following algorithms return the leftmost place where the given element can be correctly inserted (and still maintain the sorted order). This is the lower (inclusive) bound of the range of elements that are equal to the given value (if any). Equivalently, this is the lowest index where the element is greater than or equal to the given value (since if it were any lower, it would violate the ordering), or 1 past the last index if such an element does not exist. This algorithm does not determine if the element is actually found. This algorithm only requires one comparison per level.<code></code>
+<code></code>
+<code>Recursive Pseudocode</code>:<code></code>
+// initially called with low = 0, high = N - 1<code></code>
+BinarySearch<em>Left(A<a href="0..N-1">0..N-1</a>, value, low, high) {<code></code>
+   // invariants: value > A<a href="i">i</a> for all i < low<code></code>
+                  value <= A<a href="i">i</a> for all i > high<code></code>
+   if (high < low)<code></code>
+       return low<code></code>
+   mid = (low + high) / 2<code></code>
+   if (A<a href="mid">mid</a> >= value)<code></code>
+       return BinarySearch</em>Left(A, value, low, mid-1)<code></code>
+   else<code></code>
+       return BinarySearch<em>Left(A, value, mid+1, high)<code></code>
+}<code></code>
+<code></code>
+<code>Iterative Pseudocode</code>:<code></code>
+BinarySearch</em>Left(A<a href="0..N-1">0..N-1</a>, value) {<code></code>
+   low = 0<code></code>
+   high = N - 1<code></code>
+   while (low <= high) {<code></code>
+       // invariants: value > A<a href="i">i</a> for all i < low<code></code>
+                      value <= A<a href="i">i</a> for all i > high<code></code>
+       mid = (low + high) / 2<code></code>
+       if (A<a href="mid">mid</a> &gt;= value)<code></code>
+           high = mid - 1<code></code>
+       else<code></code>
+           low = mid + 1<code></code>
+   }<code></code>
+   return low<code></code>
+}<code></code>
+<code></code>
+<br>Rightmost insertion point<code></code>
+The following algorithms return the rightmost place where the given element can be correctly inserted (and still maintain the sorted order). This is the upper (exclusive) bound of the range of elements that are equal to the given value (if any). Equivalently, this is the lowest index where the element is greater than the given value, or 1 past the last index if such an element does not exist. This algorithm does not determine if the element is actually found. This algorithm only requires one comparison per level. Note that these algorithms are almost exactly the same as the leftmost-insertion-point algorithms, except for how the inequality treats equal values.<code></code>
+<code></code>
+<code>Recursive Pseudocode</code>:<code></code>
+// initially called with low = 0, high = N - 1<code></code>
+BinarySearch<em>Right(A<a href="0..N-1">0..N-1</a>, value, low, high) {<code></code>
+   // invariants: value >= A<a href="i">i</a> for all i < low<code></code>
+                  value < A<a href="i">i</a> for all i > high<code></code>
+   if (high < low)<code></code>
+       return low<code></code>
+   mid = (low + high) / 2<code></code>
+   if (A<a href="mid">mid</a> > value)<code></code>
+       return BinarySearch</em>Right(A, value, low, mid-1)<code></code>
+   else<code></code>
+       return BinarySearch<em>Right(A, value, mid+1, high)<code></code>
+}<code></code>
+<code></code>
+<code>Iterative Pseudocode</code>:<code></code>
+BinarySearch</em>Right(A<a href="0..N-1">0..N-1</a>, value) {<code></code>
+   low = 0<code></code>
+   high = N - 1<code></code>
+   while (low <= high) {<code></code>
+       // invariants: value >= A<a href="i">i</a> for all i < low<code></code>
+                      value < A<a href="i">i</a> for all i > high<code></code>
+       mid = (low + high) / 2<code></code>
+       if (A<a href="mid">mid</a> &gt; value)<code></code>
+           high = mid - 1<code></code>
+       else<code></code>
+           low = mid + 1<code></code>
+   }<code></code>
+   return low<code></code>
+}<code></code>
+<code></code>
+<br>Extra credit<code></code>
+Make sure it does not have overflow bugs.<code></code>
+<code></code>
+The line in the pseudo-code above to calculate the mean of two integers:<code></code></li>
+</ul>
+<pre>mid = (low + high) / 2</pre>
+<p><code></code>
+could produce the wrong result in some programming languages when used with a bounded integer type, if the addition causes an overflow. (This can occur if the array size is greater than half the maximum integer value.) If signed integers are used, and <code>low + high</code> overflows, it becomes a negative number, and dividing by 2 will still result in a negative number. Indexing an array with a negative number could produce an out-of-bounds exception, or other undefined behavior. If unsigned integers are used, an overflow will result in losing the largest bit, which will produce the wrong result.<code></code>
+<code></code>
+One way to fix it is to manually add half the range to the low number:<code></code></p>
+<pre>mid = low + (high - low) / 2</pre>
+<p><code></code>
+Even though this is mathematically equivalent to the above, it is not susceptible to overflow.<code></code>
+<code></code>
+Another way for signed integers, possibly faster, is the following:<code></code></p>
+<pre>mid = (low + high) >>> 1</pre>
+<p><code></code>
+where <code> &gt;&gt;&gt; </code> is the logical right shift operator. The reason why this works is that, for signed integers, even though it overflows, when viewed as an unsigned number, the value is still the correct sum. To divide an unsigned number by 2, simply do a logical right shift.<code></code>
+<code></code>
+<code></code>
+<br>Related task:<code></code>
+:* <a href="Guess the number/With Feedback (Player)">Guess the number/With Feedback (Player)</a><code></code>
+<code></code>
+<code></code>
+<br>See also:<code></code>
+:* <a href="wp:Binary search algorithm">wp:Binary search algorithm</a><code></code>
+:* <a href="http://googleresearch.blogspot.com/2006/06/extra-extra-read-all-about-it-nearly.html Extra, Extra - Read All About It: Nearly All Binary Searches and Mergesorts are Broken">http://googleresearch.blogspot.com/2006/06/extra-extra-read-all-about-it-nearly.html Extra, Extra - Read All About It: Nearly All Binary Searches and Mergesorts are Broken</a>.<code></code>
+<br><br><code></code></p>

@@ -1,0 +1,33 @@
+<link href="/styles/home.css" rel="stylesheet">
+<p>A lot of composite numbers can be separated from primes by Fermat's Little Theorem, but there are some that completely confound it.<code></code>
+<code></code>
+The &nbsp; <a href="Miller-Rabin primality test|Miller Rabin Test">Miller-Rabin primality test|Miller Rabin Test</a> &nbsp; uses a combination of Fermat's Little Theorem and Chinese Division Theorem to overcome this.<code></code>
+<code></code>
+The purpose of this task is to investigate such numbers using a method based on &nbsp; <a href="wp:Carmichael number|Carmichael numbers">wp:Carmichael number|Carmichael numbers</a>, &nbsp; as suggested in &nbsp; <a href="http://www.maths.lancs.ac.uk/~jameson/carfind.pdf Notes by G.J.O Jameson March 2010">http://www.maths.lancs.ac.uk/~jameson/carfind.pdf Notes by G.J.O Jameson March 2010</a>.<code></code>
+<code></code>
+<code></code>
+<br>Task:<code></code>
+Find Carmichael numbers of the form:<code></code>
+:::: <big> <i>Prime</i><sub>1</sub> &times; <i>Prime</i><sub>2</sub> &times; <i>Prime</i><sub>3</sub> </big><code></code>
+<code></code>
+where &nbsp; <big> (<i>Prime</i><sub>1</sub>   <   <i>Prime</i><sub>2</sub>   <   <i>Prime</i><sub>3</sub>) </big> &nbsp; for all &nbsp;   <big> <i>Prime</i><sub>1</sub> </big>   &nbsp;  up to &nbsp; <code>61</code>.<code></code>
+<br>(See page 7 of &nbsp; <a href="http://www.maths.lancs.ac.uk/~jameson/carfind.pdf Notes by G.J.O Jameson March 2010">http://www.maths.lancs.ac.uk/~jameson/carfind.pdf Notes by G.J.O Jameson March 2010</a> &nbsp; for solutions.)<code></code>
+<code></code>
+<code></code>
+<br>Pseudocode:<code></code>
+For a given &nbsp; <math>Prime_1</math><code></code>
+<code></code>
+ <tt>for 1 < h3 < Prime<sub>1</sub></tt><code></code>
+     <tt>for 0 < d < h3+Prime<sub>1</sub></tt><code></code>
+          <tt>if (h3+Prime<sub>1</sub>)*(Prime<sub>1</sub>-1) mod d == 0 and -Prime<sub>1</sub> squared mod h3 == d mod h3</tt><code></code>
+          <tt>then</tt><code></code>
+                <tt>Prime<sub>2</sub> = 1 + ((Prime<sub>1</sub>-1) * (h3+Prime<sub>1</sub>)/d)</tt><code></code>
+                <tt>next d if Prime<sub>2</sub> is not prime</tt><code></code>
+                <tt>Prime<sub>3</sub> = 1 + (Prime<sub>1</sub><em>Prime<sub>2</sub>/h3)</tt><code></code>
+                <tt>next d if Prime<sub>3</sub> is not prime</tt><code></code>
+                <tt>next d if (Prime<sub>2</sub></em>Prime<sub>3</sub>) mod (Prime<sub>1</sub>-1) not equal 1</tt><code></code>
+                <tt>Prime<sub>1</sub> * Prime<sub>2</sub> * Prime<sub>3</sub> is a Carmichael Number</tt><code></code>
+<br><br><code></code>
+<br>related task<code></code>
+<a href="Chernick's Carmichael numbers">Chernick's Carmichael numbers</a><code></code>
+<br><br><code></code></p>

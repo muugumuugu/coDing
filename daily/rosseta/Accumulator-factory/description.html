@@ -1,0 +1,31 @@
+<link href="/styles/home.css" rel="stylesheet">
+<p>{{Omit from|MUMPS|Creating a function implies that there is routine somewhere that has the function stored, and that function could be modified}}<code></code>
+<code></code>
+A problem posed by <a href="wp:Paul Graham|Paul Graham">wp:Paul Graham|Paul Graham</a> is that of creating a function that takes a single (numeric) argument and which returns another function that is an accumulator. The returned accumulator function in turn also takes a single numeric argument, and returns the sum of all the numeric values passed in so far to that accumulator (including the initial value passed when the accumulator was created).<code></code>
+<code></code>
+<code></code>
+<br>Rules:<code></code>
+The detailed rules are at http://paulgraham.com/accgensub.html and are reproduced here for simplicity (with additions in <small><code>small italic text</code></small>).<code></code>
+:Before you submit an example, make sure the function<code></code>
+<code></code>
+:# Takes a number n and returns a function (lets call it g), that takes a number i, and returns n incremented by the accumulation of i from every call of function g(i).<br><small>Although these exact function and parameter names need not be used</small><code></code>
+:# Works for any numeric type-- i.e. can take both ints and floats and returns functions that can take both ints and floats. (It is not enough simply to convert all input to floats. An accumulator that has only seen integers must return integers.) <small><code>(i.e., if the language doesn't allow for numeric polymorphism, you have to use overloading or something like that)</code></small><code></code>
+:# Generates functions that return the sum of every number ever passed to them, not just the most recent. <small><code>(This requires a piece of state to hold the accumulated value, which in turn means that pure functional languages can't be used for this task.)</code></small><code></code>
+:# Returns a real function, meaning something that you can use wherever you could use a function you had defined in the ordinary way in the text of your program. <small><code>(Follow your language's conventions here.)</code></small><code></code>
+:# Doesn't store the accumulated value or the returned functions in a way that could cause them to be inadvertently modified by other code. <small><code>(No global variables or other such things.)</code></small><code></code>
+: E.g. if after the example, you added the following code (in a made-up language) <small><code>where the factory function is called foo</code></small>:<code></code>
+:: <lang pseudocode>x = foo(1);<code></code>
+x(5);<code></code>
+foo(3);<code></code>
+print x(2.3);</lang><code></code>
+: It should print <tt>8.3</tt>. <small><code>(There is no need to print the form of the accumulator function returned by <tt>foo(3)</tt>; it's not part of the task at all.)</code></small><code></code>
+<code></code>
+<code></code>
+<br>Task:<code></code>
+Create a function that implements the described rules.<code></code>
+<code></code>
+<code></code>
+It need not handle any special error cases not described above. The simplest way to implement the task as described is typically to use a <a href="Closures|closure">Closures|closure</a>, providing the language supports them.<code></code>
+<code></code>
+Where it is not possible to hold exactly to the constraints above, describe the deviations.<code></code>
+<br><br><code></code></p>

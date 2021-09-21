@@ -1,0 +1,58 @@
+<link href="/styles/home.css" rel="stylesheet">
+<p>We have a configuration file as follows:<code></code>
+<code></code>
+ # This is a configuration file in standard configuration file format<code></code>
+ #<code></code>
+ # Lines begininning with a hash or a semicolon are ignored by the application<code></code>
+ # program. Blank lines are also ignored by the application program.<code></code>
+<code></code>
+ # The first word on each non comment line is the configuration option.<code></code>
+ # Remaining words or numbers on the line are configuration parameter<code></code>
+ # data fields.<code></code>
+<code></code>
+ # Note that configuration option names are not case sensitive. However<br><code></code>
+ # configuration parameter data is case sensitive and the lettercase must<code></code>
+ # be preserved.<code></code>
+<code></code>
+ # This is a favourite fruit<code></code>
+ FAVOURITEFRUIT banana<code></code>
+<code></code>
+ # This is a boolean that should be set<code></code>
+ NEEDSPEELING<code></code>
+<code></code>
+ # This boolean is commented out<code></code>
+ ; SEEDSREMOVED<code></code>
+<code></code>
+ # How many bananas we have<code></code>
+ NUMBEROFBANANAS 48<code></code>
+<code></code>
+The task is to manipulate the configuration file as follows:<code></code>
+<code></code></p>
+<ul>
+<li>Disable the needspeeling option (using a semicolon prefix)<code></code></li>
+<li>Enable the seedsremoved option by removing the semicolon and any leading whitespace<code></code></li>
+<li>Change the numberofbananas parameter to 1024<code></code></li>
+<li>Enable (or create if it does not exist in the file) a parameter for numberofstrawberries with a value of 62000<code></code>
+<code></code>
+<br><code></code>
+Note that configuration option names are not case sensitive. This means that changes should be effected, regardless of the case.<code></code>
+<code></code>
+Options should always be disabled by prefixing them with a semicolon.<code></code>
+<code></code>
+Lines beginning with hash symbols should not be manipulated and left unchanged in the revised file.<code></code>
+<code></code>
+If a configuration option does not exist within the file (in either enabled or disabled form), it should be added during this update. Duplicate configuration option names in the file should be removed, leaving just the first entry.<code></code>
+<code></code>
+For the purpose of this task, the revised file should contain appropriate entries, whether enabled or not for needspeeling,seedsremoved,numberofbananas and numberofstrawberries.)<code></code>
+<code></code>
+The update should rewrite configuration option names in capital letters. However lines beginning with hashes and any parameter data must not be altered (eg the banana for favourite fruit must not become capitalized). The update process should also replace double semicolon prefixes with just a single semicolon (unless it is uncommenting the option, in which case it should remove all leading semicolons).<code></code>
+<code></code>
+Any lines beginning with a semicolon or groups of semicolons, but no following option should be removed, as should any leading or trailing whitespace on the lines. Whitespace between the option and parameters should consist only of a single<code></code>
+space, and any non-ASCII extended characters, tabs characters, or control codes<code></code>
+(other than end of line markers), should also be removed.<code></code>
+<code></code>
+<code></code>
+<br>Related tasks<code></code></li>
+<li><a href="Read a configuration file">Read a configuration file</a><code></code>
+<br><br><code></code></li>
+</ul>

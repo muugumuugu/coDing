@@ -1,0 +1,58 @@
+<link href="/styles/home.css" rel="stylesheet">
+<p>A particular ranking of a permutation associates an integer with a particular ordering of all the permutations of a set of distinct items.<code></code>
+For our purposes the ranking will assign integers <math>0 .. (n! - 1)</math> to an ordering of all the permutations of the integers <math>0 .. (n - 1)</math>.<code></code>
+<code></code>
+For example, the permutations of the digits zero to 3 arranged lexicographically have the following rank:<code></code>
+<code></code></p>
+<pre>  PERMUTATION      RANK<code></code>
+  (0, 1, 2, 3) ->  0<code></code>
+  (0, 1, 3, 2) ->  1<code></code>
+  (0, 2, 1, 3) ->  2<code></code>
+  (0, 2, 3, 1) ->  3<code></code>
+  (0, 3, 1, 2) ->  4<code></code>
+  (0, 3, 2, 1) ->  5<code></code>
+  (1, 0, 2, 3) ->  6<code></code>
+  (1, 0, 3, 2) ->  7<code></code>
+  (1, 2, 0, 3) ->  8<code></code>
+  (1, 2, 3, 0) ->  9<code></code>
+  (1, 3, 0, 2) -> 10<code></code>
+  (1, 3, 2, 0) -> 11<code></code>
+  (2, 0, 1, 3) -> 12<code></code>
+  (2, 0, 3, 1) -> 13<code></code>
+  (2, 1, 0, 3) -> 14<code></code>
+  (2, 1, 3, 0) -> 15<code></code>
+  (2, 3, 0, 1) -> 16<code></code>
+  (2, 3, 1, 0) -> 17<code></code>
+  (3, 0, 1, 2) -> 18<code></code>
+  (3, 0, 2, 1) -> 19<code></code>
+  (3, 1, 0, 2) -> 20<code></code>
+  (3, 1, 2, 0) -> 21<code></code>
+  (3, 2, 0, 1) -> 22<code></code>
+  (3, 2, 1, 0) -> 23</pre>
+<p><code></code>
+<code></code>
+Algorithms exist that can generate a rank from a permutation for some particular ordering of permutations, and that can generate the same rank from the given individual permutation (i.e. given a rank of 17 produce (2, 3, 1, 0) in the example above).<code></code>
+<code></code>
+One use of such algorithms could be in generating a small, random, sample of permutations of <math>n</math> items without duplicates when the total number of permutations is large. Remember that the total number of permutations of <math>n</math> items is given by <math>n!</math> which grows large very quickly: A 32 bit integer can only hold <math>12!</math>, a 64 bit integer only <math>20!</math>. It becomes difficult to take the straight-forward approach of generating all permutations then taking a random sample of them.<code></code>
+<code></code>
+A <a href="http://stackoverflow.com/questions/12884428/generate-sample-of-1-000-000-random-permutations question on the Stack Overflow site">http://stackoverflow.com/questions/12884428/generate-sample-of-1-000-000-random-permutations question on the Stack Overflow site</a> asked how to generate one million random and indivudual permutations of 144 items.<code></code>
+<code></code>
+<code></code>
+<br>Task:<code></code></p>
+<h1 id="createafunctiontogenerateapermutationfromarankc15c">Create a function to generate a permutation from a rank.<code></code></h1>
+<h1 id="createtheinversefunctionthatgiventhepermutationgeneratesitsrankc16c">Create the inverse function that given the permutation generates its rank.<code></code></h1>
+<h1 id="showthatformathn3maththetwofunctionsareindeedinversesofeachotherc17c">Show that for <math>n=3</math> the two functions are indeed inverses of each other.<code></code></h1>
+<h1 id="computeandshowhere4randomindividualsamplesofpermutationsof12objectsc18c">Compute and show here 4 random, individual, samples of permutations of 12 objects.<code></code></h1>
+<p><code></code>
+<code></code>
+<br>Stretch goal:<code></code></p>
+<ul>
+<li>State how reasonable it would be to use your program to address the limits of the Stack Overflow question.<code></code>
+<code></code>
+<code></code>
+<br>References:<code></code></li>
+</ul>
+<h1 id="ahrefhttpwebhomecsuviccaruskeypublicationsrankpermrankpermhtmlrankingandunrankingpermutationsinlineartimebymyrvoldruskeyalsoavailableviagooglehttpsdocsgooglecomvieweravqcachet8g2xq3wlkjciteseerxistpsueduviewdocdownload3fdoi3d101143452126rep3drep126type3dpdfhlenglukpidblsrcidadgeesgdccc4jvd_57zirrflhdfxppxoy88eabf9ug_tlxmzfxic8d__qx4xfy3jahw_nupdrz9gsinx0mbpyjgh807zfontlrl40wdnelw2jmdi94znv1dimxyo53d8uelcxnk053lsigahietbqtxsxcvzazgy9uhniometuw4xkgherehttpwebhomecsuviccaruskeypublicationsrankpermrankpermhtmlrankingandunrankingpermutationsinlineartimebymyrvoldruskeyalsoavailableviagooglehttpsdocsgooglecomvieweravqcachet8g2xq3wlkjciteseerxistpsueduviewdocdownload3fdoi3d101143452126rep3drep126type3dpdfhlenglukpidblsrcidadgeesgdccc4jvd_57zirrflhdfxppxoy88eabf9ug_tlxmzfxic8d__qx4xfy3jahw_nupdrz9gsinx0mbpyjgh807zfontlrl40wdnelw2jmdi94znv1dimxyo53d8uelcxnk053lsigahietbqtxsxcvzazgy9uhniometuw4xkghereac26c"><a href="http://webhome.cs.uvic.ca/~ruskey/Publications/RankPerm/RankPerm.html Ranking and Unranking Permutations in Linear Time] by Myrvold & Ruskey. (Also available via Google [https://docs.google.com/viewer?a=v&q=cache:t8G2xQ3-wlkJ:citeseerx.ist.psu.edu/viewdoc/download%3Fdoi%3D10.1.1.43.4521%26rep%3Drep1%26type%3Dpdf+&hl=en&gl=uk&pid=bl&srcid=ADGEESgDcCc4JVd_57ziRRFlhDFxpPxoy88eABf9UG_TLXMzfxiC8D__qx4xfY3JAhw_nuPDrZ9gSInX0MbpYjgh807ZfoNtLrl40wdNElw2JMdi94Znv1diM-XYo53D8uelCXnK053L&sig=AHIEtbQtx-sxcVzaZgy9uhniOmETuW4xKg here">http://webhome.cs.uvic.ca/~ruskey/Publications/RankPerm/RankPerm.html Ranking and Unranking Permutations in Linear Time] by Myrvold & Ruskey. (Also available via Google [https://docs.google.com/viewer?a=v&q=cache:t8G2xQ3-wlkJ:citeseerx.ist.psu.edu/viewdoc/download%3Fdoi%3D10.1.1.43.4521%26rep%3Drep1%26type%3Dpdf+&hl=en&gl=uk&pid=bl&srcid=ADGEESgDcCc4JVd<em>57ziRRFlhDFxpPxoy88eABf9UG</em>TLXMzfxiC8D_<em>qx4xfY3JAhw</em>nuPDrZ9gSInX0MbpYjgh807ZfoNtLrl40wdNElw2JMdi94Znv1diM-XYo53D8uelCXnK053L&sig=AHIEtbQtx-sxcVzaZgy9uhniOmETuW4xKg here</a>).<code></code></h1>
+<h1 id="ahrefhttpwwwdavdatanlmathrankshtmlrankshttpwwwdavdatanlmathrankshtmlranksaonthedevdatasitec27c"><a href="http://www.davdata.nl/math/ranks.html Ranks">http://www.davdata.nl/math/ranks.html Ranks</a> on the DevData site.<code></code></h1>
+<h1 id="ahrefhttpstackoverflowcoma150633710562anotheranswerhttpstackoverflowcoma150633710562anotheransweraonstackoverflowtoadifferentquestionthatexplainsitsalgorithmindetailc28c"><a href="http://stackoverflow.com/a/1506337/10562 Another answer">http://stackoverflow.com/a/1506337/10562 Another answer</a> on Stack Overflow to a different question that explains its algorithm in detail.<code></code></h1>
+<p><br><br><code></code></p>

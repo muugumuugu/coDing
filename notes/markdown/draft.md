@@ -1,4 +1,5 @@
 <!-- Required extensions: pymdownx.betterem, pymdownx.tilde, pymdownx.emoji, pymdownx.tasklist, pymdownx.superfences -->
++ Install necessary modules by `apt-get install php-cli php-curl`
 + image-data-uri encodeFromFile fpath > outpath
 	+ npx image-data-uri --help
 + git update-index --assume-unchanged <path>

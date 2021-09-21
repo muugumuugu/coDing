@@ -1,0 +1,83 @@
+<link href="/styles/home.css" rel="stylesheet">
+<p>One of the foundational mathematical constructs behind computer science<code></code>
+is the <a href="wp:Universal Turing machine|universal Turing Machine">wp:Universal Turing machine|universal Turing Machine</a>.<code></code>
+<code></code>
+Indeed one way to definitively prove that a language<code></code>
+is <a href="wp:Turing_completeness|turing-complete">wp:Turing_completeness|turing-complete</a><code></code>
+is to implement a universal Turing machine in it.<code></code>
+<code></code>
+<code></code>
+<br>Task:<code></code>
+<code></code>
+Simulate such a machine capable<code></code>
+of taking the definition of any other Turing machine and executing it.<code></code>
+<code></code>
+Of course, you will not have an infinite tape<br><code></code>
+but you should emulate this as much as is possible.<code></code>
+<code></code>
+The three permissible actions on the tape are "left", "right" and "stay".<code></code>
+<code></code>
+To test your universal Turing machine (and prove your programming language<code></code>
+is Turing complete!), you should execute the following two Turing machines<code></code>
+based on the following definitions.<code></code>
+<code></code>
+<code></code>
+<code>Simple incrementer</code><code></code></p>
+<ul>
+<li><code>States:</code> q0, qf<code></code></li>
+<li><code>Initial state:</code> q0<code></code></li>
+<li><code>Terminating states:</code> qf<code></code></li>
+<li><code>Permissible symbols:</code> B, 1<code></code></li>
+<li><code>Blank symbol:</code> B<code></code></li>
+<li><code>Rules:</code><code></code>
+** (q0, 1, 1, right, q0)<code></code>
+** (q0, B, 1, stay,  qf)<code></code>
+<code></code>
+<br><code></code>
+The input for this machine should be a tape of <code>1 1 1</code><code></code>
+<code></code>
+<code></code>
+<code>Three-state busy beaver</code><code></code></li>
+<li><code>States:</code> a, b, c, halt<code></code></li>
+<li><code>Initial state:</code> a<code></code></li>
+<li><code>Terminating states:</code> halt<code></code></li>
+<li><code>Permissible symbols:</code> 0, 1<code></code></li>
+<li><code>Blank symbol:</code> 0<code></code></li>
+<li><code>Rules:</code><code></code>
+** (a, 0, 1, right, b)<code></code>
+** (a, 1, 1, left,  c)<code></code>
+** (b, 0, 1, left,  a)<code></code>
+** (b, 1, 1, right, b)<code></code>
+** (c, 0, 1, left,  b)<code></code>
+** (c, 1, 1, stay,  halt)<code></code>
+<code></code>
+<br><code></code>
+The input for this machine should be an empty tape.<code></code>
+<code></code>
+<code></code>
+<code>Bonus:</code><code></code>
+<code></code>
+<code>5-state, 2-symbol probable Busy Beaver machine from Wikipedia</code><code></code></li>
+<li><code>States:</code> A, B, C, D, E, H<code></code></li>
+<li><code>Initial state:</code> A<code></code></li>
+<li><code>Terminating states:</code> H<code></code></li>
+<li><code>Permissible symbols:</code> 0, 1<code></code></li>
+<li><code>Blank symbol:</code> 0<code></code></li>
+<li><code>Rules:</code><code></code>
+** (A, 0, 1, right, B)<code></code>
+** (A, 1, 1, left,  C)<code></code>
+** (B, 0, 1, right, C)<code></code>
+** (B, 1, 1, right, B)<code></code>
+** (C, 0, 1, right, D)<code></code>
+** (C, 1, 0, left,  E)<code></code>
+** (D, 0, 1, left,  A)<code></code>
+** (D, 1, 1, left,  D)<code></code>
+** (E, 0, 1, stay,  H)<code></code>
+** (E, 1, 0, left,  A)<code></code>
+<code></code>
+<br><code></code>
+The input for this machine should be an empty tape.<code></code>
+<code></code>
+This machine runs for more than 47 millions steps.<code></code>
+<br><br><code></code></li>
+</ul>

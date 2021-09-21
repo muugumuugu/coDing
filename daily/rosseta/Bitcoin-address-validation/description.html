@@ -1,0 +1,39 @@
+<link href="/styles/home.css" rel="stylesheet">
+<p>{{omit from|Brlcad}}<code></code>
+{{omit from|GUISS}}<code></code>
+<code></code>
+<code></code>
+<br>Task:<code></code>
+Write a program that takes a <a href="wp:bitcoin|bitcoin address">wp:bitcoin|bitcoin address</a> as argument<br><code></code>
+and checks whether or not this address is valid.<code></code>
+<code></code>
+A bitcoin address uses a base58 encoding, which uses an alphabet of the characters 0 .. 9, A ..Z, a .. z, but without the four characters:<code></code>
+:::* &nbsp; 0 &nbsp; zero<code></code>
+:::* &nbsp; O &nbsp; uppercase oh<code></code>
+:::* &nbsp; I &nbsp; uppercase eye<code></code>
+:::* &nbsp; l &nbsp; lowercase ell<code></code>
+<code></code>
+<code></code>
+With this encoding, a bitcoin address encodes 25 bytes:<code></code></p>
+<ul>
+<li>the first byte is the version number, which will be zero for this task ;<code></code></li>
+<li>the next twenty bytes are a <a href="RIPEMD-160">RIPEMD-160</a> digest, but you don't have to know that for this task:  you can consider them a pure arbitrary data ;<code></code></li>
+<li>the last four bytes are a checksum check.  They are the first four bytes of a double <a href="SHA-256">SHA-256</a> digest of the previous 21 bytes.<code></code>
+<code></code>
+<code></code>
+To check the bitcoin address, you must read the first twenty-one bytes, compute the checksum, and check that it corresponds to the last four bytes.<code></code>
+<code></code>
+The program can either return a boolean value or throw an exception when not valid.<code></code>
+<code></code>
+You can use a digest library for <a href="SHA-256">SHA-256</a>.<code></code>
+<code></code>
+<code></code>
+<br>Example of a bitcoin address:<code></code>
+<big><code></code>
+1AGNa15ZQXAZUgFiqJ2i7Z2DPU2J6hW62i<code></code>
+</big><code></code>
+<code></code>
+It doesn't belong to anyone and is part of the test suite of the bitcoin software.<code></code>
+<br>You can change a few characters in this string and check that it'll fail the test.<code></code>
+<br><br><code></code></li>
+</ul>

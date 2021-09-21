@@ -1,0 +1,34 @@
+<link href="/styles/home.css" rel="stylesheet">
+<p><br>Task:<code></code>
+Write a program that solves the <a href="http://c2.com/cgi/wiki?OddWordProblem odd word problem">http://c2.com/cgi/wiki?OddWordProblem odd word problem</a> with the restrictions given below.<code></code>
+<code></code>
+<code></code>
+<br>Description:<code></code>
+You are promised an input stream consisting of English letters and punctuations.<code></code>
+<code></code>
+It is guaranteed that:<code></code></p>
+<ul>
+<li>the words (sequence of consecutive letters) are delimited by one and only one punctuation<br><code></code></li>
+<li>the stream will begin with a word<br><code></code></li>
+<li>the words will be at least one letter long, &nbsp; and<code></code></li>
+<li>a full stop (a period, <a href="<b>.</b>"><b>.</b></a>) appears after, and only after, the last word.<code></code>
+<code></code>
+<code></code>
+<br>Example:<code></code>
+A stream with six words:<code></code>
+:: <big><code>what,is,the;meaning,of:life.</code></big><code></code>
+<code></code>
+<code></code>
+The task is to reverse the letters in every other word while leaving punctuations intact, producing:<code></code>
+:: <big><code>what,si,the;gninaem,of:efil.</code></big><code></code>
+while observing the following restrictions:<code></code></li>
+</ul>
+<h1 id="onlyioallowedisreadingorwritingonecharacteratatimewhichmeansnoreadinginastringnopeekingaheadnopushingcharactersbackintothestreamandnostoringcharactersinaglobalvariableforlaterusec24c">Only I/O allowed is reading or writing one character at a time, which means: no reading in a string, no peeking ahead, no pushing characters back into the stream, and no storing characters in a global variable for later use;<code></code></h1>
+<h1 id="youarenottoexplicitlysavecharactersinacollectiondatastructuresuchasarraysstringshashtablesetcforlaterreversalc25c">You <code>are not</code> to explicitly save characters in a collection data structure, such as arrays, strings, hash tables, etc, for later reversal;<code></code></h1>
+<h1 id="youareallowedtouserecursionsclosurescontinuationsthreadscoroutinesetceveniftheiruseimpliesthestorageofmultiplecharactersc26c">You <code>are</code> allowed to use recursions, closures, continuations, threads, co-routines, etc., even if their use implies the storage of multiple characters.<code></code></h1>
+<p><code></code>
+<code></code>
+<br>Test cases:<code></code>
+Work on both the &nbsp; "life" &nbsp; example given above, and also the text:<code></code>
+:: <big><code>we,are;not,in,kansas;any,more.</code></big><code></code>
+<br><br><code></code></p>

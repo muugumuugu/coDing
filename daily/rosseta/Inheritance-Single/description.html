@@ -1,0 +1,30 @@
+<link href="/styles/home.css" rel="stylesheet">
+<p>:This task is about derived types; for implementation inheritance, see <a href="Polymorphism">Polymorphism</a>.<code></code>
+<code></code>
+Inheritance is an operation of <a href="type algebra">type algebra</a> that creates a new type from one or several parent types. The obtained type is called <code>derived type</code>. It inherits some of the properties of its parent types. Usually inherited properties are:<code></code></p>
+<ul>
+<li>methods<code></code></li>
+<li>components<code></code></li>
+<li>parts of the representation<code></code>
+The <a href="classes | class]] of the new type is a <code>subclass<code>' of the classes rooted in the parent types. When all (in certain sense) properties of the parents are preserved by the derived type, it is said to be a <a href="[wp:Liskov_substitution_principle|Liskov subtype">classes | class]">[wp:Liskov<em>substitution</em>principle|Liskov subtype">classes | class]</a> of the new type is a 'subclass</code> of the classes rooted in the parent types. When all (in certain sense) properties of the parents are preserved by the derived type, it is said to be a [[wp:Liskov<em>substitution</em>principle|Liskov subtype</a>. When properties are preserved then the derived type is substitutable</code> for its parents in all contexts. Usually full substitutability is achievable only in some contexts.<code></code>
+<code></code>
+Inheritance is<code></code></li>
+<li><code>single</code>, when only one parent is allowed<code></code></li>
+<li><code><a href="multiple inheritance | multiple">multiple inheritance | multiple</a></code>, otherwise<code></code>
+<code></code>
+Some single inheritance languages usually allow multiple inheritance for certain <a href="abstract type">abstract type</a>s, interfaces in particular.<code></code>
+<code></code>
+Inheritance can be considered as a relation parent-child. Parent types are sometimes called <code>supertype<code>', the derived ones are '</code>subtype</code>. This relation is <a href="wp:Transitive_relation|transitive]] and <a href="[wp:Reflexive_relation|reflexive]]. Types bound by the relation form a [[wp:Directed_acyclic_graph directed acyclic graph]] (ignoring reflexivity). With single inheritance it becomes a [[wp:Tree_(graph_theory)|tree">wp:Transitive<em>relation|transitive]] and [[wp:Reflexive</em>relation|reflexive]]. Types bound by the relation form a [[wp:Directed<em>acyclic</em>graph directed acyclic graph]">[wp:Reflexive<em>relation|reflexive]]. Types bound by the relation form a [[wp:Directed</em>acyclic<em>graph directed acyclic graph]] (ignoring reflexivity). With single inheritance it becomes a [[wp:Tree</em>(graph<em>theory)|tree">wp:Transitive</em>relation|transitive]] and [[wp:Reflexive<em>relation|reflexive]]. Types bound by the relation form a [[wp:Directed</em>acyclic<em>graph directed acyclic graph]</a> (ignoring reflexivity). With single inheritance it becomes a [[wp:Tree</em>(graph_theory)|tree</a>.<code></code>
+<code></code>
+<code>Task</code>: Show a tree of types which inherit from each other. The top of the tree should be a class called Animal. The second level should have Dog and Cat. Under Dog should be Lab and Collie. None of the classes need to have any functions, the only thing they need to do is inherit from the specified superclasses (overriding functions should be shown in <a href="Polymorphism">Polymorphism</a>). The tree should look like this:<code></code></li>
+</ul>
+<pre>    Animal<code></code>
+      /\<code></code>
+     /  \<code></code>
+    /    \<code></code>
+   Dog   Cat<code></code>
+   /\<code></code>
+  /  \<code></code>
+ /    \<code></code>
+Lab   Collie</pre>
+<p><code></code></p>

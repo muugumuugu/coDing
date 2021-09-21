@@ -1,0 +1,34 @@
+<link href="/styles/home.css" rel="stylesheet">
+<p><a href="wp:Gray code|Gray code]] is a form of binary encoding where transitions between consecutive numbers differ by only one bit. This is a useful encoding for reducing hardware data hazards with values that change rapidly and/or connect to slower hardware as inputs. It is also useful for generating inputs for <a href="[wp:Karnaugh map|Karnaugh maps">wp:Gray code|Gray code]">[wp:Karnaugh map|Karnaugh maps">wp:Gray code|Gray code]</a> is a form of binary encoding where transitions between consecutive numbers differ by only one bit. This is a useful encoding for reducing hardware data hazards with values that change rapidly and/or connect to slower hardware as inputs. It is also useful for generating inputs for [[wp:Karnaugh map|Karnaugh maps</a> in order from left to right or top to bottom.<code></code>
+<code></code>
+Create functions to encode a number to and decode a number from Gray code.<code></code>
+<code></code>
+Display the normal binary representations, Gray code representations, and decoded Gray code values for all 5-bit binary numbers (0-31 inclusive, leading 0's not necessary).<code></code>
+<code></code>
+There are many possible Gray codes. The following encodes what is called "binary reflected Gray code."<code></code>
+<code></code>
+Encoding (MSB is bit 0, b is binary, g is Gray code):<code></code>
+<code></code></p>
+<pre>if b<a href="i-1">i-1</a> = 1<code></code>
+   g<a href="i] = not b[i">i] = not b[i</a><code></code>
+else<code></code>
+   g<a href="i] = b[i">i] = b[i</a></pre>
+<p><code></code>
+<code></code>
+Or:<code></code>
+<code></code></p>
+<pre>g = b xor (b logically right shifted 1 time)</pre>
+<p><code></code>
+<code></code>
+Decoding (MSB is bit 0, b is binary, g is Gray code):<code></code>
+<code></code></p>
+<pre>b<a href="0] = g[0">0] = g[0</a><code></code>
+<code></code>
+for other bits:<code></code>
+b<a href="i] = g[i] xor b[i-1">i] = g[i] xor b[i-1</a></pre>
+<p><code></code>
+<code></code>
+<br>Reference<code></code></p>
+<ul>
+<li><a href="http://www.wisc-online.com/Objects/ViewObject.aspx?ID=IAU8307 Converting Between Gray and Binary Codes">http://www.wisc-online.com/Objects/ViewObject.aspx?ID=IAU8307 Converting Between Gray and Binary Codes</a>. It includes step-by-step animations.<code></code></li>
+</ul>

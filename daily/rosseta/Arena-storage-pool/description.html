@@ -1,0 +1,17 @@
+<link href="/styles/home.css" rel="stylesheet">
+<p>Dynamically allocated objects take their memory from a <a href="heap]]. The memory for an object is provided by an <code>allocator<code>' which maintains the storage pool used for the <a href="[heap">heap]">[heap">heap]</a>. The memory for an object is provided by an '</code>allocator</code> which maintains the storage pool used for the [[heap</a>. Often a call to allocator is denoted as<code></code>
+<lang ada>P := new T</lang><code></code>
+where T is the type of an allocated object and P is a <a href="reference">reference</a> to the object.<code></code>
+<code></code>
+The storage pool chosen by the allocator can be determined by either:<code></code></p>
+<ul>
+<li>the object type T;<code></code></li>
+<li>the type of pointer P.<code></code>
+In the former case objects can be allocated only in one storage pool. In the latter case objects of the type can be allocated in any storage pool or on the <a href="stack">stack</a>.<code></code>
+<code></code>
+<code>Task description</code><br><code></code>
+The task is to show how allocators and user-defined storage pools are supported by the language. In particular:<code></code></li>
+</ul>
+<h1 id="defineanarenastoragepoolanarenaisapoolinwhichobjectsareallocatedindividuallybutfreedbygroupsc11c">define an arena storage pool. An arena is a pool in which objects are allocated individually, but freed by groups.<code></code></h1>
+<h1 id="allocatesomeobjectsegintegersinthepoolc12c">allocate some objects (e.g., integers) in the pool.<code></code></h1>
+<p>Explain what controls the storage pool choice in the language.<code></code></p>

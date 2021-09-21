@@ -1,0 +1,26 @@
+<link href="/styles/home.css" rel="stylesheet">
+<p><code>Event</code> is a synchronization object. An event has two states <code>signaled and reset. A <a href="task]] may await for the event to enter the desired state, usually the signaled state. It is released once the state is entered. Releasing waiting tasks is called event notification. Programmatically controlled events can be set by a <a href="[task">task]">[task">task]</a> may await for the event to enter the desired state, usually the signaled state. It is released once the state is entered. Releasing waiting tasks is called event notification</code>. Programmatically controlled events can be set by a [[task</a> into one of its states.<code></code>
+<code></code>
+In <a href="concurrent programming">concurrent programming</a> event also refers to a notification that some state has been reached through an asynchronous activity. The source of the event can be:<code></code>
+<code></code></p>
+<ul>
+<li><code>internal</code>, from another <a href="task">task</a>, programmatically;<code></code></li>
+<li><code>external</code>, from the hardware, such as user input, timer, etc. Signaling an event from the hardware is accomplished by means of hardware <a href="interrupts">interrupts</a>.<code></code>
+<code></code>
+Event is a low-level synchronization mechanism. It neither identify the state that caused it signaled, nor the source of, nor who is the subject of notification. Events augmented by data and/or publisher-subscriber schemes are often referred as <code>messages<code>', '</code>signals</code> etc.<code></code>
+<code></code>
+In the context of general programming <code>event-driven architecture<code>' refers to a design that deploy events in order to synchronize <a href="task">task</a>s with the asynchronous activities they must be aware of. The opposite approach is 'polling' sometimes called '</code>busy waiting</code>, when the synchronization is achieved by an explicit periodic querying the state of the activity. As the name suggests busy waiting consumes system resources even when the external activity does not change its state.<code></code>
+<code></code>
+Event-driven architectures are widely used in GUI design and SCADA systems. They are flexible and have relatively short response times. At the same time event-driven architectures suffer to the problems related to their unpredictability. They face <a href="race condition]], deadlocking, live locks and priority inversion. For this reason <a href="[real-time computing|real-time">race condition]">[real-time computing|real-time">race condition]</a>, deadlocking, live locks and priority inversion. For this reason [[real-time computing|real-time</a> systems tend to polling schemes, trading performance for predictability in the worst case scenario.<code></code>
+<code></code>
+=Variants of events=<code></code>
+<code></code>
+==Manual-reset event==<code></code>
+This event changes its state by an explicit request of a <a href="task">task</a>. I.e. once signaled it remains in this state until it will be explicitly reset.<code></code>
+<code></code>
+==Pulse event==<code></code>
+A pulse event when signaled releases all <a href="task">task</a>s awaiting it and then is automatically reset.<code></code>
+<code></code>
+=Sample implementations / APIs=<code></code>
+Show how a manual-reset event can be implemented in the language or else use an API to a library that provides events. Write a program that waits 1s and then signals the event to a <a href="task">task</a> waiting for the event.<code></code></li>
+</ul>

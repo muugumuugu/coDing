@@ -1,0 +1,15 @@
+<link href="/styles/home.css" rel="stylesheet">
+<p><code>Constrained genericity<code>' or '</code>bounded quantification</code> means<code></code>
+that a parametrized type or function (see <a href="parametric polymorphism">parametric polymorphism</a>)<code></code>
+can only be instantiated on types fulfilling some conditions<br><code></code>
+even if those conditions are not used in that function.<code></code>
+<code></code>
+Say a type is called "eatable" if you can call the function <tt>eat</tt> on it.<code></code>
+Write a generic type <tt>FoodBox</tt> which contains a collection of objects of<code></code>
+a type given as parameter, but can only be instantiated on eatable types.<code></code>
+The FoodBox shall not use the function eat in any way (i.e. without the explicit restriction, it could be instantiated on any type).<code></code>
+The specification of a type being eatable should be as generic as possible<code></code>
+in your language (i.e. the restrictions on the implementation of eatable types<code></code>
+should be as minimal as possible).<code></code>
+Also explain the restrictions, if any, on the implementation of eatable types<br><code></code>
+and show at least one example of an eatable type.<code></code></p>

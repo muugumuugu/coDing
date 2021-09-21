@@ -1,0 +1,62 @@
+<link href="/styles/home.css" rel="stylesheet">
+<p>{{Sorting Algorithm}} {{wikipedia|Heapsort}}<code></code>
+{{omit from|GUISS}}<code></code>
+<code></code>
+<br><code></code>
+<a href="wp:Heapsort|Heapsort">wp:Heapsort|Heapsort</a> is an in-place sorting algorithm with worst case and average complexity of &nbsp; <span style="font-family: serif">O(<code>n logn</code>)</span>.<code></code>
+<code></code>
+The basic idea is to turn the array into a binary heap structure, which has the property that it allows efficient retrieval and removal of the maximal element.<code></code>
+<code></code>
+We repeatedly "remove" the maximal element from the heap, thus building the sorted list from back to front.<code></code>
+<code></code>
+Heapsort requires random access, so can only be used on an array-like data structure.<code></code>
+<code></code>
+Pseudocode:<code></code>
+ <code>function<code>' heapSort(a, count) '</code>is</code><code></code>
+    <code>input:</code> an unordered array <code>a of length count</code><code></code>
+<code></code>
+    <span style="color: grey"><code>(first place a in max-heap order)</code></span><code></code>
+    heapify(a, count)<code></code>
+<code></code>
+    end := count - 1<code></code>
+    <code>while<code>' end &gt; 0 '</code>do</code><code></code>
+       <span style="color: grey"><code>(swap the root(maximum value) of the heap with the</code><code></code>
+        <code>last element of the heap)</code></span><code></code>
+       swap(a<a href="end], a[0">end], a[0</a>)<code></code>
+       <span style="color: grey"><code>(decrement the size of the heap so that the previous</code><code></code>
+        <code>max value will stay in its proper place)</code></span><code></code>
+       end := end - 1<code></code>
+       <span style="color: grey"><code>(put the heap back in max-heap order)</code></span><code></code>
+       siftDown(a, 0, end)<code></code>
+<code></code>
+<code></code>
+ <code>function<code>' heapify(a,count) '</code>is</code><code></code>
+    <span style="color: grey"><code>(start is assigned the index in a of the last parent node)</code></span><code></code>
+    start := (count - 2) / 2<code></code>
+<code></code>
+    <code>while<code>' start ≥ 0 '</code>do</code><code></code>
+       <span style="color: grey"><code>(sift down the node at index start to the proper place</code><code></code>
+        <code>such that all nodes below the start index are in heap</code><code></code>
+        <code>order)</code></span><code></code>
+       siftDown(a, start, count-1)<code></code>
+       start := start - 1<code></code>
+    <span style="color: grey"><code>(after sifting down the root all nodes/elements are in heap order)</code></span><code></code>
+<code></code>
+ <code>function<code>' siftDown(a, start, end) '</code>is</code><code></code>
+    <span style="color: grey"><code>(end represents the limit of how far down the heap to sift)</code></span><code></code>
+    root := start<code></code>
+<code></code>
+    <code>while<code>' root * 2 + 1 ≤ end 'do</code>       <span style="color: grey">(While the root has at least one child)</code></span><code></code>
+       child := root * 2 + 1           <span style="color: grey"><code>(root*2+1 points to the left child)</code></span><code></code>
+       <span style="color: grey"><code>(If the child has a sibling and the child's value is less than its sibling's...)</code></span><code></code>
+       <code>if<code>' child + 1 ≤ end 'and' a<a href="child] < a[child + 1">child] < a[child + 1</a> '</code>then</code><code></code>
+          child := child + 1           <span style="color: grey"><code>(... then point to the right child instead)</code></span><code></code>
+       <code>if<code>' a<a href="root] < a[child">root] < a[child</a> 'then</code>     <span style="color: grey">(out of max-heap order)</code></span><code></code>
+          swap(a<a href="root], a[child">root], a[child</a>)<code></code>
+          root := child                <span style="color: grey"><code>(repeat to continue sifting down the child now)</code></span><code></code>
+       <code>else</code><code></code>
+          <code>return</code><code></code>
+<code></code>
+<br><code></code>
+Write a function to sort a collection of integers using heapsort.<code></code>
+<br><br><code></code></p>

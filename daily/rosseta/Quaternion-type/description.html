@@ -1,0 +1,55 @@
+<link href="/styles/home.css" rel="stylesheet">
+<p><a href="wp:Quaternion|Quaternions]] &nbsp; are an extension of the idea of &nbsp; <a href="[Arithmetic/Complex|complex numbers">wp:Quaternion|Quaternions]">[Arithmetic/Complex|complex numbers">wp:Quaternion|Quaternions]</a> &nbsp; are an extension of the idea of &nbsp; [[Arithmetic/Complex|complex numbers</a>.<code></code>
+<code></code>
+A complex number has a real and complex part, &nbsp; sometimes written as &nbsp; <big> <code> a + bi, </code> </big><code></code>
+<br>where &nbsp; <big> <code> a </code> </big> &nbsp; and &nbsp; <big> <code> b </code> </big> &nbsp; stand for real numbers, and &nbsp; <big> <code> i </code> </big> &nbsp; stands for the square root of minus 1.<code></code>
+<code></code>
+An example of a complex number might be &nbsp; <big> <code> -3 + 2i, </code> </big> &nbsp;<code></code>
+<br>where the real part, &nbsp; <big> <code> a </code> </big> &nbsp; is &nbsp; <big> <code> <code>-3.0<code>' </code> </big> &nbsp; and the complex part, &nbsp; <big> <code> b </code> </big> &nbsp; is &nbsp; <big> <code> '</code>+2.0</code>. </code> </big><code></code>
+<code></code>
+A quaternion has one real part and <code>three</code> imaginary parts, &nbsp; <big> <code> i, </code> </big> &nbsp; <big> <code> j, </code> </big> &nbsp; and &nbsp; <big> <code> k. </code> </big><code></code>
+<code></code>
+A quaternion might be written as &nbsp; <big> <code> a + bi + cj + dk. </code> </big><code></code>
+<code></code>
+In the quaternion numbering system:<code></code>
+:::* &nbsp; <big> <code> i∙i = j∙j = k∙k = i∙j∙k = -1, </code> </big> &nbsp; &nbsp; &nbsp; or more simply<br><code></code>
+:::* &nbsp; <big> <code> ii &amp;nbsp;= jj &amp;nbsp;= kk &amp;nbsp;= ijk &amp;nbsp; = -1. </code> </big><code></code>
+<code></code>
+The order of multiplication is important, as, in general, for two quaternions:<code></code>
+:::: &nbsp; <big> <code> q&lt;sub&gt;1&lt;/sub&gt; </code> </big> &nbsp; and &nbsp; <big> <code> q&lt;sub&gt;2&lt;/sub&gt;: </code> </big> &nbsp; &nbsp; <big> <code> q&lt;sub&gt;1&lt;/sub&gt;q&lt;sub&gt;2&lt;/sub&gt; &amp;ne; q&lt;sub&gt;2&lt;/sub&gt;q&lt;sub&gt;1&lt;/sub&gt;. </code> </big><code></code>
+<code></code>
+An example of a quaternion might be &nbsp; <big> <code> 1 +2i +3j +4k </code> </big><code></code>
+<code></code>
+There is a list form of notation where just the numbers are shown and the imaginary multipliers &nbsp; <big> <code>i, </code> </big> &nbsp; <big> <code> j, </code> </big> &nbsp; and &nbsp; <big> <code> k </code> </big> &nbsp; are assumed by position.<code></code>
+<code></code>
+So the example above would be written as &nbsp; <big> <code> (1, 2, 3, 4) </code> </big><code></code>
+<code></code>
+<code></code>
+<br>Task:<code></code>
+Given the three quaternions and their components: <big><code></code>
+    q  = (1, 2, 3, 4) = (a,<sub> </sub> b,<sub> </sub> c,<sub> </sub> d)<code></code>
+    q<sub>1</sub> = (2, 3, 4, 5) = (a<sub>1</sub>, b<sub>1</sub>, c<sub>1</sub>, d<sub>1</sub>)<code></code>
+    q<sub>2</sub> = (3, 4, 5, 6) = (a<sub>2</sub>, b<sub>2</sub>, c<sub>2</sub>, d<sub>2</sub>) </big><code></code>
+And a wholly real number &nbsp; <big> <code> r = 7. </code> </big><code></code>
+<code></code>
+<code></code>
+Create functions &nbsp; (or classes) &nbsp; to perform simple maths with quaternions including computing:<code></code></p>
+<h1 id="thenormofaquaternionbrbigc59cbigc60c">The norm of a quaternion: <br><big><code>&lt;math&gt;= \sqrt{a^2 + b^2 + c^2 + d^2}&lt;/math&gt;</code></big><code></code></h1>
+<h1 id="thenegativeofaquaternionbrbigc61cbigc62c">The negative of a quaternion: <br> <big> <code> = (-a, -b, -c, -d)</code> </big><code></code></h1>
+<h1 id="theconjugateofaquaternionbrbigc63cbigc64c">The conjugate of a quaternion: <br> <big> <code> = ( a, -b, -c, -d)</code> </big><code></code></h1>
+<h1 id="additionofarealnumbernbspbigc65cbignbspandaquaternionnbspbigc66cbigbrbigc67cbigc68c">Addition of a real number &nbsp; <big> <code> r </code> </big> &nbsp; and a quaternion &nbsp; <big> <code> q: </code> </big> <br> <big> <code> r + q = q + r = (a+r, b, c, d) </code> </big><code></code></h1>
+<h1 id="additionoftwoquaternionsbrbigc69cbigc70c">Addition of two quaternions: <br> <big> <code> q&lt;sub&gt;1&lt;/sub&gt; + q&lt;sub&gt;2&lt;/sub&gt; = (a&lt;sub&gt;1&lt;/sub&gt;+a&lt;sub&gt;2&lt;/sub&gt;, b&lt;sub&gt;1&lt;/sub&gt;+b&lt;sub&gt;2&lt;/sub&gt;, c&lt;sub&gt;1&lt;/sub&gt;+c&lt;sub&gt;2&lt;/sub&gt;, d&lt;sub&gt;1&lt;/sub&gt;+d&lt;sub&gt;2&lt;/sub&gt;) </code> </big><code></code></h1>
+<h1 id="multiplicationofarealnumberandaquaternionbrbigc71cbigc72c">Multiplication of a real number and a quaternion: <br> <big> <code> qr = rq = (ar, br, cr, dr) </code> </big><code></code></h1>
+<h1 id="multiplicationoftwoquaternionsnbspbigc73cbignbspandnbspbigc74cbignbspisgivenbybrbigc75cbrc76cbrc77cbrc78cbigc79c">Multiplication of two quaternions &nbsp; <big> <code> q&lt;sub&gt;1&lt;/sub&gt; </code> </big> &nbsp; and &nbsp; <big><code>q&lt;sub&gt;2&lt;/sub&gt; </code> </big> &nbsp; is given by: <br> <big> <code> ( a&lt;sub&gt;1&lt;/sub&gt;a&lt;sub&gt;2&lt;/sub&gt; − b&lt;sub&gt;1&lt;/sub&gt;b&lt;sub&gt;2&lt;/sub&gt; − c&lt;sub&gt;1&lt;/sub&gt;c&lt;sub&gt;2&lt;/sub&gt; − d&lt;sub&gt;1&lt;/sub&gt;d&lt;sub&gt;2&lt;/sub&gt;, </code> <br> <code> &amp;nbsp; a&lt;sub&gt;1&lt;/sub&gt;b&lt;sub&gt;2&lt;/sub&gt; + b&lt;sub&gt;1&lt;/sub&gt;a&lt;sub&gt;2&lt;/sub&gt; + c&lt;sub&gt;1&lt;/sub&gt;d&lt;sub&gt;2&lt;/sub&gt; − d&lt;sub&gt;1&lt;/sub&gt;c&lt;sub&gt;2&lt;/sub&gt;, </code> <br> <code> &amp;nbsp; a&lt;sub&gt;1&lt;/sub&gt;c&lt;sub&gt;2&lt;/sub&gt; − b&lt;sub&gt;1&lt;/sub&gt;d&lt;sub&gt;2&lt;/sub&gt; + c&lt;sub&gt;1&lt;/sub&gt;a&lt;sub&gt;2&lt;/sub&gt; + d&lt;sub&gt;1&lt;/sub&gt;b&lt;sub&gt;2&lt;/sub&gt;, </code> <br> <code> &amp;nbsp; a&lt;sub&gt;1&lt;/sub&gt;d&lt;sub&gt;2&lt;/sub&gt; + b&lt;sub&gt;1&lt;/sub&gt;c&lt;sub&gt;2&lt;/sub&gt; − c&lt;sub&gt;1&lt;/sub&gt;b&lt;sub&gt;2&lt;/sub&gt; + d&lt;sub&gt;1&lt;/sub&gt;a&lt;sub&gt;2&lt;/sub&gt; ) </code> </big><code></code></h1>
+<h1 id="showthatforthetwoquaternionsnbspbigc80cbignbspandnbspbigc81cbigc82c">Show that, for the two quaternions &nbsp; <big> <code> q&lt;sub&gt;1&lt;/sub&gt; </code> </big> &nbsp; and &nbsp; <big> <code> q&lt;sub&gt;2&lt;/sub&gt;: &lt;br&gt; q&lt;sub&gt;1&lt;/sub&gt;q&lt;sub&gt;2&lt;/sub&gt; &amp;ne; q&lt;sub&gt;2&lt;/sub&gt;q&lt;sub&gt;1&lt;/sub&gt; </code> </big><code></code></h1>
+<p><code></code>
+<br><code></code>
+If a language has built-in support for quaternions, then use it.<code></code>
+<code></code>
+<code></code>
+<br>C.f.:<code></code></p>
+<ul>
+<li>&nbsp; <a href="Vector products">Vector products</a><code></code></li>
+<li>&nbsp; <a href="http://www.maths.tcd.ie/pub/HistMath/People/Hamilton/QLetter/QLetter.pdf On Quaternions">http://www.maths.tcd.ie/pub/HistMath/People/Hamilton/QLetter/QLetter.pdf On Quaternions</a>; &nbsp; or on a new System of Imaginaries in Algebra. &nbsp; By Sir William Rowan Hamilton LL.D, P.R.I.A., F.R.A.S., Hon. M. R. Soc. Ed. and Dub., Hon. or Corr. M. of the Royal or Imperial Academies of St. Petersburgh, Berlin, Turin and Paris, Member of the American Academy of Arts and Sciences, and of other Scientific Societies at Home and Abroad, Andrews' Prof. of Astronomy in the University of Dublin, and Royal Astronomer of Ireland.<code></code>
+<br><br><code></code></li>
+</ul>

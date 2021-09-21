@@ -1,0 +1,47 @@
+<link href="/styles/home.css" rel="stylesheet">
+<p>{{omit from|GUISS}}<code></code>
+<code></code>
+The <a href="wp:Luhn algorithm|Luhn test">wp:Luhn algorithm|Luhn test</a> is used by some credit card companies to distinguish valid credit card numbers from what could be a random selection of digits.<code></code>
+<code></code>
+Those companies using credit card numbers that can be validated by the Luhn test have numbers that pass the following test:<code></code></p>
+<h1 id="reversetheorderofthedigitsinthenumberc5c">Reverse the order of the digits in the number.<code></code></h1>
+<h1 id="takethefirstthirdandeveryotherodddigitinthereverseddigitsandsumthemtoformthepartialsums1c6c">Take the first, third, ... and every other odd digit in the reversed digits and sum them to form the partial sum s1<code></code></h1>
+<h1 id="takingthesecondfourthandeveryotherevendigitinthereverseddigitsc7c">Taking the second, fourth ... and every other even digit in the reversed digits:<code></code></h1>
+<p>:#  Multiply each digit by two and sum the digits if the answer is greater than nine to form partial sums for the even digits<code></code>
+:#  Sum the partial sums of the even digits to form s2<code></code></p>
+<h1 id="ifs1s2endsinzerothentheoriginalnumberisintheformofavalidcreditcardnumberasverifiedbytheluhntestc10c">If s1 + s2 ends in zero then the original number is in the form of a valid credit card number as verified by the Luhn test.<code></code></h1>
+<p><code></code>
+<br><code></code>
+For example, if the trial number is 49927398716:<code></code></p>
+<pre>Reverse the digits:<code></code>
+  61789372994<code></code>
+Sum the odd digits:<code></code>
+  6 + 7 + 9 + 7 + 9 + 4 = 42 = s1<code></code>
+The even digits:<code></code>
+    1,  8,  3,  2,  9<code></code>
+  Two times each even digit:<code></code>
+    2, 16,  6,  4, 18<code></code>
+  Sum the digits of each multiplication:<code></code>
+    2,  7,  6,  4,  9<code></code>
+  Sum the last:<code></code>
+    2 + 7 + 6 + 4 + 9 = 28 = s2<code></code>
+<code></code>
+s1 + s2 = 70 which ends in zero which means that 49927398716 passes the Luhn test</pre>
+<p><code></code>
+<code></code>
+<code></code>
+<br>Task:<code></code>
+Write a function/method/procedure/subroutine that will validate a number with the Luhn test, and<code></code>
+<br>use it to validate the following numbers:<code></code>
+    49927398716<code></code>
+    49927398717<code></code>
+    1234567812345678<code></code>
+    1234567812345670<code></code>
+<code></code>
+<br><code></code>
+<br>Related tasks:<code></code></p>
+<ul>
+<li>&nbsp; <a href="SEDOLs|SEDOL">SEDOLs|SEDOL</a><code></code></li>
+<li>&nbsp; <a href="Calculate International Securities Identification Number|ISIN">Calculate International Securities Identification Number|ISIN</a><code></code>
+<br><br><code></code></li>
+</ul>

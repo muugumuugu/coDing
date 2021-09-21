@@ -1,0 +1,60 @@
+<link href="/styles/home.css" rel="stylesheet">
+<p>{{omit from|GUISS}}<code></code>
+<code></code>
+A Mersenne number is a number in the form of 2<sup>P</sup>-1.<code></code>
+<code></code>
+If P is prime, the Mersenne number may be a Mersenne prime<code></code>
+(if P is not prime, the Mersenne number is also not prime).<code></code>
+<code></code>
+In the search for Mersenne prime numbers it is advantageous to eliminate exponents by finding a small factor before starting a,  potentially lengthy, <a href="Lucas-Lehmer test">Lucas-Lehmer test</a>.<code></code>
+<code></code>
+There are very efficient algorithms for determining if a number divides 2<sup>P</sup>-1 (or equivalently, if 2<sup>P</sup> mod (the number) = 1).<code></code>
+Some languages already have built-in implementations of this exponent-and-mod operation (called <code>modPow</code> or similar).<code></code>
+<code></code>
+The following is how to implement this <code>modPow</code> yourself:<code></code>
+<code></code>
+For example, let's compute 2<sup>23</sup> mod 47.<code></code>
+Convert the exponent 23 to binary, you get 10111. Starting with <tt>square</tt> = 1, repeatedly square it.<code></code>
+Remove the top bit of the exponent, and if it's 1 multiply <tt>square</tt> by the base of the exponentiation (2), then compute <tt>square</tt> modulo 47.<code></code>
+Use the result of the modulo from the last step as the initial value of <tt>square</tt> in the next step:<code></code>
+<code></code>
+                   remove       optional<code></code>
+       square      top bit   multiply by 2   mod 47<code></code>
+    ────────────   ───────   ─────────────   ──────<code></code>
+    1<em>1 = 1        1  0111   1</em>2 = 2            2<code></code>
+    2<em>2 = 4        0   111      no              4<code></code>
+    4</em>4 = 16       1    11   16<em>2 = 32         32<code></code>
+    32</em>32 = 1024   1     1   1024<em>2 = 2048     27<code></code>
+    27</em>27 = 729    1         729*2 = 1458       1<code></code>
+<code></code>
+Since 2<sup>23</sup> mod 47 = 1, 47 is a factor of 2<sup>P</sup>-1.<code></code>
+(To see this, subtract 1 from both sides: 2<sup>23</sup>-1 = 0 mod 47.)<code></code>
+Since we've shown that 47 is a factor, 2<sup>23</sup>-1 is not prime.<code></code>
+Further properties of Mersenne numbers allow us to refine the process even more.<code></code>
+Any factor q of 2<sup>P</sup>-1 must be of the form 2kP+1, k being a positive integer or zero. Furthermore, q must be 1 or 7 mod 8.<code></code>
+Finally any potential factor q must be <a href="Primality by Trial Division|prime">Primality by Trial Division|prime</a>.<code></code>
+As in other trial division algorithms, the algorithm stops when 2kP+1 &gt; sqrt(N).<code></code>
+<code></code>
+These primality tests only work on Mersenne numbers where P is prime. For example, M<sub>4</sub>=15 yields no factors using these techniques, but factors into 3 and 5, neither of which fit 2kP+1.<code></code>
+<code></code>
+<code></code>
+<br>Task:<code></code>
+Using the above method find a factor of  2<sup>929</sup>-1 (aka M929)<code></code>
+<code></code>
+<code></code>
+<br>Related tasks:<code></code></p>
+<ul>
+<li>&nbsp; <a href="count in factors">count in factors</a><code></code></li>
+<li>&nbsp; <a href="prime decomposition">prime decomposition</a><code></code></li>
+<li>&nbsp; <a href="factors of an integer">factors of an integer</a><code></code></li>
+<li>&nbsp; <a href="Sieve of Eratosthenes">Sieve of Eratosthenes</a><code></code></li>
+<li>&nbsp; <a href="primality by trial division">primality by trial division</a><code></code></li>
+<li>&nbsp; <a href="trial factoring of a Mersenne number">trial factoring of a Mersenne number</a><code></code></li>
+<li>&nbsp; <a href="partition an integer X into N primes">partition an integer X into N primes</a><code></code></li>
+<li>&nbsp; <a href="sequence of primes by Trial Division">sequence of primes by Trial Division</a><code></code>
+<code></code>
+<code></code>
+<br>See also:<code></code></li>
+<li>&nbsp; <a href="https://www.youtube.com/watch?v=SNwvJ7psoow Computers in 1948: 2¹²⁷-1">https://www.youtube.com/watch?v=SNwvJ7psoow Computers in 1948: 2¹²⁷-1</a><code></code>
+<br><br><code></code></li>
+</ul>

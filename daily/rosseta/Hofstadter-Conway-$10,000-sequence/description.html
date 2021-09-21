@@ -1,0 +1,49 @@
+<link href="/styles/home.css" rel="stylesheet">
+<p>The definition of the sequence is colloquially described as:<code></code></p>
+<ul>
+<li>&nbsp; Starting with the list <a href="1,1">1,1</a><br><code></code></li>
+<li>&nbsp; Take the last number in the list so far: 1, I'll call it x.<code></code></li>
+<li>&nbsp; Count forward x places from the beginning of the list to find the first number to add (1)<code></code></li>
+<li>&nbsp; Count backward x places from the end of the list to find the second number to add (1)<code></code></li>
+<li>&nbsp; Add the two indexed numbers from the list and the result becomes the next number in the list (1+1)<code></code></li>
+<li>&nbsp; This would then produce <a href="1,1,2">1,1,2</a> where 2 is the third element of the sequence.<code></code>
+<code></code>
+<br>Note that indexing for the description above starts from alternately the left and right ends of the list and starts from an index of <code>one</code>.<code></code>
+<code></code>
+A less wordy description of the sequence is:<code></code>
+a(1)=a(2)=1<code></code>
+a(n)=a(a(n-1))+a(n-a(n-1))<code></code>
+<code></code>
+The sequence begins:<code></code>
+1, 1, 2, 2, 3, 4, 4, 4, 5, ...<code></code>
+<code></code>
+Interesting features of the sequence are that:<code></code></li>
+<li>&nbsp; a(n)/n &nbsp; tends to &nbsp; 0.5 &nbsp; as &nbsp; n &nbsp; grows towards infinity.<code></code></li>
+<li>&nbsp; a(n)/n &nbsp; where &nbsp; n &nbsp; is a power of &nbsp; 2 &nbsp; is &nbsp; 0.5<code></code></li>
+<li>&nbsp; For &nbsp; n&gt;4 &nbsp; the maximal value of &nbsp; a(n)/n &nbsp; between successive powers of 2 decreases.<code></code>
+<code></code>
+<a href="File:Hofstadter conway 10K.gif|center|a(n) / n &nbsp; for &nbsp; n &nbsp; in &nbsp; 1..256">File:Hofstadter conway 10K.gif|center|a(n) / n &nbsp; for &nbsp; n &nbsp; in &nbsp; 1..256</a><code></code>
+<code></code>
+<code></code>
+The sequence is so named because <a href="wp:John Horton Conway|John Conway">wp:John Horton Conway|John Conway</a> <a href="http://www.nytimes.com/1988/08/30/science/intellectual-duel-brash-challenge-swift-response.html offered a prize">http://www.nytimes.com/1988/08/30/science/intellectual-duel-brash-challenge-swift-response.html offered a prize</a> of $10,000 to the first person who could<code></code>
+find the first position, &nbsp; p &nbsp; in the sequence where<code></code>
+│a(n)/n│ < 0.55  for all  n > p<code></code>
+It was later found that <a href="wp:Douglas Hofstadter|Hofstadter">wp:Douglas Hofstadter|Hofstadter</a> had also done prior work on the sequence.<code></code>
+<code></code>
+The 'prize' was won quite quickly by <a href="http://www.research.avayalabs.com/gcm/usa/en-us/people/all/mallows.htm Dr. Colin L. Mallows">http://www.research.avayalabs.com/gcm/usa/en-us/people/all/mallows.htm Dr. Colin L. Mallows</a> who proved the properties of the sequence and allowed him to find the value of &nbsp; n &nbsp; (which is much smaller than the 3,173,375,556 quoted in the NYT article).<code></code>
+<code></code>
+<code></code>
+<br>Task:<code></code></li>
+</ul>
+<h1 id="nbspcreatearoutinetogeneratemembersofthehofstadterconwayd10000sequencec34c">&nbsp; Create a routine to generate members of the Hofstadter-Conway $10,000 sequence.<code></code></h1>
+<h1 id="nbspuseittoshowthemaximaofnbspannnbspbetweensuccessivepowersoftwouptonbsp220c35c">&nbsp; Use it to show the maxima of &nbsp; a(n)/n &nbsp; between successive powers of two up to &nbsp; 2**20<code></code></h1>
+<h1 id="nbspasastretchgoalnbspcomputethevalueofnbspnnbspthatwouldhavewontheprizeandconfirmitistruefornbspnnbspupto220c36c">&nbsp; As a stretch goal: &nbsp; compute the value of &nbsp; n &nbsp; that would have won the prize and confirm it is true for &nbsp; n &nbsp; up to 2**20<code></code></h1>
+<p><code></code>
+<code></code>
+<br><code></code>
+<br>Also see:<code></code></p>
+<ul>
+<li>&nbsp; <a href="http://www.jstor.org/stable/2324028 Conways Challenge Sequence">http://www.jstor.org/stable/2324028 Conways Challenge Sequence</a>, Mallows' own account.<code></code></li>
+<li>&nbsp; <a href="http://mathworld.wolfram.com/Hofstadter-Conway10000-DollarSequence.html Mathworld Article">http://mathworld.wolfram.com/Hofstadter-Conway10000-DollarSequence.html Mathworld Article</a>.<code></code>
+<br><br><code></code></li>
+</ul>

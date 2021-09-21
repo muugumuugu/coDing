@@ -1,0 +1,21 @@
+<link href="/styles/home.css" rel="stylesheet">
+<p>{{sorting Algorithm}}<code></code>
+{{wikipedia|Stooge sort}}<code></code>
+{{omit from|GUISS}}<code></code>
+<code></code>
+<code></code>
+<br>Task:<code></code>
+Show the &nbsp; <a href="wp:Stooge sort|Stooge Sort">wp:Stooge sort|Stooge Sort</a> &nbsp; for an array of integers.<code></code>
+<code></code>
+<code></code>
+The Stooge Sort algorithm is as follows:<code></code>
+ <b>algorithm</b> stoogesort(<b>array</b> L, i = 0, j = <b>length</b>(L)-1)<code></code>
+      <b>if</b> L<a href="j] < L[i">j] < L[i</a> <b>then</b><code></code>
+          L<a href="i] <b>↔</b> L[j">i] <b>↔</b> L[j</a><code></code>
+      <b>if</b> j - i &gt; 1 <b>then</b><code></code>
+          t <b>:=</b> (j - i + 1)/3<code></code>
+          stoogesort(L, i  , j-t)<code></code>
+          stoogesort(L, i+t, j  )<code></code>
+          stoogesort(L, i  , j-t)<code></code>
+      <b>return</b> L<code></code>
+<br><br><code></code></p>

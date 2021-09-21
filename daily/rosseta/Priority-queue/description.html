@@ -1,0 +1,18 @@
+<link href="/styles/home.css" rel="stylesheet">
+<p>A <a href="wp:Priority queue|priority queue]] is somewhat similar to a <a href="[Queue|queue">wp:Priority queue|priority queue]">[Queue|queue">wp:Priority queue|priority queue]</a> is somewhat similar to a [[Queue|queue</a>, with an important distinction: each item is added to a priority queue with a priority level, and will be later removed from the queue with the highest priority element first. That is, the items are (conceptually) stored in the queue in priority order instead of in insertion order.<code></code>
+<code></code>
+<code>Task:</code> Create a priority queue.  The queue must support at least two operations:<code></code></p>
+<h1 id="insertionanelementisaddedtothequeuewithapriorityanumericvaluec3c">Insertion.  An element is added to the queue with a priority (a numeric value).<code></code></h1>
+<h1 id="topitemremovaldeletestheelementoroneoftheelementswiththecurrenttoppriorityandreturnitc4c">Top item removal.  Deletes the element or one of the elements with the current top priority and return it.<code></code></h1>
+<p><code></code>
+Optionally, other operations may be defined, such as peeking (find what current top priority/top element is), merging (combining two priority queues into one), etc.<code></code>
+<code></code>
+To test your implementation, insert a number of elements into the queue, each with some random priority.  Then dequeue them sequentially; now the elements should be sorted by priority.  You can use the following task/priority items as input data:<code></code>
+ <code>Priority<code>'    '</code>Task</code><code></code>
+   3        Clear drains<code></code>
+   4        Feed cat<code></code>
+   5        Make tea<code></code>
+   1        Solve RC tasks<code></code>
+   2        Tax return<code></code>
+<code></code>
+The implementation should try to be efficient.  A typical implementation has O(log n) insertion and extraction time, where n is the number of items in the queue.  You may choose to impose certain limits such as small range of allowed priority levels, limited capacity, etc.  If so, discuss the reasons behind it.<code></code></p>

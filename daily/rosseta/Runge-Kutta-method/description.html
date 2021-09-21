@@ -1,0 +1,22 @@
+<link href="/styles/home.css" rel="stylesheet">
+<p>Given the example Differential equation:<code></code>
+:<math>y'(t) = t \times \sqrt {y(t)}</math><code></code>
+With initial condition:<code></code>
+:<math>t<em>0 = 0</math> and <math>y</em>0 = y(t<em>0) = y(0) = 1</math><code></code>
+This equation has an exact solution:<code></code>
+:<math>y(t) = \tfrac{1}{16}(t^2 +4)^2</math><code></code>
+<br>Task<code></code>
+Demonstrate the commonly used explicit &nbsp; <a href="wp:Runge–Kutta_methods#Common_fourth-order_Runge.E2.80.93Kutta_method|fourth-order Runge–Kutta method">wp:Runge–Kutta</em>methods#Common<em>fourth-order</em>Runge.E2.80.93Kutta_method|fourth-order Runge–Kutta method</a> &nbsp; to solve the above differential equation.<code></code></p>
+<ul>
+<li>Solve the given differential equation over the range <math>t = 0 \ldots 10</math> with a step value of <math>\delta t=0.1</math> (101 total points, the first being given)<code></code></li>
+<li>Print the calculated values of <math>y</math> at whole numbered <math>t</math>'s (<math>0.0, 1.0, \ldots 10.0</math>) along with error as compared to the exact solution.<code></code>
+<br>Method summary<code></code>
+Starting with a given <math>y<em>n</math> and <math>t</em>n</math> calculate:<code></code>
+:<math>\delta y<em>1 = \delta t\times y'(t</em>n, y<em>n)\quad</math><code></code>
+:<math>\delta y</em>2 = \delta t\times y'(t<em>n + \tfrac{1}{2}\delta t , y</em>n + \tfrac{1}{2}\delta y<em>1)</math><code></code>
+:<math>\delta y</em>3 = \delta t\times y'(t<em>n + \tfrac{1}{2}\delta t , y</em>n + \tfrac{1}{2}\delta y<em>2)</math><code></code>
+:<math>\delta y</em>4 = \delta t\times y'(t<em>n + \delta t , y</em>n + \delta y<em>3)\quad</math><code></code>
+then:<code></code>
+:<math>y</em>{n+1} = y<em>n + \tfrac{1}{6} (\delta y</em>1 + 2\delta y<em>2 + 2\delta y</em>3 + \delta y<em>4)</math><code></code>
+:<math>t</em>{n+1} = t_n + \delta t\quad</math><code></code></li>
+</ul>

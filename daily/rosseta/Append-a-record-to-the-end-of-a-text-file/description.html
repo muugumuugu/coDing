@@ -1,0 +1,64 @@
+<link href="/styles/home.css" rel="stylesheet">
+<p>Many systems offer the ability to open a file for writing, such that any data written will be appended to the end of the file. Further, the file operations will always adjust the position pointer to guarantee the end of the file, even in a multitasking environment.<code></code>
+<code></code>
+This feature is most useful in the case of log files, where many jobs may be appending to the log file at the same time, or where care <code>must</code> be taken to avoid concurrently overwriting the same record from another job.<code></code>
+<code></code>
+<code></code>
+<br>Task:<code></code>
+Given a two record sample for a mythical "passwd" file:<code></code></p>
+<ul>
+<li>Write these records out in the typical system format.<code></code>
+** Ideally these records will have named fields of various types.<code></code></li>
+<li>Close the file, then reopen the file for append.<code></code>
+** <code>Append</code> a new record to the file and close the file again.<code></code>
+** Take appropriate care to avoid concurrently overwrites from another job.<code></code></li>
+<li>Open the file and demonstrate the new record has indeed written to the end.<code></code>
+<code></code>
+{|class="wikitable" style="text-align: center; margin: 1em auto 1em auto;"<code></code>
+|+ Source record field types and contents.<code></code>
+|-<code></code>
+!account||password||UID||GID||fullname,office,extension,homephone,email||directory||shell<code></code>
+|-<code></code>
+!string||string||int||int||struct(string,string,string,string,string)||string||string<code></code>
+|-<code></code>
+|jsmith||x||1001||1000||Joe Smith,Room 1007,(234)555-8917,(234)555-0077,jsmith@rosettacode.org||/home/jsmith||/bin/bash<code></code>
+|-<code></code>
+|jdoe||x||1002||1000||Jane Doe,Room 1004,(234)555-8914,(234)555-0044,jdoe@rosettacode.org||/home/jdoe||/bin/bash<code></code>
+|}<code></code>
+<code></code>
+{|class="wikitable" style="text-align: center; margin: 1em auto 1em auto;"<code></code>
+|+ Record to be appended.<code></code>
+|-<code></code>
+!account||password||UID||GID||fullname,office,extension,homephone,email||directory||shell<code></code>
+|-<code></code>
+!string||string||int||int||struct(string,string,string,string,string)||string||string<code></code>
+|-<code></code>
+|xyz||x||1003||1000||X Yz,Room 1003,(234)555-8913,(234)555-0033,xyz@rosettacode.org||/home/xyz||/bin/bash<code></code>
+|}<code></code>
+<code></code>
+<code>Resulting file format:</code> should mimic Linux's /etc/passwd file format with particular attention to the "," separator used in the <a href="wp:Gecos field|GECOS field">wp:Gecos field|GECOS field</a>.  But if the specific language has a particular or unique format of storing records in text file, then this format should be named and demonstrated with an additional example.<code></code>
+<code></code>
+<code>Expected output:</code><code></code></li>
+</ul>
+<pre><code></code>
+Appended record: xyz:x:1003:1000:X Yz,Room 1003,(234)555-8913,(234)555-0033,xyz@rosettacode.org:/home/xyz:/bin/bash<code></code>
+</pre>
+<p><code></code>
+<code></code>
+<code>Finally:</code> Provide a summary of the language's "append record" capabilities in a table. eg.<code></code>
+{|class="wikitable" style="text-align: center; margin: 1em auto 1em auto;"<code></code>
+|+ Append Capabilities.<code></code>
+|-<code></code>
+!colspan=2| Data Representation<code></code>
+!rowspan=2| IO<BR>Library<code></code>
+!rowspan=2| Append<BR>Possible<code></code>
+!rowspan=2| Automatic<BR>Append<code></code>
+!rowspan=2| Multi-tasking<BR>Safe<code></code>
+|-<code></code>
+! In core || On disk<code></code>
+|-<code></code>
+| C struct || CSV text file || glibc/stdio || ☑ || ☑ || ☑ (Not all, eg NFS)<code></code>
+|}<code></code>
+<code></code>
+Alternatively: If the language's appends can not guarantee its writes will <code>always</code> append, then note this restriction in the table. If possible, provide an actual code example (possibly using file/record locking) to guarantee correct concurrent appends.<code></code>
+<br><br><code></code></p>

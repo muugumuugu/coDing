@@ -1,0 +1,39 @@
+PROTEINOGENIC AMINO ACIDS
+    Alanine
+    Arginine
+    Asparagine
+    Aspartic acid
+    Cysteine
+    Glutamic acid
+    Glutamine
+    Glycine
+    Histidine
+    Isoleucine
+    Leucine
+    Lysine
+    Methionine
+    Phenylalanine
+    Proline
+    Selenocysteine
+    Serine
+    Threonine
+    Tryptophan
+    Tyrosine
+    Valine
+NON-PROTEINOGENIC AMINO ACIDS
+    Citrulline
+    Cystine
+    Gama aminobutyric acid (GABA)
+    Ornithine
+    Theanine
+AMINO ACID DERIVATIVES
+    Betaine
+    Carnitine
+    Carnosine
+    Creatine
+    Hydroxyproline
+    Hydroxytryptophan
+    N-acetyl cysteine
+    S-Adenosyl methionine (SAM-e)
+    Taurine
+    Tyramine

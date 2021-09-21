@@ -1,0 +1,52 @@
+<link href="/styles/home.css" rel="stylesheet">
+<p>Given a mapping between items, and items they depend on, a <a href="wp:Topological sorting|topological sort">wp:Topological sorting|topological sort</a> orders items so that no item precedes an item it depends upon.<code></code>
+<code></code>
+The compiling of a library in the <a href="wp:VHDL|VHDL">wp:VHDL|VHDL</a> language has the constraint that a library must be compiled after any library it depends on.<code></code>
+<code></code>
+A tool exists that extracts library dependencies.<code></code>
+<code></code>
+<code></code>
+<br>Task:<code></code>
+Write a function that will return a valid compile order of VHDL libraries from their dependencies.<code></code>
+<code></code></p>
+<ul>
+<li>Assume library names are single words.<code></code></li>
+<li>Items mentioned as only dependents, (sic), have no dependents of their own, but their order of compiling must be given.<code></code></li>
+<li>Any self dependencies should be ignored.<code></code></li>
+<li>Any un-orderable dependencies should be flagged.<code></code>
+<code></code>
+<br><code></code>
+Use the following data as an example:<code></code></li>
+</ul>
+<pre><code></code>
+LIBRARY          LIBRARY DEPENDENCIES<code></code>
+=======          ====================<code></code>
+des_system_lib   std synopsys std_cell_lib des_system_lib dw02 dw01 ramlib ieee<code></code>
+dw01             ieee dw01 dware gtech<code></code>
+dw02             ieee dw02 dware<code></code>
+dw03             std synopsys dware dw03 dw02 dw01 ieee gtech<code></code>
+dw04             dw04 ieee dw01 dware gtech<code></code>
+dw05             dw05 ieee dware<code></code>
+dw06             dw06 ieee dware<code></code>
+dw07             ieee dware<code></code>
+dware            ieee dware<code></code>
+gtech            ieee gtech<code></code>
+ramlib           std ieee<code></code>
+std_cell_lib     ieee std_cell_lib<code></code>
+synopsys<code></code>
+</pre>
+<p><code></code>
+<code></code>
+<br><code></code>
+<small>Note: the above data would be un-orderable if, for example, <code>dw04</code> is added to the list of dependencies of <code>dw01</code>.</small><code></code>
+<code></code>
+<code></code>
+<br>C.f.:<code></code>
+:* &nbsp; <a href="Topological sort/Extracted top item">Topological sort/Extracted top item</a>.<code></code>
+<code></code>
+<br><code></code>
+There are two popular algorithms for topological sorting:<code></code>
+:* &nbsp; Kahn's 1962 topological sort <ref> <a href="wp: topological sorting">wp: topological sorting</a> </ref><code></code>
+:* &nbsp; depth-first search <ref> <a href="wp: topological sorting">wp: topological sorting</a> </ref> <ref> Jason Sachs<code></code>
+<a href="http://www.embeddedrelated.com/showarticle/799.php "Ten little algorithms, part 4: topological sort"">http://www.embeddedrelated.com/showarticle/799.php "Ten little algorithms, part 4: topological sort"</a> </ref><code></code>
+<br><br><code></code></p>

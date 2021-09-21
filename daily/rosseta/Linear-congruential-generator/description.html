@@ -1,0 +1,40 @@
+<link href="/styles/home.css" rel="stylesheet">
+<p>The <a href="wp:linear congruential generator|linear congruential generator]] is a very simple example of a <a href="[random number generator">wp:linear congruential generator|linear congruential generator]">[random number generator">wp:linear congruential generator|linear congruential generator]</a> is a very simple example of a [[random number generator</a>.<code></code>
+<code></code>
+All linear congruential generators use this formula:<code></code></p>
+<ul>
+<li><math>r_{n + 1} = a \times r_n + c \pmod m</math><code></code>
+<code></code>
+<code></code>
+Where:<code></code></li>
+<li><math>r_0</math> is a seed.<code></code></li>
+<li><math>r_1</math>, <math>r<em>2</math>, <math>r</em>3</math>, ..., are the random numbers.<code></code></li>
+<li><math>a</math>, <math>c</math>, <math>m</math> are constants.<code></code>
+<code></code>
+<code></code>
+If one chooses the values of <math>a</math>, <math>c</math> and <math>m</math> with care, then the generator produces a uniform distribution of integers from <math>0</math> to <math>m - 1</math>.<code></code>
+<code></code>
+LCG numbers have poor quality. <math>r<em>n</math> and <math>r</em>{n + 1}</math> are not independent, as true random numbers would be. Anyone who knows <math>r<em>n</math> can predict <math>r</em>{n + 1}</math>, therefore LCG is not cryptographically secure. The LCG is still good enough for simple tasks like <a href="Miller-Rabin primality test]], or <a href="[deal cards for FreeCell|FreeCell deals">Miller-Rabin primality test]">[deal cards for FreeCell|FreeCell deals">Miller-Rabin primality test]</a>, or [[deal cards for FreeCell|FreeCell deals</a>. Among the benefits of the LCG, one can easily reproduce a sequence of numbers, from the same <math>r<em>0</math>. One can also reproduce such sequence with a different programming language, because the formula is so simple.<code></code>
+<code></code>
+The task is to replicate two historic random number generators. One is the <code>rand()</code> function from <a href=":Category:BSD libc|BSD libc">:Category:BSD libc|BSD libc</a>, and the other is the <code>rand()</code> function from the Microsoft C Runtime (MSCVRT.DLL). Each replica must yield the same sequence of integers as the original generator, when starting from the same seed.<code></code>
+<code></code>
+In these formulas, the seed becomes <math>state</em>0</math>. The random sequence is <math>rand<em>1</math>, <math>rand</em>2</math> and so on.<code></code>
+<code></code>
+<code></code>
+<br>BSD formula:<code></code></li>
+<li><math>state_{n + 1} = 1103515245 \times state_n + 12345 \pmod{2^{31}}</math><code></code></li>
+<li><math>rand_n = state_n</math><code></code></li>
+<li><math>rand_n</math> is in range 0 to 2147483647.<code></code>
+<code></code>
+<code></code>
+<br>Microsoft formula:<code></code></li>
+<li><math>state_{n + 1} = 214013 \times state_n + 2531011 \pmod{2^{31}}</math><code></code></li>
+<li><math>rand_n = state_n \div 2^{16}</math><code></code></li>
+<li><math>rand_n</math> is in range 0 to 32767.<code></code>
+<code></code>
+<code></code>
+The BSD formula was so awful that FreeBSD switched to a different formula.<code></code>
+<code></code>
+More info is at <a href="Random number generator (included)#C">Random number generator (included)#C</a>.<code></code>
+<br><br><code></code></li>
+</ul>

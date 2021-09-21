@@ -1,0 +1,25 @@
+<link href="/styles/home.css" rel="stylesheet">
+<p>The following task concerns data that came from a pollution monitoring station with twenty-four instruments monitoring twenty-four aspects of pollution in the air. Periodically a record is added to the file, each record being a line of 49 fields separated by white-space, which can be one or more space or tab characters.<code></code>
+<code></code>
+The fields (from the left) are:<code></code>
+  DATESTAMP <a href=" VALUEn FLAGn "> VALUEn FLAGn </a> * 24<code></code>
+i.e. a datestamp followed by twenty-four repetitions of a floating-point instrument value and that instrument's associated integer flag. Flag values are &gt;= 1 if the instrument is working and &lt; 1 if there is some problem with it, in which case that instrument's value should be ignored.<code></code>
+<code></code>
+A sample from the full data file <a href="http://rosettacode.org/resources/readings.zip readings.txt">http://rosettacode.org/resources/readings.zip readings.txt</a>, which is also used in the <a href="Text processing/1">Text processing/1</a> task, follows:<code></code>
+<code></code>
+Data is no longer available at that link. Zipped mirror available <a href="https://github.com/thundergnat/rc/blob/master/resouces/readings.zip here">https://github.com/thundergnat/rc/blob/master/resouces/readings.zip here</a><code></code></p>
+<pre><code></code>
+1991-03-30    10.000  1   10.000  1   10.000  1   10.000  1   10.000  1   10.000  1   10.000  1   10.000  1   10.000  1   10.000  1   10.000  1   10.000  1   10.000  1   10.000  1   10.000  1   10.000  1   10.000  1   10.000  1   10.000  1   10.000  1   10.000  1   10.000  1   10.000  1   10.000  1<code></code>
+1991-03-31    10.000  1   10.000  1   10.000  1   10.000  1   10.000  1   10.000  1   10.000  1   20.000  1   20.000  1   20.000  1   35.000  1   50.000  1   60.000  1   40.000  1   30.000  1   30.000  1   30.000  1   25.000  1   20.000  1   20.000  1   20.000  1   20.000  1   20.000  1   35.000  1<code></code>
+1991-03-31    40.000  1   0.000   -2  0.000   -2  0.000   -2  0.000   -2  0.000   -2  0.000   -2  0.000   -2  0.000   -2  0.000   -2  0.000   -2  0.000   -2  0.000   -2  0.000   -2  0.000   -2  0.000   -2  0.000   -2  0.000   -2  0.000   -2  0.000   -2  0.000   -2  0.000   -2  0.000   -2  0.000   -2<code></code>
+1991-04-01    0.000   -2  13.000  1   16.000  1   21.000  1   24.000  1   22.000  1   20.000  1   18.000  1   29.000  1   44.000  1   50.000  1   43.000  1   38.000  1   27.000  1   27.000  1   24.000  1   23.000  1   18.000  1   12.000  1   13.000  1   14.000  1   15.000  1   13.000  1   10.000  1<code></code>
+1991-04-02    8.000   1   9.000   1   11.000  1   12.000  1   12.000  1   12.000  1   27.000  1   26.000  1   27.000  1   33.000  1   32.000  1   31.000  1   29.000  1   31.000  1   25.000  1   25.000  1   24.000  1   21.000  1   17.000  1   14.000  1   15.000  1   12.000  1   12.000  1   10.000  1<code></code>
+1991-04-03    10.000  1   9.000   1   10.000  1   10.000  1   9.000   1   10.000  1   15.000  1   24.000  1   28.000  1   24.000  1   18.000  1   14.000  1   12.000  1   13.000  1   14.000  1   15.000  1   14.000  1   15.000  1   13.000  1   13.000  1   13.000  1   12.000  1   10.000  1   10.000  1<code></code>
+</pre>
+<p><code></code>
+<code></code>
+<br>Task:<code></code></p>
+<h1 id="confirmthegeneralfieldformatofthefilec12c">Confirm the general field format of the file.<code></code></h1>
+<h1 id="identifyanydatestampsthatareduplicatedc13c">Identify any DATESTAMPs that are duplicated.<code></code></h1>
+<h1 id="reportthenumberofrecordsthathavegoodreadingsforallinstrumentsc14c">Report the number of records that have good readings for all instruments.<code></code></h1>
+<p><br><br><code></code></p>

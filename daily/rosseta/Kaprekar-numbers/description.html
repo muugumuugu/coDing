@@ -1,0 +1,40 @@
+<link href="/styles/home.css" rel="stylesheet">
+<p>A positive integer is a <a href="wp:Kaprekar number|Kaprekar number">wp:Kaprekar number|Kaprekar number</a> if:<code></code></p>
+<ul>
+<li>It is 1<code></code></li>
+<li>The decimal representation of its square may be split once into two parts consisting of positive integers which sum to the original number.<code></code>
+<br>Note that a split resulting in a part consisting purely of 0s is not valid<br><code></code>
+as 0 is not considered positive.<code></code>
+<code></code>
+<br>Example Kaprekar numbers:<code></code></li>
+<li><math>2223</math> is a Kaprekar number, as <math>2223 * 2223 = 4941729</math>, <math>4941729</math> may be split to <math>494</math> and <math>1729</math>, and <math>494 + 1729 = 2223</math>.<code></code></li>
+<li>The series of Kaprekar numbers is known as <a href="oeis:A006886|A006886">oeis:A006886|A006886</a>, and begins as <math>1, 9, 45, 55, ...</math>.<code></code>
+<code></code>
+<br>Example process:<code></code>
+10000 (100<sup>2</sup>) splitting from left to right:<code></code></li>
+<li>The first split is <a href="1, 0000">1, 0000</a>, and is invalid; the 0000 element consists entirely of 0s, and 0 is not considered positive.<code></code></li>
+<li>Slight optimization opportunity: When splitting from left to right, once the right part consists entirely of 0s, no further testing is needed; all further splits would also be invalid.<code></code>
+<code></code>
+<br>Task description:<code></code>
+Generate and show all Kaprekar numbers less than 10,000.<code></code>
+<code></code>
+<br>Extra credit:<code></code>
+Optionally, count (and report the count of) how many Kaprekar numbers are less than 1,000,000.<code></code>
+<code></code>
+<br>Extra extra credit:<code></code>
+The concept of Kaprekar numbers is not limited to base 10 (i.e. decimal numbers);<code></code>
+if you can, show that Kaprekar numbers exist in other bases too.<code></code>
+<code></code>
+For this purpose, do the following:<code></code></li>
+<li>Find all Kaprekar numbers for base 17 between 1 and 1,000,000 (one million);<code></code></li>
+<li>Display each of them in base 10 representation;<code></code></li>
+<li>Optionally, using base 17 representation (use letters 'a' to 'g' for digits 10(10) to 16(10)), display each of the numbers, its square, and where to split the square.<code></code>
+<code></code>
+<br>For example, 225(10) is "d4" in base 17, its square "a52g", and a5(17) + 2g(17) = d4(17), so the display would be something like:<pre>225   d4  a52g  a5 + 2g</pre><code></code>
+<code></code>
+<br>Reference:<code></code></li>
+<li><a href="http://www.cs.uwaterloo.ca/journals/JIS/VOL3/iann2a.html The Kaprekar Numbers] by Douglas E. Iannucci (2000). [http://pictor.math.uqam.ca/~plouffe/OEIS/jis/The%20Kaprekar%20Numbers.pdf PDF version">http://www.cs.uwaterloo.ca/journals/JIS/VOL3/iann2a.html The Kaprekar Numbers] by Douglas E. Iannucci (2000). [http://pictor.math.uqam.ca/~plouffe/OEIS/jis/The%20Kaprekar%20Numbers.pdf PDF version</a><code></code>
+<br>related task<code></code>
+<a href="Casting out nines">Casting out nines</a><code></code>
+<br><code></code></li>
+</ul>

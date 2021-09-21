@@ -1,0 +1,107 @@
+<link href="/styles/home.css" rel="stylesheet">
+<p>Given a symbol table of a <code>zero-indexed</code> array of all possible input symbols<code></code>
+<a href="wp:Move-to-front transform|this algorithm">wp:Move-to-front transform|this algorithm</a> reversibly transforms a sequence<code></code>
+of input symbols into an array of output numbers (indices).<br><code></code>
+The transform in many cases acts to give frequently repeated input symbols<code></code>
+lower indices which is <a href="wp:Move-to-front_transform#Use_in_practical_data_compression_algorithms| useful in some compression algorithms">wp:Move-to-front<em>transform#Use</em>in<em>practical</em>data<em>compression</em>algorithms| useful in some compression algorithms</a>.<code></code>
+<code></code>
+<br>Encoding algorithm:<code></code></p>
+<pre><code></code>
+    for each symbol of the input sequence:<code></code>
+        output the index of the symbol in the symbol table<code></code>
+        move that symbol to the front of the symbol table<code></code>
+</pre>
+<p><code></code>
+<code></code>
+<br>Decoding algorithm:<code></code></p>
+<pre><code></code>
+    # Using the same starting symbol table<code></code>
+    for each index of the input sequence:<code></code>
+        output the symbol at that index of the symbol table<code></code>
+        move that symbol to the front of the symbol table<code></code>
+</pre>
+<p><code></code>
+<code></code>
+<br>Example:<code></code>
+Encoding the string of character symbols 'broood' using a symbol table of<code></code>
+the characters 'a'-to-'z'<code></code>
+<code></code>
+{| class="wikitable" border="1"<code></code>
+|-<code></code>
+! Input<code></code>
+! Output<code></code>
+! SymbolTable<code></code>
+|-<code></code>
+| <code>b</code>roood<code></code>
+| 1<code></code>
+| 'abcdefghijklmnopqrstuvwxyz'<code></code>
+|-<code></code>
+| b<code>r</code>oood<code></code>
+| 1 17<code></code>
+| 'bacdefghijklmnopqrstuvwxyz'<code></code>
+|-<code></code>
+| br<code>o</code>ood<code></code>
+| 1 17 15<code></code>
+| 'rbacdefghijklmnopqstuvwxyz'<code></code>
+|-<code></code>
+| bro<code>o</code>od<code></code>
+| 1 17 15 0<code></code>
+| 'orbacdefghijklmnpqstuvwxyz'<code></code>
+|-<code></code>
+| broo<code>o</code>d<code></code>
+| 1 17 15 0 0<code></code>
+| 'orbacdefghijklmnpqstuvwxyz'<code></code>
+|-<code></code>
+| brooo<code>d</code><code></code>
+| 1 17 15 0 0 5<code></code>
+| 'orbacdefghijklmnpqstuvwxyz'<code></code>
+|}<code></code>
+<code></code>
+Decoding the indices back to the original symbol order:<code></code>
+{| class="wikitable" border="1"<code></code>
+|-<code></code>
+! Input<code></code>
+! Output<code></code>
+! SymbolTable<code></code>
+|-<code></code>
+|  <code>1</code> 17 15 0 0 5<code></code>
+| b<code></code>
+| 'abcdefghijklmnopqrstuvwxyz'<code></code>
+|-<code></code>
+| 1 <code>17</code> 15 0 0 5<code></code>
+| br<code></code>
+| 'bacdefghijklmnopqrstuvwxyz'<code></code>
+|-<code></code>
+| 1 17 <code>15</code> 0 0 5<code></code>
+| bro<code></code>
+| 'rbacdefghijklmnopqstuvwxyz'<code></code>
+|-<code></code>
+| 1 17 15 <code>0</code> 0 5<code></code>
+| broo<code></code>
+| 'orbacdefghijklmnpqstuvwxyz'<code></code>
+|-<code></code>
+| 1 17 15 0 <code>0</code> 5<code></code>
+| brooo<code></code>
+| 'orbacdefghijklmnpqstuvwxyz'<code></code>
+|-<code></code>
+| 1 17 15 0 0 <code>5</code><code></code>
+| broood<code></code>
+| 'orbacdefghijklmnpqstuvwxyz'<code></code>
+|}<code></code>
+<code></code>
+<br>Task:<code></code></p>
+<ul>
+<li>Encode and decode the following three strings of characters using the symbol table of the characters 'a'-to-'z' as above.<code></code></li>
+<li>Show the strings and their encoding here.<code></code></li>
+<li>Add a check to ensure that the decoded string is the same as the original.<code></code>
+<code></code>
+<br><code></code>
+The strings are:<code></code>
+<code></code>
+<big> broood       </big><code></code>
+<big> bananaaa     </big><code></code>
+<big> hiphophiphop </big><code></code>
+<code></code>
+(Note the spellings.)<code></code>
+<br><br><code></code></li>
+</ul>

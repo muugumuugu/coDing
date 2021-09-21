@@ -1,0 +1,21 @@
+<link href="/styles/home.css" rel="stylesheet">
+<p>A fast scheme for evaluating a polynomial such as:<code></code>
+: <math>-19+7x-4x^2+6x^3\,</math><code></code>
+when<code></code>
+: <math>x=3\;</math>.<code></code>
+is to arrange the computation as follows:<code></code>
+: <math>((((0) x + 6) x + (-4)) x + 7) x + (-19)\;</math><code></code>
+And compute the result from the innermost brackets outwards as in this pseudocode:<code></code>
+ coefficients <code>:=</code> <a href="-19, 7, -4, 6">-19, 7, -4, 6</a> <code># list coefficients of all x^0..x^n in order</code><code></code>
+ x <code>:=</code> 3<code></code>
+ accumulator <code>:=</code> 0<code></code>
+ <code>for<code>' i 'in' length(coefficients) 'downto' 1 '</code>do</code><code></code>
+     <code># Assumes 1-based indexing for arrays</code><code></code>
+     accumulator <code>:=</code> ( accumulator * x ) + coefficients<a href="i">i</a><code></code>
+ <code>done</code><code></code>
+ <code># accumulator now has the answer</code><code></code>
+<code></code>
+<code>Task Description</code><code></code>
+:Create a routine that takes a list of coefficients of a polynomial in order of increasing powers of x; together with a value of x to compute its value at, and return the value of the polynomial at that value using <a href="http://www.physics.utah.edu/~detar/lessons/c++/array/node1.html Horner's rule">http://www.physics.utah.edu/~detar/lessons/c++/array/node1.html Horner's rule</a>.<code></code>
+<code></code>
+Cf. <a href="Formal power series">Formal power series</a><code></code></p>

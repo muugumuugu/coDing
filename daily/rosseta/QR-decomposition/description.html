@@ -1,0 +1,96 @@
+<link href="/styles/home.css" rel="stylesheet">
+<p>Any rectangular <math>m \times n</math> matrix <math>\mathit A</math> can be decomposed to a product of an orthogonal matrix <math>\mathit Q</math> and an upper (right) triangular matrix <math>\mathit R</math>, as described in <a href="wp:QR decomposition|QR decomposition">wp:QR decomposition|QR decomposition</a>.<code></code>
+<code></code>
+<code>Task</code><code></code>
+<code></code>
+Demonstrate the QR decomposition on the example matrix from the <a href="wp:QR_decomposition#Example_2|Wikipedia article">wp:QR<em>decomposition#Example</em>2|Wikipedia article</a>:<code></code>
+<code></code>
+::<math>A = \begin{pmatrix}<code></code>
+12 & -51 & 4 \<code></code>
+6 & 167 & -68 \<code></code>
+-4 & 24 & -41 \end{pmatrix}</math><code></code>
+<code></code>
+and the usage for linear least squares problems on the example from <a href="Polynomial regression]]. The method of <a href="[wp: Householder transformation|Householder reflections">Polynomial regression]">[wp: Householder transformation|Householder reflections">Polynomial regression]</a>. The method of [[wp: Householder transformation|Householder reflections</a> should be used:<code></code>
+<code></code>
+<code>Method</code><code></code>
+<code></code>
+Multiplying a given vector <math>\mathit a</math>, for example the first column of matrix <math>\mathit A</math>, with the Householder matrix <math>\mathit H</math>, which is given as<code></code>
+<code></code>
+::<math>H = I - \frac {2} {u^T u} u u^T</math><code></code>
+<code></code>
+reflects <math>\mathit a</math> about a plane given by its normal vector <math>\mathit u</math>. When the normal vector of the plane <math>\mathit u</math> is given as<code></code>
+<code></code>
+::<math>u = a - |a|<em>2 \; e</em>1</math><code></code>
+<code></code>
+then the transformation reflects <math>\mathit a</math> onto the first standard basis vector<code></code>
+<code></code>
+::<math>e<em>1 = <a href="1 \; 0 \; 0 \; ...">1 \; 0 \; 0 \; ...</a>^T</math><code></code>
+<code></code>
+which means that all entries but the first become zero. To avoid numerical cancellation errors, we should take the opposite sign of <math>a</em>1</math>:<code></code>
+<code></code>
+::<math>u = a + \textrm{sign}(a<em>1)|a|</em>2 \; e<em>1</math><code></code>
+<code></code>
+and normalize with respect to the first element:<code></code>
+<code></code>
+::<math>v = \frac{u}{u</em>1}</math><code></code>
+<code></code>
+The equation for <math>H</math> thus becomes:<code></code>
+<code></code>
+::<math>H = I - \frac {2} {v^T v} v v^T</math><code></code>
+<code></code>
+or, in another form<code></code>
+<code></code>
+::<math>H = I - \beta v v^T</math><code></code>
+<code></code>
+with<code></code>
+::<math>\beta = \frac {2} {v^T v}</math><code></code>
+<code></code>
+Applying <math>\mathit H</math> on <math>\mathit a</math> then gives<code></code>
+<code></code>
+::<math>H \; a = -\textrm{sign}(a<em>1) \; |a|</em>2 \; e<em>1</math><code></code>
+<code></code>
+and applying <math>\mathit H</math> on the matrix <math>\mathit A</math> zeroes all subdiagonal elements of the first column:<code></code>
+<code></code>
+::<math>H</em>1 \; A = \begin{pmatrix}<code></code>
+r<em>{11} & r</em>{12} & r<em>{13} \<code></code>
+0    & *    & * \<code></code>
+0    & *    & * \end{pmatrix}</math><code></code>
+<code></code>
+In the second step, the second column of <math>\mathit A</math>, we want to zero all elements but the first two, which means that we have to calculate <math>\mathit H</math> with the first column of the <code>submatrix</code> (denoted *), not on the whole second column of <math>\mathit A</math>.<code></code>
+<code></code>
+To get <math>H</em>2</math>, we then embed the new <math>\mathit H</math> into an <math>m \times n</math> identity:<code></code>
+<code></code>
+::<math>H<em>2 = \begin{pmatrix}<code></code>
+1 & 0 & 0 \<code></code>
+0 & H & \<code></code>
+0 &   & \end{pmatrix}</math><code></code>
+<code></code>
+This is how we can, column by column, remove all subdiagonal elements of <math>\mathit A</math> and thus transform it into <math>\mathit R</math>.<code></code>
+<code></code>
+::<math>H</em>n \; ... \; H<em>3 H</em>2 H<em>1 A = R</math><code></code>
+<code></code>
+The product of all the Householder matrices <math>\mathit H</math>, for every column, in reverse order, will then yield the orthogonal matrix <math>\mathit Q</math>.<code></code>
+<code></code>
+::<math>H</em>1 H<em>2 H</em>3 \; ... \; H<em>n = Q</math><code></code>
+<code></code>
+The QR decomposition should then be used to solve linear least squares (<a href="Multiple regression">Multiple regression</a>) problems <math>\mathit A x = b</math> by solving<code></code>
+<code></code>
+::<math>R \; x = Q^T \; b</math><code></code>
+<code></code>
+When <math>\mathit R</math> is not square, i.e. <math>m > n</math> we have to cut off the <math>\mathit m - n</math> zero padded bottom rows.<code></code>
+<code></code>
+::<math>R =<code></code>
+\begin{pmatrix}<code></code>
+R</em>1 \<code></code>
+0 \end{pmatrix}</math><code></code>
+<code></code>
+and the same for the RHS:<code></code>
+<code></code>
+::<math>Q^T \; b =<code></code>
+\begin{pmatrix}<code></code>
+q<em>1 \<code></code>
+q</em>2 \end{pmatrix}</math><code></code>
+<code></code>
+Finally, solve the square upper triangular system by back substitution:<code></code>
+<code></code>
+::<math>R<em>1 \; x = q</em>1</math><code></code></p>

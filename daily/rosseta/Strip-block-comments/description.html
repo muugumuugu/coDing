@@ -1,0 +1,44 @@
+<link href="/styles/home.css" rel="stylesheet">
+<p>A block comment begins with a &nbsp; <code>beginning delimiter &nbsp; and ends with a &nbsp; ending delimiter</code>, &nbsp; including the delimiters. &nbsp; These delimiters are often multi-character sequences.<code></code>
+<code></code>
+<code></code>
+<br>Task:<code></code>
+Strip block comments from program text (of a programming language much like classic <a href="C">C</a>).<code></code>
+<code></code>
+Your demos should at least handle simple, non-nested and multi-line block comment delimiters.<code></code>
+<code></code>
+The block comment delimiters are the two-character sequence:<code></code>
+:::* &nbsp; &nbsp; <big><big> <code>/<em></code> </big></big> &nbsp; &nbsp; (beginning delimiter)<code></code>
+:::</em> &nbsp; &nbsp; <big><big> <code>*/</code> </big></big> &nbsp; &nbsp; (ending delimiter)<code></code>
+<code></code>
+<code></code>
+Sample text for stripping:<code></code></p>
+<pre><code></code>
+  /**<code></code>
+   * Some comments<code></code>
+   * longer comments here that we can parse.<code></code>
+   *<code></code>
+   * Rahoo<code></code>
+   */<code></code>
+   function subroutine() {<code></code>
+    a = /* inline comment */ b + c ;<code></code>
+   }<code></code>
+   /*/ <-- tricky comments */<code></code>
+<code></code>
+   /**<code></code>
+    * Another comment.<code></code>
+    */<code></code>
+    function something() {<code></code>
+    }<code></code>
+</pre>
+<p><code></code>
+<code></code>
+<br>Extra credit:<code></code>
+Ensure that the stripping code is not hard-coded to the particular delimiters described above, but instead allows the caller to specify them. &nbsp; (If your language supports them, &nbsp; <a href="Optional parameters|optional parameters">Optional parameters|optional parameters</a> &nbsp; may be useful for this.)<code></code>
+<code></code>
+<code></code>
+<br>Related task:<code></code></p>
+<ul>
+<li>&nbsp; <a href="Strip comments from a string">Strip comments from a string</a><code></code>
+<br><br><code></code></li>
+</ul>

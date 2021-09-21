@@ -1,0 +1,115 @@
+<link href="/styles/home.css" rel="stylesheet">
+<p>This is an algorithm used to thin a black and white i.e. one bit per pixel images.<code></code>
+<code></code>
+For example, with an input image of:<code></code></p>
+<pre><code></code>
+ #################                   #############<code></code>
+ ##################               ################<code></code>
+ ###################            ##################<code></code>
+ ########     #######          ###################<code></code>
+   ######     #######         #######       ######<code></code>
+   ######     #######        #######<code></code>
+   #################         #######<code></code>
+   ################          #######<code></code>
+   #################         #######<code></code>
+   ######     #######        #######<code></code>
+   ######     #######        #######<code></code>
+   ######     #######         #######       ######<code></code>
+ ########     #######          ###################<code></code>
+ ########     ####### ######    ################## ######<code></code>
+ ########     ####### ######      ################ ######<code></code>
+ ########     ####### ######         ############# ######<code></code>
+                                                           </pre>
+<p><code></code>
+It produces the thinned output:<code></code></p>
+<pre><code></code>
+<code></code>
+    # ##########                       #######<code></code>
+     ##        #                   ####       #<code></code>
+     #          #                 ##<code></code>
+     #          #                #<code></code>
+     #          #                #<code></code>
+     #          #                #<code></code>
+     ############               #<code></code>
+     #          #               #<code></code>
+     #          #                #<code></code>
+     #          #                #<code></code>
+     #          #                #<code></code>
+     #                            ##<code></code>
+     #                             ############<code></code>
+                       ###                          ###<code></code>
+<code></code>
+                                                           </pre>
+<p><code></code>
+<code></code>
+<br>Algorithm:<code></code>
+Assume black pixels are one and white pixels zero, and that the input image is a rectangular N by M array of ones and zeroes.<code></code>
+<code></code>
+The algorithm operates on all black pixels P1 that can have eight neighbours.<code></code>
+<code></code>
+The neighbours are, in order, arranged as:<code></code>
+<code></code></p>
+<table border="4"><code></code>
+     <tr><td> &nbsp; P9 &nbsp; </td><td>     &nbsp; P2 &nbsp; </td><td>      &nbsp; P3 &nbsp; </td></tr><code></code>
+     <tr><td> &nbsp; P8 &nbsp; </td><td><b>  &nbsp; P1 &nbsp; </b></td><td>  &nbsp; P4 &nbsp; </td></tr><code></code>
+     <tr><td> &nbsp; P7 &nbsp; </td><td>     &nbsp; P6 &nbsp; </td><td>      &nbsp; P5 &nbsp; </td></tr><code></code>
+</table>
+<p><code></code>
+<code></code>
+<code></code>
+Obviously the boundary pixels of the image cannot have the full eight neighbours.<code></code>
+<code></code></p>
+<ul>
+<li>Define <math>A(P1)</math> = the number of transitions from white to black, (0 -&gt; 1) in the sequence P2,P3,P4,P5,P6,P7,P8,P9,P2. (Note the extra P2 at the end - it is circular).<code></code></li>
+<li>Define <math>B(P1)</math> = The number of black pixel neighbours of P1. ( = sum(P2 .. P9) )<code></code>
+<code></code>
+<code></code>
+<br>Step 1:<code></code>
+All pixels are tested and pixels satisfying all the following conditions (simultaneously) are just noted at this stage.<code></code></li>
+<li>(0) The pixel is black and has eight neighbours<code></code></li>
+<li>(1) <math>2 <= B(P1) <= 6</math><code></code></li>
+<li>(2) A(P1) = 1<code></code></li>
+<li>(3) At least one of P2 and P4 and P6 is white<code></code></li>
+<li>(4) At least one of P4 and P6 and P8 is white<code></code>
+<code></code>
+After iterating over the image and collecting all the pixels satisfying all step 1 conditions, all these condition satisfying pixels are set to white.<code></code>
+<code></code>
+<code></code>
+<br>Step 2:<code></code>
+All pixels are again tested and pixels satisfying all the following conditions are just noted at this stage.<code></code></li>
+<li>(0) The pixel is black and has eight neighbours<code></code></li>
+<li>(1) <math>2 <= B(P1) <= 6</math><code></code></li>
+<li>(2) A(P1) = 1<code></code></li>
+<li>(3) At least one of P2 and P4 and <code>P8</code> is white<code></code></li>
+<li>(4) At least one of <code>P2</code> and P6 and P8 is white<code></code>
+<code></code>
+After iterating over the image and collecting all the pixels satisfying all step 2 conditions, all these condition satisfying pixels are again set to white.<code></code>
+<code></code>
+<code></code>
+<br>Iteration:<code></code>
+If any pixels were set in this round of either step 1 or step 2 then all steps are repeated until no image pixels are so changed.<code></code>
+<code></code>
+<code></code>
+<br>Task:<code></code></li>
+</ul>
+<h1 id="writearoutinetoperformzhangsuenthinningonanimagematrixofonesandzeroesc50c">Write a routine to perform Zhang-Suen thinning on an image matrix of ones and zeroes.<code></code></h1>
+<h1 id="usetheroutinetothinthefollowingimageandshowtheoutputhereonthispageaseitheramatrixofonesandzeroesanimageoranasciiartimageofspacenonspacecharactersc51c">Use the routine to thin the following image and show the output here on this page as either a matrix of ones and zeroes, an image, or an ASCII-art image of space/non-space characters.<code></code></h1>
+<p><code></code>
+           00000000000000000000000000000000<code></code>
+           01111111110000000111111110000000<code></code>
+           01110001111000001111001111000000<code></code>
+           01110000111000001110000111000000<code></code>
+           01110001111000001110000000000000<code></code>
+           01111111110000001110000000000000<code></code>
+           01110111100000001110000111000000<code></code>
+           01110011110011101111001111011100<code></code>
+           01110001111011100111111110011100<code></code>
+           00000000000000000000000000000000<code></code>
+<code></code>
+<code></code>
+<br>Reference:<code></code></p>
+<ul>
+<li><a href="http://nayefreza.wordpress.com/2013/05/11/zhang-suen-thinning-algorithm-java-implementation/ Zhang-Suen Thinning Algorithm, Java Implementation">http://nayefreza.wordpress.com/2013/05/11/zhang-suen-thinning-algorithm-java-implementation/ Zhang-Suen Thinning Algorithm, Java Implementation</a> by Nayef Reza.<code></code></li>
+<li>"Character Recognition Systems: A Guide for Students and Practitioners" By Mohamed Cheriet, Nawwaf Kharma, Cheng-Lin Liu, Ching Suen<code></code>
+<br><br><code></code></li>
+</ul>

@@ -1,0 +1,29 @@
+<link href="/styles/home.css" rel="stylesheet">
+<p>Avast me hearties!<code></code>
+<code></code>
+There be many a <a href="http://talklikeapirate.com/wordpress/how-to/ land lubber] that knows [https://dictionary.cambridge.org/dictionary/english/naught naught">http://talklikeapirate.com/wordpress/how-to/ land lubber] that knows [https://dictionary.cambridge.org/dictionary/english/naught naught</a> of the pirate ways and gives direction by degree!<code></code>
+They know not how to <a href="wp:Boxing the compass|box the compass">wp:Boxing the compass|box the compass</a>!<code></code>
+<code></code>
+<code></code>
+<br>Task description:<code></code></p>
+<h1 id="createafunctionthattakesaheadingindegreesandreturnsthecorrect32pointcompassheadingc7c">Create a function that takes a heading in degrees and returns the correct 32-point compass heading.<code></code></h1>
+<h1 id="usethefunctiontoprintanddisplayatableofindexcompasspointanddegreeratherlikethecorrespondingcolumnsfromthefirsttableoftheahrefwpboxingthecompasswikipediaarticlewpboxingthecompasswikipediaarticleabutuseonlythefollowing33headingsasinputc8c">Use the function to print and display a table of Index, Compass point, and Degree; rather like the corresponding columns from, the first table of the <a href="wp:Boxing the compass|wikipedia article">wp:Boxing the compass|wikipedia article</a>, but use only the following 33 headings as input:<code></code></h1>
+<p>:<code>&lt;a href="0.0, 16.87, 16.88, 33.75, 50.62, 50.63, 67.5, 84.37, 84.38, 101.25, 118.12, 118.13, 135.0, 151.87, 151.88, 168.75, 185.62, 185.63, 202.5, 219.37, 219.38, 236.25, 253.12, 253.13, 270.0, 286.87, 286.88, 303.75, 320.62, 320.63, 337.5, 354.37, 354.38"&gt;0.0, 16.87, 16.88, 33.75, 50.62, 50.63, 67.5, 84.37, 84.38, 101.25, 118.12, 118.13, 135.0, 151.87, 151.88, 168.75, 185.62, 185.63, 202.5, 219.37, 219.38, 236.25, 253.12, 253.13, 270.0, 286.87, 286.88, 303.75, 320.62, 320.63, 337.5, 354.37, 354.38&lt;/a&gt;</code>. (They should give the same order of points but are spread throughout the ranges of acceptance).<code></code>
+<code></code>
+<code></code>
+<br>Notes;<code></code></p>
+<ul>
+<li>The headings and indices can be calculated from this pseudocode:<code></code></li>
+</ul>
+<pre>for i in 0..32 inclusive:<code></code>
+    heading = i * 11.25<code></code>
+    case i %3:<code></code>
+      if 1: heading += 5.62; break<code></code>
+      if 2: heading -= 5.62; break<code></code>
+    end<code></code>
+    index = ( i mod 32) + 1</pre>
+<p><code></code></p>
+<ul>
+<li>The column of indices can be thought of as an enumeration of the thirty two cardinal points (see <a href="Talk:Box the compass#Direction, index, and angle|talk page">Talk:Box the compass#Direction, index, and angle|talk page</a>)..<code></code>
+<br><br><code></code></li>
+</ul>

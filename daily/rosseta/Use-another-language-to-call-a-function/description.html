@@ -1,0 +1,25 @@
+<link href="/styles/home.css" rel="stylesheet">
+<p>{{clarified-review}}<code></code>
+This task is inverse to the task <a href="Call foreign language function]]. Consider the following <a href="[C">Call foreign language function]">[C">Call foreign language function]</a>. Consider the following [[C</a> program:<code></code>
+<lang c>#include <stdio.h><code></code>
+<code></code>
+extern int Query (char * Data, size<em>t * Length);<code></code>
+<code></code>
+int main (int argc, char * argv <a href=""></a>)<code></code>
+{<code></code>
+   char     Buffer <a href="1024">1024</a>;<code></code>
+   size</em>t   Size = sizeof (Buffer);<code></code>
+<code></code>
+   if (0 == Query (Buffer, &Size))<code></code>
+   {¨C12C
+      printf ("failed to call Query\n");¨C13C
+   }¨C14C
+   else¨C15C
+   {¨C16C
+      char * Ptr = Buffer;¨C17C
+      while (Size-- > 0) putchar (*Ptr++);¨C18C
+      putchar ('\n');¨C19C
+   }¨C20C
+}</lang><code></code>
+<code></code>
+Implement the missing <code>Query</code> function in your language, and let this C program call it. The function should place the string <code><tt style="margin:0 0.5em">Here am I</tt></code> into the buffer which is passed to it as the parameter <code>Data</code>. The buffer size in bytes is passed as the parameter <code>Length</code>. When there is no room in the buffer, <code>Query</code> shall return 0. Otherwise it overwrites the beginning of <code>Buffer</code>, sets the number of overwritten bytes into <code>Length</code> and returns 1.<code></code></p>

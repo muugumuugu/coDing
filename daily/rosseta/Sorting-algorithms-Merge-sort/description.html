@@ -1,0 +1,66 @@
+<link href="/styles/home.css" rel="stylesheet">
+<p>{{Sorting Algorithm}}<code></code>
+<a href="Category:Recursion">Category:Recursion</a><code></code>
+<code></code>
+The &nbsp; <code>merge sort</code> &nbsp; is a recursive sort of order &nbsp; <big> n<em>log(n). </big><code></code>
+<code></code>
+It is notable for having a worst case and average complexity of &nbsp; <big> <code>O(n</em>log(n)), </big> &nbsp; and a best case complexity of &nbsp; <big> O(n)</code> &nbsp; </big> (for pre-sorted input).<code></code>
+<code></code>
+The basic idea is to split the collection into smaller groups by halving it until the groups only have one element or no elements &nbsp; (which are both entirely sorted groups).<code></code>
+<code></code>
+Then merge the groups back together so that their elements are in order.<code></code>
+<code></code>
+This is how the algorithm gets its &nbsp; <code>divide and conquer</code> &nbsp; description.<code></code>
+<code></code>
+<code></code>
+<br>Task:<code></code>
+Write a function to sort a collection of integers using the merge sort.<code></code>
+<code></code>
+<code></code>
+The merge sort algorithm comes in two parts:<code></code>
+    a sort function     and<code></code>
+    a merge function<code></code>
+<code></code>
+The functions in pseudocode look like this:<code></code>
+ <code>function</code> <code>mergesort</code>(m)<code></code>
+    <code>var</code> list left, right, result<code></code>
+    <code>if</code> length(m) ≤ 1<code></code>
+        <code>return</code> m<code></code>
+    <code>else</code><code></code>
+        <code>var</code> middle = length(m) / 2<code></code>
+        <code>for each<code>' x 'in' m '</code>up to</code> middle - 1<code></code>
+            <code>add<code>' x '</code>to</code> left<code></code>
+        <code>for each<code>' x 'in' m '</code>at and after</code> middle<code></code>
+            <code>add<code>' x '</code>to</code> right<code></code>
+        left = mergesort(left)<code></code>
+        right = mergesort(right)<code></code>
+        <code>if</code> last(left) ≤ first(right)<code></code>
+           <code>append<code>' right '</code>to</code> left<code></code>
+           <code>return</code> left<code></code>
+        result = merge(left, right)<code></code>
+        <code>return</code> result<code></code>
+<code></code>
+ <code>function</code> <code>merge</code>(left,right)<code></code>
+    <code>var</code> list result<code></code>
+    <code>while</code> length(left) &gt; 0 and length(right) &gt; 0<code></code>
+        <code>if</code> first(left) ≤ first(right)<code></code>
+            <code>append<code>' first(left) '</code>to</code> result<code></code>
+            left = rest(left)<code></code>
+        <code>else</code><code></code>
+            <code>append<code>' first(right) '</code>to</code> result<code></code>
+            right = rest(right)<code></code>
+    <code>if</code> length(left) &gt; 0<code></code>
+        <code>append<code>' rest(left) '</code>to</code> result<code></code>
+    <code>if</code> length(right) &gt; 0<code></code>
+        <code>append<code>' rest(right) '</code>to</code> result<code></code>
+    <code>return</code> result<code></code>
+<code></code>
+<code></code>
+<br>See also:<code></code></p>
+<ul>
+<li>&nbsp; the Wikipedia entry: &nbsp; <a href="wp:Merge_sort| merge sort">wp:Merge_sort| merge sort</a><code></code>
+<code></code>
+<code></code>
+Note: &nbsp; better performance can be expected if, rather than recursing until &nbsp; <big> length(m) ≤ 1, </big> &nbsp; an insertion sort is used for &nbsp; <big> length(m) </big> &nbsp; smaller than some threshold larger than &nbsp; <code>1</code>. &nbsp; However, this complicates the example code, so it is not shown here.<code></code>
+<br><br><code></code></li>
+</ul>

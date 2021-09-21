@@ -1,0 +1,16 @@
+<link href="/styles/home.css" rel="stylesheet">
+<p>{{task heading}}<code></code>
+<code></code>
+Write a program to find the &nbsp; <a href="wp:Median|median">wp:Median|median</a> &nbsp; value of a vector of floating-point numbers.<code></code>
+<code></code>
+The program need not handle the case where the vector is empty, but <code>must</code> handle the case where there are an even number of elements. &nbsp; In that case, return the average of the two middle values.<code></code>
+<code></code>
+There are several approaches to this. &nbsp; One is to sort the elements, and then pick the element(s) in the middle.<code></code>
+<code></code>
+Sorting would take at least &nbsp; <big><span style="font-family: serif">O(<code>n logn)</span></big>. &nbsp; Another approach would be to build a priority queue from the elements, and then extract half of the elements to get to the middle element(s). &nbsp; This would also take &nbsp; <big><span style="font-family: serif">O(n logn)</span></big>. &nbsp; The best solution is to use the &nbsp; <a href="wp:Selection algorithm|selection algorithm">wp:Selection algorithm|selection algorithm</a> &nbsp; to find the median in &nbsp; <big><span style="font-family: serif">O(n</code>)</span></big> &nbsp; time.<code></code>
+<code></code>
+{{task heading|See also}}<code></code>
+<a href="Quickselect_algorithm">Quickselect_algorithm</a><code></code>
+{{Related tasks/Statistical measures}}<code></code>
+<code></code>
+<hr><code></code></p>

@@ -1,0 +1,48 @@
+<link href="/styles/home.css" rel="stylesheet">
+<p>{{omit from|ACL2}}<code></code>
+{{omit from|Applesoft BASIC|no concept of a GUI}}<code></code>
+{{omit from|AWK|no concept of a GUI}}<code></code>
+{{omit from|Batch File}}<code></code>
+{{omit from|Blast}}<code></code>
+{{omit from|Brainf***}}<code></code>
+{{omit from|Commodore BASIC}}<code></code>
+{{omit from|GUISS|Can only do what the installed applications can do}}<code></code>
+{{omit from|Integer BASIC|no concept of a GUI}}<code></code>
+{{omit from|Lilypond}}<code></code>
+{{omit from|Logtalk}}<code></code>
+{{omit from|Lotus 123}}<code></code>
+{{omit from|Maxima}}<code></code>
+{{omit from|PARI/GP}}<code></code>
+{{omit from|PostScript}}<code></code>
+{{omit from|Retro}}<code></code>
+{{omit from|SQL PL|It does not handle GUI}}<code></code>
+<code></code>
+In addition to fundamental <a href="GUI component interaction">GUI component interaction</a>, an application should<code></code>
+dynamically enable and disable GUI components, to give some guidance to the<code></code>
+user, and prohibit (inter)actions which are inappropriate in the current state<code></code>
+of the application.<code></code>
+<code></code>
+<code></code>
+<br>Task:<code></code>
+Similar to the task <a href="GUI component interaction">GUI component interaction</a>, write a program<code></code>
+that presents a form with three components to the user:<code></code>
+::# &nbsp; a numeric input field ("Value")<code></code>
+::# &nbsp; a button &nbsp; ("increment")<code></code>
+::# &nbsp; a button &nbsp; ("decrement")<code></code>
+<code></code>
+<br><code></code>
+The field is initialized to zero.<code></code>
+The user may manually enter a new value into the field<br><code></code>
+increment its value with the "increment" button<br><code></code>
+or decrement the value with the "decrement" button.<code></code>
+<code></code>
+The input field should be enabled only when its value is zero.<code></code>
+The "increment" button only as long as the field's value is less then 10:<code></code>
+When the value 10 is reached, the button should go into a disabled state.<code></code>
+Analogously, the "decrement" button should be enabled only as long as<code></code>
+the value is greater than zero.<code></code>
+<code></code>
+Effectively, the user can now either increment up to 10, or down to zero.<code></code>
+Manually entering values outside that range is still legal<br><code></code>
+but the buttons should reflect that and enable/disable accordingly.<code></code>
+<br><br><code></code></p>

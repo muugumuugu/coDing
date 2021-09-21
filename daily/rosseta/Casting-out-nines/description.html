@@ -1,0 +1,29 @@
+<link href="/styles/home.css" rel="stylesheet">
+<p><br>Task &nbsp; (in three parts):<code></code>
+<code></code>
+<code></code>
+<br>Part 1<code></code>
+Write a procedure (say <math>\mathit{co9}(x)</math>) which implements <a href="http://mathforum.org/library/drmath/view/55926.html Casting Out Nines">http://mathforum.org/library/drmath/view/55926.html Casting Out Nines</a> as described by returning the checksum for <math>x</math>. Demonstrate the procedure using the examples given there, or others you may consider lucky.<code></code>
+<code></code>
+<br>Part 2<code></code>
+Notwithstanding past Intel microcode errors, checking computer calculations like this would not be sensible. To find a computer use for your procedure:<code></code>
+: Consider the statement "318682 is 101558 + 217124 and squared is 101558217124" (see: <a href="Kaprekar numbers#Casting Out Nines (fast)">Kaprekar numbers#Casting Out Nines (fast)</a>).<code></code>
+: note that <math>318682</math> has the same checksum as (<math>101558 + 217124</math>);<code></code>
+: note that <math>101558217124</math> has the same checksum as (<math>101558 + 217124</math>) because for a Kaprekar they are made up of the same digits (sometimes with extra zeroes);<code></code>
+: note that this implies that for Kaprekar numbers the checksum of <math>k</math> equals the checksum of <math>k^2</math>.<code></code>
+<code></code>
+Demonstrate that your procedure can be used to generate or filter a range of numbers with the property <math>\mathit{co9}(k) = \mathit{co9}(k^2)</math> and show that this subset is a small proportion of the range and contains all the Kaprekar in the range.<code></code>
+<code></code>
+<br>Part 3<code></code>
+Considering <a href="http://mathworld.wolfram.com/CastingOutNines.html this MathWorld page">http://mathworld.wolfram.com/CastingOutNines.html this MathWorld page</a>, produce a efficient algorithm based on the more mathematical treatment of Casting Out Nines, and realizing:<code></code>
+: <math>\mathit{co9}(x)</math> is the residual of <math>x</math> mod <math>9</math>;<code></code>
+: the procedure can be extended to bases other than 9.<code></code>
+<code></code>
+Demonstrate your algorithm by generating or filtering a range of numbers with the property <math>k%(\mathit{Base}-1) == (k^2)%(\mathit{Base}-1)</math> and show that this subset is a small proportion of the range and contains all the Kaprekar in the range.<code></code>
+<br><code></code>
+<br>related tasks<code></code></p>
+<ul>
+<li><a href="First perfect square in base N with N unique digits">First perfect square in base N with N unique digits</a><code></code></li>
+<li><a href="Kaprekar numbers">Kaprekar numbers</a><code></code>
+<br><code></code></li>
+</ul>

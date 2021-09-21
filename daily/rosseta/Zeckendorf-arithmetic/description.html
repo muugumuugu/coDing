@@ -1,0 +1,74 @@
+<link href="/styles/home.css" rel="stylesheet">
+<p>This task is a <code>total immersion</code> zeckendorf task; using decimal numbers will attract serious disapprobation.<code></code>
+<code></code>
+The task is to implement addition, subtraction, multiplication, and division using <a href="Zeckendorf number representation]]. <a href="[Zeckendorf number representation#Using_a_C.2B.2B11_User_Defined_Literal|Optionally">Zeckendorf number representation]">[Zeckendorf number representation#Using<em>a</em>C.2B.2B11<em>User</em>Defined<em>Literal|Optionally">Zeckendorf number representation]</a>. [[Zeckendorf number representation#Using</em>a<em>C.2B.2B11</em>User<em>Defined</em>Literal|Optionally</a> provide decrement, increment and comparitive operation functions.<code></code>
+<code></code>
+<br>Addition<code></code>
+Like binary 1 + 1 = 10, note carry 1 left. There the similarity ends. 10 + 10 = 101, note carry 1 left and 1 right. 100 + 100 = 1001, note carry 1 left and 2 right, this is the general case.<code></code>
+<code></code>
+Occurrences of 11 must be changed to 100. Occurrences of 111 may be changed from the right by replacing 11 with 100, or from the left converting 111 to 100 + 100;<code></code>
+<code></code>
+<br>Subtraction<code></code>
+10 - 1 = 1. The general rule is borrow 1 right carry 1 left. eg:<code></code></p>
+<pre><code></code>
+  abcde<code></code>
+  10100 -<code></code>
+   1000<code></code>
+  _____<code></code>
+    100  borrow 1 from a leaves 100<code></code>
+  + 100  add the carry<code></code>
+  _____<code></code>
+   1001<code></code>
+</pre>
+<p><code></code>
+A larger example:<code></code></p>
+<pre><code></code>
+  abcdef<code></code>
+  100100 -<code></code>
+    1000<code></code>
+  ______<code></code>
+  1*0100 borrow 1 from b<code></code>
+   + 100 add the carry<code></code>
+  ______<code></code>
+  1*1001<code></code>
+<code></code>
+Sadly we borrowed 1 from b which didn't have it to lend. So now b borrows from a:<code></code>
+<code></code>
+    1001<code></code>
+  + 1000 add the carry<code></code>
+    ____<code></code>
+   10100<code></code>
+</pre>
+<p><code></code>
+<code></code>
+<br>Multiplication<code></code>
+Here you teach your computer its zeckendorf tables. eg. 101 * 1001:<code></code></p>
+<pre><code></code>
+  a = 1 * 101 = 101<code></code>
+  b = 10 * 101 = a + a = 10000<code></code>
+  c = 100 * 101 = b + a = 10101<code></code>
+  d = 1000 * 101 = c + b = 101010<code></code>
+<code></code>
+  1001 = d + a therefore 101 * 1001 =<code></code>
+<code></code>
+  101010<code></code>
+   + 101<code></code>
+  ______<code></code>
+ 1000100<code></code>
+</pre>
+<p><code></code>
+<code></code>
+<br>Division<code></code>
+Lets try 1000101 divided by 101, so we can use the same table used for multiplication.<code></code></p>
+<pre><code></code>
+  1000101 -<code></code>
+   101010 subtract d (1000 * 101)<code></code>
+  _______<code></code>
+     1000 -<code></code>
+      101 b and c are too large to subtract, so subtract a<code></code>
+     ____<code></code>
+        1 so 1000101 divided by 101 is d + a (1001) remainder 1<code></code>
+</pre>
+<p><code></code>
+<code></code>
+<a href="http://arxiv.org/pdf/1207.4497.pdf Efficient algorithms for Zeckendorf arithmetic">http://arxiv.org/pdf/1207.4497.pdf Efficient algorithms for Zeckendorf arithmetic</a> is interesting. The sections on addition and subtraction are particularly relevant for this task.<code></code></p>

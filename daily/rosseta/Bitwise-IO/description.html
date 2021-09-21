@@ -1,0 +1,25 @@
+<link href="/styles/home.css" rel="stylesheet">
+<p>The aim of this task is to write functions (or create a class if your<code></code>
+language is Object Oriented and you prefer) for reading and writing sequences of<code></code>
+bits, most significant bit first. While the output of a <tt>asciiprint "STRING"</tt> is the ASCII byte sequence<code></code>
+"S", "T", "R", "I", "N", "G", the output of a "print" of the bits sequence<code></code>
+0101011101010 (13 bits) must be 0101011101010; real I/O is performed always<code></code>
+<code>quantized</code> by byte (avoiding endianness issues and relying on underlying<code></code>
+buffering for performance), therefore you must obtain as output the bytes<code></code>
+0101 0111 0101 0<code>000</code> (bold bits are padding bits), i.e. in hexadecimal 57 50.<code></code>
+<code></code>
+As test, you can implement a <code>rough</code> (e.g. don't care about error handling or<code></code>
+other issues) compression/decompression program for ASCII sequences<code></code>
+of bytes, i.e. bytes for which the most significant bit is always unused, so that you can write<code></code>
+seven bits instead of eight (each 8 bytes of input, we write 7 bytes of output).<code></code>
+<code></code>
+These bit oriented I/O functions can be used to implement compressors and<code></code>
+decompressors; e.g. Dynamic and Static Huffman encodings use variable length<code></code>
+bits sequences, while LZW (see <a href="LZW compression">LZW compression</a>) use fixed or variable <code>words</code><code></code>
+nine (or more) bits long.<code></code>
+<code></code></p>
+<ul>
+<li>Limits in the maximum number of bits that can be written/read in a single read/write operation are allowed.<code></code></li>
+<li>Errors handling is not mandatory<code></code>
+<br><br><code></code></li>
+</ul>

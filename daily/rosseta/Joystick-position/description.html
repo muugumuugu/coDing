@@ -1,0 +1,21 @@
+<link href="/styles/home.css" rel="stylesheet">
+<p>The task is to determine the joystick position and represent this on the display via a crosshair.<code></code>
+For a centred joystick, the crosshair should appear in the centre of the screen.<code></code>
+If the joystick is pushed left or right, then the cross hair should move left or right according to the extent that the joystick is pushed.<code></code>
+<code></code>
+If the joystick is pushed forward or pulled back, then the crosshair should move up or down according to the extent that that joystick is pushed or pulled.<code></code>
+The edges of the display represent maximum extents for joystick movement.<code></code>
+<code></code>
+For example, a joystick pushed fully forward would raise the crosshair to the top centre of the screen.<code></code>
+<code></code>
+A joystick pulled backwards and to the right would move the crosshair to the bottom right of the screen (except for a small area reserved to show joystick status). Implementations can use a graphical display method to produce the crosshair, or alternatively represent the crosshair using a plus symbol on<code></code>
+a terminal, and move the plus symbol position according to the joystick.<code></code>
+The bottom part of the display can hide or show an alphanumeric sequence to represent the buttons pressed.<code></code>
+<code></code>
+For example, if pushbuttons 1,4 and 10 are depressed, we could display "1 4 A".<code></code>
+<code></code>
+The implemented code should continue to redraw the crosshair according to the joystick position and show the current pushbutton statuses until the task is terminated.<code></code>
+Digital joysticks that produce no extent data, should have their position indicated as full extent movement of the crosshair.<code></code>
+<code></code>
+For the purpose of this task, we assume that the joystick is calibrated and that the first joystick is being used. <br><code></code>
+The task implementer could at their option provide a solution that includes a joystick selection facility, enabling the user to choose which joystick is to be used for this task.<code></code></p>

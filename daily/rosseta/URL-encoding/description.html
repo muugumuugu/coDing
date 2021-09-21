@@ -1,0 +1,39 @@
+<link href="/styles/home.css" rel="stylesheet">
+<p><br>Task:<code></code>
+Provide a function or mechanism to convert a provided string into URL encoding representation.<code></code>
+<code></code>
+In URL encoding, special characters, control characters and extended characters<code></code>
+are converted into a percent symbol followed by a two digit hexadecimal code<br><code></code>
+So a space character encodes into %20 within the string.<code></code>
+<code></code>
+For the purposes of this task, every character except 0-9, A-Z and a-z requires conversion, so the following characters all require conversion by default:<code></code>
+<code></code></p>
+<ul>
+<li>ASCII control codes (Character ranges 00-1F hex (0-31 decimal) and 7F (127 decimal).<code></code></li>
+<li>ASCII symbols (Character ranges 32-47 decimal (20-2F hex))<code></code></li>
+<li>ASCII symbols (Character ranges 58-64 decimal (3A-40 hex))<code></code></li>
+<li>ASCII symbols (Character ranges 91-96 decimal (5B-60 hex))<code></code></li>
+<li>ASCII symbols (Character ranges 123-126 decimal (7B-7E hex))<code></code></li>
+<li>Extended characters with character codes of 128 decimal (80 hex) and above.<code></code>
+<code></code>
+<br><code></code>
+<br>Example:<code></code>
+The string "<code>&lt;nowiki&gt;http://foo bar/&lt;/nowiki&gt;</code>" would be encoded as "<code>&lt;nowiki&gt;http%3A%2F%2Ffoo%20bar%2F&lt;/nowiki&gt;</code>".<code></code>
+<code></code>
+<code></code>
+<br>Variations:<code></code></li>
+<li>Lowercase escapes are legal, as in "<code>&lt;nowiki&gt;http%3a%2f%2ffoo%20bar%2f&lt;/nowiki&gt;</code>".<code></code></li>
+<li>Some standards give different rules: RFC 3986, <code>Uniform Resource Identifier (URI): Generic Syntax</code>, section 2.3, says that "-.<em>~" should not be encoded. HTML 5, section <a href="http://www.whatwg.org/specs/web-apps/current-work/multipage/association-of-controls-and-forms.html#url-encoded-form-data 4.10.22.5 URL-encoded form data">http://www.whatwg.org/specs/web-apps/current-work/multipage/association-of-controls-and-forms.html#url-encoded-form-data 4.10.22.5 URL-encoded form data</a>, says to preserve "-.</em>*", and to encode space " " to "+". The options below provide for utilization of an exception string, enabling preservation (non encoding) of particular characters to meet specific standards.<code></code>
+<code></code>
+<code></code>
+<br>Options:<code></code>
+It is permissible to use an exception string (containing a set of symbols<code></code>
+that do not need to be converted).<code></code>
+However, this is an optional feature and is not a requirement of this task.<code></code>
+<code></code>
+<code></code>
+<br>Related tasks:<code></code></li>
+<li>&nbsp; <a href="URL decoding">URL decoding</a><code></code></li>
+<li>&nbsp; <a href="URL parser">URL parser</a><code></code>
+<br><br><code></code></li>
+</ul>

@@ -1,0 +1,41 @@
+<link href="/styles/home.css" rel="stylesheet">
+<p><br>Task:<code></code>
+Given the operator characteristics and input from the <a href="wp:Shunting-yard_algorithm|Shunting-yard algorithm">wp:Shunting-yard_algorithm|Shunting-yard algorithm</a> page and tables, use the algorithm to show the changes in the operator stack and RPN output<code></code>
+as each individual token is processed.<code></code>
+<code></code></p>
+<ul>
+<li>Assume an input of a correct, space separated, string of tokens representing an infix expression<code></code></li>
+<li>Generate a space separated output string representing the RPN<code></code></li>
+<li>Test with the input string:<code></code>
+:::: <big><big><code> 3 + 4 * 2 / ( 1 - 5 ) ^ 2 ^ 3 </code></big></big><code></code></li>
+<li>print and display the output here.<code></code></li>
+<li>Operator precedence is given in this table:<code></code>
+:{| class="wikitable"<code></code>
+<code></code>
+! operator !! <a href="wp:Order_of_operations|precedence]] !! <a href="[wp:Operator_associativity|associativity">wp:Order<em>of</em>operations|precedence]">[wp:Operator<em>associativity|associativity">wp:Order</em>of<em>operations|precedence]</a> !! [[wp:Operator</em>associativity|associativity</a> !! operation<code></code>
+|- || align="center"<code></code>
+|                    <big><big> ^ </big></big>  ||  4  ||  right  ||  exponentiation<code></code>
+|- || align="center"<code></code>
+|                    <big><big> * </big></big>  ||  3  ||  left   ||  multiplication<code></code>
+|- || align="center"<code></code>
+|                    <big><big> / </big></big>  ||  3  ||  left   ||  division<code></code>
+|- || align="center"<code></code>
+|                    <big><big> + </big></big>  ||  2  ||  left   ||  addition<code></code>
+|- || align="center"<code></code>
+|                    <big><big> - </big></big>  ||  2  ||  left   ||  subtraction<code></code>
+|}<code></code>
+<code></code>
+<br><code></code>
+<br>Extra credit<code></code>
+Add extra text explaining the actions and an optional comment for the action on receipt of each token.<code></code>
+<code></code>
+<code></code>
+<br>Note<code></code>
+The handling of functions and arguments is not required.<code></code>
+<code></code>
+<code></code>
+<br>See also:<code></code></li>
+<li><a href="Parsing/RPN calculator algorithm">Parsing/RPN calculator algorithm</a> for a method of calculating a final value from this output RPN expression.<code></code></li>
+<li><a href="Parsing/RPN to infix conversion">Parsing/RPN to infix conversion</a>.<code></code>
+<br><br><code></code></li>
+</ul>

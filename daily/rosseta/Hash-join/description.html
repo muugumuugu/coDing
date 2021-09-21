@@ -1,0 +1,119 @@
+<link href="/styles/home.css" rel="stylesheet">
+<p>An <a href="wp:Join_(SQL)#Inner_join|inner join]] is an operation that combines two data tables into one table, based on matching column values. The simplest way of implementing this operation is the <a href="[wp:Nested loop join|nested loop join]] algorithm, but a more scalable alternative is the [[wp:hash join|hash join">wp:Join<em>(SQL)#Inner</em>join|inner join]] is an operation that combines two data tables into one table, based on matching column values. The simplest way of implementing this operation is the [[wp:Nested loop join|nested loop join]">[wp:Nested loop join|nested loop join]] algorithm, but a more scalable alternative is the [[wp:hash join|hash join">wp:Join<em>(SQL)#Inner</em>join|inner join]] is an operation that combines two data tables into one table, based on matching column values. The simplest way of implementing this operation is the [[wp:Nested loop join|nested loop join]</a> algorithm, but a more scalable alternative is the [[wp:hash join|hash join</a> algorithm.<code></code>
+<code></code>
+{{task heading}}<code></code>
+<code></code>
+Implement the "hash join" algorithm, and demonstrate that it passes the test-case listed below.<code></code>
+<code></code>
+You should represent the tables as data structures that feel natural in your programming language.<code></code>
+<code></code>
+{{task heading|Guidance}}<code></code>
+<code></code>
+The "hash join" algorithm consists of two steps:<code></code>
+<code></code></p>
+<h1 id="hashphasecreateaahrefwpmultimapmultimapwpmultimapmultimapafromoneofthetwotablesmappingfromeachjoincolumnvaluetoalltherowsthatcontainitbrc12c"><code>Hash phase:</code> Create a <a href="wp:Multimap|multimap">wp:Multimap|multimap</a> from one of the two tables, mapping from each join column value to all the rows that contain it.<br><code></code></h1>
+<h1 id="themultimapmustsupporthashbasedlookupwhichscalesbetterthanasimplelinearsearchbecausethatsthewholepointofthisalgorithmc13c">* The multimap must support hash-based lookup which scales better than a simple linear search, because that's the whole point of this algorithm.<code></code></h1>
+<h1 id="ideallyweshouldcreatethemultimapforthesmallertablethusminimizingitscreationtimeandmemorysizec14c">* Ideally we should create the multimap for the <code>smaller</code> table, thus minimizing its creation time and memory size.<code></code></h1>
+<h1 id="joinphasescantheothertableandfindmatchingrowsbylookinginthemultimapcreatedbeforec15c"><code>Join phase:</code> Scan the other table, and find matching rows by looking in the multimap created before.<code></code></h1>
+<p><code></code>
+<br><code></code>
+In pseudo-code, the algorithm could be expressed as follows:<code></code>
+<code></code>
+ <code>let</code> <code>A</code> = the first input table (or ideally, the larger one)<code></code>
+ <code>let</code> <code>B</code> = the second input table (or ideally, the smaller one)<code></code>
+ <code>let</code> <code>j<sub>A</sub> = the join column ID of table A</code><code></code>
+ <code>let</code> <code>j<sub>B</sub> = the join column ID of table B</code><code></code>
+ <code>let</code> <code>M<sub>B</sub> = a multimap for mapping from single values to multiple rows of table B</code> (starts out empty)<code></code>
+ <code>let</code> <code>C</code> = the output table (starts out empty)<code></code>
+<code></code>
+ <code>for each<code>' row b 'in' table B'</code>:</code><code></code>
+    <code>place<code>' b 'in</code> multimap M<sub>B</sub> under key b(j<sub>B</sub></code>)<code></code>
+<code></code>
+ <code>for each<code>' row a 'in' table A'</code>:</code><code></code>
+    <code>for each<code>' row b 'in' multimap M<sub>B</sub> under key a(j<sub>A</sub>)'</code>:</code><code></code>
+       <code>let</code> <code>c = the concatenation of row a and row b</code><code></code>
+       <code>place</code> row <code>c in table C</code><code></code>
+<code></code>
+{{task heading|Test-case}}<code></code>
+<code></code>
+{| class="wikitable"<code></code>
+|-<code></code>
+! Input<code></code>
+! Output<code></code>
+|-<code></code>
+|<code></code>
+<code></code>
+{| style="border:none; border-collapse:collapse;"<code></code>
+|-<code></code>
+| style="border:none" | <code>A</code> =<code></code>
+| style="border:none" |<code></code>
+<code></code>
+{| class="wikitable"<code></code>
+|-<code></code>
+! Age !! Name<code></code>
+|-<code></code>
+| 27 || Jonah<code></code>
+|-<code></code>
+| 18 || Alan<code></code>
+|-<code></code>
+| 28 || Glory<code></code>
+|-<code></code>
+| 18 || Popeye<code></code>
+|-<code></code>
+| 28 || Alan<code></code>
+|}<code></code>
+<code></code>
+| style="border:none; padding-left:1.5em;" rowspan="2" |<code></code>
+| style="border:none" | <code>B</code> =<code></code>
+| style="border:none" |<code></code>
+<code></code>
+{| class="wikitable"<code></code>
+|-<code></code>
+! Character !! Nemesis<code></code>
+|-<code></code>
+| Jonah || Whales<code></code>
+|-<code></code>
+| Jonah || Spiders<code></code>
+|-<code></code>
+| Alan || Ghosts<code></code>
+|-<code></code>
+| Alan || Zombies<code></code>
+|-<code></code>
+| Glory || Buffy<code></code>
+|}<code></code>
+<code></code>
+|-<code></code>
+| style="border:none" | <code>j<sub>A</sub></code> =<code></code>
+| style="border:none" | <code>Name</code> (i.e. column 1)<code></code>
+<code></code>
+| style="border:none" | <code>j<sub>B</sub></code> =<code></code>
+| style="border:none" | <code>Character</code> (i.e. column 0)<code></code>
+|}<code></code>
+<code></code>
+|<code></code>
+<code></code>
+{| class="wikitable" style="margin-left:1em"<code></code>
+|-<code></code>
+! A.Age !! A.Name !! B.Character !! B.Nemesis<code></code>
+|-<code></code>
+| 27 || Jonah || Jonah || Whales<code></code>
+|-<code></code>
+| 27 || Jonah || Jonah || Spiders<code></code>
+|-<code></code>
+| 18 || Alan || Alan || Ghosts<code></code>
+|-<code></code>
+| 18 || Alan || Alan || Zombies<code></code>
+|-<code></code>
+| 28 || Glory || Glory || Buffy<code></code>
+|-<code></code>
+| 28 || Alan || Alan || Ghosts<code></code>
+|-<code></code>
+| 28 || Alan || Alan || Zombies<code></code>
+|}<code></code>
+<code></code>
+|}<code></code>
+<code></code>
+The order of the rows in the output table is not significant.<br><code></code>
+If you're using numerically indexed arrays to represent table rows (rather than referring to columns by name), you could represent the output rows in the form <code style="white-space:nowrap">&lt;a href="27, "Jonah"], &lt;a href=""Jonah", "Whales""&gt;27, "Jonah""&gt;"Jonah", "Whales""&gt;27, "Jonah"&lt;/a&gt;, ["Jonah", "Whales"&lt;/a&gt;</code>.<code></code>
+<code></code>
+<br><hr><code></code></p>

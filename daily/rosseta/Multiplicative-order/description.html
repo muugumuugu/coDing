@@ -1,0 +1,49 @@
+<link href="/styles/home.css" rel="stylesheet">
+<p>The <code>multiplicative order</code> of <code>a relative to m is the least positive integer n such that a^n is 1 (modulo m</code>).<code></code>
+<code></code>
+<code></code>
+<br>Example:<code></code>
+The multiplicative order of 37 relative to 1000 is 100 because 37^100 is 1 (modulo 1000), and no number smaller than 100 would do.<code></code>
+<code></code>
+<code></code>
+One possible algorithm that is efficient also for large numbers is the following: By the <a href="wp:Chinese_Remainder_Theorem|Chinese Remainder Theorem">wp:Chinese<em>Remainder</em>Theorem|Chinese Remainder Theorem</a>, it's enough to calculate the multiplicative order for each prime exponent <code>p^k of m</code>, and<code></code>
+combine the results with the <code><a href="least common multiple">least common multiple</a></code> operation.<code></code>
+<code></code>
+Now the order of <code>a with regard to p^k must divide &Phi;(p^k). Call this number t, and determine it's factors q^e. Since each multiple of the order will also yield 1 when used as exponent for a, it's enough to find the least d such that (q^d)*(t/(q^e))</code> yields 1 when used as exponent.<code></code>
+<code></code>
+<code></code>
+<br>Task:<code></code>
+Implement a routine to calculate the multiplicative order along these lines. You may assume that routines to determine the factorization into prime powers are available in some library.<code></code>
+<code></code>
+----<code></code>
+<code></code>
+An algorithm for the multiplicative order can be found in Bach &amp; Shallit, <i>Algorithmic Number Theory, Volume I: Efficient Algorithms</i>, The MIT Press, 1996:<code></code>
+<code></code></p>
+<p>Exercise 5.8, page 115:</p>
+<p><code></code>
+<code></code></p>
+<p>Suppose you are given a prime<tt> p </tt>and a complete factorization<code></code>
+of<tt> p-1</tt>. &nbsp; Show how to compute the order of an<code></code>
+element<tt> a </tt>in<tt> (Z/(p))<sup>*</sup> </tt>using<tt> O((lg p)<sup>4</sup>/(lg lg p)) </tt>bit<code></code>
+operations.</p>
+<p><code></code>
+<code></code></p>
+<p>Solution, page 337:</p>
+<p><code></code>
+<code></code></p>
+<p>Let the prime factorization of<tt> p-1 </tt> be<tt> q1<sup>e1</sup>q2<sup>e2</sup>...qk<sup>ek</sup></tt> .<tt> </tt>We use the following observation:<code></code>
+if<tt> x^((p-1)/qi<sup>fi</sup>) = 1 (mod p)</tt> ,<tt> </tt><code></code>
+and<tt> fi=ei </tt>or<tt> x^((p-1)/qi<sup>fi+1</sup>) != 1 (mod p)</tt> ,<tt> </tt>then<tt> qi<sup>ei-fi</sup>||ord<sub>p</sub> x</tt>. &nbsp; (This follows by combining Exercises 5.1 and 2.10.)<code></code>
+<code></code>
+Hence it suffices to find, for each<tt> i</tt> ,<tt> </tt>the exponent<tt> fi </tt> such that the condition above holds.</p>
+<p><code></code>
+<code></code>
+<p>This can be done as follows: first compute<tt> q1<sup>e1</sup>, q2<sup>e2</sup>, ... <br><code></code>
+qk<sup>ek</sup></tt> .<tt> </tt> This can be done using<tt> O((lg p)<sup>2</sup>) </tt>bit operations. Next, compute<tt> y1=(p-1)/q1<sup>e1</sup>, ... , yk=(p-1)/qk<sup>ek</sup></tt> .<tt> </tt><code></code>
+This can be done using<tt> O((lg p)<sup>2</sup>) </tt>bit operations. Now, using the binary method<br><code></code>
+compute<tt> x1=a<sup>y1</sup>(mod p), ... ,  xk=a<sup>yk</sup>(mod p) </tt>.<tt> </tt><code></code>
+This can be done using<tt> O(k(lg p)<sup>3</sup>) </tt>bit operations, and<tt> k=O((lg p)/(lg lg p)) </tt>by Theorem 8.8.10.<code></code>
+Finally, for each<tt> i</tt> ,<tt> </tt>repeatedly raise<tt> xi </tt>to the<tt> qi</tt>-th power<tt> (mod p) </tt>(as many as<tt> ei-1 </tt> times), checking to see when 1 is obtained.<code></code>
+This can be done using<tt> O((lg p)<sup>3</sup>) </tt>steps.<code></code>
+The total cost is dominated by<tt> O(k(lg p)<sup>3</sup>)</tt> ,<tt> </tt>which is<tt> O((lg p)<sup>4</sup>/(lg lg p))</tt>.<code></code>
+<br><br><code></code></p>

@@ -1,0 +1,25 @@
+<link href="/styles/home.css" rel="stylesheet">
+<p>Implementation of &nbsp; <a href="wp:Interval_arithmetic|interval arithmetic">wp:Interval<em>arithmetic|interval arithmetic</a> &nbsp; and more generally fuzzy number arithmetic require operations that yield safe upper and lower bounds of the exact result.<code></code>
+<code></code>
+For example, for an addition, it is the operations &nbsp; <big> +&uarr; </big> &nbsp; and &nbsp; <big> +&darr; </big> &nbsp; defined as: &nbsp; <big> <code>a +&darr; b &le; a + b &le; a +&uarr; b</code>. </big><code></code>
+<code></code>
+Additionally it is desired that the width of the interval &nbsp; <big> (<code>a +&uarr; b) - (a +&darr; b</code>) </big>  &nbsp; would be about the machine epsilon after removing the exponent part.<code></code>
+<code></code>
+Differently to the standard floating-point arithmetic, safe interval arithmetic is <code>accurate</code> (but still imprecise).<code></code>
+<code></code>
+I.E.: &nbsp; the result of each defined operation contains (though does not identify) the exact mathematical outcome.<code></code>
+<code></code>
+Usually a &nbsp; <a href="wp:Floating_Point_Unit|FPU's">wp:Floating</em>Point_Unit|FPU's</a> &nbsp; have machine &nbsp; <big> +,-,*,/ </big> &nbsp; operations accurate within the machine precision.<code></code>
+<code></code>
+To illustrate it, let us consider a machine with decimal floating-point arithmetic that has the precision is <code>3</code> decimal points.<code></code>
+<code></code>
+If the result of the machine addition is &nbsp; <big> 1.23, </big> &nbsp; then the exact mathematical result is within the interval &nbsp; <big> ]1.22, 1.24[. </big><code></code>
+<code></code>
+When the machine rounds towards zero, then the exact result is within &nbsp; <big> [1.23,1.24[. </big> &nbsp; This is the basis for an implementation of safe addition.<code></code>
+<code></code>
+<code></code>
+<br>Task;<code></code>
+Show how &nbsp; <big> +&darr; </big> &nbsp; and &nbsp; <big> +&uarr; </big> &nbsp; can be implemented in your language using the standard floating-point type.<code></code>
+<code></code>
+Define an interval type based on the standard floating-point one, &nbsp; and implement an interval-valued addition of two floating-point numbers considering them exact, in short an operation that yields the interval &nbsp; <big> <a href="<code>a +&darr; b, a +&uarr; b">a +&darr; b, a +&uarr; b</code></a>. </big><code></code>
+<br><br><code></code></p>
