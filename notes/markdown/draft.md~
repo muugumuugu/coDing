@@ -1,5 +1,6 @@
 <!-- Required extensions: pymdownx.betterem, pymdownx.tilde, pymdownx.emoji, pymdownx.tasklist, pymdownx.superfences -->
-
++ image-data-uri encodeFromFile fpath > outpath
++ git update-index --assume-unchanged <path>
 + ConcaT videos
 	```
 	for f in *.mp4; do echo "file '$f'" >>files.txt;done;

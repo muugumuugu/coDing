@@ -1,4 +1,6 @@
 <!-- Required extensions: pymdownx.betterem, pymdownx.tilde, pymdownx.emoji, pymdownx.tasklist, pymdownx.superfences -->
++ image-data-uri encodeFromFile fpath > outpath
+	+ npx image-data-uri --help
 + git update-index --assume-unchanged <path>
 + ConcaT videos
 	```
