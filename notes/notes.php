@@ -4,7 +4,7 @@ include_once "markdown.php";
 $editting=true;
 $backup=true;
 $wikiName="coding notes";
-$exceptions=array("markdown.php","notes.php");
+$exceptions=array("markdown.php","notes.php","index.html");
 //
 //$exceptions=array("scripts");
 $css=array("/styles/home.css");
@@ -56,9 +56,11 @@ function readDirectory($dir,$exceptions,$level=0){
 				echo "</details></div>";
 			}
 		}
-		if (preg_match('/^.*\.(md|MD|markdown|MarkDown|text|Text|TEXT|txt|TXT)$/',$entry)) {
+		if (preg_match('/^.*\.(md|MD|markdown|MarkDown|text|Text|TEXT|txt|TXT|HTML|html|htm|HTM)$/',$entry)) {
+			if (preg_match('/index\.html/i',$entry)==0){
 			$entryURL='entry='.urlencode($dir).'/'.urlencode($entry);
 		    array_push($notDirs, "<li class='point'><h><a href=$url?".htmlentities($entryURL).">$entry</a><h></li>\n");
+		    }
 		}
 	    }
 		sort($notDirs);
@@ -219,6 +221,6 @@ if ($_GET['edit']){
 }
 ?>
 </div>
-
+<footer><a href="./">back to notes folder</a></footer>
 </body>
 </html>
