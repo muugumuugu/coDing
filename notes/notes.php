@@ -3,8 +3,8 @@ include_once "markdown.php";
 
 $editting=true;
 $backup=true;
-$wikiName="coding notes - formatted";
-$exceptions=array("markdown.php","index.php");
+$wikiName="coding notes";
+$exceptions=array("markdown.php","notes.php");
 //
 //$exceptions=array("scripts");
 $css=array("/styles/home.css");
@@ -18,7 +18,7 @@ place more header entries here to come after HOME and EDIT
 "Markdown Manual"=>"http://daringfireball.net/projects/markdown/syntax",
 );
 	$nav=array(
-		"HOME"=>"./index.php",
+		"HOME"=>"./notes.php",
 	);
 if(isset($_GET['entry'])){
 	if(!isset($_GET['edit'])&&$editting){
@@ -148,7 +148,7 @@ details[open]{
 width:800px; padding:10px;border:dotted;border-width:0.3px;margin:15px
 }
 ul.flexnone{margin:0px;padding:5px;}
-li.point {margin:10px;width:300px;}
+ul.flexnone li {margin:2px;width:230px;}
 </style>
 <?php
 if(isset($favicon)){
@@ -162,7 +162,7 @@ if(isset($favicon)){
 <div class="navbar navbar-inverse navbar-fixed-top">
   <div class="navbar-inner">
     <div class="container">
-      <header><h1><a class="brand" href="index.php"><?php echo $wikiName; ?></a></h1></header>
+      <header><h1><a class="brand" href="notes.php"><?php echo $wikiName; ?></a></h1></header>
       <ul class="nav">
 <?php
 foreach($nav as $show=>$html){
@@ -191,7 +191,7 @@ if (!$_GET['edit']){
 		readDirectory('.',$exceptions);
 	}
 	if ( isset($_GET['entry'])){
-		if ( strpos($_GET['entry'], 'index.php') === false ){
+		if ( strpos($_GET['entry'], 'notes.php') === false ){
 			readDirFile('.',$exceptions);
 		}
 		else{
@@ -206,7 +206,7 @@ if ($_GET['edit']){
 		readDirectory('.',$exceptions);
 	} else {
 ?>
-	<form action="./index.php" method="post">
+	<form action="./notes.php" method="post">
 		<input type="hidden" name="article" value="<?php echo $_GET['entry']; ?>" >
 		<textarea name="update" rows="25" cols="100" class="field span12" <?php if(!$editting) echo "disabled";?>><?php readDirFileRAW('.');?></textarea>
 		<br/>
