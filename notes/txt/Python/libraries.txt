@@ -1,0 +1,209 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+
+
+====== Useful Modules, Packages and Libraries ======
+
+== Standard Library Backports ==
+* StandardLibraryBackports - modules that make later standard library functionality available in earlier version
+
+== Cryptography ==
+Python includes several modules for [[http://www.python.org/doc/lib/module-hashlib.html|hashing]] and even basic [[http://www.python.org/doc/lib/module-socket.html|ssl support]] which is integrated into the socket module.
+
+For more serious cryptography work, have a look at the following extension modules.
+
+== Interfaces to OpenSSL ==
+
+[[http://www.openssl.org/|OpenSSL]] is an open-source library that implements SSL and comes with a large number of very fast crypto and hash algorithm implementations.
+
+* M2Crypto - Python interface to OpenSSL
+* [[http://pyopenssl.sf.net/|pyOpenSSL]] - Python interface to OpenSSL, with focus on SSL networking
+* [[http://www.egenix.com/products/python/pyOpenSSL/|eGenix pyOpenSSL Distribution]] - An easy-to-install distribution of pyOpenSSL
+
+== Stand-alone Cryptographic Libraries ==
+
+* [[http://www.amk.ca/python/code/crypto.html|Python Cryptography Toolkit]] - A collection of crypto-related algorithms and protocols implemented as Python extension
+
+== Resources ==
+
+* [[http://listserv.surfnet.nl/archives/python-crypto.html|python-crypto Mailing List]] - A mailing list for discussing Python and cryptography
+
+== Database ==
+* [[http://www.sqlalchemy.org/|SQLAlchemy]] or [[http://sqlobject.org/|SQLObject]] - Object oriented access to several different database systems
+* DatabaseInterfaces - Direct Python interfaces to relational and non-relational database backends
+* See also DatabaseProgramming for guidance on choosing a database backend system
+
+== Foreign Function Interface ==
+* [[http://starship.python.net/crew/theller/ctypes/|CTypes]] - A package for calling the functions of dlls/shared libraries. Now included with Python 2.5 and up.
+* [[http://cython.org/|Cython]] is an extension language for the CPython runtime. It translates Python code to fast C code and supports calling external C and C++ code natively. As opposed to ctypes, it requires a C compiler to translate the generated code.
+
+== Game Development ==
+* [[http://www.pygame.org/|PyGame]] - Principal wrapper of the SDL library.
+* See also GameProgramming. A more comprehensive list of packages can be found on the PythonGameLibraries page.
+
+== GIS (Geographic Information System) ==
+List of GIS Web services packages tools :
+* [[http://pypi.python.org/pypi/googlemaps/|googlemaps]] Easy geocoding, reverse geocoding, driving directions, and local search in Python via Google.
+* [[http://pypi.python.org/pypi/geopy|geopy]] Python Geocoding Toolbox
+
+== GUI ==
+* PyGtk - Bindings for the cross-platform Gtk toolkit.
+* PyQt - Bindings for the cross-platform Qt framework.
+* TkInter - The traditional Python user interface toolkit.
+* WxPython - wxWidgets bindings for Python supporting PythonCard
+* [[https://pypi.python.org/pypi/wax/|Wax]] is a GUI toolkit. It sits on top of wxPython, removing some of the low-level aspects of that GUI, and adding some useful abstractions. The goal is that Wax should be easier to use than WxPython, to be more "Pythonic". It's far from feature complete but very nice for quick hacks.
+* PyjamasDesktop - Bindings and a framework for the cross-platform [[http://webkit.org|webkit]].
+* [[https://pysimplegui.readthedocs.io/en/latest/|PySimpleGUI]] - Wrapper for TkInter, Qt, wxpython and Remi (Web) that makes GUI development easy and compact
+* GUI Programming is, in many cases, a matter of taste. See a more extensive list on the GuiProgramming page.
+
+=== Console ===
+
+== Ascii Table packages ==
+* [[http://pypi.python.org/pypi/text_table/|text_table]]
+* [[http://pypi.python.org/pypi/PrettyTable|PrettyTable]] :not support break line in cells.
+* [[http://pypi.python.org/pypi/texttable/0.7.0|texttable]]
+
+== Audio / Music ==
+= Built in modules =
+
+
+The [[http://docs.python.org/3/library/mm.html|Multimedia Services]] allow for some basic audio functionality in Python. It consists of the following modules:
+
+* [[http://docs.python.org/3/library/audioop.html|audioop]] Manipulate raw audio data.
+* [[http://docs.python.org/3/library/aifc.html|aifc]] Read and write audio files in AIFF or AIFC format.
+* [[http://docs.python.org/3/library/sunau.html|sunau]] Provide an interface to the Sun AU sound format.
+* [[http://docs.python.org/3/library/wave.html|wave]] Provide an interface to the WAV sound format.
+* [[http://docs.python.org/3/library/chunk.html|chunk]] Module to read IFF (e.g. AIFF) chunks.
+* [[http://docs.python.org/3/library/chunk.html|colorsys]] Conversions between colour systems.
+* [[http://docs.python.org/3/library/chunk.html|imghdr]] Determine the type of a image file.
+* [[http://docs.python.org/3/library/sndhdr.html|sndhdr]] Determine the type of a sound file.
+* [[http://docs.python.org/3/library/ossaudiodev.html|ossaudiodev]] Access to OSS-compatible audio devices (mainly important for Linux / FreeBSD)
+* [[http://docs.python.org/3/library/winsound.html|winsound]] Access to the basic sound-playing machinery provided by Windows platforms.
+
+= Beyond the default modules =
+
+* [[http://nsound.sourceforge.net|Nsound]] C++ library with Python module for audio synthesis.
+* [[http://pypi.python.org/pypi/pyaudiere/0.2|PyAudiere]] A high-level audio interface for Python. (deadlink)
+* [[http://pydub.com|Pydub]] A high-level audio interface for Python. Uses ffmpeg for formats other than WAVE
+* [[http://people.csail.mit.edu/hubert/pyaudio/|pyAudio]] Python bindings for  audio input and output
+* [[http://www.speech.kth.se/snack/|Snack]] Playback, recording, file and socket I/O, waveforms and spectrograms. "Last release 2004-12-01. Dead?"
+* [[http://sourceforge.net/projects/audiotools/|Python Audio Tools]] Programs for CD-ripping and conversion between audio file formats.
+* [[https://pypi.python.org/pypi/musicplayer|musicplayer module]] Part of a [[http://albertz.github.com/music-player/|music player]]. It uses FFmpeg for decoding and for output. It supports gapless playback and high sample rates (96kHz or 192kHz). It also has the functionality to calculate the replay gain value and do loudness normalization, to calculate the acoustic id fingerprint, to get the metadata (via FFmpeg) and to calculate a visual representation for a sound file.
+* [[http://python-sounddevice.rtfd.org/|sounddevice]] This module provides bindings for the [[http://www.portaudio.com/|PortAudio]] library (using [[https://cffi.rtfd.org/|CFFI]]) and a few convenience functions to play and record [[http://www.numpy.org/|NumPy]] arrays containing audio signals.
+* [[http://simpleaudio.readthedocs.org/en/latest/|simpleaudio]]  Simple, dependency-free audio playback for Python 3
+
+== ID3 Handling ==
+* [[http://code.google.com/p/mutagen/|Mutagen]] - Mutagen is a Python module to handle audio metadata. It supports FLAC, M4A, Musepack, MP3, Ogg FLAC, Ogg Speex, Ogg Theora, Ogg Vorbis, True Audio, and WavPack audio files. All versions of ID3v2 are supported, and all standard ID3v2.4 frames are parsed. It can read Xing headers to accurately calculate the bitrate and length of MP3s. ID3 and APEv2 tags can be edited regardless of audio format. It can also manipulate Ogg streams on an individual packet/page level. '''It only writes ID3v2.4''' (introduced in 2000, but as of Windows 8 still not supported by MediaPlayer).
+* [[http://www.nedbatchelder.com/code/modules/id3reader.html|ID3Reader]] - "Id3reader.py is a Python module that reads ID3 metadata tags in MP3 files. It can read ID3v1, ID3v2.2, ID3v2.3, or ID3v2.4 tags. It does not write tags at all" (from site). Used in ID3Writer. Does not work with Python 3000. Not maintained since 2006.
+* [[http://sourceforge.net/projects/pyid3|PyID3]] - ""(Appears to be inactive)""Module for manipulating ID3 informational tags in MP3 audio files. Not as good as ID3Writer, but no issues w/ genre, unlike ID3Writer. Not maintained since 2007.
+* [[http://www.liquidx.net/pytagger/|pytagger]] - tag reader and writer implemented purely in Python. Supports ID3v1, ID3v1.1, ID3v2.2, ID3v2.3 and ID3v2.4
+* [[http://eyed3.nicfit.net/|eyeD3]] - is a Python module and program for processing ID3 tags. It can extract information such as bit rate, sample frequency, play time, etc. It supports ID3 v1.0/v1.1 and v2.3/v2.4.
+* [[http://pypi.python.org/pypi/hsaudiotag3k#downloads|hsaudiotag]] - Py3k - hsaudiotag is a pure Python library that lets you read metadata (bitrate, sample rate, duration and tags) from mp3, mp4, wma, ogg, flac and aiff files. It can only read tags, not write to them, but unlike more complete libraries (like Mutagen), it is BSD licensed.
+* [[https://pypi.python.org/pypi/pytaglib|pytaglib]] - Python 3.x and 2.x support - bindings to the C++ [[http://taglib.github.io|taglib]] library, reads and writes mp3, ogg, flac, mpc, speex, opus, WavPack, TrueAudio, wav, aiff, mp4 and asf files.
+
+== Image Manipulation ==
+* [[http://www.pythonware.com/products/pil/|Python Imaging Library (PIL)]] - Supports many file formats, and provides powerful image processing and graphics capabilities.
+* [[http://www.pyqtgraph.org/|pyqtgraph]] - Pure-python graphics library for scientific applications with image/video display, multidimensional image slicing, and interactive manipulation tools.
+
+== Indexing and Searching ==
+* InformationRetrieval
+
+== Java ==
+* [[libraries:ScriptingJava|Java scripting]]
+
+== Networking ==
+* [[http://asyncoro.sourceforge.net|asyncoro]] - Asynchronous, concurrent programming framework with coroutines with thread-like interface
+* [[http://gevent.org|Gevent]] - Coroutine-based network library
+* [[http://twistedmatrix.com|TwistedMatrix]] - Event-driven networking framework
+* [[http://rpyc.wikispaces.com|RPyC]] - Transparent RPC/distributed-computing framework
+* [[http://pyro.sourceforge.net|PyRO]] - powerful OO RPC
+* [[http://code.google.com/p/httplib2/|HTTPLib2]] - A comprehensive HTTP client library that supports many features left out of other HTTP libraries, like httplib on the standard library.
+* [[http://celeryproject.org|Celery]] - Distributed task queue for out of band processing/RPC and more.
+
+== Platform-Specific ==
+* [[http://psyco.sourceforge.net/|Psyco]] - Psyco can speed up the execution of any Python code (x86 only).
+* [[http://www.pyinstaller.org/|PyInstaller]] - Packages Python programs into stand-alone executables, under Windows, Linux and Irix.
+
+=== Mac ===
+* [[http://pythonmac.org/wiki/py2app|py2app]] - Creates stand-alone apps (like py2exe for Mac)
+* [[http://pyobjc.sourceforge.net|PyObjC]] - Bridge between the Python and Objective-C. Most important usage of this is writing Cocoa GUI applications on Mac OS X in pure Python
+
+=== Windows ===
+* [[https://sourceforge.net/projects/pywin32/|PyWin32]] - Python extensions for Windows.
+* [[http://www.py2exe.org/|Py2exe]] - Converts python scripts into executable windows programs, able to run without requiring a python installation.
+
+== Plotting ==
+* [[http://code.enthought.com/chaco/|Chaco]] - Creates interactive plots
+* [[http://gnuplot-py.sourceforge.net/|gnuplot.py]] - Based on gnuplot
+* [[http://matplotlib.sourceforge.net/|Matplotlib]] - Production quality output in a wide variety of formats
+* [[https://plot.ly/|Plotly]] - Interactive, publication-quality, web based charts
+* [[http://pyx.sourceforge.net/|PyX]] - Postscript and PDF output, (La)TeX integration
+* [[http://www.reportlab.org/|ReportLab]] includes a charting package
+* [[http://home.gna.org/veusz/|Veusz]] - Postscript output with a PyQt front end
+* [[http://www.pyqtgraph.org/|pyqtgraph]] - Pure-python plotting and graphics library based on PyQt and numpy.
+
+The SciPy [[http://scipy.org/Topical_Software#head-b98ffdb309ccce4e4504a25ea75b5c806e4897b6|topical software]] page has a longer list.
+
+== Presentation ==
+* http://docutils.sourceforge.net/docs/user/tools.html#rst2s5-py - Create HTML slides from .rst files
+* http://seld.be/notes/introducing-slippy-html-presentations - For your Python presentations in browser
+
+== RDF Processing ==
+* See RdfLibraries for a list of available RDF processing solutions.
+
+== Scientific ==
+* [[http://vpython.org/|Visual Python]] - Offers real-time 3D output, is easily usable by novice programmers, excellent for physics.
+* [[http://www.scipy.org/|SciPy]] - Includes modules for graphics and plotting, optimization, integration, special functions, signal and image processing, genetic algorithms, ODE solvers, and others.
+* [[http://rpy.sourceforge.net/|Python Bindings for R]] - R is a well known, open source (GPL 2) statistical package. RPy has two versions. Version 2 is still in development but is already usable.
+* [[libraries:numpy]]
+* [[http://www.roguewave.com/products/imsl-numerical-libraries:pyimsl-studio.aspx|PyIMSL]] is a collection of Python wrappers to the mathematical and statistical algorithms in the IMSL C Numerical Library. Developers can use Python, PyIMSL and the IMSL C Numerical Library for rapid prototyping. [[http://www.roguewave.com/products/imsl-numerical-libraries:pyimsl-studio.aspx|PyIMSL Studio]] is a complete packaged, supported and documented development environment designed for deploying mathematics and statistics prototype models into production applications. PyIMSL Studio includes the PyIMSL wrappers, the IMSL C Numerical Library, a Python distribution and a selection of open source python modules useful for prototype analytical development. PyIMSL Studio is available for download at no charge for non-commercial use or for commercial evaluation.
+
+== Standard Library Enhancements ==
+* [[http://pypi.python.org/pypi/path.py|Python Path]] - Wraps the functionality of the os.path module and provides something more convenient.
+* [[https://pypi.python.org/pypi/requests|Requests]] - An improvement upon urllib etc., for sending HTTP requests.
+* [[https://pypi.python.org/pypi/python-dateutil|Dateutil]] - Provides powerful extensions to the datetime module.
+* [[https://pypi.python.org/pypi/sh|sh]] - Can call any external program as if it were a function.
+* [[https://pypi.python.org/pypi/docopt|DocOpt]] - Command line arguments parser, with declarative approach (docstring).
+* [[http://sourceforge.net/projects/pylibrary/|PyLibrary]] - Collection of Libraries useful for Python developers.
+
+== Threading ==
+* [[http://chrisarndt.de/projects/threadpool/|ThreadPool]] - Intuitive approach to threads, well-explained.
+* See the ParallelProcessing page for other multiprocessing or parallel processing approaches.
+
+== System administration ==
+* [[https://github.com/giampaolo/psutil|psutil]] - cross-platform library for retrieving information on running processes and system utilization (CPU, memory, disks, network) in Python.
+
+== Web Development ==
+* [[http://www.djangoproject.com|Django]] - High-level web framework.
+* [[http://docs.pylonsproject.org/|Pyramid]] - Turbogears, Pylons, Repoz.bfg merged as Pyramid.
+* [[http://www.turbogears.org|TurboGears]] - Rapid web development megaframework.
+* [[http://pylonshq.com|Pylons]] - A lightweight web framework emphasizing flexibility and rapid development.
+
+* [[http://web2py.com/|web2py]] - High-level framework for agile development.
+* [[http://flask.pocoo.org/|Flask]] - microframework for Python based on Werkzeug, Jinja 2. (It's BSD licensed)
+.
+
+=== HTML Forms ===
+* [[http://wwwsearch.sourceforge.net/ClientForm/|ClientForm]] - "ClientForm is a Python module for handling HTML forms on the client side, useful for parsing HTML forms, filling them in and returning the completed forms to the server. It developed from a port of Gisle Aas' Perl module HTML::Form, from the libwww-perl library, but the interface is not the same." - from the website.
+* [[http://formencode.org/|FormEncode]]
+* [[http://lxml.de/|lxml.html]] has support for dealing with forms in HTML documents
+
+=== HTML Parser ===
+* [[http://www.crummy.com/software/BeautifulSoup/|Beautiful Soup]] - HTML/XML parser designed for quick turnaround projects like screen-scraping, will accept bad markup.
+* [[http://packages.python.org/pyquery/|PyQuery]] - implements jQuery in Python; faster than BeautifulSoup, apparently.
+* [[http://www.egenix.com/products/python/mxExperimental/mxTidy/|mxTidy]] - HTML cleanup tool. This is a library version of the popular HTML Tidy command-line application which will convert HTML (even badly formatted) into e.g. XHTML.
+* [[http://lxml.de/|lxml.html]] is a very fast, easy-to-use and versatile library for handling (and fixing up) HTML
+* See also PythonXml for related tools.
+
+== Workflow ==
+* [[http://www.openflow.it/Openflow|openflow]] - A workflow engine for Zope 2.
+* [[http://code.djangoproject.com/wiki/GoFlow|Goflow]] - A workflow engine for Django, with same design as openflow.
+
+== XML Processing ==
+* [[http://effbot.org/zone/element-index.htm|ElementTree]] - The Element type is a simple but flexible container object, designed to store hierarchical data structures, such as simplified XML infosets, in memory. --Note: Python 2.5 and up has ElementTree in the Standard Library--
+* [[http://lxml.de/|lxml]] is a very fast, easy-to-use and versatile library for XML handling that is mostly compatible with but much more feature-rich than ElementTree
+* [[http://wiki.xml3k.org/Amara2|Amara]] - Amara provides tools you can trust to conform with XML standards without losing the familiar Python feel. (see also the [[http://wiki.xml3k.org/Amara|1.x version]])
+* PythonXml provides a list of available XML processing solutions.
+
+== Flow Based Programming ==
+* [[libraries:FlowBasedProgramming|Python and Flow Based Programming (pipelines)]]

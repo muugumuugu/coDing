@@ -1,0 +1,25 @@
+<link href="/styles/home.css" rel="stylesheet">
+<p>It is often necessary to split a string into pieces<code></code>
+based on several different (potentially multi-character) separator strings<br><code></code>
+while still retaining the information about which separators were present in the input.<code></code>
+<code></code>
+This is particularly useful when doing small parsing tasks. <br><code></code>
+The task is to write code to demonstrate this.<code></code>
+<code></code>
+The function (or procedure or method, as appropriate) should<code></code>
+take an input string and an ordered collection of separators.<code></code>
+<code></code>
+The order of the separators is significant: <br><code></code>
+The delimiter order represents priority in matching, with the first defined delimiter having the highest priority.<code></code>
+In cases where there would be an ambiguity as to<code></code>
+which separator to use at a particular point<code></code>
+(e.g., because one separator is a prefix of another)<code></code>
+the separator with the highest priority should be used.<code></code>
+Delimiters can be reused and the output from the function should be an ordered sequence of substrings.<code></code>
+<code></code>
+Test your code using the input string “<code>a!===b=!=c</code>” and the separators “<code>==</code>”, “<code>!=</code>” and “<code>=</code>”.<code></code>
+<code></code>
+For these inputs the string should be parsed as <code>"a" (!=) "" (==) "b" (=) "" (!=) "c"</code>, where matched delimiters are shown in parentheses, and separated strings are quoted, so our resulting output is <code>"a", empty string, "b", empty string, "c"</code>.<code></code>
+Note that the quotation marks are shown for clarity and do not form part of the output.<code></code>
+<code></code>
+<code>Extra Credit:</code> provide information that indicates which separator was matched at each separation point and where in the input string that separator was matched.<code></code></p>

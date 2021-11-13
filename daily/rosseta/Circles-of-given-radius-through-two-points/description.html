@@ -1,0 +1,36 @@
+<link href="/styles/home.css" rel="stylesheet">
+<p><a href="File:2 circles through 2 points.jpg|500px||right|2 circles with a given radius through 2 points in 2D space.">File:2 circles through 2 points.jpg|500px||right|2 circles with a given radius through 2 points in 2D space.</a><code></code>
+<code></code>
+Given two points on a plane and a radius, usually two circles of given radius can be drawn through the points.<code></code>
+<br>Exceptions:<code></code></p>
+<h1 id="r00shouldbetreatedasneverdescribingcirclesexceptinthecasewherethepointsarecoincidentc4c">r==0.0 should be treated as never describing circles (except in the case where the points are coincident).<code></code></h1>
+<h1 id="ifthepointsarecoincidentthenaninfinitenumberofcircleswiththepointontheircircumferencecanbedrawnunlessr00aswellwhichthencollapsesthecirclestoapointc5c">If the points are coincident then an infinite number of circles with the point on their circumference can be drawn, unless r==0.0 as well which then collapses the circles to a point.<code></code></h1>
+<h1 id="ifthepointsformadiameterthenreturntwoidenticalcirclesorreturnasinglecircleaccordingtowhichisthemostnaturalmechanismfortheimplementationlanguagec6c">If the points form a diameter then return two identical circles <code>or</code> return a single circle, according to which is the most natural mechanism for the implementation language.<code></code></h1>
+<h1 id="ifthepointsaretoofarapartthennocirclescanbedrawnc7c">If the points are too far apart then no circles can be drawn.<code></code></h1>
+<p><code></code>
+<code></code>
+<br>Task detail:<code></code></p>
+<ul>
+<li>Write a function/subroutine/method/... that takes two points and a radius and returns the two circles through those points, <code>or some indication of special cases where two, possibly equal, circles cannot be returned</code>.<code></code></li>
+<li>Show here the output for the following inputs:<code></code></li>
+</ul>
+<pre><code></code>
+      p1                p2           r<code></code>
+0.1234, 0.9876    0.8765, 0.2345    2.0<code></code>
+0.0000, 2.0000    0.0000, 0.0000    1.0<code></code>
+0.1234, 0.9876    0.1234, 0.9876    2.0<code></code>
+0.1234, 0.9876    0.8765, 0.2345    0.5<code></code>
+0.1234, 0.9876    0.1234, 0.9876    0.0<code></code>
+</pre>
+<p><code></code>
+<code></code>
+<code></code>
+<br>Related task:<code></code></p>
+<ul>
+<li>&nbsp; <a href="Total circles area">Total circles area</a>.<code></code>
+<code></code>
+<code></code>
+<br>See also:<code></code></li>
+<li>&nbsp; <a href="http://mathforum.org/library/drmath/view/53027.html Finding the Center of a Circle from 2 Points and Radius">http://mathforum.org/library/drmath/view/53027.html Finding the Center of a Circle from 2 Points and Radius</a> from Math forum @ Drexel<code></code>
+<br><br><code></code></li>
+</ul>

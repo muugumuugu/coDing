@@ -1,0 +1,39 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2021-10-15T12:54:47+05:30
+
+====== Python ======
+Created Friday 15 October 2021
+
+* space sensitice language
+* auto typesetting of variables
+* importing libraries:
+{{{code: lang="python3" linenumbers="True"
+#import library as an object with attributes and methods
+import module_name
+# fills name space
+from module_name import constant1,function1
+}}}
+
+* comments
+{{{code: lang="python3" linenumbers="True"
+# single line
+'''
+multi-line
+'''
+
+}}}
+
+* variables are passed by value.
+	* variables not bins but bindings, and each new value change just switches the binding.
+	* unbinded contaitners are periodically cleaned (garbage collection)
+	* check type using ''isinstance'' function
+{{{code: lang="python3" linenumbers="True"
+
+var1="test var" # variable declared as it is initialized
+id(var1)#returns memory address of variable
+str1="11"
+int1=int(str1,2) # converst string to integer in given base'
+#here int1 = 3
+
+}}}

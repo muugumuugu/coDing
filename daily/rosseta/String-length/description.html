@@ -1,0 +1,26 @@
+<link href="/styles/home.css" rel="stylesheet">
+<p>{{omit from|GUISS|Can use Microsoft Word document properties, but this might not be accurate}}<code></code>
+{{omit from|Openscad}}<code></code>
+<code></code>
+<br>Task:<code></code>
+Find the <em>character</em> and <em>byte</em> length of a string.<code></code>
+<code></code>
+This means encodings like <a href="UTF-8">UTF-8</a> need to be handled properly, as there is not necessarily a one-to-one relationship between bytes and characters.<code></code>
+<code></code>
+By <code>character, we mean an individual Unicode code point, not a user-visible grapheme</code> containing combining characters.<code></code>
+<code></code>
+For example, the character length of "møøse" is 5 but the byte length is 7 in UTF-8 and 10 in UTF-16.<code></code>
+<code></code>
+Non-BMP code points (those between 0x10000 and 0x10FFFF) must also be handled correctly: answers should produce actual character counts in code points, not in code unit counts.<code></code>
+<code></code>
+Therefore a string like "𝔘𝔫𝔦𝔠𝔬𝔡𝔢" (consisting of the 7 Unicode characters U+1D518  U+1D52B U+1D526 U+1D520 U+1D52C U+1D521 U+1D522) is 7 characters long, <code>not</code> 14 UTF-16 code units; and it is 28 bytes long whether encoded in UTF-8 or in  UTF-16.<code></code>
+<code></code>
+Please mark your examples with <nowiki>===Character Length=== or ===Byte Length===</nowiki>.<code></code>
+<code></code>
+If your language is capable of providing the string length in graphemes, mark those examples with <nowiki>===Grapheme Length===</nowiki>.<code></code>
+<code></code>
+For example, the string "J̲o̲s̲é̲" ("J\x{332}o\x{332}s\x{332}e\x{301}\x{332}") has 4 user-visible graphemes, 9 characters (code points), and 14 bytes when encoded in UTF-8.<code></code>
+<br><br><code></code>
+<code></code>
+{{Template:Strings}}<code></code>
+<br><br><code></code></p>

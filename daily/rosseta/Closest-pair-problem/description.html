@@ -1,0 +1,70 @@
+<link href="/styles/home.css" rel="stylesheet">
+<p>{{Wikipedia|Closest pair of points problem}}<code></code>
+<code></code>
+<code></code>
+<br>Task:<code></code>
+Provide a function to find the closest two points among a set of given points in two dimensions, &nbsp; i.e. to solve the &nbsp; <a href="wp:Closest pair of points problem|Closest pair of points problem">wp:Closest pair of points problem|Closest pair of points problem</a> &nbsp; in the &nbsp; <code>planar</code> &nbsp; case.<code></code>
+<code></code>
+The straightforward solution is a &nbsp; O(n<sup>2</sup>) &nbsp; algorithm &nbsp; (which we can call <code>brute-force algorithm</code>); &nbsp; the pseudo-code (using indexes) could be simply:<code></code>
+<code></code>
+ <code>bruteForceClosestPair</code> of P(1), P(2), ... P(N)<code></code>
+ <code>if<code>' N &lt; 2 '</code>then</code><code></code>
+   <code>return</code> ∞<code></code>
+ <code>else</code><code></code>
+   minDistance ← |P(1) - P(2)|<code></code>
+   minPoints ← { P(1), P(2) }<code></code>
+   <code>foreach</code> i ∈ <a href="1, N-1">1, N-1</a><code></code>
+     <code>foreach</code> j ∈ <a href="i+1, N">i+1, N</a><code></code>
+       <code>if<code>' |P(i) - P(j)| < minDistance '</code>then</code><code></code>
+         minDistance ← |P(i) - P(j)|<code></code>
+         minPoints ← { P(i), P(j) }<code></code>
+       <code>endif</code><code></code>
+     <code>endfor</code><code></code>
+   <code>endfor</code><code></code>
+   <code>return</code> minDistance, minPoints<code></code>
+  <code>endif</code><code></code>
+<code></code>
+A better algorithm is based on the recursive divide&amp;conquer approach, &nbsp; as explained also at &nbsp; <a href="wp:Closest pair of points problem#Planar_case|Wikipedia's Closest pair of points problem">wp:Closest pair of points problem#Planar_case|Wikipedia's Closest pair of points problem</a>, &nbsp; which is &nbsp; O(<code>n log n</code>); &nbsp; a pseudo-code could be:<code></code>
+¨C26C
+ <code>closestPair</code> of (xP, yP)¨C27C
+                where xP is P(1) .. P(N) sorted by x coordinate, and¨C28C
+                      yP is P(1) .. P(N) sorted by y coordinate (ascending order)¨C29C
+ <code>if<code>' N ≤ 3 '</code>then</code>¨C30C
+   <code>return</code> closest points of xP using brute-force algorithm¨C31C
+ <code>else</code>¨C32C
+   xL ← points of xP from 1 to ⌈N/2⌉¨C33C
+   xR ← points of xP from ⌈N/2⌉+1 to N¨C34C
+   xm ← xP(⌈N/2⌉)¨C75C¨C35C
+   yL ← { p ∈ yP : p¨C76C ≤ xm }¨C36C
+   yR ← { p ∈ yP : p¨C77C &gt; xm }¨C37C
+   (dL, pairL) ← <code>closestPair</code> of (xL, yL)¨C38C
+   (dR, pairR) ← <code>closestPair</code> of (xR, yR)¨C39C
+   (dmin, pairMin) ← (dR, pairR)¨C40C
+   <code>if<code>' dL &lt; dR '</code>then</code>¨C41C
+     (dmin, pairMin) ← (dL, pairL)¨C42C
+   <code>endif</code>¨C43C
+   yS ← { p ∈ yP : |xm - p¨C78C| &lt; dmin }¨C44C
+   nS ← number of points in yS¨C45C
+   (closest, closestPair) ← (dmin, pairMin)¨C46C
+   <code>for<code>' i 'from' 1 '</code>to</code> nS - 1¨C47C
+     k ← i + 1¨C48C
+     <code>while<code>' k ≤ nS '</code>and</code> yS(k)¨C79C - yS(i)¨C80C &lt; dmin¨C49C
+       <code>if<code>' |yS(k) - yS(i)| &lt; closest '</code>then</code>¨C50C
+         (closest, closestPair) ← (|yS(k) - yS(i)|, {yS(k), yS(i)})¨C51C
+       <code>endif</code>¨C52C
+       k ← k + 1¨C53C
+     <code>endwhile</code>¨C54C
+   <code>endfor</code>¨C55C
+   <code>return</code> closest, closestPair¨C56C
+ <code>endif</code>¨C57C
+¨C58C
+¨C59C
+<br>References and further readings:<code></code></p>
+<ul>
+<li>&nbsp; <a href="wp:Closest pair of points problem|Closest pair of points problem">wp:Closest pair of points problem|Closest pair of points problem</a><code></code></li>
+<li>&nbsp; <a href="http://www.cs.mcgill.ca/~cs251/ClosestPair/ClosestPairDQ.html Closest Pair (McGill)">http://www.cs.mcgill.ca/~cs251/ClosestPair/ClosestPairDQ.html Closest Pair (McGill)</a><code></code></li>
+<li>&nbsp; <a href="http://www.cs.ucsb.edu/~suri/cs235/ClosestPair.pdf Closest Pair (UCSB)">http://www.cs.ucsb.edu/~suri/cs235/ClosestPair.pdf Closest Pair (UCSB)</a><code></code></li>
+<li>&nbsp; <a href="http://classes.cec.wustl.edu/~cse241/handouts/closestpair.pdf Closest pair (WUStL)">http://classes.cec.wustl.edu/~cse241/handouts/closestpair.pdf Closest pair (WUStL)</a><code></code></li>
+<li>&nbsp; <a href="http://www.cs.iupui.edu/~xkzou/teaching/CS580/Divide-and-conquer-closestPair.ppt Closest pair (IUPUI)">http://www.cs.iupui.edu/~xkzou/teaching/CS580/Divide-and-conquer-closestPair.ppt Closest pair (IUPUI)</a><code></code>
+<br><br><code></code></li>
+</ul>

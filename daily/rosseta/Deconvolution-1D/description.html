@@ -1,0 +1,82 @@
+<link href="/styles/home.css" rel="stylesheet">
+<p>The convolution of two functions <math>\mathit{F}</math> and <math>\mathit{H}</math> of<code></code>
+an integer variable is defined as the function <math>\mathit{G}</math><code></code>
+satisfying<code></code>
+<code></code>
+:<math> G(n) = \sum<em>{m=-\infty}^{\infty} F(m) H(n-m) </math><code></code>
+<code></code>
+for all integers <math>\mathit{n}</math>. Assume <math>F(n)</math> can be non-zero only for <math>0</math> &le; <math>\mathit{n}</math> &le; <math>|\mathit{F}|</math>, where <math>|\mathit{F}|</math> is the "length" of <math>\mathit{F}</math>, and similarly for <math>\mathit{G}</math> and <math>\mathit{H}</math>, so that the functions can be modeled as finite sequences by identifying <math>f</em>0, f<em>1, f</em>2, \dots</math> with <math>F(0), F(1), F(2), \dots</math>, etc.<code></code>
+Then for example, values of <math>|\mathit{F}| = 6</math> and <math>|\mathit{H}| = 5</math> would determine the following value of <math>\mathit{g}</math> by definition.<code></code>
+<code></code>
+:<math><code></code>
+\begin{array}{lllllllllll}<code></code>
+g<em>0 &= &f</em>0h<em>0\<code></code>
+g</em>1 &= &f<em>1h</em>0 &+ &f<em>0h</em>1\<code></code>
+g<em>2 &= &f</em>2h<em>0 &+ &f</em>1h<em>1 &+ &f</em>0h<em>2\<code></code>
+g</em>3 &= &f<em>3h</em>0 &+ &f<em>2h</em>1 &+ &f<em>1h</em>2 &+ &f<em>0h</em>3\<code></code>
+g<em>4 &= &f</em>4h<em>0 &+ &f</em>3h<em>1 &+ &f</em>2h<em>2 &+ &f</em>1h<em>3 &+ &f</em>0h<em>4\<code></code>
+g</em>5 &= &f<em>5h</em>0 &+ &f<em>4h</em>1 &+ &f<em>3h</em>2 &+ &f<em>2h</em>3 &+ &f<em>1h</em>4\<code></code>
+g<em>6 &= &       &  &f</em>5h<em>1 &+ &f</em>4h<em>2 &+ &f</em>3h<em>3 &+ &f</em>2h<em>4\<code></code>
+g</em>7 &= &       &  &       &  &f<em>5h</em>2 &+ &f<em>4h</em>3 &+ &f<em>3h</em>4\<code></code>
+g<em>8 &= &       &  &       &  &       &  &f</em>5h<em>3 &+ &f</em>4h<em>4\<code></code>
+g</em>9 &= &       &  &       &  &       &  &       &  &f<em>5h</em>4¨C20C
+\end{array}¨C21C
+</math><code></code>
+<code></code>
+We can write this in matrix form as:<code></code>
+<code></code>
+:<math><code></code>
+\left(<code></code>
+\begin{array}{l}<code></code>
+g<em>0 \<code></code>
+g</em>1 \<code></code>
+g<em>2 \<code></code>
+g</em>3 \<code></code>
+g<em>4 \<code></code>
+g</em>5 \<code></code>
+g<em>6 \<code></code>
+g</em>7 \<code></code>
+g<em>8 \¨C37C
+g</em>9 \¨C38C
+\end{array}¨C39C
+\right) = \left(¨C40C
+\begin{array}{lllll}¨C41C
+f<em>0\¨C42C
+f</em>1 & f<em>0\¨C43C
+f</em>2 & f<em>1 & f</em>0\¨C44C
+f<em>3 & f</em>2 & f<em>1 & f</em>0\¨C45C
+f<em>4 & f</em>3 & f<em>2 & f</em>1 & f<em>0\¨C46C
+f</em>5 & f<em>4 & f</em>3 & f<em>2 & f</em>1\¨C47C
+    & f<em>5 & f</em>4 & f<em>3 & f</em>2\¨C48C
+    &     & f<em>5 & f</em>4 & f<em>3\¨C49C
+    &     &     & f</em>5 & f<em>4\¨C50C
+    &     &     &     & f</em>5¨C51C
+\end{array}¨C52C
+\right) \; \left(¨C53C
+\begin{array}{l}¨C54C
+h<em>0 \¨C55C
+h</em>1 \¨C56C
+h<em>2 \¨C57C
+h</em>3 \¨C58C
+h_4 \¨C59C
+\end{array} \right)¨C60C
+</math><code></code>
+<code></code>
+or<code></code>
+<code></code>
+:<math><code></code>
+g = A \; h<code></code>
+</math><code></code>
+<code></code>
+For this task, implement a function (or method, procedure, subroutine, etc.) <code>deconv</code> to perform <code>deconvolution (i.e., the inverse</code> of convolution) by constructing and solving such a system of equations represented by the above matrix <math>A</math> for <math>\mathit{h}</math> given <math>\mathit{f}</math> and <math>\mathit{g}</math>.<code></code>
+<code></code></p>
+<ul>
+<li>The function should work for <math>\mathit{G}</math> of arbitrary length (i.e., not hard coded or constant) and <math>\mathit{F}</math> of any length up to that of <math>\mathit{G}</math>. Note that <math>|\mathit{H}|</math> will be given by <math>|\mathit{G}| - |\mathit{F}| + 1</math>.<code></code></li>
+<li>There may be more equations than unknowns. If convenient, use a function from a <a href="http://www.netlib.org/lapack/lug/node27.html library] that finds the best fitting solution to an overdetermined system of linear equations (as in the <a href="Multiple regression]] task).  Otherwise, prune the set of equations as needed and solve as in the [[Reduced row echelon form">Multiple regression]">http://www.netlib.org/lapack/lug/node27.html library] that finds the best fitting solution to an overdetermined system of linear equations (as in the <a href="Multiple regression]] task).  Otherwise, prune the set of equations as needed and solve as in the [[Reduced row echelon form">Multiple regression]</a> task).  Otherwise, prune the set of equations as needed and solve as in the [[Reduced row echelon form</a> task.<code></code></li>
+<li>Test your solution on the following data. Be sure to verify both that <code>deconv</code><math>(g,f) = h</math> and <code>deconv</code><math>(g,h) = f</math> and display the results in a human readable form.<code></code>
+<code>&lt;code&gt;&lt;/code&gt;
+h = &lt;a href="-8,-9,-3,-1,-6,7"&gt;-8,-9,-3,-1,-6,7&lt;/a&gt;&lt;br&gt;&lt;code&gt;&lt;/code&gt;
+f = &lt;a href="-3,-6,-1,8,-6,3,-1,-9,-9,3,-2,5,2,-2,-7,-1"&gt;-3,-6,-1,8,-6,3,-1,-9,-9,3,-2,5,2,-2,-7,-1&lt;/a&gt;&lt;br&gt;&lt;code&gt;&lt;/code&gt;
+g = &lt;a href="24,75,71,-34,3,22,-45,23,245,25,52,25,-67,-96,96,31,55,36,29,-43,-7"&gt;24,75,71,-34,3,22,-45,23,245,25,52,25,-67,-96,96,31,55,36,29,-43,-7&lt;/a&gt;&lt;code&gt;&lt;/code&gt;
+</code><code></code></li>
+</ul>

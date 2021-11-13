@@ -1,0 +1,8 @@
+<link href="/styles/home.css" rel="stylesheet">
+<p><br>Task:<code></code>
+Create a temporary file, <code>securely and exclusively</code> (opening it such that there are no possible <a href="race condition|race conditions">race condition|race conditions</a>).<code></code>
+<code></code>
+It's fine assuming local filesystem semantics (NFS or other networking filesystems can have signficantly more complicated semantics for satisfying the "no race conditions" criteria).<code></code>
+<code></code>
+The function should automatically resolve name collisions and should only fail in cases where permission is denied, the filesystem is read-only or full, or similar conditions exist (returning an error or raising an exception as appropriate to the language/environment).<code></code>
+<br><br><code></code></p>

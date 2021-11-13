@@ -1,0 +1,55 @@
+<link href="/styles/home.css" rel="stylesheet">
+<p>A new medical treatment was tested on a population of <math>n + m</math><code></code>
+volunteers, with each volunteer randomly assigned either to a group of<code></code></p>
+<math>n</math>
+<p>treatment subjects, or to a group of <math>m</math> control subjects.<code></code>
+<code></code>
+Members of the treatment group were given the treatment<br><code></code>
+and members of the control group were given a placebo.<code></code>
+The effect of the treatment or placebo on each volunteer<code></code>
+was measured and reported in this table.<code></code>
+<code></code>
+{| style="text-align: left; width: 50%;" border="4" cellpadding="2" cellspacing="2"<code></code>
+|+ Table of experimental results<code></code>
+|- style="background-color: rgb(255, 204, 255);"<code></code>
+! Treatment group !! Control group<code></code>
+|-<code></code>
+| 85 || 68<code></code>
+|-<code></code>
+| 88 || 41<code></code>
+|-<code></code>
+| 75 || 10<code></code>
+|-<code></code>
+| 66 || 49<code></code>
+|-<code></code>
+| 25 || 16<code></code>
+|-<code></code>
+| 29 || 65<code></code>
+|-<code></code>
+| 83 || 32<code></code>
+|-<code></code>
+| 39 || 92<code></code>
+|-<code></code>
+| 97 || 28<code></code>
+|-<code></code>
+|      || 98<code></code>
+|}<code></code>
+Write a program that performs a<code></code>
+<a href="wp:Permutation_test#Permutation_tests|permutation test">wp:Permutation<em>test#Permutation</em>tests|permutation test</a> to judge<code></code>
+whether the treatment had a significantly stronger effect than the<code></code>
+placebo.<code></code>
+<code></code></p>
+<ul>
+<li>Do this by considering every possible alternative assignment from the same pool of volunteers to a treatment group of size <math>n</math> and a control group of size <math>m</math> (i.e., the same group sizes used in the actual experiment but with the group members chosen differently), while assuming that each volunteer's effect remains constant regardless.<code></code></li>
+<li>Note that the number of alternatives will be the <a href="wp:Binomial_coefficient|binomial coefficient">wp:Binomial_coefficient|binomial coefficient</a> <math>\tbinom{n+m}{n}</math>.<code></code></li>
+<li>Compute the mean effect for each group and the difference in means between the groups in every case by subtracting the mean of the control group from the mean of the treatment group.<code></code></li>
+<li>Report the percentage of alternative groupings for which the difference in means is less or equal to the actual experimentally observed difference in means, and the percentage for which it is greater.<code></code></li>
+<li>Note that they should sum to 100%.<code></code>
+<code></code>
+Extremely dissimilar values are evidence of an effect not entirely due<code></code>
+to chance, but your program need not draw any conclusions.<code></code>
+<code></code>
+You may assume the experimental data are known at compile time if<code></code>
+that's easier than loading them at run time. Test your solution on the<code></code>
+data given above.<code></code></li>
+</ul>

@@ -1,0 +1,38 @@
+<link href="/styles/home.css" rel="stylesheet">
+<p>A <code>subtractive generator</code> calculates a sequence of <a href="random number generator|random numbers">random number generator|random numbers</a>, where each number is congruent to the subtraction of two previous numbers from the sequence. <br><code></code>
+The formula is<code></code>
+<code></code></p>
+<ul>
+<li><big><math>r<em>n = r</em>{(n - i)} - r<em>{(n - j)} \pmod m</math></big><code></code>
+<code></code>
+for some fixed values of <big><math>i</math></big>, <big><math>j</math></big> and <big><math>m</math></big>, all positive integers. Supposing that <big><math>i > j</math></big>, then the state of this generator is the list of the previous numbers from <big><math>r</em>{n - i}</math></big> to <big><math>r<em>{n - 1}</math></big>. Many states generate uniform random integers from <big><math>0</math></big> to <big><math>m - 1</math></big>, but some states are bad. A state, filled with zeros, generates only zeros. If <big><math>m</math></big> is even, then a state, filled with even numbers, generates only even numbers. More generally, if <big><math>f</math></big> is a factor of <big><math>m</math></big>, then a state, filled with multiples of <big><math>f</math></big>, generates only multiples of <big><math>f</math></big>.<code></code>
+<code></code>
+All subtractive generators have some weaknesses. The formula correlates <big><math>r</em>n</math></big>, <big><math>r<em>{(n - i)}</math></big> and <big><math>r</em>{(n - j)}</math></big>; these three numbers are not independent, as true random numbers would be. Anyone who observes <big><math>i</math></big> consecutive numbers can predict the next numbers, so the generator is not cryptographically secure. The authors of <code>Freeciv (<a href="http://svn.gna.org/viewcvs/freeciv/trunk/utility/rand.c?view=markup utility/rand.c">http://svn.gna.org/viewcvs/freeciv/trunk/utility/rand.c?view=markup utility/rand.c</a>) and xpat2</code> (src/testit2.c) knew another problem: the low bits are less random than the high bits.<code></code>
+<code></code>
+The subtractive generator has a better reputation than the <a href="linear congruential generator">linear congruential generator</a>, perhaps because it holds more state. A subtractive generator might never multiply numbers: this helps where multiplication is slow. A subtractive generator might also avoid division: the value of <big><math>r<em>{(n - i)} - r</em>{(n - j)}</math></big> is always between <big><math>-m</math></big> and <big><math>m</math></big>, so a program only needs to add <big><math>m</math></big> to negative numbers.<code></code>
+<code></code>
+The choice of <big><math>i</math></big> and <big><math>j</math></big> affects the period of the generator. A popular choice is <big><math>i = 55</math></big> and <big><math>j = 24</math></big>, so the formula is<code></code>
+<code></code></li>
+<li><big><math>r<em>n = r</em>{(n - 55)} - r_{(n - 24)} \pmod m</math></big><code></code>
+<code></code>
+The subtractive generator from <code>xpat2</code> uses<code></code>
+<code></code></li>
+<li><big><math>r<em>n = r</em>{(n - 55)} - r<em>{(n - 24)} \pmod{10^9}</math></big><code></code>
+<code></code>
+The implementation is by J. Bentley and comes from program</em>tools/universal.c of <a href="ftp://dimacs.rutgers.edu/pub/netflow/ the DIMACS (netflow) archive">ftp://dimacs.rutgers.edu/pub/netflow/ the DIMACS (netflow) archive</a> at Rutgers University. It credits Knuth, <a href="wp:The Art of Computer Programming|<code>TAOCP">wp:The Art of Computer Programming|TAOCP</code></a>, Volume 2, Section 3.2.2 (Algorithm A).<code></code>
+<code></code>
+Bentley uses this clever algorithm to seed the generator.<code></code>
+<code></code></li>
+</ul>
+<h1 id="startwithasinglebigmathseedmathbiginrangebigmath0mathbigtobigmath1091mathbigc23c">Start with a single <big><math>seed</math></big> in range <big><math>0</math></big> to <big><math>10^9 - 1</math></big>.<code></code></h1>
+<h1 id="setbigmaths_0seedmathbigandbigmaths_11mathbigtheinclusionofbigmaths_11mathbigavoidssomebadstateslikeallzerosorallmultiplesof10c24c">Set <big><math>s<em>0 = seed</math></big> and <big><math>s</em>1 = 1</math></big>. The inclusion of <big><math>s_1 = 1</math></big> avoids some bad states (like all zeros, or all multiples of 10).<code></code></h1>
+<h1 id="computebigmaths_2s_3s_54mathbigusingthesubtractiveformulabigmaths_ns_n2s_n1pmod109mathbigc25c">Compute <big><math>s<em>2, s</em>3, ..., s<em>{54}</math></big> using the subtractive formula <big><math>s</em>n = s<em>{(n - 2)} - s</em>{(n - 1)} \pmod{10^9}</math></big>.<code></code></h1>
+<h1 id="reorderthese55valuessobigmathr_0s_34mathbigbigmathr_1s_13mathbigbigmathr_2s_47mathbigbigmathr_ns_34n1pmod55mathbigc26c">Reorder these 55 values so <big><math>r<em>0 = s</em>{34}</math></big>, <big><math>r<em>1 = s</em>{13}</math></big>, <big><math>r<em>2 = s</em>{47}</math></big>, ..., <big><math>r<em>n = s</em>{(34 * (n + 1) \pmod{55})}</math></big>.<code></code></h1>
+<h1 id="thisisthesameorderasbigmaths_0r_54mathbigbigmaths_1r_33mathbigbigmaths_2r_12mathbigbigmaths_nr_34n1pmod55mathbigc27c">* This is the same order as <big><math>s<em>0 = r</em>{54}</math></big>, <big><math>s<em>1 = r</em>{33}</math></big>, <big><math>s<em>2 = r</em>{12}</math></big>, ..., <big><math>s<em>n = r</em>{((34 * n) - 1 \pmod{55})}</math></big>.<code></code></h1>
+<h1 id="thisrearrangementexploitshow34and55arerelativelyprimec28c">* This rearrangement exploits how 34 and 55 are relatively prime.<code></code></h1>
+<h1 id="computethenext165valuesbigmathr_55mathbigtobigmathr_219mathbigstorethelast55valuesc29c">Compute the next 165 values <big><math>r<em>{55}</math></big> to <big><math>r</em>{219}</math></big>. Store the last 55 values.<code></code></h1>
+<p><code></code>
+This generator yields the sequence <big><math>r<em>{220}</math></big>, <big><math>r</em>{221}</math></big>, <big><math>r<em>{222}</math></big> and so on. For example, if the seed is 292929, then the sequence begins with <big><math>r</em>{220} = 467478574</math></big>, <big><math>r<em>{221} = 512932792</math></big>, <big><math>r</em>{222} = 539453717</math></big>. By starting at <big><math>r<em>{220}</math></big>, this generator avoids a bias from the first numbers of the sequence. This generator must store the last 55 numbers of the sequence, so to compute the next <big><math>r</em>n</math></big>. Any array or list would work; a <a href="ring buffer">ring buffer</a> is ideal but not necessary.<code></code>
+<code></code>
+Implement a subtractive generator that replicates the sequences from <code>xpat2</code>.<code></code>
+<br><br><code></code></p>

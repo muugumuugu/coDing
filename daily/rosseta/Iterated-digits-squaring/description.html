@@ -1,0 +1,37 @@
+<link href="/styles/home.css" rel="stylesheet">
+<p>If you add the square of the digits of a Natural number (an integer bigger than zero), you always end with either 1 or 89:<code></code></p>
+<pre>15 -> 26 -> 40 -> 16 -> 37 -> 58 -> 89<code></code>
+7 -> 49 -> 97 -> 130 -> 10 -> 1</pre>
+<p><code></code>
+<code></code>
+An example in Python:<code></code>
+<code></code>
+<lang python>&gt;&gt;&gt; step = lambda x: sum(int(d) ** 2 for d in str(x))<code></code></p>
+<blockquote>
+  <blockquote>
+    <blockquote>
+      <p>iterate = lambda x: x if x in <a href="1, 89">1, 89</a> else iterate(step(x))<code></code>
+      <a href="iterate(x) for x in xrange(1, 20)">iterate(x) for x in xrange(1, 20)</a><code></code>
+      <a href="1, 89, 89, 89, 89, 89, 1, 89, 89, 1, 89, 89, 1, 89, 89, 89, 89, 89, 1">1, 89, 89, 89, 89, 89, 1, 89, 89, 1, 89, 89, 1, 89, 89, 89, 89, 89, 1</a></lang><code></code>
+      <code></code>
+      <code></code>
+      <br>Task:<code></code>
+      : Count how many number chains for integers 1 <= n < 100<em>000</em>000 end with a value 89.<code></code>
+Or, for much less credit - (showing that your algorithm and/or language is slow):<code></code>
+: Count how many number chains for integers 1 <= n < 1<em>000</em>000 end with a value 89.<code></code>
+<code></code>
+This problem derives from the <a href="https://projecteuler.net/problem=92 Project Euler problem 92">https://projecteuler.net/problem=92 Project Euler problem 92</a>.<code></code>
+<code></code>
+For a quick algorithm for this task see <a href="Talk:Iterated_digits_squaring|the talk page">Talk:Iterated<em>digits</em>squaring|the talk page</a>¨C18C
+¨C19C
+¨C20C
+<br>Related tasks:<code></code></p>
+      <ul>
+      <li><a href="Combinations with repetitions">Combinations with repetitions</a><code></code></li>
+      <li><a href="Digital root">Digital root</a><code></code></li>
+      <li><a href="Digital root/Multiplicative digital root">Digital root/Multiplicative digital root</a><code></code>
+      <br><br><code></code></li>
+      </ul>
+    </blockquote>
+  </blockquote>
+</blockquote>

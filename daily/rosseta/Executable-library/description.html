@@ -1,0 +1,32 @@
+<link href="/styles/home.css" rel="stylesheet">
+<p>{{omit from|GUISS}}<code></code>
+{{omit from|MATLAB}}<code></code>
+{{omit from|Maxima}}<code></code>
+{{omit from|Octave}}<code></code>
+{{omit from|R}}<code></code>
+{{omit from|SAS}}<code></code>
+{{omit from|Scilab}}<code></code>
+{{omit from|Stata}}<code></code>
+The general idea behind an executable library is to create a library<code></code>
+that when used as a library does one thing;<code></code>
+but has the ability to be run directly via command line.<code></code>
+Thus the API comes with a CLI in the very same source code file.<code></code>
+<code></code>
+<code>Task detail</code><code></code>
+<code></code></p>
+<ul>
+<li>Create a library/module/dll/shared object/... for a programming language that contains a function/method called hailstone that is a function taking a positive integer and returns the <a href="Hailstone sequence">Hailstone sequence</a> for that number.<code></code>
+<code></code></li>
+<li>The library, when executed directly should satisfy the remaining requirements of the <a href="Hailstone sequence">Hailstone sequence</a> task:<code></code>
+:: 2.  Use the routine to show that the hailstone sequence for the number 27 has 112 elements starting with 27, 82, 41, 124 and ending with 8, 4, 2, 1<code></code>
+:: 3.  Show the number less than 100,000 which has the longest hailstone sequence together with that sequence's length.<code></code>
+<code></code></li>
+<li>Create a second executable to calculate the following:<code></code>
+** Use the library's hailstone function, in the standard manner, (or document how this use deviates from standard use of a library), together with extra code in this executable, to find the hailstone length returned most often for 1 ≤ n &lt; 100,000.<code></code>
+<code></code></li>
+<li>Explain any extra setup/run steps needed to complete the task.<code></code>
+<code></code>
+<code>Notes:</code><code></code></li>
+<li>It is assumed that for a language that overwhelmingly ships in a compiled form, such as C, the library must also be an executable and the compiled user of that library is to do so without changing the compiled library. I.e. the compile tool-chain is assumed <code>not</code> to be present in the runtime environment.<code></code></li>
+<li>Interpreters are present in the runtime environment.<code></code></li>
+</ul>

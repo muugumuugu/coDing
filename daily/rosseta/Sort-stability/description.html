@@ -1,0 +1,18 @@
+<link href="/styles/home.css" rel="stylesheet">
+<p>When sorting records in a table by a particular column or field, a <a href="wp:Stable_sort#Stability|stable sort">wp:Stable_sort#Stability|stable sort</a> will always retain the  relative order of records that have the same key.<code></code>
+<code></code>
+For example, in this table of countries and cities, a stable sort on the <code>second</code> column, the cities, would  keep the US Birmingham above the UK Birmingham. (Although an unstable sort <code>might, in this case, place the US Birmingham above the UK Birmingham, a stable sort routine would guarantee</code> it).<code></code></p>
+<pre>UK  London<code></code>
+US  New York<code></code>
+US  Birmingham<code></code>
+UK  Birmingham</pre>
+<p><code></code>
+Similarly, stable sorting on just the first column would generate “UK London” as the first item and “US Birmingham” as the last item (since the order of the elements having the same first word – “UK” or “US” – would be maintained).<code></code>
+<code></code></p>
+<h1 id="examinethedocumentationonanyinbuiltsortroutinessuppliedbyalanguagec6c">Examine the documentation on any in-built sort routines supplied by a language.<code></code></h1>
+<h1 id="indicateifaninbuiltroutineissuppliedc7c">Indicate if an in-built routine is supplied<code></code></h1>
+<h1 id="ifsuppliedindicatewhetherornottheinbuiltroutineisstablec8c">If supplied, indicate whether or not the in-built routine is stable.<code></code></h1>
+<p><code></code>
+<br><code></code>
+(This <a href="wp:Stable_sort#Comparison_of_algorithms|Wikipedia table">wp:Stable<em>sort#Comparison</em>of_algorithms|Wikipedia table</a> shows the stability of some common sort routines).<code></code>
+<br><br><code></code></p>

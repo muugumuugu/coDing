@@ -1,0 +1,63 @@
+<link href="/styles/home.css" rel="stylesheet">
+<p><code>Free Cell is the solitaire card game that Paul Alfille introduced to the PLATO system in 1978. Jim Horne, at Microsoft, changed the name to FreeCell</code> and reimplemented the game for <a href="DOS]], then <a href="[Windows">DOS]">[Windows">DOS]</a>, then [[Windows</a>. <br><code></code>
+This version introduced 32000 numbered deals. (The <a href="http://www.solitairelaboratory.com/fcfaq.html FreeCell FAQ">http://www.solitairelaboratory.com/fcfaq.html FreeCell FAQ</a> tells this history.)<code></code>
+<code></code>
+As the game became popular, Jim Horne disclosed <a href="http://www.solitairelaboratory.com/mshuffle.txt the algorithm">http://www.solitairelaboratory.com/mshuffle.txt the algorithm</a>, and other implementations of FreeCell began to reproduce the Microsoft deals. <br><code></code>
+These deals are numbered from 1 to 32000.<code></code>
+Newer versions from Microsoft have 1 million deals, numbered from 1 to 1000000; some implementations allow numbers outside that range.<code></code>
+<code></code>
+The algorithm uses this <a href="linear congruential generator">linear congruential generator</a> from Microsoft C:<code></code>
+<code></code></p>
+<ul>
+<li><math>state_{n + 1} \equiv 214013 \times state_n + 2531011 \pmod{2^{31}}</math><code></code></li>
+<li><math>rand_n = state_n \div 2^{16}</math><code></code></li>
+<li><math>rand_n</math> is in range 0 to 32767.<code></code></li>
+<li>Rosetta Code has another task, <a href="linear congruential generator">linear congruential generator</a>, with code for this RNG in several languages.<code></code>
+<code></code>
+<br><code></code>
+The algorithm follows:<code></code>
+<code></code></li>
+</ul>
+<h1 id="seedtherngwiththenumberofthedealc17c">Seed the RNG with the number of the deal.<code></code></h1>
+<h1 id="createanahrefarrayarrayaof52cardsaceofclubsaceofdiamondsaceofheartsaceofspades2ofclubs2ofdiamondsandsoonthroughtheranksace2345678910jackqueenkingthearrayindexesare0to51withaceofclubsat0andkingofspadesat51c18c">Create an <a href="array">array</a> of 52 cards: Ace of Clubs, Ace of Diamonds, Ace of Hearts, Ace of Spades, 2 of Clubs, 2 of Diamonds, and so on through the ranks: Ace, 2, 3, 4, 5, 6, 7, 8, 9, 10, Jack, Queen, King. The array indexes are 0 to 51, with Ace of Clubs at 0, and King of Spades at 51.<code></code></h1>
+<h1 id="untilthearrayisemptyc19c">Until the array is empty:<code></code></h1>
+<h1 id="choosearandomcardatindexequivnextrandomnumbermodarraylengthc20c">* Choose a random card at <code>index &equiv; next random number (mod array length</code>).<code></code></h1>
+<h1 id="swapthisrandomcardwiththelastcardofthearrayc21c">* Swap this random card with the last card of the array.<code></code></h1>
+<h1 id="removethisrandomcardfromthearrayarraylengthgoesdownby1c22c">* Remove this random card from the array. (Array length goes down by 1.)<code></code></h1>
+<h1 id="dealthisrandomcardc23c">* Deal this random card.<code></code></h1>
+<h1 id="dealall52cardsfaceupacross8columnsthefirst8cardsgoin8columnsthenext8cardsgoonthefirst8cardsandsoonc24c">Deal all 52 cards, face up, across 8 columns. The first 8 cards go in 8 columns, the next 8 cards go on the first 8 cards, and so on.<code></code></h1>
+<p><code></code>
+{| class="wikitable"<code></code>
+!| Order to deal cards<code></code>
+!| Game #1<code></code>
+!| Game #617<code></code>
+|-<code></code>
+|| <pre> 1  2  3  4  5  6  7  8<code></code>
+ 9 10 11 12 13 14 15 16<code></code>
+17 18 19 20 21 22 23 24<code></code>
+25 26 27 28 29 30 31 32<code></code>
+33 34 35 36 37 38 39 40<code></code>
+41 42 43 44 45 46 47 48<code></code>
+49 50 51 52</pre><code></code>
+|| <pre>JD 2D 9H JC 5D 7H 7C 5H<code></code>
+KD KC 9S 5S AD QC KH 3H<code></code>
+2S KS 9D QD JS AS AH 3C<code></code>
+4C 5C TS QH 4H AC 4D 7S<code></code>
+3S TD 4S TH 8H 2C JH 7D<code></code>
+6D 8S 8D QS 6C 3D 8C TC<code></code>
+6S 9C 2H 6H</pre><code></code>
+|| <pre>7D AD 5C 3S 5S 8C 2D AH<code></code>
+TD 7S QD AC 6D 8H AS KH<code></code>
+TH QC 3H 9D 6S 8D 3D TC<code></code>
+KD 5H 9S 3C 8S 7H 4D JS<code></code>
+4C QS 9C 9H 7C 6H 2C 2S<code></code>
+4S TS 2H 5D JC 6C JH QH<code></code>
+JD KS KC 4H</pre><code></code>
+|}<code></code>
+<code></code>
+Deals can also be checked against <a href="http://freecellgamesolutions.com/ FreeCell solutions to 1000000 games">http://freecellgamesolutions.com/ FreeCell solutions to 1000000 games</a>.<code></code>
+(Summon a video solution, and it displays the initial deal.)<code></code>
+<code></code>
+Write a program to take a deal number and deal cards in the same order as this algorithm.<code></code>
+The program may display the cards with ASCII, with Unicode, by drawing graphics, or any other way.<code></code>
+<br><br><code></code></p>

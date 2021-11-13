@@ -1,0 +1,36 @@
+<link href="/styles/home.css" rel="stylesheet">
+<p>All real numbers form the uncountable set ℝ.  Among its subsets, relatively simple are the convex sets, each expressed as a range between two real numbers <code>a and b where a ≤ b</code>.  There are actually four cases for the meaning of "between", depending on open or closed boundary:<code></code></p>
+<ul>
+<li><a href="<code>a, b">a, b</a>: {x | a ≤ x and x ≤ b</code> }<code></code></li>
+<li>(<code>a, b): {x | a &lt; x and x &lt; b</code> }<code></code></li>
+<li>[<code>a, b): {x | a ≤ x and x &lt; b</code> }<code></code></li>
+<li>(<code>a, b]: {x | a &lt; x and x ≤ b</code> }<code></code>
+Note that if <code>a = b, of the four only <a href="a, a">a, a</code></a> would be non-empty.<code></code>
+<code></code>
+<code>Task</code><code></code></li>
+<li>Devise a way to represent any set of real numbers, for the definition of 'any' in the implementation notes below.<code></code></li>
+<li>Provide methods for these common set operations (<code>x is a real number; A and B</code> are sets):<code></code>
+:* <code>x ∈ A: determine if x is an element of A</code><code></code>
+:: example: 1 is in [1, 2), while 2, 3, ... are not.<code></code>
+:* <code>A ∪ B: union of A and B, i.e. {x | x ∈ A or x ∈ B</code>}<code></code>
+:: example: <a href="0, 2) ∪ (1, 3) = [0, 3); [0, 1) ∪ (2, 3] = well, [0, 1) ∪ (2, 3">0, 2) ∪ (1, 3) = [0, 3); [0, 1) ∪ (2, 3] = well, [0, 1) ∪ (2, 3</a><code></code>
+:* <code>A ∩ B: intersection of A and B, i.e. {x | x ∈ A and x ∈ B</code>}<code></code>
+:: example: <a href="0, 2) ∩ (1, 3) = (1, 2); [0, 1) ∩ (2, 3">0, 2) ∩ (1, 3) = (1, 2); [0, 1) ∩ (2, 3</a> = empty set<code></code>
+:* <code>A - B: difference between A and B, also written as A \ B, i.e. {x | x ∈ A and x ∉ B</code>}<code></code>
+:: example: <a href="0, 2) − (1, 3) = [0, 1">0, 2) − (1, 3) = [0, 1</a><code></code></li>
+<li>Test your implementation by checking if numbers 0, 1, and 2 are in any of the following sets:<code></code>
+:* (0, 1] ∪ [0, 2)<code></code>
+:* <a href="0, 2) ∩ (1, 2">0, 2) ∩ (1, 2</a><code></code>
+:* [0, 3) − (0, 1)<code></code>
+:* <a href="0, 3) − [0, 1">0, 3) − [0, 1</a><code></code>
+<code></code>
+<code>Implementation notes</code><code></code></li>
+<li>'Any' real set means 'sets that can be expressed as the union of a finite number of convex real sets'.  Cantor's set needs not apply.<code></code></li>
+<li>Infinities should be handled gracefully; indeterminate numbers (NaN) can be ignored.<code></code></li>
+<li>You can use your machine's native real number representation, which is probably IEEE floating point, and assume it's good enough (it usually is).<code></code>
+<code></code>
+<code>Optional work</code><code></code></li>
+<li>Create a function to determine if a given set is empty (contains no element).<code></code></li>
+<li>Define <code><a href="http://www.wolframalpha.com/input/?i=%7Csin%28pi+x2%29%7C%3E1%2F2%2C+0+%3C+x+%3C+10 A] = {x | 0 < x < 10 and |sin(π x²)| > 1/2 }, [http://www.wolframalpha.com/input/?i=%7Csin%28pi+x%29%7C%3E1%2F2%2C+0+%3C+x+%3C+10 B">http://www.wolframalpha.com/input/?i=%7Csin%28pi+x2%29%7C%3E1%2F2%2C+0+%3C+x+%3C+10 A] = {x | 0 < x < 10 and |sin(π x²)| > 1/2 }, [http://www.wolframalpha.com/input/?i=%7Csin%28pi+x%29%7C%3E1%2F2%2C+0+%3C+x+%3C+10 B</a> = {x | 0 < x < 10 and |sin(π x)| > 1/2}, calculate the length of the real axis covered by the set A − B</code>.  Note that<code></code>
+|sin(π <code>x)| &gt; 1/2 is the same as n + 1/6 &lt; x &lt; n + 5/6 for all integers n</code>; your program does not need to derive this by itself.<code></code></li>
+</ul>

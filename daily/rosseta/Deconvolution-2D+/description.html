@@ -1,0 +1,86 @@
+<link href="/styles/home.css" rel="stylesheet">
+<p>This task is a straightforward generalization of <a href="Deconvolution/1D">Deconvolution/1D</a> to higher dimensions. For example, the one dimensional case would be applicable to audio signals, whereas two dimensions would pertain to images. Define the discrete convolution in <math>\mathit d</math> dimensions of two functions<code></code>
+<code></code>
+:<math>H,F:\mathbb{Z}^d\rightarrow\mathbb{R}</math><code></code>
+<code></code>
+taking <math>\mathit d</math>-tuples of integers to real numbers as the function<code></code>
+<code></code>
+:<math>G:\mathbb{Z}^d\rightarrow\mathbb{R}</math><code></code>
+<code></code>
+also taking <math>\mathit d</math>-tuples of integers to reals and satisfying<code></code>
+<code></code>
+:<math>G(n<em>0, \dots, n</em>{d-1})=\sum<em>{m</em>0=-\infty}^{\infty}\dots\sum<em>{m</em>{d-1}=-\infty}^{\infty}F(m<em>0, \dots, m</em>{d-1})H(n<em>0-m</em>0, \dots, n<em>{d-1}-m</em>{d-1})</math><code></code>
+<code></code>
+for all <math>\mathit d</math>-tuples of integers <math>(n<em>0, \dots, n</em>{d-1})\in\mathbb{Z}^d</math>. Assume<code></code></p>
+<math>\mathit F</math>
+<p>and <math>\mathit H</math> (and therefore <math>\mathit G</math>) are non-zero over only a finite domain bounded by the origin, hence possible to represent as finite multi-dimensional arrays or nested lists <math>\mathit f</math>, <math>\mathit h</math>, and <math>\mathit g</math>.<code></code>
+<code></code>
+For this task, implement a function (or method, procedure, subroutine, etc.) <code>deconv</code> to perform <code>deconvolution (i.e., the inverse</code> of convolution) by solving for <math>\mathit{h}</math> given <math>\mathit{f}</math> and <math>\mathit{g}</math>. (See <a href="Deconvolution/1D">Deconvolution/1D</a> for details.)<code></code></p>
+<ul>
+<li>The function should work for <math>\mathit{g}</math> of arbitrary length in each dimension (i.e., not hard coded or constant) and <math>\mathit{f}</math> of any length up to that of <math>\mathit{g}</math> in the corresponding dimension.<code></code></li>
+<li>The <code>deconv</code> function will need to be parameterized by the dimension <math>\mathit d</math> unless the dimension can be inferred from the data structures representing <math>\mathit g</math> and <math>\mathit f</math>.<code></code></li>
+<li>There may be more equations than unknowns. If convenient, use a function from a <a href="http://www.netlib.org/lapack/lug/node27.html library] that finds the best fitting solution to an overdetermined system of linear equations (as in the <a href="Multiple regression]] task).  Otherwise, prune the set of equations as needed and solve as in the [[Reduced row echelon form">Multiple regression]">http://www.netlib.org/lapack/lug/node27.html library] that finds the best fitting solution to an overdetermined system of linear equations (as in the <a href="Multiple regression]] task).  Otherwise, prune the set of equations as needed and solve as in the [[Reduced row echelon form">Multiple regression]</a> task).  Otherwise, prune the set of equations as needed and solve as in the [[Reduced row echelon form</a> task.<code></code></li>
+<li>Debug your solution using <a href="http://rosettacode.org/mw/index.php?title=Deconvolution/2D%2B/Test_data&action=raw this test data">http://rosettacode.org/mw/index.php?title=Deconvolution/2D%2B/Test_data&action=raw this test data</a>, of which a portion is shown below. Be sure to verify both that the deconvolution of <math>\mathit g</math> with <math>\mathit f</math> is <math>\mathit h</math> and that the deconvolution of <math>\mathit g</math> with <math>\mathit h</math> is <math>\mathit f</math>. Display the results in a human readable form for the three dimensional case <code>only</code>.<code></code>
+<code></code>
+dimension 1:<code></code></li>
+</ul>
+<pre><code></code>
+h: <a href="-8, 2, -9, -2, 9, -8, -2">-8, 2, -9, -2, 9, -8, -2</a><code></code>
+f: <a href=" 6, -9, -7, -5"> 6, -9, -7, -5</a><code></code>
+g: <a href="-48, 84, -16, 95, 125, -70, 7, 29, 54, 10">-48, 84, -16, 95, 125, -70, 7, 29, 54, 10</a><code></code>
+</pre>
+<p><code></code>
+dimension 2:<code></code></p>
+<pre><code></code>
+h: [<code></code>
+      <a href="-8, 1, -7, -2, -9, 4">-8, 1, -7, -2, -9, 4</a><br><code></code>
+      <a href="4, 5, -5, 2, 7, -1">4, 5, -5, 2, 7, -1</a><br><code></code>
+      <a href="-6, -3, -3, -6, 9, 5]">-6, -3, -3, -6, 9, 5]</a><code></code>
+f: [<code></code>
+      <a href="-5, 2, -2, -6, -7">-5, 2, -2, -6, -7</a><br><code></code>
+      <a href="9, 7, -6, 5, -7">9, 7, -6, 5, -7</a><br><code></code>
+      <a href="1, -1, 9, 2, -7">1, -1, 9, 2, -7</a><br><code></code>
+      <a href="5, 9, -9, 2, -5">5, 9, -9, 2, -5</a><br><code></code>
+      <a href="-8, 5, -2, 8, 5]">-8, 5, -2, 8, 5]</a><code></code>
+g: [<code></code>
+      <a href="40, -21, 53, 42, 105, 1, 87, 60, 39, -28">40, -21, 53, 42, 105, 1, 87, 60, 39, -28</a><br><code></code>
+      <a href="-92, -64, 19, -167, -71, -47, 128, -109, 40, -21">-92, -64, 19, -167, -71, -47, 128, -109, 40, -21</a><br><code></code>
+      <a href="58, 85, -93, 37, 101, -14, 5, 37, -76, -56">58, 85, -93, 37, 101, -14, 5, 37, -76, -56</a><br><code></code>
+      <a href="-90, -135, 60, -125, 68, 53, 223, 4, -36, -48">-90, -135, 60, -125, 68, 53, 223, 4, -36, -48</a><br><code></code>
+      <a href="78, 16, 7, -199, 156, -162, 29, 28, -103, -10">78, 16, 7, -199, 156, -162, 29, 28, -103, -10</a><br><code></code>
+      <a href="-62, -89, 69, -61, 66, 193, -61, 71, -8, -30">-62, -89, 69, -61, 66, 193, -61, 71, -8, -30</a><br><code></code>
+      <a href="48, -6, 21, -9, -150, -22, -56, 32, 85, 25]">48, -6, 21, -9, -150, -22, -56, 32, 85, 25]</a><code></code>
+</pre>
+<p><code></code>
+dimension 3:<code></code></p>
+<pre><code></code>
+h: [<code></code>
+      <a href="-6, -8, -5, 9], <a href="-7, 9, -6, -8], [2, -7, 9, 8">-6, -8, -5, 9], [-7, 9, -6, -8">-7, 9, -6, -8], [2, -7, 9, 8">-6, -8, -5, 9], [-7, 9, -6, -8</a>, [2, -7, 9, 8</a><br><code></code>
+      <a href="7, 4, 4, -6], <a href="9, 9, 4, -4], [-3, 7, -2, -3]">7, 4, 4, -6], [9, 9, 4, -4], [-3, 7, -2, -3">9, 9, 4, -4], [-3, 7, -2, -3]">7, 4, 4, -6], [9, 9, 4, -4], [-3, 7, -2, -3</a></a><code></code>
+f: [<code></code>
+      <a href="-9, 5, -8], <a href="3, 5, 1">-9, 5, -8">3, 5, 1">-9, 5, -8</a>, [3, 5, 1</a><br><code></code>
+      <a href="-1, -7, 2], <a href="-5, -6, 6">-1, -7, 2">-5, -6, 6">-1, -7, 2</a>, [-5, -6, 6</a><br><code></code>
+      <a href="8, 5, 8],<a href="-2, -6, -4]">8, 5, 8],[-2, -6, -4">-2, -6, -4]">8, 5, 8],[-2, -6, -4</a></a><code></code>
+g: [<code></code>
+      [<code></code>
+         <a href="54, 42, 53, -42, 85, -72">54, 42, 53, -42, 85, -72</a><br><code></code>
+         <a href="45, -170, 94, -36, 48, 73">45, -170, 94, -36, 48, 73</a><br><code></code>
+         <a href="-39, 65, -112, -16, -78, -72">-39, 65, -112, -16, -78, -72</a><br><code></code>
+         <a href="6, -11, -6, 62, 49, 8]">6, -11, -6, 62, 49, 8]</a><br><code></code>
+      [<code></code>
+         <a href="-57, 49, -23, 52, -135, 66">-57, 49, -23, 52, -135, 66</a><br><code></code>
+         <a href="-23, 127, -58, -5, -118, 64">-23, 127, -58, -5, -118, 64</a><br><code></code>
+         <a href="87, -16, 121, 23, -41, -12">87, -16, 121, 23, -41, -12</a><br><code></code>
+         <a href="-19, 29, 35, -148, -11, 45]">-19, 29, 35, -148, -11, 45]</a><br><code></code>
+      [<code></code>
+         <a href="-55, -147, -146, -31, 55, 60">-55, -147, -146, -31, 55, 60</a><br><code></code>
+         <a href="-88, -45, -28, 46, -26, -144">-88, -45, -28, 46, -26, -144</a><br><code></code>
+         <a href="-12, -107, -34, 150, 249, 66">-12, -107, -34, 150, 249, 66</a><br><code></code>
+         <a href="11, -15, -34, 27, -78, -50]">11, -15, -34, 27, -78, -50]</a><br><code></code>
+      [<code></code>
+         <a href="56, 67, 108, 4, 2, -48">56, 67, 108, 4, 2, -48</a><br><code></code>
+         <a href="58, 67, 89, 32, 32, -8">58, 67, 89, 32, 32, -8</a><br><code></code>
+         <a href="-42, -31, -103, -30, -23, -8">-42, -31, -103, -30, -23, -8</a><br><code></code>
+         <a href="6, 4, -26, -10, 26, 12]]">6, 4, -26, -10, 26, 12]]</a><code></code>
+</pre>
+<p><code></code></p>

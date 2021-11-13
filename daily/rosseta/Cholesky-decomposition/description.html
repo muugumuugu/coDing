@@ -1,0 +1,82 @@
+<link href="/styles/home.css" rel="stylesheet">
+<p>Every symmetric, positive definite matrix A can be decomposed into a product of a unique lower triangular matrix L and its transpose:<code></code>
+<code></code>
+:<math>A = LL^T</math><code></code>
+<code></code></p>
+<math>L</math>
+<p>is called the <code>Cholesky factor</code> of <math>A</math>, and can be interpreted as a generalized square root of <math>A</math>, as described in <a href="wp:Cholesky decomposition|Cholesky decomposition">wp:Cholesky decomposition|Cholesky decomposition</a>.<code></code>
+<code></code>
+In a 3x3 example, we have to solve the following system of equations:<code></code>
+<code></code>
+:<math>\begin{align}<code></code>
+A &=<code></code>
+\begin{pmatrix}<code></code>
+   a<em>{11} & a</em>{21} & a<em>{31}\<code></code>
+   a</em>{21} & a<em>{22} & a</em>{32}\<code></code>
+   a<em>{31} & a</em>{32} & a<em>{33}\<code></code>
+\end{pmatrix}\<code></code>
+& =<code></code>
+\begin{pmatrix}<code></code>
+   l</em>{11} & 0 & 0 \<code></code>
+   l<em>{21} & l</em>{22} & 0 \<code></code>
+   l<em>{31} & l</em>{32} & l<em>{33}\¨C19C
+\end{pmatrix}¨C20C
+\begin{pmatrix}¨C21C
+   l</em>{11} & l<em>{21} & l</em>{31} \¨C22C
+   0 & l<em>{22} & l</em>{32} \¨C23C
+   0 & 0 & l<em>{33}¨C24C
+\end{pmatrix} \equiv LL^T\¨C25C
+&= \begin{pmatrix}¨C26C
+   l</em>{11}^2     & l<em>{21}l</em>{11} & l<em>{31}l</em>{11} \¨C27C
+   l<em>{21}l</em>{11} & l<em>{21}^2 + l</em>{22}^2& l<em>{31}l</em>{21}+l<em>{32}l</em>{22} \¨C28C
+   l<em>{31}l</em>{11} & l<em>{31}l</em>{21}+l<em>{32}l</em>{22} & l<em>{31}^2 + l</em>{32}^2+l<em>{33}^2¨C29C
+\end{pmatrix}\end{align}¨C30C
+</math><code></code>
+<code></code>
+We can see that for the diagonal elements (<math>l</em>{kk}</math>) of <math>L</math> there is a calculation pattern:<code></code>
+<code></code>
+:<math>l<em>{11} = \sqrt{a</em>{11}}</math><code></code>
+:<math>l<em>{22} = \sqrt{a</em>{22} - l<em>{21}^2}</math><code></code>
+:<math>l</em>{33} = \sqrt{a<em>{33} - (l</em>{31}^2 + l<em>{32}^2)}</math><code></code>
+<code></code>
+or in general:<code></code>
+<code></code>
+:<math>l</em>{kk} = \sqrt{a<em>{kk} - \sum</em>{j=1}^{k-1} l<em>{kj}^2}</math><code></code>
+<code></code>
+For the elements below the diagonal (<math>l</em>{ik}</math>, where <math>i > k </math>) there is also a calculation pattern:<code></code>
+<code></code>
+:<math>l<em>{21} = \frac{1}{l</em>{11}} a<em>{21}</math><code></code>
+:<math>l</em>{31} = \frac{1}{l<em>{11}} a</em>{31}</math><code></code>
+:<math>l<em>{32} = \frac{1}{l</em>{22}} (a<em>{32} - l</em>{31}l<em>{21})</math><code></code>
+<code></code>
+which can also be expressed in a general formula:<code></code>
+<code></code>
+:<math>l</em>{ik} = \frac{1}{l<em>{kk}} \left ( a</em>{ik} - \sum<em>{j=1}^{k-1} l</em>{ij}l_{kj} \right )</math><code></code>
+<code></code>
+<code>Task description</code><code></code>
+<code></code>
+The task is to implement a routine which will return a lower Cholesky factor <math>L</math> for every given symmetric, positive definite nxn matrix <math>A</math>. You should then test it on the following two examples and include your output.<code></code>
+<code></code>
+Example 1:<code></code>
+<code></code></p>
+<pre><code></code>
+25  15  -5                 5   0   0<code></code>
+15  18   0         -->     3   3   0<code></code>
+-5   0  11                -1   1   3<code></code>
+</pre>
+<p><code></code>
+<code></code>
+Example 2:<code></code>
+<code></code></p>
+<pre><code></code>
+18  22   54   42           4.24264    0.00000    0.00000    0.00000<code></code>
+22  70   86   62   -->     5.18545    6.56591    0.00000    0.00000<code></code>
+54  86  174  134          12.72792    3.04604    1.64974    0.00000<code></code>
+42  62  134  106           9.89949    1.62455    1.84971    1.39262<code></code>
+</pre>
+<p><code></code>
+<code></code>
+<code></code>
+<br>Note:<code></code></p>
+<h1 id="thecholeskydecompositionofaahrefpascalmatrixgenerationpascaluppertrianglematrixistheahrefwpidentitymatrixidentitymatrixpascalmatrixgenerationpascalwpidentitymatrixidentitymatrixpascalmatrixgenerationpascalauppertrianglematrixisthewpidentitymatrixidentitymatrixaofthesamesizec67c">The Cholesky decomposition of a <a href="Pascal matrix generation‎|Pascal]] upper-triangle matrix is the <a href="[wp:Identity matrix|Identity matrix">Pascal matrix generation‎|Pascal]">[wp:Identity matrix|Identity matrix">Pascal matrix generation‎|Pascal]</a> upper-triangle matrix is the [[wp:Identity matrix|Identity matrix</a> of the same size.<code></code></h1>
+<h1 id="thecholeskydecompositionofapascalsymmetricmatrixisthepascallowertrianglematrixofthesamesizec68c">The Cholesky decomposition of a Pascal symmetric matrix is the Pascal lower-triangle matrix of the same size.<code></code></h1>

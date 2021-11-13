@@ -1,0 +1,34 @@
+<link href="/styles/home.css" rel="stylesheet">
+<p><a href="wp:Partial application|Partial function application">wp:Partial application|Partial function application</a> &nbsp; is the ability to take a function of many<code></code>
+parameters and apply arguments to some of the parameters to create a new<code></code>
+function that needs only the application of the remaining arguments to<code></code>
+produce the equivalent of applying all arguments to the original function.<code></code>
+<code></code>
+E.g:<code></code>
+: Given values <code>v1, v2</code><code></code>
+: Given <code>f(param1, param2)</code><code></code>
+: Then  <code>partial(f, param1=v1)</code> returns <code>f'(param2)</code><code></code>
+: And   <code>f(param1=v1, param2=v2) == f'(param2=v2)</code> (for any value v2)<code></code>
+<code></code>
+<code></code>
+Note that in the partial application of a parameter, (in the above case param1), other parameters are not explicitly mentioned. This is a recurring feature of partial function application.<code></code>
+<code></code>
+<code></code>
+<br>Task<code></code></p>
+<ul>
+<li>Create a function fs( f, s ) that takes a function, f( n ), of one value and a sequence of values s.<br> Function fs should return an ordered sequence of the result of applying function f to every value of s in turn.<code></code>
+<code></code></li>
+<li>Create function f1 that takes a value and returns it multiplied by 2.<code></code></li>
+<li>Create function f2 that takes a value and returns it squared.<code></code>
+<code></code></li>
+<li>Partially apply f1 to fs to form function fsf1( s )<code></code></li>
+<li>Partially apply f2 to fs to form function fsf2( s )<code></code>
+<code></code></li>
+<li>Test fsf1 and fsf2 by evaluating them with s being the sequence of integers from 0 to 3 inclusive and then the sequence of even integers from 2 to 8 inclusive.<code></code>
+<code></code>
+<code></code>
+<br>Notes<code></code></li>
+<li>In partially applying the functions f1 or f2 to fs, there should be no <code>explicit mention of any other parameters to fs, although introspection of fs within the partial applicator to find its parameters is</code> allowed.<code></code></li>
+<li>This task is more about <code>how</code> results are generated rather than just getting results.<code></code>
+<br><br><code></code></li>
+</ul>

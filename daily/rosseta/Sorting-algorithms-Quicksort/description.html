@@ -1,0 +1,80 @@
+<link href="/styles/home.css" rel="stylesheet">
+<p>{{Sorting Algorithm}}<code></code>
+<a href="Category:Recursion">Category:Recursion</a><code></code>
+{{Wikipedia|Quicksort}}<code></code>
+<code></code>
+<code></code>
+<br>Task:<code></code>
+Sort an array (or list) elements using the &nbsp; <a href="https://en.wikipedia.org/wiki/Quicksort <code>quicksort">https://en.wikipedia.org/wiki/Quicksort quicksort</code></a> &nbsp; algorithm.<code></code>
+<code></code>
+The elements must have a &nbsp; <a href="https://en.wikipedia.org/wiki/Weak_ordering strict weak order">https://en.wikipedia.org/wiki/Weak_ordering strict weak order</a> &nbsp; and the index of the array can be of any discrete type.<code></code>
+<code></code>
+For languages where this is not possible, sort an array of integers.<code></code>
+<code></code>
+<code></code>
+Quicksort, also known as &nbsp; <code>partition-exchange sort</code>, &nbsp; uses these steps.<code></code>
+<code></code>
+::# &nbsp; Choose any element of the array to be the pivot.<code></code>
+::# &nbsp; Divide all other elements (except the pivot) into two partitions.<code></code>
+::#* &nbsp; All elements less than the pivot must be in the first partition.<code></code>
+::#* &nbsp; All elements greater than the pivot must be in the second partition.<code></code>
+::# &nbsp; Use recursion to sort both partitions.<code></code>
+::# &nbsp; Join the first sorted partition, the pivot, and the second sorted partition.<code></code>
+<code></code>
+<br><code></code>
+The best pivot creates partitions of equal length (or lengths differing by &nbsp; <code>1</code>).<code></code>
+<code></code>
+The worst pivot creates an empty partition (for example, if the pivot is the first or last element of a sorted array).<code></code>
+<code></code>
+The run-time of Quicksort ranges from &nbsp; <big> <code><a href="O]](n log n) </big> &nbsp; with the best pivots, to &nbsp; <big>  <a href="[O">O]">[O">O]</a>(n log n) </big> &nbsp; with the best pivots, to &nbsp; <big>  [[O</a>(n<sup>2</sup>) </big> &nbsp; with the worst pivots, where &nbsp; <big> n</code> </big> &nbsp; is the number of elements in the array.<code></code>
+<code></code>
+<code></code>
+This is a simple quicksort algorithm, adapted from Wikipedia.<code></code>
+<code></code>
+ <code>function</code> <code>quicksort</code>(array)<code></code>
+     less, equal, greater <code>:=</code> three empty arrays<code></code>
+     <code>if</code> length(array) &gt; 1<code></code>
+         pivot <code>:=</code> <code>select any element of</code> array<code></code>
+         <code>for each<code>' x '</code>in</code> array<code></code>
+             <code>if<code>' x < pivot 'then add' x '</code>to</code> less<code></code>
+             <code>if<code>' x = pivot 'then add' x '</code>to</code> equal<code></code>
+             <code>if<code>' x > pivot 'then add' x '</code>to</code> greater<code></code>
+         quicksort(less)<code></code>
+         quicksort(greater)<code></code>
+         array <code>:=</code> concatenate(less, equal, greater)<code></code>
+<code></code>
+A better quicksort algorithm works in place, by swapping elements within the array, to avoid the memory allocation of more arrays.<code></code>
+<code></code>
+ <code>function</code> <code>quicksort</code>(array)<code></code>
+     <code>if</code> length(array) &gt; 1<code></code>
+         pivot <code>:=</code> <code>select any element of</code> array<code></code>
+         left <code>:= first index of</code> array<code></code>
+         right <code>:=<code>' '</code>last index of</code> array<code></code>
+         <code>while</code> left ≤ right<code></code>
+             <code>while</code> array<a href="left">left</a> < pivot<code></code>
+                 left := left + 1<code></code>
+             <code>while</code> array<a href="right">right</a> > pivot<code></code>
+                 right := right - 1<code></code>
+             <code>if</code> left ≤ right<code></code>
+                 <code>swap<code>' array<a href="left] 'with' array[right">left] '</code>with</code> array[right</a><code></code>
+                 left := left + 1<code></code>
+                 right := right - 1<code></code>
+         quicksort(array <code>from first index to</code> right)<code></code>
+         quicksort(array <code>from<code>' left '</code>to last index</code>)<code></code>
+<code></code>
+Quicksort has a reputation as the fastest sort. Optimized variants of quicksort are common features of many languages and libraries. One often contrasts quicksort with &nbsp; &lt;a href="../Merge sort|merge sort]], &nbsp; because both sorts have an average time of &nbsp; <big> <code><a href="[O">../Merge sort|merge sort]">[O">../Merge sort|merge sort]</a>, &nbsp; because both sorts have an average time of &nbsp; <big> [[O</a>(n log n)</code>. </big><code></code>
+<code></code>
+: <code>"On average, mergesort does fewer comparisons than quicksort, so it may be better when complicated comparison routines are used. Mergesort also takes advantage of pre-existing order, so it would be favored for using sort() to merge several sorted arrays. On the other hand, quicksort is often faster for small arrays, and on arrays of a few distinct values, repeated many times."</code> — http://perldoc.perl.org/sort.html<code></code>
+<code></code>
+Quicksort is at one end of the spectrum of divide-and-conquer algorithms, with merge sort at the opposite end.<code></code>
+<code></code></p>
+<ul>
+<li>Quicksort is a conquer-then-divide algorithm, which does most of the work during the partitioning and the recursive calls. The subsequent reassembly of the sorted partitions involves trivial effort.<code></code></li>
+<li>Merge sort is a divide-then-conquer algorithm. The partioning happens in a trivial way, by splitting the input array in half. Most of the work happens during the recursive calls and the merge phase.<code></code>
+<code></code>
+<br><code></code>
+With quicksort, every element in the first partition is less than or equal to every element in the second partition. Therefore, the merge phase of quicksort is so trivial that it needs no mention!<code></code>
+<code></code>
+This task has not specified whether to allocate new arrays, or sort in place. This task also has not specified how to choose the pivot element. (Common ways to are to choose the first element, the middle element, or the median of three elements.) Thus there is a variety among the following implementations.<code></code>
+<br><br><code></code></li>
+</ul>

@@ -1,0 +1,37 @@
+<link href="/styles/home.css" rel="stylesheet">
+<p><br>Task:<code></code>
+Calculate the Shannon entropy &nbsp; H &nbsp; of a given input string.<code></code>
+<code></code>
+Given the discrete random variable <math>X</math> that is a string of <math>N</math> "symbols" (total characters) consisting of <math>n</math> different characters (n=2 for binary), the Shannon entropy of X in <code>bits/symbol</code> is :<code></code>
+:<math>H<em>2(X) = -\sum</em>{i=1}^n \frac{count<em>i}{N} \log</em>2 \left(\frac{count<em>i}{N}\right)</math><code></code>
+<code></code>
+where <math>count</em>i</math> is the count of character <math>n<em>i</math>.<code></code>
+<code></code>
+For this task, use X="<tt>1223334444</tt>" as an example. The result should be 1.84644... bits/symbol.  This assumes X was a random variable, which may not be the case, or it may depend on the observer.<code></code>
+<code></code>
+This coding problem calculates the "specific" or "<a href="wp:Intensive_and_extensive_properties|intensive">wp:Intensive</em>and<em>extensive</em>properties|intensive</a>" entropy that finds its parallel in physics with "specific entropy" S<sup>0</sup> which is entropy per kg or per mole, not like physical entropy S and therefore not the "information" content of a file. It comes from Boltzmann's H-theorem where <math>S=k<em>B  N  H</math> where N=number of molecules. Boltzmann's H is the same equation as Shannon's H, and it gives the specific entropy H on a "per molecule" basis.<code></code>
+<code></code>
+The "total", "absolute", or "<a href="wp:Intensive_and_extensive_properties|extensive">wp:Intensive</em>and<em>extensive</em>properties|extensive</a>" information entropy is<code></code>
+:<math>S=H<em>2 N</math> bits<code></code>
+This is not the entropy being coded here, but it is the closest to physical entropy and a measure of the information content of a string. But it does not look for any patterns that might be available for compression, so it is a very restricted, basic, and certain measure of "information". Every binary file with an equal number of 1's and 0's will have S=N bits. All hex files with equal symbol frequencies will have <math>S=N \log</em>2(16)</math> bits of entropy. The total entropy in bits of the example above is S= 10*18.4644 = 18.4644  bits.<code></code>
+<code></code>
+The H function does not look for any patterns in data or check if X was a random variable.  For example, X=000000111111 gives the same calculated entropy in all senses as Y=010011100101. For most purposes it is usually more relevant to divide the gzip length by the length of the original data to get an informal measure of how much "order" was in the data.<code></code>
+<code></code>
+Two other "entropies" are useful:<code></code>
+<code></code>
+Normalized specific entropy:<code></code>
+:<math>H<em>n=\frac{H</em>2 * \log(2)}{\log(n)}</math><code></code>
+which varies from 0 to 1 and it has units of "entropy/symbol" or just 1/symbol. For this example, H<sub>n<\sub>= 0.923.<code></code>
+<code></code>
+Normalized total (extensive) entropy:<code></code>
+:<math>S<em>n = \frac{H</em>2 N * \log(2)}{\log(n)}</math><code></code>
+which varies from 0 to N and does not have units. It is simply the "entropy", but it needs to be called "total normalized extensive entropy" so that it is not confused with Shannon's (specific) entropy or physical entropy. For this example, S<sub>n<\sub>= 9.23.<code></code>
+<code></code>
+Shannon himself is the reason his "entropy/symbol" H function is very confusingly called "entropy". That's like calling a function that returns a speed a "meter". See section 1.7 of his classic <a href="http://worrydream.com/refs/Shannon%20-%20A%20Mathematical%20Theory%20of%20Communication.pdf  A Mathematical Theory of Communication">http://worrydream.com/refs/Shannon%20-%20A%20Mathematical%20Theory%20of%20Communication.pdf  A Mathematical Theory of Communication</a> and search on "per symbol" and "units" to see he always stated his entropy H has units of "bits/symbol" or "entropy/symbol" or "information/symbol".  So it is legitimate to say entropy NH is "information".<code></code>
+<code></code>
+In keeping with Landauer's limit, the physics entropy generated from erasing N bits is <math>S = H<em>2 N k</em>B \ln(2)</math> if the bit storage device is perfectly efficient.  This can be solved for H<sub>2</sub><em>N to (arguably) get the number of bits of information that a physical entropy represents.<code></code>
+<code></code>
+<br>Related tasks:<code></code>
+:</em> <a href="Fibonacci_word">Fibonacci_word</a><code></code>
+:* <a href="Entropy/Narcissist">Entropy/Narcissist</a><code></code>
+<br><br><code></code></p>

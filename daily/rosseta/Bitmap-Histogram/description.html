@@ -1,0 +1,13 @@
+<link href="/styles/home.css" rel="stylesheet">
+<p>Extend the basic bitmap storage defined <a href="Basic_bitmap_storage|on this page">Basic<em>bitmap</em>storage|on this page</a> to support dealing with image histograms. The image histogram contains for each luminance the count of image pixels having this luminance. Choosing a histogram representation take care about the data type used for the counts. It must have range of at least 0..NxM, where N is the image width and M is the image height.<code></code>
+<code></code>
+<code>Test task</code><code></code>
+<code></code>
+Histogram is useful for many image processing operations. As an example, use it to convert an image into black and white art. The method works as follows:<code></code></p>
+<ul>
+<li>Convert image to grayscale;<code></code></li>
+<li>Compute the histogram<code></code></li>
+<li>Find the median: defined as the luminance such that the image has an approximately equal number of pixels with lesser and greater luminance.<code></code></li>
+<li>Replace each pixel of luminance lesser than the median to black, and others to white.<code></code>
+Use <a href="read ppm file | read]]/<a href="[write ppm file]], and [[grayscale image">read ppm file | read]]/[[write ppm file]">[write ppm file]], and [[grayscale image">read ppm file | read]]/[[write ppm file]</a>, and [[grayscale image</a> solutions.<code></code></li>
+</ul>

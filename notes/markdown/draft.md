@@ -1,4 +1,54 @@
 <!-- Required extensions: pymdownx.betterem, pymdownx.tilde, pymdownx.emoji, pymdownx.tasklist, pymdownx.superfences -->
++ check for a match
+```
+[[ $date =~ ^regex$ ]] && echo "matched" || echo "did not match"
+```
++ set an alias
+	```
+	git config --global alias.last 'log -1 HEAD'
+	```
++ remove an alias
+	```
+	git config --global --unset alias.last
+	```
++ list aliases
+	```
+	git config --get-regexp alias
+	```
++ https://raw.githubusercontent.com/user/rep/filepath
++ https://cdn.jsdelivr.net/gh/user/repo/File
+	+ only main branch
++ id3v2 -l "$f" | grep -i "content type" | sed "s/^.*: //" | sed "s/ (.*$//"
+	+ get genre from id3
+
++ sed -z "fname"
+	+ delimeter is null values instead of newlines
++ To capitalize first word only:
+	```
+	foo='one two three'
+	foo="${foo^}"
+	echo $foo
+	```
+    > One two three
+
++ To capitalize every word in the variable:
+	```
+	foo="one two three"
+	foo=( $foo ) # without quotes
+	foo="${foo[@]^}"
+	echo $foo
+	```
+
++ Only files
+	```ls -p|grep -v /```
++ Only folders
+	```ls -F |grep '/' ```
++ webp to gif
+	```mkdir frames
+	ffmpeg -i giphy.mp4 -vf scale=320:-1:flags=lanczos,fps=10 frames/ffout%03d.png
+	convert -loop 0 frames/ffout*.png output.gif
+```
++ Install necessary modules by `apt-get install php-cli php-curl`
 + image-data-uri encodeFromFile fpath > outpath
 	+ npx image-data-uri --help
 + git update-index --assume-unchanged <path>
@@ -36,6 +86,7 @@
 + eyeD3 --write-images=DIR mp3_file  #writes covers from id3 tags
 + ffmpeg -i file.mp3 file.jpg  #extracts cover art
 + youtube-dl   -j --flat-playlist https://youtube.com/playlist?list=id | jq -r '.id' | sed 's_^_https://youtube.com/v/_' #get links of all vids in playlist
++ yt-dlp -j --flat-playlist https://youtube.com/playlist?list=id | jq -r '.id' | sed 's_^_https://youtube.com/v/_' #get links of all vids in playlist
 + http://www.youtube.com/watch_videos?video_ids=comma seperated list of ids #make a playlist from ids
 + regex: \A starting of text
 + regex: \Z end of text

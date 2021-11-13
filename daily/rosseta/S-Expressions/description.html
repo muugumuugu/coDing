@@ -1,0 +1,33 @@
+<link href="/styles/home.css" rel="stylesheet">
+<p><a href="wp:S-Expression|S-Expressions">wp:S-Expression|S-Expressions</a> &nbsp; are one convenient way to parse and store data.<code></code>
+<code></code>
+<code></code>
+<br>Task:<code></code>
+Write a simple reader and writer for S-Expressions that handles quoted and unquoted strings, integers and floats.<code></code>
+<code></code>
+The reader should read a single but nested S-Expression from a string and store it in a suitable datastructure (list, array, etc).<code></code>
+<code></code>
+Newlines and other whitespace may be ignored unless contained within a quoted string.<code></code>
+<code></code>
+“<tt>()</tt>” &nbsp; inside quoted strings are not interpreted, but treated as part of the string.<code></code>
+<code></code>
+Handling escaped quotes inside a string is optional; &nbsp; thus “<tt>(foo"bar)</tt>” maybe treated as a string “<tt>foo"bar</tt>”, or as an error.<code></code>
+<code></code>
+For this, the reader need not recognize “<tt>\</tt>” for escaping, but should, in addition, recognize numbers if the language has appropriate datatypes.<code></code>
+<code></code>
+Languages that support it may treat unquoted strings as symbols.<code></code>
+<code></code>
+Note that with the exception of “<tt>()"</tt>” (“<tt>\</tt>” if escaping is supported) and whitespace there are no special characters. Anything else is allowed without quotes.<code></code>
+<code></code>
+The reader should be able to read the following input<code></code>
+<lang lisp>((data "quoted data" 123 4.5)<code></code>
+ (data (!@# (4.5) "(more" "data)")))</lang><code></code>
+and turn it into a native datastructure. (see the <a href="#Pike|Pike]], <a href="[#Python|Python]] and [[#Ruby|Ruby">#Pike|Pike]], [[#Python|Python]">[#Python|Python]] and [[#Ruby|Ruby">#Pike|Pike]], [[#Python|Python]</a> and [[#Ruby|Ruby</a> implementations for examples of native data structures.)<code></code>
+<code></code>
+The writer should be able to take the produced list and turn it into a new S-Expression.<code></code>
+Strings that don't contain whitespace or parentheses () don't need to be quoted in the resulting S-Expression, but as a simplification, any string may be quoted.<code></code>
+<code></code>
+<code></code>
+<br>Extra Credit:<code></code>
+Let the writer produce pretty printed output with indenting and line-breaks.<code></code>
+<br><br><code></code></p>

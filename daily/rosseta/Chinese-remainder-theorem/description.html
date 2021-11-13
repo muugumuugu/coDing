@@ -1,0 +1,50 @@
+<link href="/styles/home.css" rel="stylesheet">
+<p>Suppose &nbsp; <math>n<em>1</math>, &nbsp; <math>n</em>2</math>, &nbsp; <math>\ldots</math>, &nbsp; <math>n<em>k</math> &nbsp; are positive <a href="integer">integer</a>s that are pairwise co-prime. &nbsp;<code></code>
+<code></code>
+Then, for any given sequence of integers &nbsp; <math>a</em>1</math>, &nbsp; <math>a<em>2</math>, &nbsp; <math>\dots</math>, &nbsp; <math>a</em>k</math>, &nbsp; there exists an integer &nbsp; <math>x</math> &nbsp; solving the following system of simultaneous congruences:<code></code>
+<code></code>
+::: <math>\begin{align}<code></code>
+  x &\equiv a<em>1 \pmod{n</em>1} \<code></code>
+  x &\equiv a<em>2 \pmod{n</em>2} \<code></code>
+    &{}\  \  \vdots \<code></code>
+  x &\equiv a<em>k \pmod{n</em>k}<code></code>
+\end{align}</math><code></code>
+<code></code>
+Furthermore, all solutions &nbsp; <math>x</math> &nbsp; of this system are congruent modulo the product, &nbsp;  <math>N=n<em>1n</em>2\ldots n<em>k</math>.<code></code>
+<code></code>
+<code></code>
+<br>Task:<code></code>
+Write a program to solve a system of linear congruences by applying the &nbsp; <a href="wp:Chinese Remainder Theorem|Chinese Remainder Theorem">wp:Chinese Remainder Theorem|Chinese Remainder Theorem</a>.<code></code>
+<code></code>
+If the system of equations cannot be solved, your program must somehow indicate this.<code></code>
+<code></code>
+(It may throw an exception or return a special false value.)<code></code>
+<code></code>
+Since there are infinitely many solutions, the program should return the unique solution &nbsp; <math>s</math> &nbsp; where &nbsp; <math>0 \leq s \leq n</em>1n<em>2\ldots n</em>k</math>.<code></code>
+<code></code>
+<code></code>
+<code>Show the functionality of this program</code> by printing the result such that the &nbsp; <math>n</math>'s &nbsp; are &nbsp; <math><a href="3,5,7]</math> &nbsp; and the &nbsp; <math>a</math>'s &nbsp; are &nbsp; <math>[2,3,2">3,5,7]</math> &nbsp; and the &nbsp; <math>a</math>'s &nbsp; are &nbsp; <math>[2,3,2</a></math>.<code></code>
+<code></code>
+<code></code>
+<code>Algorithm</code>: &nbsp; The following algorithm only applies if the &nbsp; <math>n<em>i</math>'s &nbsp; are pairwise co-prime.<code></code>
+<code></code>
+Suppose, as above, that a solution is required for the system of congruences:<code></code>
+<code></code>
+::: <math>x \equiv a</em>i \pmod{n<em>i} \quad\mathrm{for}\; i = 1, \ldots, k</math><code></code>
+<code></code>
+Again, to begin, the product &nbsp; <math>N = n</em>1n<em>2 \ldots n</em>k</math> &nbsp; is defined.<code></code>
+<code></code>
+Then a solution &nbsp; <math>x</math> &nbsp; can be found as follows:<code></code>
+<code></code>
+For each &nbsp; <math>i</math>, &nbsp; the integers &nbsp; <math>n<em>i</math> &nbsp; and &nbsp; <math>N/n</em>i</math> &nbsp; are co-prime.<code></code>
+<code></code>
+Using the &nbsp; <a href="wp:Extended Euclidean algorithm|Extended Euclidean algorithm">wp:Extended Euclidean algorithm|Extended Euclidean algorithm</a>, &nbsp; we can find integers &nbsp; <math>r<em>i</math> &nbsp; and &nbsp; <math>s</em>i</math> &nbsp; such that &nbsp; <math>r<em>i n</em>i + s<em>i N/n</em>i = 1</math>.<code></code>
+<code></code>
+Then, one solution to the system of simultaneous congruences is:<code></code>
+<code></code>
+::: <math>x = \sum<em>{i=1}^k a</em>i s<em>i N/n</em>i</math><code></code>
+<code></code>
+and the minimal solution<br><code></code>
+<code></code>
+::: <math>x \pmod{N}</math>.<code></code>
+<br><br><code></code></p>

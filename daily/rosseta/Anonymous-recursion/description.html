@@ -1,0 +1,19 @@
+<link href="/styles/home.css" rel="stylesheet">
+<p>While implementing a recursive function, it often happens that we must resort to a separate &nbsp; <code>helper function</code> &nbsp; to handle the actual recursion.<code></code>
+<code></code>
+This is usually the case when directly calling the current function would waste too many resources (stack space, execution time), causing unwanted side-effects, &nbsp; and/or the function doesn't have the right arguments and/or return values.<code></code>
+<code></code>
+So we end up inventing some silly name like &nbsp; <code>foo2<code>' &nbsp; or &nbsp; '</code>foo_helper</code>. &nbsp; I have always found it painful to come up with a proper name, and see some disadvantages:<code></code>
+<code></code>
+::* &nbsp; You have to think up a name, which then pollutes the namespace<code></code>
+::* &nbsp; Function is created which is called from nowhere else<code></code>
+::* &nbsp; The program flow in the source code is interrupted<code></code>
+<code></code>
+Some languages allow you to embed recursion directly in-place. &nbsp; This might work via a label, a local <code>gosub</code> instruction, or some special keyword.<code></code>
+<code></code>
+Anonymous recursion can also be accomplished using the &nbsp; <a href="Y combinator">Y combinator</a>.<code></code>
+<code></code>
+<code></code>
+<br>Task:<code></code>
+If possible, demonstrate this by writing the recursive version of the fibonacci function &nbsp; (see <a href="Fibonacci sequence">Fibonacci sequence</a>) &nbsp; which checks for a negative argument before doing the actual recursion.<code></code>
+<br><br><code></code></p>

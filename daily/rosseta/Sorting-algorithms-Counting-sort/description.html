@@ -1,0 +1,30 @@
+<link href="/styles/home.css" rel="stylesheet">
+<p>{{Sorting Algorithm}}<code></code>
+{{Wikipedia|Counting sort}}<code></code>
+<code></code>
+<code></code>
+<br>Task:<code></code>
+Implement the <a href="wp:Counting sort|Counting sort">wp:Counting sort|Counting sort</a>. This is a way of sorting integers when the minimum and maximum value are known.<code></code>
+<code></code>
+<code></code>
+Pseudocode:<code></code>
+ <code>function</code> <code>countingSort</code>(array, min, max):<code></code>
+     count: <code>array of<code>' (max - min + 1) '</code>elements</code><code></code>
+     <code>initialize<code>' count '</code>with</code> 0<code></code>
+     <code>for each<code>' number 'in' array '</code>do</code><code></code>
+         count<a href="number - min] := count[number - min">number - min] := count[number - min</a> + 1<code></code>
+     <code>done</code><code></code>
+     z := 0<code></code>
+     <code>for<code>' i 'from' min 'to' max '</code>do</code><code></code>
+         <code>while<code>' ( count<a href="i - min">i - min</a> &gt; 0 ) '</code>do</code><code></code>
+             array<a href="z">z</a> := i<code></code>
+             z := z+1<code></code>
+             count<a href="i - min] := count[i - min">i - min] := count[i - min</a> - 1<code></code>
+         <code>done</code><code></code>
+     <code>done</code><code></code>
+<code></code>
+The <code>min and max can be computed apart, or be known a priori</code>.<code></code>
+<code></code>
+<code></code>
+<code>Note<code>': &nbsp; we know that, given an array of integers, &nbsp; its maximum and minimum values can be always found; &nbsp; but if we imagine the worst case for an array that can hold up to 32 bit integers, &nbsp; we see that in order to hold the counts, &nbsp; an array of up to '2<sup>32</sup>' elements may be needed. &nbsp; I.E.: &nbsp; we need to hold a count value up to '2<sup>32</sup>-1</code>, &nbsp; which is a little over 4.2 Gbytes. &nbsp; So the counting sort is more practical when the range is (very) limited, &nbsp; and minimum and maximum values are known &nbsp; a priori. &nbsp; (The use of &nbsp; sparse arrays &nbsp; minimizes the impact of the memory usage, &nbsp; as well as removing the need of having to know the minimum and maximum values &nbsp; a priori</code>.)<code></code>
+<br><br><code></code></p>

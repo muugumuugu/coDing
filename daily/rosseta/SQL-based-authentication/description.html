@@ -1,0 +1,18 @@
+<link href="/styles/home.css" rel="stylesheet">
+<p>This task has three parts:<code></code></p>
+<ul>
+<li>Connect to a <a href="MySQL">MySQL</a> database (<tt>connect_db</tt>)<code></code></li>
+<li>Create user/password records in the following table (<tt>create_user</tt>)<code></code></li>
+<li>Authenticate login requests against the table (<tt>authenticate<em>user</tt>)<code></code>
+<code></code>
+This is the table definition:<code></code>
+<lang sql>create table users (<code></code>
+userid int primary key auto</em>increment<br><code></code>
+username varchar(32) unique key not null<br><code></code>
+pass<em>salt tinyblob not null<br><code></code>
+        -- a string of 16 random bytes<code></code>
+pass</em>md5 tinyblob not null<code></code>
+        -- binary MD5 hash of pass<em>salt concatenated with the password<code></code>
+);</lang><code></code>
+(<tt>pass</em>salt</tt> and <tt>pass_md5</tt> would be <tt>binary(16)</tt> values, but MySQL versions before 5.0.15 strip trailing spaces when selecting them.)<code></code></li>
+</ul>

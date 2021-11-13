@@ -1,0 +1,16 @@
+<link href="/styles/home.css" rel="stylesheet">
+<p>An object is <a href="polymorphism|polymorphic">polymorphism|polymorphic</a> when its specific type may vary.<code></code>
+The types a specific value may take, is called <code>class</code>.<code></code>
+<code></code>
+It is trivial to copy an object if its type is known:<code></code>
+<lang c>int x;<code></code>
+int y = x;</lang><code></code>
+Here x is not polymorphic, so y is declared of same type (<code>int</code>) as x.<code></code>
+But if the specific type of x were unknown, then y could not be declared of any specific type.<code></code>
+<code></code>
+The task: let a polymorphic object contain an instance of some specific type S derived from a type T.<code></code>
+The type T is known.<code></code>
+The type S is possibly unknown until <a href="run time">run time</a>.<code></code>
+The objective is to create an exact copy of such polymorphic object (not to create a <a href="reference">reference</a>, nor a pointer to).<code></code>
+Let further the type T have a method overridden by S.<code></code>
+This method is to be called on the copy to demonstrate that the specific type of the copy is indeed S.<code></code></p>

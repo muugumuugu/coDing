@@ -1,0 +1,55 @@
+<link href="/styles/home.css" rel="stylesheet">
+<p>The task is to read a configuration file in standard configuration file format<br><code></code>
+and set variables accordingly.<code></code>
+<code></code>
+For this task, we have a configuration file as follows:<code></code>
+<code></code>
+ # This is a configuration file in standard configuration file format<code></code>
+ #<code></code>
+ # Lines beginning with a hash or a semicolon are ignored by the application<code></code>
+ # program. Blank lines are also ignored by the application program.<code></code>
+<code></code>
+ # This is the fullname parameter<code></code>
+ FULLNAME Foo Barber<code></code>
+<code></code>
+ # This is a favourite fruit<code></code>
+ FAVOURITEFRUIT banana<code></code>
+<code></code>
+ # This is a boolean that should be set<code></code>
+ NEEDSPEELING<code></code>
+<code></code>
+ # This boolean is commented out<code></code>
+ ; SEEDSREMOVED<code></code>
+<code></code>
+ # Configuration option names are not case sensitive, but configuration parameter<code></code>
+ # data is case sensitive and may be preserved by the application program.<code></code>
+<code></code>
+ # An optional equals sign can be used to separate configuration parameter data<code></code>
+ # from the option name. This is dropped by the parser.<code></code>
+<code></code>
+ # A configuration option may take multiple parameters separated by commas.<code></code>
+ # Leading and trailing whitespace around parameter names and parameter data fields<code></code>
+ # are ignored by the application program.<code></code>
+<code></code>
+ OTHERFAMILY Rhu Barber, Harry Barber<code></code>
+<code></code>
+<code></code>
+For the task we need to set four variables according to the configuration entries as follows:<code></code>
+<code></code>
+*fullname = Foo Barber<code></code>
+*favouritefruit = banana<code></code>
+*needspeeling = true<code></code>
+*seedsremoved = false<code></code>
+<code></code>
+<code></code>
+We also have an option that contains multiple parameters. These may be stored in an array.<code></code>
+<code></code></p>
+<ul>
+<li>otherfamily(1) = Rhu Barber<code></code></li>
+<li>otherfamily(2) = Harry Barber<code></code>
+<code></code>
+<code></code>
+<br>Related tasks<code></code></li>
+<li><a href="Update a configuration file">Update a configuration file</a><code></code>
+<br><br><code></code></li>
+</ul>

@@ -1,0 +1,53 @@
+<link href="/styles/home.css" rel="stylesheet">
+<p>Solve the <a href="wp:Stable marriage problem|Stable marriage problem">wp:Stable marriage problem|Stable marriage problem</a> using the Gale/Shapley algorithm.<code></code>
+<code></code>
+<code></code>
+<code>Problem description</code><br><code></code>
+Given an equal number of men and women to be paired for marriage, each man ranks all the women in order of his preference and each woman ranks all the men in order of her preference.<code></code>
+<code></code>
+A stable set of engagements for marriage is one where no man prefers a woman over the one he is engaged to, where that other woman <code>also</code> prefers that man over the one she is engaged to. I.e. with consulting marriages, there would be no reason for the engagements between the people to change.<code></code>
+<code></code>
+Gale and Shapley proved that there is a stable set of engagements for any set of preferences and the first link above gives their algorithm for finding a set of stable engagements.<code></code>
+<code></code>
+<code></code>
+<code>Task Specifics</code><br><code></code>
+Given ten males:<code></code>
+    abe, bob, col, dan, ed, fred, gav, hal, ian, jon<code></code>
+And ten females:<code></code>
+    abi, bea, cath, dee, eve, fay, gay, hope, ivy, jan<code></code>
+<code></code>
+And a complete list of ranked preferences, where the most liked is to the left:<code></code>
+   abe: abi, eve, cath, ivy, jan, dee, fay, bea, hope, gay<code></code>
+   bob: cath, hope, abi, dee, eve, fay, bea, jan, ivy, gay<code></code>
+   col: hope, eve, abi, dee, bea, fay, ivy, gay, cath, jan<code></code>
+   dan: ivy, fay, dee, gay, hope, eve, jan, bea, cath, abi<code></code>
+    ed: jan, dee, bea, cath, fay, eve, abi, ivy, hope, gay<code></code>
+  fred: bea, abi, dee, gay, eve, ivy, cath, jan, hope, fay<code></code>
+   gav: gay, eve, ivy, bea, cath, abi, dee, hope, jan, fay<code></code>
+   hal: abi, eve, hope, fay, ivy, cath, jan, bea, gay, dee<code></code>
+   ian: hope, cath, dee, gay, bea, abi, fay, ivy, jan, eve<code></code>
+   jon: abi, fay, jan, gay, eve, bea, dee, cath, ivy, hope<code></code>
+<code></code>
+   abi: bob, fred, jon, gav, ian, abe, dan, ed, col, hal<code></code>
+   bea: bob, abe, col, fred, gav, dan, ian, ed, jon, hal<code></code>
+  cath: fred, bob, ed, gav, hal, col, ian, abe, dan, jon<code></code>
+   dee: fred, jon, col, abe, ian, hal, gav, dan, bob, ed<code></code>
+   eve: jon, hal, fred, dan, abe, gav, col, ed, ian, bob<code></code>
+   fay: bob, abe, ed, ian, jon, dan, fred, gav, col, hal<code></code>
+   gay: jon, gav, hal, fred, bob, abe, col, ed, dan, ian<code></code>
+  hope: gav, jon, bob, abe, ian, dan, hal, ed, col, fred<code></code>
+   ivy: ian, col, hal, gav, fred, bob, abe, ed, jon, dan<code></code>
+   jan: ed, hal, gav, abe, bob, jon, col, ian, fred, dan<code></code>
+<code></code></p>
+<h1 id="usethegaleshapleyalgorithmtofindastablesetofengagementsc40c">Use the Gale Shapley algorithm to find a stable set of engagements<code></code></h1>
+<h1 id="perturbthissetofengagementstoformanunstablesetofengagementsthencheckthisnewsetforstabilityc41c">Perturb this set of engagements to form an unstable set of engagements then check this new set for stability.<code></code></h1>
+<p><code></code>
+<code></code>
+<code>References</code><code></code></p>
+<h1 id="ahrefhttpwwwcscolumbiaeduevsintrostablewriteuphtmlthestablemarriageproblemhttpwwwcscolumbiaeduevsintrostablewriteuphtmlthestablemarriageproblemaeloquentdescriptionandbackgroundinformationc45c"><a href="http://www.cs.columbia.edu/~evs/intro/stable/writeup.html The Stable Marriage Problem">http://www.cs.columbia.edu/~evs/intro/stable/writeup.html The Stable Marriage Problem</a>. (Eloquent description and background information).<code></code></h1>
+<h1 id="ahrefhttpsephlietzcomgaleshapleygaleshapleyalgorithmdemonstrationhttpsephlietzcomgaleshapleygaleshapleyalgorithmdemonstrationac46c"><a href="http://sephlietz.com/gale-shapley/ Gale-Shapley Algorithm Demonstration">http://sephlietz.com/gale-shapley/ Gale-Shapley Algorithm Demonstration</a>.<code></code></h1>
+<h1 id="ahrefhttpmathsitemathberkeleyedusmpsmphtmlanothergaleshapleyalgorithmdemonstrationhttpmathsitemathberkeleyedusmpsmphtmlanothergaleshapleyalgorithmdemonstrationac47c"><a href="http://mathsite.math.berkeley.edu/smp/smp.html Another Gale-Shapley Algorithm Demonstration">http://mathsite.math.berkeley.edu/smp/smp.html Another Gale-Shapley Algorithm Demonstration</a>.<code></code></h1>
+<h1 id="ahrefhttpswwwyoutubecomwatchvqcv1iqhwazgstablemarriageproblemnumberphilehttpswwwyoutubecomwatchvqcv1iqhwazgstablemarriageproblemnumberphileavideoc48c"><a href="https://www.youtube.com/watch?v=Qcv1IqHWAzg Stable Marriage Problem - Numberphile">https://www.youtube.com/watch?v=Qcv1IqHWAzg Stable Marriage Problem - Numberphile</a> (Video).<code></code></h1>
+<h1 id="ahrefhttpswwwyoutubecomwatchvlttv6rixhdostablemarriageproblemthemathbithttpswwwyoutubecomwatchvlttv6rixhdostablemarriageproblemthemathbitavideoc49c"><a href="https://www.youtube.com/watch?v=LtTV6rIxhdo Stable Marriage Problem (the math bit)">https://www.youtube.com/watch?v=LtTV6rIxhdo Stable Marriage Problem (the math bit)</a> (Video).<code></code></h1>
+<h1 id="ahrefhttpwwwamsorgsamplingsfeaturecolumnfc201503thestablemarriageproblemandschoolchoicehttpwwwamsorgsamplingsfeaturecolumnfc201503thestablemarriageproblemandschoolchoiceaexcellentexpositionc50c"><a href="http://www.ams.org/samplings/feature-column/fc-2015-03 The Stable Marriage Problem and School Choice">http://www.ams.org/samplings/feature-column/fc-2015-03 The Stable Marriage Problem and School Choice</a>. (Excellent exposition)<code></code></h1>
+<p><br><br><code></code></p>

@@ -1,0 +1,28 @@
+<link href="/styles/home.css" rel="stylesheet">
+<p>{{wikipedia|Forest-fire model}}<a href="Category:Cellular automata">Category:Cellular automata</a><code></code>
+<code></code>
+<br><code></code>
+<br>Task:<code></code>
+Implement the Drossel and Schwabl definition of the <a href="wp:Forest-fire model|forest-fire model">wp:Forest-fire model|forest-fire model</a>.<code></code>
+<code></code>
+<code></code>
+It is basically a 2D &nbsp; <a href="wp:Cellular automaton|cellular automaton">wp:Cellular automaton|cellular automaton</a> &nbsp; where each cell can be in three distinct states (<code>empty, tree and burning</code>) and evolves according to the following rules (as given by Wikipedia)<code></code>
+<code></code></p>
+<h1 id="aburningcellturnsintoanemptycellc9c">A burning cell turns into an empty cell<code></code></h1>
+<h1 id="atreewillburnifatleastoneneighborisburningc10c">A tree will burn if at least one neighbor is burning<code></code></h1>
+<h1 id="atreeigniteswithprobabilitynbspbigfbignbspevenifnoneighborisburningc11c">A tree ignites with probability &nbsp; <big><code>f</code> </big> &nbsp; even if no neighbor is burning<code></code></h1>
+<h1 id="anemptyspacefillswithatreewithprobabilitynbspbigpbigc12c">An empty space fills with a tree with probability &nbsp; <big> <code>p</code> </big><code></code></h1>
+<p><code></code>
+<br>Neighborhood is the &nbsp; <a href="wp:Moore neighborhood|Moore neighborhood">wp:Moore neighborhood|Moore neighborhood</a>; &nbsp; boundary conditions are so that on the boundary the cells are always empty ("fixed" boundary condition).<code></code>
+<code></code>
+At the beginning, populate the lattice with empty and tree cells according to a specific probability (e.g. a cell has the probability 0.5 to be a tree). Then, let the system evolve.<code></code>
+<code></code>
+Task's requirements do not include graphical display or the ability to change parameters (probabilities &nbsp; <big> <code>p </big> &nbsp; and &nbsp; <big> f</code> </big>) &nbsp; through a graphical or command line interface.<code></code>
+<code></code>
+<code></code>
+<br>Related tasks:<code></code></p>
+<ul>
+<li>&nbsp; See &nbsp; <a href="Conway's Game of Life">Conway's Game of Life</a><code></code></li>
+<li>&nbsp; See &nbsp; <a href="Wireworld">Wireworld</a>.<code></code>
+<br><br><code></code></li>
+</ul>

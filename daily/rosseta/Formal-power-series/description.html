@@ -1,0 +1,21 @@
+<link href="/styles/home.css" rel="stylesheet">
+<p>A <code>power series</code> is an infinite sum of the form<code></code>
+<code></code></p>
+<math>a_0 + a_1 \cdot x + a_2 \cdot x^2 + a_3 \cdot x^3 + \cdots</math>
+<p><code></code>
+<code></code>
+The <code>a<sub>i</sub> are called the coefficients of the series. Such sums can be added, multiplied etc., where the new coefficients of the powers of x</code> are calculated according to the usual rules.<code></code>
+<code></code>
+If one is not interested in evaluating such a series for particular values of <code>x, or in other words, if convergence doesn't play a role, then such a collection of coefficients is called formal power series</code>. It can be treated like a new kind of number.<code></code>
+<code></code>
+<code>Task</code>: Implement formal power series as a numeric type. Operations should at least include <code>addition, multiplication, division and additionally non-numeric operations like differentiation and integration</code> (with an integration constant of zero). Take care that your implementation deals with the potentially infinite number of coefficients.<code></code>
+<code></code>
+As an example, define the power series of sine and cosine in terms of each other using integration, as in<code></code>
+<code></code></p>
+<math>\sin x = \int_0^x \cos t\, dt</math>
+<p><code></code>
+<code></code></p>
+<math>\cos x = 1 - \int_0^x \sin t\, dt</math>
+<p><code></code>
+<code></code>
+<code>Goals</code>: Demonstrate how the language handles new numeric types and delayed (or <code>lazy</code>) evaluation.<code></code></p>

@@ -1,0 +1,27 @@
+<link href="/styles/home.css" rel="stylesheet">
+<p>This task is an exercise in <a href="wp:Call-by-name#Call_by_name|call by name">wp:Call-by-name#Call<em>by</em>name|call by name</a>.<code></code>
+<code></code>
+<code>Jensen's Device</code> is a computer programming technique devised by Danish computer scientist <a href="wp:Jørn_Jensen|Jørn Jensen]] after studying the <a href="[ALGOL 60">wp:Jørn<em>Jensen|Jørn Jensen]">[ALGOL 60">wp:Jørn</em>Jensen|Jørn Jensen]</a> after studying the [[ALGOL 60</a> Report.<code></code>
+<code></code>
+The following program was proposed to illustrate the technique. It computes the 100th <a href="wp:Harmonic_number|harmonic number">wp:Harmonic<em>number|harmonic number</a>:<code></code>
+<code></code>
+ <code>begin</code><code></code>
+    <code>integer</code> i;<code></code>
+    <code>real procedure</code> sum (i, lo, hi, term);<code></code>
+       <code>value</code> lo, hi;<code></code>
+       <code>integer</code> i, lo, hi;<code></code>
+       <code>real</code> term;<code></code>
+       <code>comment</code> term is passed by-name, and so is i;<code></code>
+    <code>begin</code><code></code>
+       <code>real</code> temp;¨C14C
+       temp := 0;¨C15C
+       <code>for<code>' i := lo 'step' 1 'until' hi '</code>do</code>¨C16C
+          temp := temp + term;¨C17C
+       sum := temp¨C18C
+    <code>end</code>;¨C19C
+    <code>comment</code> note the correspondence between the mathematical notation and the call to sum;¨C20C
+    print (sum (i, 1, 100, 1/i))¨C21C
+ <code>end</code>¨C22C
+¨C23C
+The above exploits <a href="wp:Call-by-name#Call_by_name|call by name">wp:Call-by-name#Call</em>by¨C34CKnuth|Donald Knuth]">[Man or boy test|Man or Boy Test">wp:Donald_Knuth|Donald Knuth]</a> later proposed the [[Man or boy test|Man or Boy Test</a> as a more rigorous exercise.<code></code>
+<br><br><code></code></p>

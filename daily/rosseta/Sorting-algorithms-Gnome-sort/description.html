@@ -1,0 +1,30 @@
+<link href="/styles/home.css" rel="stylesheet">
+<p>{{Sorting Algorithm}}<code></code>
+{{Wikipedia|Gnome sort}}<code></code>
+<code></code>
+<code></code>
+Gnome sort is a sorting algorithm which is similar to <a href="Insertion sort]], except that moving an element to its proper place is accomplished by a series of swaps, as in <a href="[Bubble Sort">Insertion sort]">[Bubble Sort">Insertion sort]</a>, except that moving an element to its proper place is accomplished by a series of swaps, as in [[Bubble Sort</a>.<code></code>
+<code></code>
+The pseudocode for the algorithm is:<code></code>
+ <code>function</code> <code>gnomeSort</code>(a<a href="0..size-1">0..size-1</a>)<code></code>
+     i := 1<code></code>
+     j := 2<code></code>
+     <code>while<code>' i < size '</code>do</code><code></code>
+         <code>if<code>' a<a href="i-1] <= a[i">i-1] <= a[i</a> '</code>then</code><code></code>
+             <code>// for descending sort, use >= for comparison</code><code></code>
+             i := j<code></code>
+             j := j + 1<code></code>
+         <code>else</code><code></code>
+             <code>swap<code>' a<a href="i-1] 'and' a[i">i-1] '</code>and</code> a[i</a><code></code>
+             i := i - 1<code></code>
+             <code>if<code>' i = 0 '</code>then</code><code></code>
+                 i := j<code></code>
+                 j := j + 1<code></code>
+             <code>endif</code><code></code>
+         <code>endif</code><code></code>
+     <code>done</code><code></code>
+<code></code>
+<code></code>
+<br>Task:<code></code>
+Implement the Gnome sort in your language to sort an array (or list) of numbers.<code></code>
+<br><br><code></code></p>

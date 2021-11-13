@@ -1,0 +1,37 @@
+<link href="/styles/home.css" rel="stylesheet">
+<p>{{Clarified-review}}Write a program to find the roots of a quadratic equation, i.e., solve the equation <math>ax^2 + bx + c = 0</math>.<code></code>
+Your program must correctly handle non-real roots, but it need not check that <math>a \neq 0</math>.<code></code>
+<code></code>
+The problem of solving a quadratic equation is a good example of how dangerous it can be to ignore the peculiarities of floating-point arithmetic.<code></code>
+The obvious way to implement the quadratic formula suffers catastrophic loss of accuracy when one of the roots to be found is much closer to 0 than the other.<code></code>
+In their classic textbook on numeric methods <code><a href="http://www.pdas.com/fmm.htm Computer Methods for Mathematical Computations">http://www.pdas.com/fmm.htm Computer Methods for Mathematical Computations</a></code>, George Forsythe, Michael Malcolm, and Cleve Moler suggest trying the naive algorithm with <math>a = 1</math>, <math>b = -10^5</math>, and <math>c = 1</math>.<code></code>
+(For double-precision floats, set <math>b = -10^9</math>.)<code></code>
+Consider the following implementation in <a href="Ada">Ada</a>:<code></code>
+<lang ada>with Ada.Text<em>IO;                        use Ada.Text</em>IO;<code></code>
+with Ada.Numerics.Elementary<em>Functions;  use Ada.Numerics.Elementary</em>Functions;<code></code>
+<code></code>
+procedure Quadratic<em>Equation is<code></code>
+   type Roots is array (1..2) of Float;<code></code>
+   function Solve (A, B, C : Float) return Roots is<code></code>
+      SD : constant Float := sqrt (B**2 - 4.0 * A * C);<code></code>
+      AA : constant Float := 2.0 * A;<code></code>
+   begin¨C16C
+      return ((- B + SD) / AA, (- B - SD) / AA);¨C17C
+   end Solve;¨C18C
+¨C19C
+   R : constant Roots := Solve (1.0, -10.0E5, 1.0);¨C20C
+begin¨C21C
+   Put</em>Line ("X1 =" & Float'Image (R (1)) & " X2 =" & Float'Image (R (2)));¨C22C
+end Quadratic_Equation;</lang><code></code>
+{{out}}<code></code></p>
+<pre>X1 = 1.00000E+06 X2 = 0.00000E+00</pre>
+<p><code></code>
+As we can see, the second root has lost all significant figures. The right answer is that <code>X2</code> is about <math>10^{-6}</math>. The naive method is numerically unstable.<code></code>
+<code></code>
+Suggested by Middlebrook (D-OA), a better numerical method: to define two parameters <math> q = \sqrt{a c} / b </math> and <math> f = 1/2 + \sqrt{1 - 4 q^2} /2 </math><code></code>
+<code></code>
+and the two roots of the quardratic are: <math> \frac{-b}{a} f </math> and <math> \frac{-c}{b f} </math><code></code>
+<code></code>
+<code></code>
+<code>Task</code>: do it better. This means that given <math>a = 1</math>, <math>b = -10^9</math>, and <math>c = 1</math>, both of the roots your program returns should be greater than <math>10^{-11}</math>. Or, if your language can't do floating-point arithmetic any more precisely than single precision, your program should be able to handle <math>b = -10^6</math>. Either way, show what your program gives as the roots of the quadratic in question. See page 9 of<code></code>
+<a href="https://web.archive.org/web/20080921074325/http://dlc.sun.com/pdf//800-7895/800-7895.pdf "What Every Scientist Should Know About Floating-Point Arithmetic"">https://web.archive.org/web/20080921074325/http://dlc.sun.com/pdf//800-7895/800-7895.pdf "What Every Scientist Should Know About Floating-Point Arithmetic"</a> for a possible algorithm.<code></code></p>

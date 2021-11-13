@@ -1,0 +1,11 @@
+<link href="/styles/home.css" rel="stylesheet">
+<p><br>Task:<code></code>
+Generate 100 <x,y> coordinate pairs such that x and y are integers sampled from the uniform distribution with the condition that <br><math>10 \leq \sqrt{ x^2 + y^2 } \leq 15 </math>. <br>Then display/plot them. The outcome should be a "fuzzy" circle. The actual number of points plotted may be less than 100, given that some pairs may be generated more than once.<code></code>
+<code></code>
+There are several possible approaches to accomplish this. Here are two possible algorithms.<code></code>
+<code></code>
+1) Generate random pairs of integers and filter out those that don't satisfy this condition:<code></code>
+:<math>10 \leq \sqrt{ x^2 + y^2 } \leq 15 </math>.<code></code>
+<code></code>
+2) Precalculate the set of all possible points (there are 404 of them) and select randomly from this set.<code></code>
+<br><br><code></code></p>

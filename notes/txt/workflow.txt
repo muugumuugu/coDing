@@ -1,6 +1,12 @@
-workflow:
-    using http-server p-8081
-    (installed it using npm install -g http-server)
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
 
-CDNs used{
-    p5: <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.2.0/p5.js"></script>,
+
+
+
+workflow:
+	using http-server p-8081
+	(installed it using npm install -g http-server)
+
+CDNs used:
+	p5: <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.2.0/p5.js"></script>,

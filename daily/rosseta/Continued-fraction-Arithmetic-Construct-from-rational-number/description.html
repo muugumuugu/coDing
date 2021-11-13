@@ -1,0 +1,36 @@
+<link href="/styles/home.css" rel="stylesheet">
+<p>To understand this task in context please see <a href="Continued fraction arithmetic">Continued fraction arithmetic</a><code></code>
+<code></code>
+The purpose of this task is to write a function <math>\mathit{r2cf}(\mathrm{int}</math> <math>N<em>1, \mathrm{int}</math> <math>N</em>2)</math>, or <math>\mathit{r2cf}(\mathrm{Fraction}</math> <math>N)</math>, which will output a continued fraction assuming:<code></code>
+:<math>N<em>1</math> is the numerator<code></code>
+:<math>N</em>2</math> is the denominator<code></code>
+<code></code>
+The function should output its results one digit at a time each time it is called, in a manner sometimes described as lazy evaluation.<code></code>
+<code></code>
+To achieve this it must determine: the integer part; and remainder part, of <math>N<em>1</math> divided by <math>N</em>2</math>. It then sets <math>N<em>1</math> to <math>N</em>2</math> and <math>N<em>2</math> to the determined remainder part. It then outputs the determined integer part. It does this until <math>\mathrm{abs}(N</em>2)</math> is zero.<code></code>
+<code></code>
+Demonstrate the function by outputing the continued fraction for:<code></code>
+: 1/2<code></code>
+: 3<code></code>
+: 23/8<code></code>
+: 13/11<code></code>
+: 22/7<code></code>
+: -151/77<code></code></p>
+<math>\sqrt 2</math>
+<p>should approach <math><a href="1; 2, 2, 2, 2, \ldots">1; 2, 2, 2, 2, \ldots</a></math> try ever closer rational approximations until boredom gets the better of you:<code></code>
+: 14142,10000<code></code>
+: 141421,100000<code></code>
+: 1414214,1000000<code></code>
+: 14142136,10000000<code></code>
+<code></code>
+Try :<code></code>
+: 31,10<code></code>
+: 314,100<code></code>
+: 3142,1000<code></code>
+: 31428,10000<code></code>
+: 314285,100000<code></code>
+: 3142857,1000000<code></code>
+: 31428571,10000000<code></code>
+: 314285714,100000000<code></code>
+<code></code>
+Observe how this rational number behaves differently to <math>\sqrt 2</math> and convince yourself that, in the same way as <math>3.7</math> may be represented as <math>3.70</math> when an extra decimal place is required, <math><a href="3;7]</math> may be represented as <math>[3;7,\infty">3;7]</math> may be represented as <math>[3;7,\infty</a></math> when an extra term is required.<code></code></p>

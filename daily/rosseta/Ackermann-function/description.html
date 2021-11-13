@@ -1,0 +1,29 @@
+<link href="/styles/home.css" rel="stylesheet">
+<p>The <code><a href="wp:Ackermann function|Ackermann function]]' is a classic example of a recursive function, notable especially because it is not a <a href="[wp:Primitive_recursive_function|primitive recursive function">wp:Ackermann function|Ackermann function]">[wp:Primitive<em>recursive</em>function|primitive recursive function">wp:Ackermann function|Ackermann function]</a></code> is a classic example of a recursive function, notable especially because it is not a [[wp:Primitive<em>recursive</em>function|primitive recursive function</a>. It grows very quickly in value, as does the size of its call tree.<code></code>
+<code></code>
+<code></code>
+The Ackermann function is usually defined as follows:<code></code>
+<code></code>
+<big><code></code>
+:<math> A(m, n) =<code></code>
+ \begin{cases}<code></code>
+ n+1 & \mbox{if } m = 0 \<code></code>
+ A(m-1, 1) & \mbox{if } m > 0 \mbox{ and } n = 0 \<code></code>
+ A(m-1, A(m, n-1)) & \mbox{if } m > 0 \mbox{ and } n > 0.<code></code>
+ \end{cases}<code></code>
+</math><code></code>
+</big><code></code>
+<code></code></p>
+<!-- <table><tr><td width=12><td><td><math>n+1</math><td>if <math>m=0</math> <tr><td> <td><math>A(m, n) =</math> <td><math>A(m-1, 1)</math> <td>if <math>m>0</math> and <math>n=0</math> <tr><td><td><td><math>A(m-1, A(m, n-1))</math>&nbsp;&nbsp;<td> if <math>m>0</math> and <math>n>0</math></table> -->
+<p><code></code>
+<code></code>
+Its arguments are never negative and it always terminates.<code></code>
+<code></code>
+<br>Task:<code></code>
+Write a function which returns the value of <math>A(m, n)</math>. Arbitrary precision is preferred (since the function grows so quickly), but not required.<code></code>
+<code></code>
+<br>See also:<code></code></p>
+<ul>
+<li><a href="wp:Conway_chained_arrow_notation#Ackermann_function|Conway chained arrow notation">wp:Conway<em>chained</em>arrow<em>notation#Ackermann</em>function|Conway chained arrow notation</a> for the Ackermann function.<code></code>
+<br><br><code></code></li>
+</ul>

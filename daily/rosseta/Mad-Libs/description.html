@@ -1,0 +1,132 @@
+<link href="/styles/home.css" rel="stylesheet">
+<p>{{wikipedia}}<code></code>
+<code></code>
+<br><code></code>
+<a href="wp:Mad Libs|Mad Libs">wp:Mad Libs|Mad Libs</a> is a phrasal template word game where one player prompts another for a list of words to substitute for blanks in a story, usually with funny results.<code></code>
+<code></code>
+<code></code>
+<br>Task;<code></code>
+Write a program to create a Mad Libs like story.<code></code>
+<code></code>
+The program should read an arbitrary multiline story from input.<code></code>
+<code></code>
+The story will be terminated with a blank line.<code></code>
+<code></code>
+Then, find each replacement to be made within the story, ask the user for a word to replace it with, and make all the replacements.<code></code>
+<code></code>
+Stop when there are none left and print the final story.<code></code>
+<code></code>
+<code></code>
+The input should be an arbitrary story in the form:<code></code></p>
+<pre><code></code>
+<name> went for a walk in the park. <he or she><code></code>
+found a <noun>. <name> decided to take it home.<code></code>
+</pre>
+<p><code></code>
+Given this example, it should then ask for a <tt>name</tt>, a <tt>he or she</tt> and a <tt>noun</tt> (<tt><nowiki><name></nowiki></tt> gets replaced both times with the same value).<code></code>
+<code></code>
+<code></code>
+<br>Related tasks:<code></code></p>
+<ul>
+<li>&nbsp; <a href="Old_lady_swallowed_a_fly">Old<em>lady</em>swallowed<em>a</em>fly</a><code></code></li>
+<li>&nbsp; <a href="The Twelve Days of Christmas">The Twelve Days of Christmas</a><code></code>
+<br><br><code></code>
+<code></code>
+== {{header|Ada}} ==<code></code>
+<code></code>
+The fun of Mad Libs is not knowing the story ahead of time, so the program reads the story template from a text file. The name of the text file is given as a command line argument.<code></code>
+<code></code>
+<lang Ada>with Ada.Text<em>IO, Ada.Command</em>Line, String<em>Helper;<code></code>
+<code></code>
+procedure Madlib is<code></code>
+<code></code>
+use String</em>Helper;<code></code>
+<code></code>
+Text: Vector := Get<em>Vector(Ada.Command</em>Line.Argument(1));<code></code>
+M, N: Natural;<code></code>
+¨C40C
+begin¨C41C
+-- search for templates and modify the text accordingly¨C42C
+for I in Text.First¨C156CIndex loop¨C43C
+  loop¨C44C
+     Search¨C157CIO.Put¨C158CWord: String := Ada.Text¨C159CLine;¨C50C
+     begin¨C51C
+        for J in I .. Text.Last¨C160CElement(J, Replace(Text.Element(J), Old, New¨C161CIndex .. Text.Last¨C162CIO.Put¨C163CHelper for simple string functions;¨C65C
+¨C66C
+<lang Ada>with Ada.Containers.Indefinite¨C164CHelper is¨C69C
+¨C70C
+function Index(Source: String; Pattern: String) return Natural;¨C71C
+¨C72C
+procedure Search¨C165CBracket: String;¨C74C
+                         Right¨C166CWord: String; New¨C167CVec is new Ada.Containers.Indefinite¨C168CType   => Positive<br>¨C84C
+  Element¨C169CVec.Vector with null record;¨C87C
+¨C88C
+function Get¨C170CHelper;</lang><code></code>
+<code></code>
+Here is the implementation of String<em>Helper:<code></code>
+<code></code>
+<lang Ada>with Ada.Strings.Fixed, Ada.Text</em>IO;<code></code>
+<code></code>
+package body String<em>Helper is<code></code>
+<code></code>
+function Index(Source: String; Pattern: String) return Natural is<code></code>
+begin<code></code>
+  return Ada.Strings.Fixed.Index(Source => Source, Pattern => Pattern);<code></code>
+end Index;<code></code>
+<code></code>
+procedure Search</em>Brackets(Source: String;<code></code>
+                         Left<em>Bracket: String;<code></code>
+                         Right</em>Bracket: String;<code></code>
+                         First, Last: out Natural) is<code></code>
+begin<code></code>
+  First := Index(Source, Left<em>Bracket);<code></code>
+  if First = 0 then<code></code>
+     Last := 0; -- not found<code></code>
+  else<code></code>
+     Last := Index(Source(First+1 .. Source'Last), Right</em>Bracket);<code></code>
+     if Last = 0 then<code></code>
+        First := 0; -- not found;<code></code>
+     end if;<code></code>
+  end if;<code></code>
+end Search<em>Brackets;<code></code>
+<code></code>
+function Replace(Source: String; Old</em>Word: String; New<em>Word: String)<code></code>
+               return String is<code></code>
+  L: Positive := Old</em>Word'Length;<code></code>
+  I: Natural := Index(Source, Old<em>Word);<code></code>
+begin<code></code>
+  if I = 0 then<code></code>
+     return Source;<code></code>
+  else<code></code>
+     return Source(Source'First .. I-1) & New</em>Word<code></code>
+       &amp; Replace(Source(I+L .. Source'Last), Old<em>Word, New</em>Word);<code></code>
+  end if;<code></code>
+end Replace;<code></code>
+<code></code>
+function Get<em>Vector(Filename: String) return Vector is<code></code>
+  F: Ada.Text</em>IO.File<em>Type;<code></code>
+  T: Vector;<code></code>
+begin<code></code>
+  Ada.Text</em>IO.Open(F, Ada.Text<em>IO.In</em>File, Filename);<code></code>
+  while not Ada.Text<em>IO.End</em>Of<em>File(F) loop<code></code>
+     T.Append(Ada.Text</em>IO.Get<em>Line(F));<code></code>
+  end loop;<code></code>
+  Ada.Text</em>IO.Close(F);<code></code>
+  return T;<code></code>
+end Get<em>Vector;<code></code>
+<code></code>
+end String</em>Helper;</lang><code></code>
+<code></code>
+A sample run (with the story template in t.txt):<code></code>
+<code></code></li>
+</ul>
+<pre>./madlib t.txt<code></code>
+Replacement for <name>?<code></code>
+Hilla, the hypohondraic<br><code></code>
+Replacement for <he or she>?<code></code>
+She<code></code>
+Replacement for <noun>?<code></code>
+headache<code></code>
+Hilla, the hypohondraic, went for a walk in the park. She<code></code>
+found a headache. Hilla, the hypohondraic, decided to take it home.</pre>
+<p><code></code></p>

@@ -1,0 +1,46 @@
+<link href="/styles/home.css" rel="stylesheet">
+<p>Write functions to calculate the definite integral of a function <big><big> {{math|1=<code>ƒ(x)}} </big></big> using all</code> five of the following methods:<code></code>
+:* <a href="wp:Rectangle_method|rectangular">wp:Rectangle<em>method|rectangular</a><code></code>
+:**  left<code></code>
+:**  right<code></code>
+:**  midpoint<code></code>
+:* <a href="wp:Trapezoidal_rule|trapezium">wp:Trapezoidal</em>rule|trapezium</a><code></code>
+:* <a href="wp:Simpson%27s_rule|Simpson's">wp:Simpson%27s<em>rule|Simpson's</a><code></code>
+:** composite<code></code>
+<code></code>
+Your functions should take in the upper and lower bounds ({{math|<code>a}} and {{math|b}}), and the number of approximations to make in that range ({{math|n</code>}}).<code></code>
+<code></code>
+Assume that your example already has a function that gives values for <big> {{math|1=<code>ƒ(x)</code>}} </big>.<code></code>
+<code></code>
+Simpson's method is defined by the following pseudo-code:<code></code>
+{| class="mw-collapsible mw-collapsed"<code></code>
+|+ Pseudocode: Simpson's method, composite<code></code>
+|-<code></code>
+|¨C17C
+ <code>procedure</code> quad</em>simpson_composite(f, a, b, n)<code></code>
+     h := (b - a) / n<code></code>
+     sum1 := f(a + h/2)<code></code>
+     sum2 := 0<code></code>
+<code></code>
+     loop on i from 1 to (n - 1)<code></code>
+         sum1 := sum1 + f(a + h * i + h/2)<code></code>
+         sum2 := sum2 + f(a + h * i)<code></code>
+<code></code>
+     <code>answer</code> := (h / 6) * (f(a) + f(b) + 4<em>sum1 + 2</em>sum2)<code></code>
+|}<code></code>
+<code></code>
+<code></code>
+Demonstrate your function by showing the results for:<code></code></p>
+<ul>
+<li>{{math|1=ƒ(x) = x<sup>3</sup>}},   where   <code>x</code>   is  <a href="0,1">0,1</a>,  with 100 approximations.  The exact result is  1/4,  or  0.25.<code></code></li>
+<li>{{math|1=ƒ(x) = 1/x}},   where  <code>x</code>  is  <a href="1,100">1,100</a>,  with 1,000 approximations.  The exact result is the natural log of 100,  or about  4.605170<code></code></li>
+<li>{{math|1=ƒ(x) = x}},    where  <code>x</code>  is  <a href="0,5000">0,5000</a>,  with 5,000,000 approximations.  The exact result is  12,500,000.<code></code></li>
+<li>{{math|1=ƒ(x) = x}},    where  <code>x</code>  is  <a href="0,6000">0,6000</a>,  with 6,000,000 approximations.  The exact result is  18,000,000.<code></code>
+<code></code>
+<br/><code></code>
+<code>See also</code><code></code></li>
+<li><a href="Active object">Active object</a> for integrating a function of real time.<code></code></li>
+<li><a href="Special:PrefixIndex/Numerical integration">Special:PrefixIndex/Numerical integration</a> for other integration methods.<code></code>
+<code></code>
+<br/><code></code></li>
+</ul>

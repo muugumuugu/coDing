@@ -1,0 +1,16 @@
+<link href="/styles/home.css" rel="stylesheet">
+<p>Write a program to let the user play <a href="wp:Go Fish|Go Fish">wp:Go Fish|Go Fish</a> against a computer opponent. Use the following rules:<code></code>
+<code></code></p>
+<ul>
+<li>Each player is dealt nine cards to start with.<code></code></li>
+<li>On their turn, a player asks their opponent for a given rank (such as threes or kings). A player must already have at least one card of a given rank to ask for more.<code></code>
+** If the opponent has any cards of the named rank, they must hand over all such cards, and the requester can ask again.<code></code>
+** If the opponent has no cards of the named rank, the requester draws a card and ends their turn.<code></code></li>
+<li>A <code>book</code> is a collection of every card of a given rank. Whenever a player completes a book, they may remove it from their hand.<code></code></li>
+<li>If at any time a player's hand is empty, they may immediately draw a new card, so long as any new cards remain in the deck.<code></code></li>
+<li>The game ends when every book is complete. The player with the most books wins.<code></code>
+<code></code>
+The game's AI need not be terribly smart, but it should use at least some strategy. That is, it shouldn't choose legal moves entirely at random.<code></code>
+<code></code>
+You may want to use code from <a href="Playing Cards">Playing Cards</a>.<code></code></li>
+</ul>

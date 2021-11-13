@@ -1,0 +1,29 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2021-10-15T13:00:19+05:30
+
+====== lists ======
+Created Friday 15 October 2021
+
+* implemented as arrays.
+* but are resizable.
+
+===== operations =====
+1. concatenation
+{{{code: lang="python3" linenumbers="True"
+
+arr1=["a","b","c"]
+arr2=[1,2,3]
+arr3=arr1 + arr2
+# arr3 is set to ["a","b","c",1,2,3]
+
+}}}
+
+2. slicing ( works the same way for most iterables)
+	a. syntax:
+		''list_name[startAt:endBefore:skip] #skip can be negative to traverse in opp direction''
+	b. returns a new array. (can be used to create a duplicate array)
+3. indexing using ''[]'' notation
+
+===== methods =====
+

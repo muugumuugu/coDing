@@ -1,0 +1,54 @@
+<link href="/styles/home.css" rel="stylesheet">
+<p>{{omit from|GUISS}}<code></code>
+<code></code>
+<a href="wp:Wireworld|Wireworld]] is a cellular automaton with some similarities to <a href="[Conway's Game of Life">wp:Wireworld|Wireworld]">[Conway's Game of Life">wp:Wireworld|Wireworld]</a> is a cellular automaton with some similarities to [[Conway's Game of Life</a>.<code></code>
+<code></code>
+It is capable of doing sophisticated computations with appropriate programs<code></code>
+(it is actually <a href="wp:Turing-complete|Turing complete">wp:Turing-complete|Turing complete</a>)<br><code></code>
+and is much simpler to program for.<code></code>
+<code></code>
+A Wireworld arena consists of a Cartesian grid of cells<br><code></code>
+each of which can be in one of four states.<code></code>
+All cell transitions happen simultaneously.<code></code>
+<code></code>
+The cell transition rules are this:<code></code>
+{| class=wikitable<code></code>
+|-<code></code>
+! Input State<code></code>
+! Output State<code></code>
+! Condition<code></code>
+|-<code></code>
+| <tt>empty</tt><code></code>
+| <tt>empty</tt><code></code>
+|<code></code>
+|-<code></code>
+| <tt>electron&nbsp;head&nbsp;</tt><code></code>
+| <tt>electron&nbsp;tail&nbsp;</tt><code></code>
+|<code></code>
+|-<code></code>
+| <tt>electron&nbsp;tail&nbsp;</tt><code></code>
+| <tt>conductor</tt><code></code>
+|<code></code>
+|-<code></code>
+| valign=top | <tt>conductor</tt><code></code>
+| valign=top | <tt>electron&nbsp;head&nbsp;</tt><code></code>
+| if 1 or 2 cells in the <a href="wp:Moore neighborhood|neighborhood">wp:Moore neighborhood|neighborhood</a> of the cell are in the state “<tt>electron head</tt>”<code></code>
+|-<code></code>
+| <tt>conductor</tt><code></code>
+| <tt>conductor</tt><code></code>
+| otherwise<code></code>
+|}<code></code>
+<code></code>
+<code></code>
+<br>Task:<code></code>
+Create a program that reads a Wireworld program from a file and displays an animation of the processing. Here is a sample description file (using "<tt>H</tt>" for an electron head, "<tt>t</tt>" for a tail, "<tt>.</tt>" for a conductor and a space for empty) you may wish to test with, which demonstrates two cycle-3 generators and an inhibit gate:<code></code></p>
+<pre><code></code>
+tH.........<code></code>
+.   .<code></code>
+   ...<code></code>
+.   .<code></code>
+Ht.. ......<code></code>
+</pre>
+<p><code></code>
+While text-only implementations of this task are possible, mapping cells to pixels is advisable if you wish to be able to display large designs. The logic is not significantly more complex.<code></code>
+<br><br><code></code></p>

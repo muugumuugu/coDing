@@ -1,0 +1,35 @@
+<link href="/styles/home.css" rel="stylesheet">
+<p>{{Sorting Algorithm}}<code></code>
+<code></code>
+<br>Task:<code></code>
+Sort an array of elements using the bubble sort algorithm. &nbsp; The elements must have a total order and the index of the array can be of any discrete type. &nbsp; For languages where this is not possible, sort an array of integers.<code></code>
+<code></code>
+The bubble sort is generally considered to be the simplest sorting algorithm.<code></code>
+<code></code>
+Because of its simplicity and ease of visualization, it is often taught in introductory computer science courses.<code></code>
+<code></code>
+Because of its abysmal O(n<sup>2</sup>) performance, it is not used often for large (or even medium-sized) datasets.<code></code>
+<code></code>
+The bubble sort works by passing sequentially over a list, comparing each value to the one immediately after it. &nbsp; If the first value is greater than the second, their positions are switched. &nbsp; Over a number of passes, at most equal to the number of elements in the list, all of the values drift into their correct positions (large values "bubble" rapidly toward the end, pushing others down around them). &nbsp;<code></code>
+Because each pass finds the maximum item and puts it at the end, the portion of the list to be sorted can be reduced at each pass. &nbsp;<code></code>
+A boolean variable is used to track whether any changes have been made in the current pass; when a pass completes without changing anything, the algorithm exits.<code></code>
+<code></code>
+This can be expressed in pseudo-code as follows (assuming 1-based indexing):<code></code>
+ <code>repeat</code><code></code>
+     <code>if</code> itemCount <= 1<code></code>
+         <code>return</code><code></code>
+     hasChanged := false<code></code>
+     <code>decrement</code> itemCount<code></code>
+     <code>repeat with<code>' index 'from' 1 '</code>to</code> itemCount<code></code>
+         <code>if<code>' (item 'at' index) > (item '</code>at</code> (index + 1))<code></code>
+             swap (item <code>at<code>' index) with (item '</code>at</code> (index + 1))<code></code>
+             hasChanged := true<code></code>
+ <code>until<code>' hasChanged = '</code>false</code><code></code>
+<code></code>
+<code></code>
+<br>References:<code></code></p>
+<ul>
+<li>The article on <a href="wp:Bubble_sort|Wikipedia">wp:Bubble_sort|Wikipedia</a>.<code></code></li>
+<li>Dance <a href="http://www.youtube.com/watch?v=lyZQPjUT5B4&feature=youtu.be interpretation">http://www.youtube.com/watch?v=lyZQPjUT5B4&feature=youtu.be interpretation</a>.<code></code>
+<br><br><code></code></li>
+</ul>

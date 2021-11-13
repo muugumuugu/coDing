@@ -145,7 +145,8 @@ if(isset($css)){
 <style type="text/css">
 .content{width:100%;}
 body{width:90%;flex-wrap:wrap;}
-details{width:200px; font-size:16px; font-family:Monospace;text-shadow: 0 0 5px #ddd;padding:10px;border:dotted;border-width:0.3px;margin:15px;}
+details{width:200px; padding:10px;border:dotted;border-width:0.3px;margin:15px;}
+summary{font-size:16px; font-family:Monospace;text-shadow: 0 0 5px #ddd;}
 details[open]{
 width:800px; padding:10px;border:dotted;border-width:0.3px;margin:15px
 }

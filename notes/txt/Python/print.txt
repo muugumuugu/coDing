@@ -1,0 +1,99 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2021-10-15T13:02:29+05:30
+
+====== print ======
+Created Friday 15 October 2021
+
+{{{code: lang="python3" linenumbers="True"
+
+print("Rawr","Rar",sep=", ") # print list seperated by sep
+# Output: Rawr, Rar
+
+print("Rawr\nRar", end=",") # \n , \t etc can be used within double quotes, end specifies what to append to the end of the string, \n by default, like echo
+''' Output:
+Rawr
+Rar,
+'''
+
+
+print("a" * 5) # You can multiply!
+# Output: aaaaa
+
+}}}
+
+===== Inject Into string =====
+
+==== inline ====
+{{{code: lang="python3" linenumbers="True"
+dragon = "trex"
+#formated ordered injection
+
+#with tuples
+print("%s %s %s %.3f" % ("Hi!", "I am", dragon,2.221291))
+# Output: Hi! I am trex 2.221
+
+# With dictionaries
+my_dict = {"dragons":"Dragons", "are":"are", "the":"the", "best":"best! Yeah!"}
+print("%(dragons)s %(are)s %(the)s %(best)s" % (my_dict))
+# Output: Dragons are the best! Yeah!
+
+#js style
+dragon = "trex"
+stuff = "orchestral music"
+print(f"Hi! I am {dragon} and I make {stuff}!")
+# Output: Hi! I am trex and I make orchestral music!
+}}}
+
+
+==== format ====
+
+=== simple ===
+{{{code: lang="python3" linenumbers="True"
+dragon = "trex"
+stuff = "orchestral music"
+number = 5
+# indexed tuple injection:
+print("{1} makes {0}!".format(dragon, stuff)) # possible to use dictionary of vals and their keys as indices.
+# Output: orchestral music makes trex!
+}}}
+
+=== formating injections ===
+Whenusing {}, add :<stuff> to add extra formatting options.
+* {:<10} Left padding (align left)
+* {:>10} Right padding (align right)
+* {:^10} Centre padding (align centre)
+* {:.5} Truncate string
+* {:d} Int
+* {:f} Float
+* {:5d} Padded Int
+* {:.5f} Fixed Decimal Float
+* {:08b} Binary with 8 digits zero-padded on the left
+* {:+d} Sign Prefixed Number
+* {: d} Space Prefixed Number
+* {:=5d} Control the position of the sign relative to padding
+{{{code: lang="python3" linenumbers="True"
+print("{:.1f}".format(number))
+# Output: 5.0
+}}}
+
+dictionary keyword argument flattening
+{{{code: lang="python3" linenumbers="True"
+my_dict = {"dragons":"trexes", "are":"are", "the":"the", "best":"best! Yeah!"}
+print("{dragons} {are} {the} {best}".format(**my_dict))
+# Output: trexes are the best! Yeah!
+}}}
+
+
+
+
+
+
+
+
+
+
+
+
+
+

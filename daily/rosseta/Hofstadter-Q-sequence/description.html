@@ -1,0 +1,24 @@
+<link href="/styles/home.css" rel="stylesheet">
+<p>The <a href="wp:Hofstadter_sequence#Hofstadter_Q_sequence|Hofstadter Q sequence">wp:Hofstadter<em>sequence#Hofstadter</em>Q_sequence|Hofstadter Q sequence</a> is defined as:<code></code>
+<big><code></code>
+:: <math>\begin{align}<code></code>
+Q(1)&=Q(2)=1, \<code></code>
+Q(n)&=Q\big(n-Q(n-1)\big)+Q\big(n-Q(n-2)\big), \quad n>2.<code></code>
+\end{align}</math><code></code>
+</big><code></code>
+<code></code>
+It is defined like the <a href="Fibonacci sequence">Fibonacci sequence</a>, but whereas the next term in the Fibonacci sequence is the sum of the previous two terms, in the Q sequence the previous two terms tell you how far to go back in the Q sequence to find the two numbers to sum to make the next term of the sequence.<code></code>
+<code></code>
+<code></code>
+<br>Task:<code></code></p>
+<ul>
+<li>Confirm and display that the first ten terms of the sequence are: 1, 1, 2, 3, 3, 4, 5, 5, 6, and 6<code></code></li>
+<li>Confirm and display that the 1000<sup>th</sup> term is: &nbsp; 502<code></code>
+<code></code>
+<code></code>
+<br>Optional extra credit<code></code></li>
+<li>Count and display how many times a member of the sequence is less than its preceding term for terms up to and including the 100,000<sup>th</sup> term.<code></code></li>
+<li>Ensure that the extra credit solution &nbsp; <code>safely &nbsp; handles being initially asked for an <code>n'<sup>th</sup> term where &nbsp; '</code>n</code> &nbsp; is large.<code></code>
+<br>(This point is to ensure that caching and/or recursion limits, if it is a concern, is correctly handled).<code></code>
+<br><br><code></code></li>
+</ul>

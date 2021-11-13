@@ -1,0 +1,91 @@
+<link href="/styles/home.css" rel="stylesheet">
+<p>{{Wikipedia}}<code></code>
+:<cite>In algebra, <a href="wp:Polynomial long division|polynomial long division">wp:Polynomial long division|polynomial long division</a> is an algorithm for dividing a polynomial by another polynomial of the same or lower degree.</cite><code></code>
+<code></code>
+Let us suppose a polynomial is represented by a vector, <math>x</math> (i.e., an ordered collection of <a href="wp:Coefficient|coefficients">wp:Coefficient|coefficients</a>) so that the <math>i</math><sup>th</sup> element keeps the coefficient of <math>x^i</math>, and the multiplication by a monomial is a <code>shift</code>  of the vector's elements "towards right" (injecting ones from left) followed by a multiplication of each element by the coefficient of the monomial.<code></code>
+<code></code>
+Then a pseudocode for the polynomial long division using the conventions described above could be:<code></code>
+<code></code>
+ degree(<code>P</code>):<code></code>
+   <code>return<code>' the index of the last non-zero element of '</code>P</code>;<code></code>
+          if all elements are 0, return -∞<code></code>
+<code></code>
+ polynomial<em>long</em>division(<code>N<code>', 'D') returns ('q', '</code>r</code>):<code></code>
+   <span class="co1">// <code>N<code>', 'D', 'q', '</code>r</code> are vectors</span><code></code>
+   <code>if<code>' degree('D') &lt; 0 'then</code> error</code><code></code>
+   <code>q<code>' ← '</code>0</code><code></code>
+   <code>while<code>' degree('N') ≥ degree('</code>D</code>)<code></code>
+     <code>d<code>' ← 'D' shifted right by (degree('N') - degree('</code>D</code>))<code></code>
+     <code>q<code>'(degree('N') - degree('D')) ← 'N'(degree('N')) / 'd'(degree('</code>d</code>))<code></code>
+     <span class="co1">// by construction, degree(<code>d<code>') = degree('</code>N</code>) of course</span><code></code>
+     <code>d<code>' ← 'd' * 'q'(degree('N') - degree('</code>D</code>))<code></code>
+     <code>N<code>' ← 'N' - '</code>d</code><code></code>
+   <code>endwhile</code><code></code>
+   <code>r<code>' ← '</code>N</code><code></code>
+   <code>return<code>' ('q', '</code>r</code>)<code></code>
+<code></code>
+<code>Note</code>: <code>vector * scalar</code> multiplies each element of the vector by the scalar; <code>vectorA - vectorB</code> subtracts each element of the vectorB from the element of the vectorA with "the same index". The vectors in the pseudocode are zero-based.<code></code>
+<code></code></p>
+<ul>
+<li>Error handling (for allocations or for wrong inputs) is not mandatory.<code></code></li>
+<li>Conventions can be different; in particular, note that if the first coefficient in the vector is the highest power of x for the polynomial represented by the vector, then the algorithm becomes simpler.<code></code>
+<code></code>
+<code>Example for clarification</code><code></code>
+<br><code></code>
+This example is from Wikipedia, but changed to show how the given pseudocode works.<code></code>
+<code></code>
+   0    1    2    3<code></code>
+----------------------<code></code>
+N:  -42    0  -12    1        degree = 3<code></code>
+D:   -3    1    0    0        degree = 1<code></code>
+<code></code>
+<span class="co1">d(N) - d(D) = 2, so let's shift D towards right by 2:</span><code></code>
+<code></code>
+N:  -42    0  -12    1<code></code>
+d:    0    0   -3    1<code></code>
+<code></code>
+<span class="co1">N(3)/d(3) = 1, so d is unchanged. Now remember that "shifting by 2"<code></code>
+is like multiplying by x<sup>2</sup>, and the final multiplication<code></code>
+(here by 1) is the coefficient of this monomial. Let's store this<code></code>
+into q:</span><code></code>
+                            0     1     2<code></code>
+                           ---------------<code></code>
+                       q:   0     0     1<code></code>
+<code></code>
+<span class="co1">now compute N - d, and let it be the "new" N, and let's loop</span><code></code>
+<code></code>
+N:  -42    0   -9    0        degree = 2<code></code>
+D:   -3    1    0    0        degree = 1<code></code>
+<code></code>
+<span class="co1">d(N) - d(D) = 1, right shift D by 1 and let it be d</span><code></code>
+<code></code>
+N:  -42    0   -9    0<code></code>
+d:    0   -3    1    0        * -9/1 = -9<code></code>
+<code></code>
+                       q:   0    -9     1<code></code>
+<code></code>
+d:    0   27   -9    0<code></code>
+<code></code>
+N ← N - d<code></code>
+<code></code>
+N:  -42  -27    0    0        degree = 1<code></code>
+D:   -3    1    0    0        degree = 1<code></code>
+<code></code>
+<span class="co1">looping again... d(N)-d(D)=0, so no shift is needed; we<code></code>
+multiply D by -27 (= -27/1) storing the result in d, then</span><code></code>
+<code></code>
+                       q:  -27   -9     1<code></code>
+<code></code>
+<span class="co1">and</span><code></code>
+<code></code>
+N:  -42  -27    0    0        -<code></code>
+d:   81  -27    0    0        =<code></code>
+N: -123    0    0    0        (last N)<code></code>
+<code></code>
+ <span class="co1">d(N) &lt; d(D), so now r ← N, and the result is:</span><code></code>
+<code></code>
+    0   1  2<code></code>
+-------------<code></code>
+q:   -27  -9  1   →  x<sup>2</sup> - 9x - 27<code></code>
+r:  -123   0  0   →          -123<code></code></li>
+</ul>

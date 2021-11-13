@@ -1,0 +1,34 @@
+<link href="/styles/home.css" rel="stylesheet">
+<p>The <code>Game of Life</code> is a &nbsp; <a href="wp:cellular automaton|cellular automaton]] &nbsp; devised by the British mathematician &nbsp; <a href="[wp:John Horton Conway|John Horton Conway">wp:cellular automaton|cellular automaton]">[wp:John Horton Conway|John Horton Conway">wp:cellular automaton|cellular automaton]</a> &nbsp; devised by the British mathematician &nbsp; [[wp:John Horton Conway|John Horton Conway</a> &nbsp; in 1970. &nbsp; It is the best-known example of a cellular automaton.<code></code>
+<code></code>
+Conway's game of life is described &nbsp; <a href="wp:Conway%27s_Game_of_Life|here">wp:Conway%27s<em>Game</em>of<em>Life|here</a>:<code></code>
+<code></code>
+A cell &nbsp; <code>C<code>' &nbsp; is represented by a &nbsp; '1' &nbsp; when alive, &nbsp; or &nbsp; '</code>0</code> &nbsp; when dead, &nbsp; in an &nbsp; m-by-m &nbsp; (or <big>m</big>&times;<big>m</big>) &nbsp; square array of cells.<code></code>
+<code></code>
+We calculate &nbsp; <code>N</code> &nbsp; - the sum of live cells in C's &nbsp; <a href="wp:Moore neighborhood|eight-location neighbourhood">wp:Moore neighborhood|eight-location neighbourhood</a>, &nbsp; then cell &nbsp; C &nbsp; is alive or dead in the next generation based on the following table:<code></code>
+    <code>C   N                 new C</code><code></code>
+    1   0,1             ->  0  # Lonely<code></code>
+    1   4,5,6,7,8       ->  0  # Overcrowded<code></code>
+    1   2,3             ->  1  # Lives<code></code>
+    0   3               ->  1  # It takes three to give birth!¨C11C
+    0   0,1,2,4,5,6,7,8 ->  0  # Barren¨C12C
+¨C13C
+Assume cells beyond the boundary are always dead.¨C14C
+¨C15C
+The "game" is actually a zero-player game, meaning that its evolution is determined by its initial state, needing no input from human players. &nbsp; One interacts with the Game of Life by creating an initial configuration and observing how it evolves.¨C16C
+¨C17C
+¨C18C
+<br>Task:¨C19C
+Although you should test your implementation on more complex examples such as the &nbsp; <a href="wp:Conway%27s_Game_of_Life#Examples_of_patterns|glider">wp:Conway%27s</em>Game¨C39CLife#Examples¨C40Cpatterns|glider</a> &nbsp; in a larger universe, &nbsp; show the action of the blinker &nbsp; (three adjoining cells in a row all alive), &nbsp; over three generations, in a 3 by 3 grid.<code></code>
+<code></code>
+<code></code>
+<br>References:<code></code></p>
+<ul>
+<li>&nbsp; Its creator John Conway, explains &nbsp; <a href="http://www.youtube.com/watch?v=E8kUJL04ELA the game of life">http://www.youtube.com/watch?v=E8kUJL04ELA the game of life</a>. &nbsp;  Video from numberphile on youtube.<code></code></li>
+<li>&nbsp; John Conway &nbsp; <a href="http://www.youtube.com/watch?v=R9Plq-D1gEk Inventing Game of Life">http://www.youtube.com/watch?v=R9Plq-D1gEk Inventing Game of Life</a> &nbsp; - Numberphile video.<code></code>
+<code></code>
+<code></code>
+<br>Related task:<code></code></li>
+<li>&nbsp; <a href="Langton's ant">Langton's ant</a> &nbsp; - another well known cellular automaton.<code></code>
+<br><br><code></code></li>
+</ul>

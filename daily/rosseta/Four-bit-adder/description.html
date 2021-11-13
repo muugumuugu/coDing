@@ -1,0 +1,33 @@
+<link href="/styles/home.css" rel="stylesheet">
+<p><br>Task:<code></code>
+"<code>Simulate</code>" a four-bit adder.<code></code>
+<code></code>
+This design can be realized using four <a href="wp:Adder_(electronics)#Full_adder|1-bit full adder">wp:Adder<em>(electronics)#Full</em>adder|1-bit full adder</a>s.<code></code>
+Each of these 1-bit full adders can be built with two <a href="wp:Adder_(electronics)#Half_adder|half adder]]s and an <code>or <a href="[wp:Logic gate|gate">wp:Adder<em>(electronics)#Half</em>adder|half adder]">[wp:Logic gate|gate">wp:Adder<em>(electronics)#Half</em>adder|half adder]</a>s and an or [[wp:Logic gate|gate</a>. Finally a half adder can be made using a xor gate and an and</code> gate.<code></code>
+The <code>xor gate can be made using two nots, two ands and one or</code>.<code></code>
+<code></code>
+<code>Not<code>', 'or' and '</code>and</code>, the only allowed "gates" for the task, can be "imitated" by using the <a href="Bitwise operations|bitwise operators">Bitwise operations|bitwise operators</a> of your language.<code></code>
+If there is not a <code>bit type in your language, to be sure that the not does not "invert" all the other bits of the basic type (e.g. a byte) we are not interested in, you can use an extra nand (and then not</code>) with the constant 1 on one input.<code></code>
+<code></code>
+Instead of optimizing and reducing the number of gates used for the final 4-bit adder, build it in the most straightforward way, <code>connecting</code> the other "constructive blocks", in turn made of "simpler" and "smaller" ones.<code></code>
+<code></code>
+{|<code></code>
+|+Schematics of the "constructive blocks"<code></code>
+!Xor gate done with ands, ors and nots<code></code>
+!A half adder<code></code>
+!A full adder<code></code>
+!A 4-bit adder<code></code>
+|-<code></code>
+|<a href="File:xor.png|frameless|Xor gate done with ands, ors and nots">File:xor.png|frameless|Xor gate done with ands, ors and nots</a><code></code>
+|<a href="File:halfadder.png|frameless|A half adder">File:halfadder.png|frameless|A half adder</a><code></code>
+|<a href="File:fulladder.png|frameless|A full adder">File:fulladder.png|frameless|A full adder</a><code></code>
+|<a href="File:4bitsadder.png|frameless|A 4-bit adder">File:4bitsadder.png|frameless|A 4-bit adder</a><code></code>
+|}<code></code>
+<code></code>
+Solutions should try to be as descriptive as possible, making it as easy as possible to identify "connections" between higher-order "blocks".<code></code>
+It is not mandatory to replicate the syntax of higher-order blocks in the atomic "gate" blocks, i.e. basic "gate" operations can be performed as usual bitwise operations, or they can be "wrapped" in a <code>block</code> in order to expose the same syntax of higher-order blocks, at implementers' choice.<code></code>
+<code></code>
+To test the implementation, show the sum of two four-bit numbers (in binary).<code></code></p>
+<div style="clear:both"></div>
+<p><code></code>
+<br><br><code></code></p>

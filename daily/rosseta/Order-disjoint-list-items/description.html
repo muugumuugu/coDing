@@ -1,0 +1,43 @@
+<link href="/styles/home.css" rel="stylesheet">
+<p>Given &nbsp; <code>M</code> &nbsp; as a list of items and another list &nbsp; <code>N</code> &nbsp; of items chosen from &nbsp; <code>M</code>, &nbsp; create &nbsp; <code>M'</code> &nbsp; as a list with the <code>first</code> occurrences of items from &nbsp; N &nbsp; sorted to be in one of the set of indices of their original occurrence in &nbsp; <code>M</code> &nbsp; but in the order given by their order in &nbsp;  <code>N</code>.<code></code>
+<code></code>
+That is, items in &nbsp; <code>N</code> &nbsp; are taken from &nbsp; <code>M</code> &nbsp; without replacement, then the corresponding positions in &nbsp; <code>M'</code> &nbsp; are filled by successive items from &nbsp; <code>N</code>.<code></code>
+<code></code>
+<code></code>
+<br>For example:<code></code>
+:if &nbsp; <code>M</code> &nbsp; is &nbsp; <code>'the cat sat on the mat'</code><code></code>
+:And &nbsp; <code>N</code> &nbsp; is &nbsp; <code>'mat cat'</code><code></code>
+:Then the result &nbsp; <code>M'</code> &nbsp; is &nbsp; <code>'the mat sat on the cat'</code>.<code></code>
+<code></code>
+The words not in &nbsp; <code>N</code> &nbsp; are left in their original positions.<code></code>
+<code></code>
+<code></code>
+If there are duplications then only the first instances in &nbsp; <code>M</code> &nbsp; up to as many as are mentioned in &nbsp; <code>N</code> &nbsp; are potentially re-ordered.<code></code>
+<code></code>
+<code></code>
+<br>For example:<code></code>
+: <code> M = 'A B C A B C A B C' </code><code></code>
+: <code> N = 'C A C A'           </code><code></code>
+<code></code>
+Is ordered as:<code></code>
+:<code> M' = 'C B A C B A A B C' </code><code></code>
+<code></code>
+<br><code></code>
+Show the output, here, for at least the following inputs:<code></code></p>
+<pre><code></code>
+Data M: 'the cat sat on the mat' Order N: 'mat cat'<code></code>
+Data M: 'the cat sat on the mat' Order N: 'cat mat'<code></code>
+Data M: 'A B C A B C A B C'      Order N: 'C A C A'<code></code>
+Data M: 'A B C A B D A B E'      Order N: 'E A D A'<code></code>
+Data M: 'A B'                    Order N: 'B'<code></code>
+Data M: 'A B'                    Order N: 'B A'<code></code>
+Data M: 'A B B A'                Order N: 'B A'<code></code>
+</pre>
+<p><code></code>
+<code></code>
+<code></code>
+<br>Cf:<code></code></p>
+<ul>
+<li><a href="Sort disjoint sublist">Sort disjoint sublist</a><code></code>
+<br><br><code></code></li>
+</ul>

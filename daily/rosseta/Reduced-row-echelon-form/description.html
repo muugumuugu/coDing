@@ -1,0 +1,57 @@
+<link href="/styles/home.css" rel="stylesheet">
+<p>{{omit from|GUISS}}<code></code>
+<code></code>
+<code></code>
+<br>Task:<code></code>
+Show how to compute the <code>reduced row echelon form</code><code></code>
+(a.k.a. <code>row canonical form</code>) of a matrix.<code></code>
+<code></code>
+The matrix can be stored in any datatype that is convenient<code></code>
+(for most languages, this will probably be a two-dimensional array).<code></code>
+<code></code>
+Built-in functions or this pseudocode (from Wikipedia) may be used:<code></code>
+ <code>function<code>' ToReducedRowEchelonForm(Matrix M) '</code>is</code><code></code>
+     <code>lead</code> := 0<code></code>
+     <code>rowCount</code> := the number of rows in M<code></code>
+     <code>columnCount</code> := the number of columns in M<code></code>
+     <code>for<code>' 0 &le; r &lt; rowCount '</code>do</code><code></code>
+         <code>if<code>' columnCount &le; lead '</code>then</code><code></code>
+             <code>stop</code><code></code>
+         <code>end if</code><code></code>
+         <code>i = r</code><code></code>
+         <code>while<code>' M<a href="i, lead">i, lead</a> = 0 '</code>do</code><code></code>
+             <code>i = i</code> + 1<code></code>
+             <code>if<code>' rowCount = i '</code>then</code><code></code>
+                 <code>i = r</code><code></code>
+                 <code>lead = lead</code> + 1<code></code>
+                 <code>if<code>' columnCount = lead '</code>then</code><code></code>
+                     <code>stop</code><code></code>
+                 <code>end if</code><code></code>
+             <code>end if</code><code></code>
+         <code>end while</code><code></code>
+         Swap rows <code>i and r</code><code></code>
+         If M<a href="<code>r, lead] is not 0 divide row r by M[r, lead">r, lead] is not 0 divide row r by M[r, lead</code></a><code></code>
+         <code>for<code>' 0 &le; i &lt; rowCount '</code>do</code><code></code>
+             <code>if<code>' i ≠ r '</code>do</code><code></code>
+                 Subtract M<a href="i, lead">i, lead</a> multiplied by row <code>r from row i</code><code></code>
+             <code>end if</code><code></code>
+         <code>end for</code><code></code>
+         <code>lead = lead</code> + 1<code></code>
+     <code>end for</code><code></code>
+ <code>end function</code><code></code>
+<code></code>
+For testing purposes, the RREF of this matrix:<code></code></p>
+<pre><code></code>
+ 1    2   -1   -4<code></code>
+ 2    3   -1   -11<code></code>
+-2    0   -3    22<code></code>
+</pre>
+<p><code></code>
+is:<code></code></p>
+<pre><code></code>
+ 1    0    0   -8<code></code>
+ 0    1    0    1<code></code>
+ 0    0    1   -2<code></code>
+</pre>
+<p><code></code>
+<br><br><code></code></p>

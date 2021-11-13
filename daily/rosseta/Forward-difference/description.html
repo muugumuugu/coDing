@@ -1,0 +1,49 @@
+<link href="/styles/home.css" rel="stylesheet">
+<p><br>Task:<code></code>
+Provide code that produces a list of numbers which is the &nbsp; <big>n<sup>th</sup></big> &nbsp;order forward difference, given a non-negative integer (specifying the order) and a list of numbers.<code></code>
+<code></code>
+<code></code>
+The first-order forward difference of a list of numbers &nbsp; <big><code>A<code>'</big> &nbsp; is a new list &nbsp; <big>'</code>B</code></big>, &nbsp; where &nbsp; <big><b>B</b><sub>n</sub> = <b>A</b><sub>n+1</sub> - <b>A</b><sub>n</sub></big>.<code></code>
+<code></code>
+List &nbsp; <big><code>B</code></big> &nbsp; should have one fewer element as a result.<code></code>
+<code></code>
+The second-order forward difference of &nbsp; <big><code>A</code></big> &nbsp; will be:<code></code></p>
+<pre><code></code>
+tdefmodule Diff do<code></code>
+    def forward(arr,i\\1) do<code></code>
+        forward(arr,<a href=""></a>,i)<code></code>
+    end<code></code>
+<code></code>
+    def forward(<a href="_|[]">_|[]</a>,diffs,i) do<code></code>
+        if i == 1 do<code></code>
+            IO.inspect diffs<code></code>
+        else<code></code>
+            forward(diffs,<a href=""></a>,i-1)<code></code>
+        end<code></code>
+    end<code></code>
+<code></code>
+    def forward(<a href="val1|[val2|vals]">val1|[val2|vals]</a>,diffs,i) do<code></code>
+        forward(<a href="val2|vals],diffs++[val2-val1">val2|vals],diffs++[val2-val1</a>,i)<code></code>
+    end<code></code>
+end<code></code>
+</pre>
+<p><code></code>
+The same as the first-order forward difference of &nbsp; <big><code>B</code></big>.<code></code>
+<code></code>
+That new list will have two fewer elements than &nbsp; <big><code>A<code>'</big> &nbsp; and one less than &nbsp; <big>'</code>B</code></big>.<code></code>
+<code></code>
+The goal of this task is to repeat this process up to the desired order.<code></code>
+<code></code>
+For a more formal description, see the related &nbsp; <a href="http://mathworld.wolfram.com/ForwardDifference.html Mathworld article">http://mathworld.wolfram.com/ForwardDifference.html Mathworld article</a>.<code></code>
+<code></code>
+<code></code>
+<br>Algorithmic options:<code></code></p>
+<ul>
+<li>Iterate through all previous forward differences and re-calculate a new array each time.<code></code></li>
+<li>Use this formula (from <a href="wp:Forward difference|Wikipedia">wp:Forward difference|Wikipedia</a>):<code></code>
+<big><big><code></code>
+::: <math>\Delta^n <a href="f">f</a>(x)= \sum_{k=0}^n {n \choose k} (-1)^{n-k} f(x+k)</math><code></code>
+</big></big><code></code>
+::: (<a href="Pascal's Triangle">Pascal's Triangle</a> &nbsp; may be useful for this option.)<code></code>
+<br><br><code></code></li>
+</ul>

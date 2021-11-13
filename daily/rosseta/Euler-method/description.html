@@ -1,0 +1,62 @@
+<link href="/styles/home.css" rel="stylesheet">
+<p>Euler's method numerically approximates solutions of first-order ordinary differential equations (ODEs) with a given initial value. &nbsp; It is an explicit method for solving initial value problems (IVPs), as described in <a href="wp:Euler method|the wikipedia page">wp:Euler method|the wikipedia page</a>.<code></code>
+<code></code>
+The ODE has to be provided in the following form:<code></code>
+<code></code>
+::: <big><math>\frac{dy(t)}{dt} = f(t,y(t))</math></big><code></code>
+<code></code>
+with an initial value<code></code>
+<code></code>
+::: <big><math>y(t<em>0) = y</em>0</math></big><code></code>
+<code></code>
+To get a numeric solution, we replace the derivative on the &nbsp; LHS &nbsp; with a finite difference approximation:<code></code>
+<code></code>
+::: <big><math>\frac{dy(t)}{dt}  \approx \frac{y(t+h)-y(t)}{h}</math></big><code></code>
+<code></code>
+then solve for <math>y(t+h)</math>:<code></code>
+<code></code>
+::: <big><math>y(t+h) \approx y(t) + h \, \frac{dy(t)}{dt}</math></big><code></code>
+<code></code>
+which is the same as<code></code>
+<code></code>
+::: <big><math>y(t+h) \approx y(t) + h \, f(t,y(t))</math></big><code></code>
+<code></code>
+The iterative solution rule is then:<code></code>
+<code></code>
+::: <big><math>y<em>{n+1} = y</em>n + h \, f(t<em>n, y</em>n)</math></big><code></code>
+<code></code>
+where &nbsp; <big><math>h</math></big> &nbsp; is the step size, the most relevant parameter for accuracy of the solution. &nbsp; A smaller step size increases accuracy but also the computation cost, so it has always has to be hand-picked according to the problem at hand.<code></code>
+<code></code>
+<code></code>
+<code>Example: Newton's Cooling Law</code><code></code>
+<code></code>
+Newton's cooling law describes how an object of initial temperature &nbsp; <big><math>T(t<em>0) = T</em>0</math></big> &nbsp; cools down in an environment of temperature &nbsp; <big><math>T<em>R</math></big>:<code></code>
+<code></code>
+::: <big><math>\frac{dT(t)}{dt} = -k \, \Delta T</math></big><code></code>
+or<code></code>
+::: <big><math>\frac{dT(t)}{dt} = -k \, (T(t) - T</em>R)</math></big><code></code>
+<code></code>
+<br><code></code>
+It says that the cooling rate &nbsp; <big><math>\frac{dT(t)}{dt}</math></big> &nbsp; of the object is proportional to the current temperature difference &nbsp; <big><math>\Delta T = (T(t) - T<em>R)</math></big> &nbsp; to the surrounding environment.<code></code>
+<code></code>
+The analytical solution, which we will compare to the numerical approximation, is<code></code>
+::: <big><math>T(t) = T</em>R + (T<em>0 - T</em>R) \; e^{-k t}</math></big><code></code>
+<code></code>
+<code></code>
+<br>Task:<code></code>
+Implement a routine of Euler's method and then to use it to solve the given example of Newton's cooling law with it for three different step sizes of:<code></code>
+:::* &nbsp; 2 s<code></code>
+:::* &nbsp; 5 s &nbsp; &nbsp; &nbsp; and<code></code>
+:::* &nbsp; 10 s<code></code>
+and to compare with the analytical solution.<code></code>
+<code></code>
+<code></code>
+<br>Initial values:<code></code>
+:::* &nbsp; initial temperature &nbsp; <big><math>T<em>0</math></big> &nbsp; shall be &nbsp; 100 °C<code></code>
+:::* &nbsp; room temperature &nbsp; <big><math>T</em>R</math></big> &nbsp; shall be &nbsp; 20 °C<code></code>
+:::* &nbsp; cooling constant &nbsp; &nbsp; <big><math>k</math></big> &nbsp; &nbsp; shall be &nbsp; 0.07<code></code>
+:::* &nbsp; time interval to calculate shall be from &nbsp; 0 s &nbsp; --> &nbsp; 100 s<code></code>
+<code></code>
+<br><code></code>
+A reference solution (<a href="#Common Lisp|Common Lisp">#Common Lisp|Common Lisp</a>) can be seen below. &nbsp; We see that bigger step sizes lead to reduced approximation accuracy.<code></code>
+<a href="Image:Euler_Method_Newton_Cooling.png|center|750px">Image:Euler<em>Method</em>Newton_Cooling.png|center|750px</a><code></code></p>

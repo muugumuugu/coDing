@@ -1,0 +1,26 @@
+<link href="/styles/home.css" rel="stylesheet">
+<p>The task requires poking machine code directly into memory and executing it.<code></code>
+<code></code>
+This is strictly for x86 (32 bit) architectures.<code></code>
+<code></code>
+The machine code is the opcodes of the following simple program:<code></code>
+<code></code>
+<lang asm>mov EAX, <a href="ESP+4">ESP+4</a><code></code>
+add EAX, <a href="ESP+8">ESP+8</a><code></code>
+ret</lang><code></code>
+<code></code>
+which translates into the following opcodes:    <code></code>
+(139 68 36 4 3 68 36 8 195)<code></code>
+and in Hex this would correspond to the following:<code></code>
+("8B" "44" "24" "4" "3" "44" "24" "8" "C3")<code></code>
+<code></code>
+<code></code>
+<br>Task:<code></code>
+Implement the following in your favorite programming language (take the common lisp code as an example if you wish):<code></code></p>
+<ol><code></code>
+<li> Poke the above opcodes into a memory pointer</li><code></code>
+<li>Execute it with the following arguments: <a href="ESP+4] => unsigned-byte argument of value 7; [ESP+8">ESP+4] => unsigned-byte argument of value 7; [ESP+8</a> => unsigned-byte argument of value 12; The result would be 19.</li><code></code>
+<li>Free the Pointer</li><code></code>
+</ol>
+<p><code></code>
+<br><br><code></code></p>

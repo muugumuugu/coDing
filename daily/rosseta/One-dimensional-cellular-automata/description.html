@@ -1,0 +1,16 @@
+<link href="/styles/home.css" rel="stylesheet">
+<p>Assume an array of cells with an initial distribution of live and dead cells<br><code></code>
+and imaginary cells off the end of the array having fixed values.<code></code>
+<code></code>
+Cells in the next generation of the array are calculated based on the value of the cell and its left and right nearest neighbours in the current generation.<code></code>
+<code></code>
+If, in the following table, a live cell is represented by 1 and a dead cell by 0 then to generate the value of the cell at a particular index in the array of cellular values you use the following table:<code></code>
+<code></code>
+ 0<code>0</code>0 -&gt; 0  #<code></code>
+ 0<code>0</code>1 -&gt; 0  #<code></code>
+ 0<code>1</code>0 -&gt; 0  # Dies without enough neighbours<code></code>
+ 0<code>1</code>1 -&gt; 1  # Needs one neighbour to survive<code></code>
+ 1<code>0</code>0 -&gt; 0  #<code></code>
+ 1<code>0</code>1 -&gt; 1  # Two neighbours giving birth<code></code>
+ 1<code>1</code>0 -&gt; 1  # Needs one neighbour to survive<code></code>
+ 1<code>1</code>1 -&gt; 0  # Starved to death.<code></code></p>

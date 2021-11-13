@@ -1,0 +1,28 @@
+<link href="/styles/home.css" rel="stylesheet">
+<p>{{Sorting Algorithm}}<code></code>
+{{wikipedia|Insertion sort}}<code></code>
+{{omit from|GUISS}}<code></code>
+<code></code>
+<br><code></code>
+An <span style="font-family: serif"><a href="O">O</a>(<code>n</code><sup>2</sup>)</span> sorting algorithm which moves elements one at a time into the correct position.<code></code>
+The algorithm consists of inserting one element at a time into the previously sorted part of the array, moving higher ranked elements up as necessary.<code></code>
+To start off, the first (or smallest, or any arbitrary) element of the unsorted array is considered to be the sorted part.<code></code>
+<code></code>
+Although insertion sort is an <span style="font-family: serif"><a href="O">O</a>(<code>n</code><sup>2</sup>)</span> algorithm, its simplicity, low overhead, good locality of reference and efficiency make it a good choice in two cases: <br><code></code>
+(i) small <span style="font-family: serif"><code>n</code></span>, <br><code></code>
+(ii) as the final finishing-off algorithm for <span style="font-family: serif"><a href="O]](<code>n logn)</span> algorithms such as <a href="[Merge sort|mergesort]] and <a href="" title="n logn'">[quicksort">O]</a></span> algorithms such as [[Merge sort|mergesort]"&gt;[Merge sort|mergesort]] and <a href="" title="n log</code>n'">[quicksort">O]</a></span> algorithms such as [[Merge sort|mergesort]</a> and [[quicksort</a>.<code></code>
+<code></code>
+The algorithm is as follows (from <a href="wp:Insertion_sort#Algorithm|wikipedia">wp:Insertion_sort#Algorithm|wikipedia</a>):<code></code>
+ <code>function</code> <code>insertionSort</code>(array A)<code></code>
+     <code>for<code>' i 'from' 1 'to' length<a href="A">A</a>-1 '</code>do</code><code></code>
+         value := A<a href="i">i</a><code></code>
+         j := i-1<code></code>
+         <code>while<code>' j &gt;= 0 'and' A<a href="j">j</a> &gt; value '</code>do</code><code></code>
+             A<a href="j+1] := A[j">j+1] := A[j</a><code></code>
+             j := j-1<code></code>
+         <code>done</code><code></code>
+         A<a href="j+1">j+1</a> = value<code></code>
+     <code>done</code><code></code>
+<code></code>
+Writing the algorithm for integers will suffice.<code></code>
+<br><br><code></code></p>

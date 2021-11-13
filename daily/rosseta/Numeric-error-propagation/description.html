@@ -1,0 +1,43 @@
+<link href="/styles/home.css" rel="stylesheet">
+<p>If &nbsp; <code>f<code>', &nbsp; 'a', &nbsp; and &nbsp; 'b' &nbsp; are values with uncertainties &nbsp; σ<sub>f</sub>, &nbsp; σ<sub>a</sub>, &nbsp; and &nbsp; σ<sub>b</sub>, &nbsp; and &nbsp; '</code>c</code> &nbsp; is a constant;<code></code>
+<br>then if &nbsp; <code>f<code>' &nbsp; is derived from &nbsp; 'a', &nbsp; 'b', &nbsp; and &nbsp; '</code>c</code> &nbsp; in the following ways<br><code></code>
+<br>then &nbsp; σ<sub>f</sub> &nbsp; can be calculated as follows:<code></code>
+<code></code>
+:;Addition/Subtraction<code></code>
+:* If &nbsp; f = a &plusmn; c, &nbsp; or &nbsp; f = c &plusmn; a &nbsp; then &nbsp; <code>σ<sub>f</sub> = σ<sub>a</sub></code><code></code>
+:* If &nbsp; f = a &plusmn; b &nbsp; then &nbsp; <code>σ<sub>f</sub><sup>2</sup> = σ<sub>a</sub><sup>2</sup> + σ<sub>b</sub><sup>2</sup></code><code></code>
+<code></code>
+:;Multiplication/Division<code></code>
+:* If &nbsp; f = ca &nbsp; or &nbsp; f = ac &nbsp; &nbsp; &nbsp; then &nbsp; <code>σ<sub>f</sub> = |cσ<sub>a</sub>|</code><code></code>
+:* If &nbsp; f = ab &nbsp; or &nbsp; f = a / b &nbsp;            then &nbsp; <code>σ<sub>f</sub><sup>2</sup> = f<sup>2</sup>( (σ<sub>a</sub> / a)<sup>2</sup> + (σ<sub>b</sub> / b)<sup>2</sup>)</code><code></code>
+<code></code>
+:;Exponentiation<code></code>
+:* If &nbsp; f = a<sup>c</sup> &nbsp; then &nbsp; <code>σ<sub>f</sub> = |fc(σ<sub>a</sub> / a)|</code><code></code>
+<code></code>
+<code></code>
+Caution:<code></code>
+::This implementation of error propagation does not address issues of dependent and independent values. &nbsp; It is assumed that &nbsp; <code>a<code>' &nbsp; and &nbsp; 'b' &nbsp; are independent and so the formula for multiplication should not be applied to &nbsp; '</code>a*a</code> &nbsp; for example. &nbsp; See &nbsp; <a href="Talk:Numeric_error_propagation|the talk page">Talk:Numeric<em>error</em>propagation|the talk page</a> &nbsp; for some of the implications of this issue.<code></code>
+<code></code>
+<code></code>
+<br>Task details:<code></code></p>
+<h1 id="addanuncertainnumbertypetoyourlanguagethatcansupportadditionsubtractionmultiplicationdivisionandexponentiationbetweennumberswithanassociatederrortermtogetherwithnormalfloatingpointnumberswithoutanassociatederrortermbrimplementenoughfunctionalitytoperformthefollowingcalculationsc21c">Add an uncertain number type to your language that can support addition, subtraction, multiplication, division, and exponentiation between numbers with an associated error term together with 'normal' floating point numbers without an associated error term. <br>Implement enough functionality to perform the following calculations.<code></code></h1>
+<h1 id="givencoordinatesandtheirerrorsbrx1100plusmn11bry150plusmn12brx2200plusmn22bry2100plusmn23brifpointp1islocatedatx1y1andp2isatx2y2calculatethedistancebetweenthetwopointsusingtheclassicpythagoreanformulabrbigbigdradicspanstyletextdecorationoverlinenbspx1x2nbspnbspy1y2nbspspanbigbigc22c">Given coordinates and their errors:<br>x1 = 100 &plusmn; 1.1<br>y1 =  50 &plusmn; 1.2<br>x2 = 200 &plusmn; 2.2<br>y2 = 100 &plusmn; 2.3<br> if point p1 is located at (x1, y1) and p2 is at (x2, y2); calculate the distance between the two points using the classic Pythagorean formula: <br> <big><big> d = &radic;<span style="text-decoration:overline"> &nbsp; (x1 - x2)² &nbsp; + &nbsp; (y1 - y2)² &nbsp; </span> </big></big><code></code></h1>
+<h1 id="printanddisplaybothnbspbigdbignbspanditserrorc23c">Print and display both &nbsp; <big> <code>d</code> </big> &nbsp; and its error.<code></code></h1>
+<p><code></code></p>
+ <!-- the superscript<code></code>
+       2 glyph  <a href="²">²</a><code></code>
+had to be used instead of the<code></code>
+       <sup>2</sup><code></code>
+notation which causes the  overline  "text-decoration"  to either overlay the superscript or it causes a "break" in the continuous overline part of the radic.    Gerard Schildberger.  -->
+<p><code></code>
+<code></code>
+<br>References:<code></code></p>
+<ul>
+<li><a href="http://casa.colorado.edu/~benderan/teaching/astr3510/stats.pdf A Guide to Error Propagation">http://casa.colorado.edu/~benderan/teaching/astr3510/stats.pdf A Guide to Error Propagation</a> B. Keeney, 2005.<code></code></li>
+<li><a href="wp:Propagation of uncertainty|Propagation of uncertainty">wp:Propagation of uncertainty|Propagation of uncertainty</a> Wikipedia.<code></code>
+<code></code>
+<code></code>
+<br>Related task:<code></code></li>
+<li>&nbsp; <a href="Quaternion type">Quaternion type</a><code></code>
+<br><br><code></code></li>
+</ul>

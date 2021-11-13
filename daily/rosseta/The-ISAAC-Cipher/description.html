@@ -1,0 +1,62 @@
+<link href="/styles/home.css" rel="stylesheet">
+<p>ISAAC is a cryptographically secure pseudo-random number generator (CSPRNG) and stream cipher. It was developed by Bob Jenkins from 1993 (http://burtleburtle.net/bob/rand/isaac.html) and placed in the Public Domain. ISAAC is fast - especially when optimised - and portable to most architectures in nearly all programming and scripting languages.<code></code>
+It is also simple and succinct, using as it does just two 256-word arrays for its state.<code></code>
+<code></code>
+ISAAC stands for "Indirection, Shift, Accumulate, Add, and Count" which are the principal bitwise operations employed.<code></code>
+To date - and that's after more than 20 years of existence - ISAAC has not been broken (unless GCHQ or NSA did it, but they wouldn't be telling).<code></code>
+ISAAC thus deserves a lot more attention than it has hitherto received and it would be salutary to see it more universally implemented.<code></code>
+<code></code>
+<code></code>
+<br>Task:<code></code>
+Translate ISAAC's reference C or Pascal code into your language of choice.<code></code>
+<code></code>
+The RNG should then be seeded with the string "this is my secret key" and<code></code>
+finally the message "a Top Secret secret" should be encrypted on that key.<code></code>
+Your program's output cipher-text will be a string of hexadecimal digits.<code></code>
+<code></code>
+Optional: Include a decryption check by re-initializing ISAAC and performing<code></code>
+the same encryption pass on the cipher-text.<code></code>
+<code></code>
+Please use the C or Pascal as a reference guide to these operations.<code></code>
+<code></code>
+Two encryption schemes are possible:<code></code>
+(1) XOR (Vernam) or<code></code>
+(2) Caesar-shift mod 95 (Vigenère).<code></code>
+XOR is the simplest; C-shifting offers greater security.<code></code>
+<code></code>
+You may choose either scheme, or both, but please specify which you used.<code></code>
+Here are the alternative sample outputs for checking purposes:<code></code>
+<code></code></p>
+<pre><code></code>
+Message: a Top Secret secret<code></code>
+Key    : this is my secret key<code></code>
+XOR    : 1C0636190B1260233B35125F1E1D0E2F4C5422<code></code>
+MOD    : 734270227D36772A783B4F2A5F206266236978<code></code>
+XOR dcr: a Top Secret secret<code></code>
+MOD dcr: a Top Secret secret<code></code>
+</pre>
+<p><code></code>
+<code></code>
+No official seeding method for ISAAC has been published, but for this task<code></code>
+we may as well just inject the bytes of our key into the randrsl array<br><code></code>
+padding with zeroes before mixing, like so:<code></code>
+<code></code></p>
+<pre><code></code>
+// zeroise mm array<code></code>
+FOR i:= 0 TO 255 DO mm<a href="i">i</a>:=0;<code></code>
+// check seed's highest array element<code></code>
+m := High(seed);<code></code>
+// inject the seed<code></code>
+FOR i:= 0 TO 255 DO BEGIN<code></code>
+    // in case seed<a href=""></a> has less than 256 elements.<code></code>
+    IF i>m THEN randrsl<a href="i">i</a>:=0<code></code>
+        ELSE randrsl<a href="i]:=seed[i">i]:=seed[i</a>;<code></code>
+END;<code></code>
+// initialize ISAAC with seed<code></code>
+RandInit(true);<code></code>
+</pre>
+<p><code></code>
+<code></code>
+ISAAC can of course also be initialized with a single 32-bit unsigned integer in the manner of traditional RNGs, and indeed used as such for research and gaming purposes.<code></code>
+But building a strong and simple ISAAC-based stream cipher - replacing the irreparably broken RC4 - is our goal here: ISAAC's intended purpose.<code></code>
+<br><br><code></code></p>

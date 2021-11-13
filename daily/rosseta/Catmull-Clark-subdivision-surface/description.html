@@ -1,0 +1,46 @@
+<link href="/styles/home.css" rel="stylesheet">
+<p>Implement the Catmull-Clark surface subdivision (<a href="wp:Catmull–Clark_subdivision_surface|description on Wikipedia">wp:Catmull–Clark<em>subdivision</em>surface|description on Wikipedia</a>), which is an algorithm that maps from a surface (described as a set of points and a set of polygons with vertices at those points) to another more refined surface. The resulting surface will always consist of a mesh of quadrilaterals.<code></code>
+<code></code>
+The process for computing the new locations of the points works as follows when the surface is free of holes:<code></code>
+<a href="Image:CatmullClark_subdiv_0.png|thumb|Starting cubic mesh; the meshes below are derived from this.">Image:CatmullClark<em>subdiv</em>0.png|thumb|Starting cubic mesh; the meshes below are derived from this.</a><code></code>
+<a href="Image:CatmullClark_subdiv_1.png|thumb|After one round of the Catmull-Clark algorithm applied to a cubic mesh.">Image:CatmullClark<em>subdiv</em>1.png|thumb|After one round of the Catmull-Clark algorithm applied to a cubic mesh.</a><code></code>
+<a href="Image:CatmullClark_subdiv_2.png|thumb|After two rounds of the Catmull-Clark algorithm. As can be seen, this is converging to a surface that looks nearly spherical.">Image:CatmullClark<em>subdiv</em>2.png|thumb|After two rounds of the Catmull-Clark algorithm. As can be seen, this is converging to a surface that looks nearly spherical.</a><code></code></p>
+<h1 id="foreachfaceafacepointiscreatedwhichistheaverageofallthepointsofthefacec6c">for each face, a <code>face point</code> is created which is the average of all the points of the face.<code></code></h1>
+<h1 id="foreachedgeanedgepointiscreatedwhichistheaveragebetweenthecenteroftheedgeandthecenterofthesegmentmadewiththefacepointsofthetwoadjacentfacesc7c">for each edge, an <code>edge point</code> is created which is the average between the center of the edge and the center of the segment made with the face points of the two adjacent faces.<code></code></h1>
+<h1 id="foreachvertexpointitscoordinatesareupdatedfromttnew_coordsttc8c">for each vertex point, its coordinates are updated from (<tt>new_coords</tt>):<code></code></h1>
+<h2 id="theoldcoordinatesttold_coordsttbrc9c">the old coordinates (<tt>old_coords</tt>)<br><code></code></h2>
+<h2 id="theaverageofthefacepointsofthefacesthepointbelongstottavg_face_pointsttbrc10c">the average of the face points of the faces the point belongs to (<tt>avg<em>face</em>points</tt>)<br><code></code></h2>
+<h2 id="theaverageofthecentersofedgesthepointbelongstottavg_mid_edgesttbrc11c">the average of the centers of edges the point belongs to (<tt>avg<em>mid</em>edges</tt>)<br><code></code></h2>
+<h2 id="howmanyfacesapointbelongstottnttthenusethisformulac12c">how many faces a point belongs to (<tt>n</tt>), then use this formula:<code></code></h2>
+<pre><code>  m&lt;sub&gt;1&lt;/sub&gt; = (n - 3) / n<code></code>
+  m&lt;sub&gt;2&lt;/sub&gt; = 1 / n<code></code>
+  m&lt;sub&gt;3&lt;/sub&gt; = 2 / n<code></code>
+  new_coords = (m&lt;sub&gt;1&lt;/sub&gt; * old_coords)<code></code>
+             + (m&lt;sub&gt;2&lt;/sub&gt; * avg_face_points)<code></code>
+             + (m&lt;sub&gt;3&lt;/sub&gt; * avg_mid_edges)<code></code>
+</code></pre>
+<p><code></code>
+Then each face is replaced by new faces made with the new points<br><code></code></p>
+<ul>
+<li>for a triangle face (a,b,c):<code></code>
+(a, edge<em>point<sub>ab</sub>, face</em>point<sub>abc</sub>, edge<em>point<sub>ca</sub>)<code></code>
+(b, edge</em>point<sub>bc</sub>, face<em>point<sub>abc</sub>, edge</em>point<sub>ab</sub>)<code></code>
+(c, edge<em>point<sub>ca</sub>, face</em>point<sub>abc</sub>, edge_point<sub>bc</sub>)<code></code></li>
+<li>for a quad face (a,b,c,d):<code></code>
+(a, edge<em>point<sub>ab</sub>, face</em>point<sub>abcd</sub>, edge<em>point<sub>da</sub>)<code></code>
+(b, edge</em>point<sub>bc</sub>, face<em>point<sub>abcd</sub>, edge</em>point<sub>ab</sub>)<code></code>
+(c, edge<em>point<sub>cd</sub>, face</em>point<sub>abcd</sub>, edge<em>point<sub>bc</sub>)<code></code>
+(d, edge</em>point<sub>da</sub>, face<em>point<sub>abcd</sub>, edge</em>point<sub>cd</sub>)<code></code>
+<code></code>
+When there is a hole, we can detect it as follows:<code></code></li>
+<li>an edge is the border of a hole if it belongs to only one face<br><code></code></li>
+<li>a point is on the border of a hole if <tt>n<sub>faces</sub> != n<sub>edges</sub></tt> with <tt>n<sub>faces</sub></tt> the number of faces the point belongs to, and <tt>n<sub>edges</sub></tt> the number of edges a point belongs to.<code></code>
+<code></code>
+On the border of a hole the subdivision occurs as follows:<code></code></li>
+</ul>
+<h1 id="fortheedgesthatareontheborderofaholetheedgepointisjustthemiddleoftheedgec36c">for the edges that are on the border of a hole, the edge point is just the middle of the edge.<code></code></h1>
+<h1 id="forthevertexpointsthatareontheborderofaholethenewcoordinatesarecalculatedasfollowsc37c">for the vertex points that are on the border of a hole, the new coordinates are calculated as follows:<code></code></h1>
+<h2 id="inalltheedgesthepointbelongstoonlytakeinaccountthemiddlesoftheedgesthatareontheborderoftheholec38c">in all the edges the point belongs to, only take in account the middles of the edges that are on the border of the hole<code></code></h2>
+<h2 id="calculatetheaveragebetweenthesepointsontheholeboundaryandtheoldcoordinatesalsoontheholeboundaryc39c">calculate the average between these points (on the hole boundary) and the old coordinates (also on the hole boundary).<code></code></h2>
+<p><code></code>
+For edges and vertices not next to a hole, the standard algorithm from above is used.<code></code></p>

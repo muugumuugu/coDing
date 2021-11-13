@@ -1,0 +1,228 @@
+<link href="/styles/home.css" rel="stylesheet">
+<p><br><code></code>
+<code>Background<code>': The '</code>man or boy test</code> was proposed by computer scientist <a href="wp:Donald_Knuth|Donald Knuth]] as a means of evaluating implementations of the <a href="[:Category:ALGOL 60|ALGOL 60">wp:Donald<em>Knuth|Donald Knuth]">[:Category:ALGOL 60|ALGOL 60">wp:Donald</em>Knuth|Donald Knuth]</a> as a means of evaluating implementations of the [[:Category:ALGOL 60|ALGOL 60</a> programming language. The aim of the test was to distinguish compilers that correctly implemented "recursion and non-local references" from those that did not.<code></code>
+<code></code></p>
+<blockquote style="font-style:italic"><code></code>
+  I have written the following simple routine, which may separate the 'man-compilers' from the 'boy-compilers'<br> &mdash; <span style="font-style:normal">Donald Knuth</span></blockquote>
+<p><code></code>
+<code></code>
+<code>Task</code>: Imitate <a href="#ALGOL 60 - Knuth's example|Knuth's example in Algol 60">#ALGOL 60 - Knuth's example|Knuth's example in Algol 60</a> in another language, as far as possible.<code></code>
+<code></code>
+<code>Details</code>: Local variables of routines are often kept in <a href="http://c2.com/cgi/wiki?ActivationRecord <code>activation records] (also call frames). In many languages, these records are kept on a <a href="System stack|call stack]]. In Algol (and e.g. in [[Smalltalk]]), they are allocated on a [[heap]] instead. Hence it is possible to pass references to routines that still can use and update variables from their call environment, even if the routine where those variables are declared already returned. This difference in implementations is sometimes called the [[wp:Funarg_problem|Funarg Problem">System stack|call stack]]. In Algol (and e.g. in [[Smalltalk]]), they are allocated on a <a href="also" title="'call frames'">[heap]">http://c2.com/cgi/wiki?ActivationRecord activation records</code></a>. In many languages, these records are kept on a <a href="System stack|call stack]]. In Algol (and e.g. in [[Smalltalk]]), they are allocated on a [[heap]] instead. Hence it is possible to pass references to routines that still can use and update variables from their call environment, even if the routine where those variables are declared already returned. This difference in implementations is sometimes called the [[wp:Funarg_problem|Funarg Problem">System stack|call stack]]. In Algol (and e.g. in [[Smalltalk]]), they are allocated on a [[heap]</a> instead. Hence it is possible to pass references to routines that still can use and update variables from their call environment, even if the routine where those variables are declared already returned. This difference in implementations is sometimes called the [[wp:Funarg_problem|Funarg Problem</a>.<code></code>
+<code></code>
+In Knuth's example, each call to <code>A allocates an activation record for the variable A. When B is called from A, any access to k now refers to this activation record. Now B in turn calls A, but passes itself as an argument. This argument remains bound to the activation record. This call to A also "shifts" the variables x<sub>i</sub> by one place, so eventually the argument B</code> (still bound to its particular<code></code>
+activation record) will appear as <code>x4 or x5 in a call to A. If this happens when the expression x4 + x5 is evaluated, then this will again call B, which in turn will update k in the activation record it was originally bound to. As this activation record is shared with other instances of calls to A and B</code>, it will influence the whole computation.<code></code>
+<code></code>
+So all the example does is to set up a convoluted calling structure, where updates to <code>k</code> can influence the behavior<code></code>
+in completely different parts of the call tree.<code></code>
+<code></code>
+Knuth used this to test the correctness of the compiler, but one can of course also use it to test that other languages can emulate the Algol behavior correctly. If the handling of activation records is correct, the computed value will be &minus;67.<code></code>
+<code></code>
+<code>Performance and Memory</code>: Man or Boy is intense and can be pushed to challenge any machine. Memory (both stack and heap) not CPU time is the constraining resource as the recursion creates a proliferation activation records which will quickly exhaust memory and present itself through a stack error.  Each language may have ways of adjusting the amount of memory or increasing the recursion depth. Optionally, show how you would make such adjustments.<code></code>
+<code></code>
+The table below shows the result, call depths, and total calls for a range of <code>k</code>:<code></code>
+{| class="wikitable" style="font-size: 85%"<code></code>
+! <code>k</code><code></code>
+! 0<code></code>
+! 1<code></code>
+! 2<code></code>
+! 3<code></code>
+! 4<code></code>
+! 5<code></code>
+! 6<code></code>
+! 7<code></code>
+! 8<code></code>
+! 9<code></code>
+! 10<code></code>
+! 11<code></code>
+! 12<code></code>
+! 13<code></code>
+! 14<code></code>
+! 15<code></code>
+! 16<code></code>
+! 17<code></code>
+! 18<code></code>
+! 19<code></code>
+! 20<code></code>
+! 21<code></code>
+! 22<code></code>
+! 23<code></code>
+! 24<code></code>
+! 25<code></code>
+! 26<code></code>
+! 27<code></code>
+! 28<code></code>
+! 29<code></code>
+! 30<code></code>
+|-<code></code>
+! <code>A</code><code></code>
+|align="right"| 1<code></code>
+|align="right"| 0<code></code>
+|align="right"| -2<code></code>
+|align="right"| 0<code></code>
+|align="right"| 1<code></code>
+|align="right"| 0<code></code>
+|align="right"| 1<code></code>
+|align="right"| -1<code></code>
+|align="right"| -10<code></code>
+|align="right"| -30<code></code>
+|align="right"| -67<code></code>
+|align="right"| -138<code></code>
+|align="right"| -291<code></code>
+|align="right"| -642<code></code>
+|align="right"| -1,446<code></code>
+|align="right"| -3,250<code></code>
+|align="right"| -7,244<code></code>
+|align="right"| -16,065<code></code>
+|align="right"| -35,601<code></code>
+|align="right"| -78,985<code></code>
+|align="right"| -175,416<code></code>
+|align="right"| -389,695<code></code>
+|align="right"| -865,609<code></code>
+|align="right"| -1,922,362<code></code>
+|align="right"| -4,268,854<code></code>
+|align="right"| -9,479,595<code></code>
+|align="right"| -21,051,458<code></code>
+|align="right"| -46,750,171<code></code>
+|align="right"| -103,821,058<code></code>
+|align="right"| -230,560,902<code></code>
+|align="right"| -512,016,658<code></code>
+|-<code></code>
+! <code>A</code> called<code></code>
+|align="right"| 1<code></code>
+|align="right"| 2<code></code>
+|align="right"| 3<code></code>
+|align="right"| 4<code></code>
+|align="right"| 8<code></code>
+|align="right"| 18<code></code>
+|align="right"| 38<code></code>
+|align="right"| 80<code></code>
+|align="right"| 167<code></code>
+|align="right"| 347<code></code>
+|align="right"| 722<code></code>
+|align="right"| 1,509<code></code>
+|align="right"| 3,168<code></code>
+|align="right"| 6,673<code></code>
+|align="right"| 14,091<code></code>
+|align="right"| 29,825<code></code>
+|align="right"| 63,287<code></code>
+|align="right"| 134,652<code></code>
+|align="right"| 287,264<code></code>
+|align="right"| 614,442<code></code>
+|align="right"| 1,317,533<code></code>
+|align="right"| 2,831,900<code></code>
+|align="right"| 6,100,852<code></code>
+|align="right"| 13,172,239<code></code>
+|align="right"| 28,499,827<code></code>
+|align="right"| 61,786,266<code></code>
+|align="right"| 134,202,509<code></code>
+|align="right"| 292,011,464<code></code>
+|&nbsp;<code></code>
+|&nbsp;<code></code>
+|&nbsp;<code></code>
+|-<code></code>
+! <code>A</code> depth<code></code>
+|align="right"| 1<code></code>
+|align="right"| 2<code></code>
+|align="right"| 3<code></code>
+|align="right"| 4<code></code>
+|align="right"| 8<code></code>
+|align="right"| 16<code></code>
+|align="right"| 32<code></code>
+|align="right"| 64<code></code>
+|align="right"| 128<code></code>
+|align="right"| 256<code></code>
+|align="right"| 512<code></code>
+|align="right"| 1,024<code></code>
+|align="right"| 2,048<code></code>
+|align="right"| 4,096<code></code>
+|align="right"| 8,192<code></code>
+|align="right"| 16,384<code></code>
+|align="right"| 32,768<code></code>
+|align="right"| 65,536<code></code>
+|align="right"| 131,072<code></code>
+|align="right"| 262,144<code></code>
+|align="right"| 524,288<code></code>
+|align="right"| 1,048,576<code></code>
+|align="right"| 2,097,152<code></code>
+|align="right"| 4,194,304<code></code>
+|align="right"| 8,388,608<code></code>
+|&nbsp;<code></code>
+|&nbsp;<code></code>
+|&nbsp;<code></code>
+|&nbsp;<code></code>
+|&nbsp;<code></code>
+|&nbsp;<code></code>
+|-<code></code>
+! <code>B</code> called<code></code>
+|align="right"| 0<code></code>
+|align="right"| 1<code></code>
+|align="right"| 2<code></code>
+|align="right"| 3<code></code>
+|align="right"| 7<code></code>
+|align="right"| 17<code></code>
+|align="right"| 37<code></code>
+|align="right"| 79<code></code>
+|align="right"| 166<code></code>
+|align="right"| 346<code></code>
+|align="right"| 721<code></code>
+|align="right"| 1,508<code></code>
+|align="right"| 3,167<code></code>
+|align="right"| 6,672<code></code>
+|align="right"| 14,090<code></code>
+|align="right"| 29,824<code></code>
+|align="right"| 63,286<code></code>
+|align="right"| 134,651<code></code>
+|align="right"| 287,263<code></code>
+|align="right"| 614,441<code></code>
+|align="right"| 1,317,532<code></code>
+|align="right"| 2,831,899<code></code>
+|align="right"| 6,100,851<code></code>
+|align="right"| 13,172,238<code></code>
+|align="right"| 28,499,826<code></code>
+|&nbsp;<code></code>
+|&nbsp;<code></code>
+|&nbsp;<code></code>
+|&nbsp;<code></code>
+|&nbsp;<code></code>
+|&nbsp;<code></code>
+|-<code></code>
+! <code>B</code> depth<code></code>
+|align="right"| 0<code></code>
+|align="right"| 1<code></code>
+|align="right"| 2<code></code>
+|align="right"| 3<code></code>
+|align="right"| 7<code></code>
+|align="right"| 15<code></code>
+|align="right"| 31<code></code>
+|align="right"| 63<code></code>
+|align="right"| 127<code></code>
+|align="right"| 255<code></code>
+|align="right"| 511<code></code>
+|align="right"| 1,023<code></code>
+|align="right"| 2,047<code></code>
+|align="right"| 4,095<code></code>
+|align="right"| 8,191<code></code>
+|align="right"| 16,383<code></code>
+|align="right"| 32,767<code></code>
+|align="right"| 65,535<code></code>
+|align="right"| 131,071<code></code>
+|align="right"| 262,143<code></code>
+|align="right"| 524,287<code></code>
+|align="right"| 1,048,575<code></code>
+|align="right"| 2,097,151<code></code>
+|align="right"| 4,194,303<code></code>
+|align="right"| 8,388,607<code></code>
+|&nbsp;<code></code>
+|&nbsp;<code></code>
+|&nbsp;<code></code>
+|&nbsp;<code></code>
+|&nbsp;<code></code>
+|&nbsp;<code></code>
+|}<code></code>
+<br><code></code>
+<br>Related tasks:<code></code></p>
+<ul>
+<li>&nbsp; <a href="Jensen's Device">Jensen's Device</a><code></code>
+<br><code></code></li>
+</ul>

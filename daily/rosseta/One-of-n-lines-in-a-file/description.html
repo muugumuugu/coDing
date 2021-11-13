@@ -1,0 +1,25 @@
+<link href="/styles/home.css" rel="stylesheet">
+<p>A method of choosing a line randomly from a file:<code></code>
+::* Without reading the file more than once<code></code>
+::* When substantial parts of the file cannot be held in memory<code></code>
+::* Without knowing how many lines are in the file<code></code>
+Is to:<code></code>
+::* keep the first line of the file as a possible choice, then<code></code>
+::* Read the second line of the file if possible and make it the possible choice if a uniform random value between zero and one is less than 1/2.<code></code>
+::* Read the third line of the file if possible and make it the possible choice if a uniform random value between zero and one is less than 1/3.<code></code>
+::* ...<code></code>
+::* Read the Nth line of the file if possible and make it the possible choice if a uniform random value between zero and one is less than 1/N<code></code>
+<code></code>
+::* Return the computed possible choice when no further lines exist in the file.<code></code>
+<code></code>
+<code></code>
+<br>Task:<code></code></p>
+<h1 id="createafunctionmethodroutinecalledc15cthatgivenc16cthenumberofactuallinesinafilefollowsthealgorithmabovetoreturnanintegerthelinenumberofthelinechosenfromthefilebrthenumberreturnedcanvaryrandomlyineachrunc17c">Create a function/method/routine called <code>one_of_n</code> that given <code>n</code>, the number of actual lines in a file, follows the algorithm above to return an integer - the line number of the line chosen from the file. <br>The number returned can vary, randomly, in each run.<code></code></h1>
+<h1 id="usec18cinasimulationtofindwhatwoudbethechosenlineofa10linefilesimulated1000000timesc19c">Use <code>one_of_n</code> in a <code>simulation</code> to find what woud be the chosen line of a 10 line file simulated 1,000,000 times.<code></code></h1>
+<h1 id="printandshowhowmanytimeseachofthe10linesischosenasaroughmeasureofhowwellthealgorithmworksc20c">Print and show how many times each of the 10 lines is chosen as a rough measure of how well the algorithm works.<code></code></h1>
+<p><code></code>
+<code></code>
+Note: You may choose a smaller number of repetitions if necessary, but mention this up-front.<code></code>
+<code></code>
+Note: This is a specific version of a Reservoir Sampling algorithm: https://en.wikipedia.org/wiki/Reservoir_sampling<code></code>
+<br><br><code></code></p>

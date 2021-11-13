@@ -1,0 +1,1 @@
+https://openlibrary.org/isbn/{isbn13no}.json

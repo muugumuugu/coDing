@@ -1,0 +1,30 @@
+<link href="/styles/home.css" rel="stylesheet">
+<p>Create a function that takes a list of character names and a list of corresponding remarks and returns an XML document of <code>&lt;Character&gt;</code> elements each with a name attributes and each enclosing its remarks.<code></code>
+All <code>&lt;Character&gt;</code> elements are to be enclosed in turn, in an outer <code>&lt;CharacterRemarks&gt;</code> element.<code></code>
+<code></code>
+As an example, calling the function with the three names of:<code></code></p>
+<pre><code></code>
+April<code></code>
+Tam O'Shanter<code></code>
+Emily</pre>
+<p><code></code>
+And three remarks of:<code></code></p>
+<pre><code></code>
+Bubbly: I'm > Tam and <= Emily<code></code>
+Burns: "When chapman billies leave the street ..."<code></code>
+Short & shrift</pre>
+<p><code></code>
+Should produce the XML (but not necessarily with the indentation):<code></code>
+<lang xml><CharacterRemarks><code></code>
+    <Character name="April">Bubbly: I'm &gt; Tam and &lt;= Emily</Character><code></code>
+    <Character name="Tam O'Shanter">Burns: "When chapman billies leave the street ..."</Character><code></code>
+    <Character name="Emily">Short &amp; shrift</Character><code></code>
+</CharacterRemarks></lang><code></code>
+<code></code>
+The document may include an <tt><?xml?></tt> declaration and document type declaration, but these are optional. If attempting this task by direct string manipulation, the implementation <code>must</code> include code to perform entity substitution for the characters that have entities defined in the XML 1.0 specification.<code></code>
+<code></code>
+Note: the example is chosen to show correct escaping of XML strings.<code></code>
+Note too that although the task is written to take two lists of corresponding data, a single mapping/hash/dictionary of names to remarks is also acceptable.<code></code>
+<code></code>
+<code>Note to editors:</code> Program output with escaped characters will be viewed as the character on the page so you need to 'escape-the-escapes' to make the RC entry display what would be shown in a plain text viewer (See <a href="Talk:XML_Creation#Escaping_Escapes|this">Talk:XML<em>Creation#Escaping</em>Escapes|this</a>).<code></code>
+Alternately, output can be placed in <nowiki><lang xml></lang></nowiki> tags without any special treatment.<code></code></p>

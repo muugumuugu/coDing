@@ -1,0 +1,46 @@
+<link href="/styles/home.css" rel="stylesheet">
+<p>Computing the <a href="wp:Moving_average#Simple_moving_average|simple moving average">wp:Moving<em>average#Simple</em>moving_average|simple moving average</a> of a series of numbers.<code></code>
+<code></code>
+{{task heading}}<code></code>
+<code></code>
+Create a <a href="wp:Stateful|stateful">wp:Stateful|stateful</a> function/class/instance that takes a period and returns a routine that takes a number as argument and returns a simple moving average of its arguments so far.<code></code>
+<code></code>
+{{task heading|Description}}<code></code>
+<code></code>
+A simple moving average is a method for computing an average of a stream of numbers by only averaging the last &nbsp; P &nbsp; numbers from the stream, &nbsp; where &nbsp; P &nbsp; is known as the period.<code></code>
+<code></code>
+It can be implemented by calling an initialing routine with &nbsp; P &nbsp; as its argument, &nbsp; I(P), &nbsp; which should then return a routine that when called with individual, successive members of a stream of numbers, computes the mean of (up to), the last &nbsp; P &nbsp; of them, lets call this &nbsp; SMA().<code></code>
+<code></code>
+The word &nbsp; <code>stateful</code> &nbsp; in the task description refers to the need for &nbsp; SMA() &nbsp; to remember certain information between calls to it:<code></code></p>
+<ul>
+<li>&nbsp; The period, &nbsp; P<code></code></li>
+<li>&nbsp; An ordered container of at least the last &nbsp; P &nbsp; numbers from each of its individual calls.<code></code>
+<code></code>
+<br><code></code>
+<code>Stateful &nbsp;  also means that successive calls to &nbsp; I(), &nbsp; the initializer, &nbsp; should return separate routines that do &nbsp; not</code> &nbsp; share saved state so they could be used on two independent streams of data.<code></code>
+<code></code>
+Pseudo-code for an implementation of &nbsp; SMA &nbsp; is:<code></code></li>
+</ul>
+<pre><code></code>
+function SMA(number: N):<code></code>
+    stateful integer: P<code></code>
+    stateful list:    stream<code></code>
+    number:           average<code></code>
+<code></code>
+    stream.append_last(N)<code></code>
+    if stream.length() > P:<code></code>
+        # Only average the last P elements of the stream<code></code>
+        stream.delete_first()<code></code>
+    if stream.length() == 0:<code></code>
+        average = 0<code></code>
+    else:<code></code>
+        average = sum( stream.values() ) / stream.length()<code></code>
+    return average<code></code>
+</pre>
+<p><code></code>
+<code></code>
+{{task heading|See also}}<code></code>
+<code></code>
+{{Related tasks/Statistical measures}}<code></code>
+<code></code>
+<hr><code></code></p>

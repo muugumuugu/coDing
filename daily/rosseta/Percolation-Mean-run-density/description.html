@@ -1,0 +1,32 @@
+<link href="/styles/home.css" rel="stylesheet">
+<p>{{Percolation Simulation}}<code></code>
+Let <math>v</math> be a vector of <math>n</math> values of either <tt>1</tt> or <tt>0</tt> where the probability of any<code></code>
+value being <tt>1</tt> is <math>p</math>; the probability of a value being <tt>0</tt> is therefore <math>1-p</math>.<code></code>
+Define a run of <tt>1</tt>s as being a group of consecutive <tt>1</tt>s in the vector bounded<code></code>
+either by the limits of the vector or by a <tt>0</tt>. Let the number of such runs in a given<code></code>
+vector of length <math>n</math> be <math>R<em>n</math>.<code></code>
+<code></code>
+For example, the following vector has <math>R</em>{10} = 3</math><code></code></p>
+<pre><code></code>
+<a href="1 1 0 0 0 1 0 1 1 1">1 1 0 0 0 1 0 1 1 1</a><code></code>
+ ^^^       ^   ^^^^^<code></code>
+</pre>
+<p><code></code>
+Percolation theory states that<code></code>
+<code></code>
+:<math>K(p) = \lim<em>{n\to\infty} R</em>n / n = p(1 - p)</math><code></code>
+<code></code>
+<br>Task<code></code>
+<code></code>
+Any calculation of <math>R_n / n</math> for finite <math>n</math> is subject to randomness so should be<code></code>
+computed as the average of <math>t</math> runs, where <math>t \ge 100</math>.<code></code>
+<code></code>
+For values of <math>p</math> of 0.1, 0.3, 0.5, 0.7, and 0.9, show the effect of varying <math>n</math><code></code>
+on the accuracy of simulated <math>K(p)</math>.<code></code>
+<code></code>
+Show your output here.<code></code>
+<code></code>
+<br>See also<code></code></p>
+<ul>
+<li><a href="http://mathworld.wolfram.com/s-Run.html s-Run">http://mathworld.wolfram.com/s-Run.html s-Run</a> on Wolfram mathworld.<code></code></li>
+</ul>

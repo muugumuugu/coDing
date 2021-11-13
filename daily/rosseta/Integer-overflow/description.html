@@ -1,0 +1,111 @@
+<link href="/styles/home.css" rel="stylesheet">
+<p>Some languages support one or more integer types of the underlying processor.<code></code>
+<code></code>
+This integer types have fixed size; &nbsp; usually &nbsp; <code>8<code>'-bit, &nbsp; '16'-bit, &nbsp; '32'-bit, &nbsp; or &nbsp; '</code>64</code>-bit.<code></code>
+<br>The integers supported by such a type can be &nbsp; <code>signed &nbsp; or &nbsp; unsigned</code>.<code></code>
+<code></code>
+Arithmetic for machine level integers can often be done by single CPU instructions.<code></code>
+<br>This allows high performance and is the main reason to support machine level integers.<code></code>
+<code></code>
+<code></code>
+<br>Definition:<code></code>
+An integer overflow happens when the result of a computation does not fit into the fixed size integer.<code></code>
+The result can be too small or too big to be representable in the fixed size integer.<code></code>
+<code></code>
+<code></code>
+<br>Task:<code></code>
+When a language has fixed size integer types, create a program that<code></code>
+does arithmetic computations for the fixed size integers of the language.<code></code>
+<code></code>
+These computations must be done such that the result would overflow.<code></code>
+<code></code>
+The program should demonstrate what the following expressions do.<code></code>
+<code></code>
+<code></code>
+For 32-bit signed integers:<code></code>
+{|class="wikitable"<code></code>
+!Expression<code></code>
+!Result that does not fit into a 32-bit signed integer<code></code>
+|-<code></code>
+| -(-2147483647-1)<code></code>
+| 2147483648<code></code>
+|-<code></code>
+| 2000000000 + 2000000000<code></code>
+| 4000000000<code></code>
+|-<code></code>
+| -2147483647 - 2147483647<code></code>
+| -4294967294<code></code>
+|-<code></code>
+| 46341 * 46341<code></code>
+| 2147488281<code></code>
+|-<code></code>
+| (-2147483647-1) / -1<code></code>
+| 2147483648<code></code>
+|}<code></code>
+<code></code>
+For 64-bit signed integers:<code></code>
+{|class="wikitable"<code></code>
+!Expression<code></code>
+!Result that does not fit into a 64-bit signed integer<code></code>
+|-<code></code>
+| -(-9223372036854775807-1)<code></code>
+| 9223372036854775808<code></code>
+|-<code></code>
+| 5000000000000000000+5000000000000000000<code></code>
+| 10000000000000000000<code></code>
+|-<code></code>
+| -9223372036854775807 - 9223372036854775807<code></code>
+| -18446744073709551614<code></code>
+|-<code></code>
+| 3037000500 * 3037000500<code></code>
+| 9223372037000250000<code></code>
+|-<code></code>
+| (-9223372036854775807-1) / -1<code></code>
+| 9223372036854775808<code></code>
+|}<code></code>
+<code></code>
+For 32-bit unsigned integers:<code></code>
+{|class="wikitable"<code></code>
+!Expression<code></code>
+!Result that does not fit into a 32-bit unsigned integer<code></code>
+|-<code></code>
+| -4294967295<code></code>
+| -4294967295<code></code>
+|-<code></code>
+| 3000000000 + 3000000000<code></code>
+| 6000000000<code></code>
+|-<code></code>
+| 2147483647 - 4294967295<code></code>
+| -2147483648<code></code>
+|-<code></code>
+| 65537 * 65537<code></code>
+| 4295098369<code></code>
+|}<code></code>
+<code></code>
+For 64-bit unsigned integers:<code></code>
+{|class="wikitable"<code></code>
+!Expression<code></code>
+!Result that does not fit into a 64-bit unsigned integer<code></code>
+|-<code></code>
+| -18446744073709551615<code></code>
+| -18446744073709551615<code></code>
+|-<code></code>
+| 10000000000000000000 + 10000000000000000000<code></code>
+| 20000000000000000000<code></code>
+|-<code></code>
+| 9223372036854775807 - 18446744073709551615<code></code>
+| -9223372036854775808<code></code>
+|-<code></code>
+| 4294967296 * 4294967296<code></code>
+| 18446744073709551616<code></code>
+|}<code></code>
+<code></code>
+When the integer overflow does trigger an exception show how the exception is caught.<code></code>
+When the integer overflow produces some value print it.<code></code>
+It should be explicitly noted when an integer overflow is not recognized and the program continues with wrong results.<code></code>
+This should be done for signed and unsigned integers of various sizes supported by the language.<code></code>
+When a language has no fixed size integer type or when no integer overflow can occur<code></code>
+for other reasons this should be noted.<code></code>
+It is okay to mention, when a language supports unlimited precision integers, but<code></code>
+this task is NOT the place to demonstrate the capabilities of unlimited precision integers.<code></code>
+<br><br><code></code></p>

@@ -1,0 +1,151 @@
+<link href="/styles/home.css" rel="stylesheet">
+<p><br>Task:<code></code>
+Create an interpreter for a <a href="wp:Markov algorithm|Markov Algorithm">wp:Markov algorithm|Markov Algorithm</a>.<code></code>
+<code></code>
+Rules have the syntax:<code></code>
+ <ruleset> ::= ((<comment> | <rule>) <newline>+)*<code></code>
+ <comment> ::= # {<any character>}<code></code>
+ <rule> ::= <pattern> <whitespace> -&gt; <whitespace> <a href=".">.</a> <replacement><code></code>
+ <whitespace> ::= (<tab> | <space>) <a href="<whitespace>"><whitespace></a><code></code>
+There is one rule per line.<code></code>
+<code></code>
+If there is a &nbsp; <b>.</b> &nbsp; (period) &nbsp; present before the &nbsp; <code><replacement></code>, &nbsp; then this is a terminating rule in which case the interpreter must halt execution.<code></code>
+<code></code>
+A ruleset consists of a sequence of rules, with optional comments.<code></code>
+<code></code>
+<code></code>
+<big><big> Rulesets </big></big><code></code>
+<code></code>
+Use the following tests on entries:<code></code>
+<code></code>
+<code></code>
+<br>Ruleset 1:<code></code></p>
+<pre><code></code>
+# This rules file is extracted from Wikipedia:<code></code>
+# http://en.wikipedia.org/wiki/Markov_Algorithm<code></code>
+A -> apple<code></code>
+B -> bag<code></code>
+S -> shop<code></code>
+T -> the<code></code>
+the shop -> my brother<code></code>
+a never used -> .terminating rule<code></code>
+</pre>
+<p><code></code>
+Sample text of:<code></code>
+: <code> I bought a B of As from T S. </code><code></code>
+Should generate the output:<code></code>
+: <code> I bought a bag of apples from my brother. </code><code></code>
+<code></code>
+<code></code>
+<br>Ruleset 2:<code></code>
+A test of the terminating rule<code></code></p>
+<pre><code></code>
+# Slightly modified from the rules on Wikipedia<code></code>
+A -> apple<code></code>
+B -> bag<code></code>
+S -> .shop<code></code>
+T -> the<code></code>
+the shop -> my brother<code></code>
+a never used -> .terminating rule</pre>
+<p><code></code>
+Sample text of:<code></code>
+: <code>I bought a B of As from T S.</code><code></code>
+Should generate:<code></code>
+: <code>I bought a bag of apples from T shop.</code><code></code>
+<code></code>
+<code></code>
+<br>Ruleset 3:<code></code>
+This tests for correct substitution order and may trap simple regexp based replacement routines if special regexp characters are not escaped.<code></code></p>
+<pre><code></code>
+# BNF Syntax testing rules<code></code>
+A -> apple<code></code>
+WWWW -> with<code></code>
+Bgage -> ->.*<code></code>
+B -> bag<code></code>
+->.* -> money<code></code>
+W -> WW<code></code>
+S -> .shop<code></code>
+T -> the<code></code>
+the shop -> my brother<code></code>
+a never used -> .terminating rule<code></code>
+</pre>
+<p><code></code>
+Sample text of:<code></code>
+: <code>I bought a B of As W my Bgage from T S.</code><code></code>
+Should generate:<code></code>
+: <code>I bought a bag of apples with my money from T shop.</code><code></code>
+<code></code>
+<code></code>
+<br>Ruleset 4:<code></code>
+This tests for correct order of scanning of rules, and may trap replacement routines that scan in the wrong order. &nbsp; It implements a general unary multiplication engine. &nbsp; (Note that the input expression must be placed within underscores in this implementation.)<code></code></p>
+<pre><code></code>
+### Unary Multiplication Engine, for testing Markov Algorithm implementations<code></code>
+### By Donal Fellows.<code></code>
+# Unary addition engine<code></code>
+_+1 -> _1+<code></code>
+1+1 -> 11+<code></code>
+# Pass for converting from the splitting of multiplication into ordinary<code></code>
+# addition<code></code>
+1! -> !1<code></code>
+,! -> !+<code></code>
+_! -> _<code></code>
+# Unary multiplication by duplicating left side, right side times<code></code>
+1*1 -> x,@y<code></code>
+1x -> xX<code></code>
+X, -> 1,1<code></code>
+X1 -> 1X<code></code>
+_x -> _X<code></code>
+,x -> ,X<code></code>
+y1 -> 1y<code></code>
+y_ -> _<code></code>
+# Next phase of applying<code></code>
+1@1 -> x,@y<code></code>
+1@_ -> @_<code></code>
+,@_ -> !_<code></code>
+++ -> +<code></code>
+# Termination cleanup for addition<code></code>
+_1 -> 1<code></code>
+1+_ -> 1<code></code>
+_+_ -><code></code>
+</pre>
+<p><code></code>
+Sample text of:<code></code>
+: <code> _1111*11111_ </code><code></code>
+should generate the output:<code></code>
+: <code> 11111111111111111111 </code><code></code>
+<code></code>
+<code></code>
+<br>Ruleset 5:<code></code>
+A simple <a href="http://en.wikipedia.org/wiki/Turing_machine Turing machine">http://en.wikipedia.org/wiki/Turing<em>machine Turing machine</a><br><code></code>
+implementing a three-state <a href="http://en.wikipedia.org/wiki/Busy_beaver busy beaver">http://en.wikipedia.org/wiki/Busy</em>beaver busy beaver</a>.<code></code>
+<code></code>
+The tape consists of <code>0<code>'s and '1's, &nbsp; the states are 'A', 'B', 'C' and 'H' (for '</code>H</code>alt), and the head position is indicated by writing the state letter before the character where the head is.<code></code>
+All parts of the initial tape the machine operates on have to be given in the input.<code></code>
+<code></code>
+Besides demonstrating that the Markov algorithm is Turing-complete, it also made me catch a bug in the C++ implementation which wasn't caught by the first four rulesets.<code></code></p>
+<pre><code></code>
+# Turing machine: three-state busy beaver<code></code>
+#<code></code>
+# state A, symbol 0 => write 1, move right, new state B<code></code>
+A0 -> 1B<code></code>
+# state A, symbol 1 => write 1, move left, new state C<code></code>
+0A1 -> C01<code></code>
+1A1 -> C11<code></code>
+# state B, symbol 0 => write 1, move left, new state A<code></code>
+0B0 -> A01<code></code>
+1B0 -> A11<code></code>
+# state B, symbol 1 => write 1, move right, new state B<code></code>
+B1 -> 1B<code></code>
+# state C, symbol 0 => write 1, move left, new state B<code></code>
+0C0 -> B01<code></code>
+1C0 -> B11<code></code>
+# state C, symbol 1 => write 1, move left, halt<code></code>
+0C1 -> H01<code></code>
+1C1 -> H11<code></code>
+</pre>
+<p><code></code>
+This ruleset should turn<code></code>
+: <code> 000000A000000 </code><code></code>
+into<code></code>
+: <code> 00011H1111000 </code><code></code>
+<br><br><code></code></p>

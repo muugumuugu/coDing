@@ -1,0 +1,41 @@
+<link href="/styles/home.css" rel="stylesheet">
+<p>When entering text on a phone's digital pad it is possible that a particular combination of digits corresponds to more than one word. Such are called textonyms.<code></code>
+<code></code>
+Assuming the digit keys are mapped to letters as follows:<code></code>
+     2 -&gt; ABC<code></code>
+     3 -&gt; DEF<code></code>
+     4 -&gt; GHI<code></code>
+     5 -&gt; JKL<code></code>
+     6 -&gt; MNO<code></code>
+     7 -&gt; PQRS<code></code>
+     8 -&gt; TUV<code></code>
+     9 -&gt; WXYZ<code></code>
+<code></code>
+<code></code>
+<br>Task:<code></code>
+Write a program that finds textonyms in a list of words such as &nbsp;<code></code>
+<a href="Textonyms/wordlist">Textonyms/wordlist</a> &nbsp; or &nbsp;<code></code>
+<a href="http://www.puzzlers.org/pub/wordlists/unixdict.txt unixdict.txt">http://www.puzzlers.org/pub/wordlists/unixdict.txt unixdict.txt</a>.<code></code>
+<code></code>
+The task should produce a report:<code></code>
+<code></code>
+ There are #{0} words in #{1} which can be represented by the digit key mapping.<code></code>
+ They require #{2} digit combinations to represent them.<code></code>
+ #{3} digit combinations represent Textonyms.<code></code>
+<code></code>
+Where:<code></code>
+ #{0} is the number of words in the list which can be represented by the digit key mapping.<code></code>
+ #{1} is the URL of the wordlist being used.<code></code>
+ #{2} is the number of digit combinations required to represent the words in #{0}.<code></code>
+ #{3} is the number of #{2} which represent more than one word.<code></code>
+<code></code>
+At your discretion show a couple of examples of your solution displaying Textonys.<code></code>
+<code></code>
+E.G.:<code></code>
+<code></code>
+  2748424767 -&gt; "Briticisms", "criticisms"<code></code>
+<code></code>
+<code></code>
+<br>Extra credit:<code></code>
+Use a word list and keypad mapping other than English.<code></code>
+<br><br><code></code></p>

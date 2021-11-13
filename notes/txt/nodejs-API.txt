@@ -1,8 +1,11 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+
 Building API in Node:
-    why??
-        some silly files require a server.
-            LARGE FILES if theres a lot of files to churn by the client(sayp5 sketch), then its better to use a server 
-            PERSISTENCE also if there's user data entry and that which requires persistant data, then we need a server.
-            API sharing my data with other users , so that they can query it etc.
-            CORSproxyETc-webscraping client is not allowed to reach to another server and request data. so server pulls the data and passes it to client
+	why??
+		some silly files require a server.
+			LARGE FILES if theres a lot of files to churn by the client(sayp5 sketch), then its better to use a server 
+			PERSISTENCE also if there's user data entry and that which requires persistant data, then we need a server.
+			API sharing my data with other users , so that they can query it etc.
+			CORSproxyETc-webscraping client is not allowed to reach to another server and request data. so server pulls the data and passes it to client
 POST request: sends data to server for storing /processing etc.

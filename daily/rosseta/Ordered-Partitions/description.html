@@ -1,0 +1,54 @@
+<link href="/styles/home.css" rel="stylesheet">
+<p>In this task we want to find the ordered partitions into fixed-size blocks.<code></code>
+<code></code>
+This task is related to <a href="Combinations">Combinations</a> in that it has to do with discrete mathematics and moreover a helper function to compute combinations is (probably) needed to solve this task.<code></code>
+<code></code></p>
+<math>partitions(\mathit{arg}_1,\mathit{arg}_2,...,\mathit{arg}_n)</math>
+<p>should generate all distributions of the elements in <math>{1,...,\Sigma<em>{i=1}^n\mathit{arg}</em>i}</math> into <math>n</math> blocks of respective size <math>\mathit{arg}<em>1,\mathit{arg}</em>2,...,\mathit{arg}_n</math>.<code></code>
+<code></code>
+Example 1: <math>partitions(2,0,2)</math> would create:<code></code>
+<code></code></p>
+<pre><code></code>
+{({1, 2}, {}, {3, 4})<br><code></code>
+ ({1, 3}, {}, {2, 4})<br><code></code>
+ ({1, 4}, {}, {2, 3})<br><code></code>
+ ({2, 3}, {}, {1, 4})<br><code></code>
+ ({2, 4}, {}, {1, 3})<br><code></code>
+ ({3, 4}, {}, {1, 2})}<code></code>
+</pre>
+<p><code></code>
+<code></code>
+Example 2: <math>partitions(1,1,1)</math> would create:<code></code>
+<code></code></p>
+<pre><code></code>
+{({1}, {2}, {3})<br><code></code>
+ ({1}, {3}, {2})<br><code></code>
+ ({2}, {1}, {3})<br><code></code>
+ ({2}, {3}, {1})<br><code></code>
+ ({3}, {1}, {2})<br><code></code>
+ ({3}, {2}, {1})}<code></code>
+</pre>
+<p><code></code>
+<code></code>
+Note that the number of elements in the list is<code></code>
+:<math>{\mathit{arg}<em>1+\mathit{arg}</em>2+...+\mathit{arg}<em>n \choose \mathit{arg}</em>1} \cdot {\mathit{arg}<em>2+\mathit{arg}</em>3+...+\mathit{arg}<em>n \choose \mathit{arg}</em>2} \cdot \ldots \cdot {\mathit{arg}<em>n \choose \mathit{arg}</em>n}</math><code></code>
+(see <a href="http://en.wikipedia.org/wiki/Binomial_coefficient the definition of the binomial coefficient">http://en.wikipedia.org/wiki/Binomial<em>coefficient the definition of the binomial coefficient</a> if you are not familiar with this notation) and the number of elements remains the same regardless of how the argument is permuted<code></code>
+(i.e. the <a href="http://en.wikipedia.org/wiki/Multinomial_coefficient multinomial coefficient">http://en.wikipedia.org/wiki/Multinomial</em>coefficient multinomial coefficient</a>).<code></code>
+<code></code>
+Also, <math>partitions(1,1,1)</math> creates the permutations of <math>{1,2,3}</math> and thus there would be <math>3! = 6</math> elements in the list.<code></code>
+<code></code>
+Note: Do not use functions that are not in the standard library of the programming language you use. Your file should be written so that it can be executed on the command line and by default outputs the result of <math>partitions(2,0,2)</math>. If the programming language does not support polyvariadic functions pass a list as an argument.<code></code>
+<code></code>
+<code>Notation</code><code></code>
+<code></code>
+Here are some explanatory remarks on the notation used in the task description:<code></code>
+<code></code></p>
+<math>\{1, \ldots, n\}</math>
+<p>denotes the set of consecutive numbers from <math>1</math> to <math>n</math>, e.g. <math>{1,2,3}</math> if <math>n = 3</math>.<code></code>
+<code></code></p>
+<math>\Sigma</math>
+<p>is the mathematical notation for summation, e.g. <math>\Sigma<em>{i=1}^3 i = 6</math> (see also <a href="http://en.wikipedia.org/wiki/Summation#Capital-sigma_notation">http://en.wikipedia.org/wiki/Summation#Capital-sigma</em>notation</a>).<code></code>
+<code></code></p>
+<math>\mathit{arg}_1,\mathit{arg}_2,...,\mathit{arg}_n</math>
+<p>are the arguments — natural numbers — that the sought function receives.<code></code>
+<br><br><code></code></p>
