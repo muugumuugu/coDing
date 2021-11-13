@@ -1,4 +1,5 @@
 <!-- Required extensions: pymdownx.betterem, pymdownx.tilde, pymdownx.emoji, pymdownx.tasklist, pymdownx.superfences -->
+<<<<<<< HEAD
 + check for a match
 ```
 [[ $date =~ ^regex$ ]] && echo "matched" || echo "did not match"
@@ -48,6 +49,8 @@
 	ffmpeg -i giphy.mp4 -vf scale=320:-1:flags=lanczos,fps=10 frames/ffout%03d.png
 	convert -loop 0 frames/ffout*.png output.gif
 ```
+=======
+>>>>>>> 320a042a54cbe3bc3595b0ddb45817a4fce6cea0
 + Install necessary modules by `apt-get install php-cli php-curl`
 + image-data-uri encodeFromFile fpath > outpath
 	+ npx image-data-uri --help
