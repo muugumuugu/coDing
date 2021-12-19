@@ -49,9 +49,9 @@
 	ffmpeg -i giphy.mp4 -vf scale=320:-1:flags=lanczos,fps=10 frames/ffout%03d.png
 	convert -loop 0 frames/ffout*.png output.gif
 ```
-+ Install necessary modules by `apt-get install php-cli php-curl`
 =======
 >>>>>>> 320a042a54cbe3bc3595b0ddb45817a4fce6cea0
++ Install necessary modules by `apt-get install php-cli php-curl`
 + image-data-uri encodeFromFile fpath > outpath
 	+ npx image-data-uri --help
 + git update-index --assume-unchanged <path>
@@ -89,10 +89,7 @@
 + eyeD3 --write-images=DIR mp3_file  #writes covers from id3 tags
 + ffmpeg -i file.mp3 file.jpg  #extracts cover art
 + youtube-dl   -j --flat-playlist https://youtube.com/playlist?list=id | jq -r '.id' | sed 's_^_https://youtube.com/v/_' #get links of all vids in playlist
-<<<<<<< HEAD
-+ yt-dlp
-=======
->>>>>>> 320a042a54cbe3bc3595b0ddb45817a4fce6cea0
++ yt-dlp -j --flat-playlist https://youtube.com/playlist?list=id | jq -r '.id' | sed 's_^_https://youtube.com/v/_' #get links of all vids in playlist
 + http://www.youtube.com/watch_videos?video_ids=comma seperated list of ids #make a playlist from ids
 + regex: \A starting of text
 + regex: \Z end of text

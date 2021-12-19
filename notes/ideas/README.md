@@ -1,0 +1,1 @@
+Mainly the outlines of Daniel Shiffman's Coding Challenges.

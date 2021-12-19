@@ -1,0 +1,736 @@
+<link href="/styles/home.css" rel=stylesheet></link>
+<style>
+h2{display:inline;}
+ul.flexnone li {width:300px; margin:5px; border:0.3px;}
+div.flex div {border:0.3px;margin:5px;}
+</style>
+<h1 id="project-based-learning">Project Based Learning</h1>
+<div><details><summary><h2 id="table-of-contents">Table of Contents:</h2></summary>
+<ul class="flexnone">
+<li><a href="#c">C#</a></li>
+<li><a href="#c-c">C/C++</a></li>
+<li><a href="#clojure">Clojure</a></li>
+<li><a href="#elixir">Elixir</a></li>
+<li><a href="#erlang">Erlang</a></li>
+<li><a href="#f">F#</a></li>
+<li><a href="#go">Go</a></li>
+<li><a href="#haskell">Haskell</a></li>
+<li><a href="#html-and-css">HTML/CSS</a></li>
+<li><a href="#java">Java</a></li>
+<li><a href="#javascript">JavaScript</a></li>
+<li><a href="#kotlin">Kotlin</a></li>
+<li><a href="#lua">Lua</a></li>
+<li><a href="#ocaml">OCaml</a></li>
+<li><a href="#php">PHP</a></li>
+<li><a href="#python">Python</a></li>
+<li><a href="#r">R</a></li>
+<li><a href="#ruby">Ruby</a></li>
+<li><a href="#rust">Rust</a></li>
+<li><a href="#scala">Scala</a></li>
+<li><a href="#swift">Swift</a></li>
+<li><a href="#additional-resources">Additional resources</a></li>
+</ul>
+</details></div>
+<div class="flex">
+<div><details><summary><h2 id="c-c">C/C++:</h2></summary>
+<ul>
+<li><a href="http://www.craftinginterpreters.com/">Build an Interpreter</a> (Chapter 14 on is written in C)</li>
+<li><a href="https://arjunsreedharan.org/post/148675821737/memory-allocators-101-write-a-simple-memory">Memory Allocators 101 - Write a simple memory allocator</a></li>
+<li><a href="https://brennan.io/2015/01/16/write-a-shell-in-c/">Write a Shell in C</a></li>
+<li><a href="https://www.cs.nmsu.edu/~pfeiffer/fuse-tutorial/">Write a FUSE Filesystem</a></li>
+<li><a href="http://viewsourcecode.org/snaptoken/kilo/">Build Your Own Text Editor</a></li>
+<li><a href="http://www.buildyourownlisp.com/">Build Your Own Lisp</a></li>
+<li><a href="https://nesdoug.com/">How to Program an NES Game in C</a></li>
+<li><a href="https://github.com/tuhdo/os01">Write an OS from scratch</a></li>
+<li><a href="https://github.com/cfenollosa/os-tutorial">How to create an OS from scratch </a></li>
+<li><a href="https://austinmorlan.com/posts/chip8_emulator/">Building a CHIP-8 Emulator</a></li>
+<li><a href="http://lazyfoo.net/tutorials/SDL/">Beginning Game Programming with C++ and SDL</a></li>
+<li><a href="http://codecapsule.com/2012/11/07/ikvs-implementing-a-key-value-store-table-of-contents/">Implementing a Key-Value Store</a></li>
+<li>Tiny 3D graphics projects<ul>
+<li><a href="https://github.com/ssloy/tinyrenderer/wiki">Tiny Renderer or how OpenGL works: software rendering in 500 lines of code</a></li>
+<li><a href="https://github.com/ssloy/tinyraytracer/wiki">Understandable RayTracing in 256 lines of bare C++</a></li>
+<li><a href="https://github.com/ssloy/tinykaboom/wiki">KABOOM! in 180 lines of bare C++</a></li>
+<li><a href="https://github.com/ssloy/tinyraycaster/wiki">486 lines of C++: old-school FPS in a weekend</a></li>
+</ul>
+</li>
+<li>Writing a minimal x86-64 JIT compiler in C++<ul>
+<li><a href="https://solarianprogrammer.com/2018/01/10/writing-minimal-x86-64-jit-compiler-cpp/">Part 1</a></li>
+<li><a href="https://solarianprogrammer.com/2018/01/12/writing-minimal-x86-64-jit-compiler-cpp-part-2/">Part 2</a></li>
+</ul>
+</li>
+<li><a href="http://howistart.org/posts/cpp/1/index.html">Build a Live Code-reloader Library for C++</a></li>
+<li><a href="https://github.com/jamesroutley/write-a-hash-table">Write a hash table in C</a></li>
+<li><a href="https://cstack.github.io/db_tutorial/">Let&#39;s Build a Simple Database</a></li>
+<li><a href="http://arjunsreedharan.org/post/82710718100/kernel-101-lets-write-a-kernel">Let&#39;s Write a Kernel</a></li>
+<li><a href="http://3zanders.co.uk/2017/10/13/writing-a-bootloader/">Write a Bootloader in C</a></li>
+<li><a href="https://blog.lizzie.io/linux-containers-in-500-loc.html">Linux Container in 500 Lines of Code</a></li>
+<li><a href="https://justinmeiners.github.io/lc3-vm/">Write Your Own Virtual Machine</a></li>
+<li><a href="https://david942j.blogspot.com/2018/10/note-learning-kvm-implement-your-own.html">Learning KVM - Implement Your Own Linux Kernel</a></li>
+<li>Write a C compiler<ul>
+<li><a href="https://norasandler.com/2017/11/29/Write-a-Compiler.html">Part 1: Integers, Lexing and Code Generation</a></li>
+<li><a href="https://norasandler.com/2017/12/05/Write-a-Compiler-2.html">Part 2: Unary Operators</a></li>
+<li><a href="https://norasandler.com/2017/12/15/Write-a-Compiler-3.html">Part 3: Binary Operators</a></li>
+<li><a href="https://norasandler.com/2017/12/28/Write-a-Compiler-4.html">Part 4: Even More Binary Operators</a></li>
+<li><a href="https://norasandler.com/2018/01/08/Write-a-Compiler-5.html">Part 5: Local Variables</a></li>
+<li><a href="https://norasandler.com/2018/02/25/Write-a-Compiler-6.html">Part 6: Conditionals</a></li>
+<li><a href="https://norasandler.com/2018/03/14/Write-a-Compiler-7.html">Part 7: Compound Statements</a></li>
+<li><a href="https://norasandler.com/2018/04/10/Write-a-Compiler-8.html">Part 8: Loops</a></li>
+<li><a href="https://norasandler.com/2018/06/27/Write-a-Compiler-9.html">Part 9: Functions</a></li>
+<li><a href="https://norasandler.com/2019/02/18/Write-a-Compiler-10.html">Part 10: Global Variables</a></li>
+</ul>
+</li>
+<li><a href="https://llvm.org/docs/tutorial/#kaleidoscope-implementing-a-language-with-llvm">Implementing a Language with LLVM</a></li>
+<li><a href="https://jguegant.github.io//jguegant.github.io/blogs/tech/meta-crush-saga.html">Meta Crush Saga: a C++17 compile-time game</a></li>
+<li><a href="https://gist.github.com/nadavrot/5b35d44e8ba3dd718e595e40184d03f0">High-Performance Matrix Multiplication</a></li>
+<li>Space Invaders from Scratch<ul>
+<li><a href="http://nicktasios.nl/posts/space-invaders-from-scratch-part-1.html">Part 1</a></li>
+<li><a href="http://nicktasios.nl/posts/space-invaders-from-scratch-part-2.html">Part 2</a></li>
+<li><a href="http://nicktasios.nl/posts/space-invaders-from-scratch-part-3.html">Part 3</a></li>
+<li><a href="http://nicktasios.nl/posts/space-invaders-from-scratch-part-4.html">Part 4</a></li>
+<li><a href="http://nicktasios.nl/posts/space-invaders-from-scratch-part-5.html">Part 5</a></li>
+</ul>
+</li>
+<li><a href="http://javilop.com/gamedev/tetris-tutorial-in-c-platform-independent-focused-in-game-logic-for-beginners/">Tetris Tutorial in C++ Platform Independent</a></li>
+<li>Writing a Linux Debugger<ul>
+<li><a href="https://blog.tartanllama.xyz/writing-a-linux-debugger-setup/">Part 1: Setup</a></li>
+<li><a href="https://blog.tartanllama.xyz/writing-a-linux-debugger-breakpoints/">Part 2: Breakpoints</a></li>
+<li><a href="https://blog.tartanllama.xyz/writing-a-linux-debugger-registers/">Part 3: Registers and memory</a></li>
+<li><a href="https://blog.tartanllama.xyz/writing-a-linux-debugger-elf-dwarf/">Part 4: Elves and dwarves</a></li>
+<li><a href="https://blog.tartanllama.xyz/writing-a-linux-debugger-source-signal/">Part 5: Source and signals</a></li>
+<li><a href="https://blog.tartanllama.xyz/writing-a-linux-debugger-dwarf-step/">Part 6: Source-level stepping</a></li>
+<li><a href="https://blog.tartanllama.xyz/writing-a-linux-debugger-source-break/">Part 7: Source-level breakpoints</a></li>
+<li><a href="https://blog.tartanllama.xyz/writing-a-linux-debugger-unwinding/">Part 8: Stack unwinding</a></li>
+<li><a href="https://blog.tartanllama.xyz/writing-a-linux-debugger-variables/">Part 9: Handling variables</a></li>
+<li><a href="https://blog.tartanllama.xyz/writing-a-linux-debugger-advanced-topics/">Part 10: Advanced topics</a></li>
+</ul>
+</li>
+<li><p>Let&#39;s write a compiler</p>
+<ul>
+<li><a href="https://briancallahan.net/blog/20210814.html">Part 1: Introduction, selecting a language, and doing some planning</a></li>
+<li><a href="https://briancallahan.net/blog/20210815.html">Part 2: A lexer</a></li>
+<li><a href="https://briancallahan.net/blog/20210816.html">Part 3: A parser</a></li>
+<li><a href="https://briancallahan.net/blog/20210817.html">Part 4: Testing</a></li>
+<li><a href="https://briancallahan.net/blog/20210818.html">Part 5: A code generator</a></li>
+<li><a href="https://briancallahan.net/blog/20210819.html">Part 6: Input and output</a></li>
+<li><a href="https://briancallahan.net/blog/20210822.html">Part 7: Arrays</a></li>
+<li><a href="https://briancallahan.net/blog/20210826.html">Part 8: Strings, forward references, and conclusion</a><h3 id="network-programming">Network programming</h3>
+</li>
+</ul>
+</li>
+<li><p>Let&#39;s Code a TCP/IP Stack</p>
+<ul>
+<li><a href="http://www.saminiir.com/lets-code-tcp-ip-stack-1-ethernet-arp/">Part 1: Ethernet &amp; ARP</a></li>
+<li><a href="http://www.saminiir.com/lets-code-tcp-ip-stack-2-ipv4-icmpv4/">Part 2: IPv4 &amp; ICMPv4</a></li>
+<li><a href="http://www.saminiir.com/lets-code-tcp-ip-stack-3-tcp-handshake/">Part 3: TCP Basics &amp; Handshake</a></li>
+<li><a href="http://www.saminiir.com/lets-code-tcp-ip-stack-4-tcp-data-flow-socket-api/">Part 4: TCP Data Flow &amp; Socket API</a></li>
+<li><a href="http://www.saminiir.com/lets-code-tcp-ip-stack-5-tcp-retransmission/">Part 5: TCP Retransmission</a></li>
+</ul>
+</li>
+<li><p>Programming concurrent servers</p>
+<ul>
+<li><a href="https://eli.thegreenplace.net/2017/concurrent-servers-part-1-introduction/">Part 1 - Introduction</a></li>
+<li><a href="https://eli.thegreenplace.net/2017/concurrent-servers-part-2-threads/">Part 2 - Threads</a></li>
+<li><a href="https://eli.thegreenplace.net/2017/concurrent-servers-part-3-event-driven/">Part 3 - Event-driven</a></li>
+<li><a href="https://eli.thegreenplace.net/2017/concurrent-servers-part-4-libuv/">Part 4 - libuv</a></li>
+<li><a href="https://eli.thegreenplace.net/2017/concurrent-servers-part-5-redis-case-study/">Part 5 - Redis case study</a></li>
+<li><a href="https://eli.thegreenplace.net/2018/concurrent-servers-part-6-callbacks-promises-and-asyncawait/">Part 6 - Callbacks, Promises and async/await</a></li>
+</ul>
+</li>
+<li><p>MQTT Broker from scratch</p>
+<ul>
+<li><a href="https://codepr.github.io/posts/sol-mqtt-broker">Part 1 - The protocol</a></li>
+<li><a href="https://codepr.github.io/posts/sol-mqtt-broker-p2">Part 2 - Networking</a></li>
+<li><a href="https://codepr.github.io/posts/sol-mqtt-broker-p3">Part 3 - Server</a></li>
+<li><a href="https://codepr.github.io/posts/sol-mqtt-broker-p4">Part 4 - Data structures</a></li>
+<li><a href="https://codepr.github.io/posts/sol-mqtt-broker-p5">Part 5 - Topic abstraction</a></li>
+<li><a href="https://codepr.github.io/posts/sol-mqtt-broker-p6">Part 6 - Handlers</a></li>
+<li><a href="https://codepr.github.io/posts/sol-mqtt-broker-bonus">Bonus - Multithreading</a></li>
+</ul>
+</li>
+</ul>
+<h3 id="opengl">OpenGL:</h3>
+<ul>
+<li>Creating 2D Breakout game clone in C++ with OpenGL<ul>
+<li><a href="https://learnopengl.com/In-Practice/2D-Game/Breakout">Breakout</a></li>
+<li><a href="https://learnopengl.com/In-Practice/2D-Game/Setting-up">Setting up</a></li>
+<li><a href="https://learnopengl.com/In-Practice/2D-Game/Rendering-Sprites">Rendering Sprites</a></li>
+<li><a href="https://learnopengl.com/In-Practice/2D-Game/Levels">Levels</a></li>
+<li>Collisions<ul>
+<li><a href="https://learnopengl.com/In-Practice/2D-Game/Collisions/Ball">Ball</a></li>
+<li><a href="https://learnopengl.com/In-Practice/2D-Game/Collisions/Collision-detection">Collision detection</a></li>
+<li><a href="https://learnopengl.com/In-Practice/2D-Game/Collisions/Collision-resolution">Collision resolution</a></li>
+</ul>
+</li>
+<li><a href="https://learnopengl.com/In-Practice/2D-Game/Particles">Particles</a></li>
+<li><a href="https://learnopengl.com/In-Practice/2D-Game/Postprocessing">Postprocessing</a></li>
+<li><a href="https://learnopengl.com/In-Practice/2D-Game/Powerups">Powerups</a></li>
+<li><a href="https://learnopengl.com/In-Practice/2D-Game/Audio">Audio</a></li>
+<li><a href="https://learnopengl.com/In-Practice/2D-Game/Render-text">Render text</a></li>
+<li><a href="https://learnopengl.com/In-Practice/2D-Game/Final-thoughts">Final thoughts</a></li>
+</ul>
+</li>
+<li><a href="https://handmadehero.org">Handmade Hero</a></li>
+<li><a href="https://www.youtube.com/playlist?list=PLMZ_9w2XRxiZq1vfw1lrpCMRDufe2MKV_">How to Make Minecraft in C++/OpenGL</a> (video)</li>
+</ul>
+</details></div><div><details><summary><h2 id="c">C#:</h2></summary>
+<ul>
+<li><a href="http://scottlilly.com/learn-c-by-building-a-simple-rpg-index/">Learn C# By Building a Simple RPG Game</a></li>
+<li><a href="https://roguesharp.wordpress.com/">Create a Rogue-like game in C#</a></li>
+<li><a href="https://www.intertech.com/Blog/xamarin-tutorial-part-1-create-a-blank-app/">Create a Blank App with C# and Xamarin (work in progress)</a></li>
+<li><a href="https://www.raywenderlich.com/134049/building-ios-apps-with-xamarin-and-visual-studio">Build iOS Photo Library App with Xamarin and Visual Studio</a></li>
+<li><a href="https://www.youtube.com/playlist?list=PLVMqA0_8O85yC78I4Xj7z48ES48IQBa7p">Building the CoreWiki</a> This is a Wiki-style content management system that has been completely written in C# with ASP.NET Core and Razor Pages. You can find the source code <a href="https://github.com/csharpfritz/CoreWiki">here</a>.</li>
+</ul>
+</details></div><div><details><summary><h2 id="clojure">Clojure:</h2></summary>
+<ul>
+<li><a href="http://howistart.org/posts/clojure/1/index.html">Build a Twitter Bot with Clojure</a></li>
+<li><a href="https://bernhardwenzel.com/articles/clojure-spellchecker/">Building a Spell-Checker</a></li>
+<li><a href="https://hackernoon.com/building-a-jira-integration-with-clojure-atlassian-connect-506ebd112807">Building a JIRA integration with Clojure &amp; Atlassian Connect</a></li>
+<li><a href="https://github.com/aliaksandr-s/prototyping-with-clojure">Prototyping with Clojure</a></li>
+<li><a href="https://shaunlebron.github.io/t3tr0s-slides">Tetris in ClojureScript</a></li>
+</ul>
+</details></div><div><details><summary><h2 id="elixir">Elixir</h2></summary>
+<ul>
+<li><a href="https://sheharyar.me/blog/simple-chat-phoenix-elixir/">Building a Simple Chat App With Elixir and Phoenix</a></li>
+<li><a href="https://medium.com/free-code-camp/how-to-write-a-super-fast-link-shortener-with-elixir-phoenix-and-mnesia-70ffa1564b3c">How to write a super fast link shortener with Elixir, Phoenix, and Mnesia</a></li>
+</ul>
+</details></div><div><details><summary><h2 id="erlang">Erlang</h2></summary>
+<ul>
+<li><a href="https://medium.com/@kansi/chatbus-build-your-first-multi-user-chat-room-app-with-erlang-otp-b55f72064901">ChatBus : build your first multi-user chat room app with Erlang/OTP</a></li>
+<li><a href="http://marianoguerra.org/posts/making-a-chat-app-with-erlang-rebar-cowboy-and-bullet.html">Making a Chat App with Erlang, Rebar, Cowboy and Bullet</a></li>
+</ul>
+</details></div><div><details><summary><h2 id="f">F#:</h2></summary>
+<ul>
+<li><a href="http://tomasp.net/blog/2018/write-your-own-excel">Write your own Excel in 100 lines of F#</a></li>
+</ul>
+</details></div><div><details><summary><h2 id="java">Java:</h2></summary>
+<ul>
+<li><a href="http://www.craftinginterpreters.com/">Build an Interpreter</a> (Chapter 4-13 is written in Java)</li>
+<li><a href="http://javarevisited.blogspot.com/2015/06/how-to-create-http-server-in-java-serversocket-example.html">Build a Simple HTTP Server with Java</a></li>
+<li><a href="https://www.youtube.com/watch?v=dhWL4DC7Krs">Build an Android Flashlight App</a> (video)</li>
+<li><a href="https://scotch.io/tutorials/build-a-spring-boot-app-with-user-authentication">Build a Spring Boot App with User Authentication</a></li>
+</ul>
+</details></div><div><details><summary><h2 id="javascript">JavaScript:</h2></summary>
+<ul>
+<li><a href="https://javascript30.com">Build 30 things in 30 days with 30 tutorials</a></li>
+<li><a href="https://medium.com/codingthesmartway-com-blog/pure-javascript-building-a-real-world-application-from-scratch-5213591cfcd6">Build an App in Pure JS</a></li>
+<li><a href="https://link.medium.com/wWUO7TN8SS">Build a Jupyter Notebook Extension</a></li>
+<li><a href="https://medium.com/javascript-in-plain-english/build-tic-tac-toe-game-using-javascript-3afba3c8fdcc">Build a TicTacToe Game with JavaScript</a></li>
+</ul>
+</details></div><div><details><summary><h2 id="html-and-css">HTML and CSS:</h2></summary>
+<ul>
+<li><a href="https://medium.freecodecamp.org/how-to-build-a-delightful-loading-screen-in-5-minutes-847991da509f">Build A Loading Screen</a></li>
+<li><a href="https://medium.freecodecamp.org/how-to-build-an-html-calculator-app-from-scratch-using-javascript-4454b8714b98">Build an HTML Calculator with JS</a></li>
+<li><a href="https://www.freecodecamp.org/news/think-like-a-programmer-how-to-build-snake-using-only-javascript-html-and-css-7b1479c3339e/">Build Snake using only JavaScript, HTML &amp; CSS</a></li>
+</ul>
+<h3 id="mobile-application">Mobile Application:</h3>
+<ul>
+<li><a href="https://egghead.io/courses/build-a-react-native-todo-application">Build a React Native Todo Application</a></li>
+<li><a href="https://medium.com/@alialhaddad/how-to-use-redux-thunk-in-react-and-react-native-4743a1321bd0">Build a React Native Application with Redux Thunk</a></li>
+</ul>
+<h3 id="web-applications">Web Applications:</h3>
+<h4 id="react">React:</h4>
+<ul>
+<li><a href="http://serverless-stack.com/">Create Serverless React.js Apps</a></li>
+<li><a href="http://codeloveandboards.com/blog/2016/01/04/trello-tribute-with-phoenix-and-react-pt-1/">Create a Trello Clone</a></li>
+<li><a href="http://sahatyalkabov.com/create-a-character-voting-app-using-react-nodejs-mongodb-and-socketio">Create a Character Voting App with React, Node, MongoDB and SocketIO</a></li>
+<li><a href="https://www.fullstackreact.com/articles/react-tutorial-cloning-yelp/">React Tutorial: Cloning Yelp</a></li>
+<li><a href="https://teropa.info/blog/2015/09/10/full-stack-redux-tutorial.html">Build a Full Stack Movie Voting App with Test-First Development using Mocha, React, Redux and Immutable</a></li>
+<li><a href="https://scotch.io/tutorials/build-a-real-time-twitter-stream-with-node-and-react-js">Build a Twitter Stream with React and Node</a></li>
+<li>Build a Serverless MERN Story App with Webtask.io<ul>
+<li><a href="https://scotch.io/tutorials/build-a-serverless-mern-story-app-with-webtask-io-zero-to-deploy-1">Part 1</a></li>
+<li><a href="https://scotch.io/tutorials/build-a-serverless-mern-story-app-with-webtask-io-zero-to-deploy-2">Part 2</a></li>
+</ul>
+</li>
+<li><a href="https://medium.com/@kris101/clone-medium-on-node-js-and-react-js-731cdfbb6878">Build A Simple Medium Clone using React.js and Node.js</a></li>
+<li><a href="https://medium.freecodecamp.org/how-to-integrate-mailchimp-in-a-javascript-web-app-2a889fb43f6f">Integrate MailChimp in JS</a></li>
+<li><a href="https://medium.freecodecamp.org/building-chrome-extensions-in-react-parcel-79d0240dd58f">Build A Chrome Extension with React + Parcel</a></li>
+<li><a href="https://blog.hasura.io/tutorial-fullstack-react-native-with-graphql-and-authentication-18183d13373a">Build A ToDo App With React Native</a></li>
+<li><a href="https://medium.freecodecamp.org/how-to-build-a-chat-application-using-react-redux-redux-saga-and-web-sockets-47423e4bc21a">Make a Chat Application</a></li>
+<li><a href="https://medium.freecodecamp.org/create-a-news-app-using-react-native-ced249263627">Create a News App with React Native</a></li>
+<li><a href="https://medium.freecodecamp.org/learn-webpack-for-react-a36d4cac5060">Learn Webpack For React</a></li>
+<li><a href="https://blog.bitsrc.io/testing-your-react-app-with-puppeteer-and-jest-c72b3dfcde59">Testing React App With Puppeteer and Jest</a></li>
+<li><a href="https://medium.freecodecamp.org/how-to-build-your-own-react-boilerplate-2f8cbbeb9b3f">Build Your Own React Boilerplate</a></li>
+<li><a href="https://medium.freecodecamp.org/create-gameoflife-with-react-in-one-hour-8e686a410174">Code The Game Of Life With React</a></li>
+<li><a href="https://hackernoon.com/a-basic-react-redux-introductory-tutorial-adcc681eeb5e">A Basic React+Redux Introductory Tutorial</a></li>
+<li><a href="https://hackernoon.com/build-an-appointment-scheduler-using-react-twilio-and-cosmic-js-95377f6d1040">Build an Appointment Scheduler</a></li>
+<li><a href="https://codeburst.io/build-a-chat-app-with-sentiment-analysis-using-next-js-c43ebf3ea643">Build A Chat App with Sentiment Analysis</a></li>
+<li><a href="https://hackernoon.com/full-stack-web-application-using-react-node-js-express-and-webpack-97dbd5b9d708">Build A Full Stack Web Application Setup</a></li>
+<li><a href="https://www.youtube.com/watch?v=hT3j87FMR6M">Create Todoist clone with React and Firebase</a></li>
+<li>Build A Random Quote Machine<ul>
+<li><a href="https://www.youtube.com/watch?v=3QngsWA9IEE">Part 1</a></li>
+<li><a href="https://www.youtube.com/watch?v=XnoTmO06OYo">Part 2</a></li>
+<li><a href="https://www.youtube.com/watch?v=us51Jne67_I">Part 3</a></li>
+<li><a href="https://www.youtube.com/watch?v=iZx7hqHb5MU">Part 4</a></li>
+<li><a href="https://www.youtube.com/watch?v=lpba9vBqXl0">Part 5</a></li>
+<li><a href="https://www.youtube.com/watch?v=Jvp8j6zrFHE">Part 6</a></li>
+<li><a href="https://www.youtube.com/watch?v=M_hFfrN8_PQ">Part 7</a></li>
+</ul>
+</li>
+<li><a href="https://www.youtube.com/watch?v=-edmQKcOW8s">React Phone E-Commerce Project(video)</a></li>
+</ul>
+<h4 id="angular">Angular:</h4>
+<ul>
+<li><a href="https://hackhands.com/building-instagram-clone-angularjs-satellizer-nodejs-mongodb/">Build an Instagram Clone with Angular 1.x</a></li>
+<li>Build an offline-capable Hacker News client with Angular 2+<ul>
+<li><a href="https://houssein.me/angular2-hacker-news">Part 1</a></li>
+<li><a href="https://houssein.me/progressive-angular-applications">Part 2</a></li>
+</ul>
+</li>
+<li><a href="https://thinkster.io/django-angularjs-tutorial">Build a Google+ clone with Django and AngularJS (Angular 1.x)</a></li>
+<li><p>Build A Beautiful Real World App with Angular 8 :</p>
+<ul>
+<li><a href="https://medium.com/@hamedbaatour/build-a-real-world-beautiful-web-app-with-angular-6-a-to-z-ultimate-guide-2018-part-i-e121dd1d55e">Part I</a></li>
+<li><a href="https://medium.com/@hamedbaatour/build-a-real-world-beautiful-web-app-with-angular-8-the-ultimate-guide-2019-part-ii-fe70852b2d6d">Part II</a></li>
+</ul>
+</li>
+<li><p><a href="https://medium.com/@tomastrajan/how-to-build-responsive-layouts-with-bootstrap-4-and-angular-6-cfbb108d797b">Build Responsive layout with BootStrap 4 and Angular 6</a></p>
+</li>
+<li>ToDo App with Angular 5<ul>
+<li><a href="http://www.discoversdk.com/blog/intro-to-angular-and-the-evolution-of-the-web">Introduction to Angular</a></li>
+<li><a href="http://www.discoversdk.com/blog/angular-5-to-do-list-app-part-1">Part 1</a></li>
+</ul>
+</li>
+</ul>
+<h4 id="node">Node:</h4>
+<ul>
+<li><a href="https://closebrace.com/tutorials/2017-03-02/the-dead-simple-step-by-step-guide-for-front-end-developers-to-getting-up-and-running-with-nodejs-express-and-mongodb">Build A Simple Website With Node,Express and MongoDB</a></li>
+<li><a href="https://scotch.io/tutorials/building-a-real-time-markdown-viewer">Build a real-time Markdown Editor with NodeJS</a></li>
+<li><a href="http://mherman.org/blog/2016/04/28/test-driven-development-with-node/">Test-Driven Development with Node, Postgres and Knex</a></li>
+<li>Write a Twitter Bot in Node.js<ul>
+<li><a href="https://codeburst.io/build-a-simple-twitter-bot-with-node-js-in-just-38-lines-of-code-ed92db9eb078">Part 1</a></li>
+<li><a href="https://codeburst.io/build-a-simple-twitter-bot-with-node-js-part-2-do-more-2ef1e039715d">Part 2</a></li>
+</ul>
+</li>
+<li><a href="https://closebrace.com/tutorials/2017-03-02/creating-a-simple-restful-web-app-with-nodejs-express-and-mongodb">Create A Simple RESTFUL Web App</a></li>
+<li><a href="https://medium.freecodecamp.org/how-to-build-a-simple-search-bot-in-30-minutes-eb56fcedcdb1">Build A Simple Search Bot in 30 minutes</a></li>
+<li><a href="https://medium.freecodecamp.org/how-i-built-a-job-scraping-web-app-using-node-js-and-indreed-7fbba124bbdc">Build A Job Scraping Web App</a></li>
+<li><a href="https://blog.scottlogic.com/2017/05/22/gifbot-github-integration.html">Building a GitHub App</a></li>
+<li>How to build your own Uber-for-X App using JavaScript, Node.JS, MongoDB and Web Sockets<ul>
+<li><a href="https://www.ashwinhariharan.tech/blog/how-to-build-your-own-uber-for-x-app/">Part 1</a></li>
+<li><a href="https://www.ashwinhariharan.tech/blog/how-to-build-your-own-uber-for-x-app-part-2/">Part 2</a></li>
+</ul>
+</li>
+</ul>
+<h4 id="vue">Vue</h4>
+<ul>
+<li><a href="https://medium.com/@anas.mammeri/vue-2-firebase-how-to-build-a-vue-app-with-firebase-authentication-system-in-15-minutes-fdce6f289c3c">Vue 2 + Firebase: How to build a Vue app with Firebase authentication system in 15 minutes</a></li>
+<li><a href="https://matthiashager.com/complete-vuejs-application-tutorial/">Vue.js Application Tutorial – Creating a Simple Budgeting App with Vue</a></li>
+<li><a href="https://scotch.io/tutorials/build-a-blog-with-vue-graphql-and-apollo-client">Build a Blog with Vue, GraphQL and Apollo</a></li>
+<li>Build a full stack web application using MEVN (MongoDB, Express, Vue, Node) stack<ul>
+<li><a href="https://medium.com/@anaida07/mevn-stack-application-part-1-3a27b61dcae0">Part 1</a></li>
+<li><a href="https://medium.com/@anaida07/mevn-stack-application-part-2-2-9ebcf8a22753">Part 2</a></li>
+</ul>
+</li>
+<li><a href="https://www.youtube.com/watch?v=78tNYZUS-ps">Vue.js To-Do List Tutorial (video)</a></li>
+<li><a href="https://www.ably.io/tutorials/peer-to-peer-vue">Vue 2 + Pub/Sub: Build a peer to peer multi-user platform for games</a></li>
+</ul>
+<h4 id="others-hapi-express">Others (Hapi, Express...):</h4>
+<ul>
+<li>Build a Progressive Web Application (PWA)<ul>
+<li><a href="https://bitsofco.de/bitsofcode-pwa-part-1-offline-first-with-service-worker/">Part 1</a></li>
+<li><a href="https://bitsofco.de/bitsofcode-pwa-part-2-instant-loading-with-indexeddb/">Part 2</a></li>
+<li><a href="https://bitsofco.de/bitsofcode-pwa-part-3-push-notifications/">Part 3</a></li>
+</ul>
+</li>
+<li>Build A Support Ticket Application With AdonisJs<ul>
+<li><a href="https://scotch.io/tutorials/build-a-support-ticket-application-with-adonisjs">Part 1</a></li>
+<li><a href="https://scotch.io/tutorials/build-a-support-ticket-application-with-adonisjs-part-2">Part 2</a></li>
+</ul>
+</li>
+<li><a href="https://medium.freecodecamp.org/build-native-desktop-apps-with-javascript-a49ede90d8e9">Build A Native Desktop App with JS</a></li>
+<li>Build a Powerful API with NodeJs,GraphQL and Hapi<ul>
+<li><a href="https://medium.com/@wesharehoodies/how-to-setup-a-powerful-api-with-nodejs-graphql-mongodb-hapi-and-swagger-e251ac189649">Part I</a></li>
+</ul>
+</li>
+</ul>
+<h4 id="d3-js">D3.js</h4>
+<ul>
+<li><a href="https://www.sitepoint.com/d3-js-data-visualizations/">Learn D3 using examples</a></li>
+<li><a href="https://medium.freecodecamp.org/learn-to-create-a-line-chart-using-d3-js-4f43f1ee716b">Learn To Make A Line Chart</a></li>
+</ul>
+<h3 id="game-development">Game Development:</h3>
+<ul>
+<li><a href="https://developer.mozilla.org/en-US/docs/Games/Tutorials/2D_breakout_game_Phaser">Make 2D Breakout Game using Phaser</a></li>
+<li>Make Flappy Bird in HTML5 and JavaScript with Phaser<ul>
+<li><a href="http://www.lessmilk.com/tutorial/flappy-bird-phaser-1">Part 1</a></li>
+<li><a href="http://www.lessmilk.com/tutorial/flappy-bird-phaser-2">Part 2</a></li>
+</ul>
+</li>
+</ul>
+<h3 id="desktop-application">Desktop Application:</h3>
+<ul>
+<li>Build a Music Player with React &amp; Electron<ul>
+<li><a href="https://scotch.io/tutorials/build-a-music-player-with-react-electron-i-setup-basic-concepts">Part 1</a></li>
+<li><a href="https://scotch.io/tutorials/build-a-music-player-with-react-electron-ii-making-the-ui">Part 2</a></li>
+<li><a href="https://scotch.io/tutorials/build-a-music-player-with-react-electron-iii-bringing-it-all-together">Part 3</a></li>
+</ul>
+</li>
+<li><a href="https://medium.freecodecamp.org/build-a-desktop-chat-app-with-react-electron-and-chatkit-744d168e6f2f">Build A Desktop Chat App with React and Electron</a></li>
+</ul>
+<h3 id="miscellaneous">Miscellaneous:</h3>
+<ul>
+<li><a href="https://www.pubnub.com/blog/build-yourself-a-web-framework-in-less-than-20-lines-of-code/">How to Build a Web Framework in Less Than 20 Lines of Code</a></li>
+<li><a href="https://zapier.com/engineering/how-to-build-redux/">Build Yourself a Redux</a></li>
+<li><a href="https://medium.com/@deathmood/how-to-write-your-own-virtual-dom-ee74acc13060">How to write your own Virtual DOM</a></li>
+<li><a href="https://andrewgriffithsonline.com/blog/serverless-websockets-on-aws/">Build A Realtime Serverless GraphQL API with WebSockets on AWS</a></li>
+</ul>
+</details></div><div><details><summary><h2 id="kotlin">Kotlin:</h2></summary>
+<ul>
+<li><a href="https://medium.com/@juanchosaravia/learn-kotlin-while-developing-an-android-app-introduction-567e21ff9664">Keddit - Learn Kotlin While Developing an Android Application</a></li>
+</ul>
+</details></div><div><details><summary><h2 id="lua">Lua:</h2></summary>
+<h3 id="l-ve">LÖVE:</h3>
+<ul>
+<li>BYTEPATH: Creation of a Complete Game with Lua and LÖVE<ul>
+<li><a href="https://github.com/SSYGEN/blog/issues/30">Part 0: Introduction</a></li>
+<li><a href="https://github.com/SSYGEN/blog/issues/15">Part 1: Game Loop</a></li>
+<li><a href="https://github.com/SSYGEN/blog/issues/16">Part 2: Libraries</a></li>
+<li><a href="https://github.com/SSYGEN/blog/issues/17">Part 3: Rooms and Areas</a></li>
+<li><a href="https://github.com/SSYGEN/blog/issues/18">Part 4: Exercises</a></li>
+<li><a href="https://github.com/SSYGEN/blog/issues/19">Part 5: Game Basics</a></li>
+<li><a href="https://github.com/SSYGEN/blog/issues/20">Part 6: Player Basics</a></li>
+<li><a href="https://github.com/SSYGEN/blog/issues/21">Part 7: Player Stats and Attacks</a></li>
+<li><a href="https://github.com/SSYGEN/blog/issues/22">Part 8: Enemies</a></li>
+<li><a href="https://github.com/SSYGEN/blog/issues/23">Part 9: Director and Gameplay Loop</a></li>
+<li><a href="https://github.com/SSYGEN/blog/issues/24">Part 10: Coding Practices</a></li>
+<li><a href="https://github.com/SSYGEN/blog/issues/25">Part 11: Passives</a></li>
+<li><a href="https://github.com/SSYGEN/blog/issues/26">Part 12: More Passives</a></li>
+<li><a href="https://github.com/SSYGEN/blog/issues/27">Part 13: Skill Tree</a></li>
+<li><a href="https://github.com/SSYGEN/blog/issues/28">Part 14: Console</a></li>
+<li><a href="https://github.com/SSYGEN/blog/issues/29">Part 15: Final</a></li>
+</ul>
+</li>
+</ul>
+</details></div><div><details><summary><h2 id="python">Python:</h2></summary>
+<h3 id="web-scraping">Web Scraping:</h3>
+<ul>
+<li><a href="https://marcobonzanini.com/2015/03/02/mining-twitter-data-with-python-part-1/">Mining Twitter Data with Python</a></li>
+<li><a href="https://realpython.com/blog/python/web-scraping-with-scrapy-and-mongodb/">Scrape a Website with Scrapy and MongoDB</a></li>
+<li><a href="http://www.byperth.com/2018/04/25/guide-web-scraping-101-what-you-need-to-know-and-how-to-scrape-with-python-selenium-webdriver/">How To Scrape With Python and Selenium WebDriver</a></li>
+<li><a href="https://medium.com/@nishantsahoo.in/which-movie-should-i-watch-5c83a3c0f5b1">Which Movie Should I Watch using BeautifulSoup</a></li>
+</ul>
+<h3 id="web-applications">Web Applications:</h3>
+<ul>
+<li><a href="https://blog.miguelgrinberg.com/post/the-flask-mega-tutorial-part-i-hello-world">Build a Microblog with Flask</a></li>
+<li><a href="https://tutorial.djangogirls.org/en/">Create a Blog Web App In Django</a></li>
+<li><a href="https://www.twilio.com/blog/2015/03/choose-your-own-adventures-presentations-wizard-mode-part-1-of-3.html">Choose Your Own Adventure Presentations</a></li>
+<li><a href="https://realpython.com/blog/python/rethink-flask-a-simple-todo-list-powered-by-flask-and-rethinkdb/">Build a Todo List with Flask and RethinkDB</a></li>
+<li><a href="http://www.obeythetestinggoat.com/">Build a Todo List with Django and Test-Driven Development</a></li>
+<li><a href="http://www.skybert.net/python/developing-a-restful-micro-service-in-python/">Build a RESTful Microservice in Python</a></li>
+<li><a href="https://testdriven.io/">Microservices with Docker, Flask, and React</a></li>
+<li><a href="https://pythonspot.com/flask-web-app-with-python/">Build A Simple Web App With Flask</a></li>
+<li><a href="https://scotch.io/tutorials/build-a-restful-api-with-flask-the-tdd-way">Build a RESTful API with Flask – The TDD Way</a></li>
+<li><a href="https://codeburst.io/create-a-django-api-in-under-20-minutes-2a082a60f6f3">Create A Django API in under 20 minutes</a></li>
+<li>Build a Community-driven delivery application with Django, Postgres and JavaScript<ul>
+<li><a href="https://www.ashwinhariharan.tech/blog/thinking-of-building-a-contact-tracing-application-heres-what-you-can-do-instead/">Part 1</a></li>
+<li><a href="https://www.ashwinhariharan.tech/blog/thinking-of-building-a-contact-tracing-application-heres-what-you-can-do-instead-part-2/">Part 2</a></li>
+</ul>
+</li>
+</ul>
+<h3 id="bots">Bots:</h3>
+<ul>
+<li><a href="http://pythonforengineers.com/build-a-reddit-bot-part-1/">Build a Reddit Bot</a></li>
+<li><a href="https://www.youtube.com/watch?v=krTUf7BpTc0">How to Make a Reddit Bot - YouTube</a> (video)</li>
+<li><a href="https://blog.hartleybrody.com/fb-messenger-bot/">Build a Facebook Messenger Bot</a></li>
+<li><a href="https://pythontips.com/2017/04/13/making-a-reddit-facebook-messenger-bot/">Making a Reddit + Facebook Messenger Bot</a></li>
+<li>How To Create a Telegram Bot Using Python<ul>
+<li><a href="https://khashtamov.com/en/how-to-create-a-telegram-bot-using-python/">Part 1</a></li>
+<li><a href="https://khashtamov.com/en/how-to-deploy-telegram-bot-django/">Part 2</a></li>
+</ul>
+</li>
+<li><a href="https://medium.freecodecamp.org/creating-a-twitter-bot-in-python-with-tweepy-ac524157a607">Create a Twitter Bot In Python</a></li>
+</ul>
+<h3 id="data-science">Data Science:</h3>
+<ul>
+<li>Learn Python For Data Science by Doing Several Projects (video):<ul>
+<li><a href="https://www.youtube.com/watch?v=T5pRlIbr6gg">Part 1: Introduction</a></li>
+<li><a href="https://www.youtube.com/watch?v=o_OZdbCzHUA">Part 2: Twitter Sentiment Analysis</a></li>
+<li><a href="https://www.youtube.com/watch?v=9gBC9R-msAk&amp;list=PL2-dafEMk2A6QKz1mrk1uIGfHkC1zZ6UU&amp;index=3">Part 3: Recommendation Systems</a></li>
+<li><a href="https://www.youtube.com/watch?v=SSu00IRRraY&amp;index=4&amp;list=PL2-dafEMk2A6QKz1mrk1uIGfHkC1zZ6UU">Part 4: Predicting Stock Prices</a></li>
+<li><a href="https://www.youtube.com/watch?v=MrBzgvUNr4w&amp;list=PL2-dafEMk2A6QKz1mrk1uIGfHkC1zZ6UU&amp;index=5">Part 5: Deep Dream in TensorFlow</a></li>
+<li><a href="https://www.youtube.com/watch?v=dSofAXnnFrY&amp;index=6&amp;list=PL2-dafEMk2A6QKz1mrk1uIGfHkC1zZ6UU">Part 6: Genetic Algorithms</a></li>
+</ul>
+</li>
+</ul>
+<h3 id="machine-learning">Machine Learning:</h3>
+<ul>
+<li><a href="https://www.youtube.com/watch?v=uwwWVAgJBcM">Write Linear Regression From Scratch in Python</a> (video)</li>
+<li><a href="https://machinelearningmastery.com/machine-learning-in-python-step-by-step/">Step-By-Step Machine Learning In Python</a></li>
+<li><a href="https://medium.freecodecamp.org/using-machine-learning-to-predict-the-quality-of-wines-9e2e13d7480d">Predict Quality Of Wine</a></li>
+<li><a href="https://towardsdatascience.com/solving-a-simple-classification-problem-with-python-fruits-lovers-edition-d20ab6b071d2">Solving A Fruits Classification Problem</a></li>
+<li><a href="https://scikit-learn.org/stable/unsupervised_learning.html">Learn Unsupervised Learning with Python</a></li>
+<li><a href="https://towardsdatascience.com/how-to-build-your-own-neural-network-from-scratch-in-python-68998a08e4f6">Build Your Own Neural Net from Scratch in Python</a></li>
+<li><a href="https://medium.com/we-are-orb/linear-regression-in-python-without-scikit-learn-50aef4b8d122">Linear Regression in Python without sklearn</a></li>
+<li><a href="https://medium.com/we-are-orb/multivariate-linear-regression-in-python-without-scikit-learn-7091b1d45905">Multivariate Linear Regression without sklearn</a></li>
+<li><a href="https://towardsdatascience.com/how-to-build-a-simple-song-recommender-296fcbc8c85">Music Recommender using KNN</a></li>
+<li>Find Similar Quora Questions-<ul>
+<li><a href="https://towardsdatascience.com/finding-similar-quora-questions-with-bow-tfidf-and-random-forest-c54ad88d1370">Using BOW, TFIDF and Xgboost</a></li>
+<li><a href="https://towardsdatascience.com/finding-similar-quora-questions-with-word2vec-and-xgboost-1a19ad272c0d">Using Word2Vec and Xgboost</a></li>
+</ul>
+</li>
+</ul>
+<h3 id="opencv">OpenCV:</h3>
+<ul>
+<li><a href="https://www.pyimagesearch.com/2014/09/01/build-kick-ass-mobile-document-scanner-just-5-minutes/">Build A Document Scanner</a></li>
+<li><a href="https://www.pyimagesearch.com/2018/02/26/face-detection-with-opencv-and-deep-learning/">Build A Face Detector using OpenCV and Deep Learning</a></li>
+<li><a href="https://www.youtube.com/playlist?list=PLKHYJbyeQ1a0oGzgRXy-QwAN1tSV4XZxg">Build fastest custom object Detection system yusing YOLOv3(video playlist)</a></li>
+<li><a href="https://www.pyimagesearch.com/2018/06/18/face-recognition-with-opencv-python-and-deep-learning/">Build a Face Recognition System using OpenCV, Python and Deep Learning</a></li>
+<li><a href="https://www.pyimagesearch.com/2018/07/16/opencv-saliency-detection/">Detect The Salient Features in an Image</a></li>
+<li><a href="https://www.pyimagesearch.com/2018/05/21/an-opencv-barcode-and-qr-code-scanner-with-zbar/">Build A Barcode Scanner</a></li>
+<li><a href="https://www.pyimagesearch.com/2018/07/09/face-clustering-with-python/">Learn Face Clustering with Python</a></li>
+<li><a href="https://www.pyimagesearch.com/wp-content/uploads/2014/11/opencv_crash_course_camshift.pdf">Object Tracking with Camshift</a></li>
+<li><a href="https://www.pyimagesearch.com/2018/09/03/semantic-segmentation-with-opencv-and-deep-learning/">Semantic Segmentation with OpenCV and Deep Learning</a></li>
+<li><a href="https://www.pyimagesearch.com/2018/08/20/opencv-text-detection-east-text-detector/">Text Detection in Images and Videos</a></li>
+<li><a href="https://www.pyimagesearch.com/2018/08/13/opencv-people-counter/">People Counter using OpenCV</a></li>
+<li><a href="https://www.pyimagesearch.com/2018/08/06/tracking-multiple-objects-with-opencv/">Tracking Multiple Objects with OpenCV</a></li>
+<li><a href="https://www.pyimagesearch.com/2018/08/27/neural-style-transfer-with-opencv/">Neural Style Transfer with OpenCV</a></li>
+<li><a href="https://www.pyimagesearch.com/2018/09/17/opencv-ocr-and-text-recognition-with-tesseract/">OpenCV OCR and Text Recognition</a></li>
+<li><a href="https://www.pyimagesearch.com/2017/02/20/text-skew-correction-opencv-python/">Text Skew Correction Tutorial</a></li>
+<li><a href="https://www.pyimagesearch.com/2017/04/03/facial-landmarks-dlib-opencv-python/">Facial Landmark Detection Tutorial</a></li>
+<li><a href="https://www.learnopencv.com/deep-learning-based-object-detection-and-instance-segmentation-using-mask-r-cnn-in-opencv-python-c/">Object Detection using Mask-R-CNN</a></li>
+<li><a href="https://www.pyimagesearch.com/2015/05/04/target-acquired-finding-targets-in-drone-and-quadcopter-video-streams-using-python-and-opencv/">Automatic Target Detection Tutorial</a></li>
+<li><a href="https://www.learnopencv.com/eigenface-using-opencv-c-python/">EigenFaces using OpenCV</a></li>
+<li><a href="https://www.pyimagesearch.com/2018/04/02/faster-facial-landmark-detector-with-dlib/">Faster(5-point) Facial Landmark Detection Tutorial</a></li>
+<li><a href="https://www.learnopencv.com/hand-keypoint-detection-using-deep-learning-and-opencv/">Hand Keypoint Detection</a></li>
+<li>Dlib Correlation Object Tracking -<ul>
+<li><a href="https://www.pyimagesearch.com/2018/10/22/object-tracking-with-dlib/">Single Object Tracker</a></li>
+<li><a href="https://www.pyimagesearch.com/2018/10/29/multi-object-tracking-with-dlib/">Mutiple Object Tracker</a></li>
+</ul>
+</li>
+<li><a href="https://www.pyimagesearch.com/2018/12/17/image-stitching-with-opencv-and-python/">Image Stitching with OpenCV and Python</a></li>
+<li><a href="https://www.pyimagesearch.com/2018/11/26/instance-segmentation-with-opencv/">Instance Segmentation with OpenCV</a></li>
+<li><a href="https://www.pyimagesearch.com/2020/05/04/covid-19-face-mask-detector-with-opencv-keras-tensorflow-and-deep-learning/">Face mask detector</a></li>
+</ul>
+<h3 id="deep-learning">Deep Learning:</h3>
+<ul>
+<li><a href="http://danielnouri.org/notes/2014/12/17/using-convolutional-neural-nets-to-detect-facial-keypoints-tutorial/">Using Convolutional Neural Nets to Detect Facial Keypoints</a></li>
+<li><a href="https://www.learnopencv.com/average-face-opencv-c-python-tutorial/">Generate an Average Face using Python and OpenCV</a></li>
+<li><a href="https://medium.com/@ageitgey/how-to-break-a-captcha-system-in-15-minutes-with-machine-learning-dbebb035a710">Break A Captcha System using CNNs</a></li>
+<li><a href="https://medium.com/google-cloud/keras-inception-v3-on-google-compute-engine-a54918b0058">Use pre-trained Inception model to provide image predictions</a></li>
+<li><a href="https://hackernoon.com/deep-learning-cnns-in-tensorflow-with-gpus-cba6efe0acc2">Create your first CNN</a></li>
+<li><a href="https://hackernoon.com/building-a-facial-recognition-pipeline-with-deep-learning-in-tensorflow-66e7645015b8">Build A Facial Recognition Pipeline</a></li>
+<li><a href="https://medium.freecodecamp.org/building-an-image-caption-generator-with-deep-learning-in-tensorflow-a142722e9b1f">Build An Image Caption Generator</a></li>
+<li><a href="https://medium.freecodecamp.org/making-your-own-face-recognition-system-29a8e728107c">Make your Own Face Recognition System</a></li>
+<li><a href="https://towardsdatascience.com/how-i-trained-a-language-detection-ai-in-20-minutes-with-a-97-accuracy-fdeca0fb7724">Train a Language Detection AI in 20 minutes</a></li>
+<li><a href="https://towardsdatascience.com/object-detection-with-neural-networks-a4e2c46b4491">Object Detection With Neural Networks</a></li>
+<li>Learn Twitter Sentiment Analysis -<ul>
+<li><a href="https://towardsdatascience.com/another-twitter-sentiment-analysis-bb5b01ebad90">Part I - Data Cleaning</a></li>
+<li><a href="https://towardsdatascience.com/another-twitter-sentiment-analysis-with-python-part-2-333514854913">Part II - EDA, Data Visualisation</a></li>
+<li><a href="https://towardsdatascience.com/another-twitter-sentiment-analysis-with-python-part-3-zipfs-law-data-visualisation-fc9eadda71e7">Part III - Zipf&#39;s Law, Data Visualisation</a></li>
+<li><a href="https://towardsdatascience.com/another-twitter-sentiment-analysis-with-python-part-4-count-vectorizer-b3f4944e51b5">Part IV - Feature Extraction(count vectoriser)</a></li>
+<li><a href="https://towardsdatascience.com/another-twitter-sentiment-analysis-with-python-part-5-50b4e87d9bdd">Part V - Feature Extraction(Tfidf vectoriser)</a></li>
+<li><a href="https://towardsdatascience.com/another-twitter-sentiment-analysis-with-python-part-6-doc2vec-603f11832504">Part VI - Doc2Vec</a></li>
+<li><a href="https://towardsdatascience.com/another-twitter-sentiment-analysis-with-python-part-7-phrase-modeling-doc2vec-592a8a996867">Part VII - Phrase Modeling + Doc2Vec</a></li>
+<li><a href="https://towardsdatascience.com/another-twitter-sentiment-analysis-with-python-part-8-dimensionality-reduction-chi2-pca-c6d06fb3fcf3">Part VIII - Dimensionality Reduction</a></li>
+<li><a href="https://towardsdatascience.com/another-twitter-sentiment-analysis-with-python-part-9-neural-networks-with-tfidf-vectors-using-d0b4af6be6d7">Part IX - Neural Nets with Tfdif vectors</a></li>
+<li><a href="https://towardsdatascience.com/another-twitter-sentiment-analysis-with-python-part-10-neural-network-with-a6441269aa3c">Part X - Neural Nets with word2vec/doc2vec</a></li>
+<li><a href="https://towardsdatascience.com/another-twitter-sentiment-analysis-with-python-part-11-cnn-word2vec-41f5e28eda74">Part XI - CNN with Word2Vec</a></li>
+</ul>
+</li>
+<li><a href="https://becominghuman.ai/transfer-learning-retraining-inception-v3-for-custom-image-classification-2820f653c557">Use Transfer Learning for custom image classification</a></li>
+<li><a href="https://iamtrask.github.io/2015/07/12/basic-python-network/">Learn to Code a simple Neural Network in 11 lines of Python</a></li>
+<li><a href="https://iamtrask.github.io/2015/07/27/python-network-part2/">Build a Neural Network using Gradient Descent Approach</a></li>
+<li><a href="https://heartbeat.fritz.ai/how-to-train-a-keras-model-to-generate-colors-3bc79e54971b">Train a Keras Model To Generate Colors</a></li>
+<li><a href="https://www.pyimagesearch.com/2018/09/10/keras-tutorial-how-to-get-started-with-keras-deep-learning-and-python/">Get Started with Keras on a Custom Dataset</a></li>
+<li><a href="https://nicholastsmith.wordpress.com/2016/02/18/eigenfaces-versus-fisherfaces-on-the-faces94-database-with-scikit-learn/">Use EigenFaces and FisherFaces on Faces94 dataset</a></li>
+<li><a href="https://medium.com/@lvarruda/how-to-get-top-2-position-on-kaggles-mnist-digit-recognizer-48185d80a2d4">Kaggle MNIST Digit Recognizer Tutorial</a></li>
+<li><a href="https://medium.com/tensorflow/hello-deep-learning-fashion-mnist-with-keras-50fcff8cd74a">Fashion MNIST tutorial with tf.keras</a></li>
+<li><a href="https://www.pyimagesearch.com/2018/10/15/deep-learning-hydroponics-and-medical-marijuana/">CNN using Keras to automatically classify root health</a></li>
+<li><a href="https://www.pyimagesearch.com/2018/10/08/keras-vs-tensorflow-which-one-is-better-and-which-one-should-i-learn/">Keras vs Tensorflow</a></li>
+<li><a href="https://www.pyimagesearch.com/2018/12/03/deep-learning-and-medical-image-analysis-with-keras/">Deep Learning and Medical Image Analysis for Malaria Detection</a></li>
+<li><a href="https://towardsdatascience.com/transfer-learning-for-image-classification-using-keras-c47ccf09c8c8">Transfer Learning for Image Classification using Keras</a></li>
+<li><a href="https://github.com/kylemcdonald/SmileCNN">Code a Smile Classifier using CNNS in Python</a></li>
+<li><a href="https://towardsdatascience.com/natural-language-processing-count-vectorization-with-scikit-learn-e7804269bb5e">Natural Language Processing using scikit-learn</a></li>
+<li><a href="https://towardsdatascience.com/ai-generates-taylor-swifts-song-lyrics-6fd92a03ef7e">Code a Taylor Swift Lyrics Generator</a></li>
+<li><a href="https://towardsdatascience.com/how-i-built-a-face-mask-detector-for-covid-19-using-pytorch-lightning-67eb3752fd61">Mask detection using PyTorch Lightning</a></li>
+</ul>
+<h3 id="miscellaneous">Miscellaneous:</h3>
+<ul>
+<li><a href="https://ruslanspivak.com/lsbasi-part1/">Build a Simple Interpreter</a></li>
+<li><a href="https://hackernoon.com/learn-blockchains-by-building-one-117428612f46">Build a Simple Blockchain in Python</a></li>
+<li><a href="https://jeffknupp.com/blog/2014/09/01/what-is-a-nosql-database-learn-by-writing-one-in-python/">Write a NoSQL Database in Python</a></li>
+<li><a href="https://hackernoon.com/building-a-gas-pump-scanner-with-opencv-python-ios-116fe6c9ae8b">Building a Gas Pump Scanner with OpenCV/Python/iOS</a></li>
+<li><a href="https://codequs.com/p/S14jQ5UyG/build-a-distributed-streaming-system-with-apache-kafka-and-python">Build a Distributed Streaming System with Python and Kafka</a></li>
+<li><a href="https://csl.name/post/python-jit/">Writing a basic x86-64 JIT compiler from scratch in stock Python</a></li>
+<li>Making a low level (Linux) debugger<ul>
+<li><a href="https://blog.asrpo.com/making_a_low_level_debugger">Part 1</a></li>
+<li><a href="https://blog.asrpo.com/making_a_low_level_debugger_part_2">Part 2: C</a></li>
+</ul>
+</li>
+<li>Implementing a Search Engine<ul>
+<li><a href="http://www.ardendertat.com/2011/05/30/how-to-implement-a-search-engine-part-1-create-index/">Part 1</a></li>
+<li><a href="http://www.ardendertat.com/2011/05/31/how-to-implement-a-search-engine-part-2-query-index/">Part 2</a></li>
+<li><a href="http://www.ardendertat.com/2011/07/17/how-to-implement-a-search-engine-part-3-ranking-tf-idf/">Part 3</a></li>
+</ul>
+</li>
+<li><a href="https://robertheaton.com/2018/07/20/project-2-game-of-life/">Build the Game of Life</a></li>
+<li><a href="https://robertheaton.com/2018/06/12/programming-projects-for-advanced-beginners-ascii-art/">Create terminal ASCII art</a></li>
+<li><a href="https://robertheaton.com/2018/10/09/programming-projects-for-advanced-beginners-3-a/">Write a Tic-Tac-Toe AI</a></li>
+<li><a href="https://robertheaton.com/2018/11/03/programming-project-4-photomosaics/">Create photomosaic art</a></li>
+<li><a href="https://robertheaton.com/2018/12/02/programming-project-5-snake/">Build the game &quot;Snake&quot; in the terminal</a></li>
+<li><a href="https://wyag.thb.lt/">Write yourself a Git</a></li>
+<li><a href="https://www.aosabook.org/en/500L/a-python-interpreter-written-in-python.html">A Python implementation of a Python bytecode runner</a></li>
+<li><a href="https://www.geeksforgeeks.org/voice-assistant-using-python/">Create a Voice assistant using Python</a></li>
+</ul>
+</details></div><div><details><summary><h2 id="go">Go:</h2></summary>
+<ul>
+<li><a href="https://www.thepolyglotdeveloper.com/2016/12/create-real-time-chat-app-golang-angular-2-websockets/">Create a Real Time Chat App with Golang, Angular 2, and WebSocket</a></li>
+<li><a href="https://semaphoreci.com/community/tutorials/building-go-web-applications-and-microservices-using-gin">Building Go Web Applications and Microservices Using Gin</a></li>
+<li><a href="https://semaphoreci.com/community/tutorials/how-to-use-godog-for-behavior-driven-development-in-go">How to Use Godog for Behavior-driven Development in Go</a></li>
+<li>Building Blockchain in Go<ul>
+<li><a href="https://jeiwan.net/posts/building-blockchain-in-go-part-1/">Part 1: Basic Prototype</a></li>
+<li><a href="https://jeiwan.net/posts/building-blockchain-in-go-part-2/">Part 2: Proof of Work</a></li>
+<li><a href="https://jeiwan.net/posts/building-blockchain-in-go-part-3/">Part 3: Persistence and CLI</a></li>
+<li><a href="https://jeiwan.net/posts/building-blockchain-in-go-part-4/">Part 4: Transactions 1</a></li>
+<li><a href="https://jeiwan.net/posts/building-blockchain-in-go-part-5/">Part 5: Address</a></li>
+<li><a href="https://jeiwan.net/posts/building-blockchain-in-go-part-6/">Part 6: Transactions 2</a></li>
+<li><a href="https://jeiwan.net/posts/building-blockchain-in-go-part-7/">Part 7: Network</a></li>
+</ul>
+</li>
+<li><a href="https://www.youtube.com/watch?v=8fi7uSYlOdc">Building a container from scratch in Go - Liz Rice (Microscaling Systems)(video)</a></li>
+<li><a href="https://astaxie.gitbooks.io/build-web-application-with-golang/content/en/">Build Web Application with GoLang</a></li>
+<li>Building a Chat Application in Go with ReactJS<ul>
+<li><a href="https://tutorialedge.net/projects/chat-system-in-go-and-react/part-1-initial-setup/">Part 1: Initial Setup</a></li>
+<li><a href="https://tutorialedge.net/projects/chat-system-in-go-and-react/part-2-simple-communication/">Part 2: Simple Communication</a></li>
+<li><a href="https://tutorialedge.net/projects/chat-system-in-go-and-react/part-3-designing-our-frontend/">Part 3: Designing our Frontend</a></li>
+<li><a href="https://tutorialedge.net/projects/chat-system-in-go-and-react/part-4-handling-multiple-clients/">Part 4: Handling Multiple Clients</a></li>
+<li><a href="https://tutorialedge.net/projects/chat-system-in-go-and-react/part-5-improved-frontend/">Part 5: Improving the Frontend</a></li>
+<li><a href="https://tutorialedge.net/projects/chat-system-in-go-and-react/part-6-dockerizing-your-backend/">Part 6: Dockerizing your Backend</a></li>
+</ul>
+</li>
+<li><a href="https://tutorialedge.net/golang/go-webassembly-tutorial/">Go WebAssembly Tutorial - Building a Calculator Tutorial</a></li>
+<li>REST Servers in Go<ul>
+<li><a href="https://eli.thegreenplace.net/2021/rest-servers-in-go-part-1-standard-library/">Part 1 - standard library</a></li>
+<li><a href="https://eli.thegreenplace.net/2021/rest-servers-in-go-part-2-using-a-router-package/">Part 2 - using a router package</a></li>
+<li><a href="https://eli.thegreenplace.net/2021/rest-servers-in-go-part-3-using-a-web-framework/">Part 3 - using a web framework</a></li>
+<li><a href="https://eli.thegreenplace.net/2021/rest-servers-in-go-part-4-using-openapi-and-swagger/">Part 4 - using OpenAPI and Swagger</a></li>
+<li><a href="https://eli.thegreenplace.net/2021/rest-servers-in-go-part-5-middleware/">Part 5 - middleware</a></li>
+<li><a href="https://eli.thegreenplace.net/2021/rest-servers-in-go-part-6-authentication/">Part 6 - authentication</a></li>
+<li><a href="https://eli.thegreenplace.net/2021/rest-servers-in-go-part-7-graphql/">Part 7 - GraphQL</a></li>
+</ul>
+</li>
+<li>Let&#39;s build a URL shortener in Go - with Gin &amp; Redis<ul>
+<li><a href="https://www.eddywm.com/lets-build-a-url-shortener-in-go/">Part 1 - Project setup</a></li>
+<li><a href="https://www.eddywm.com/lets-build-a-url-shortener-in-go-with-redis-part-2-storage-layer/">Part 2 - Storage Layer</a></li>
+<li><a href="https://www.eddywm.com/lets-build-a-url-shortener-in-go-part-3-short-link-generation/">Part 3 - Short Link Generator</a></li>
+<li><a href="https://www.eddywm.com/lets-build-a-url-shortener-in-go-part-iv-forwarding/">Part 4 - Forwarding</a></li>
+</ul>
+</li>
+<li><a href="https://www.youtube.com/watch?v=Sphme0BqJiY">Building a TCP Chat in Go(video)</a></li>
+</ul>
+</details></div><div><details><summary><h2 id="php">PHP:</h2></summary>
+<ul>
+<li><a href="https://www.youtube.com/playlist?list=PLwAKR305CRO-Q90J---jXVzbOd4CDRbVx">How To Build A Blog With Laravel</a> (video)</li>
+<li><a href="http://ilovephp.jondh.me.uk/en/tutorial/make-your-own-blog">Make Your Own Blog (in Pure PHP)</a></li>
+<li><a href="https://www.silverstripe.org/learn/lessons/">Build A Real Estate Website Example with SilverStripe</a></li>
+<li><a href="https://www.youtube.com/playlist?list=PLXsbBbd36_uVjOFH_P25__XAyGsohXWlv">Building Realtime Chat App with Laravel 5.4 and VueJS</a> (video)</li>
+<li><a href="https://www.youtube.com/playlist?list=PLfdtiltiRHWGGxaR6uFtwZnnbcXqyq8JD">Build A Social Network: Laravel 5 - Youtube</a> (video)</li>
+<li>Build a full-featured multi-tenant app with Laravel<ul>
+<li><a href="https://medium.com/@ashokgelal/writing-a-full-featured-multi-tenant-laravel-app-from-scratch-a0e1a7350d9d">Part 0: Introduction</a></li>
+<li><a href="https://medium.com/@ashokgelal/a-full-featured-multi-tenant-app-with-laravel-part-1-4049a3cc229d">Part 1: Setup</a></li>
+<li><a href="https://medium.com/@ashokgelal/a-full-featured-multi-tenant-app-with-laravel-part-2-roles-and-permissions-d9a5bfe5d525">Part 2: Roles and Permissinos</a></li>
+<li><a href="https://medium.com/@ashokgelal/a-full-featured-multi-tenant-app-with-laravel-part-3-invitation-c982dca55eb9">Part 3: Invitation</a></li>
+<li><a href="https://medium.com/@ashokgelal/a-full-featured-multi-tenant-app-with-laravel-part-4-tenancy-aware-authentication-e0ee37270bc8">Part 4: Authentication</a></li>
+<li><a href="https://medium.com/@ashokgelal/a-full-featured-multi-tenant-app-with-laravel-part-2-unit-tests-96d6dfbf0617">Part 5: Testing</a></li>
+<li><a href="https://medium.com/@ashokgelal/a-full-featured-multi-tenant-app-with-laravel-part-5-user-profile-5c3d0c655f3a">Part 6: User Profile</a></li>
+<li><a href="https://medium.com/@ashokgelal/a-full-featured-multi-tenant-app-with-laravel-part-7-deployment-40bb3c895627">Part 7: Deployment</a></li>
+</ul>
+</li>
+<li><a href="https://www.codewall.co.uk/laravel-crud-demo-with-resource-controller-tutorial/">Build a Laravel CRUD Application From Scratch</a></li>
+</ul>
+</details></div><div><details><summary><h2 id="ocaml">OCaml:</h2></summary>
+<ul>
+<li><a href="https://llvm.org/docs/tutorial/#kaleidoscope-implementing-a-language-with-llvm-in-objective-caml">Implement a Language with LLVM in OCaml</a></li>
+</ul>
+</details></div><div><details><summary><h2 id="ruby">Ruby:</h2></summary>
+<ul>
+<li><a href="https://medium.com/geckoboard-under-the-hood/how-to-build-a-network-stack-in-ruby-f73aeb1b661b">Build a Network Stack with Ruby</a></li>
+<li>Build your own Redis<ul>
+<li><a href="https://rohitpaulk.com/articles/redis-0">Part 0: Introduction</a></li>
+<li><a href="https://rohitpaulk.com/articles/redis-1">Part 1: Barebones TCP Server</a></li>
+<li><a href="https://rohitpaulk.com/articles/redis-2">Part 2: PING &lt;-&gt; PONG</a></li>
+<li><a href="https://rohitpaulk.com/articles/redis-3">Part 3: Concurrent Clients</a></li>
+<li><a href="https://rohitpaulk.com/articles/redis-4">Part 4: ECHO</a></li>
+</ul>
+</li>
+<li><a href="https://thoughtbot.com/blog/rebuilding-git-in-ruby">Rebuilding Git in Ruby</a></li>
+</ul>
+<h3 id="ruby-on-rails">Ruby on Rails:</h3>
+<ul>
+<li><a href="https://www.railstutorial.org/book">The Ruby on Rails Tutorial</a></li>
+<li><a href="https://www.dropbox.com/s/9vq430e9s3q7pu8/Let%27s%20Build%20Instagram%20with%20Ruby%20on%20Rails%20-%20Free%20Edition.pdf?dl=0">Build Instagram From Scratch with Ruby on Rails</a></li>
+<li><a href="https://medium.com/rails-ember-beyond/how-to-build-a-social-network-using-rails-eb31da569233">Build a Social Network using Rails</a></li>
+<li><a href="https://www.digitalocean.com/community/tutorials/how-to-build-a-ruby-on-rails-application">How To Build a Ruby on Rails Application</a></li>
+</ul>
+</details></div><div><details><summary><h2 id="haskell">Haskell:</h2></summary>
+<ul>
+<li><a href="http://dev.stephendiehl.com/fun/">Write You a Haskell - Build a modern functional compiler</a></li>
+<li><a href="https://en.wikibooks.org/wiki/Write_Yourself_a_Scheme_in_48_Hours">Write Yourself a Scheme in 48 hours</a></li>
+<li><a href="https://github.com/write-you-a-scheme-v2/scheme">Write You A Scheme, Version 2</a></li>
+<li><a href="https://wiki.haskell.org/Roll_your_own_IRC_bot">Roll Your Own IRC Bot</a></li>
+<li><a href="https://lettier.github.io/posts/2016-08-15-making-movie-monad.html">Making Movie Monad</a></li>
+<li><a href="http://adit.io/posts/2013-04-15-making-a-website-with-haskell.html">Making a Website with Haskell <strong>(outdated)</strong></a></li>
+</ul>
+</details></div><div><details><summary><h2 id="r">R:</h2></summary>
+<ul>
+<li><a href="http://shiny.rstudio.com/tutorial/">Build Web Apps with Shiny</a></li>
+<li><a href="https://towardsdatascience.com/build-a-cryptocurrency-trading-bot-with-r-1445c429e1b1">Build A Cryptocurrency Bot</a></li>
+<li><a href="https://towardsdatascience.com/association-rule-mining-in-r-ddf2d044ae50">Learn Associate Rule Mining in R</a></li>
+</ul>
+</details></div><div><details><summary><h2 id="rust">Rust:</h2></summary>
+<ul>
+<li>A Simple Web App in Rust<ul>
+<li><a href="http://joelmccracken.github.io/entries/a-simple-web-app-in-rust-pt-1/">Part 1</a></li>
+<li><a href="http://joelmccracken.github.io/entries/a-simple-web-app-in-rust-pt-2a/">Part 2a</a></li>
+<li><a href="http://joelmccracken.github.io/entries/a-simple-web-app-in-rust-pt-2b/">Part 2b</a></li>
+</ul>
+</li>
+<li><a href="https://os.phil-opp.com/">Write an OS in pure Rust</a></li>
+<li><a href="https://limpet.net/mbrubeck/2014/08/08/toy-layout-engine-1.html">Build a browser engine in Rust</a></li>
+<li><a href="http://www.goldsborough.me/rust/web/tutorial/2018/01/20/17-01-11-writing_a_microservice_in_rust/">Write a Microservice in Rust</a></li>
+<li><a href="http://cglab.ca/~abeinges/blah/too-many-lists/book/README.html">Learning Rust with Too Many Linked Lists</a></li>
+<li>Rust in Detail: Writing Scalable Chat Service from Scratch<ul>
+<li><a href="https://nbaksalyar.github.io/2015/07/10/writing-chat-in-rust.html">Part 1: Implementing WebSocket. Introduction.</a></li>
+<li><a href="https://nbaksalyar.github.io/2015/11/09/rust-in-detail-2.html">Part 2: Sending and Receiving Messages</a></li>
+</ul>
+</li>
+<li><a href="https://aimlesslygoingforward.com/blog/2019/02/09/writing-a-rust-roguelike-for-the-desktop-and-the-web/">Writing a Rust Roguelike for the Desktop and the Web</a></li>
+<li><a href="http://www.sheshbabu.com/posts/rust-wasm-yew-single-page-application/">Single Page Applications using Rust</a></li>
+<li><a href="https://bugzmanov.github.io/nes_ebook/">Writing NES Emulator in Rust</a></li>
+<li>Create a simulation of evolution using neural network and genetic algorithm, and compile the application to WebAssembly<ul>
+<li><a href="https://pwy.io/en/posts/learning-to-fly-pt1/">Part 1</a></li>
+<li><a href="https://pwy.io/en/posts/learning-to-fly-pt2/">Part 2</a></li>
+<li><a href="https://pwy.io/en/posts/learning-to-fly-pt3/">Part 3</a></li>
+<li><a href="https://pwy.io/en/posts/learning-to-fly-pt4/">Part 4</a></li>
+</ul>
+</li>
+</ul>
+</details></div><div><details><summary><h2 id="scala">Scala:</h2></summary>
+<ul>
+<li><a href="https://www.freecodecamp.org/news/how-to-build-a-simple-actor-based-blockchain-aac1e996c177/">Simple actor-based blockchain</a></li>
+<li><a href="https://rcoh.svbtle.com/no-magic-regular-expressions">No Magic: Regular Expressions</a></li>
+</ul>
+</details></div><div><details><summary><h2 id="swift">Swift:</h2></summary>
+<ul>
+<li><a href="https://www.hackingwithswift.com/read">Hacking with Swift - Learn Swift by doing 39 projects</a></li>
+<li><a href="https://github.com/nicklockwood/RetroRampage">Retro first-person shooter from scratch</a></li>
+</ul>
+</details></div><div><details><summary><h2 id="additional-resources">Additional Resources</h2></summary>
+<ul>
+<li><a href="https://github.com/markerikson/react-redux-links">React Redux Links</a></li>
+<li><a href="https://www.udemy.com/">Udemy.com</a></li>
+<li><a href="https://www.fullstackpython.com/">Full Stack Python</a></li>
+<li><a href="https://nodeschool.io/">Node School</a></li>
+<li><a href="https://scotch.io/">ScotchIO</a></li>
+<li><a href="http://www.exercism.io/">Exercism</a></li>
+<li><a href="http://www.egghead.io/">Egghead.io</a></li>
+<li><a href="http://mherman.org/">Michael Herman&#39;s Blog</a></li>
+<li><a href="http://thinkster.io">Thinkster.io</a></li>
+<li><a href="https://github.com/rby90/Project-Based-Tutorials-in-C">C Project Based Tutorials</a></li>
+<li><a href="https://enlight.nyc/">Enlight</a></li>
+<li><a href="https://hackclub.com/workshops/">Hack Club Workshops</a></li>
+<li><a href="https://codecrafters.io/">CodeCrafters</a></li>
+</ul>
+</details>
+</div>
+</div>
