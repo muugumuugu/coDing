@@ -1,4 +1,8 @@
-# recursive algorithm
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+
+
+====== recursive algorithm ======
 1. Given a current cell as a parameter,
 2. Mark the current cell as visited
 3. While the current cell has any unvisited neighbour cells
@@ -7,8 +11,9 @@
 	3. Invoke the routine recursively for a chosen cell
 which is invoked once for any initial cell in the area.
 
-# cell object
-## attributes
+====== cell object ======
+
+===== attributes =====
 * i = column numbers
 * j = row number
 * wall mask array
@@ -16,7 +21,7 @@ which is invoked once for any initial cell in the area.
 * visited flag
 	for DFS/BFS etc traversal
 
-## methods
+===== methods =====
 * show
 	* draw walls individually using wall mask as conditionals
 	* color based on visited status

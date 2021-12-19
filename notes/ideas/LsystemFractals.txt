@@ -1,16 +1,16 @@
-# Alphabet
+====== Alphabet ======
 say A,B
-# Axiom
+====== Axiom ======
 say AAAB
-# Rules
+====== Rules ======
 say
 * A → AB
 * B → A
-# string replacement structure
+====== string replacement structure ======
 make replace all calls to , with replaced chars being uppercase
 lowercase the result
 
-# turtle function
+====== turtle function ======
 parse string character by character and perform a drawing operation acc to character
 
 

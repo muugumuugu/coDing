@@ -1,3 +1,6 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+
 set of complex numbers p for which
 	fₚ(z) = z² + p
 	does not diverge when iterated from 0
@@ -6,11 +9,8 @@ Select some Infinity
 Also Select some infinty for number of iterations to check.
 Establish a Zoom Level by fixing range of complex vals.
 
-
-
-
-
-```
+====== code ======
+{{{code: lang="java" linenumbers="True"
 void setup() {
   size(640, 480);
   colorMode(RGB, 1);
@@ -48,4 +48,5 @@ void draw() {
 	}
   updatePixels();
 }
-```
+
+}}}

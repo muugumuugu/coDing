@@ -1,3 +1,6 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+
 * load a string stream and join all lines into a single string.
 * split it according to regex "/W+/"
 * create a count hashmap/associative array.
@@ -12,7 +15,7 @@
 * the secret life of pronouns.
 * Term Frequency - Inverse Document Frequency
 	Score = frequency in document * log( Corpus Size/ frequency in all of document space).
-```
+{{{code: lang="java" linenumbers="True"
 IntDict counts;
 
 void setup() {
@@ -42,5 +45,4 @@ float y = random(height);
 text(k, x, y);
 }
 }
-
-```
+}}}

@@ -1,8 +1,12 @@
-# colors
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+
+
+====== colors ======
 * raindrops: rgb(138,43,226)
 * bg: rgb(30,30,50)
 
-# drop object
+====== drop object ======
 * attributes
 	* float xposition
 		* initialize to random location across width of screen
@@ -21,4 +25,4 @@
 		* say as lines of length dropsize at xpos,ypos.
 		* maybe map size to alpha.
 
-# make an array of drops and update all of theme in each frame.
+make an array of drops and update all of theme in each frame.

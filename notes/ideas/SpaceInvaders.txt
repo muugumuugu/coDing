@@ -1,15 +1,24 @@
-# ship object
-## attributes
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+
+
+====== ship object ======
+
+===== attributes =====
 * x position
-## methods
+
+===== methods =====
 * show
 * move(direction)
 	this.x+=direction*stepsize
-# alien object
-## attributes
+
+====== alien object ======
+
+===== attributes =====
 * x position(x,y)
 * y position
-## methods
+
+===== methods =====
 * show
 * move : auto
 	* static class var = xdir, ydir
@@ -20,8 +29,9 @@
 		* make ydir=1
 		* xdir=-xdir.
 
-# canon object(x)
-## attributes
+====== canon object(x) ======
+
+===== attributes =====
 * x = ship.x @ firing time
 * y
 ##methods
@@ -30,11 +40,13 @@
 * show
 * hits-alien check(alien)
 	d=distance (this,alien) - alien.r - this.r
-# bind keypressed
+
+====== bind keypressed ======
 	to ship.movefunctions
 	ship.shootfunctions
 		add drop to drops array at current x
-# intersection checking
+
+====== intersection checking ======
 * for all aliens for all canons
 * check if distance b/w this and otherobj ≤ this.r+ otherobj.r
 * on true
@@ -42,9 +54,9 @@
 * kill the alien
 
 
-# deletion loop
+====== deletion loop ======
 traverse backward and delete flagged canons
 
-# winning check
+====== winning check ======
 * if aliens.y>height lose
 * if aliens array's length = 0 WIN

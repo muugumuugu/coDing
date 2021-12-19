@@ -1,12 +1,17 @@
-# Particle Object
-## attributes
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+
+
+====== Particle Object ======
+
+===== attributes =====
 * position
 * velocity x=given , default =0,y=random -ve value
 * acceleration
 * lifespan = 255
 * seedflag
 
-## methods
+===== methods =====
 * update
 	vel+=acceleration
 	pos+=velocity
@@ -16,13 +21,15 @@
 * show
 	if its not a seed firework map alpha with lifespan
 
-# firework object
-## attributes
+====== firework object ======
+
+===== attributes =====
 * fwcompomemt// seed
 * particles // non seeds
 * exploded flag
 * done flag
-## methods
+
+===== methods =====
 * update
 	* fwcompomemt.applyforce(); // seed
 	* fwcompomemt.update();
@@ -40,7 +47,7 @@
 	fill particles with particles at same location and random 2d velocity and seed flag=false
 
 
-# fireworks array
+====== fireworks array ======
 * each frame, update all, show all
 * loop thru backwords.
 * delete any fireworkobject which is flagged done

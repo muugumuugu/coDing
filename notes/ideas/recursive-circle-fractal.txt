@@ -1,0 +1,31 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2021-12-19T21:22:08+05:30
+
+
+
+
+
+====== code ======
+
+{{{code: lang="java" linenumbers="False"
+void draw() {
+  background(0);
+  stroke(255);
+  noFill();
+  drawCircle(300, 200, 600);
+  noLoop();
+}
+
+void drawCircle(float x, float y, float d) {
+  ellipse(x, y, d, d);
+  if (d > 2) {
+	float newD = d * 0.25;
+	drawCircle(x + newD, y, newD);
+	drawCircle(x - newD, y, newD);
+	//drawCircle(x, y + d * 0.5, d * 0.5);
+  }
+}
+
+
+}}}

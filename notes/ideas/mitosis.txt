@@ -1,6 +1,10 @@
-# cell object
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
 
-## attributes
+
+====== cell object ======
+
+===== attributes =====
 * position vector
 	initiate:randomly / maybe according to parent + some random
 * gene: color (from parent).
@@ -10,7 +14,7 @@
 * age
 
 
-## methods
+===== methods =====
 * move
 	* steering behaviour?
 	* random.

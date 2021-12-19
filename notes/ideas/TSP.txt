@@ -1,30 +1,38 @@
-# data
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+
+====== data ======
 * create an hashed array for the vertices
 * create a distance function using the values of the nodes
 * plot them,
 	possibly using polar co-ordinates,
 	equally angle dispersed, r=value.
-# brute force
+
+====== brute force ======
 * randomly shuffle the ordering of the data array.
 * calculate distance based on the path infered from current shuffleing
 * store min, and keep updating it.
 	* also store the ordered pointer list here.
-# lexicographical permutation generation
+
+====== lexicographical permutation generation ======
 1. find the index of the (valley)element closest to the end such that it is less than its right neighbour.
 	* if there is no such index, this is the last permutation in the lexicographic order.
 		* break out of the whole loop
 2. Find the largest (hill)index @ which the value is higher than the value at the chosen valley index.
 3. swap the hill and valley.
-3. Reverse from valley index+1 onwards.
-## use lexical orderings to find the distances
+4. Reverse from valley index+1 onwards.
+
+===== use lexical orderings to find the distances =====
 * calculate distance based on the path infered from current shuffleing
 * store min, and keep updating it.
 	* also store the ordered pointer list here.
-# genetic algorithm
+
+====== genetic algorithm ======
 * store shuffelings as organisms in population
 * store their distance inverses as the fitness corresponding to each organism.
 * normalize fitness scores
-## create new generation
+
+===== create new generation =====
 * pick a parent index ordering from the current generation
 	* based on its fittness as the probability of being chosen as a parent
 * mutate it by swapping a few indices(mutation rate times)
@@ -38,18 +46,11 @@
 * make the new gen the current
 * score the current population, and repeat the GA.
 
-# efficiency top-ups
+====== efficiency top-ups ======
 * pre-compute distances and look-up them.
 
-
-
-
-
-
-
-
-
-```
+====== code ======
+{{{code: lang="java" linenumbers="True"
 PVector[] cities;
 int totalCities = 12;
 
@@ -70,14 +71,14 @@ void setup() {
   fitness = new float[popSize];
 
   for (int i = 0; i < totalCities; i++) {
-    PVector v = new PVector(random(width), random(height / 2));
-    cities[i] = v;
-    order.append(i);
+	PVector v = new PVector(random(width), random(height / 2));
+	cities[i] = v;
+	order.append(i);
   }
   IntList orderCopy = order.copy();
   for (int i = 0; i < popSize; i++) {
-    orderCopy.shuffle();
-    population[i] = orderCopy;
+	orderCopy.shuffle();
+	population[i] = orderCopy;
   }
 }
 
@@ -94,9 +95,9 @@ void draw() {
   noFill();
   beginShape();
   for (int i = 0; i < bestEver.size(); i++) {
-    int n = bestEver.get(i);
-    vertex(cities[n].x, cities[n].y);
-    ellipse(cities[n].x, cities[n].y, 16, 16);
+	int n = bestEver.get(i);
+	vertex(cities[n].x, cities[n].y);
+	ellipse(cities[n].x, cities[n].y, 16, 16);
   }
   endShape();
 
@@ -106,9 +107,9 @@ void draw() {
   noFill();
   beginShape();
   for (int i = 0; i < currentBest.size(); i++) {
-    int n = currentBest.get(i);
-    vertex(cities[n].x, cities[n].y);
-    ellipse(cities[n].x, cities[n].y, 16, 16);
+	int n = currentBest.get(i);
+	vertex(cities[n].x, cities[n].y);
+	ellipse(cities[n].x, cities[n].y, 16, 16);
   }
   endShape();
 
@@ -137,12 +138,12 @@ void swap(IntList a, int i, int j) {
 float calcDistance(PVector[] points, IntList order) {
   float sum = 0;
   for (int i = 0; i < order.size() - 1; i++) {
-    int cityAIndex = order.get(i);
-    PVector cityA = points[cityAIndex];
-    int cityBIndex = order.get(i + 1);
-    PVector cityB = points[cityBIndex];
-    float d = dist(cityA.x, cityA.y, cityB.x, cityB.y);
-    sum += d;
+	int cityAIndex = order.get(i);
+	PVector cityA = points[cityAIndex];
+	int cityBIndex = order.get(i + 1);
+	PVector cityB = points[cityBIndex];
+	float d = dist(cityA.x, cityA.y, cityB.x, cityB.y);
+	sum += d;
   }
   return sum;
 }
@@ -151,42 +152,42 @@ float calcDistance(PVector[] points, IntList order) {
 void calculateFitness() {
   float currentRecord = Float.POSITIVE_INFINITY;
   for (int i = 0; i < population.length; i++) {
-    float d = calcDistance(cities, population[i]);
-    if (d < recordDistance) {
-      recordDistance = d;
-      bestEver = population[i];
-    }
-    if (d < currentRecord) {
-      currentRecord = d;
-      currentBest = population[i];
-    }
+	float d = calcDistance(cities, population[i]);
+	if (d < recordDistance) {
+	  recordDistance = d;
+	  bestEver = population[i];
+	}
+	if (d < currentRecord) {
+	  currentRecord = d;
+	  currentBest = population[i];
+	}
 
 
-    // This fitness function has been edited from the original video
-    // to improve performance, as discussed in The Nature of Code 9.6 video,
-    // available here: https://www.youtube.com/watch?v=HzaLIO9dLbA
-    fitness[i] = 1 / (pow(d, 8) + 1);
+	// This fitness function has been edited from the original video
+	// to improve performance, as discussed in The Nature of Code 9.6 video,
+	// available here: https://www.youtube.com/watch?v=HzaLIO9dLbA
+	fitness[i] = 1 / (pow(d, 8) + 1);
   }
 }
 
 void normalizeFitness() {
   float sum = 0;
   for (int i = 0; i < fitness.length; i++) {
-    sum += fitness[i];
+	sum += fitness[i];
   }
   for (int i = 0; i < fitness.length; i++) {
-    fitness[i] = fitness[i] / sum;;
+	fitness[i] = fitness[i] / sum;;
   }
 }
 
 void nextGeneration() {
   IntList[] newPopulation = new IntList[popSize];
   for (int i = 0; i < population.length; i++) {
-    IntList orderA = pickOne(population, fitness);
-    IntList orderB = pickOne(population, fitness);
-    IntList order = crossOver(orderA, orderB);
-    mutate(order, 0.01);
-    newPopulation[i] = order;
+	IntList orderA = pickOne(population, fitness);
+	IntList orderB = pickOne(population, fitness);
+	IntList order = crossOver(orderA, orderB);
+	mutate(order, 0.01);
+	newPopulation[i] = order;
   }
   population = newPopulation;
 
@@ -197,8 +198,8 @@ IntList pickOne(IntList[] list, float[] prob) {
   float r = random(1);
 
   while (r > 0) {
-    r = r - prob[index];
-    index++;
+	r = r - prob[index];
+	index++;
   }
   index--;
   return list[index].copy();
@@ -209,15 +210,15 @@ IntList crossOver(IntList orderA, IntList orderB) {
   int end = floor(random(start + 1, orderA.size()));
   IntList neworder = new IntList();
   for (int i = start; i < end; i++){
-    neworder.append(orderA.get(i));
+	neworder.append(orderA.get(i));
   }
 
   // var left = totalCities - neworder.length;
   for (int i = 0; i < orderB.size(); i++) {
-    int city = orderB.get(i);
-    if (!neworder.hasValue(city)) {
-      neworder.append(city);
-    }
+	int city = orderB.get(i);
+	if (!neworder.hasValue(city)) {
+	  neworder.append(city);
+	}
   }
   return neworder;
 }
@@ -225,11 +226,13 @@ IntList crossOver(IntList orderA, IntList orderB) {
 
 void mutate(IntList order, float mutationRate) {
   for (int i = 0; i < totalCities; i++) {
-    if (random(1) < mutationRate) {
-      int indexA = floor(random(order.size()));
-      int indexB = (indexA + 1) % totalCities;
-      swap(order, indexA, indexB);
-    }
+	if (random(1) < mutationRate) {
+	  int indexA = floor(random(order.size()));
+	  int indexB = (indexA + 1) % totalCities;
+	  swap(order, indexA, indexB);
+	}
   }
 }
-```
+
+}}}
+
