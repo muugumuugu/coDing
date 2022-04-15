@@ -1,0 +1,34 @@
+<html>
+<head>
+<title>CSV</title>
+<script src="../js/lib/data-viz/chart.min.js"></script>
+</head>
+<body>
+<canvas id=cnvs></canvas>
+<script>
+async function getTbl(){
+	const resp= await fetch("../assets/csv/temps.csv");
+	const tbl=await resp.text();
+	const rows=tbl.split(/\n/)
+	let dat=[];
+	rows.forEach(row=>{dat.push(row.split(","))});
+	return dat;
+}
+async function chartit(){
+	const ctx=document.getElementById('cnvs').getContext('2d');
+	const data=await getTbl();
+	data.shift();
+	const years = [];const temps = [];
+	data.forEach(row => {years.push(row[0]);temps.push(parseFloat(row[1]));});
+	const chart=new Chart(ctx,
+		{
+		type:"line",
+		data:{labels:years,datasets:[{label:"Temp devn in C",data:temps,fill:false}]},
+		options:{}
+		}
+	);
+}
+window.addEventListener("load",chartit);
+</script>
+</body>
+</html>

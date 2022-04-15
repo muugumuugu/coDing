@@ -1,0 +1,29 @@
+<html><head><title>ISS</title></head><body>
+<div id="map"></div><div id="loc"></div>
+<style>#map{height:80%; width:80%;}</style>
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.4.0/dist/leaflet.css" />
+<script src="https://unpkg.com/leaflet@1.4.0/dist/leaflet.js"></script>
+<script>
+let lat=0,lon=0;
+const map=L.map('map').setView([0,0],1);
+const attrib='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors';
+const tileUrl = 'https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png';
+const tiles = L.tileLayer(tileUrl, {attrib});
+tiles.addTo(map);
+const icon=L.icon({iconUrl:"iss.png",iconSize:[40,40],iconAnchor:[20,20]})
+let iss=L.marker([lat,lon],{icon:icon}).addTo(map);
+setInterval(()=>{
+fetch("https://api.wheretheiss.at/v1/satellites/25544").then(resp=>{return resp.json();}).then(dat=>{let d=document.getElementById('loc');lat=dat.latitude;lon=dat.longitude;d.textContent=dat.longitude+" " + dat.latitude;}).catch(err=>{console.log(err)});
+iss.setLatLng([lat,lon]);
+},1000);
+map.on('zoomend', function() {
+	const zoom = map.getZoom() + 1;
+	const w = 50 * zoom; const h = 32 * zoom;
+	icon.options.iconSize = [w, h];icon.options.iconAnchor = [w / 2, h / 2];
+	map.removeLayer(iss);
+	let latlng = iss.getLatLng();
+	iss = L.marker([0, 0], { icon: icon }).addTo(map);
+	iss.setLatLng(latlng);
+});
+</script>
+</body></html>

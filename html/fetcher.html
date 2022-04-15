@@ -1,0 +1,4 @@
+<html><head><title>FETCH</title></head><body>
+<style>img{width:100%;}</style>
+<script>fetch("https://upload.wikimedia.org/wikipedia/commons/thumb/5/5c/Double-alaskan-rainbow.jpg/450px-Double-alaskan-rainbow.jpg").then(resp=>{console.log(resp); return resp.blob();}).then(blob=>{let img=document.createElement('img');document.getElementsByTagName("body")[0].appendChild(img);img.src=URL.createObjectURL(blob);}).catch(err=>{console.log(err)});</script>
+</body></html>

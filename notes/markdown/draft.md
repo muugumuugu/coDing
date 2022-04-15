@@ -88,6 +88,7 @@
 + youtube-dl   -j --flat-playlist https://youtube.com/playlist?list=id | jq -r '.id' | sed 's_^_https://youtube.com/v/_' #get links of all vids in playlist
 + yt-dlp -j --flat-playlist https://youtube.com/playlist?list=id | jq -r '.id' | sed 's_^_https://youtube.com/v/_' #get links of all vids in playlist
 + http://www.youtube.com/watch_videos?video_ids=comma seperated list of ids #make a playlist from ids
++ yt-dlp  --extract-audio --audio-format mp3 -cik https://www.youtube.com/playlist?list=id #get songs
 + regex: \A starting of text
 + regex: \Z end of text
 + ```cd <directory>\```
