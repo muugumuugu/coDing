@@ -1,0 +1,293 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style>* {
+    margin: 0;
+    padding: 0;
+}
+body {
+    background: rgba(2,2,2,0.9);
+}
+#hexGrid {
+  display: flex;
+  flex-wrap: wrap;
+  width: 90%;
+  margin: 0 auto;
+  overflow: hidden;
+  font-family: 'Raleway', sans-serif;
+  font-size: 15px;
+  list-style-type: none;
+}
+
+.hex {
+  position: relative;
+  visibility:hidden;
+  outline:1px solid transparent; /* fix for jagged edges in FF on hover transition */
+}
+.hex::after{
+  content:'';
+  display:block;
+  padding-bottom: 86.602%;  /* =  100 / tan(60) * 1.5 */
+}
+.hexIn{
+  position: absolute;
+  width:96%;
+  padding-bottom: 110.851%; /* =  width / sin(60) */
+  margin:0 2%;
+  overflow: hidden;
+  visibility: hidden;
+  outline:1px solid transparent; /* fix for jagged edges in FF on hover transition */
+  -webkit-transform: rotate3d(0,0,1,-60deg) skewY(30deg);
+      -ms-transform: rotate3d(0,0,1,-60deg) skewY(30deg);
+          transform: rotate3d(0,0,1,-60deg) skewY(30deg);
+}
+.hexIn * {
+  position: absolute;
+  visibility: visible;
+  outline:1px solid transparent; /* fix for jagged edges in FF on hover transition */
+}
+.hexLink {
+    display:block;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    color: #fff;
+    overflow: hidden;
+    -webkit-transform: skewY(-30deg) rotate3d(0,0,1,60deg);
+        -ms-transform: skewY(-30deg) rotate3d(0,0,1,60deg);
+            transform: skewY(-30deg) rotate3d(0,0,1,60deg);
+}
+
+/*** HEX CONTENT **********************************************************************/
+.hex img {
+  left: -100%;
+  right: -100%;
+  width: auto;
+  height: 100%;
+  margin: 0 auto;
+  -webkit-transform: rotate3d(0,0,0,0deg);
+      -ms-transform: rotate3d(0,0,0,0deg);
+          transform: rotate3d(0,0,0,0deg);
+}
+
+.hex h1, .hex p {
+  width: 100%;
+  padding: 5%;
+  box-sizing:border-box;
+  background-color: rgba(128, 128, 128, 0.8);
+  color:black;
+  font-weight: 300;
+  -webkit-transition:  -webkit-transform .2s ease-out, opacity .3s ease-out;
+          transition:          transform .2s ease-out, opacity .3s ease-out;
+}
+.hex h1 {
+  bottom: 50%;
+  padding-top:50%;
+  font-size: 1.5em;
+  z-index: 1;
+  -webkit-transform:translate3d(0,-100%,0);
+      -ms-transform:translate3d(0,-100%,0);
+          transform:translate3d(0,-100%,0);
+}
+.hex h1::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 45%;
+  width: 10%;
+  text-align: center;
+  border-bottom: 1px solid #fff;
+}
+.hex p {
+  top: 50%;
+  padding-bottom:50%;
+  -webkit-transform:translate3d(0,100%,0);
+      -ms-transform:translate3d(0,100%,0);
+          transform:translate3d(0,100%,0);
+}
+
+
+/*** HOVER EFFECT  **********************************************************************/
+.hexLink:hover h1, .hexLink:focus h1,
+.hexLink:hover p, .hexLink:focus p{
+  -webkit-transform:translate3d(0,0,0);
+      -ms-transform:translate3d(0,0,0);
+          transform:translate3d(0,0,0);
+}
+
+/*** HEXAGON SIZING AND EVEN ROW INDENTATION *****************************************************************/
+@media (min-width:1201px) { /* <- 5-4  hexagons per row */
+  #hexGrid{
+    padding-bottom: 4.4%
+  }
+  .hex {
+    width: 20%; /* = 100 / 5 */
+  }
+  .hex:nth-child(9n+6){ /* first hexagon of even rows */
+    margin-left:10%;  /* = width of .hex / 2  to indent even rows */
+  }
+}
+
+@media (max-width: 1200px) and (min-width:901px) { /* <- 4-3  hexagons per row */
+  #hexGrid{
+    padding-bottom: 5.5%
+  }
+  .hex {
+    width: 25%; /* = 100 / 4 */
+  }
+  .hex:nth-child(7n+5){ /* first hexagon of even rows */
+    margin-left:12.5%;  /* = width of .hex / 2  to indent even rows */
+  }
+}
+
+@media (max-width: 900px) and (min-width:601px) { /* <- 3-2  hexagons per row */
+  #hexGrid{
+    padding-bottom: 7.4%
+  }
+  .hex {
+    width: 33.333%; /* = 100 / 3 */
+  }
+  .hex:nth-child(5n+4){ /* first hexagon of even rows */
+    margin-left:16.666%;  /* = width of .hex / 2  to indent even rows */
+  }
+}
+
+@media (max-width: 600px) { /* <- 2-1  hexagons per row */
+  #hexGrid{
+    padding-bottom: 11.2%
+  }
+  .hex {
+    width: 50%; /* = 100 / 3 */
+  }
+  .hex:nth-child(3n+3){ /* first hexagon of even rows */
+    margin-left:25%;  /* = width of .hex / 2  to indent even rows */
+  }
+}
+
+@media (max-width: 400px) {
+    #hexGrid {
+        font-size: 13px;
+    }
+}</style>
+    <link href='https://fonts.googleapis.com/css?family=Raleway:300' rel='stylesheet' type='text/css'>
+  </head>
+  <body>
+    <ul id="hexGrid">
+      <li class="hex">
+        <div class="hexIn">
+          <a class="hexLink" href="https://raw.githubusercontent.com/muugumuugu/muSe/minifiedmusiccorpora/forMP3player/emo/Hand%20Crushed%20by%20a%20Mallet%20_%20100%20gecs.mp3">
+          <img src="https://64.media.tumblr.com/1404b181960e214d1db84079303b43dd/db14a42540f3bad1-97/s500x750/d31432909fcffd1109aa36cce0f6f1908b5bf8ff.jpg" alt="origami hand tightly cletched on a pen - a reverse alussion to hand crushed by a mallet by 100 gecs." />
+            <h1>Hand Crushed By A Mallet</h1>
+            <p>100 gecs</p>
+          </a>
+        </div>
+
+      </li>
+      <li class="hex">
+        <div class="hexIn">
+          <a class="hexLink" href="https://href.li/?https://raw.githubusercontent.com/muugumuugu/muSe/minifiedmusiccorpora/forMP3player/honeysuckle/Nocturnal%20Waltz%20_%20Johannes%20Bornl%C3%B6f.mp3">
+            <img src="https://64.media.tumblr.com/143214b16d0c2666e018e5ab2e7bfb69/398dedce17785908-b2/s500x750/fcf3ea07044ddfcb5c8f60e0941d34ac8c1d59d0.png" alt="origami waltzing couple made from a sheet of sheet music." />
+            <h1>Nocturnal Waltz</h1>
+            <p>Johannes Bornlöf</p>
+          </a>
+        </div>
+       </li>
+       <li class="hex">
+        <div class="hexIn">
+          <a class="hexLink" href="https://raw.githubusercontent.com/muugumuugu/muSe/minifiedmusiccorpora/forMP3player/honeysuckle/Kaathalae%20Kaathalae%20_%20Chinmayi%2C%20Govind%20Vasantha%20(Govind%20Vasantha)%20%7BKarthik%20Netha%7D%20%5BGovind%20Vasantha%2C%20Kiran%5D.mp3">
+            <img src="https://64.media.tumblr.com/8fd6624ddadb989764378ab7f39304e1/3f0a5ec46dd13e4a-ba/s500x750/3b0fa5329d2d823a1849e98e5965d47d0d4e47db.jpg" alt="origami whale, because the song was recorded and mixed with a whale song." />
+            <h1>Kaathalae Kaathalae</h1>
+            <p>Chinmayi, Govind Vasantha</p>
+          </a>
+        </div>
+       </li>
+       <li class="hex">
+        <div class="hexIn">
+          <a class="hexLink" href="https://raw.githubusercontent.com/muugumuugu/muSe/minifiedmusiccorpora/forMP3player/simplyThree/Rain%20_%20Simply%20Three.mp3">
+            <img src="https://64.media.tumblr.com/f577f23761e02dd30256230a9f3b1e1c/f2158c5cdcec67d9-aa/s500x750/670e82266f858b4db4888d2bf0baee142172e5e6.jpg" alt="origami girl holding an umbrella, i.e. girl in the rain." />
+            <h1>Rain</h1>
+            <p>Simply Three</p>
+          </a>
+        </div>
+       </li>
+       <li class="hex">
+        <div class="hexIn">
+          <a class="hexLink" href="https://raw.githubusercontent.com/muugumuugu/muSe/minifiedmusiccorpora/forMP3player/plasticHearts/Prisoner%20_%20Miley%20Cyrus.mp3">
+            <img src="https://64.media.tumblr.com/9daccf7763b44ebbefd643946934da0d/f9899328830a9cb3-e3/s500x750/bf731546601c847cd299ddab8941d67ac597a599.jpg" alt="origami person in a prison cage made from foil." />
+            <h1>Prisoner</h1>
+            <p>Miley Cyrus & Dua Lipa</p>
+          </a>
+        </div>
+      </li>
+      <li class="hex">
+        <div class="hexIn">
+          <a class="hexLink" href="https://raw.githubusercontent.com/muugumuugu/muSe/minifiedmusiccorpora/forMP3player/honeysuckle/Starry%20Starry%20Night%20_%20Lianne%20La%20Havas%20(Don%20McLean)%20%7BDon%20McLean%7D.mp3">
+            <img src="https://64.media.tumblr.com/5f2cbde32c138e0f3e522dcd9ebb2ca9/435cb735a888dfcd-f8/s500x750/7cb22b2e05e0986757d00e572c97d9be096543e8.jpg" alt="origami frame of Vincent Van gogh's Starry Starry Night." />
+            <h1>Starry Starry Night</h1>
+            <p>Lianne La Havas</p>
+          </a>
+        </div>
+      </li>
+      <li class="hex">
+        <div class="hexIn">
+          <a class="hexLink" href="https://raw.githubusercontent.com/muugumuugu/muSe/minifiedmusiccorpora/forMP3player/dot/Busy%20in%20Beige%20_%20Dot..mp3">
+            <img src="https://64.media.tumblr.com/126541786281c1c648225e2d7c6478cc/b9c5d6ad4fcdb1c3-1c/s500x750/79fada5ae8ebf0c6ea5f7042b410967b1074f9f8.jpg" alt="origami stickman lying on the ledge , i.e. a laptop screen's edge." />
+            <h1>Busy in Beige</h1>
+            <p>Dot.</p>
+          </a>
+        </div>
+      </li>
+
+      <li class="hex">
+        <div class="hexIn">
+          <a class="hexLink" href="https://raw.githubusercontent.com/muugumuugu/muSe/minifiedmusiccorpora/forMP3player/robindroSongeet/Tumi%20kon%20Kanoner%20_%20Gourab%20Sarkar%2C%20Nilanjan%20Ghosh%20%7BRabindranath%20Tagore%7D.mp3">
+            <img src="https://64.media.tumblr.com/54a1d4fb4b06e9325b6ee437725410bb/f18a09a1abc59bda-05/s540x810/2cf073427c41c2970e75c52a259af2f969673aec.jpg" alt="" />
+            <h1>Tumi kon Kanoner</h1>
+            <p>Gourab Sarkar, Nilanjan Ghosh</p>
+          </a>
+        </div>
+      </li>
+      <li class="hex">
+        <div class="hexIn">
+          <a class="hexLink" href="https://raw.githubusercontent.com/muugumuugu/muSe/minifiedmusiccorpora/forMP3player/bops/The%20Fox%20_%20Ylvis.mp3">
+            <img src="https://64.media.tumblr.com/b3735ffac6791e0d07e45937c109dac3/05ada8939b2f0af2-09/s250x400/623ac48e6f3e3029fe7d160684aeec1dab8fd373.jpg" alt="origami fox from a ruled sheet." />
+            <h1>The Fox</h1>
+            <p>Ylvis</p>
+          </a>
+        </div>
+      </li>
+      <li class="hex">
+        <div class="hexIn">
+          <a class="hexLink" href="https://raw.githubusercontent.com/muugumuugu/muSe/minifiedmusiccorpora/forMP3player/progTabla/When%20Time%20Stands%20Still%20(Tabla%20Experiment)%20_%20ProgTabla%2C%20Sitar%20Metal.mp3">
+            <img src="https://64.media.tumblr.com/dcbc9e73915931c173c39e4a0b989c12/8e49af551613a849-be/s250x400/482260bb9d593f984e88cf3408edd7b850ff939f.jpg" alt="a really small origami cukoo clock." />
+            <h1>When Time Stands Still</h1>
+            <p>Prog Table, Sitar Metal</p>
+          </a>
+        </div>
+      </li>
+      <li class="hex">
+        <div class="hexIn">
+          <a class="hexLink" href="https://raw.githubusercontent.com/muugumuugu/muSe/minifiedmusiccorpora/forMP3player/jal/Jal%20Pari%20_%20Jal%20The%20Band.mp3">
+            <img src="https://64.media.tumblr.com/102bfdf0dcf24515f88fb5c89d2b3c3e/4595abf38bdec0b5-aa/s540x810/c4d8e2bfde53e01efc68c2cbbd4e95e11fc26196.jpg" alt="two origami scaled mermaids, white and yellow." />
+            <h1>Jal Parie</h1>
+            <p>Atif Aslam, Jal the Band, Rohail Hyatt</p>
+          </a>
+        </div>
+      </li>
+      <!---
+      <li class="hex">
+        <div class="hexIn">
+          <a class="hexLink" href="#">
+            <img src="img.jpg" alt="" />
+            <h1>This is a title</h1>
+            <p>Some sample text about the article this hexagon leads to</p>
+          </a>
+        </div>
+      </li>
+     ---->
+    </ul>
+  </body>
+</html>
